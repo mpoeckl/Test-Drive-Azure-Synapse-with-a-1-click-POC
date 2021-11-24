@@ -1,0 +1,20 @@
+{
+	"name": "WriteAutoJson",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSynapseAnalyticsTripsData",
+						"type": "DatasetReference"
+					},
+					"name": "TripsDataTable"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table',\n\tstaged: true) ~> TripsDataTable"
+		}
+	}
+}
