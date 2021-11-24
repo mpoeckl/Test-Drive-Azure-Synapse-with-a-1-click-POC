@@ -5,14 +5,7 @@
 			{
 				"name": "WriteCustomJson",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "WriteAutoJson",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "1.00:00:00",
 					"retry": 0,
