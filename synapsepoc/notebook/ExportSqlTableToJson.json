@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0b7080a0-4a10-4fa1-98e5-129daee199aa"
+				"spark.autotune.trackingId": "94d89c11-e003-47e3-9d6e-aa0459f16c52"
 			}
 		},
 		"metadata": {
@@ -58,14 +58,8 @@
 				"source": [
 					"%%spark\n",
 					"val df = spark.read.sqlanalytics(\"mpajn6axh2pc3wispocws1p1.dbo.TripsData\")\n",
-					"//df.show\n",
-					"//df.write.mode(\"overwrite\").saveAsTable(\"default.TripsData\")\n",
 					"\n",
-					"  //.map(jsonString => s\"  $jsonString\")\n",
 					"val rawJson = df.toJSON\n",
-					"  //.withColumn(\"order\", (count(\"value\").over(window) % lit(2)) + lit(1))\n",
-					"  //.withColumn(\"value\", when(col(\"order\").equalTo(1), concat(col(\"value\"), lit(\",\"))).otherwise(col(\"value\")))\n",
-					"  //.unionByName(Seq((0, \"[\"), (3, \"]\")).toDF(\"order\", \"value\"))\n",
 					"\n",
 					"rawJson.write.text(\"abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net/export/tripfares-sparkexport-autoJson.json\")\n",
 					"rawJson.show"
