@@ -45,14 +45,7 @@
 					{
 						"name": "WriteCustomJson",
 						"type": "ExecuteDataFlow",
-						"dependsOn": [
-							{
-								"activity": "WriteAutoJson",
-								"dependencyConditions": [
-									"Completed"
-								]
-							}
-						],
+						"dependsOn": [],
 						"policy": {
 							"timeout": "1.00:00:00",
 							"retry": 0,
@@ -1183,7 +1176,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@dataset().datalakeAccountName",
+							"value": "@dataset().fileName",
 							"type": "Expression"
 						},
 						"folderPath": "export",
