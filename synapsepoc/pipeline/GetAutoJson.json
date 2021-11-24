@@ -17,7 +17,15 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "WriteAutoJson",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"TripsDataTable": {
+								"SynapseWorkspaceName": "mpajn6axh2pc3wispocws1.database.windows.net",
+								"SQLDedicatedPoolName": "mpajn6axh2pc3wispocws1p1",
+								"keyVaultName": "kvmpajn6axh2pc3wispoc",
+								"SQLLoginUsername": "mpadmin"
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
