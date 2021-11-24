@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 2",
+	"name": "ExportSqlTableToJson",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,15 +17,15 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "8dae6ab3-2305-4134-93dc-d14acd292021"
+				"spark.autotune.trackingId": "0cbeb8a3-0c92-4e15-9443-044287adebcf"
 			}
 		},
 		"metadata": {
 			"saveOutput": true,
 			"enableDebugMode": false,
 			"kernelspec": {
-				"name": "synapse_spark",
-				"display_name": "scala"
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "scala"
@@ -58,10 +58,19 @@
 				"source": [
 					"%%spark\n",
 					"val df = spark.read.sqlanalytics(\"mpajn6axh2pc3wispocws1p1.dbo.TripsData\")\n",
-					"df.show\n",
-					"//df.write.mode(\"overwrite\").saveAsTable(\"default.TripsData\")"
+					"//df.show\n",
+					"//df.write.mode(\"overwrite\").saveAsTable(\"default.TripsData\")\n",
+					"\n",
+					"  //.map(jsonString => s\"  $jsonString\")\n",
+					"val rawJson = df.toJSON\n",
+					"  //.withColumn(\"order\", (count(\"value\").over(window) % lit(2)) + lit(1))\n",
+					"  //.withColumn(\"value\", when(col(\"order\").equalTo(1), concat(col(\"value\"), lit(\",\"))).otherwise(col(\"value\")))\n",
+					"  //.unionByName(Seq((0, \"[\"), (3, \"]\")).toDF(\"order\", \"value\"))\n",
+					"\n",
+					"\n",
+					"rawJson.show"
 				],
-				"execution_count": null
+				"execution_count": 6
 			}
 		]
 	}
