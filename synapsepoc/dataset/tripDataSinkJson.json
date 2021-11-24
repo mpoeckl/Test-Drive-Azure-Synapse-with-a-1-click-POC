@@ -21,6 +21,9 @@
 			},
 			"keyVaultName": {
 				"type": "string"
+			},
+			"fileName": {
+				"type": "string"
 			}
 		},
 		"folder": {
@@ -31,7 +34,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "trip-data-export.json",
+				"fileName": {
+					"value": "@dataset().datalakeAccountName",
+					"type": "Expression"
+				},
 				"folderPath": "export",
 				"fileSystem": "public"
 			}
