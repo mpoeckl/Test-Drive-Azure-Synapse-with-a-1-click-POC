@@ -24,6 +24,10 @@
 								"SQLDedicatedPoolName": "mpajn6axh2pc3wispocws1p1",
 								"keyVaultName": "kvmpajn6axh2pc3wispoc",
 								"SQLLoginUsername": "mpadmin"
+							},
+							"JsonFile": {
+								"datalakeAccountName": "mpajn6axh2pc3wispoc",
+								"keyVaultName": "kvmpajn6axh2pc3wispoc"
 							}
 						}
 					},
