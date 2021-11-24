@@ -28,7 +28,7 @@
 							"WriteJsonFile": {
 								"datalakeAccountName": "mpajn6axh2pc3wispoc",
 								"keyVaultName": "kvmpajn6axh2pc3wispoc",
-								"fileName": "tripfares-dataexport-autoJson.json"
+								"fileName": "tripfares-dataexport-customJson.json"
 							}
 						}
 					},
