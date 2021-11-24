@@ -45,7 +45,14 @@
 					{
 						"name": "WriteCustomJson",
 						"type": "ExecuteDataFlow",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "WriteAutoJson",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "1.00:00:00",
 							"retry": 0,
@@ -68,7 +75,8 @@
 									},
 									"WriteJsonFile": {
 										"datalakeAccountName": "mpajn6axh2pc3wispoc",
-										"keyVaultName": "kvmpajn6axh2pc3wispoc"
+										"keyVaultName": "kvmpajn6axh2pc3wispoc",
+										"fileName": "tripfares-dataexport-autoJson.json"
 									}
 								}
 							},
@@ -81,6 +89,60 @@
 							},
 							"traceLevel": "Fine"
 						}
+					},
+					{
+						"name": "WriteAutoJson",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "SqlDWSource",
+								"queryTimeout": "02:00:00",
+								"partitionOption": "None"
+							},
+							"sink": {
+								"type": "JsonSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "JsonWriteSettings",
+									"filePattern": "arrayOfObjects"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "AzureSynapseAnalyticsTripsData",
+								"type": "DatasetReference",
+								"parameters": {
+									"SynapseWorkspaceName": "mpajn6axh2pc3wispocws1.database.windows.net",
+									"SQLDedicatedPoolName": "mpajn6axh2pc3wispocws1p1",
+									"keyVaultName": "kvmpajn6axh2pc3wispoc",
+									"SQLLoginUsername": "mpadmin"
+								}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "tripDataSinkJson",
+								"type": "DatasetReference",
+								"parameters": {
+									"datalakeAccountName": "mpajn6axh2pc3wispoc",
+									"keyVaultName": "kvmpajn6axh2pc3wispoc",
+									"fileName": "tripfares-dataexport-customJson.json"
+								}
+							}
+						]
 					}
 				],
 				"policy": {
@@ -94,7 +156,9 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/dataflows/WriteCustomJson')]",
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/datasets/AzureSynapseAnalyticsTripsData')]",
+				"[concat(variables('workspaceId'), '/datasets/tripDataSinkJson')]"
 			]
 		},
 		{
@@ -1105,6 +1169,9 @@
 					},
 					"keyVaultName": {
 						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
 					}
 				},
 				"folder": {
@@ -1115,7 +1182,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "trip-data-export.json",
+						"fileName": {
+							"value": "@dataset().datalakeAccountName",
+							"type": "Expression"
+						},
 						"folderPath": "export",
 						"fileSystem": "public"
 					}
