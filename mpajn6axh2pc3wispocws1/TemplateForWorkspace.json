@@ -132,7 +132,7 @@
 								"parameters": {
 									"datalakeAccountName": "mpajn6axh2pc3wispoc",
 									"keyVaultName": "kvmpajn6axh2pc3wispoc",
-									"fileName": "tripfares-dataexport-customJson.json"
+									"fileName": "tripfares-dataexport-autoJson.json"
 								}
 							}
 						]
