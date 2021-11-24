@@ -1,5 +1,5 @@
 {
-	"name": "WriteAutoJson",
+	"name": "WriteCustomJson",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
