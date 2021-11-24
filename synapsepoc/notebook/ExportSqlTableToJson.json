@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "0cbeb8a3-0c92-4e15-9443-044287adebcf"
+				"spark.autotune.trackingId": "0b7080a0-4a10-4fa1-98e5-129daee199aa"
 			}
 		},
 		"metadata": {
@@ -67,10 +67,10 @@
 					"  //.withColumn(\"value\", when(col(\"order\").equalTo(1), concat(col(\"value\"), lit(\",\"))).otherwise(col(\"value\")))\n",
 					"  //.unionByName(Seq((0, \"[\"), (3, \"]\")).toDF(\"order\", \"value\"))\n",
 					"\n",
-					"\n",
+					"rawJson.write.text(\"abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net/export/tripfares-sparkexport-autoJson.json\")\n",
 					"rawJson.show"
 				],
-				"execution_count": 6
+				"execution_count": 9
 			}
 		]
 	}
