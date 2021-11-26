@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "true",
 				"spark.dynamicAllocation.minExecutors": "1",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "86cb2f91-cd7f-493e-a11e-08b595c1a7a3"
+				"spark.autotune.trackingId": "6c8651d2-268c-4a09-a218-e2856090b668"
 			}
 		},
 		"metadata": {
@@ -97,11 +97,14 @@
 					"case class dropoff_latitude(dep_id:String)\r\n",
 					"\r\n",
 					"\r\n",
-					"case class details(id:empId,name:String,position:String,depId:depId)\r\n",
-					"case class code(manager_id:String) \r\n",
-					"case class reporting(reporting:Array[code])\r\n",
-					"case class hireDate(hire_date:String)\r\n",
-					"case class emp_record(emp_details:details,incrementDate:String,commission:String,country:String,hireDate:hireDate,reports_to:reporting)\r\n",
+					"case class pickup(pickup_datetime:pickup_datetime, pickup_longitude:pickup_longitude, pickup_latitude:pickup_latitude)//,name:String,position:String,depId:depId)\r\n",
+					"case class dropoff(dropoff_datetime:dropoff_datetime, dropoff_longitude:dropoff_longitude, dropoff_latitude:dropoff_latitude) \r\n",
+					"\r\n",
+					"//case class code(manager_id:String)\r\n",
+					"//case class reporting(reporting:Array[code])\r\n",
+					"\r\n",
+					"case class trip_record(medallion:medallion,hack_license:hack_license,vendor_id:vendor_id,rate_code:rate_code,store_and_fwd_flag:store_and_fwd_flag,passenger_count:passenger_count, _\r\n",
+					" trip_time_in_secs:trip_time_in_secs, trip_distance:trip_distance, pickup:pickup, dropoff:dropoff)\r\n",
 					""
 				],
 				"execution_count": null
