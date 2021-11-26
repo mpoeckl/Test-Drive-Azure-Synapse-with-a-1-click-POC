@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "true",
 				"spark.dynamicAllocation.minExecutors": "1",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "cc4c6479-e76a-4a2a-a07b-8cfcdb6e18ab"
+				"spark.autotune.trackingId": "86cb2f91-cd7f-493e-a11e-08b595c1a7a3"
 			}
 		},
 		"metadata": {
@@ -59,12 +59,13 @@
 					"%%spark\n",
 					"val df = spark.read.sqlanalytics(\"mpajn6axh2pc3wispocws1p1.dbo.TripsData\")\n",
 					"\n",
-					"val rawJson = df.toJSON\n",
+					"val autoJson = df.toJSON\n",
 					"\n",
-					"//rawJson.write.text(\"abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net/export/tripfares-sparkexport-autoJson.json\")\n",
-					"display(rawJson)"
+					"//val str = autoJson.collect.mkString(\"[\", \",\" , \"]\" )\n",
+					"//autoJson.write.text(\"abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net/export/tripfares-sparkexport-autoJson.json\")\n",
+					"display(autoJson)"
 				],
-				"execution_count": 6
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -80,10 +81,56 @@
 					}
 				},
 				"source": [
-					"val str = rawJson.collect.mkString(\"[\", \",\" , \"]\" )\r\n",
-					"println(str)"
+					"case class medallion(id:String)\r\n",
+					"case class hack_license(dep_id:String)\r\n",
+					"case class vendor_id(dep_id:String)\r\n",
+					"case class rate_code(dep_id:String)\r\n",
+					"case class store_and_fwd_flag(dep_id:String)\r\n",
+					"case class passenger_count(dep_id:String)\r\n",
+					"case class trip_time_in_secs(dep_id:String)\r\n",
+					"case class trip_distance(dep_id:String)\r\n",
+					"case class pickup_datetime(dep_id:String)\r\n",
+					"case class pickup_longitude(dep_id:String)\r\n",
+					"case class pickup_latitude(dep_id:String)\r\n",
+					"case class dropoff_datetime(dep_id:String)\r\n",
+					"case class dropoff_longitude(dep_id:String)\r\n",
+					"case class dropoff_latitude(dep_id:String)\r\n",
+					"\r\n",
+					"\r\n",
+					"case class details(id:empId,name:String,position:String,depId:depId)\r\n",
+					"case class code(manager_id:String) \r\n",
+					"case class reporting(reporting:Array[code])\r\n",
+					"case class hireDate(hire_date:String)\r\n",
+					"case class emp_record(emp_details:details,incrementDate:String,commission:String,country:String,hireDate:hireDate,reports_to:reporting)\r\n",
+					""
 				],
-				"execution_count": 4
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"val nestedDF= df.map(r=>{\r\n",
+					"val medallion= medallion(r.getString(0))\r\n",
+					"val hack_license = hack_license(r.getString(7))\r\n",
+					"val details_1=details(empID_1,r.getString(1),r.getString(2),depId_1)\r\n",
+					"val code_1=code(r.getString(3)) \r\n",
+					"val reporting_1 = reporting(Array(code_1))\r\n",
+					"val hireDate_1 = hireDate(r.getString(4))\r\n",
+					"emp_record(details_1,r.getString(8),r.getString(6),r.getString(9),hireDate_1,reporting_1)\r\n",
+					""
+				],
+				"execution_count": null
 			}
 		]
 	}
