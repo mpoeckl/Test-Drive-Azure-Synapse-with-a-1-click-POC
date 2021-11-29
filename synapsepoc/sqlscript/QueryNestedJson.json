@@ -1,0 +1,17 @@
+{
+	"name": "QueryNestedJson",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 100\n    JSON_VALUE (jsonContent, '$.sensorid') AS sensorid,\n    JSON_VALUE (jsonContent, '$.praegid') AS praegid,\n    ts,\n    Weg,\n    Kraft\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/machine-data.json',\n        FORMAT = 'CSV',\n        FIELDQUOTE = '0x0b',\n        FIELDTERMINATOR ='0x0b',\n        ROWTERMINATOR = '0x0b'\n    )\nWITH (\n    jsonContent varchar(MAX)\n    ) AS [q]\nCROSS APPLY openjson (JSON_QUERY (jsonContent, '$.series')) \nWITH (  ts varchar(50) '$.ts',\n        Weg varchar(50) '$.Weg',\n        Kraft varchar(50) '$.Kraft'\n    )",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
