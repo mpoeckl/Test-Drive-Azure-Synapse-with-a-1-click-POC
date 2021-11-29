@@ -7,13 +7,13 @@
 			"metadata": "Workspace name",
 			"defaultValue": "mpajn6axh2pc3wispocws1"
 		},
-		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'TripFaresSynapseAnalyticsLinkedService'"
-		},
 		"TripFaresBlobStorageLinkedService_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'TripFaresBlobStorageLinkedService'"
+		},
+		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'TripFaresSynapseAnalyticsLinkedService'"
 		},
 		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
 			"type": "string",
@@ -73,9 +73,7 @@
 									}
 								}
 							},
-							"staging": {
-								"folderPath": "staging"
-							},
+							"staging": {},
 							"compute": {
 								"coreCount": 8,
 								"computeType": "General"
@@ -149,7 +147,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/dataflows/WriteCustomJson')]",
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('workspaceId'), '/datasets/AzureSynapseAnalyticsTripsData')]",
 				"[concat(variables('workspaceId'), '/datasets/tripDataSinkJson')]"
 			]
@@ -1332,6 +1329,25 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/TripFaresBlobStorageLinkedService')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('TripFaresBlobStorageLinkedService_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/TripFaresDataLakeStorageLinkedService')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
@@ -1904,7 +1920,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/Notebook 2')]",
+			"name": "[concat(parameters('workspaceName'), '/ExportSqlTableToJson')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -1919,20 +1935,20 @@
 					"driverCores": 4,
 					"executorMemory": "28g",
 					"executorCores": 4,
-					"numExecutors": 2,
+					"numExecutors": 1,
 					"conf": {
-						"spark.dynamicAllocation.enabled": "false",
-						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.enabled": "true",
+						"spark.dynamicAllocation.minExecutors": "1",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "8dae6ab3-2305-4134-93dc-d14acd292021"
+						"spark.autotune.trackingId": "6c8651d2-268c-4a09-a218-e2856090b668"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
 					"enableDebugMode": false,
 					"kernelspec": {
-						"name": "synapse_spark",
-						"display_name": "scala"
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
 					},
 					"language_info": {
 						"name": "scala"
@@ -1963,8 +1979,82 @@
 						"source": [
 							"%%spark\n",
 							"val df = spark.read.sqlanalytics(\"mpajn6axh2pc3wispocws1p1.dbo.TripsData\")\n",
-							"df.show\n",
-							"//df.write.mode(\"overwrite\").saveAsTable(\"default.TripsData\")"
+							"\n",
+							"val autoJson = df.toJSON\n",
+							"\n",
+							"//val str = autoJson.collect.mkString(\"[\", \",\" , \"]\" )\n",
+							"//autoJson.write.text(\"abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net/export/tripfares-sparkexport-autoJson.json\")\n",
+							"display(autoJson)"
+						],
+						"outputs": [],
+						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"case class medallion(id:String)\r\n",
+							"case class hack_license(dep_id:String)\r\n",
+							"case class vendor_id(dep_id:String)\r\n",
+							"case class rate_code(dep_id:String)\r\n",
+							"case class store_and_fwd_flag(dep_id:String)\r\n",
+							"case class passenger_count(dep_id:String)\r\n",
+							"case class trip_time_in_secs(dep_id:String)\r\n",
+							"case class trip_distance(dep_id:String)\r\n",
+							"case class pickup_datetime(dep_id:String)\r\n",
+							"case class pickup_longitude(dep_id:String)\r\n",
+							"case class pickup_latitude(dep_id:String)\r\n",
+							"case class dropoff_datetime(dep_id:String)\r\n",
+							"case class dropoff_longitude(dep_id:String)\r\n",
+							"case class dropoff_latitude(dep_id:String)\r\n",
+							"\r\n",
+							"\r\n",
+							"case class pickup(pickup_datetime:pickup_datetime, pickup_longitude:pickup_longitude, pickup_latitude:pickup_latitude)//,name:String,position:String,depId:depId)\r\n",
+							"case class dropoff(dropoff_datetime:dropoff_datetime, dropoff_longitude:dropoff_longitude, dropoff_latitude:dropoff_latitude) \r\n",
+							"\r\n",
+							"//case class code(manager_id:String)\r\n",
+							"//case class reporting(reporting:Array[code])\r\n",
+							"\r\n",
+							"case class trip_record(medallion:medallion,hack_license:hack_license,vendor_id:vendor_id,rate_code:rate_code,store_and_fwd_flag:store_and_fwd_flag,passenger_count:passenger_count, _\r\n",
+							" trip_time_in_secs:trip_time_in_secs, trip_distance:trip_distance, pickup:pickup, dropoff:dropoff)\r\n",
+							""
+						],
+						"outputs": [],
+						"execution_count": null
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"val nestedDF= df.map(r=>{\r\n",
+							"val medallion= medallion(r.getString(0))\r\n",
+							"val hack_license = hack_license(r.getString(7))\r\n",
+							"val details_1=details(empID_1,r.getString(1),r.getString(2),depId_1)\r\n",
+							"val code_1=code(r.getString(3)) \r\n",
+							"val reporting_1 = reporting(Array(code_1))\r\n",
+							"val hireDate_1 = hireDate(r.getString(4))\r\n",
+							"emp_record(details_1,r.getString(8),r.getString(6),r.getString(9),hireDate_1,reporting_1)\r\n",
+							""
 						],
 						"outputs": [],
 						"execution_count": null
@@ -1993,23 +2083,24 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/TripFaresBlobStorageLinkedService')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"name": "[concat(parameters('workspaceName'), '/QueryNestedJson')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('TripFaresBlobStorageLinkedService_connectionString')]"
+				"content": {
+					"query": "-- https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/synapse-analytics/how-to-analyze-complex-schema.md\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-openrowset\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/query-json-files\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest\n\n--CREATE DATABASE iot\n\n--DROP VIEW iotdata\nCREATE VIEW iotdata  \nAS \nSELECT TOP 100\n    JSON_VALUE (jsonContent, '$.sensorid') AS sensorid,\n    CAST(JSON_VALUE (jsonContent, '$.praegid') AS INT) AS praegid,\n    ts,\n    Weg,\n    Kraft\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/machine-data.json',\n        FORMAT = 'CSV',\n        FIELDQUOTE = '0x0b',\n        FIELDTERMINATOR ='0x0b',\n        ROWTERMINATOR = '0x0b'\n    )\nWITH (\n    jsonContent varchar(MAX)\n    ) AS [q]\nCROSS APPLY openjson (JSON_QUERY (jsonContent, '$.series')) \nWITH (  ts BIGINT '$.ts',\n        Weg FLOAT '$.Weg',\n        Kraft INT '$.Kraft'\n    )",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "iot",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
 				},
-				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
+				"type": "SqlQuery"
 			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
+			"dependsOn": []
 		}
 	]
 }
