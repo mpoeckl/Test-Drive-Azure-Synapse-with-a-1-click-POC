@@ -1585,6 +1585,26 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/QueryNestedJson')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "-- https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/synapse-analytics/how-to-analyze-complex-schema.md\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-openrowset\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/query-json-files\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest\n\n--CREATE DATABASE iot\n\n--DROP VIEW iotdata\nCREATE VIEW iotdata  \nAS \nSELECT TOP 100\n    JSON_VALUE (jsonContent, '$.sensorid') AS sensorid,\n    CAST(JSON_VALUE (jsonContent, '$.praegid') AS INT) AS praegid,\n    ts,\n    DATEADD(ms, CAST(RIGHT(ts, 3) AS INT), DATEADD(s, ts/1000, CAST('1970-01-01' AS DATETIME2(3)))) AS dt,\n    weg,\n    kraft\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/machine-data.json',\n        FORMAT = 'CSV',\n        FIELDQUOTE = '0x0b',\n        FIELDTERMINATOR ='0x0b',\n        ROWTERMINATOR = '0x0b'\n    )\nWITH (\n    jsonContent varchar(MAX)\n    ) AS [q]\nCROSS APPLY openjson (JSON_QUERY (jsonContent, '$.series')) \nWITH (  ts BIGINT '$.ts',\n        weg FLOAT '$.Weg',\n        kraft INT '$.Kraft'\n    )\nORDER BY ts ",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "iot",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/Data Exploration and ML Modeling - NYC taxi predict using Spark MLlib')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
@@ -2080,26 +2100,6 @@
 			"type": "Microsoft.Synapse/workspaces/managedVirtualNetworks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/QueryNestedJson')]",
-			"type": "Microsoft.Synapse/workspaces/sqlscripts",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"content": {
-					"query": "-- https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/synapse-analytics/how-to-analyze-complex-schema.md\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-openrowset\n-- https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/query-json-files\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest\n-- https://docs.microsoft.com/en-us/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest\n\n--CREATE DATABASE iot\n\n--DROP VIEW iotdata\nCREATE VIEW iotdata  \nAS \nSELECT TOP 100\n    JSON_VALUE (jsonContent, '$.sensorid') AS sensorid,\n    CAST(JSON_VALUE (jsonContent, '$.praegid') AS INT) AS praegid,\n    ts,\n    CAST(DATEADD(ms, CAST(RIGHT(ts,3) AS INT), DATEADD(s, ts/1000, '1970-01-01')) AS DATETIME2(7)) AS dt,\n    weg,\n    kraft\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/machine-data.json',\n        FORMAT = 'CSV',\n        FIELDQUOTE = '0x0b',\n        FIELDTERMINATOR ='0x0b',\n        ROWTERMINATOR = '0x0b'\n    )\nWITH (\n    jsonContent varchar(MAX)\n    ) AS [q]\nCROSS APPLY openjson (JSON_QUERY (jsonContent, '$.series')) \nWITH (  ts BIGINT '$.ts',\n        Weg FLOAT '$.Weg',\n        Kraft INT '$.Kraft'\n    )",
-					"metadata": {
-						"language": "sql"
-					},
-					"currentConnection": {
-						"databaseName": "iot",
-						"poolName": "Built-in"
-					},
-					"resultLimit": 5000
-				},
-				"type": "SqlQuery"
-			},
 			"dependsOn": []
 		}
 	]
