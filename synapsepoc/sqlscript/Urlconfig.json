@@ -2,12 +2,12 @@
 	"name": "Urlconfig",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nCREATE VIEW urlconfig\nSELECT\n*\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/urlconfig.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\n",
+			"query": "-- This is auto-generated code\nCREATE VIEW urlconfig\nAS\nSELECT *\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/urlconfig.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\n\n--DROP VIEW urlconfig",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
+				"databaseName": "iotdb",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
