@@ -2,7 +2,7 @@
 	"name": "CREATE tripdata views",
 	"properties": {
 		"content": {
-			"query": "DROP VIEW [dbo].[v_tripdata_exttable];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_exttable]\nAS\nSELECT * FROM [dbo].[tripdata]\nGO;\n\nDROP VIEW [dbo].[v_tripdata_openrowset];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_openrowset]\nAS\nSELECT\n    *\nFROM\n    OPENROWSET(\n        BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/trip-data.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\nGO;\n\nDROP VIEW [dbo].[v_tripdata_extview];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_extview]\nAS\nSELECT * FROM [dbo].[v_tripdata_openrowset]\nGO;",
+			"query": "DROP VIEW [dbo].[v_tripdata_exttable];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_exttable]\nAS\nSELECT * FROM [dbo].[tripdata]\nWHERE [dbo].[tripdata].[medallion] = '9F3B5F7A9F37581A5B033F4D2050C935'\nGO;\n\nDROP VIEW [dbo].[v_tripdata_openrowset];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_openrowset]\nAS\nSELECT\n    *\nFROM\n    OPENROWSET(\n        BULK 'trip-data.csv',\n        -- Data source with MSI credential access defined in external table 'tripdata'\n        DATA_SOURCE='public_mpajn6axh2pc3wispoc_dfs_core_windows_net',\n        --BULK 'https://mpajn6axh2pc3wispoc.dfs.core.windows.net/public/trip-data.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\nGO;\n\nDROP VIEW [dbo].[v_tripdata_extview];\nGO;\n\nCREATE VIEW [dbo].[v_tripdata_extview]\nAS\nSELECT * FROM [dbo].[v_tripdata_openrowset]\nWHERE [dbo].[v_tripdata_openrowset].[medallion] = '9F3B5F7A9F37581A5B033F4D2050C935'\nGO;",
 			"metadata": {
 				"language": "sql"
 			},
