@@ -2,12 +2,12 @@
 	"name": "Check user roles",
 	"properties": {
 		"content": {
-			"query": "SELECT  pri.name As Username\n,       pri.type_desc AS [User Type]\n,       permit.permission_name AS [Permission]\n,       permit.state_desc AS [Permission State]\n,       permit.class_desc Class\n,       object_name(permit.major_id) AS [Object Name]\nFROM    sys.database_principals pri\nLEFT JOIN\n        sys.database_permissions permit\nON      permit.grantee_principal_id = pri.principal_id\nWHERE pri.name = 'user1'\n\nEXECUTE AS LOGIN = 'login1';\nSELECT * FROM fn_my_permissions(NULL, 'SERVER')\nREVERT;\n\nDENY ADMINISTER BULK OPERATIONS to login1;\nGRANT ADMINISTER BULK OPERATIONS to login1;",
+			"query": "SELECT  pri.name As Username\n,       pri.type_desc AS [User Type]\n,       permit.permission_name AS [Permission]\n,       permit.state_desc AS [Permission State]\n,       permit.class_desc Class\n,       object_name(permit.major_id) AS [Object Name]\nFROM    sys.database_principals pri\nLEFT JOIN\n        sys.database_permissions permit\nON      permit.grantee_principal_id = pri.principal_id\nWHERE pri.name = 'user1'\n\nEXECUTE AS LOGIN = 'login1';\nSELECT * FROM fn_my_permissions(NULL, 'SERVER')\nREVERT;\n\nDENY ADMINISTER BULK OPERATIONS to login1;\n--GRANT ADMINISTER BULK OPERATIONS to login1;\n--GRANT ADMINISTER DATABASE BULK OPERATIONS to user1;\n--REVOKE ADMINISTER DATABASE BULK OPERATIONS to user1;\n",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
+				"databaseName": "nyt_tripsdata",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
