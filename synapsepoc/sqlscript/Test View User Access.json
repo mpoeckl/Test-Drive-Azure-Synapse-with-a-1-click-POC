@@ -1,0 +1,17 @@
+{
+	"name": "Test View User Access",
+	"properties": {
+		"content": {
+			"query": "-- Check current user\nSELECT CURRENT_USER; \nSELECT SUSER_NAME(), USER_NAME();  \n\n-- Check owners\nEXECUTE sp_tables [tripdata];\nEXECUTE sp_tables [v_tripdata];\n\n-- Create Login+User for test\nCREATE LOGIN login1 WITH PASSWORD = 'J345#$)thb';  \nCREATE USER user1 FOR LOGIN login1;\n\n-- Grant user read rights on view but not on ext. table\nGRANT SELECT ON [dbo].[v_tripdata] TO user1;\n\n-- Check access to view for user 1\nEXECUTE AS LOGIN = 'login1';\nSELECT SUSER_NAME(), USER_NAME();\nSELECT TOP 1 * FROM [dbo].[v_tripdata]; \nREVERT;\n\n-- Check access to ext. table for user 1\nEXECUTE AS LOGIN = 'login1';\nSELECT SUSER_NAME(), USER_NAME();\nSELECT TOP 1 * FROM [dbo].[tripdata]; \nREVERT;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyt_tripsdata",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

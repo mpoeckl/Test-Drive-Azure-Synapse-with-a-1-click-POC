@@ -1,0 +1,17 @@
+{
+	"name": "Create External Table tripdata",
+	"properties": {
+		"content": {
+			"query": "DROP EXTERNAL TABLE tripdata;\nDROP EXTERNAL FILE FORMAT SynapseDelimitedTextFormat;\n\nIF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseDelimitedTextFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseDelimitedTextFormat] \n\tWITH ( FORMAT_TYPE = DELIMITEDTEXT ,\n\t       FORMAT_OPTIONS (\n\t\t\t FIELD_TERMINATOR = ',',\n\t\t\t STRING_DELIMITER = '\"',\n\t\t\t USE_TYPE_DEFAULT = FALSE,\n\t\t\t FIRST_ROW = 2,\n\t\t\t ENCODING = 'UTF8',\n\t\t\t PARSER_VERSION ='1.0'\n\t\t\t))\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'public_mpajn6axh2pc3wispoc_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [public_mpajn6axh2pc3wispoc_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://public@mpajn6axh2pc3wispoc.dfs.core.windows.net' \n\t)\nGO\n\n\nCREATE EXTERNAL TABLE tripdata (\n\t[medallion] nvarchar(32),\n\t[hack_license] nvarchar(32),\n\t[vendor_id] nvarchar(10),\n\t[rate_code] bigint,\n\t[store_and_fwd_flag] nvarchar(4),\n\t[pickup_datetime] datetime2(0),\n\t[dropoff_datetime] datetime2(0),\n\t[passenger_count] bigint,\n\t[trip_time_in_secs] bigint,\n\t[trip_distance] float,\n\t[pickup_longitude] float,\n\t[pickup_latitude] float,\n\t[dropoff_longitude] float,\n\t[dropoff_latitude] float\n\t)\n\tWITH (\n\tLOCATION = 'trip-data.csv',\n\tDATA_SOURCE = [public_mpajn6axh2pc3wispoc_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseDelimitedTextFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.tripdata\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "nyt_tripsdata",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
