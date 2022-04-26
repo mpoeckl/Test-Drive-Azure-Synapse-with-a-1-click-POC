@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tudyytifnx",
+	"properties": {
+		"Name": "relationship-tudyytifnx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Material",
+		"ToTableName": "DistillationTower",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaterialId",
+				"ToColumnName": "MaterialId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Material.cdm.json/Material\",\"toEntity\":\"DistillationTower.cdm.json/DistillationTower\",\"joinPairs\":[{\"fromAttribute\":\"MaterialId\",\"toAttribute\":\"MaterialId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

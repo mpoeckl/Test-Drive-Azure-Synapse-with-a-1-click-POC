@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vbygbuuujx",
+	"properties": {
+		"Name": "relationship-vbygbuuujx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Meter",
+		"ToTableName": "MeterChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeterId",
+				"ToColumnName": "MeterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Meter.cdm.json/Meter\",\"toEntity\":\"MeterChannel.cdm.json/MeterChannel\",\"joinPairs\":[{\"fromAttribute\":\"MeterId\",\"toAttribute\":\"MeterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

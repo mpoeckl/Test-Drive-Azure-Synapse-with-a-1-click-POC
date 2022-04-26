@@ -1,0 +1,106 @@
+{
+	"name": "ImpellerSystemType",
+	"properties": {
+		"Name": "ImpellerSystemType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pump impeller.\n\nEx:\n- High Head Closed Channel\n- Vortex\n- Centrifugal Screw\n- Propeller\n- Shredded\n- Closed Channel\n- Misced Flow\n- Semi-Open",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ImpellerSystemTypeId",
+					"Description": "The unique identifier of an impeller type.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerSystemType.cdm.json/ImpellerSystemType",
+						"Name": "ImpellerSystemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerSystemTypeName",
+					"Description": "The name of an impeller type.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerSystemType.cdm.json/ImpellerSystemType",
+						"Name": "ImpellerSystemTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerSystemTypeDescription",
+					"Description": "The description of an impeller type.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerSystemType.cdm.json/ImpellerSystemType",
+						"Name": "ImpellerSystemTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImpellerSystemType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImpellerSystemType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ImpellerSystemTypeId\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeId\"},\"ImpellerSystemTypeName\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeName\"},\"ImpellerSystemTypeDescription\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ImpellerSystemType\",\"path\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\"},\"description\":\"The type of pump impeller.\\n\\nEx:\\n- High Head Closed Channel\\n- Vortex\\n- Centrifugal Screw\\n- Propeller\\n- Shredded\\n- Closed Channel\\n- Misced Flow\\n- Semi-Open\",\"primaryKey\":[\"ImpellerSystemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an impeller type.\",\"isNullable\":false,\"name\":\"ImpellerSystemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an impeller type.\",\"isNullable\":true,\"name\":\"ImpellerSystemTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an impeller type.\",\"isNullable\":true,\"name\":\"ImpellerSystemTypeDescription\"}]}}}",
+			"Description": "The type of pump impeller.\n\nEx:\n- High Head Closed Channel\n- Vortex\n- Centrifugal Screw\n- Propeller\n- Shredded\n- Closed Channel\n- Misced Flow\n- Semi-Open",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ImpellerSystemTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

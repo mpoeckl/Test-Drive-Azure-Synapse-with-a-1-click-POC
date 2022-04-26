@@ -1,0 +1,106 @@
+{
+	"name": "OpenCloseStatus",
+	"properties": {
+		"Name": "OpenCloseStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status type of the pipe.\n\nEx:\n- Close\n- Open\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OpenCloseStatusId",
+					"Description": "The unique identifier of an open/close status type.",
+					"BaseAttributeReference": {
+						"Entity": "OpenCloseStatus.cdm.json/OpenCloseStatus",
+						"Name": "OpenCloseStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OpenCloseStatusName",
+					"Description": "The name of an open/close status type.",
+					"BaseAttributeReference": {
+						"Entity": "OpenCloseStatus.cdm.json/OpenCloseStatus",
+						"Name": "OpenCloseStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OpenCloseStatusDescription",
+					"Description": "The description of an open/close status type.",
+					"BaseAttributeReference": {
+						"Entity": "OpenCloseStatus.cdm.json/OpenCloseStatus",
+						"Name": "OpenCloseStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OpenCloseStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OpenCloseStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OpenCloseStatusId\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusId\"},\"OpenCloseStatusName\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusName\"},\"OpenCloseStatusDescription\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OpenCloseStatus\",\"path\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\"},\"description\":\"The status type of the pipe.\\n\\nEx:\\n- Close\\n- Open\\n- Unknown\",\"primaryKey\":[\"OpenCloseStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an open/close status type.\",\"isNullable\":false,\"name\":\"OpenCloseStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an open/close status type.\",\"isNullable\":true,\"name\":\"OpenCloseStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"name\":\"OpenCloseStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an open/close status type.\",\"isNullable\":true,\"name\":\"OpenCloseStatusDescription\"}]}}}",
+			"Description": "The status type of the pipe.\n\nEx:\n- Close\n- Open\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "OpenCloseStatusId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

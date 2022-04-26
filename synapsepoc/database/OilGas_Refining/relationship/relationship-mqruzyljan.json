@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mqruzyljan",
+	"properties": {
+		"Name": "relationship-mqruzyljan",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentInspectionStatus",
+		"ToTableName": "ComponentInspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentInspectionStatusId",
+				"ToColumnName": "ComponentInspectionStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentInspectionStatus.cdm.json/ComponentInspectionStatus\",\"toEntity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"joinPairs\":[{\"fromAttribute\":\"ComponentInspectionStatusId\",\"toAttribute\":\"ComponentInspectionStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

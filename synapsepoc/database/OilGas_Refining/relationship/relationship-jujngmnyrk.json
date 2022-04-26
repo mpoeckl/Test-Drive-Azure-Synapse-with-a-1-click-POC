@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jujngmnyrk",
+	"properties": {
+		"Name": "relationship-jujngmnyrk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DeviceDataLoggingType",
+		"ToTableName": "Device",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceDataLoggingTypeId",
+				"ToColumnName": "DeviceDataLoggingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"toEntity\":\"Device.cdm.json/Device\",\"joinPairs\":[{\"fromAttribute\":\"DeviceDataLoggingTypeId\",\"toAttribute\":\"DeviceDataLoggingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

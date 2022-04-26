@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dhxvlgcowz",
+	"properties": {
+		"Name": "relationship-dhxvlgcowz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaphthaHydrotreaterOutputType",
+		"ToTableName": "NaphthaHydrotreaterProduction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaphthaHydrotreaterOutputTypeId",
+				"ToColumnName": "NaphthaHydrotreaterOutputTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"toEntity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"joinPairs\":[{\"fromAttribute\":\"NaphthaHydrotreaterOutputTypeId\",\"toAttribute\":\"NaphthaHydrotreaterOutputTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

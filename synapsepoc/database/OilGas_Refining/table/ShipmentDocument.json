@@ -1,0 +1,205 @@
+{
+	"name": "ShipmentDocument",
+	"properties": {
+		"Name": "ShipmentDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A document associated with a Shipment.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDocumentAuthorizedTimestamp",
+					"Description": "The timestamp when the shipment document was authorized.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShipmentDocumentAuthorizedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDocumentReceivedTimestamp",
+					"Description": "The timestamp when the shipment document was received.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShipmentDocumentReceivedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDocumentIssuedTimestamp",
+					"Description": "The timestamp when the shipment document was issued.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShipmentDocumentIssuedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShippingDocumentTypeId",
+					"Description": "The unique identifier of a Shipping Document Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShippingDocumentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentDocumentNote",
+					"Description": "A note, comment or additional information regarding the shipment document.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentDocument.cdm.json/ShipmentDocument",
+						"Name": "ShipmentDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentDocument",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentDocument",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentId\"},\"DocumentId\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"DocumentId\"},\"ShipmentDocumentAuthorizedTimestamp\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentAuthorizedTimestamp\"},\"ShipmentDocumentReceivedTimestamp\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentReceivedTimestamp\"},\"ShipmentDocumentIssuedTimestamp\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentIssuedTimestamp\"},\"ShippingDocumentTypeId\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShippingDocumentTypeId\"},\"ShippingLocationId\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShippingLocationId\"},\"IsoCurrencyCode\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"IsoCurrencyCode\"},\"ShipmentDocumentNote\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentDocument\",\"path\":\"ShipmentDocument.cdm.json/ShipmentDocument\"},\"description\":\"A document associated with a Shipment.\",\"primaryKey\":[\"ShipmentId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentAuthorizedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the shipment document was authorized.\",\"isNullable\":true,\"name\":\"ShipmentDocumentAuthorizedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentReceivedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the shipment document was received.\",\"isNullable\":true,\"name\":\"ShipmentDocumentReceivedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentIssuedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the shipment document was issued.\",\"isNullable\":true,\"name\":\"ShipmentDocumentIssuedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShippingDocumentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipping Document Type.\",\"isNullable\":false,\"name\":\"ShippingDocumentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipping Location.\",\"isNullable\":true,\"name\":\"ShippingLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":true,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentDocument.cdm.json/ShipmentDocument\",\"name\":\"ShipmentDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the shipment document.\",\"isNullable\":true,\"name\":\"ShipmentDocumentNote\"}]}}}",
+			"Description": "A document associated with a Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,DocumentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

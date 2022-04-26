@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zxvrkciarc",
+	"properties": {
+		"Name": "relationship-zxvrkciarc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTest",
+		"ToTableName": "RelatedRefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestId",
+				"ToColumnName": "RefineryTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"toEntity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestId\",\"toAttribute\":\"RefineryTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

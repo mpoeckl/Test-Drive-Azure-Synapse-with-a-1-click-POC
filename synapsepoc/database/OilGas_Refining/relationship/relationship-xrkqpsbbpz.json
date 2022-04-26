@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xrkqpsbbpz",
+	"properties": {
+		"Name": "relationship-xrkqpsbbpz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "Valve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ValveId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"Valve.cdm.json/Valve\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ValveId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oxwjimngid",
+	"properties": {
+		"Name": "relationship-oxwjimngid",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchanger",
+		"ToTableName": "HydrocrackerUnit",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerId",
+				"ToColumnName": "HeatExchangerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"toEntity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerId\",\"toAttribute\":\"HeatExchangerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

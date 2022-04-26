@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xqmgikkmtr",
+	"properties": {
+		"Name": "relationship-xqmgikkmtr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SubstanceType",
+		"ToTableName": "PipelineTransferredSubstance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SubstanceTypeId",
+				"ToColumnName": "SubstanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SubstanceType.cdm.json/SubstanceType\",\"toEntity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"joinPairs\":[{\"fromAttribute\":\"SubstanceTypeId\",\"toAttribute\":\"SubstanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

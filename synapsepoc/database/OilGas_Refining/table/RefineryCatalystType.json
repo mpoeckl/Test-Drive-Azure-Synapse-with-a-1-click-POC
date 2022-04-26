@@ -1,0 +1,122 @@
+{
+	"name": "RefineryCatalystType",
+	"properties": {
+		"Name": "RefineryCatalystType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of catalyst that may be added to the process, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Tetraethyl Lead (TEL)\n- Tetramethyl Lead (TML)\n- Ethyl tertiary butyl ether (ETBE) \n- Methyl tertiary butyl ether (MTBE)\n- Tertiary amyl methyl ether (TAME)\n- Caustic\n- Sulfuric acid\n- Hydroflouric acid\n- Ammonia\n- Zeolite (FCCU)\n- Bauxite (FCCU)\n- Silica-alumina (FCCU)\n- Aluminum hydrosilicate (FCCU)\n\nwhere:\n\n1. Leaded Gasoline Additives. Tetraethyl lead (TEL) and tetramethyl lead (TML) are additives formerly used to improve gasoline octane ratings but are no\nlonger in common use except in aviation gasoline.\n2. Oxygenates. Ethyl tertiary butyl ether (ETBE), methyl tertiary butyl ether (MTBE), tertiary amyl methyl ether (TAME), and other oxygenates improve\ngasoline octane ratings and reduce carbon monoxide emissions.\n3. Caustics. Caustics are added to desalting water to neutralize acids and reduce corrosion. They are also added to desalted crude in order to reduce the\namount of corrosive chlorides in the tower overheads. They are used in some refinery treating processes to remove contaminants from hydrocarbon\nstreams.\n4. Sulfuric Acid and Hydrofluoric Acid. Sulfuric acid and hydrofluoric acid are used primarily as catalysts in alkylation processes. Sulfuric acid is also used\nin some treatment processes.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CatalystTypeId",
+					"Description": "The unique identifier of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryCatalystType.cdm.json/RefineryCatalystType",
+						"Name": "CatalystTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTypeName",
+					"Description": "The name of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryCatalystType.cdm.json/RefineryCatalystType",
+						"Name": "CatalystTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTypeDescription",
+					"Description": "The description of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryCatalystType.cdm.json/RefineryCatalystType",
+						"Name": "CatalystTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryCatalystType.cdm.json/RefineryCatalystType",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryCatalystType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryCatalystType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CatalystTypeId\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeId\"},\"CatalystTypeName\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeName\"},\"CatalystTypeDescription\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CorrosiveQualityId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryCatalystType\",\"path\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\"},\"description\":\"A type of catalyst that may be added to the process, which is a chemical added to a process or product to improve the outcome or product properties.\\n\\nEx:\\n- Tetraethyl Lead (TEL)\\n- Tetramethyl Lead (TML)\\n- Ethyl tertiary butyl ether (ETBE) \\n- Methyl tertiary butyl ether (MTBE)\\n- Tertiary amyl methyl ether (TAME)\\n- Caustic\\n- Sulfuric acid\\n- Hydroflouric acid\\n- Ammonia\\n- Zeolite (FCCU)\\n- Bauxite (FCCU)\\n- Silica-alumina (FCCU)\\n- Aluminum hydrosilicate (FCCU)\\n\\nwhere:\\n\\n1. Leaded Gasoline Additives. Tetraethyl lead (TEL) and tetramethyl lead (TML) are additives formerly used to improve gasoline octane ratings but are no\\nlonger in common use except in aviation gasoline.\\n2. Oxygenates. Ethyl tertiary butyl ether (ETBE), methyl tertiary butyl ether (MTBE), tertiary amyl methyl ether (TAME), and other oxygenates improve\\ngasoline octane ratings and reduce carbon monoxide emissions.\\n3. Caustics. Caustics are added to desalting water to neutralize acids and reduce corrosion. They are also added to desalted crude in order to reduce the\\namount of corrosive chlorides in the tower overheads. They are used in some refinery treating processes to remove contaminants from hydrocarbon\\nstreams.\\n4. Sulfuric Acid and Hydrofluoric Acid. Sulfuric acid and hydrofluoric acid are used primarily as catalysts in alkylation processes. Sulfuric acid is also used\\nin some treatment processes.\",\"primaryKey\":[\"CatalystTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a catalyst type.\",\"isNullable\":false,\"name\":\"CatalystTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a catalyst type.\",\"isNullable\":true,\"name\":\"CatalystTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a catalyst type.\",\"isNullable\":true,\"name\":\"CatalystTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityId\"}]}}}",
+			"Description": "A type of catalyst that may be added to the process, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Tetraethyl Lead (TEL)\n- Tetramethyl Lead (TML)\n- Ethyl tertiary butyl ether (ETBE) \n- Methyl tertiary butyl ether (MTBE)\n- Tertiary amyl methyl ether (TAME)\n- Caustic\n- Sulfuric acid\n- Hydroflouric acid\n- Ammonia\n- Zeolite (FCCU)\n- Bauxite (FCCU)\n- Silica-alumina (FCCU)\n- Aluminum hydrosilicate (FCCU)\n\nwhere:\n\n1. Leaded Gasoline Additives. Tetraethyl lead (TEL) and tetramethyl lead (TML) are additives formerly used to improve gasoline octane ratings but are no\nlonger in common use except in aviation gasoline.\n2. Oxygenates. Ethyl tertiary butyl ether (ETBE), methyl tertiary butyl ether (MTBE), tertiary amyl methyl ether (TAME), and other oxygenates improve\ngasoline octane ratings and reduce carbon monoxide emissions.\n3. Caustics. Caustics are added to desalting water to neutralize acids and reduce corrosion. They are also added to desalted crude in order to reduce the\namount of corrosive chlorides in the tower overheads. They are used in some refinery treating processes to remove contaminants from hydrocarbon\nstreams.\n4. Sulfuric Acid and Hydrofluoric Acid. Sulfuric acid and hydrofluoric acid are used primarily as catalysts in alkylation processes. Sulfuric acid is also used\nin some treatment processes.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CatalystTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

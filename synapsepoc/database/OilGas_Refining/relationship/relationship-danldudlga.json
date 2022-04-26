@@ -1,0 +1,26 @@
+{
+	"name": "relationship-danldudlga",
+	"properties": {
+		"Name": "relationship-danldudlga",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Switch",
+		"ToTableName": "ElectricJunctionSwitch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SwitchId",
+				"ToColumnName": "SwitchId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Switch.cdm.json/Switch\",\"toEntity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"joinPairs\":[{\"fromAttribute\":\"SwitchId\",\"toAttribute\":\"SwitchId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

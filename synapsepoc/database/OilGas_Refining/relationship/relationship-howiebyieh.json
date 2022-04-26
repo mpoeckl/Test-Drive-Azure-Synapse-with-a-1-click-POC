@@ -1,0 +1,26 @@
+{
+	"name": "relationship-howiebyieh",
+	"properties": {
+		"Name": "relationship-howiebyieh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CentrifugalPumpType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CentrifugalPumpTypeId",
+				"ToColumnName": "CentrifugalPumpTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CentrifugalPumpType.cdm.json/CentrifugalPumpType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"CentrifugalPumpTypeId\",\"toAttribute\":\"CentrifugalPumpTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

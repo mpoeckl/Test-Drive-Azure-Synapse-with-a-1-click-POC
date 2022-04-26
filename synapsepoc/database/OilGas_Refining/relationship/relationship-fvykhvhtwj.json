@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fvykhvhtwj",
+	"properties": {
+		"Name": "relationship-fvykhvhtwj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetCategory",
+		"ToTableName": "Asset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetCategoryId",
+				"ToColumnName": "AssetCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetCategory.cdm.json/AssetCategory\",\"toEntity\":\"Asset.cdm.json/Asset\",\"joinPairs\":[{\"fromAttribute\":\"AssetCategoryId\",\"toAttribute\":\"AssetCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

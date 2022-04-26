@@ -1,0 +1,189 @@
+{
+	"name": "ShipmentCharge",
+	"properties": {
+		"Name": "ShipmentCharge",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A charge or fee incurred by the shipment by the indicated party.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeTypeId",
+					"Description": "The unique identifier of a shipment charge type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentChargeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeTimestamp",
+					"Description": "The timestamp of the shipment charge.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentChargeTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeAmount",
+					"Description": "The amount of the shipment charge.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentChargeAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargePaidTimestamp",
+					"Description": "The timestamp that the shipment charge was paid.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentChargePaidTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeNote",
+					"Description": "A note, comment or additional information regarding a shipment charge.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ShipmentChargeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ChargeByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentCharge.cdm.json/ShipmentCharge",
+						"Name": "ChargeByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentCharge",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentCharge",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentId\"},\"ShipmentChargeTypeId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTypeId\"},\"ShipmentChargeTimestamp\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTimestamp\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentLegNumber\"},\"ShipmentChargeAmount\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeAmount\"},\"ShipmentChargePaidTimestamp\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargePaidTimestamp\"},\"ShipmentChargeNote\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeNote\"},\"ChargeByPartyId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ChargeByPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentCharge\",\"path\":\"ShipmentCharge.cdm.json/ShipmentCharge\"},\"description\":\"A charge or fee incurred by the shipment by the indicated party.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentChargeTypeId\",\"ShipmentChargeTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a shipment charge type.\",\"isNullable\":false,\"name\":\"ShipmentChargeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the shipment charge.\",\"isNullable\":false,\"name\":\"ShipmentChargeTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.\",\"isNullable\":true,\"name\":\"ShipmentLegNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the shipment charge.\",\"isNullable\":true,\"scale\":2,\"name\":\"ShipmentChargeAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargePaidTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the shipment charge was paid.\",\"isNullable\":true,\"name\":\"ShipmentChargePaidTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a shipment charge.\",\"isNullable\":true,\"name\":\"ShipmentChargeNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ChargeByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ChargeByPartyId\"}]}}}",
+			"Description": "A charge or fee incurred by the shipment by the indicated party.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentChargeTypeId,ShipmentChargeTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

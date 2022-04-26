@@ -1,0 +1,105 @@
+{
+	"name": "ProductRiskPhrase",
+	"properties": {
+		"Name": "ProductRiskPhrase",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The one or more Risk Phrases associated with a product.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRiskPhrase.cdm.json/ProductRiskPhrase",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RiskPhraseId",
+					"Description": "The unique identifier associated with a Risk Phrase.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRiskPhrase.cdm.json/ProductRiskPhrase",
+						"Name": "RiskPhraseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductRiskPhraseNote",
+					"Description": "Notes, comments or additional information regarding the Product Risk Phrase.",
+					"BaseAttributeReference": {
+						"Entity": "ProductRiskPhrase.cdm.json/ProductRiskPhrase",
+						"Name": "ProductRiskPhraseNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductRiskPhrase",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductRiskPhrase",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"ProductId\"},\"RiskPhraseId\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"RiskPhraseId\"},\"ProductRiskPhraseNote\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"ProductRiskPhraseNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductRiskPhrase\",\"path\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\"},\"description\":\"The one or more Risk Phrases associated with a product.\",\"primaryKey\":[\"ProductId\",\"RiskPhraseId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"RiskPhraseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier associated with a Risk Phrase.\",\"isNullable\":false,\"name\":\"RiskPhraseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"name\":\"ProductRiskPhraseNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Product Risk Phrase.\",\"isNullable\":true,\"name\":\"ProductRiskPhraseNote\"}]}}}",
+			"Description": "The one or more Risk Phrases associated with a product.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ProductId,RiskPhraseId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

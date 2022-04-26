@@ -1,0 +1,26 @@
+{
+	"name": "relationship-osaaztykdm",
+	"properties": {
+		"Name": "relationship-osaaztykdm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "DocumentType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "DocumentTypeRetentionPeriodUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"DocumentType.cdm.json/DocumentType\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"DocumentTypeRetentionPeriodUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

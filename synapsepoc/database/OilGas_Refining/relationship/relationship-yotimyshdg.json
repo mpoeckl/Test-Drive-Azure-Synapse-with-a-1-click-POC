@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yotimyshdg",
+	"properties": {
+		"Name": "relationship-yotimyshdg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ValveRating",
+		"ToTableName": "Valve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ValveRatingId",
+				"ToColumnName": "ValveRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ValveRating.cdm.json/ValveRating\",\"toEntity\":\"Valve.cdm.json/Valve\",\"joinPairs\":[{\"fromAttribute\":\"ValveRatingId\",\"toAttribute\":\"ValveRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

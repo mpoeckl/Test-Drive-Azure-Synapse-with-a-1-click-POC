@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lhmxklwxyp",
+	"properties": {
+		"Name": "relationship-lhmxklwxyp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetAlarmActivity",
+		"ToTableName": "ComponentReadingAlarm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetAlarmActivityId",
+				"ToColumnName": "AssetAlarmActivityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"toEntity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"joinPairs\":[{\"fromAttribute\":\"AssetAlarmActivityId\",\"toAttribute\":\"AssetAlarmActivityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

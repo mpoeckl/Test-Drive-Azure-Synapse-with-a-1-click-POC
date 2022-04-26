@@ -1,0 +1,106 @@
+{
+	"name": "HydrocrackerUnitConfigurationType",
+	"properties": {
+		"Name": "HydrocrackerUnitConfigurationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "There are also a number of different hydrocracker process equipment configurations, the most common of which are depicted in the adjacent diagram:\n\nSINGLE STAGE, ONCE THROUGH HYDROCRACKER\nThis configuration uses only one reactor and any uncracked residual hydrocarbon oil from the bottom of the reaction product fractionation (distillation) tower is not recycled for further cracking. For single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\n\nSINGLE STAGE HYDROCRACKER WITH RECYCLE\nThis is the most commonly used configuration. The uncracked residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the single reactor for further cracking. Again, for single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\n\nTWO STAGE HYDROCRACKER\nThis configuration uses two reactors and the residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the second reactor for further cracking. Since the first stage reactor accomplishes both hydrotreating and hydrocracking, the second stage reactor feed is virtually free of ammonia and hydrogen sulfide. This permits the use of high performance noble metal (palladium, platinum) catalysts which are susceptible to poisoning by sulfur or nitrogen compounds.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitConfigurationTypeId",
+					"Description": "The unique identifier of a hydrocracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType",
+						"Name": "HydrocrackerUnitConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitConfigurationTypeName",
+					"Description": "The name of a hydrocracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType",
+						"Name": "HydrocrackerUnitConfigurationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitConfigurationTypeDescription",
+					"Description": "The description of a hydrocracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType",
+						"Name": "HydrocrackerUnitConfigurationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitConfigurationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitConfigurationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitConfigurationTypeId\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeId\"},\"HydrocrackerUnitConfigurationTypeName\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeName\"},\"HydrocrackerUnitConfigurationTypeDescription\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitConfigurationType\",\"path\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\"},\"description\":\"There are also a number of different hydrocracker process equipment configurations, the most common of which are depicted in the adjacent diagram:\\n\\nSINGLE STAGE, ONCE THROUGH HYDROCRACKER\\nThis configuration uses only one reactor and any uncracked residual hydrocarbon oil from the bottom of the reaction product fractionation (distillation) tower is not recycled for further cracking. For single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\\n\\nSINGLE STAGE HYDROCRACKER WITH RECYCLE\\nThis is the most commonly used configuration. The uncracked residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the single reactor for further cracking. Again, for single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\\n\\nTWO STAGE HYDROCRACKER\\nThis configuration uses two reactors and the residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the second reactor for further cracking. Since the first stage reactor accomplishes both hydrotreating and hydrocracking, the second stage reactor feed is virtually free of ammonia and hydrogen sulfide. This permits the use of high performance noble metal (palladium, platinum) catalysts which are susceptible to poisoning by sulfur or nitrogen compounds.\",\"primaryKey\":[\"HydrocrackerUnitConfigurationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrocracker unit configuration type.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a hydrocracker unit configuration type.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitConfigurationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitConfigurationType.cdm.json/HydrocrackerUnitConfigurationType\",\"name\":\"HydrocrackerUnitConfigurationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a hydrocracker unit configuration type.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitConfigurationTypeDescription\"}]}}}",
+			"Description": "There are also a number of different hydrocracker process equipment configurations, the most common of which are depicted in the adjacent diagram:\n\nSINGLE STAGE, ONCE THROUGH HYDROCRACKER\nThis configuration uses only one reactor and any uncracked residual hydrocarbon oil from the bottom of the reaction product fractionation (distillation) tower is not recycled for further cracking. For single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\n\nSINGLE STAGE HYDROCRACKER WITH RECYCLE\nThis is the most commonly used configuration. The uncracked residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the single reactor for further cracking. Again, for single stage hydrocracking, either the feedstock must first be hydrotreated to remove ammonia and hydrogen sulfide or the catalyst used in the single reactor must be capable of both hydrotreating and hydrocracking.\n\nTWO STAGE HYDROCRACKER\nThis configuration uses two reactors and the residual hydrocarbon oil from the bottom of reaction product fractionation tower is recycled back into the second reactor for further cracking. Since the first stage reactor accomplishes both hydrotreating and hydrocracking, the second stage reactor feed is virtually free of ammonia and hydrogen sulfide. This permits the use of high performance noble metal (palladium, platinum) catalysts which are susceptible to poisoning by sulfur or nitrogen compounds.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitConfigurationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

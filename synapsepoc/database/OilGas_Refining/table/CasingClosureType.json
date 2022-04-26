@@ -1,0 +1,106 @@
+{
+	"name": "CasingClosureType",
+	"properties": {
+		"Name": "CasingClosureType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The casing closure type associated with the component casing.\n\nEx:\n- Blind Flange\n- Hinged Closure\n- Mechanical Plug\n- Weld Cap \n- Welded Flange\n- Yale Cap\n- Stopper\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CasingClosureTypeId",
+					"Description": "The unique identifier of a casing closure type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingClosureType.cdm.json/CasingClosureType",
+						"Name": "CasingClosureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CasingClosureTypeName",
+					"Description": "The name of a casing closure type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingClosureType.cdm.json/CasingClosureType",
+						"Name": "CasingClosureTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CasingClosureTypeDescription",
+					"Description": "The description of a casing closure type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingClosureType.cdm.json/CasingClosureType",
+						"Name": "CasingClosureTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingClosureType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingClosureType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CasingClosureTypeId\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeId\"},\"CasingClosureTypeName\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeName\"},\"CasingClosureTypeDescription\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CasingClosureType\",\"path\":\"CasingClosureType.cdm.json/CasingClosureType\"},\"description\":\"The casing closure type associated with the component casing.\\n\\nEx:\\n- Blind Flange\\n- Hinged Closure\\n- Mechanical Plug\\n- Weld Cap \\n- Welded Flange\\n- Yale Cap\\n- Stopper\\n- Unknown\",\"primaryKey\":[\"CasingClosureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing closure type.\",\"isNullable\":false,\"name\":\"CasingClosureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a casing closure type.\",\"isNullable\":true,\"name\":\"CasingClosureTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a casing closure type.\",\"isNullable\":true,\"name\":\"CasingClosureTypeDescription\"}]}}}",
+			"Description": "The casing closure type associated with the component casing.\n\nEx:\n- Blind Flange\n- Hinged Closure\n- Mechanical Plug\n- Weld Cap \n- Welded Flange\n- Yale Cap\n- Stopper\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CasingClosureTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

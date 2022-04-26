@@ -1,0 +1,106 @@
+{
+	"name": "ComponentEventRelationshipType",
+	"properties": {
+		"Name": "ComponentEventRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between two or more Component Events.\n\nEx:\n- Caused-by\n- Contributory\n- Required-by\n- Issued in response to\n- Planned\n- Precautionary\n- Preceding\n- Subsequent",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentEventRelationshipTypeId",
+					"Description": "The unique identifier of a Component Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType",
+						"Name": "ComponentEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventRelationshipTypeName",
+					"Description": "The name of a Component Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType",
+						"Name": "ComponentEventRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventRelationshipTypeDescription",
+					"Description": "The description of a Component Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType",
+						"Name": "ComponentEventRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventRelationshipTypeId\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeId\"},\"ComponentEventRelationshipTypeName\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeName\"},\"ComponentEventRelationshipTypeDescription\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentEventRelationshipType\",\"path\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\"},\"description\":\"The nature of the relationship between two or more Component Events.\\n\\nEx:\\n- Caused-by\\n- Contributory\\n- Required-by\\n- Issued in response to\\n- Planned\\n- Precautionary\\n- Preceding\\n- Subsequent\",\"primaryKey\":[\"ComponentEventRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Event Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentEventRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Event Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentEventRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between two or more Component Events.\n\nEx:\n- Caused-by\n- Contributory\n- Required-by\n- Issued in response to\n- Planned\n- Precautionary\n- Preceding\n- Subsequent",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentEventRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

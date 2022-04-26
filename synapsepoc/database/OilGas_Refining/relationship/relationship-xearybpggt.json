@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xearybpggt",
+	"properties": {
+		"Name": "relationship-xearybpggt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponentType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentTypeId",
+				"ToColumnName": "ComponentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentTypeId\",\"toAttribute\":\"ComponentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

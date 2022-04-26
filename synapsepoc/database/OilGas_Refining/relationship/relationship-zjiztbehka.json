@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zjiztbehka",
+	"properties": {
+		"Name": "relationship-zjiztbehka",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessComponent",
+		"ToTableName": "RefineryProcessComponentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessComponent.cdm.json/RefineryProcessComponent\",\"toEntity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

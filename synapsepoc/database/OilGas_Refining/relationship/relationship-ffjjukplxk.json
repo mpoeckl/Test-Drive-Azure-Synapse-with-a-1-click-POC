@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ffjjukplxk",
+	"properties": {
+		"Name": "relationship-ffjjukplxk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Structure",
+		"ToTableName": "StructureComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureId",
+				"ToColumnName": "StructureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Structure.cdm.json/Structure\",\"toEntity\":\"StructureComponent.cdm.json/StructureComponent\",\"joinPairs\":[{\"fromAttribute\":\"StructureId\",\"toAttribute\":\"StructureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

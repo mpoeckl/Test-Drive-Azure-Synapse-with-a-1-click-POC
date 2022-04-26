@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ujxvfvabcj",
+	"properties": {
+		"Name": "relationship-ujxvfvabcj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceOperation",
+		"ToTableName": "ComponentMaintenance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceOperationId",
+				"ToColumnName": "MaintenanceOperationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"toEntity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceOperationId\",\"toAttribute\":\"MaintenanceOperationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

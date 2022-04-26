@@ -1,0 +1,106 @@
+{
+	"name": "StructureStatusType",
+	"properties": {
+		"Name": "StructureStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of a structure for the associated period.\n\nEx:\n- Occupied\n- Unoccupied\n- Rented\n- Vacant\n- Abandoned\n- Active business\n- Unknown\n- Operational\n- Under Construction\n- De-commissioned",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureStatusTypeId",
+					"Description": "The unique identifier of a structure status type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureStatusType.cdm.json/StructureStatusType",
+						"Name": "StructureStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureStatusTypeName",
+					"Description": "The name of a structure status type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureStatusType.cdm.json/StructureStatusType",
+						"Name": "StructureStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureStatusTypeDescription",
+					"Description": "The description of a structure status type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureStatusType.cdm.json/StructureStatusType",
+						"Name": "StructureStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureStatusTypeId\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeId\"},\"StructureStatusTypeName\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeName\"},\"StructureStatusTypeDescription\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureStatusType\",\"path\":\"StructureStatusType.cdm.json/StructureStatusType\"},\"description\":\"The status of a structure for the associated period.\\n\\nEx:\\n- Occupied\\n- Unoccupied\\n- Rented\\n- Vacant\\n- Abandoned\\n- Active business\\n- Unknown\\n- Operational\\n- Under Construction\\n- De-commissioned\",\"primaryKey\":[\"StructureStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure status type.\",\"isNullable\":false,\"name\":\"StructureStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a structure status type.\",\"isNullable\":true,\"name\":\"StructureStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureStatusType.cdm.json/StructureStatusType\",\"name\":\"StructureStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a structure status type.\",\"isNullable\":true,\"name\":\"StructureStatusTypeDescription\"}]}}}",
+			"Description": "The status of a structure for the associated period.\n\nEx:\n- Occupied\n- Unoccupied\n- Rented\n- Vacant\n- Abandoned\n- Active business\n- Unknown\n- Operational\n- Under Construction\n- De-commissioned",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "StructureStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

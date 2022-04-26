@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kiwfqdpxnc",
+	"properties": {
+		"Name": "relationship-kiwfqdpxnc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "Switch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "SwitchId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"Switch.cdm.json/Switch\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"SwitchId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,171 @@
+{
+	"name": "PumpSpecification",
+	"properties": {
+		"Name": "PumpSpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A specification associated with a pump.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpSpecificationTypeId",
+					"Description": "The unique identifier of a pump specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PumpSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PumpId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PumpModelSpecificationValue",
+					"Description": "The value of the pump specification.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PumpModelSpecificationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpSpecificationUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PumpSpecificationUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpSpecificationNote",
+					"Description": "A note, comment or additional information regarding the pump.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecification.cdm.json/PumpSpecification",
+						"Name": "PumpSpecificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpSpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpSpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpSpecificationTypeId\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationTypeId\"},\"PumpId\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpId\"},\"PeriodStartTimestamp\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PeriodEndTimestamp\"},\"PumpModelSpecificationValue\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpModelSpecificationValue\"},\"PumpSpecificationUomId\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationUomId\"},\"PumpSpecificationNote\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpSpecification\",\"path\":\"PumpSpecification.cdm.json/PumpSpecification\"},\"description\":\"A specification associated with a pump.\",\"primaryKey\":[\"PumpSpecificationTypeId\",\"PumpId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump specification type.\",\"isNullable\":false,\"name\":\"PumpSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PumpId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpModelSpecificationValue\"},\"dataType\":\"integer\",\"description\":\"The value of the pump specification.\",\"isNullable\":true,\"name\":\"PumpModelSpecificationValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"PumpSpecificationUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"name\":\"PumpSpecificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pump.\",\"isNullable\":true,\"name\":\"PumpSpecificationNote\"}]}}}",
+			"Description": "A specification associated with a pump.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpSpecificationTypeId,PumpId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

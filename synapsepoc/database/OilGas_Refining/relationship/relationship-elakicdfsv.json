@@ -1,0 +1,26 @@
+{
+	"name": "relationship-elakicdfsv",
+	"properties": {
+		"Name": "relationship-elakicdfsv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReading",
+		"ToTableName": "ComponentReadingPreventiveAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingStartTimestamp",
+				"ToColumnName": "ReadingStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"toEntity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"joinPairs\":[{\"fromAttribute\":\"ReadingStartTimestamp\",\"toAttribute\":\"ReadingStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

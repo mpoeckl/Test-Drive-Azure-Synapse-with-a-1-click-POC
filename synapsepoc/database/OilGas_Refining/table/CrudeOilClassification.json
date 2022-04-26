@@ -1,0 +1,106 @@
+{
+	"name": "CrudeOilClassification",
+	"properties": {
+		"Name": "CrudeOilClassification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Crude oils are generally classified as:\n\n- paraffinic\n- naphthenic\n- aromatic\n- Alkenes\n- mixed\n\nThis is based on the predominant proportion of similar hydrocarbon molecules. Mixed-base crudes have varying amounts of each type of hydrocarbon. \n\nParaffins. The paraffinic series of hydrocarbon compounds found in crude oil have the general formula CnH2n+2 and can be either straight chains\n(normal) or branched chains (isomers) of carbon atoms. The lighter, straight-chain paraffin molecules are found in gases and paraffin waxes. Examples of straight-chain molecules are methane, ethane, propane, and butane (gases containing from one to four carbon atoms), and pentane and hexane (liquids with five to six carbon atoms). The branched-chain (isomer) paraffins are usually found in heavier fractions of crude oil and have higher octane numbers than normal paraffins. These compounds are saturated hydrocarbons, with all carbon bonds satisfied, that is, the hydrocarbon chain carries the full complement of hydrogen atoms.\n Example of simplest HC molecule (CH4):\nMethane (CH4)\nFigure IV: 2-1. Typical Paraffins\nExamples of straight chain paraffin molecule (Butane) and branched paraffin molecule (Isobutane) with same chemical formula (C4H10):\nButane (C4H10) Isobutane (C4H10)\n\n     b. Aromatics. are unsaturated ring-type (cyclic) compounds which react readily because they have carbon atoms that are deficient in hydrogen. All aromatics have at least one benzene ring (a single-ring compound characterized by three double bonds alternating with three single bonds between six carbon atoms) as part of their molecular structure. Naphthalenes are fused double-ring aromatic compounds. The most complex aromatics, polynuclears (three or more fused aromatic rings), are found in heavier fractions of crude oil.\n\nc. Naphthenes. are saturated hydrocarbon groupings with the general formula CnH2n, arranged in the form of closed rings (cyclic) and found in all fractions of crude oil except the very lightest. Single-ring naphthenes (monocycloparaffins) with five and six carbon atoms predominate, with two-ring naphthenes (dicycloparaffins) found in the heavier ends of naphtha.\n\nAlkenes are mono-olefins with the general formula CnH2n and contain only one carbon-carbon double bond in the chain. The simplest alkene is\nethylene, with two carbon atoms joined by a double bond and four hydrogen atoms. Olefins are usually formed by thermal and catalytic cracking and rarely occur naturally in unprocessed crude oil.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CrudeOilClassificationId",
+					"Description": "The unique identifier of a crude oil classification.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilClassification.cdm.json/CrudeOilClassification",
+						"Name": "CrudeOilClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilClassificationName",
+					"Description": "The name of a crude oil classification.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilClassification.cdm.json/CrudeOilClassification",
+						"Name": "CrudeOilClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilClassificationDescription",
+					"Description": "The description of a crude oil classification.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilClassification.cdm.json/CrudeOilClassification",
+						"Name": "CrudeOilClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilClassification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilClassification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilClassificationId\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationId\"},\"CrudeOilClassificationName\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationName\"},\"CrudeOilClassificationDescription\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CrudeOilClassification\",\"path\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\"},\"description\":\"Crude oils are generally classified as:\\n\\n- paraffinic\\n- naphthenic\\n- aromatic\\n- Alkenes\\n- mixed\\n\\nThis is based on the predominant proportion of similar hydrocarbon molecules. Mixed-base crudes have varying amounts of each type of hydrocarbon. \\n\\nParaffins. The paraffinic series of hydrocarbon compounds found in crude oil have the general formula CnH2n+2 and can be either straight chains\\n(normal) or branched chains (isomers) of carbon atoms. The lighter, straight-chain paraffin molecules are found in gases and paraffin waxes. Examples of straight-chain molecules are methane, ethane, propane, and butane (gases containing from one to four carbon atoms), and pentane and hexane (liquids with five to six carbon atoms). The branched-chain (isomer) paraffins are usually found in heavier fractions of crude oil and have higher octane numbers than normal paraffins. These compounds are saturated hydrocarbons, with all carbon bonds satisfied, that is, the hydrocarbon chain carries the full complement of hydrogen atoms.\\n Example of simplest HC molecule (CH4):\\nMethane (CH4)\\nFigure IV: 2-1. Typical Paraffins\\nExamples of straight chain paraffin molecule (Butane) and branched paraffin molecule (Isobutane) with same chemical formula (C4H10):\\nButane (C4H10) Isobutane (C4H10)\\n\\n     b. Aromatics. are unsaturated ring-type (cyclic) compounds which react readily because they have carbon atoms that are deficient in hydrogen. All aromatics have at least one benzene ring (a single-ring compound characterized by three double bonds alternating with three single bonds between six carbon atoms) as part of their molecular structure. Naphthalenes are fused double-ring aromatic compounds. The most complex aromatics, polynuclears (three or more fused aromatic rings), are found in heavier fractions of crude oil.\\n\\nc. Naphthenes. are saturated hydrocarbon groupings with the general formula CnH2n, arranged in the form of closed rings (cyclic) and found in all fractions of crude oil except the very lightest. Single-ring naphthenes (monocycloparaffins) with five and six carbon atoms predominate, with two-ring naphthenes (dicycloparaffins) found in the heavier ends of naphtha.\\n\\nAlkenes are mono-olefins with the general formula CnH2n and contain only one carbon-carbon double bond in the chain. The simplest alkene is\\nethylene, with two carbon atoms joined by a double bond and four hydrogen atoms. Olefins are usually formed by thermal and catalytic cracking and rarely occur naturally in unprocessed crude oil.\",\"primaryKey\":[\"CrudeOilClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil classification.\",\"isNullable\":false,\"name\":\"CrudeOilClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a crude oil classification.\",\"isNullable\":true,\"name\":\"CrudeOilClassificationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilClassification.cdm.json/CrudeOilClassification\",\"name\":\"CrudeOilClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a crude oil classification.\",\"isNullable\":true,\"name\":\"CrudeOilClassificationDescription\"}]}}}",
+			"Description": "Crude oils are generally classified as:\n\n- paraffinic\n- naphthenic\n- aromatic\n- Alkenes\n- mixed\n\nThis is based on the predominant proportion of similar hydrocarbon molecules. Mixed-base crudes have varying amounts of each type of hydrocarbon. \n\nParaffins. The paraffinic series of hydrocarbon compounds found in crude oil have the general formula CnH2n+2 and can be either straight chains\n(normal) or branched chains (isomers) of carbon atoms. The lighter, straight-chain paraffin molecules are found in gases and paraffin waxes. Examples of straight-chain molecules are methane, ethane, propane, and butane (gases containing from one to four carbon atoms), and pentane and hexane (liquids with five to six carbon atoms). The branched-chain (isomer) paraffins are usually found in heavier fractions of crude oil and have higher octane numbers than normal paraffins. These compounds are saturated hydrocarbons, with all carbon bonds satisfied, that is, the hydrocarbon chain carries the full complement of hydrogen atoms.\n Example of simplest HC molecule (CH4):\nMethane (CH4)\nFigure IV: 2-1. Typical Paraffins\nExamples of straight chain paraffin molecule (Butane) and branched paraffin molecule (Isobutane) with same chemical formula (C4H10):\nButane (C4H10) Isobutane (C4H10)\n\n     b. Aromatics. are unsaturated ring-type (cyclic) compounds which react readily because they have carbon atoms that are deficient in hydrogen. All aromatics have at least one benzene ring (a single-ring compound characterized by three double bonds alternating with three single bonds between six carbon atoms) as part of their molecular structure. Naphthalenes are fused double-ring aromatic compounds. The most complex aromatics, polynuclears (three or more fused aromatic rings), are found in heavier fractions of crude oil.\n\nc. Naphthenes. are saturated hydrocarbon groupings with the general formula CnH2n, arranged in the form of closed rings (cyclic) and found in all fractions of crude oil except the very lightest. Single-ring naphthenes (monocycloparaffins) with five and six carbon atoms predominate, with two-ring naphthenes (dicycloparaffins) found in the heavier ends of naphtha.\n\nAlkenes are mono-olefins with the general formula CnH2n and contain only one carbon-carbon double bond in the chain. The simplest alkene is\nethylene, with two carbon atoms joined by a double bond and four hydrogen atoms. Olefins are usually formed by thermal and catalytic cracking and rarely occur naturally in unprocessed crude oil.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "CrudeOilClassificationId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

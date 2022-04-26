@@ -1,0 +1,26 @@
+{
+	"name": "relationship-brcucpexpc",
+	"properties": {
+		"Name": "relationship-brcucpexpc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HazardSeverityCategory",
+		"ToTableName": "Item",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HazardSeverityCategoryId",
+				"ToColumnName": "HazardSeverityCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"toEntity\":\"Item.cdm.json/Item\",\"joinPairs\":[{\"fromAttribute\":\"HazardSeverityCategoryId\",\"toAttribute\":\"HazardSeverityCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

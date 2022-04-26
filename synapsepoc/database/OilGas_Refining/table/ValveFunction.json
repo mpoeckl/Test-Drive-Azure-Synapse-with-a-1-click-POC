@@ -1,0 +1,106 @@
+{
+	"name": "ValveFunction",
+	"properties": {
+		"Name": "ValveFunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The valve function associated with the valve.\n\nEx:\n- Blowoff\n- Check\n- Drip\n- Fire Gate\n- Mainline\n- Monitor Regulator\n- Pressure Limiting\n- Regulator \n- Relief Post \n- Relief Valve\n- Side\n- Tie Over\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveFunctionId",
+					"Description": "The unique identifier of a valve function.",
+					"BaseAttributeReference": {
+						"Entity": "ValveFunction.cdm.json/ValveFunction",
+						"Name": "ValveFunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveFunctionName",
+					"Description": "The name of a valve function.",
+					"BaseAttributeReference": {
+						"Entity": "ValveFunction.cdm.json/ValveFunction",
+						"Name": "ValveFunctionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveFunctionDescription",
+					"Description": "The description of a valve function.",
+					"BaseAttributeReference": {
+						"Entity": "ValveFunction.cdm.json/ValveFunction",
+						"Name": "ValveFunctionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveFunction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveFunction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveFunctionId\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionId\"},\"ValveFunctionName\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionName\"},\"ValveFunctionDescription\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveFunction\",\"path\":\"ValveFunction.cdm.json/ValveFunction\"},\"description\":\"The valve function associated with the valve.\\n\\nEx:\\n- Blowoff\\n- Check\\n- Drip\\n- Fire Gate\\n- Mainline\\n- Monitor Regulator\\n- Pressure Limiting\\n- Regulator \\n- Relief Post \\n- Relief Valve\\n- Side\\n- Tie Over\\n- Unknown\",\"primaryKey\":[\"ValveFunctionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve function.\",\"isNullable\":false,\"name\":\"ValveFunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a valve function.\",\"isNullable\":true,\"name\":\"ValveFunctionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveFunction.cdm.json/ValveFunction\",\"name\":\"ValveFunctionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a valve function.\",\"isNullable\":true,\"name\":\"ValveFunctionDescription\"}]}}}",
+			"Description": "The valve function associated with the valve.\n\nEx:\n- Blowoff\n- Check\n- Drip\n- Fire Gate\n- Mainline\n- Monitor Regulator\n- Pressure Limiting\n- Regulator \n- Relief Post \n- Relief Valve\n- Side\n- Tie Over\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveFunctionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

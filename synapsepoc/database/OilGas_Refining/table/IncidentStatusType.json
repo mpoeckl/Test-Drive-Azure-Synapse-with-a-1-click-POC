@@ -1,0 +1,106 @@
+{
+	"name": "IncidentStatusType",
+	"properties": {
+		"Name": "IncidentStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of incident status type.\n\nEx:\n- In-process \n- Under investigation\n- Closed\n- Unknown\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentStatusTypeId",
+					"Description": "The unique identifier of an Incident Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentStatusType.cdm.json/IncidentStatusType",
+						"Name": "IncidentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentStatusTypeName",
+					"Description": "The name of an Incident Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentStatusType.cdm.json/IncidentStatusType",
+						"Name": "IncidentStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentStatusTypeDescription",
+					"Description": "The description of an Incident Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentStatusType.cdm.json/IncidentStatusType",
+						"Name": "IncidentStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentStatusTypeId\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeId\"},\"IncidentStatusTypeName\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeName\"},\"IncidentStatusTypeDescription\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentStatusType\",\"path\":\"IncidentStatusType.cdm.json/IncidentStatusType\"},\"description\":\"A type of incident status type.\\n\\nEx:\\n- In-process \\n- Under investigation\\n- Closed\\n- Unknown\\n- N/A\",\"primaryKey\":[\"IncidentStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Status Type.\",\"isNullable\":false,\"name\":\"IncidentStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Status Type.\",\"isNullable\":true,\"name\":\"IncidentStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Status Type.\",\"isNullable\":true,\"name\":\"IncidentStatusTypeDescription\"}]}}}",
+			"Description": "A type of incident status type.\n\nEx:\n- In-process \n- Under investigation\n- Closed\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

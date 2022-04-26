@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ulylatqzwg",
+	"properties": {
+		"Name": "relationship-ulylatqzwg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CasingInsulatorType",
+		"ToTableName": "ComponentCasingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CasingInsulatorTypeId",
+				"ToColumnName": "CasingInsulatorTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"toEntity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"joinPairs\":[{\"fromAttribute\":\"CasingInsulatorTypeId\",\"toAttribute\":\"CasingInsulatorTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

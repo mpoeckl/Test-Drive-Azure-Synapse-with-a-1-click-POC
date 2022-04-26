@@ -1,0 +1,26 @@
+{
+	"name": "relationship-webszkirtd",
+	"properties": {
+		"Name": "relationship-webszkirtd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "Meter",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "MeterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"Meter.cdm.json/Meter\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"MeterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

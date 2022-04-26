@@ -1,0 +1,155 @@
+{
+	"name": "RefineryProcessComponentEvent",
+	"properties": {
+		"Name": "RefineryProcessComponentEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An event related to a refinery process component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of a Refinery Process Component Event Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of a Refinery Process Component Event Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessComponentEventTypeId",
+					"Description": "The unique identifier of a Refinery Process Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "RefineryProcessComponentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessComponentEventNote",
+					"Description": "A note, comment or additional information regarding the refinery process component event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent",
+						"Name": "RefineryProcessComponentEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"ComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessComponentEventTypeId\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessComponentEventTypeId\"},\"RefineryProcessComponentEventNote\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessComponentEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessComponentEvent\",\"path\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\"},\"description\":\"An event related to a refinery process component.\",\"primaryKey\":[\"RefineryProcessId\",\"ComponentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of a Refinery Process Component Event Relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of a Refinery Process Component Event Relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessComponentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Process Component Event Type.\",\"isNullable\":true,\"name\":\"RefineryProcessComponentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"name\":\"RefineryProcessComponentEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process component event.\",\"isNullable\":true,\"name\":\"RefineryProcessComponentEventNote\"}]}}}",
+			"Description": "An event related to a refinery process component.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ComponentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

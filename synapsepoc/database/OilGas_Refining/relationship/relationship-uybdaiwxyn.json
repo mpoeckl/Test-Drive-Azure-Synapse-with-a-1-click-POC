@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uybdaiwxyn",
+	"properties": {
+		"Name": "relationship-uybdaiwxyn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryEvent",
+		"ToTableName": "RefineryEventRelatedComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryEventId",
+				"ToColumnName": "RefineryEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"toEntity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"joinPairs\":[{\"fromAttribute\":\"RefineryEventId\",\"toAttribute\":\"RefineryEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "IncidentCostType",
+	"properties": {
+		"Name": "IncidentCostType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of cost that may be applied to an Incident.\n\nEx:\n- Police Services\n- Fire Services\n- Safety Services\n- Lost Production\n- Injury-related\n- Fatality-related\n- Environmental Fine\n- Legal",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentCostTypeId",
+					"Description": "The unique identifier of an incident cost type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCostType.cdm.json/IncidentCostType",
+						"Name": "IncidentCostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCostTypeName",
+					"Description": "The name of an incident cost type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCostType.cdm.json/IncidentCostType",
+						"Name": "IncidentCostTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentCostTypeDescription",
+					"Description": "The description of an incident cost type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentCostType.cdm.json/IncidentCostType",
+						"Name": "IncidentCostTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentCostType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentCostType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentCostTypeId\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeId\"},\"IncidentCostTypeName\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeName\"},\"IncidentCostTypeDescription\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentCostType\",\"path\":\"IncidentCostType.cdm.json/IncidentCostType\"},\"description\":\"A type of cost that may be applied to an Incident.\\n\\nEx:\\n- Police Services\\n- Fire Services\\n- Safety Services\\n- Lost Production\\n- Injury-related\\n- Fatality-related\\n- Environmental Fine\\n- Legal\",\"primaryKey\":[\"IncidentCostTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident cost type.\",\"isNullable\":false,\"name\":\"IncidentCostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an incident cost type.\",\"isNullable\":true,\"name\":\"IncidentCostTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an incident cost type.\",\"isNullable\":true,\"name\":\"IncidentCostTypeDescription\"}]}}}",
+			"Description": "A type of cost that may be applied to an Incident.\n\nEx:\n- Police Services\n- Fire Services\n- Safety Services\n- Lost Production\n- Injury-related\n- Fatality-related\n- Environmental Fine\n- Legal",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentCostTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

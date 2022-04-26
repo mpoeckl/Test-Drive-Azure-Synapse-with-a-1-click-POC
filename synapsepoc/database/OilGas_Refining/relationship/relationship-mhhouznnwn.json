@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mhhouznnwn",
+	"properties": {
+		"Name": "relationship-mhhouznnwn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CorrosiveQuality",
+		"ToTableName": "RefineryAdditiveType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CorrosiveQualityId",
+				"ToColumnName": "CorrosiveQualityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"toEntity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"joinPairs\":[{\"fromAttribute\":\"CorrosiveQualityId\",\"toAttribute\":\"CorrosiveQualityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

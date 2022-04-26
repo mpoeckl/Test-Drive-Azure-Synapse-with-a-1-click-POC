@@ -1,0 +1,106 @@
+{
+	"name": "AssetInspectionType",
+	"properties": {
+		"Name": "AssetInspectionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A categorization of inspection types based on common objectives.\n\nEx:\n- Safety Inspection\n- Maintenance Record Inspection\n- Fluid Inspection\n- Tire Inspection\n- Body Condition Inspection",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetInspectionTypeId",
+					"Description": "The unique identifier of an Asset Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionType.cdm.json/AssetInspectionType",
+						"Name": "AssetInspectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionTypeName",
+					"Description": "The name of an Asset Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionType.cdm.json/AssetInspectionType",
+						"Name": "AssetInspectionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionTypeDescription",
+					"Description": "The description of an Asset Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionType.cdm.json/AssetInspectionType",
+						"Name": "AssetInspectionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspectionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspectionType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetInspectionTypeId\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeId\"},\"AssetInspectionTypeName\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeName\"},\"AssetInspectionTypeDescription\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetInspectionType\",\"path\":\"AssetInspectionType.cdm.json/AssetInspectionType\"},\"description\":\"A categorization of inspection types based on common objectives.\\n\\nEx:\\n- Safety Inspection\\n- Maintenance Record Inspection\\n- Fluid Inspection\\n- Tire Inspection\\n- Body Condition Inspection\",\"primaryKey\":[\"AssetInspectionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection Type.\",\"isNullable\":false,\"name\":\"AssetInspectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Asset Inspection Type.\",\"isNullable\":true,\"name\":\"AssetInspectionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionType.cdm.json/AssetInspectionType\",\"name\":\"AssetInspectionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Asset Inspection Type.\",\"isNullable\":true,\"name\":\"AssetInspectionTypeDescription\"}]}}}",
+			"Description": "A categorization of inspection types based on common objectives.\n\nEx:\n- Safety Inspection\n- Maintenance Record Inspection\n- Fluid Inspection\n- Tire Inspection\n- Body Condition Inspection",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetInspectionTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,171 @@
+{
+	"name": "HydrocrackerUnitProduction",
+	"properties": {
+		"Name": "HydrocrackerUnitProduction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of product produced by the Hydrocracker Unit during the associated period.\n\nEx:\n- Jet fuel\n- Diesel\n- Kerosene",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "HydrocrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProducedUnits",
+					"Description": "The quantity of product produced during the period.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "ProducedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitProductionNote",
+					"Description": "A note, comment or additional information regarding the hydrocracker unit production.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction",
+						"Name": "HydrocrackerUnitProductionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitProduction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitProduction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitId\"},\"ProductId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitProductionNote\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitProductionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitProduction\",\"path\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\"},\"description\":\"The quantity of product produced by the Hydrocracker Unit during the associated period.\\n\\nEx:\\n- Jet fuel\\n- Diesel\\n- Kerosene\",\"primaryKey\":[\"HydrocrackerUnitId\",\"ProductId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProducedUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of product produced during the period.\",\"isNullable\":true,\"name\":\"ProducedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":false,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitProductionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the hydrocracker unit production.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitProductionNote\"}]}}}",
+			"Description": "The quantity of product produced by the Hydrocracker Unit during the associated period.\n\nEx:\n- Jet fuel\n- Diesel\n- Kerosene",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitId,ProductId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

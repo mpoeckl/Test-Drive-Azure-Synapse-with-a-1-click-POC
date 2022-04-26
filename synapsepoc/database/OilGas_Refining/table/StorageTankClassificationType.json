@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankClassificationType",
+	"properties": {
+		"Name": "StorageTankClassificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The storage tank classification:\n\nCOT- crude oil tankages\nPIT- product and intermediate storage tankages\nDISPATCH- dispatch area tankages\nUTILITIES- tanks made in the power plant area, for storage water etc.\nOSBL tanks- the first 3 types come under out side battery limit tankages\nISBL tanks- these are usually mini tanks which are found in the production units of a refinery",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankClassificationTypeId",
+					"Description": "The unique identifier of a storage tank classification type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankClassificationType.cdm.json/StorageTankClassificationType",
+						"Name": "StorageTankClassificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankClassificationTypeName",
+					"Description": "The name of a storage tank classification type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankClassificationType.cdm.json/StorageTankClassificationType",
+						"Name": "StorageTankClassificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankClassificationTypeDescription",
+					"Description": "The description of a storage tank classification type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankClassificationType.cdm.json/StorageTankClassificationType",
+						"Name": "StorageTankClassificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankClassificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankClassificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankClassificationTypeId\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeId\"},\"StorageTankClassificationTypeName\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeName\"},\"StorageTankClassificationTypeDescription\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankClassificationType\",\"path\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\"},\"description\":\"The storage tank classification:\\n\\nCOT- crude oil tankages\\nPIT- product and intermediate storage tankages\\nDISPATCH- dispatch area tankages\\nUTILITIES- tanks made in the power plant area, for storage water etc.\\nOSBL tanks- the first 3 types come under out side battery limit tankages\\nISBL tanks- these are usually mini tanks which are found in the production units of a refinery\",\"primaryKey\":[\"StorageTankClassificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank classification type.\",\"isNullable\":false,\"name\":\"StorageTankClassificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank classification type.\",\"isNullable\":true,\"name\":\"StorageTankClassificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank classification type.\",\"isNullable\":true,\"name\":\"StorageTankClassificationTypeDescription\"}]}}}",
+			"Description": "The storage tank classification:\n\nCOT- crude oil tankages\nPIT- product and intermediate storage tankages\nDISPATCH- dispatch area tankages\nUTILITIES- tanks made in the power plant area, for storage water etc.\nOSBL tanks- the first 3 types come under out side battery limit tankages\nISBL tanks- these are usually mini tanks which are found in the production units of a refinery",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankClassificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

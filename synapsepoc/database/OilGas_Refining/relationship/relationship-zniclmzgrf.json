@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zniclmzgrf",
+	"properties": {
+		"Name": "relationship-zniclmzgrf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Incident",
+		"ToTableName": "IncidentRelatedComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Incident.cdm.json/Incident\",\"toEntity\":\"IncidentRelatedComponent.cdm.json/IncidentRelatedComponent\",\"joinPairs\":[{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

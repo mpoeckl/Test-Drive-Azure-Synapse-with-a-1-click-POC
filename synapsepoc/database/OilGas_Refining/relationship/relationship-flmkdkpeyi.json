@@ -1,0 +1,26 @@
+{
+	"name": "relationship-flmkdkpeyi",
+	"properties": {
+		"Name": "relationship-flmkdkpeyi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentInjuryRelatedTreatment",
+		"ToTableName": "IncidentInjuryTreatmentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"toEntity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

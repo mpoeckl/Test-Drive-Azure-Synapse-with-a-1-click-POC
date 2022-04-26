@@ -1,0 +1,187 @@
+{
+	"name": "Material",
+	"properties": {
+		"Name": "Material",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A material that may be associated with a component or casing.   \n\nEx:\n- Bare Steel \n- Bare Steel Cast Iron \n- Bolt Type Cast Iron \n- Cast Iron \n- Celluloid Acetate Butadiene \n- Copper \n- Copper-Nickel Alloy\n- DuPont Aladyl-A \n- Flex Joint Cast Iron \n- Flexible Joint Cast Iron \n- Galvanized \n- Gland Type Cast Iron \n- Nickel & Nickel alloy\n- Orangeburg \n- Outside Diameter Steel \n- Plain End Cast Iron \n- Plastic \n- Poly Vinyl Chloride\n- Polyethylene \n- Screw Steel \n- Stainless steel/carbon steel\n- Steel \n- Tantalum \n- Titanium & Titanium alloy\n- Unknown \n- Welded Steel \n- Wrot/wrought Iron \n- Wrot/wrought Steel\n- Zirconium",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialName",
+					"Description": "The name of a material.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MaterialName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaterialDescription",
+					"Description": "The description of a material.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MaterialDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialTypeId",
+					"Description": "The unique identifier of a material type.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DiverseOriginMaterialIndicator",
+					"Description": "Indicates that the material is a diverse origin material.\n\n3.1.12\ndiverse origin\nrefers to materials that are not isolated together or the result of the same synthetic process\nEXAMPLE Material derived from the root and flower of the same plant would be defined as two substances since are not physically connected. Material isolated from the stem and leaf of plant which are physically connected would be a single substance.\nNOTE Basis upon which a material is defined as a single substance or as multiple substances. Material isolated from non-contiguous part of a biological matrix would be defined as separate substances.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "DiverseOriginMaterialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MultiSubstanceMaterialIndicator",
+					"Description": "3.52\n\nmulti-substance material\nsingle substances or specified substances of diverse origin that are brought together and do not undergo a chemical transformation\n\nEXAMPLE Materials such as human insulin isophane, simethicone, aluminum lakes, nicotine polacrilex, and phosphate buffered saline are all multi-substance ingredients\n.\nNote 1 to entry: Each substance part of the multi-substance material is a parent substance of the multi-substance material and should be registered first. The multi-substance material is captured at the Specified Substance Group 1 information level.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MultiSubstanceMaterialIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MaterialNote",
+					"Description": "A note, comment or additional information regarding the material.",
+					"BaseAttributeReference": {
+						"Entity": "Material.cdm.json/Material",
+						"Name": "MaterialNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Material",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Material",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaterialId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialId\"},\"MaterialName\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialName\"},\"MaterialDescription\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialDescription\"},\"CorrosiveQualityId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"CorrosiveQualityId\"},\"MaterialTypeId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialTypeId\"},\"DiverseOriginMaterialIndicator\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"DiverseOriginMaterialIndicator\"},\"MultiSubstanceMaterialIndicator\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MultiSubstanceMaterialIndicator\"},\"MaterialNote\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Material\",\"path\":\"Material.cdm.json/Material\"},\"description\":\"A material that may be associated with a component or casing.   \\n\\nEx:\\n- Bare Steel \\n- Bare Steel Cast Iron \\n- Bolt Type Cast Iron \\n- Cast Iron \\n- Celluloid Acetate Butadiene \\n- Copper \\n- Copper-Nickel Alloy\\n- DuPont Aladyl-A \\n- Flex Joint Cast Iron \\n- Flexible Joint Cast Iron \\n- Galvanized \\n- Gland Type Cast Iron \\n- Nickel & Nickel alloy\\n- Orangeburg \\n- Outside Diameter Steel \\n- Plain End Cast Iron \\n- Plastic \\n- Poly Vinyl Chloride\\n- Polyethylene \\n- Screw Steel \\n- Stainless steel/carbon steel\\n- Steel \\n- Tantalum \\n- Titanium & Titanium alloy\\n- Unknown \\n- Welded Steel \\n- Wrot/wrought Iron \\n- Wrot/wrought Steel\\n- Zirconium\",\"primaryKey\":[\"MaterialId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":false,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a material.\",\"isNullable\":true,\"name\":\"MaterialName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a material.\",\"isNullable\":true,\"name\":\"MaterialDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material type.\",\"isNullable\":true,\"name\":\"MaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"DiverseOriginMaterialIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the material is a diverse origin material.\\n\\n3.1.12\\ndiverse origin\\nrefers to materials that are not isolated together or the result of the same synthetic process\\nEXAMPLE Material derived from the root and flower of the same plant would be defined as two substances since are not physically connected. Material isolated from the stem and leaf of plant which are physically connected would be a single substance.\\nNOTE Basis upon which a material is defined as a single substance or as multiple substances. Material isolated from non-contiguous part of a biological matrix would be defined as separate substances.\",\"isNullable\":true,\"name\":\"DiverseOriginMaterialIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MultiSubstanceMaterialIndicator\"},\"dataType\":\"boolean\",\"description\":\"3.52\\n\\nmulti-substance material\\nsingle substances or specified substances of diverse origin that are brought together and do not undergo a chemical transformation\\n\\nEXAMPLE Materials such as human insulin isophane, simethicone, aluminum lakes, nicotine polacrilex, and phosphate buffered saline are all multi-substance ingredients\\n.\\nNote 1 to entry: Each substance part of the multi-substance material is a parent substance of the multi-substance material and should be registered first. The multi-substance material is captured at the Specified Substance Group 1 information level.\",\"isNullable\":true,\"name\":\"MultiSubstanceMaterialIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the material.\",\"isNullable\":true,\"name\":\"MaterialNote\"}]}}}",
+			"Description": "A material that may be associated with a component or casing.   \n\nEx:\n- Bare Steel \n- Bare Steel Cast Iron \n- Bolt Type Cast Iron \n- Cast Iron \n- Celluloid Acetate Butadiene \n- Copper \n- Copper-Nickel Alloy\n- DuPont Aladyl-A \n- Flex Joint Cast Iron \n- Flexible Joint Cast Iron \n- Galvanized \n- Gland Type Cast Iron \n- Nickel & Nickel alloy\n- Orangeburg \n- Outside Diameter Steel \n- Plain End Cast Iron \n- Plastic \n- Poly Vinyl Chloride\n- Polyethylene \n- Screw Steel \n- Stainless steel/carbon steel\n- Steel \n- Tantalum \n- Titanium & Titanium alloy\n- Unknown \n- Welded Steel \n- Wrot/wrought Iron \n- Wrot/wrought Steel\n- Zirconium",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MaterialId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

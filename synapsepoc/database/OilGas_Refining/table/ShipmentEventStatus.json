@@ -1,0 +1,106 @@
+{
+	"name": "ShipmentEventStatus",
+	"properties": {
+		"Name": "ShipmentEventStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the Shipment Event.\n\nEx:\n- planned\n- in process\n- completed\n- unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentEventStatusId",
+					"Description": "The unique identifier of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStatusName",
+					"Description": "The name of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStatusDescription",
+					"Description": "The description of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventStatus.cdm.json/ShipmentEventStatus",
+						"Name": "ShipmentEventStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentEventStatusId\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusId\"},\"ShipmentEventStatusName\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusName\"},\"ShipmentEventStatusDescription\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentEventStatus\",\"path\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\"},\"description\":\"The status of the Shipment Event.\\n\\nEx:\\n- planned\\n- in process\\n- completed\\n- unknown\",\"primaryKey\":[\"ShipmentEventStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Status.\",\"isNullable\":false,\"name\":\"ShipmentEventStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Shipment Event Status.\",\"isNullable\":true,\"name\":\"ShipmentEventStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"name\":\"ShipmentEventStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Shipment Event Status.\",\"isNullable\":true,\"name\":\"ShipmentEventStatusDescription\"}]}}}",
+			"Description": "The status of the Shipment Event.\n\nEx:\n- planned\n- in process\n- completed\n- unknown",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentEventStatusId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

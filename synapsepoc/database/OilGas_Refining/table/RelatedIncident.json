@@ -1,0 +1,121 @@
+{
+	"name": "RelatedIncident",
+	"properties": {
+		"Name": "RelatedIncident",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship of two or more incidents.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIncident.cdm.json/RelatedIncident",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedIncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIncident.cdm.json/RelatedIncident",
+						"Name": "RelatedIncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIncident.cdm.json/RelatedIncident",
+						"Name": "IncidentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedIncidentNote",
+					"Description": "A note, comment or additional information regarding the related incident.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedIncident.cdm.json/RelatedIncident",
+						"Name": "RelatedIncidentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedIncident",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedIncident",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentId\"},\"RelatedIncidentId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentId\"},\"IncidentRelationshipTypeId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentRelationshipTypeId\"},\"RelatedIncidentNote\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedIncident\",\"path\":\"RelatedIncident.cdm.json/RelatedIncident\"},\"description\":\"The relationship of two or more incidents.\",\"primaryKey\":[\"IncidentId\",\"RelatedIncidentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"RelatedIncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Relationship Type.\",\"isNullable\":true,\"name\":\"IncidentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related incident.\",\"isNullable\":true,\"name\":\"RelatedIncidentNote\"}]}}}",
+			"Description": "The relationship of two or more incidents.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,RelatedIncidentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

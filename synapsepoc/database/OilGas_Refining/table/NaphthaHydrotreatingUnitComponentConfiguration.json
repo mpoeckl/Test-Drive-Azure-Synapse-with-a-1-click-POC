@@ -1,0 +1,139 @@
+{
+	"name": "NaphthaHydrotreatingUnitComponentConfiguration",
+	"properties": {
+		"Name": "NaphthaHydrotreatingUnitComponentConfiguration",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Naphtha Hydrotreating Unit Component(s) installed and operating during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaphthaHydrotreatingUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration",
+						"Name": "NaphthaHydrotreatingUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration",
+						"Name": "NaphthaHydrotreatingUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentConfigurationNote",
+					"Description": "A note, comment or additional information regarding the naphtha hydrotreating unit component configuration.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration",
+						"Name": "NaphthaHydrotreatingUnitComponentConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentConfiguration",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentConfiguration",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"NaphthaHydrotreatingUnitComponentId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"NaphthaHydrotreatingUnitComponentConfigurationNote\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreatingUnitComponentConfiguration\",\"path\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\"},\"description\":\"The Naphtha Hydrotreating Unit Component(s) installed and operating during the associated period.\",\"primaryKey\":[\"NaphthaHydrotreatingUnitId\",\"NaphthaHydrotreatingUnitComponentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the naphtha hydrotreating unit component configuration.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentConfigurationNote\"}]}}}",
+			"Description": "The Naphtha Hydrotreating Unit Component(s) installed and operating during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "NaphthaHydrotreatingUnitId,NaphthaHydrotreatingUnitComponentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

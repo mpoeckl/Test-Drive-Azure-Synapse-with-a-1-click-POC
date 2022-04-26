@@ -1,0 +1,106 @@
+{
+	"name": "ShipmentChargeCategory",
+	"properties": {
+		"Name": "ShipmentChargeCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A categorization of shipment charges based on common characteristics or functions performed.\n\nEx:\n- Administrative Charge\n- Delivery Charge\n- Freight Charge\n- Handling Charge\n- Import / Export Charge\n- Insurance Charge\n- Processing Charge\n- Special Handling Charge",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentChargeCategoryId",
+					"Description": "The unique identifier of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeCategoryName",
+					"Description": "The name of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentChargeCategoryDescription",
+					"Description": "The description of a Shipment Charge Category.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentChargeCategory.cdm.json/ShipmentChargeCategory",
+						"Name": "ShipmentChargeCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentChargeCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentChargeCategory",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentChargeCategoryId\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryId\"},\"ShipmentChargeCategoryName\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryName\"},\"ShipmentChargeCategoryDescription\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentChargeCategory\",\"path\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\"},\"description\":\"A categorization of shipment charges based on common characteristics or functions performed.\\n\\nEx:\\n- Administrative Charge\\n- Delivery Charge\\n- Freight Charge\\n- Handling Charge\\n- Import / Export Charge\\n- Insurance Charge\\n- Processing Charge\\n- Special Handling Charge\",\"primaryKey\":[\"ShipmentChargeCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Charge Category.\",\"isNullable\":false,\"name\":\"ShipmentChargeCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Shipment Charge Category.\",\"isNullable\":true,\"name\":\"ShipmentChargeCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Shipment Charge Category.\",\"isNullable\":true,\"name\":\"ShipmentChargeCategoryDescription\"}]}}}",
+			"Description": "A categorization of shipment charges based on common characteristics or functions performed.\n\nEx:\n- Administrative Charge\n- Delivery Charge\n- Freight Charge\n- Handling Charge\n- Import / Export Charge\n- Insurance Charge\n- Processing Charge\n- Special Handling Charge",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentChargeCategoryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

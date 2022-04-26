@@ -1,0 +1,26 @@
+{
+	"name": "relationship-secuwdyzzn",
+	"properties": {
+		"Name": "relationship-secuwdyzzn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeasurementType",
+		"ToTableName": "RefineryProcessComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeasurementTypeId",
+				"ToColumnName": "MeasurementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeasurementType.cdm.json/MeasurementType\",\"toEntity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"MeasurementTypeId\",\"toAttribute\":\"MeasurementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

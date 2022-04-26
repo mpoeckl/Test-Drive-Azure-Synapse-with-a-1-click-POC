@@ -1,0 +1,106 @@
+{
+	"name": "ExtraordinaryRepairPartyRelationshipType",
+	"properties": {
+		"Name": "ExtraordinaryRepairPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a party and the associated component extraordinary repair.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExtraordinaryRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a extraordinary repair party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType",
+						"Name": "ExtraordinaryRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairPartyRelationshipTypeName",
+					"Description": "The name of a extraordinary repair party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType",
+						"Name": "ExtraordinaryRepairPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairPartyRelationshipTypeDescription",
+					"Description": "The description of a extraordinary repair party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType",
+						"Name": "ExtraordinaryRepairPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ExtraordinaryRepairPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ExtraordinaryRepairPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExtraordinaryRepairPartyRelationshipTypeId\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},\"ExtraordinaryRepairPartyRelationshipTypeName\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeName\"},\"ExtraordinaryRepairPartyRelationshipTypeDescription\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExtraordinaryRepairPartyRelationshipType\",\"path\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\"},\"description\":\"The nature of the relationship between a party and the associated component extraordinary repair.\\n\\nEx:\\n- Requested-by Party\\n- Authorized-by Party\\n- Performed-by Party\\n- Billed-by Party\\n- Billed-to Party\",\"primaryKey\":[\"ExtraordinaryRepairPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a extraordinary repair party relationship type.\",\"isNullable\":false,\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a extraordinary repair party relationship type.\",\"isNullable\":true,\"name\":\"ExtraordinaryRepairPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a extraordinary repair party relationship type.\",\"isNullable\":true,\"name\":\"ExtraordinaryRepairPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a party and the associated component extraordinary repair.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ExtraordinaryRepairPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

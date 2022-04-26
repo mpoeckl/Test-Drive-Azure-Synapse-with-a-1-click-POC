@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vnjkdoggri",
+	"properties": {
+		"Name": "relationship-vnjkdoggri",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "RefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "RefineryTestLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"RefineryTestLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

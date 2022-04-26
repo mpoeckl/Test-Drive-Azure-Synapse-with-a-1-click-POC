@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iwnekkwcaq",
+	"properties": {
+		"Name": "relationship-iwnekkwcaq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HydrocrackerUnit",
+		"ToTableName": "HydrocrackerUnitFeedstock",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HydrocrackerUnitId",
+				"ToColumnName": "HydrocrackerUnitId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"toEntity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"joinPairs\":[{\"fromAttribute\":\"HydrocrackerUnitId\",\"toAttribute\":\"HydrocrackerUnitId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

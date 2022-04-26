@@ -1,0 +1,106 @@
+{
+	"name": "AssetInspectionStatus",
+	"properties": {
+		"Name": "AssetInspectionStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the associated asset inspection.\n\nEx:\n- planned\n- in process\n- passed\n- failed\n- results pending\n- results disputed",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetInspectionStatusId",
+					"Description": "The unique identifier of an Asset Inspection Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionStatus.cdm.json/AssetInspectionStatus",
+						"Name": "AssetInspectionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionStatusName",
+					"Description": "The name of an Asset Inspection Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionStatus.cdm.json/AssetInspectionStatus",
+						"Name": "AssetInspectionStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionStatusDescription",
+					"Description": "The description of an Asset Inspection Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspectionStatus.cdm.json/AssetInspectionStatus",
+						"Name": "AssetInspectionStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspectionStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspectionStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetInspectionStatusId\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusId\"},\"AssetInspectionStatusName\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusName\"},\"AssetInspectionStatusDescription\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetInspectionStatus\",\"path\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\"},\"description\":\"The status of the associated asset inspection.\\n\\nEx:\\n- planned\\n- in process\\n- passed\\n- failed\\n- results pending\\n- results disputed\",\"primaryKey\":[\"AssetInspectionStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection Status.\",\"isNullable\":false,\"name\":\"AssetInspectionStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Asset Inspection Status.\",\"isNullable\":true,\"name\":\"AssetInspectionStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Asset Inspection Status.\",\"isNullable\":true,\"name\":\"AssetInspectionStatusDescription\"}]}}}",
+			"Description": "The status of the associated asset inspection.\n\nEx:\n- planned\n- in process\n- passed\n- failed\n- results pending\n- results disputed",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetInspectionStatusId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

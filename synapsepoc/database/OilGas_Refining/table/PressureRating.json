@@ -1,0 +1,106 @@
+{
+	"name": "PressureRating",
+	"properties": {
+		"Name": "PressureRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The pressure rating of the associated pipe.\n\nEx:\n- API WOG 150 PSI\n- API WOG 275 PSI\n- API WOG 300 PSI\n- API WOG 400 PSI\n- API WOG 500 PSI\n- API WOG 600 PSI\n- API WOG 700 PSI\n- API WOG 720 PSI\n- API WOG 800 PSI\n- API WOG 850 PSI\n- API WOG 900 PSI\n- API WOG 950 PSI\n- API WOG 960 PSI\n- API WOG 980 PSI\n- API WOG 1000 PSI\n- API WOG 1500 PSI\n- API WOG 2000 PSI\n- API WOG 3000 PSI\n- API WOG 5000 PSI\n- API WOG 10000 PSI\n- API WOG 15000 PSI\n- API WOG 20000 PSI\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PressureRatingId",
+					"Description": "The unique identifier of a Pressure Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PressureRating.cdm.json/PressureRating",
+						"Name": "PressureRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PressureRatingName",
+					"Description": "The name of a Pressure Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PressureRating.cdm.json/PressureRating",
+						"Name": "PressureRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PressureRatingDescription",
+					"Description": "The description of a Pressure Rating.",
+					"BaseAttributeReference": {
+						"Entity": "PressureRating.cdm.json/PressureRating",
+						"Name": "PressureRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PressureRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PressureRating",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PressureRatingId\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingId\"},\"PressureRatingName\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingName\"},\"PressureRatingDescription\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PressureRating\",\"path\":\"PressureRating.cdm.json/PressureRating\"},\"description\":\"The pressure rating of the associated pipe.\\n\\nEx:\\n- API WOG 150 PSI\\n- API WOG 275 PSI\\n- API WOG 300 PSI\\n- API WOG 400 PSI\\n- API WOG 500 PSI\\n- API WOG 600 PSI\\n- API WOG 700 PSI\\n- API WOG 720 PSI\\n- API WOG 800 PSI\\n- API WOG 850 PSI\\n- API WOG 900 PSI\\n- API WOG 950 PSI\\n- API WOG 960 PSI\\n- API WOG 980 PSI\\n- API WOG 1000 PSI\\n- API WOG 1500 PSI\\n- API WOG 2000 PSI\\n- API WOG 3000 PSI\\n- API WOG 5000 PSI\\n- API WOG 10000 PSI\\n- API WOG 15000 PSI\\n- API WOG 20000 PSI\\n- Unknown\",\"primaryKey\":[\"PressureRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pressure Rating.\",\"isNullable\":false,\"name\":\"PressureRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pressure Rating.\",\"isNullable\":true,\"name\":\"PressureRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PressureRating.cdm.json/PressureRating\",\"name\":\"PressureRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pressure Rating.\",\"isNullable\":true,\"name\":\"PressureRatingDescription\"}]}}}",
+			"Description": "The pressure rating of the associated pipe.\n\nEx:\n- API WOG 150 PSI\n- API WOG 275 PSI\n- API WOG 300 PSI\n- API WOG 400 PSI\n- API WOG 500 PSI\n- API WOG 600 PSI\n- API WOG 700 PSI\n- API WOG 720 PSI\n- API WOG 800 PSI\n- API WOG 850 PSI\n- API WOG 900 PSI\n- API WOG 950 PSI\n- API WOG 960 PSI\n- API WOG 980 PSI\n- API WOG 1000 PSI\n- API WOG 1500 PSI\n- API WOG 2000 PSI\n- API WOG 3000 PSI\n- API WOG 5000 PSI\n- API WOG 10000 PSI\n- API WOG 15000 PSI\n- API WOG 20000 PSI\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PressureRatingId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

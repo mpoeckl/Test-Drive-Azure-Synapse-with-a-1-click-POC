@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uasebjpslm",
+	"properties": {
+		"Name": "relationship-uasebjpslm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetConditionRating",
+		"ToTableName": "AssetCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetConditionRatingId",
+				"ToColumnName": "AssetConditionRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetConditionRating.cdm.json/AssetConditionRating\",\"toEntity\":\"AssetCondition.cdm.json/AssetCondition\",\"joinPairs\":[{\"fromAttribute\":\"AssetConditionRatingId\",\"toAttribute\":\"AssetConditionRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,351 @@
+{
+	"name": "RefineryProcess",
+	"properties": {
+		"Name": "RefineryProcess",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A procedure performed at an Ore Refinery.\n\nPetroleum refining begins with the distillation, or fractionation, of crude oils into separate hydrocarbon groups. The resultant products are directly related to the characteristics of the crude processed. Most distillation products are further converted into more usable products by changing the size and structure of the hydrocarbon molecules through cracking, reforming, and other conversion processes as discussed in this chapter. These converted products are then subjected to various treatment and separation processes such as extraction, hydrotreating, and sweetening to remove undesirable constituents and improve product quality.\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessTypeId",
+					"Description": "The unique identifier of a Refinery Process Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessPlannedStartTimestamp",
+					"Description": "The process planned start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessPlannedStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessPlannedEndTimestamp",
+					"Description": "The process planned end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessPlannedEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessScheduledStartTimestamp",
+					"Description": "The process scheduled start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessScheduledStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessScheduledEndTimestamp",
+					"Description": "The process scheduled end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessScheduledEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessStartTimestamp",
+					"Description": "The process start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessEndTimestamp",
+					"Description": "The process end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FacilityId",
+					"Description": "The unique identifier of a Facility.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "FacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrackedStockIndicator",
+					"Description": "A petroleum stock that has been produced in a cracking operation, either catalytic or thermal.  Cracked stocks contain hydrogen deficient compounds such as olefins and aromatics.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "CrackedStockIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DelayedCokingRefineryProcessIndicator",
+					"Description": "Delayed coking: A refinery process in which a heavy oil is heated and then allowed to thermally crack and deposit coke in a large drum that provides delay time for the coking reactions to occur.  The coke is removed from the drum with a hydraulic drill that is lowered into the drum from a derrick that sits atop the drum.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "DelayedCokingRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DesaltingRefineryProcessIndicator",
+					"Description": "Desalting: A process that removes chlorides and other inorganic salts from crude oil by injecting water and applying an electrostatic field to force the salt into the aqueous phase.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "DesaltingRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FluidCokingRefineryProcessIndicator",
+					"Description": "Fluid coking: A coking process in which the feed is preheated and sprayed into a reactor where it contacts a hot fluidized bed of coke returning from a burner vessel.  The hot oil products are stripped from the coke which is circulated back to the burner vessel.  Coke not returned to the reactor from the burner vessel is withdrawn as a coke product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "FluidCokingRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackingRefineryProcessIndicator",
+					"Description": "Hydrocracking: A refining process in which a petroleum stream is cracked over a catalyst in a high hydrogen atmosphere.  The high H2 partial pressure immediately saturates any unsaturated compounds produced by the cracking reactions.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "HydrocrackingRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreatingRefineryProcessIndicator",
+					"Description": "Hydrotreating: A mild hydrocracking process in which cracking is minimized.  The hydrogen consumed in chemical reactions is that required to convert sulfur and nitrogen compounds to H2S and NH3 plus hydrogen that replaces carbon/carbon double bonds in saturation reactions.  Some hydrogen is also lost through solubility in the liquid product(s).",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "HydrotreatingRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IsomerizationRefineryProcessIndicator",
+					"Description": "Isomerization: A reaction process in which the molecular structure of a compound is rearranged to a different isomer form.  The chemical formula is not changed.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "IsomerizationRefineryProcessIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessNote",
+					"Description": "A note, comment or additional information regarding the Process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcess.cdm.json/RefineryProcess",
+						"Name": "RefineryProcessNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcess",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcess",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessId\"},\"RefineryProcessTypeId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessTypeId\"},\"RefineryProcessPlannedStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedStartTimestamp\"},\"RefineryProcessPlannedEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedEndTimestamp\"},\"RefineryProcessScheduledStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledStartTimestamp\"},\"RefineryProcessScheduledEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledEndTimestamp\"},\"RefineryProcessStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessStartTimestamp\"},\"RefineryProcessEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessEndTimestamp\"},\"FacilityId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"LocationId\"},\"CrackedStockIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"CrackedStockIndicator\"},\"DelayedCokingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DelayedCokingRefineryProcessIndicator\"},\"DesaltingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DesaltingRefineryProcessIndicator\"},\"FluidCokingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FluidCokingRefineryProcessIndicator\"},\"HydrocrackingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrocrackingRefineryProcessIndicator\"},\"HydrotreatingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrotreatingRefineryProcessIndicator\"},\"IsomerizationRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"IsomerizationRefineryProcessIndicator\"},\"RefineryProcessNote\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcess\",\"path\":\"RefineryProcess.cdm.json/RefineryProcess\"},\"description\":\"A procedure performed at an Ore Refinery.\\n\\nPetroleum refining begins with the distillation, or fractionation, of crude oils into separate hydrocarbon groups. The resultant products are directly related to the characteristics of the crude processed. Most distillation products are further converted into more usable products by changing the size and structure of the hydrocarbon molecules through cracking, reforming, and other conversion processes as discussed in this chapter. These converted products are then subjected to various treatment and separation processes such as extraction, hydrotreating, and sweetening to remove undesirable constituents and improve product quality.\\n\\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.\",\"primaryKey\":[\"RefineryProcessId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Process Type.\",\"isNullable\":true,\"name\":\"RefineryProcessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process planned start timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessPlannedStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process planned end timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessPlannedEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process scheduled start timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessScheduledStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process scheduled end timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessScheduledEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process start timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The process end timestamp.\",\"isNullable\":true,\"name\":\"RefineryProcessEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"CrackedStockIndicator\"},\"dataType\":\"boolean\",\"description\":\"A petroleum stock that has been produced in a cracking operation, either catalytic or thermal.  Cracked stocks contain hydrogen deficient compounds such as olefins and aromatics.\",\"isNullable\":true,\"name\":\"CrackedStockIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DelayedCokingRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Delayed coking: A refinery process in which a heavy oil is heated and then allowed to thermally crack and deposit coke in a large drum that provides delay time for the coking reactions to occur.  The coke is removed from the drum with a hydraulic drill that is lowered into the drum from a derrick that sits atop the drum.\",\"isNullable\":true,\"name\":\"DelayedCokingRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DesaltingRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Desalting: A process that removes chlorides and other inorganic salts from crude oil by injecting water and applying an electrostatic field to force the salt into the aqueous phase.\",\"isNullable\":true,\"name\":\"DesaltingRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FluidCokingRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Fluid coking: A coking process in which the feed is preheated and sprayed into a reactor where it contacts a hot fluidized bed of coke returning from a burner vessel.  The hot oil products are stripped from the coke which is circulated back to the burner vessel.  Coke not returned to the reactor from the burner vessel is withdrawn as a coke product.\",\"isNullable\":true,\"name\":\"FluidCokingRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrocrackingRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracking: A refining process in which a petroleum stream is cracked over a catalyst in a high hydrogen atmosphere.  The high H2 partial pressure immediately saturates any unsaturated compounds produced by the cracking reactions.\",\"isNullable\":true,\"name\":\"HydrocrackingRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrotreatingRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrotreating: A mild hydrocracking process in which cracking is minimized.  The hydrogen consumed in chemical reactions is that required to convert sulfur and nitrogen compounds to H2S and NH3 plus hydrogen that replaces carbon/carbon double bonds in saturation reactions.  Some hydrogen is also lost through solubility in the liquid product(s).\",\"isNullable\":true,\"name\":\"HydrotreatingRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"IsomerizationRefineryProcessIndicator\"},\"dataType\":\"boolean\",\"description\":\"Isomerization: A reaction process in which the molecular structure of a compound is rearranged to a different isomer form.  The chemical formula is not changed.\",\"isNullable\":true,\"name\":\"IsomerizationRefineryProcessIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Process.\",\"isNullable\":true,\"name\":\"RefineryProcessNote\"}]}}}",
+			"Description": "A procedure performed at an Ore Refinery.\n\nPetroleum refining begins with the distillation, or fractionation, of crude oils into separate hydrocarbon groups. The resultant products are directly related to the characteristics of the crude processed. Most distillation products are further converted into more usable products by changing the size and structure of the hydrocarbon molecules through cracking, reforming, and other conversion processes as discussed in this chapter. These converted products are then subjected to various treatment and separation processes such as extraction, hydrotreating, and sweetening to remove undesirable constituents and improve product quality.\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

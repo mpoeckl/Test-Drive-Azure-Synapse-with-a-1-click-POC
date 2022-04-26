@@ -1,0 +1,155 @@
+{
+	"name": "NaphthaHydrotreatingUnitComponent",
+	"properties": {
+		"Name": "NaphthaHydrotreatingUnitComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A naphtha hydrotreating unit component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "NaphthaHydrotreatingUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentName",
+					"Description": "The name of a naphtha hydrotreating unit component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "NaphthaHydrotreatingUnitComponentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentDescription",
+					"Description": "The description of a naphtha hydrotreating unit component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "NaphthaHydrotreatingUnitComponentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentTypeId",
+					"Description": "The unique identifier of a naphtha hydrotreating unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "NaphthaHydrotreatingUnitComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentNote",
+					"Description": "A note, comment or additional information regarding the naphtha hydrotreating unit component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "NaphthaHydrotreatingUnitComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitComponentId\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentId\"},\"NaphthaHydrotreatingUnitComponentName\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentName\"},\"NaphthaHydrotreatingUnitComponentDescription\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentDescription\"},\"NaphthaHydrotreatingUnitComponentTypeId\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},\"NaphthaHydrotreatingUnitComponentNote\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentNote\"},\"MaterialId\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"MaterialId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreatingUnitComponent\",\"path\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\"},\"description\":\"A naphtha hydrotreating unit component.\",\"primaryKey\":[\"NaphthaHydrotreatingUnitComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a naphtha hydrotreating unit component.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a naphtha hydrotreating unit component.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a naphtha hydrotreating unit component type.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"NaphthaHydrotreatingUnitComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the naphtha hydrotreating unit component.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"}]}}}",
+			"Description": "A naphtha hydrotreating unit component.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "NaphthaHydrotreatingUnitComponentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

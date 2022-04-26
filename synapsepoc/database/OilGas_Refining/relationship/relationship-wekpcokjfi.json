@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wekpcokjfi",
+	"properties": {
+		"Name": "relationship-wekpcokjfi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentCasingType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentCasingTypeId",
+				"ToColumnName": "ComponentCasingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentCasingTypeId\",\"toAttribute\":\"ComponentCasingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerFlowArrangementType",
+	"properties": {
+		"Name": "HeatExchangerFlowArrangementType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of heat exchanger flow arrangement.\n\nEx:\n- Parallel-flow\n- Counter-flow\n- Cross-flow\n\nThere are three primary classifications of heat exchangers according to their flow arrangement. In parallel-flow heat exchangers, the two fluids enter the exchanger at the same end, and travel in parallel to one another to the other side. In counter-flow heat exchangers the fluids enter the exchanger from opposite ends. The counter current design is the most efficient, in that it can transfer the most heat from the heat (transfer) medium per unit mass due to the fact that the average temperature difference along any unit length is higher. See countercurrent exchange. In a cross-flow heat exchanger, the fluids travel roughly perpendicular to one another through the exchanger.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerFlowArrangementTypeId",
+					"Description": "The unique identifier of a heat exchanger flow arrangement type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType",
+						"Name": "HeatExchangerFlowArrangementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFlowArrangementTypeName",
+					"Description": "The name of a heat exchanger flow arrangement type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType",
+						"Name": "HeatExchangerFlowArrangementTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFlowArrangementTypeDescription",
+					"Description": "The description of a heat exchanger flow arrangement type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType",
+						"Name": "HeatExchangerFlowArrangementTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFlowArrangementType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFlowArrangementType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerFlowArrangementTypeId\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeId\"},\"HeatExchangerFlowArrangementTypeName\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeName\"},\"HeatExchangerFlowArrangementTypeDescription\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerFlowArrangementType\",\"path\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\"},\"description\":\"The type of heat exchanger flow arrangement.\\n\\nEx:\\n- Parallel-flow\\n- Counter-flow\\n- Cross-flow\\n\\nThere are three primary classifications of heat exchangers according to their flow arrangement. In parallel-flow heat exchangers, the two fluids enter the exchanger at the same end, and travel in parallel to one another to the other side. In counter-flow heat exchangers the fluids enter the exchanger from opposite ends. The counter current design is the most efficient, in that it can transfer the most heat from the heat (transfer) medium per unit mass due to the fact that the average temperature difference along any unit length is higher. See countercurrent exchange. In a cross-flow heat exchanger, the fluids travel roughly perpendicular to one another through the exchanger.\",\"primaryKey\":[\"HeatExchangerFlowArrangementTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger flow arrangement type.\",\"isNullable\":false,\"name\":\"HeatExchangerFlowArrangementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger flow arrangement type.\",\"isNullable\":true,\"name\":\"HeatExchangerFlowArrangementTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger flow arrangement type.\",\"isNullable\":true,\"name\":\"HeatExchangerFlowArrangementTypeDescription\"}]}}}",
+			"Description": "The type of heat exchanger flow arrangement.\n\nEx:\n- Parallel-flow\n- Counter-flow\n- Cross-flow\n\nThere are three primary classifications of heat exchangers according to their flow arrangement. In parallel-flow heat exchangers, the two fluids enter the exchanger at the same end, and travel in parallel to one another to the other side. In counter-flow heat exchangers the fluids enter the exchanger from opposite ends. The counter current design is the most efficient, in that it can transfer the most heat from the heat (transfer) medium per unit mass due to the fact that the average temperature difference along any unit length is higher. See countercurrent exchange. In a cross-flow heat exchanger, the fluids travel roughly perpendicular to one another through the exchanger.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerFlowArrangementTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

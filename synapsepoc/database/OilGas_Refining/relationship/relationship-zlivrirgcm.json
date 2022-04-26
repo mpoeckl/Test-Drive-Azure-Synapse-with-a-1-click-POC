@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zlivrirgcm",
+	"properties": {
+		"Name": "relationship-zlivrirgcm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SwitchType",
+		"ToTableName": "Switch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SwitchTypeId",
+				"ToColumnName": "SwitchTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SwitchType.cdm.json/SwitchType\",\"toEntity\":\"Switch.cdm.json/Switch\",\"joinPairs\":[{\"fromAttribute\":\"SwitchTypeId\",\"toAttribute\":\"SwitchTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

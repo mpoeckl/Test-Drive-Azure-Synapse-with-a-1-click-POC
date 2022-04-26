@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nyroaudjle",
+	"properties": {
+		"Name": "relationship-nyroaudjle",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingErrorType",
+		"ToTableName": "ComponentReadingError",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingErrorTypeId",
+				"ToColumnName": "ReadingErrorTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"toEntity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"joinPairs\":[{\"fromAttribute\":\"ReadingErrorTypeId\",\"toAttribute\":\"ReadingErrorTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

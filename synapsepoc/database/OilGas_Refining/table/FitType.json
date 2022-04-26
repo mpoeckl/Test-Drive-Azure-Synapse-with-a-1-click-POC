@@ -1,0 +1,106 @@
+{
+	"name": "FitType",
+	"properties": {
+		"Name": "FitType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of fit associated with the component.\n\nEx:\n- Compression Coupling\n- Drip\n- Expansion Joint\n- General Fitting\n- Inline Insulator\n- Reducer\n- Saddle\n- Sleeve\n- Tee\n- Transition\n- Unknown\n- Unset",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FitTypeId",
+					"Description": "The unique identifier of a fit type.",
+					"BaseAttributeReference": {
+						"Entity": "FitType.cdm.json/FitType",
+						"Name": "FitTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FitTypeName",
+					"Description": "The name of a fit type.",
+					"BaseAttributeReference": {
+						"Entity": "FitType.cdm.json/FitType",
+						"Name": "FitTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FitTypeDescription",
+					"Description": "The description of a fit type.",
+					"BaseAttributeReference": {
+						"Entity": "FitType.cdm.json/FitType",
+						"Name": "FitTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FitType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FitType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FitTypeId\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeId\"},\"FitTypeName\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeName\"},\"FitTypeDescription\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FitType\",\"path\":\"FitType.cdm.json/FitType\"},\"description\":\"The type of fit associated with the component.\\n\\nEx:\\n- Compression Coupling\\n- Drip\\n- Expansion Joint\\n- General Fitting\\n- Inline Insulator\\n- Reducer\\n- Saddle\\n- Sleeve\\n- Tee\\n- Transition\\n- Unknown\\n- Unset\",\"primaryKey\":[\"FitTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fit type.\",\"isNullable\":false,\"name\":\"FitTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a fit type.\",\"isNullable\":true,\"name\":\"FitTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FitType.cdm.json/FitType\",\"name\":\"FitTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a fit type.\",\"isNullable\":true,\"name\":\"FitTypeDescription\"}]}}}",
+			"Description": "The type of fit associated with the component.\n\nEx:\n- Compression Coupling\n- Drip\n- Expansion Joint\n- General Fitting\n- Inline Insulator\n- Reducer\n- Saddle\n- Sleeve\n- Tee\n- Transition\n- Unknown\n- Unset",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "FitTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

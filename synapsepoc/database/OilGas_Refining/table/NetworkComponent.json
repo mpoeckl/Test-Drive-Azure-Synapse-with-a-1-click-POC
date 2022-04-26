@@ -1,0 +1,563 @@
+{
+	"name": "NetworkComponent",
+	"properties": {
+		"Name": "NetworkComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Network Component is a physical or software component of an electric, gas,  water or telecommunications network involved in the  generation, transmission, distribution or provision of customer services at a service location.\n\nA network component may be related to network infrastructure components or customer/service location components of a network \"past the  meter\" in the  customer environment (appliances, air conditioning, water heaters etc.).\n\nInfrastructure components are used to generate, maintain and report upon the  network:\n- Generating plant\n- Transmission line\n- Transformer\n- Substation\n- Power Transmission Pole\n- Generator\n- Generator BOM Item\n- Meter\n\nCustomer/Service Location components are used to control, report, bill and service customer appliances and devices attached to the  network:\n    - Air conditioner\n    - Water heater\n    - Home Appliance Network\n\nEach network component has a potential direct or indirect relationship with other network components that can be accessed by its position/level and relationship to related network components.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentName",
+					"Description": "The name of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentDescription",
+					"Description": "The description of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentUtilityAssignedSerialNumber",
+					"Description": "The serial number of a component assigned by a utility.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentUtilityAssignedSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ElectronicSerialNumber",
+					"Description": "The electronic serial number is a unique identification number embedded by manufacturers on a microchip in their product. While the ESN was first commonly used in wireless phones it has found traction in other electronic products.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ElectronicSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MacAddress",
+					"Description": "A media access control address (MAC address) of a device is a unique identifier assigned to a network interface controller (NIC) for communications at the data link layer of a network segment. MAC addresses are typically used as a network address for most IEEE 802 network technologies, including Ethernet, Wi-Fi and Bluetooth.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "MacAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerId",
+					"Description": "The unique identifier of a Manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ManufacturerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentManufacturerName",
+					"Description": "The name of the original manufacturer of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentManufacturerSerialNumber",
+					"Description": "The serial number of the Component originally assigned by the manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentManufacturerSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentOriginalInstallationTimestamp",
+					"Description": "The timestamp that a component was originally installed.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentOriginalInstallationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "GlobalIndividualAssetIdentifier",
+					"Description": "The Global Individual Asset Identifier (GIAI) is a simple tool used to identify an asset by type, uniquely where required. The GIAI is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "GlobalIndividualAssetIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartIdentifier",
+					"Description": "The Component / Part Identifier (CPID) is used to identify components or parts that are used in the assembly of a larger item. The CPID is part of the GS1 system of standards.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentPartIdentifier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IpAddress",
+					"Description": "A 32-bit or 128-bit numerical label assigned to each device in a computer network that uses the internet protocol communication.\n\nThe Internet Assigned Numbers Authority (ANA) manages the IP address space allocations.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "IpAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 15,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CriticalNetworkComponentIndicator",
+					"Description": "Indicates that a component is critical for network operation.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "CriticalNetworkComponentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentTypeId",
+					"Description": "The unique identifier of a Component Type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FacilityId",
+					"Description": "The unique identifier of a Facility.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "FacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccessTypeId",
+					"Description": "The unique identifier of an access type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "AccessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FitTypeId",
+					"Description": "The unique identifier of a fit type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "FitTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CoatingConditionId",
+					"Description": "The unique identifier of a coating condition.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "CoatingConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CoatingTypeId",
+					"Description": "The unique identifier of a coating type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "CoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsulationTypeId",
+					"Description": "The unique identifier of an insulation type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "InsulationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentOwnershipTypeId",
+					"Description": "The unique identifier of a Component Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentOwnershipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FittingStyleId",
+					"Description": "The unique identifier of a fitting style.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "FittingStyleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NetworkId",
+					"Description": "The unique identifier of a Network.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "NetworkId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ServiceLocationId",
+					"Description": "The unique identifier of a Service Location.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ServiceLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCasingTypeId",
+					"Description": "The unique identifier of a Component Casing Type.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentCasingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentNote",
+					"Description": "A note, comment or additional information regarding a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NetworkComponent.cdm.json/NetworkComponent",
+						"Name": "ComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NetworkComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NetworkComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentId\"},\"ComponentName\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentName\"},\"ComponentDescription\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentDescription\"},\"ComponentUtilityAssignedSerialNumber\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentUtilityAssignedSerialNumber\"},\"ElectronicSerialNumber\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ElectronicSerialNumber\"},\"MacAddress\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"MacAddress\"},\"ManufacturerId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ManufacturerId\"},\"ComponentManufacturerName\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentManufacturerName\"},\"ComponentManufacturerSerialNumber\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentManufacturerSerialNumber\"},\"ComponentOriginalInstallationTimestamp\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentOriginalInstallationTimestamp\"},\"GlobalIndividualAssetIdentifier\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"GlobalIndividualAssetIdentifier\"},\"ComponentPartIdentifier\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentPartIdentifier\"},\"IpAddress\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"IpAddress\"},\"CriticalNetworkComponentIndicator\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CriticalNetworkComponentIndicator\"},\"AssetId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"AssetId\"},\"ComponentTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentTypeId\"},\"LocationId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"LocationId\"},\"FacilityId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FacilityId\"},\"CorrosiveQualityId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CorrosiveQualityId\"},\"AccessTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"AccessTypeId\"},\"MaterialId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"MaterialId\"},\"FitTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FitTypeId\"},\"CoatingConditionId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CoatingConditionId\"},\"CoatingTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CoatingTypeId\"},\"InsulationTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"InsulationTypeId\"},\"ComponentOwnershipTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentOwnershipTypeId\"},\"FittingStyleId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FittingStyleId\"},\"NetworkId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"NetworkId\"},\"ServiceLocationId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ServiceLocationId\"},\"ComponentCasingTypeId\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentCasingTypeId\"},\"ComponentNote\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NetworkComponent\",\"path\":\"NetworkComponent.cdm.json/NetworkComponent\"},\"description\":\"A Network Component is a physical or software component of an electric, gas,  water or telecommunications network involved in the  generation, transmission, distribution or provision of customer services at a service location.\\n\\nA network component may be related to network infrastructure components or customer/service location components of a network \\\"past the  meter\\\" in the  customer environment (appliances, air conditioning, water heaters etc.).\\n\\nInfrastructure components are used to generate, maintain and report upon the  network:\\n- Generating plant\\n- Transmission line\\n- Transformer\\n- Substation\\n- Power Transmission Pole\\n- Generator\\n- Generator BOM Item\\n- Meter\\n\\nCustomer/Service Location components are used to control, report, bill and service customer appliances and devices attached to the  network:\\n    - Air conditioner\\n    - Water heater\\n    - Home Appliance Network\\n\\nEach network component has a potential direct or indirect relationship with other network components that can be accessed by its position/level and relationship to related network components.\",\"primaryKey\":[\"ComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component.\",\"isNullable\":true,\"name\":\"ComponentName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component.\",\"isNullable\":true,\"name\":\"ComponentDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentUtilityAssignedSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of a component assigned by a utility.\",\"isNullable\":true,\"name\":\"ComponentUtilityAssignedSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ElectronicSerialNumber\"},\"dataType\":\"integer\",\"description\":\"The electronic serial number is a unique identification number embedded by manufacturers on a microchip in their product. While the ESN was first commonly used in wireless phones it has found traction in other electronic products.\",\"isNullable\":true,\"name\":\"ElectronicSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"MacAddress\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"A media access control address (MAC address) of a device is a unique identifier assigned to a network interface controller (NIC) for communications at the data link layer of a network segment. MAC addresses are typically used as a network address for most IEEE 802 network technologies, including Ethernet, Wi-Fi and Bluetooth.\",\"isNullable\":true,\"name\":\"MacAddress\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ManufacturerId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Manufacturer.\",\"isNullable\":true,\"name\":\"ManufacturerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the original manufacturer of a Component.\",\"isNullable\":true,\"name\":\"ComponentManufacturerName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentManufacturerSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the Component originally assigned by the manufacturer.\",\"isNullable\":true,\"name\":\"ComponentManufacturerSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentOriginalInstallationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that a component was originally installed.\",\"isNullable\":true,\"name\":\"ComponentOriginalInstallationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"GlobalIndividualAssetIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The Global Individual Asset Identifier (GIAI) is a simple tool used to identify an asset by type, uniquely where required. The GIAI is part of the GS1 system of standards.\",\"isNullable\":true,\"name\":\"GlobalIndividualAssetIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentPartIdentifier\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The Component / Part Identifier (CPID) is used to identify components or parts that are used in the assembly of a larger item. The CPID is part of the GS1 system of standards.\",\"isNullable\":true,\"name\":\"ComponentPartIdentifier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"IpAddress\"},\"dataType\":\"string\",\"dataTypeLength\":15,\"description\":\"A 32-bit or 128-bit numerical label assigned to each device in a computer network that uses the internet protocol communication.\\n\\nThe Internet Assigned Numbers Authority (ANA) manages the IP address space allocations.\",\"isNullable\":true,\"name\":\"IpAddress\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CriticalNetworkComponentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that a component is critical for network operation.\",\"isNullable\":true,\"name\":\"CriticalNetworkComponentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":true,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Type.\",\"isNullable\":true,\"name\":\"ComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Facility.\",\"isNullable\":true,\"name\":\"FacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"AccessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an access type.\",\"isNullable\":true,\"name\":\"AccessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FitTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fit type.\",\"isNullable\":true,\"name\":\"FitTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CoatingConditionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a coating condition.\",\"isNullable\":true,\"name\":\"CoatingConditionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"CoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a coating type.\",\"isNullable\":true,\"name\":\"CoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"InsulationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an insulation type.\",\"isNullable\":true,\"name\":\"InsulationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentOwnershipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Ownership Type.\",\"isNullable\":true,\"name\":\"ComponentOwnershipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"FittingStyleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fitting style.\",\"isNullable\":true,\"name\":\"FittingStyleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"NetworkId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Network.\",\"isNullable\":true,\"name\":\"NetworkId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ServiceLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Service Location.\",\"isNullable\":true,\"name\":\"ServiceLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentCasingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Casing Type.\",\"isNullable\":true,\"name\":\"ComponentCasingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"name\":\"ComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component.\",\"isNullable\":true,\"name\":\"ComponentNote\"}]}}}",
+			"Description": "A Network Component is a physical or software component of an electric, gas,  water or telecommunications network involved in the  generation, transmission, distribution or provision of customer services at a service location.\n\nA network component may be related to network infrastructure components or customer/service location components of a network \"past the  meter\" in the  customer environment (appliances, air conditioning, water heaters etc.).\n\nInfrastructure components are used to generate, maintain and report upon the  network:\n- Generating plant\n- Transmission line\n- Transformer\n- Substation\n- Power Transmission Pole\n- Generator\n- Generator BOM Item\n- Meter\n\nCustomer/Service Location components are used to control, report, bill and service customer appliances and devices attached to the  network:\n    - Air conditioner\n    - Water heater\n    - Home Appliance Network\n\nEach network component has a potential direct or indirect relationship with other network components that can be accessed by its position/level and relationship to related network components.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

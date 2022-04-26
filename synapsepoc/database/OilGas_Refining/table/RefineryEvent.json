@@ -1,0 +1,172 @@
+{
+	"name": "RefineryEvent",
+	"properties": {
+		"Name": "RefineryEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An event associated with the Refinery.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventDescription",
+					"Description": "The description of a refinery event",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventTypeId",
+					"Description": "The unique identifier of a Refinery Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventStartTimestamp",
+					"Description": "The start timestamp of the Refinery event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventEndTimestamp",
+					"Description": "The end timestamp of the Refinery event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventNote",
+					"Description": "A note, comment or additional information regarding the refinery event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEvent.cdm.json/RefineryEvent",
+						"Name": "RefineryEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventId\"},\"RefineryEventDescription\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventDescription\"},\"RefineryEventTypeId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventTypeId\"},\"RefineryEventStartTimestamp\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventStartTimestamp\"},\"RefineryEventEndTimestamp\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventEndTimestamp\"},\"RefineryId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryId\"},\"RefineryEventNote\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEvent\",\"path\":\"RefineryEvent.cdm.json/RefineryEvent\"},\"description\":\"An event associated with the Refinery.\",\"primaryKey\":[\"RefineryEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery event\",\"isNullable\":true,\"name\":\"RefineryEventDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Type.\",\"isNullable\":false,\"name\":\"RefineryEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the Refinery event.\",\"isNullable\":true,\"name\":\"RefineryEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of the Refinery event.\",\"isNullable\":true,\"name\":\"RefineryEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":true,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery event.\",\"isNullable\":true,\"name\":\"RefineryEventNote\"}]}}}",
+			"Description": "An event associated with the Refinery.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

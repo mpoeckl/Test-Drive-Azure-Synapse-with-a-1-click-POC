@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dbvgsirkjh",
+	"properties": {
+		"Name": "relationship-dbvgsirkjh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Location",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationId",
+				"ToColumnName": "ConsigneeLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Location.cdm.json/Location\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"LocationId\",\"toAttribute\":\"ConsigneeLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

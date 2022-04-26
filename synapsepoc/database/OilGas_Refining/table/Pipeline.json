@@ -1,0 +1,270 @@
+{
+	"name": "Pipeline",
+	"properties": {
+		"Name": "Pipeline",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipelineName",
+					"Description": "The name of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineDescription",
+					"Description": "The description of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FullRegulationPipelineIndicator",
+					"Description": "A pipeline whose access arrangements are subject to full economic regulation",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "FullRegulationPipelineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PiggablePipelineIndicator",
+					"Description": "A piggable pipeline is a pipeline that is designed to allow a standard inspection tool to negotiate it, which requires basically a more or less constant bore, sufficiently long radius bends and traps to launch and receive the pigs.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PiggablePipelineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IntrastatePipelineIndicator",
+					"Description": "A natural gas pipeline company that is engaged in the transportation of natural gas within the state in which the gas is produced. Subject to regulatory oversight of the applicable state.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "IntrastatePipelineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InterstatePipelineIndicator",
+					"Description": "A natural gas pipeline company in the US that is engaged in the transportation of natural gas across state boundaries and is, therefore, subject to FERC jurisdiction.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "InterstatePipelineIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PipelineTypeId",
+					"Description": "The unique identifier of a Pipeline Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelinePurposeId",
+					"Description": "The unique identifier of a Pipeline Purpose.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelinePurposeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineMaximumCapacityL",
+					"Description": "The amount of oil or gas that can be passed through a pipeline over a given period of time.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineMaximumCapacityL"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipelineMaximumAllowableOperatingPressurePsig",
+					"Description": "The maximum pressure at which a pipeline or segment of a pipeline may be operated.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineMaximumAllowableOperatingPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipelineNetworkId",
+					"Description": "The unique identifier of a Pipeline Network.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "PipelineNetworkId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MarketParticipantId",
+					"Description": "The unique identifier of a Market Participant.",
+					"BaseAttributeReference": {
+						"Entity": "Pipeline.cdm.json/Pipeline",
+						"Name": "MarketParticipantId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pipeline",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pipeline",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineId\"},\"PipelineName\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineName\"},\"PipelineDescription\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineDescription\"},\"FullRegulationPipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"FullRegulationPipelineIndicator\"},\"PiggablePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PiggablePipelineIndicator\"},\"IntrastatePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"IntrastatePipelineIndicator\"},\"InterstatePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"InterstatePipelineIndicator\"},\"PipelineTypeId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineTypeId\"},\"PipelinePurposeId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelinePurposeId\"},\"PipelineMaximumCapacityL\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumCapacityL\"},\"PipelineMaximumAllowableOperatingPressurePsig\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumAllowableOperatingPressurePsig\"},\"PipelineNetworkId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineNetworkId\"},\"MarketParticipantId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"MarketParticipantId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Pipeline\",\"path\":\"Pipeline.cdm.json/Pipeline\"},\"description\":\"A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.\",\"primaryKey\":[\"PipelineId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline.\",\"isNullable\":false,\"name\":\"PipelineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pipeline.\",\"isNullable\":true,\"name\":\"PipelineName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pipeline.\",\"isNullable\":true,\"name\":\"PipelineDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"FullRegulationPipelineIndicator\"},\"dataType\":\"boolean\",\"description\":\"A pipeline whose access arrangements are subject to full economic regulation\",\"isNullable\":true,\"name\":\"FullRegulationPipelineIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PiggablePipelineIndicator\"},\"dataType\":\"boolean\",\"description\":\"A piggable pipeline is a pipeline that is designed to allow a standard inspection tool to negotiate it, which requires basically a more or less constant bore, sufficiently long radius bends and traps to launch and receive the pigs.\",\"isNullable\":true,\"name\":\"PiggablePipelineIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"IntrastatePipelineIndicator\"},\"dataType\":\"boolean\",\"description\":\"A natural gas pipeline company that is engaged in the transportation of natural gas within the state in which the gas is produced. Subject to regulatory oversight of the applicable state.\",\"isNullable\":true,\"name\":\"IntrastatePipelineIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"InterstatePipelineIndicator\"},\"dataType\":\"boolean\",\"description\":\"A natural gas pipeline company in the US that is engaged in the transportation of natural gas across state boundaries and is, therefore, subject to FERC jurisdiction.\",\"isNullable\":true,\"name\":\"InterstatePipelineIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Type.\",\"isNullable\":true,\"name\":\"PipelineTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelinePurposeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Purpose.\",\"isNullable\":true,\"name\":\"PipelinePurposeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumCapacityL\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of oil or gas that can be passed through a pipeline over a given period of time.\",\"isNullable\":true,\"scale\":8,\"name\":\"PipelineMaximumCapacityL\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumAllowableOperatingPressurePsig\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum pressure at which a pipeline or segment of a pipeline may be operated.\",\"isNullable\":true,\"scale\":8,\"name\":\"PipelineMaximumAllowableOperatingPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineNetworkId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Network.\",\"isNullable\":true,\"name\":\"PipelineNetworkId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"MarketParticipantId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Market Participant.\",\"isNullable\":false,\"name\":\"MarketParticipantId\"}]}}}",
+			"Description": "A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

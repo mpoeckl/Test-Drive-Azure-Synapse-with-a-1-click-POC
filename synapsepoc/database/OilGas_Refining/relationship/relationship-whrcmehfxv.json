@@ -1,0 +1,26 @@
+{
+	"name": "relationship-whrcmehfxv",
+	"properties": {
+		"Name": "relationship-whrcmehfxv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OdorQualityType",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OdorQualityTypeId",
+				"ToColumnName": "OdorQualityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"OdorQualityTypeId\",\"toAttribute\":\"OdorQualityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

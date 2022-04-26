@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xbdctryvwv",
+	"properties": {
+		"Name": "relationship-xbdctryvwv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "Switch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "SwitchId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"Switch.cdm.json/Switch\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"SwitchId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

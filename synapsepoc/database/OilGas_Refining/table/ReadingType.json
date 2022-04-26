@@ -1,0 +1,106 @@
+{
+	"name": "ReadingType",
+	"properties": {
+		"Name": "ReadingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of reading that is recorded or reported for an asset, component or item for a period.\n\nEx:\n- Ambient (Air) Temperature\n- Operating Temperature\n- Humidity\n- Atmospheric Pressure\n- Voltage Level\n- Pressure\n- Water Pressure\n- Water Volume\n- Oil Pressure\n- Oil Volume\n- Gas Volume\n- Gas Pressure\n- Barometric Pressure\n- Sound (decibels)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ReadingType.cdm.json/ReadingType",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeName",
+					"Description": "The name of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ReadingType.cdm.json/ReadingType",
+						"Name": "ReadingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeDescription",
+					"Description": "The description of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ReadingType.cdm.json/ReadingType",
+						"Name": "ReadingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReadingTypeId\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeId\"},\"ReadingTypeName\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeName\"},\"ReadingTypeDescription\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReadingType\",\"path\":\"ReadingType.cdm.json/ReadingType\"},\"description\":\"A type of reading that is recorded or reported for an asset, component or item for a period.\\n\\nEx:\\n- Ambient (Air) Temperature\\n- Operating Temperature\\n- Humidity\\n- Atmospheric Pressure\\n- Voltage Level\\n- Pressure\\n- Water Pressure\\n- Water Volume\\n- Oil Pressure\\n- Oil Volume\\n- Gas Volume\\n- Gas Pressure\\n- Barometric Pressure\\n- Sound (decibels)\",\"primaryKey\":[\"ReadingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Reading Type\",\"isNullable\":true,\"name\":\"ReadingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingType.cdm.json/ReadingType\",\"name\":\"ReadingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Reading Type\",\"isNullable\":true,\"name\":\"ReadingTypeDescription\"}]}}}",
+			"Description": "A type of reading that is recorded or reported for an asset, component or item for a period.\n\nEx:\n- Ambient (Air) Temperature\n- Operating Temperature\n- Humidity\n- Atmospheric Pressure\n- Voltage Level\n- Pressure\n- Water Pressure\n- Water Volume\n- Oil Pressure\n- Oil Volume\n- Gas Volume\n- Gas Pressure\n- Barometric Pressure\n- Sound (decibels)",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ReadingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

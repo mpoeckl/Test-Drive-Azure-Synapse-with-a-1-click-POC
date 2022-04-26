@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqnsxydbjf",
+	"properties": {
+		"Name": "relationship-jqnsxydbjf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AlarmState",
+		"ToTableName": "ComponentReadingAlarm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AlarmStateId",
+				"ToColumnName": "AlarmStateId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AlarmState.cdm.json/AlarmState\",\"toEntity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"joinPairs\":[{\"fromAttribute\":\"AlarmStateId\",\"toAttribute\":\"AlarmStateId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

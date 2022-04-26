@@ -1,0 +1,207 @@
+{
+	"name": "AssetLocation",
+	"properties": {
+		"Name": "AssetLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The specific location of a fixed asset for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LocationTypeId",
+					"Description": "The unique identifier of a Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "LocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the fixed asset is located at this address.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the fixed asset is located at this address.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetLatitude",
+					"Description": "The location north or south in reference to the equator, which is designated at zero (0) degrees. Parallel lines that circle the globe both north and south of the equator. \n\nLatitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "AssetLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AssetLongitude",
+					"Description": "The location east or west in reference to the Prime Meridian, which is designated as zero (0) degrees longitude. The distance between lines of longitude are greater at the equator and smaller at the higher latitudes, intersecting at the earth's North and South Poles. Time zones are correlated to longitude.\n\nLongitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "AssetLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssetLocationNote",
+					"Description": "A note, comment or additional information regarding the asset location.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocation.cdm.json/AssetLocation",
+						"Name": "AssetLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetLocation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetLocation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetId\"},\"LocationTypeId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationId\"},\"AssetLatitude\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLatitude\"},\"AssetLongitude\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLongitude\"},\"PartyId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PartyId\"},\"AssetLocationNote\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetLocation\",\"path\":\"AssetLocation.cdm.json/AssetLocation\"},\"description\":\"The specific location of a fixed asset for the associated period.\",\"primaryKey\":[\"AssetId\",\"LocationTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location Type.\",\"isNullable\":false,\"name\":\"LocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the fixed asset is located at this address.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the fixed asset is located at this address.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The location north or south in reference to the equator, which is designated at zero (0) degrees. Parallel lines that circle the globe both north and south of the equator. \\n\\nLatitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).\",\"isNullable\":true,\"scale\":4,\"name\":\"AssetLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The location east or west in reference to the Prime Meridian, which is designated as zero (0) degrees longitude. The distance between lines of longitude are greater at the equator and smaller at the higher latitudes, intersecting at the earth's North and South Poles. Time zones are correlated to longitude.\\n\\nLongitude is often measured in degrees, minutes, seconds (ddd mm ss), but other formats are also commonly used: gps coordinate (ddd mm.mmmm), decimal degrees (ddd.dddd).\",\"isNullable\":true,\"scale\":4,\"name\":\"AssetLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the asset location.\",\"isNullable\":true,\"name\":\"AssetLocationNote\"}]}}}",
+			"Description": "The specific location of a fixed asset for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetId,LocationTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

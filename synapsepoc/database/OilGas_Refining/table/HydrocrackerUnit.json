@@ -1,0 +1,429 @@
+{
+	"name": "HydrocrackerUnit",
+	"properties": {
+		"Name": "HydrocrackerUnit",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Hydrocracker Unit uses hydrogen to upgrade heavier fractions into lighter, more valuable products.\n\nA hydrocracking unit, or hydrocracker, takes gas oil, which is heavier and has a higher boiling range than distillate fuel oil, and cracks the heavy molecules into distillate and gasoline in the presence of hydrogen and a catalyst. The hydrocracker upgrades low-quality heavy gas oils from the atmospheric or vacuum distillation tower, the fluid catalytic cracker, and the coking units into high-quality, clean-burning jet fuel, diesel, and gasoline.\n\nThe process cracks the high-boiling, high molecular weight hydrocarbons into lower-boiling, lower molecular weight olefinic and aromatic hydrocarbons and then hydrogenates them. Any sulfur and nitrogen present in the hydrocracking feedstock are, to a large extent, also hydrogenated and form gaseous hydrogen sulfide (H2S) and ammonia (NH3) which are subsequently removed. The result is that the hydrocracking products are essentially free of sulfur and nitrogen impurities and consist mostly of paraffinic hydrocarbons.\n\nHydrogen is also used to control the temperature of the reactor-it is fed into the reactor at different points. This keeps the reactor temperature from cooling to the point that cracking will not occur and from rising too high as to jeopardize the safety of the operation.\n\nThere are 4 primary reactions:\nReaction 1: Addition of hydrogen to aromatics converts them into hydrogenated rings. These are then readily cracked using acid catalysts.\nReaction 2: Acid catalyst cracking opens paraffinic rings, breaks larger paraffins into smaller pieces and creates double bonds.\nReaction 3: Addition of hydrogen to olefinic double bonds to obtain paraffins.\nReaction 4: Isomerization of branched and straight-chain paraffins.\n\nNote:\nMany refiners do not have hydrocrackers, but as demand for middle distillates such as jet fuel, kerosene, and diesel increases both in the United States and around the world, refiners may find incentive to build them to increase distillate yield. In the emerging low-sulfur world, the hydrocracker often converts high-sulfur materials, which would end up in marine or boiler fuel, into low-sulfur fuels for vehicles and airplanes. A refinery's ability to upgrade low-value products into high-value products and convert high-sulfur material to low-sulfur material with a secondary unit like a hydrocracker plays a key role in determining its economic fate.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitManufacturerName",
+					"Description": "The name of the hydrocracker unit manufacturer.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitModelNumber",
+					"Description": "The hydrocracker unit model number.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitConstructionCompletedDate",
+					"Description": "The date that the hydrocracker unit construction was completed.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitConstructionCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitFirstOperationDate",
+					"Description": "The first operation date of the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitFirstOperationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitDesignGraphic",
+					"Description": "The design graphic of the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitDesignGraphic"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitHeightMeters",
+					"Description": "The height of the hydrocracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitLengthMeters",
+					"Description": "The length of the hydrocracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitLengthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitWidthMeters",
+					"Description": "The width of the hydrocracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitWidthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitAreaSquareMeters",
+					"Description": "The area of the hydrocracker unit in square meters.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitAreaSquareMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitDesignCapacityMmtpa",
+					"Description": "The hydrocracker unit design capacity in million metric tons per annum.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitDesignCapacityMmtpa"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitNumberOfReactors",
+					"Description": "The number of hydrocracker unit reactors.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitNumberOfReactors"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitCatalystOperatingCycleMonths",
+					"Description": "The operating cycle of the catalysts in the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitCatalystOperatingCycleMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitNumberOfHighPressureSeparators",
+					"Description": "The number of separators in the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitNumberOfHighPressureSeparators"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RecycleGasAmineTreatmentIndicator",
+					"Description": "Hydrocracker utilizes an amine treatment gas recycler.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "RecycleGasAmineTreatmentIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BufferGasCompressorIndicator",
+					"Description": "Hydrocracker integrates a buffer gas compressor.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "BufferGasCompressorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VacuumColumnIndicator",
+					"Description": "Hydrocracker integrates a vacuum column.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "VacuumColumnIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "VacuumFurnaceIndicator",
+					"Description": "Hydrocracker integrates a vacuum furnace.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "VacuumFurnaceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DigitalControlsIndicator",
+					"Description": "Hydrocracker integrates digital controls.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "DigitalControlsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AnalyticReportingIndicator",
+					"Description": "Hydrocracker integrates analytic reporting.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "AnalyticReportingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitConfigurationTypeId",
+					"Description": "The unique identifier of a hydrocracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HeatExchangerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitNote",
+					"Description": "A note, comment or additional information regarding the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnit.cdm.json/HydrocrackerUnit",
+						"Name": "HydrocrackerUnitNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnit",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnit",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitId\"},\"HydrocrackerUnitManufacturerName\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitManufacturerName\"},\"HydrocrackerUnitModelNumber\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitModelNumber\"},\"HydrocrackerUnitConstructionCompletedDate\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitConstructionCompletedDate\"},\"HydrocrackerUnitFirstOperationDate\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitFirstOperationDate\"},\"HydrocrackerUnitDesignGraphic\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitDesignGraphic\"},\"HydrocrackerUnitHeightMeters\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitHeightMeters\"},\"HydrocrackerUnitLengthMeters\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitLengthMeters\"},\"HydrocrackerUnitWidthMeters\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitWidthMeters\"},\"HydrocrackerUnitAreaSquareMeters\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitAreaSquareMeters\"},\"HydrocrackerUnitDesignCapacityMmtpa\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitDesignCapacityMmtpa\"},\"HydrocrackerUnitNumberOfReactors\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNumberOfReactors\"},\"HydrocrackerUnitCatalystOperatingCycleMonths\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitCatalystOperatingCycleMonths\"},\"HydrocrackerUnitNumberOfHighPressureSeparators\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNumberOfHighPressureSeparators\"},\"RecycleGasAmineTreatmentIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"RecycleGasAmineTreatmentIndicator\"},\"BufferGasCompressorIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"BufferGasCompressorIndicator\"},\"VacuumColumnIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"VacuumColumnIndicator\"},\"VacuumFurnaceIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"VacuumFurnaceIndicator\"},\"DigitalControlsIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"DigitalControlsIndicator\"},\"AnalyticReportingIndicator\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"AnalyticReportingIndicator\"},\"HydrocrackerUnitConfigurationTypeId\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitConfigurationTypeId\"},\"HeatExchangerId\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HeatExchangerId\"},\"HydrocrackerUnitNote\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnit\",\"path\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\"},\"description\":\"The Hydrocracker Unit uses hydrogen to upgrade heavier fractions into lighter, more valuable products.\\n\\nA hydrocracking unit, or hydrocracker, takes gas oil, which is heavier and has a higher boiling range than distillate fuel oil, and cracks the heavy molecules into distillate and gasoline in the presence of hydrogen and a catalyst. The hydrocracker upgrades low-quality heavy gas oils from the atmospheric or vacuum distillation tower, the fluid catalytic cracker, and the coking units into high-quality, clean-burning jet fuel, diesel, and gasoline.\\n\\nThe process cracks the high-boiling, high molecular weight hydrocarbons into lower-boiling, lower molecular weight olefinic and aromatic hydrocarbons and then hydrogenates them. Any sulfur and nitrogen present in the hydrocracking feedstock are, to a large extent, also hydrogenated and form gaseous hydrogen sulfide (H2S) and ammonia (NH3) which are subsequently removed. The result is that the hydrocracking products are essentially free of sulfur and nitrogen impurities and consist mostly of paraffinic hydrocarbons.\\n\\nHydrogen is also used to control the temperature of the reactor-it is fed into the reactor at different points. This keeps the reactor temperature from cooling to the point that cracking will not occur and from rising too high as to jeopardize the safety of the operation.\\n\\nThere are 4 primary reactions:\\nReaction 1: Addition of hydrogen to aromatics converts them into hydrogenated rings. These are then readily cracked using acid catalysts.\\nReaction 2: Acid catalyst cracking opens paraffinic rings, breaks larger paraffins into smaller pieces and creates double bonds.\\nReaction 3: Addition of hydrogen to olefinic double bonds to obtain paraffins.\\nReaction 4: Isomerization of branched and straight-chain paraffins.\\n\\nNote:\\nMany refiners do not have hydrocrackers, but as demand for middle distillates such as jet fuel, kerosene, and diesel increases both in the United States and around the world, refiners may find incentive to build them to increase distillate yield. In the emerging low-sulfur world, the hydrocracker often converts high-sulfur materials, which would end up in marine or boiler fuel, into low-sulfur fuels for vehicles and airplanes. A refinery's ability to upgrade low-value products into high-value products and convert high-sulfur material to low-sulfur material with a secondary unit like a hydrocracker plays a key role in determining its economic fate.\",\"primaryKey\":[\"HydrocrackerUnitId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the hydrocracker unit manufacturer.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitManufacturerName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The hydrocracker unit model number.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitConstructionCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the hydrocracker unit construction was completed.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitConstructionCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitFirstOperationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operation date of the hydrocracker unit.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitFirstOperationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitDesignGraphic\"},\"dataType\":\"binary\",\"description\":\"The design graphic of the hydrocracker unit.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitDesignGraphic\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the hydrocracker unit in meters.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitLengthMeters\"},\"dataType\":\"integer\",\"description\":\"The length of the hydrocracker unit in meters.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitLengthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitWidthMeters\"},\"dataType\":\"integer\",\"description\":\"The width of the hydrocracker unit in meters.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitWidthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitAreaSquareMeters\"},\"dataType\":\"integer\",\"description\":\"The area of the hydrocracker unit in square meters.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitAreaSquareMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitDesignCapacityMmtpa\"},\"dataType\":\"integer\",\"description\":\"The hydrocracker unit design capacity in million metric tons per annum.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitDesignCapacityMmtpa\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNumberOfReactors\"},\"dataType\":\"integer\",\"description\":\"The number of hydrocracker unit reactors.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitNumberOfReactors\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitCatalystOperatingCycleMonths\"},\"dataType\":\"integer\",\"description\":\"The operating cycle of the catalysts in the hydrocracker unit.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitCatalystOperatingCycleMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNumberOfHighPressureSeparators\"},\"dataType\":\"integer\",\"description\":\"The number of separators in the hydrocracker unit.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitNumberOfHighPressureSeparators\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"RecycleGasAmineTreatmentIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker utilizes an amine treatment gas recycler.\",\"isNullable\":true,\"name\":\"RecycleGasAmineTreatmentIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"BufferGasCompressorIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker integrates a buffer gas compressor.\",\"isNullable\":true,\"name\":\"BufferGasCompressorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"VacuumColumnIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker integrates a vacuum column.\",\"isNullable\":true,\"name\":\"VacuumColumnIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"VacuumFurnaceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker integrates a vacuum furnace.\",\"isNullable\":true,\"name\":\"VacuumFurnaceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"DigitalControlsIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker integrates digital controls.\",\"isNullable\":true,\"name\":\"DigitalControlsIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"AnalyticReportingIndicator\"},\"dataType\":\"boolean\",\"description\":\"Hydrocracker integrates analytic reporting.\",\"isNullable\":true,\"name\":\"AnalyticReportingIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrocracker unit configuration type.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HeatExchangerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"HeatExchangerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnit.cdm.json/HydrocrackerUnit\",\"name\":\"HydrocrackerUnitNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the hydrocracker unit.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitNote\"}]}}}",
+			"Description": "The Hydrocracker Unit uses hydrogen to upgrade heavier fractions into lighter, more valuable products.\n\nA hydrocracking unit, or hydrocracker, takes gas oil, which is heavier and has a higher boiling range than distillate fuel oil, and cracks the heavy molecules into distillate and gasoline in the presence of hydrogen and a catalyst. The hydrocracker upgrades low-quality heavy gas oils from the atmospheric or vacuum distillation tower, the fluid catalytic cracker, and the coking units into high-quality, clean-burning jet fuel, diesel, and gasoline.\n\nThe process cracks the high-boiling, high molecular weight hydrocarbons into lower-boiling, lower molecular weight olefinic and aromatic hydrocarbons and then hydrogenates them. Any sulfur and nitrogen present in the hydrocracking feedstock are, to a large extent, also hydrogenated and form gaseous hydrogen sulfide (H2S) and ammonia (NH3) which are subsequently removed. The result is that the hydrocracking products are essentially free of sulfur and nitrogen impurities and consist mostly of paraffinic hydrocarbons.\n\nHydrogen is also used to control the temperature of the reactor-it is fed into the reactor at different points. This keeps the reactor temperature from cooling to the point that cracking will not occur and from rising too high as to jeopardize the safety of the operation.\n\nThere are 4 primary reactions:\nReaction 1: Addition of hydrogen to aromatics converts them into hydrogenated rings. These are then readily cracked using acid catalysts.\nReaction 2: Acid catalyst cracking opens paraffinic rings, breaks larger paraffins into smaller pieces and creates double bonds.\nReaction 3: Addition of hydrogen to olefinic double bonds to obtain paraffins.\nReaction 4: Isomerization of branched and straight-chain paraffins.\n\nNote:\nMany refiners do not have hydrocrackers, but as demand for middle distillates such as jet fuel, kerosene, and diesel increases both in the United States and around the world, refiners may find incentive to build them to increase distillate yield. In the emerging low-sulfur world, the hydrocracker often converts high-sulfur materials, which would end up in marine or boiler fuel, into low-sulfur fuels for vehicles and airplanes. A refinery's ability to upgrade low-value products into high-value products and convert high-sulfur material to low-sulfur material with a secondary unit like a hydrocracker plays a key role in determining its economic fate.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

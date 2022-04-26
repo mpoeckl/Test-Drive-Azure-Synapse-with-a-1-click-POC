@@ -1,0 +1,26 @@
+{
+	"name": "relationship-leaqvdycar",
+	"properties": {
+		"Name": "relationship-leaqvdycar",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeterType",
+		"ToTableName": "MeterModel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeterTypeId",
+				"ToColumnName": "MeterTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeterType.cdm.json/MeterType\",\"toEntity\":\"MeterModel.cdm.json/MeterModel\",\"joinPairs\":[{\"fromAttribute\":\"MeterTypeId\",\"toAttribute\":\"MeterTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

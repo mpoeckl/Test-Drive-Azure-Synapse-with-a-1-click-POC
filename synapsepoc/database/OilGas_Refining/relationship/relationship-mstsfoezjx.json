@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mstsfoezjx",
+	"properties": {
+		"Name": "relationship-mstsfoezjx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CrudeOilType",
+		"ToTableName": "RefineryProcessSourceCrudeOil",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CrudeOilTypeId",
+				"ToColumnName": "CrudeOilTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"toEntity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"joinPairs\":[{\"fromAttribute\":\"CrudeOilTypeId\",\"toAttribute\":\"CrudeOilTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

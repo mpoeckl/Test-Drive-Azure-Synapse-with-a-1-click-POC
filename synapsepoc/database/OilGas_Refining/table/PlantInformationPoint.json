@@ -1,0 +1,155 @@
+{
+	"name": "PlantInformationPoint",
+	"properties": {
+		"Name": "PlantInformationPoint",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A point in a network, plant or other configurable system as defined by a plant information system, such as SCADA.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PiPointId",
+					"Description": "The unique identifier of a PI Point.",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "PiPointId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PiPointName",
+					"Description": "The name of a PI Point.",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "PiPointName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PiPointDescription",
+					"Description": "The description of a PI Point.",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "PiPointDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PiNode",
+					"Description": "The unique identifier of the PI Point is known as the PI Node in many third party software packages. This \"key\" is an alphanumeric string which may or may not have meaning implied to its structure.",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "PiNode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "PlantInformationPoint.cdm.json/PlantInformationPoint",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PlantInformationPoint",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PlantInformationPoint",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PiPointId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointId\"},\"PiPointName\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointName\"},\"PiPointDescription\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointDescription\"},\"PiNode\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiNode\"},\"ComponentId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ReadingTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PlantInformationPoint\",\"path\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\"},\"description\":\"A point in a network, plant or other configurable system as defined by a plant information system, such as SCADA.\",\"primaryKey\":[\"PiPointId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a PI Point.\",\"isNullable\":false,\"name\":\"PiPointId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a PI Point.\",\"isNullable\":true,\"name\":\"PiPointName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a PI Point.\",\"isNullable\":true,\"name\":\"PiPointDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiNode\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The unique identifier of the PI Point is known as the PI Node in many third party software packages. This \\\"key\\\" is an alphanumeric string which may or may not have meaning implied to its structure.\",\"isNullable\":true,\"name\":\"PiNode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":true,\"name\":\"ReadingTypeId\"}]}}}",
+			"Description": "A point in a network, plant or other configurable system as defined by a plant information system, such as SCADA.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "PiPointId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ccmvivexze",
+	"properties": {
+		"Name": "relationship-ccmvivexze",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HydrocrackerUnitComponent",
+		"ToTableName": "HydrocrackerUnitComponentConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HydrocrackerUnitComponentId",
+				"ToColumnName": "HydrocrackerUnitComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"toEntity\":\"HydrocrackerUnitComponentConfiguration.cdm.json/HydrocrackerUnitComponentConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"HydrocrackerUnitComponentId\",\"toAttribute\":\"HydrocrackerUnitComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ComponentRefineryTestType",
+	"properties": {
+		"Name": "ComponentRefineryTestType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of component refinery test.\n\nEx:\n- Pour Point C\n- Water % wt.\n- Aromatics % st\n- Specific gravity\n- Viscosity index\n- Ash Content\n- Flash point\n- Sulfur content",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentRefineryTestTypeId",
+					"Description": "The unique identifier of a Component Refinery Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRefineryTestType.cdm.json/ComponentRefineryTestType",
+						"Name": "ComponentRefineryTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRefineryTestTypeName",
+					"Description": "The name of a Component Refinery Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRefineryTestType.cdm.json/ComponentRefineryTestType",
+						"Name": "ComponentRefineryTestTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRefineryTestTypeDescription",
+					"Description": "The description of a Component Refinery Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRefineryTestType.cdm.json/ComponentRefineryTestType",
+						"Name": "ComponentRefineryTestTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRefineryTestType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRefineryTestType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentRefineryTestTypeId\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeId\"},\"ComponentRefineryTestTypeName\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeName\"},\"ComponentRefineryTestTypeDescription\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentRefineryTestType\",\"path\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\"},\"description\":\"The type of component refinery test.\\n\\nEx:\\n- Pour Point C\\n- Water % wt.\\n- Aromatics % st\\n- Specific gravity\\n- Viscosity index\\n- Ash Content\\n- Flash point\\n- Sulfur content\",\"primaryKey\":[\"ComponentRefineryTestTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Refinery Test Type.\",\"isNullable\":false,\"name\":\"ComponentRefineryTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Refinery Test Type.\",\"isNullable\":true,\"name\":\"ComponentRefineryTestTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Refinery Test Type.\",\"isNullable\":true,\"name\":\"ComponentRefineryTestTypeDescription\"}]}}}",
+			"Description": "The type of component refinery test.\n\nEx:\n- Pour Point C\n- Water % wt.\n- Aromatics % st\n- Specific gravity\n- Viscosity index\n- Ash Content\n- Flash point\n- Sulfur content",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "ComponentRefineryTestTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

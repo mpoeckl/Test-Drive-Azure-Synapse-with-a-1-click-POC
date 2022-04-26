@@ -1,0 +1,106 @@
+{
+	"name": "ValveRating",
+	"properties": {
+		"Name": "ValveRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The valve rating associated with the valve.\n\nEx:\n- 7 w.c.\n- 8-10 psig\n- 20-25 psig\n- 50-55 psig\n- 70-76 psig\n- 70-95 psig\n- 125 psig or less\n- 175 psig or less\n- 215 psig or less\n- 250 or less\n- 400 psig or less\n- 450 psig\n- 500 psig\n- 550 psig\n- 600 psig\n- 650 psig \n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveRatingId",
+					"Description": "The unique identifier of a valve rating.",
+					"BaseAttributeReference": {
+						"Entity": "ValveRating.cdm.json/ValveRating",
+						"Name": "ValveRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveRatingName",
+					"Description": "The name of a valve rating.",
+					"BaseAttributeReference": {
+						"Entity": "ValveRating.cdm.json/ValveRating",
+						"Name": "ValveRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveRatingDescription",
+					"Description": "The description of a valve rating.",
+					"BaseAttributeReference": {
+						"Entity": "ValveRating.cdm.json/ValveRating",
+						"Name": "ValveRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveRating",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveRatingId\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingId\"},\"ValveRatingName\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingName\"},\"ValveRatingDescription\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveRating\",\"path\":\"ValveRating.cdm.json/ValveRating\"},\"description\":\"The valve rating associated with the valve.\\n\\nEx:\\n- 7 w.c.\\n- 8-10 psig\\n- 20-25 psig\\n- 50-55 psig\\n- 70-76 psig\\n- 70-95 psig\\n- 125 psig or less\\n- 175 psig or less\\n- 215 psig or less\\n- 250 or less\\n- 400 psig or less\\n- 450 psig\\n- 500 psig\\n- 550 psig\\n- 600 psig\\n- 650 psig \\n- Unknown\",\"primaryKey\":[\"ValveRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve rating.\",\"isNullable\":false,\"name\":\"ValveRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a valve rating.\",\"isNullable\":true,\"name\":\"ValveRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a valve rating.\",\"isNullable\":true,\"name\":\"ValveRatingDescription\"}]}}}",
+			"Description": "The valve rating associated with the valve.\n\nEx:\n- 7 w.c.\n- 8-10 psig\n- 20-25 psig\n- 50-55 psig\n- 70-76 psig\n- 70-95 psig\n- 125 psig or less\n- 175 psig or less\n- 215 psig or less\n- 250 or less\n- 400 psig or less\n- 450 psig\n- 500 psig\n- 550 psig\n- 600 psig\n- 650 psig \n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveRatingId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

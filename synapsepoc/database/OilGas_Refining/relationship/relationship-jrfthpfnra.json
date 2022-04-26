@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jrfthpfnra",
+	"properties": {
+		"Name": "relationship-jrfthpfnra",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "RefineryProcessFeedstock",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

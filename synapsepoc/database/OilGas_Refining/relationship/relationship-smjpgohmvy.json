@@ -1,0 +1,26 @@
+{
+	"name": "relationship-smjpgohmvy",
+	"properties": {
+		"Name": "relationship-smjpgohmvy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessComponentEventType",
+		"ToTableName": "RefineryProcessComponentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessComponentEventTypeId",
+				"ToColumnName": "RefineryProcessComponentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"toEntity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessComponentEventTypeId\",\"toAttribute\":\"RefineryProcessComponentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

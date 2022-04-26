@@ -1,0 +1,377 @@
+{
+	"name": "Pump",
+	"properties": {
+		"Name": "Pump",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A device that is used to raise, transfer, deliver or compress fluids or that attenuates gases by suction, pressure or both.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PumpDescription",
+					"Description": "The description of the pump.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CloseCoupledPumpIndicator",
+					"Description": "Indicates that the pump impeller is mounted directly on the motor shaft. There is no separate bearing case.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "CloseCoupledPumpIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DoubleSuctionPumpIndicator",
+					"Description": "Indicates that the rotor is suspended between two bearings with the fluid entering on either side of the impeller, which is used at higher capacities.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "DoubleSuctionPumpIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SelfPrimingPumpIndicator",
+					"Description": "The ability of a pump to purge air from its casing and suction hose, creating a partial vacuum and allowing water to flow freely into the pump. Most smaller portable centrifugal pumps (2\" to 4\" diameter) require an initial manual priming before operation is begun and then operate as self-priming.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "SelfPrimingPumpIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SubmersiblePumpIndicator",
+					"Description": "A centrifugal pump designed to operate within the water source being pumped, thereby eliminating the suction lift limitations common to other types.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "SubmersiblePumpIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CircularCasingPumpIndicator",
+					"Description": "Indicates a circular casing, which is used with centrifugal pumps that circulate fluid rather than build head or pressure.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "CircularCasingPumpIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PumpTypeId",
+					"Description": "The unique identifier of a Pump Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CentrifugalPumpTypeId",
+					"Description": "The unique identifier of a centrifugal pump type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "CentrifugalPumpTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpServiceTypeId",
+					"Description": "The unique identifier of a pump service type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BufferFluidTypeId",
+					"Description": "The unique identifier of a pump buffer fluid type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "BufferFluidTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpRotationDirectionId",
+					"Description": "The unique identifier of a pump rotation direction type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpRotationDirectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerCategoryId",
+					"Description": "The unique identifier of an impeller category.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "ImpellerCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpMotorTypeId",
+					"Description": "The unique identifier of a pump motor type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpMotorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpApplicationTypeId",
+					"Description": "The unique identifier of a pump application type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpApplicationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpDriveTypeId",
+					"Description": "The unique identifier of a pump drive type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpDriveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpBearingTypeId",
+					"Description": "The unique identifier of a type of pump bearing.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PumpBearingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FuelTypeId",
+					"Description": "The unique identifier of a Fuel Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "FuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationId",
+					"Description": "The unique identifier of a Pipeline Station.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "PipelineStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerSystemTypeId",
+					"Description": "The unique identifier of an impeller type.",
+					"BaseAttributeReference": {
+						"Entity": "Pump.cdm.json/Pump",
+						"Name": "ImpellerSystemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pump",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pump",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpId\"},\"PumpDescription\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpDescription\"},\"CloseCoupledPumpIndicator\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CloseCoupledPumpIndicator\"},\"DoubleSuctionPumpIndicator\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"DoubleSuctionPumpIndicator\"},\"SelfPrimingPumpIndicator\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"SelfPrimingPumpIndicator\"},\"SubmersiblePumpIndicator\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"SubmersiblePumpIndicator\"},\"CircularCasingPumpIndicator\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CircularCasingPumpIndicator\"},\"PumpTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpTypeId\"},\"CentrifugalPumpTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CentrifugalPumpTypeId\"},\"PumpServiceTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpServiceTypeId\"},\"BufferFluidTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"BufferFluidTypeId\"},\"PumpRotationDirectionId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpRotationDirectionId\"},\"ImpellerCategoryId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"ImpellerCategoryId\"},\"PumpMotorTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpMotorTypeId\"},\"PumpApplicationTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpApplicationTypeId\"},\"PumpDriveTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpDriveTypeId\"},\"PumpBearingTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpBearingTypeId\"},\"FuelTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"FuelTypeId\"},\"PipelineStationId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PipelineStationId\"},\"ImpellerSystemTypeId\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"ImpellerSystemTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Pump\",\"path\":\"Pump.cdm.json/Pump\"},\"description\":\"A device that is used to raise, transfer, deliver or compress fluids or that attenuates gases by suction, pressure or both.\",\"primaryKey\":[\"PumpId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PumpId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the pump.\",\"isNullable\":true,\"name\":\"PumpDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CloseCoupledPumpIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the pump impeller is mounted directly on the motor shaft. There is no separate bearing case.\",\"isNullable\":true,\"name\":\"CloseCoupledPumpIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"DoubleSuctionPumpIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the rotor is suspended between two bearings with the fluid entering on either side of the impeller, which is used at higher capacities.\",\"isNullable\":true,\"name\":\"DoubleSuctionPumpIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"SelfPrimingPumpIndicator\"},\"dataType\":\"boolean\",\"description\":\"The ability of a pump to purge air from its casing and suction hose, creating a partial vacuum and allowing water to flow freely into the pump. Most smaller portable centrifugal pumps (2\\\" to 4\\\" diameter) require an initial manual priming before operation is begun and then operate as self-priming.\",\"isNullable\":true,\"name\":\"SelfPrimingPumpIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"SubmersiblePumpIndicator\"},\"dataType\":\"boolean\",\"description\":\"A centrifugal pump designed to operate within the water source being pumped, thereby eliminating the suction lift limitations common to other types.\",\"isNullable\":true,\"name\":\"SubmersiblePumpIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CircularCasingPumpIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a circular casing, which is used with centrifugal pumps that circulate fluid rather than build head or pressure.\",\"isNullable\":true,\"name\":\"CircularCasingPumpIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pump Type.\",\"isNullable\":true,\"name\":\"PumpTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"CentrifugalPumpTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a centrifugal pump type.\",\"isNullable\":true,\"name\":\"CentrifugalPumpTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump service type.\",\"isNullable\":true,\"name\":\"PumpServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"BufferFluidTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump buffer fluid type.\",\"isNullable\":true,\"name\":\"BufferFluidTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpRotationDirectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump rotation direction type.\",\"isNullable\":true,\"name\":\"PumpRotationDirectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"ImpellerCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an impeller category.\",\"isNullable\":true,\"name\":\"ImpellerCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpMotorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump motor type.\",\"isNullable\":true,\"name\":\"PumpMotorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpApplicationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump application type.\",\"isNullable\":true,\"name\":\"PumpApplicationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpDriveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump drive type.\",\"isNullable\":true,\"name\":\"PumpDriveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PumpBearingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a type of pump bearing.\",\"isNullable\":true,\"name\":\"PumpBearingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"FuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Fuel Type.\",\"isNullable\":true,\"name\":\"FuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"PipelineStationId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline Station.\",\"isNullable\":true,\"name\":\"PipelineStationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pump.cdm.json/Pump\",\"name\":\"ImpellerSystemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an impeller type.\",\"isNullable\":true,\"name\":\"ImpellerSystemTypeId\"}]}}}",
+			"Description": "A device that is used to raise, transfer, deliver or compress fluids or that attenuates gases by suction, pressure or both.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

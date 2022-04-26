@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rsvdkxwosn",
+	"properties": {
+		"Name": "relationship-rsvdkxwosn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ProtocolType",
+		"ToTableName": "Protocol",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProtocolTypeId",
+				"ToColumnName": "ProtocolTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ProtocolType.cdm.json/ProtocolType\",\"toEntity\":\"Protocol.cdm.json/Protocol\",\"joinPairs\":[{\"fromAttribute\":\"ProtocolTypeId\",\"toAttribute\":\"ProtocolTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

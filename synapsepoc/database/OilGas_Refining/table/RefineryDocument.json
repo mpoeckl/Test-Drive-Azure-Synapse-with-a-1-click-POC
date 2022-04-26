@@ -1,0 +1,105 @@
+{
+	"name": "RefineryDocument",
+	"properties": {
+		"Name": "RefineryDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Document(s) related to the refinery.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryDocument.cdm.json/RefineryDocument",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryDocument.cdm.json/RefineryDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryDocumentNote",
+					"Description": "A note, comment or additional information regarding the refinery document.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryDocument.cdm.json/RefineryDocument",
+						"Name": "RefineryDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryDocument",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryDocument",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"RefineryId\"},\"DocumentId\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"DocumentId\"},\"RefineryDocumentNote\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"RefineryDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryDocument\",\"path\":\"RefineryDocument.cdm.json/RefineryDocument\"},\"description\":\"Document(s) related to the refinery.\",\"primaryKey\":[\"RefineryId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"name\":\"RefineryDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery document.\",\"isNullable\":true,\"name\":\"RefineryDocumentNote\"}]}}}",
+			"Description": "Document(s) related to the refinery.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,DocumentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

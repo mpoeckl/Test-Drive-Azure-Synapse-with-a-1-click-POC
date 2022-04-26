@@ -1,0 +1,139 @@
+{
+	"name": "FluidCatalyticCrackerUnitDistillationTower",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitDistillationTower",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The distillation column(s) integrated into the FCCU.\n\nThe reaction product vapors (at 535 °C and a pressure of 1.72 barg) flow from the top of the reactor to the bottom section of the distillation column (commonly referred to as the main fractionator) where they are distilled into the FCC end products of cracked petroleum naphtha, fuel oil, and offgas. After further processing for removal of sulfur compounds, the cracked naphtha becomes a high-octane component of the refinery's blended gasolines.\n\nThe main fractionator offgas is sent to what is called a gas recovery unit where it is separated into butanes and butylenes, propane and propylene, and lower molecular weight gases (hydrogen, methane, ethylene and ethane). Some FCC gas recovery units may also separate out some of the ethane and ethylene.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower",
+						"Name": "DistillationTowerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitDistillationColumnNote",
+					"Description": "A note, comment or additional information regarding the fluid catalytic cracker unit distillation column (tower).",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower",
+						"Name": "FluidCatalyticCrackerUnitDistillationColumnNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitDistillationTower",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitDistillationTower",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"DistillationTowerId\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"DistillationTowerId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodEndTimestamp\"},\"FluidCatalyticCrackerUnitDistillationColumnNote\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitDistillationColumnNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitDistillationTower\",\"path\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\"},\"description\":\"The distillation column(s) integrated into the FCCU.\\n\\nThe reaction product vapors (at 535 °C and a pressure of 1.72 barg) flow from the top of the reactor to the bottom section of the distillation column (commonly referred to as the main fractionator) where they are distilled into the FCC end products of cracked petroleum naphtha, fuel oil, and offgas. After further processing for removal of sulfur compounds, the cracked naphtha becomes a high-octane component of the refinery's blended gasolines.\\n\\nThe main fractionator offgas is sent to what is called a gas recovery unit where it is separated into butanes and butylenes, propane and propylene, and lower molecular weight gases (hydrogen, methane, ethylene and ethane). Some FCC gas recovery units may also separate out some of the ethane and ethylene.\",\"primaryKey\":[\"FluidCatalyticCrackerUnitId\",\"DistillationTowerId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"DistillationTowerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"DistillationTowerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitDistillationColumnNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the fluid catalytic cracker unit distillation column (tower).\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitDistillationColumnNote\"}]}}}",
+			"Description": "The distillation column(s) integrated into the FCCU.\n\nThe reaction product vapors (at 535 °C and a pressure of 1.72 barg) flow from the top of the reactor to the bottom section of the distillation column (commonly referred to as the main fractionator) where they are distilled into the FCC end products of cracked petroleum naphtha, fuel oil, and offgas. After further processing for removal of sulfur compounds, the cracked naphtha becomes a high-octane component of the refinery's blended gasolines.\n\nThe main fractionator offgas is sent to what is called a gas recovery unit where it is separated into butanes and butylenes, propane and propylene, and lower molecular weight gases (hydrogen, methane, ethylene and ethane). Some FCC gas recovery units may also separate out some of the ethane and ethylene.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitId,DistillationTowerId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

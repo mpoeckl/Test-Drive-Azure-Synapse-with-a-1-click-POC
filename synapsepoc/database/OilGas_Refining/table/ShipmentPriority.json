@@ -1,0 +1,106 @@
+{
+	"name": "ShipmentPriority",
+	"properties": {
+		"Name": "ShipmentPriority",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The priority assigned to the associated Shipment.\n\nEx:\n- Expedite\n- Standard",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentPriorityId",
+					"Description": "The unique identifier of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPriorityName",
+					"Description": "The name of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentPriorityDescription",
+					"Description": "The description of a Shipment Priority.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentPriority.cdm.json/ShipmentPriority",
+						"Name": "ShipmentPriorityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentPriority",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentPriority",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentPriorityId\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityId\"},\"ShipmentPriorityName\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityName\"},\"ShipmentPriorityDescription\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentPriority\",\"path\":\"ShipmentPriority.cdm.json/ShipmentPriority\"},\"description\":\"The priority assigned to the associated Shipment.\\n\\nEx:\\n- Expedite\\n- Standard\",\"primaryKey\":[\"ShipmentPriorityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Priority.\",\"isNullable\":false,\"name\":\"ShipmentPriorityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Shipment Priority.\",\"isNullable\":true,\"name\":\"ShipmentPriorityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Shipment Priority.\",\"isNullable\":true,\"name\":\"ShipmentPriorityDescription\"}]}}}",
+			"Description": "The priority assigned to the associated Shipment.\n\nEx:\n- Expedite\n- Standard",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentPriorityId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

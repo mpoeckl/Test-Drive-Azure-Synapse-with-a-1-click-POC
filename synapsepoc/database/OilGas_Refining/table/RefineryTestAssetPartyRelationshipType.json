@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestAssetPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryTestAssetPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the refinery test asset party relationship.\n\nEx:\n- Operated-by Party\n- Reported-to Party\n- Ordered-by Party\n- Bill-to Party\n- Paid-by Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestAssetPartyRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test asset party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType",
+						"Name": "RefineryTestAssetPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestAssetPartyRelationshipTypeName",
+					"Description": "The name of a refinery test asset party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType",
+						"Name": "RefineryTestAssetPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestAssetPartyRelationshipTypeDescription",
+					"Description": "The description of a refinery test asset party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType",
+						"Name": "RefineryTestAssetPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestAssetPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestAssetPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestAssetPartyRelationshipTypeId\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeId\"},\"RefineryTestAssetPartyRelationshipTypeName\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeName\"},\"RefineryTestAssetPartyRelationshipTypeDescription\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestAssetPartyRelationshipType\",\"path\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\"},\"description\":\"The nature of the refinery test asset party relationship.\\n\\nEx:\\n- Operated-by Party\\n- Reported-to Party\\n- Ordered-by Party\\n- Bill-to Party\\n- Paid-by Party\",\"primaryKey\":[\"RefineryTestAssetPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test asset party relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestAssetPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test asset party relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestAssetPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"name\":\"RefineryTestAssetPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test asset party relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestAssetPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the refinery test asset party relationship.\n\nEx:\n- Operated-by Party\n- Reported-to Party\n- Ordered-by Party\n- Bill-to Party\n- Paid-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestAssetPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

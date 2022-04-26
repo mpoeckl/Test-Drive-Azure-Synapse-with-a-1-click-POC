@@ -1,0 +1,171 @@
+{
+	"name": "LogMeanTemperatureDifference",
+	"properties": {
+		"Name": "LogMeanTemperatureDifference",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The heat exchanger log mean temperature difference recorded for the associated period.\n\nThe driving temperature across the heat transfer surface varies with position, but an appropriate mean temperature can be defined. In most simple systems this is the \"log mean temperature difference\" (LMTD). Sometimes direct knowledge of the LMTD is not available and the NTU method is used.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "HeatExchangerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "InputStreamTemperatureC",
+					"Description": "The input stream temperature of the heat exchanger in C.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "InputStreamTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OutputStreamTemperatureC",
+					"Description": "The output stream temperature of the heat exchanger in C.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "OutputStreamTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LogMeanTemperatureDifferenceC",
+					"Description": "The log mean temperature different between the input and output stream of the heat exchanger for the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "LogMeanTemperatureDifferenceC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LogMeanTemperatureDifferenceNote",
+					"Description": "A note, comment or additional information regarding the log mean temperature difference.",
+					"BaseAttributeReference": {
+						"Entity": "LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference",
+						"Name": "LogMeanTemperatureDifferenceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/LogMeanTemperatureDifference",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/LogMeanTemperatureDifference",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerId\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"HeatExchangerId\"},\"PeriodStartTimestamp\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"PeriodEndTimestamp\"},\"InputStreamTemperatureC\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"InputStreamTemperatureC\"},\"OutputStreamTemperatureC\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"OutputStreamTemperatureC\"},\"LogMeanTemperatureDifferenceC\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"LogMeanTemperatureDifferenceC\"},\"LogMeanTemperatureDifferenceNote\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"LogMeanTemperatureDifferenceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LogMeanTemperatureDifference\",\"path\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\"},\"description\":\"The heat exchanger log mean temperature difference recorded for the associated period.\\n\\nThe driving temperature across the heat transfer surface varies with position, but an appropriate mean temperature can be defined. In most simple systems this is the \\\"log mean temperature difference\\\" (LMTD). Sometimes direct knowledge of the LMTD is not available and the NTU method is used.\",\"primaryKey\":[\"HeatExchangerId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"HeatExchangerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HeatExchangerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"InputStreamTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The input stream temperature of the heat exchanger in C.\",\"isNullable\":true,\"name\":\"InputStreamTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"OutputStreamTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The output stream temperature of the heat exchanger in C.\",\"isNullable\":true,\"name\":\"OutputStreamTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"LogMeanTemperatureDifferenceC\"},\"dataType\":\"integer\",\"description\":\"The log mean temperature different between the input and output stream of the heat exchanger for the associated period.\",\"isNullable\":true,\"name\":\"LogMeanTemperatureDifferenceC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"name\":\"LogMeanTemperatureDifferenceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the log mean temperature difference.\",\"isNullable\":true,\"name\":\"LogMeanTemperatureDifferenceNote\"}]}}}",
+			"Description": "The heat exchanger log mean temperature difference recorded for the associated period.\n\nThe driving temperature across the heat transfer surface varies with position, but an appropriate mean temperature can be defined. In most simple systems this is the \"log mean temperature difference\" (LMTD). Sometimes direct knowledge of the LMTD is not available and the NTU method is used.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

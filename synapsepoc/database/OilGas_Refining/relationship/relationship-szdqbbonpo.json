@@ -1,0 +1,26 @@
+{
+	"name": "relationship-szdqbbonpo",
+	"properties": {
+		"Name": "relationship-szdqbbonpo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "RefiningComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

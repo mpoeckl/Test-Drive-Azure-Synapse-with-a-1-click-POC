@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xhysaldaos",
+	"properties": {
+		"Name": "relationship-xhysaldaos",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTest",
+		"ToTableName": "CrudeOilComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestId",
+				"ToColumnName": "RefineryTestId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"toEntity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestId\",\"toAttribute\":\"RefineryTestId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

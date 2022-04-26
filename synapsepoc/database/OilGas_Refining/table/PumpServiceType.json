@@ -1,0 +1,106 @@
+{
+	"name": "PumpServiceType",
+	"properties": {
+		"Name": "PumpServiceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of service associated with the pump.\n\nEx:\n-  High pressure \n-  Common low pressure booster \n-  Low pressure booster to HPP \n-  2nd pass \n-  3rd stage \n-  3rd stage booster \n-  4th stage \n-  ERD booster\n-  Seawater intake \n-  Ultrafiltration backwash \n-  Ultrafiltration feed\n-  Low pressure booster\n-  CIP",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpServiceTypeId",
+					"Description": "The unique identifier of a pump service type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpServiceType.cdm.json/PumpServiceType",
+						"Name": "PumpServiceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpServiceTypeName",
+					"Description": "The name of a pump service type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpServiceType.cdm.json/PumpServiceType",
+						"Name": "PumpServiceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpServiceTypeDescription",
+					"Description": "The description of a pump service type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpServiceType.cdm.json/PumpServiceType",
+						"Name": "PumpServiceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpServiceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpServiceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpServiceTypeId\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeId\"},\"PumpServiceTypeName\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeName\"},\"PumpServiceTypeDescription\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpServiceType\",\"path\":\"PumpServiceType.cdm.json/PumpServiceType\"},\"description\":\"The type of service associated with the pump.\\n\\nEx:\\n-  High pressure \\n-  Common low pressure booster \\n-  Low pressure booster to HPP \\n-  2nd pass \\n-  3rd stage \\n-  3rd stage booster \\n-  4th stage \\n-  ERD booster\\n-  Seawater intake \\n-  Ultrafiltration backwash \\n-  Ultrafiltration feed\\n-  Low pressure booster\\n-  CIP\",\"primaryKey\":[\"PumpServiceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump service type.\",\"isNullable\":false,\"name\":\"PumpServiceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump service type.\",\"isNullable\":true,\"name\":\"PumpServiceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump service type.\",\"isNullable\":true,\"name\":\"PumpServiceTypeDescription\"}]}}}",
+			"Description": "The type of service associated with the pump.\n\nEx:\n-  High pressure \n-  Common low pressure booster \n-  Low pressure booster to HPP \n-  2nd pass \n-  3rd stage \n-  3rd stage booster \n-  4th stage \n-  ERD booster\n-  Seawater intake \n-  Ultrafiltration backwash \n-  Ultrafiltration feed\n-  Low pressure booster\n-  CIP",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpServiceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

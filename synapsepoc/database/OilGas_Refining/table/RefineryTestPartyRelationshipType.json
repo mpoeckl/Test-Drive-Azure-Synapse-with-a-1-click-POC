@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryTestPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the refinery test and party.\n\nEx:\n- Authorized-By Party\n- Performed-By Party\n- Reported-By Party\n- Reported-To Party\n- Scored-By Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestPartyRelationshipTypeId",
+					"Description": "The identifier of the Refinery Test Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType",
+						"Name": "RefineryTestPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestPartyRelationshipTypeName",
+					"Description": "The name of the Refinery Test Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType",
+						"Name": "RefineryTestPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestPartyRelationshipTypeDescription",
+					"Description": "The description of the Refinery Test Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType",
+						"Name": "RefineryTestPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestPartyRelationshipTypeId\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeId\"},\"RefineryTestPartyRelationshipTypeName\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeName\"},\"RefineryTestPartyRelationshipTypeDescription\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestPartyRelationshipType\",\"path\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\"},\"description\":\"The nature of the relationship between the refinery test and party.\\n\\nEx:\\n- Authorized-By Party\\n- Performed-By Party\\n- Reported-By Party\\n- Reported-To Party\\n- Scored-By Party\",\"primaryKey\":[\"RefineryTestPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The identifier of the Refinery Test Party Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryTestPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Refinery Test Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryTestPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Refinery Test Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryTestPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the refinery test and party.\n\nEx:\n- Authorized-By Party\n- Performed-By Party\n- Reported-By Party\n- Reported-To Party\n- Scored-By Party",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

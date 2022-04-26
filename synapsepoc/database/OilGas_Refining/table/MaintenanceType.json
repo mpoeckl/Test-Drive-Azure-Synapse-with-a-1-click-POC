@@ -1,0 +1,122 @@
+{
+	"name": "MaintenanceType",
+	"properties": {
+		"Name": "MaintenanceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A classification or categorization of types of Maintenance based upon common characteristics or functions performed.\n\nEx:\nPREVENTATIVE MAINTENANCE\n- Calibration\n- Sterilization\n- Lubrication\n- Inspection\n- Software Update\n\nSCHEDULED REPAIR\n- Repair Known Problem\n\nUPGRADE\n- extend the life with enhanced parts\n\nORDINARY REPAIR\n- Replace Part\n- Paint\n\nMAJOR REPAIR\n- Engine Overhaul",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceTypeId",
+					"Description": "The unique identifier of a Maintenance Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceType.cdm.json/MaintenanceType",
+						"Name": "MaintenanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceTypeName",
+					"Description": "The name of a Maintenance Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceType.cdm.json/MaintenanceType",
+						"Name": "MaintenanceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceTypeDescription",
+					"Description": "The description of a Maintenance Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceType.cdm.json/MaintenanceType",
+						"Name": "MaintenanceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceCategoryId",
+					"Description": "The unique identifier of a Maintenance Category.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceType.cdm.json/MaintenanceType",
+						"Name": "MaintenanceCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTypeId\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeId\"},\"MaintenanceTypeName\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeName\"},\"MaintenanceTypeDescription\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeDescription\"},\"MaintenanceCategoryId\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceType\",\"path\":\"MaintenanceType.cdm.json/MaintenanceType\"},\"description\":\"A classification or categorization of types of Maintenance based upon common characteristics or functions performed.\\n\\nEx:\\nPREVENTATIVE MAINTENANCE\\n- Calibration\\n- Sterilization\\n- Lubrication\\n- Inspection\\n- Software Update\\n\\nSCHEDULED REPAIR\\n- Repair Known Problem\\n\\nUPGRADE\\n- extend the life with enhanced parts\\n\\nORDINARY REPAIR\\n- Replace Part\\n- Paint\\n\\nMAJOR REPAIR\\n- Engine Overhaul\",\"primaryKey\":[\"MaintenanceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Type.\",\"isNullable\":false,\"name\":\"MaintenanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Maintenance Type.\",\"isNullable\":true,\"name\":\"MaintenanceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Maintenance Type.\",\"isNullable\":true,\"name\":\"MaintenanceTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Category.\",\"isNullable\":true,\"name\":\"MaintenanceCategoryId\"}]}}}",
+			"Description": "A classification or categorization of types of Maintenance based upon common characteristics or functions performed.\n\nEx:\nPREVENTATIVE MAINTENANCE\n- Calibration\n- Sterilization\n- Lubrication\n- Inspection\n- Software Update\n\nSCHEDULED REPAIR\n- Repair Known Problem\n\nUPGRADE\n- extend the life with enhanced parts\n\nORDINARY REPAIR\n- Replace Part\n- Paint\n\nMAJOR REPAIR\n- Engine Overhaul",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MaintenanceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

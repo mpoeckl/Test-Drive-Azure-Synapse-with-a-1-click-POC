@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pzefefpfjx",
+	"properties": {
+		"Name": "relationship-pzefefpfjx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingMode",
+		"ToTableName": "ComponentReadingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingModeId",
+				"ToColumnName": "ReadingModeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingMode.cdm.json/ReadingMode\",\"toEntity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"joinPairs\":[{\"fromAttribute\":\"ReadingModeId\",\"toAttribute\":\"ReadingModeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

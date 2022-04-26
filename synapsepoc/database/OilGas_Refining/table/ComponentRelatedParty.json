@@ -1,0 +1,155 @@
+{
+	"name": "ComponentRelatedParty",
+	"properties": {
+		"Name": "ComponentRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship of a component and the associated party(s) during the period indicated.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "ComponentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which an associated Component - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which an associated Component - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding a Component Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelatedParty.cdm.json/ComponentRelatedParty",
+						"Name": "ComponentPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentId\"},\"PartyId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PartyId\"},\"ComponentPartyRelationshipTypeId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ComponentPartyRelationshipNote\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentRelatedParty\",\"path\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\"},\"description\":\"The relationship of a component and the associated party(s) during the period indicated.\",\"primaryKey\":[\"ComponentId\",\"PartyId\",\"ComponentPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which an associated Component - Party relationship is effective.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which an associated Component - Party relationship is effective.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Party Relationship.\",\"isNullable\":true,\"name\":\"ComponentPartyRelationshipNote\"}]}}}",
+			"Description": "The relationship of a component and the associated party(s) during the period indicated.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,PartyId,ComponentPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

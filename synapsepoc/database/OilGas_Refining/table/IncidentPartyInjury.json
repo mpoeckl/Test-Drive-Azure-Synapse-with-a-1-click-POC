@@ -1,0 +1,201 @@
+{
+	"name": "IncidentPartyInjury",
+	"properties": {
+		"Name": "IncidentPartyInjury",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The incident injury(s) incurred by the associated party. Note: This may not be the opinion of a medical professional.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeId",
+					"Description": "The unique identifier of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "InjuryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FatalInjuryIndicator",
+					"Description": "Indicates the injury resulted in a fatality.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "FatalInjuryIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FirstAidIndicator",
+					"Description": "Indicates whether first aid was applied at the location of the incident. First aid in this use does not apply to third party medical attention such as that provided by a medical professional.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "FirstAidIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MedicalAttentionRequiredIndicator",
+					"Description": "Indicates whether medical attention by a third party medical professional was required.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "MedicalAttentionRequiredIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfMissedWorkDays",
+					"Description": "The number of work days missed as a result of the injury sustained as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "NumberOfMissedWorkDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyInjuryNote",
+					"Description": "A note, comment or additional information regarding an incident party injury.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "IncidentPartyInjuryNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BodyPartId",
+					"Description": "The unique identifier of a body part.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjury.cdm.json/IncidentPartyInjury",
+						"Name": "BodyPartId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjury",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjury",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"IncidentId\"},\"InjuredPartyId\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"InjuredPartyId\"},\"InjuryTypeId\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"InjuryTypeId\"},\"FatalInjuryIndicator\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"FatalInjuryIndicator\"},\"FirstAidIndicator\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"FirstAidIndicator\"},\"MedicalAttentionRequiredIndicator\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"MedicalAttentionRequiredIndicator\"},\"NumberOfMissedWorkDays\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"NumberOfMissedWorkDays\"},\"IncidentPartyInjuryNote\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"IncidentPartyInjuryNote\"},\"BodyPartId\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"BodyPartId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentPartyInjury\",\"path\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\"},\"description\":\"The incident injury(s) incurred by the associated party. Note: This may not be the opinion of a medical professional.\",\"primaryKey\":[\"IncidentId\",\"InjuredPartyId\",\"InjuryTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"InjuryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury type.\",\"isNullable\":false,\"name\":\"InjuryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"FatalInjuryIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates the injury resulted in a fatality.\",\"isNullable\":true,\"name\":\"FatalInjuryIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"FirstAidIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether first aid was applied at the location of the incident. First aid in this use does not apply to third party medical attention such as that provided by a medical professional.\",\"isNullable\":true,\"name\":\"FirstAidIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"MedicalAttentionRequiredIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether medical attention by a third party medical professional was required.\",\"isNullable\":true,\"name\":\"MedicalAttentionRequiredIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"NumberOfMissedWorkDays\"},\"dataType\":\"integer\",\"description\":\"The number of work days missed as a result of the injury sustained as a result of the incident.\",\"isNullable\":true,\"name\":\"NumberOfMissedWorkDays\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"IncidentPartyInjuryNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding an incident party injury.\",\"isNullable\":true,\"name\":\"IncidentPartyInjuryNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"name\":\"BodyPartId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a body part.\",\"isNullable\":true,\"name\":\"BodyPartId\"}]}}}",
+			"Description": "The incident injury(s) incurred by the associated party. Note: This may not be the opinion of a medical professional.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,InjuredPartyId,InjuryTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

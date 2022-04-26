@@ -1,0 +1,139 @@
+{
+	"name": "RefineryRelatedLegalEntity",
+	"properties": {
+		"Name": "RefineryRelatedLegalEntity",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A legal entity(s) related to the refinery.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLegalEntityRelationshipTypeId",
+					"Description": "The unique identifier of a refinery legal entity relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity",
+						"Name": "RefineryLegalEntityRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the refinery - legal entity relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the refinery - legal entity relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryRelatedLegalEntityNote",
+					"Description": "A note, comment or additional information regarding the refinery legal entity relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity",
+						"Name": "RefineryRelatedLegalEntityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryRelatedLegalEntity",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryRelatedLegalEntity",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryId\"},\"RefineryLegalEntityRelationshipTypeId\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryLegalEntityRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"PeriodEndTimestamp\"},\"RefineryRelatedLegalEntityNote\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryRelatedLegalEntityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryRelatedLegalEntity\",\"path\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\"},\"description\":\"A legal entity(s) related to the refinery.\",\"primaryKey\":[\"RefineryId\",\"RefineryLegalEntityRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryLegalEntityRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery legal entity relationship type.\",\"isNullable\":false,\"name\":\"RefineryLegalEntityRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the refinery - legal entity relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the refinery - legal entity relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"name\":\"RefineryRelatedLegalEntityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery legal entity relationship.\",\"isNullable\":true,\"name\":\"RefineryRelatedLegalEntityNote\"}]}}}",
+			"Description": "A legal entity(s) related to the refinery.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,RefineryLegalEntityRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wsqxmegdai",
+	"properties": {
+		"Name": "relationship-wsqxmegdai",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "SwitchState",
+		"ToTableName": "NormalSwitchState",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "SwitchStateId",
+				"ToColumnName": "SwitchStateId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"SwitchState.cdm.json/SwitchState\",\"toEntity\":\"NormalSwitchState.cdm.json/NormalSwitchState\",\"joinPairs\":[{\"fromAttribute\":\"SwitchStateId\",\"toAttribute\":\"SwitchStateId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

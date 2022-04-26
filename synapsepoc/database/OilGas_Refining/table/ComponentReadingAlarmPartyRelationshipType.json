@@ -1,0 +1,106 @@
+{
+	"name": "ComponentReadingAlarmPartyRelationshipType",
+	"properties": {
+		"Name": "ComponentReadingAlarmPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the component reading alarm and related party.\n\nEx:\n- Reported-by Party\n- Reported-to Party\n- Reset-by Party\n- Responding-Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentReadingAlarmPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Reading Alarm Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType",
+						"Name": "ComponentReadingAlarmPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingAlarmPartyRelationshipTypeName",
+					"Description": "The name of a Component Reading Alarm Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType",
+						"Name": "ComponentReadingAlarmPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingAlarmPartyRelationshipTypeDescription",
+					"Description": "The description of a Component Reading Alarm Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType",
+						"Name": "ComponentReadingAlarmPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarmPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarmPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentReadingAlarmPartyRelationshipTypeId\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},\"ComponentReadingAlarmPartyRelationshipTypeName\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeName\"},\"ComponentReadingAlarmPartyRelationshipTypeDescription\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingAlarmPartyRelationshipType\",\"path\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\"},\"description\":\"The nature of the relationship between the component reading alarm and related party.\\n\\nEx:\\n- Reported-by Party\\n- Reported-to Party\\n- Reset-by Party\\n- Responding-Party\",\"primaryKey\":[\"ComponentReadingAlarmPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Reading Alarm Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Reading Alarm Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentReadingAlarmPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Reading Alarm Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentReadingAlarmPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the component reading alarm and related party.\n\nEx:\n- Reported-by Party\n- Reported-to Party\n- Reset-by Party\n- Responding-Party",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentReadingAlarmPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

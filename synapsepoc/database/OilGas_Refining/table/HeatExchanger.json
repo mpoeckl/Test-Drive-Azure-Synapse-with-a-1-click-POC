@@ -1,0 +1,651 @@
+{
+	"name": "HeatExchanger",
+	"properties": {
+		"Name": "HeatExchanger",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A heat exchanger is a device used to transfer heat between a solid object and a fluid, or between two or more fluids. The fluids may be separated by a solid wall to prevent mixing or they may be in direct contact.\n\nFor efficiency, heat exchangers are designed to maximize the surface area of the wall between the two fluids, while minimizing resistance to fluid flow through the exchanger. \n\nThe exchanger's performance can also be affected by the addition of fins or corrugations in one or both directions, which increase surface area and may channel fluid flow or induce turbulence.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerUnitHeightMeters",
+					"Description": "The height of the heat exchanger in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerUnitHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerUnitWidthMeters",
+					"Description": "The width of the heat exchanger in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerUnitWidthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerUnitLengthMeters",
+					"Description": "The length of the heat exchanger in meters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerUnitLengthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerUnitWeightKilograms",
+					"Description": "The weight of the heat exchanger in kilograms.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerUnitWeightKilograms"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyPeriodMonths",
+					"Description": "The warranty period in months.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "WarrantyPeriodMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WarrantyStartDate",
+					"Description": "The warranty start date.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "WarrantyStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "VoltageV",
+					"Description": "The heat exchanger voltage.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "VoltageV"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumPressureRatingPsig",
+					"Description": "The heat exchanger maximum pressure rating.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MaximumPressureRatingPsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumOperatingTemperatureC",
+					"Description": "The heat exchanger minimum operating temperature in C.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MinimumOperatingTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumOperatingTemperatureC",
+					"Description": "The heat exchanger maximum operating temperature in C.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MaximumOperatingTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PowerKw",
+					"Description": "The heat exchanger power in Kw.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "PowerKw"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumHeatTransferSurfaceAreaSquareMeters",
+					"Description": "The maximum heat transfer surface area in square meters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MaximumHeatTransferSurfaceAreaSquareMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MinimumProductionVolumeCubicLiters",
+					"Description": "The minimum production volume in cubic liters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MinimumProductionVolumeCubicLiters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumProductionVolumeCubicLiters",
+					"Description": "The maximum production volume in cubic liters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MaximumProductionVolumeCubicLiters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumLiquidFlowRateCubicLiters",
+					"Description": "The maximum production volume in cubic liters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "MaximumLiquidFlowRateCubicLiters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeInDiameterMillimeters",
+					"Description": "The tubes  diameter in millimeters.\n\nUsing a small tube diameter makes the heat exchanger both economical and compact. \n\nHowever, it is more likely for the heat exchanger to foul up faster and the small size makes mechanical cleaning of the fouling difficult.\n\n To prevail over the fouling and cleaning problems, larger tube diameters can be used. Thus to determine the tube diameter, the available space, cost and fouling nature of the fluids must be considered.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeInDiameterMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeInThicknessMillimeters",
+					"Description": "The thickness of the wall of the tubes in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeInThicknessMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeInLengthMillimeters",
+					"Description": "The length of the tubes in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeInLengthMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeOutDiameterMillimeters",
+					"Description": "The tube-out diameter in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeOutDiameterMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeOutThicknessMillimeters",
+					"Description": "The tube-out thickness in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeOutThicknessMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeOutLengthMillimeters",
+					"Description": "The tube-out length in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeOutLengthMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeInPitch",
+					"Description": "The tube-in pitch ratio.\n\nWhen designing the tubes, it is practical to ensure that the tube pitch (i.e., the center-to-center distance of adjoining tubes) is not less than 1.25 times the tubes' outside diameter. A larger tube pitch leads to a larger overall shell diameter, which leads to a more expensive heat exchanger.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeInPitch"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TubeOutPitch",
+					"Description": "The tube-out ratio.\n\nTube pitch: when designing the tubes, it is practical to ensure that the tube pitch (i.e., the center-to-center distance of adjoining tubes) is not less than 1.25 times the tubes' outside diameter. A larger tube pitch leads to a larger overall shell diameter, which leads to a more expensive heat exchanger.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeOutPitch"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WallThicknessMillimeters",
+					"Description": "The tube-out wall thickness in millimeters.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "WallThicknessMillimeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CorrugatedTubeInIndicator",
+					"Description": "This type of tubes, mainly used for the inner tubes, increases the turbulence of the fluids and the effect is very important in the heat transfer giving a better performance.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "CorrugatedTubeInIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CorrugatedTubeOutIndicator",
+					"Description": "This type of tubes, mainly used for the inner tubes, increases the turbulence of the fluids and the effect is very important in the heat transfer giving a better performance.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "CorrugatedTubeOutIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TubeInMaterialTypeId",
+					"Description": "The type of material comprising the Tube-in.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeInMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TubeOutMaterialTypeId",
+					"Description": "The unique identifier of a heat exchanger tube material type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "TubeOutMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerConfigurationTypeId",
+					"Description": "The unique identifier of a heat exchanger configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFlowArrangementTypeId",
+					"Description": "The unique identifier of a heat exchanger flow arrangement type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerFlowArrangementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTubeLayoutTypeId",
+					"Description": "The unique identifier of a heat exchanger tube layout type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerTubeLayoutTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerBaffleDesignTypeId",
+					"Description": "The unique identifier of a heat exchanger baffle design type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerBaffleDesignTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerSurfaceTreatmentCoatingTypeId",
+					"Description": "The unique identifier of a heat exchanger surface treatment coating type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerSurfaceTreatmentCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTypeId",
+					"Description": "The unique identifier of a heat exchanger type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchanger.cdm.json/HeatExchanger",
+						"Name": "HeatExchangerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchanger",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchanger",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerId\"},\"HeatExchangerUnitHeightMeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitHeightMeters\"},\"HeatExchangerUnitWidthMeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitWidthMeters\"},\"HeatExchangerUnitLengthMeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitLengthMeters\"},\"HeatExchangerUnitWeightKilograms\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitWeightKilograms\"},\"WarrantyPeriodMonths\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WarrantyPeriodMonths\"},\"WarrantyStartDate\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WarrantyStartDate\"},\"VoltageV\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"VoltageV\"},\"MaximumPressureRatingPsig\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumPressureRatingPsig\"},\"MinimumOperatingTemperatureC\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MinimumOperatingTemperatureC\"},\"MaximumOperatingTemperatureC\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumOperatingTemperatureC\"},\"PowerKw\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"PowerKw\"},\"MaximumHeatTransferSurfaceAreaSquareMeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumHeatTransferSurfaceAreaSquareMeters\"},\"MinimumProductionVolumeCubicLiters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MinimumProductionVolumeCubicLiters\"},\"MaximumProductionVolumeCubicLiters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumProductionVolumeCubicLiters\"},\"MaximumLiquidFlowRateCubicLiters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumLiquidFlowRateCubicLiters\"},\"TubeInDiameterMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInDiameterMillimeters\"},\"TubeInThicknessMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInThicknessMillimeters\"},\"TubeInLengthMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInLengthMillimeters\"},\"TubeOutDiameterMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutDiameterMillimeters\"},\"TubeOutThicknessMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutThicknessMillimeters\"},\"TubeOutLengthMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutLengthMillimeters\"},\"TubeInPitch\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInPitch\"},\"TubeOutPitch\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutPitch\"},\"WallThicknessMillimeters\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WallThicknessMillimeters\"},\"CorrugatedTubeInIndicator\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"CorrugatedTubeInIndicator\"},\"CorrugatedTubeOutIndicator\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"CorrugatedTubeOutIndicator\"},\"TubeInMaterialTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInMaterialTypeId\"},\"TubeOutMaterialTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutMaterialTypeId\"},\"HeatExchangerConfigurationTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerConfigurationTypeId\"},\"HeatExchangerFlowArrangementTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerFlowArrangementTypeId\"},\"HeatExchangerTubeLayoutTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerTubeLayoutTypeId\"},\"HeatExchangerBaffleDesignTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerBaffleDesignTypeId\"},\"HeatExchangerSurfaceTreatmentCoatingTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},\"HeatExchangerTypeId\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchanger\",\"path\":\"HeatExchanger.cdm.json/HeatExchanger\"},\"description\":\"A heat exchanger is a device used to transfer heat between a solid object and a fluid, or between two or more fluids. The fluids may be separated by a solid wall to prevent mixing or they may be in direct contact.\\n\\nFor efficiency, heat exchangers are designed to maximize the surface area of the wall between the two fluids, while minimizing resistance to fluid flow through the exchanger. \\n\\nThe exchanger's performance can also be affected by the addition of fins or corrugations in one or both directions, which increase surface area and may channel fluid flow or induce turbulence.\",\"primaryKey\":[\"HeatExchangerId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HeatExchangerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the heat exchanger in meters.\",\"isNullable\":true,\"name\":\"HeatExchangerUnitHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitWidthMeters\"},\"dataType\":\"integer\",\"description\":\"The width of the heat exchanger in meters.\",\"isNullable\":true,\"name\":\"HeatExchangerUnitWidthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitLengthMeters\"},\"dataType\":\"integer\",\"description\":\"The length of the heat exchanger in meters.\",\"isNullable\":true,\"name\":\"HeatExchangerUnitLengthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerUnitWeightKilograms\"},\"dataType\":\"integer\",\"description\":\"The weight of the heat exchanger in kilograms.\",\"isNullable\":true,\"name\":\"HeatExchangerUnitWeightKilograms\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WarrantyPeriodMonths\"},\"dataType\":\"integer\",\"description\":\"The warranty period in months.\",\"isNullable\":true,\"name\":\"WarrantyPeriodMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WarrantyStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The warranty start date.\",\"isNullable\":true,\"name\":\"WarrantyStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"VoltageV\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The heat exchanger voltage.\",\"isNullable\":true,\"scale\":8,\"name\":\"VoltageV\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumPressureRatingPsig\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The heat exchanger maximum pressure rating.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumPressureRatingPsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MinimumOperatingTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The heat exchanger minimum operating temperature in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MinimumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumOperatingTemperatureC\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The heat exchanger maximum operating temperature in C.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"PowerKw\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The heat exchanger power in Kw.\",\"isNullable\":true,\"scale\":8,\"name\":\"PowerKw\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumHeatTransferSurfaceAreaSquareMeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum heat transfer surface area in square meters.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumHeatTransferSurfaceAreaSquareMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MinimumProductionVolumeCubicLiters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum production volume in cubic liters.\",\"isNullable\":true,\"scale\":8,\"name\":\"MinimumProductionVolumeCubicLiters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumProductionVolumeCubicLiters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum production volume in cubic liters.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumProductionVolumeCubicLiters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"MaximumLiquidFlowRateCubicLiters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum production volume in cubic liters.\",\"isNullable\":true,\"scale\":8,\"name\":\"MaximumLiquidFlowRateCubicLiters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInDiameterMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tubes  diameter in millimeters.\\n\\nUsing a small tube diameter makes the heat exchanger both economical and compact. \\n\\nHowever, it is more likely for the heat exchanger to foul up faster and the small size makes mechanical cleaning of the fouling difficult.\\n\\n To prevail over the fouling and cleaning problems, larger tube diameters can be used. Thus to determine the tube diameter, the available space, cost and fouling nature of the fluids must be considered.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeInDiameterMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInThicknessMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The thickness of the wall of the tubes in millimeters.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeInThicknessMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInLengthMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The length of the tubes in millimeters.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeInLengthMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutDiameterMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tube-out diameter in millimeters.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeOutDiameterMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutThicknessMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tube-out thickness in millimeters.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeOutThicknessMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutLengthMillimeters\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tube-out length in millimeters.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeOutLengthMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInPitch\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tube-in pitch ratio.\\n\\nWhen designing the tubes, it is practical to ensure that the tube pitch (i.e., the center-to-center distance of adjoining tubes) is not less than 1.25 times the tubes' outside diameter. A larger tube pitch leads to a larger overall shell diameter, which leads to a more expensive heat exchanger.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeInPitch\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutPitch\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The tube-out ratio.\\n\\nTube pitch: when designing the tubes, it is practical to ensure that the tube pitch (i.e., the center-to-center distance of adjoining tubes) is not less than 1.25 times the tubes' outside diameter. A larger tube pitch leads to a larger overall shell diameter, which leads to a more expensive heat exchanger.\",\"isNullable\":true,\"scale\":8,\"name\":\"TubeOutPitch\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"WallThicknessMillimeters\"},\"dataType\":\"integer\",\"description\":\"The tube-out wall thickness in millimeters.\",\"isNullable\":true,\"name\":\"WallThicknessMillimeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"CorrugatedTubeInIndicator\"},\"dataType\":\"boolean\",\"description\":\"This type of tubes, mainly used for the inner tubes, increases the turbulence of the fluids and the effect is very important in the heat transfer giving a better performance.\",\"isNullable\":true,\"name\":\"CorrugatedTubeInIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"CorrugatedTubeOutIndicator\"},\"dataType\":\"boolean\",\"description\":\"This type of tubes, mainly used for the inner tubes, increases the turbulence of the fluids and the effect is very important in the heat transfer giving a better performance.\",\"isNullable\":true,\"name\":\"CorrugatedTubeOutIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeInMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The type of material comprising the Tube-in.\",\"isNullable\":true,\"name\":\"TubeInMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"TubeOutMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger tube material type.\",\"isNullable\":true,\"name\":\"TubeOutMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger configuration type.\",\"isNullable\":true,\"name\":\"HeatExchangerConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerFlowArrangementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger flow arrangement type.\",\"isNullable\":true,\"name\":\"HeatExchangerFlowArrangementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerTubeLayoutTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger tube layout type.\",\"isNullable\":true,\"name\":\"HeatExchangerTubeLayoutTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerBaffleDesignTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger baffle design type.\",\"isNullable\":true,\"name\":\"HeatExchangerBaffleDesignTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger surface treatment coating type.\",\"isNullable\":true,\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"name\":\"HeatExchangerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger type.\",\"isNullable\":true,\"name\":\"HeatExchangerTypeId\"}]}}}",
+			"Description": "A heat exchanger is a device used to transfer heat between a solid object and a fluid, or between two or more fluids. The fluids may be separated by a solid wall to prevent mixing or they may be in direct contact.\n\nFor efficiency, heat exchangers are designed to maximize the surface area of the wall between the two fluids, while minimizing resistance to fluid flow through the exchanger. \n\nThe exchanger's performance can also be affected by the addition of fins or corrugations in one or both directions, which increase surface area and may channel fluid flow or induce turbulence.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

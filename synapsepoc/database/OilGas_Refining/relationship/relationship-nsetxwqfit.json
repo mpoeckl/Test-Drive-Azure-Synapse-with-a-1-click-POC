@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nsetxwqfit",
+	"properties": {
+		"Name": "relationship-nsetxwqfit",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentRefineryTestType",
+		"ToTableName": "RefineryTestComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentRefineryTestTypeId",
+				"ToColumnName": "ComponentRefineryTestTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"toEntity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentRefineryTestTypeId\",\"toAttribute\":\"ComponentRefineryTestTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

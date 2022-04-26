@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bgmzgkbxtq",
+	"properties": {
+		"Name": "relationship-bgmzgkbxtq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CorrosiveQuality",
+		"ToTableName": "RefineryCatalystType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CorrosiveQualityId",
+				"ToColumnName": "CorrosiveQualityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"toEntity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"joinPairs\":[{\"fromAttribute\":\"CorrosiveQualityId\",\"toAttribute\":\"CorrosiveQualityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

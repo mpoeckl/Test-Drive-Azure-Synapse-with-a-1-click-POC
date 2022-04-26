@@ -1,0 +1,106 @@
+{
+	"name": "ComponentRelationshipType",
+	"properties": {
+		"Name": "ComponentRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship between component(s).\n\nEx:\n- Circuit \n- Co-located\n- Functionally-dependent\n- Downstream Dependent\n- From-Component\n- To-Component\n- Comparable\n- Compatible\n- Replacement-by\n- Upgrade-to",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentRelationshipTypeId",
+					"Description": "The unique identifier of a Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelationshipType.cdm.json/ComponentRelationshipType",
+						"Name": "ComponentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRelationshipTypeName",
+					"Description": "The name of a Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelationshipType.cdm.json/ComponentRelationshipType",
+						"Name": "ComponentRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRelationshipTypeDescription",
+					"Description": "The description of a Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentRelationshipType.cdm.json/ComponentRelationshipType",
+						"Name": "ComponentRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentRelationshipTypeId\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeId\"},\"ComponentRelationshipTypeName\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeName\"},\"ComponentRelationshipTypeDescription\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentRelationshipType\",\"path\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\"},\"description\":\"The relationship between component(s).\\n\\nEx:\\n- Circuit \\n- Co-located\\n- Functionally-dependent\\n- Downstream Dependent\\n- From-Component\\n- To-Component\\n- Comparable\\n- Compatible\\n- Replacement-by\\n- Upgrade-to\",\"primaryKey\":[\"ComponentRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentRelationshipTypeDescription\"}]}}}",
+			"Description": "The relationship between component(s).\n\nEx:\n- Circuit \n- Co-located\n- Functionally-dependent\n- Downstream Dependent\n- From-Component\n- To-Component\n- Comparable\n- Compatible\n- Replacement-by\n- Upgrade-to",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

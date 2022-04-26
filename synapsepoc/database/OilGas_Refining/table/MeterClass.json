@@ -1,0 +1,106 @@
+{
+	"name": "MeterClass",
+	"properties": {
+		"Name": "MeterClass",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The North American meter class:\n\nEx: \n- 10 A\n- 20 A\n- 100 A\n- 200 A\n- 320 A\n\nMeter Class CL = Test amperes TA * (% Overload Rating/100)\nUS meters must have a minimum CL < 60.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterClassId",
+					"Description": "The unique identifier of a meter class.",
+					"BaseAttributeReference": {
+						"Entity": "MeterClass.cdm.json/MeterClass",
+						"Name": "MeterClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterClassName",
+					"Description": "The name of a meter class.",
+					"BaseAttributeReference": {
+						"Entity": "MeterClass.cdm.json/MeterClass",
+						"Name": "MeterClassName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterClassDescription",
+					"Description": "The description of a meter class.",
+					"BaseAttributeReference": {
+						"Entity": "MeterClass.cdm.json/MeterClass",
+						"Name": "MeterClassDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterClass",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterClass",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterClassId\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassId\"},\"MeterClassName\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassName\"},\"MeterClassDescription\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterClass\",\"path\":\"MeterClass.cdm.json/MeterClass\"},\"description\":\"The North American meter class:\\n\\nEx: \\n- 10 A\\n- 20 A\\n- 100 A\\n- 200 A\\n- 320 A\\n\\nMeter Class CL = Test amperes TA * (% Overload Rating/100)\\nUS meters must have a minimum CL < 60.\",\"primaryKey\":[\"MeterClassId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter class.\",\"isNullable\":false,\"name\":\"MeterClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a meter class.\",\"isNullable\":true,\"name\":\"MeterClassName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a meter class.\",\"isNullable\":true,\"name\":\"MeterClassDescription\"}]}}}",
+			"Description": "The North American meter class:\n\nEx: \n- 10 A\n- 20 A\n- 100 A\n- 200 A\n- 320 A\n\nMeter Class CL = Test amperes TA * (% Overload Rating/100)\nUS meters must have a minimum CL < 60.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterClassId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

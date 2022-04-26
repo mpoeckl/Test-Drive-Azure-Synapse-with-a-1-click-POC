@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jpibekvbil",
+	"properties": {
+		"Name": "relationship-jpibekvbil",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExtraordinaryRepairType",
+		"ToTableName": "ComponentExtraordinaryRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExtraordinaryRepairTypeId",
+				"ToColumnName": "ExtraordinaryRepairTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"toEntity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"joinPairs\":[{\"fromAttribute\":\"ExtraordinaryRepairTypeId\",\"toAttribute\":\"ExtraordinaryRepairTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,624 @@
+{
+	"name": "NaphthaHydrotreatingUnit",
+	"properties": {
+		"Name": "NaphthaHydrotreatingUnit",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Hydrodesulfurization (HDS) is a catalytic chemical process widely used to remove sulfur (S) from natural gas and from refined petroleum products, such as gasoline or petrol, jet fuel, kerosene, diesel fuel, and fuel oils.  The purpose of removing the sulfur, and creating products such as ultra-low-sulfur diesel, is to reduce the sulfur dioxide (SO2) emissions that result from using those fuels.  \n\nThe purpose of the naphtha hydrotreating unit is to remove sulfur and nitrogen compounds.  Naphtha hydrotreating unit uses a cobalt-molybdenum catalyst to remove sulfur by converting it to hydrogen sulfide that is removed along with unreacted hydrogen.  Some of the hydrogen sulfide-hydrogen mixture is recycled back to the reactor to utilize the unreacted hydrogen, using a compressor.\n\nHydrotreating is intended to accomplish one or more of the following:\n\n- Remove sulfur and ammonia\n- Reduce the metal content of the oil\n- Saturate carbon-to-carbon double bonds\n\nIn a refinery, the hydrodesulfurization reaction takes place in a fixed-bed reactor at elevated temperatures ranging from 300 to 400 °C and elevated pressures ranging from 30 to 130 atmospheres of absolute pressure, typically in the presence of a catalyst consisting of an alumina base impregnated with cobalt and molybdenum.\n\nA naphtha hydrotreater refers to a number of flammable liquid mixtures of hydrocarbons, i.e., a component of natural gas condensate or a distillation product from petroleum, coal tar or peat boiling in a certain range and containing certain hydrocarbons. \n\nWhile the processes are essentially the same, the synonyms for the hydrotreating process are:\n\n- Hydrofining\n- Unifining\n- Hydrosulfurizing\n- GO-fining  \n- Residfining",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaphthaHydrotreatingUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreatingUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitDescription",
+					"Description": "A description of the naphtha hydrotreating unit.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreatingUnitDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitHeightMeters",
+					"Description": "The height of the naphtha hydrotreater unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitWidthMeters",
+					"Description": "The width of the naphtha hydrotreater unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitWidthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitLengthMeters",
+					"Description": "The length of the naphtha hydrotreater unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitLengthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitFirstOperationalDate",
+					"Description": "The first operational date of the naphtha hydrotreater unit.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitFirstOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitWarrantyPeriodMonths",
+					"Description": "The naphtha hydrotreater unit warranty period in months.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitWarrantyPeriodMonths"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitWarrantyStartDate",
+					"Description": "The date that the warranty period begins.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitWarrantyStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitMinimumOperatingPressurePsi",
+					"Description": "The minimum naphtha hydrotreater unit minimum operating pressure in PSI.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitMinimumOperatingPressurePsi"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitMaximumOperatingPressurePsi",
+					"Description": "The maximum naphtha hydrotreater unit minimum operating pressure in PSI.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitMaximumOperatingPressurePsi"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitMinimumOperatingTemperatureC",
+					"Description": "The naphtha hydrotreater unit minimum operating temperature in C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitMinimumOperatingTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitMaximumOperatingTemperatureC",
+					"Description": "The naphtha hydrotreater unit maximum operating temperature in C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitMaximumOperatingTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig",
+					"Description": "The naphtha hydrotreating unit change line minimum pressure in pounds per square inch gauge",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig",
+					"Description": "The naphtha hydrotreating unit change line maximum pressure in pounds per square inch gauge",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorInMinimumPressurePsig",
+					"Description": "The naphtha hydrotreat unit reactor unit in minimum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorInMinimumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorInMaximumPressurePsig",
+					"Description": "The naphtha hydrotreat unit reactor unit in maximum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorInMaximumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig",
+					"Description": "The naphtha hydrotreat unit reactor unit out minimum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig",
+					"Description": "The naphtha hydrotreat unit reactor unit out maximum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig",
+					"Description": "The naphtha hydrotreat unit separator minimum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig",
+					"Description": "The naphtha hydrotreat unit separator maximum pressure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChargeMinimumTemperatureC",
+					"Description": "The naphtha hydrotreat unit charge minimum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChargeMinimumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChargeMaximumTemperatureC",
+					"Description": "The naphtha hydrotreat unit charge maximum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChargeMaximumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC",
+					"Description": "The naphtha hydrotreat unit reactor heater minimum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC",
+					"Description": "The naphtha hydrotreat unit reactor heater maximum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC",
+					"Description": "The naphtha hydrotreat unit separator heater minimum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC",
+					"Description": "The naphtha hydrotreat unit separator heater maximum temperature C.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChargeFlowMinimumBpd",
+					"Description": "The naphtha hydrotreat unit charge flow minimum barrels per day.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChargeFlowMinimumBpd"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitChargeFlowMaximumBpd",
+					"Description": "The naphtha hydrotreat unit charge flow maximum barrels per day.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitChargeFlowMaximumBpd"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd",
+					"Description": "The naphtha hydrotreat unit separator off gas flow minimum in thousand standard cubic feet per day.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd",
+					"Description": "The naphtha hydrotreat unit separator off gas flow maximum in thousand standard cubic feet per day.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage",
+					"Description": "The naphtha hydrotreat unit separator level minimum percentage.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage",
+					"Description": "The naphtha hydrotreat unit separator level maximum percentage.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreatingProcessTypeId",
+					"Description": "The unique identifier of a hydrotreating process type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "HydrotreatingProcessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitNote",
+					"Description": "A note, comment or additional information regarding the naphtha hydrotreating unit.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit",
+						"Name": "NaphthaHydrotreatingUnitNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnit",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnit",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitId\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"NaphthaHydrotreatingUnitDescription\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitDescription\"},\"NaphthaHydrotreaterUnitHeightMeters\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitHeightMeters\"},\"NaphthaHydrotreaterUnitWidthMeters\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWidthMeters\"},\"NaphthaHydrotreaterUnitLengthMeters\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitLengthMeters\"},\"NaphthaHydrotreaterUnitFirstOperationalDate\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitFirstOperationalDate\"},\"NaphthaHydrotreaterUnitWarrantyPeriodMonths\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWarrantyPeriodMonths\"},\"NaphthaHydrotreaterUnitWarrantyStartDate\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWarrantyStartDate\"},\"NaphthaHydrotreaterUnitMinimumOperatingPressurePsi\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingPressurePsi\"},\"NaphthaHydrotreaterUnitMaximumOperatingPressurePsi\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingPressurePsi\"},\"NaphthaHydrotreaterUnitMinimumOperatingTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingTemperatureC\"},\"NaphthaHydrotreaterUnitMaximumOperatingTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingTemperatureC\"},\"NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig\"},\"NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig\"},\"NaphthaHydrotreaterUnitReactorInMinimumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorInMinimumPressurePsig\"},\"NaphthaHydrotreaterUnitReactorInMaximumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorInMaximumPressurePsig\"},\"NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig\"},\"NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig\"},\"NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig\"},\"NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig\"},\"NaphthaHydrotreaterUnitChargeMinimumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeMinimumTemperatureC\"},\"NaphthaHydrotreaterUnitChargeMaximumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeMaximumTemperatureC\"},\"NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC\"},\"NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC\"},\"NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC\"},\"NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC\"},\"NaphthaHydrotreaterUnitChargeFlowMinimumBpd\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeFlowMinimumBpd\"},\"NaphthaHydrotreaterUnitChargeFlowMaximumBpd\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeFlowMaximumBpd\"},\"NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd\"},\"NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd\"},\"NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage\"},\"NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage\"},\"MaterialId\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"MaterialId\"},\"HydrotreatingProcessTypeId\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"HydrotreatingProcessTypeId\"},\"NaphthaHydrotreatingUnitNote\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreatingUnit\",\"path\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\"},\"description\":\"Hydrodesulfurization (HDS) is a catalytic chemical process widely used to remove sulfur (S) from natural gas and from refined petroleum products, such as gasoline or petrol, jet fuel, kerosene, diesel fuel, and fuel oils.  The purpose of removing the sulfur, and creating products such as ultra-low-sulfur diesel, is to reduce the sulfur dioxide (SO2) emissions that result from using those fuels.  \\n\\nThe purpose of the naphtha hydrotreating unit is to remove sulfur and nitrogen compounds.  Naphtha hydrotreating unit uses a cobalt-molybdenum catalyst to remove sulfur by converting it to hydrogen sulfide that is removed along with unreacted hydrogen.  Some of the hydrogen sulfide-hydrogen mixture is recycled back to the reactor to utilize the unreacted hydrogen, using a compressor.\\n\\nHydrotreating is intended to accomplish one or more of the following:\\n\\n- Remove sulfur and ammonia\\n- Reduce the metal content of the oil\\n- Saturate carbon-to-carbon double bonds\\n\\nIn a refinery, the hydrodesulfurization reaction takes place in a fixed-bed reactor at elevated temperatures ranging from 300 to 400 °C and elevated pressures ranging from 30 to 130 atmospheres of absolute pressure, typically in the presence of a catalyst consisting of an alumina base impregnated with cobalt and molybdenum.\\n\\nA naphtha hydrotreater refers to a number of flammable liquid mixtures of hydrocarbons, i.e., a component of natural gas condensate or a distillation product from petroleum, coal tar or peat boiling in a certain range and containing certain hydrocarbons. \\n\\nWhile the processes are essentially the same, the synonyms for the hydrotreating process are:\\n\\n- Hydrofining\\n- Unifining\\n- Hydrosulfurizing\\n- GO-fining  \\n- Residfining\",\"primaryKey\":[\"NaphthaHydrotreatingUnitId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the naphtha hydrotreating unit.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the naphtha hydrotreater unit in meters.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWidthMeters\"},\"dataType\":\"integer\",\"description\":\"The width of the naphtha hydrotreater unit in meters.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitWidthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitLengthMeters\"},\"dataType\":\"integer\",\"description\":\"The length of the naphtha hydrotreater unit in meters.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitLengthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitFirstOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operational date of the naphtha hydrotreater unit.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitFirstOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWarrantyPeriodMonths\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreater unit warranty period in months.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitWarrantyPeriodMonths\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitWarrantyStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the warranty period begins.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitWarrantyStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingPressurePsi\"},\"dataType\":\"integer\",\"description\":\"The minimum naphtha hydrotreater unit minimum operating pressure in PSI.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingPressurePsi\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingPressurePsi\"},\"dataType\":\"integer\",\"description\":\"The maximum naphtha hydrotreater unit minimum operating pressure in PSI.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingPressurePsi\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreater unit minimum operating temperature in C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitMinimumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreater unit maximum operating temperature in C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitMaximumOperatingTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreating unit change line minimum pressure in pounds per square inch gauge\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChangeLineMinimumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreating unit change line maximum pressure in pounds per square inch gauge\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChangeLineMaximumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorInMinimumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor unit in minimum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorInMinimumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorInMaximumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor unit in maximum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorInMaximumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor unit out minimum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorOutMinimumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor unit out maximum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorOutMaximumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator minimum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator maximum pressure.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumPressurePsig\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeMinimumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit charge minimum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChargeMinimumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeMaximumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit charge maximum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChargeMaximumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor heater minimum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMinimumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit reactor heater maximum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitReactorHeaterMaximumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator heater minimum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparatorMinimumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator heater maximum temperature C.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparatorMaximumTemperatureC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeFlowMinimumBpd\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit charge flow minimum barrels per day.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChargeFlowMinimumBpd\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitChargeFlowMaximumBpd\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit charge flow maximum barrels per day.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitChargeFlowMaximumBpd\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator off gas flow minimum in thousand standard cubic feet per day.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMinimumMscfd\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd\"},\"dataType\":\"integer\",\"description\":\"The naphtha hydrotreat unit separator off gas flow maximum in thousand standard cubic feet per day.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterUnitSeparateOffGasFlowMaximumMscfd\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The naphtha hydrotreat unit separator level minimum percentage.\",\"isNullable\":true,\"scale\":8,\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMinimumPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The naphtha hydrotreat unit separator level maximum percentage.\",\"isNullable\":true,\"scale\":8,\"name\":\"NaphthaHydrotreaterUnitSeparatorLevelMaximumPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"HydrotreatingProcessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrotreating process type.\",\"isNullable\":true,\"name\":\"HydrotreatingProcessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"name\":\"NaphthaHydrotreatingUnitNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the naphtha hydrotreating unit.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitNote\"}]}}}",
+			"Description": "Hydrodesulfurization (HDS) is a catalytic chemical process widely used to remove sulfur (S) from natural gas and from refined petroleum products, such as gasoline or petrol, jet fuel, kerosene, diesel fuel, and fuel oils.  The purpose of removing the sulfur, and creating products such as ultra-low-sulfur diesel, is to reduce the sulfur dioxide (SO2) emissions that result from using those fuels.  \n\nThe purpose of the naphtha hydrotreating unit is to remove sulfur and nitrogen compounds.  Naphtha hydrotreating unit uses a cobalt-molybdenum catalyst to remove sulfur by converting it to hydrogen sulfide that is removed along with unreacted hydrogen.  Some of the hydrogen sulfide-hydrogen mixture is recycled back to the reactor to utilize the unreacted hydrogen, using a compressor.\n\nHydrotreating is intended to accomplish one or more of the following:\n\n- Remove sulfur and ammonia\n- Reduce the metal content of the oil\n- Saturate carbon-to-carbon double bonds\n\nIn a refinery, the hydrodesulfurization reaction takes place in a fixed-bed reactor at elevated temperatures ranging from 300 to 400 °C and elevated pressures ranging from 30 to 130 atmospheres of absolute pressure, typically in the presence of a catalyst consisting of an alumina base impregnated with cobalt and molybdenum.\n\nA naphtha hydrotreater refers to a number of flammable liquid mixtures of hydrocarbons, i.e., a component of natural gas condensate or a distillation product from petroleum, coal tar or peat boiling in a certain range and containing certain hydrocarbons. \n\nWhile the processes are essentially the same, the synonyms for the hydrotreating process are:\n\n- Hydrofining\n- Unifining\n- Hydrosulfurizing\n- GO-fining  \n- Residfining",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "NaphthaHydrotreatingUnitId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

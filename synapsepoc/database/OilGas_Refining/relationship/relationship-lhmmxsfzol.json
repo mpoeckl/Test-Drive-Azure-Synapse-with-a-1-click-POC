@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lhmmxsfzol",
+	"properties": {
+		"Name": "relationship-lhmmxsfzol",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentCostType",
+		"ToTableName": "IncidentCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentCostTypeId",
+				"ToColumnName": "IncidentCostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"toEntity\":\"IncidentCost.cdm.json/IncidentCost\",\"joinPairs\":[{\"fromAttribute\":\"IncidentCostTypeId\",\"toAttribute\":\"IncidentCostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

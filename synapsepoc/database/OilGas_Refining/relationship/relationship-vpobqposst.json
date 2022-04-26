@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vpobqposst",
+	"properties": {
+		"Name": "relationship-vpobqposst",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingType",
+		"ToTableName": "ComponentReadingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingTypeId",
+				"ToColumnName": "ReadingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingType.cdm.json/ReadingType\",\"toEntity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"joinPairs\":[{\"fromAttribute\":\"ReadingTypeId\",\"toAttribute\":\"ReadingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

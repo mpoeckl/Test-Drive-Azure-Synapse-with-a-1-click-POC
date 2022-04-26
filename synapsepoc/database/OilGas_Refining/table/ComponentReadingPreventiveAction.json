@@ -1,0 +1,138 @@
+{
+	"name": "ComponentReadingPreventiveAction",
+	"properties": {
+		"Name": "ComponentReadingPreventiveAction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Preventive Action for a Network Component Reading that is associated with a Component Guideline.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionId",
+					"Description": "The unique identifier of a Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction",
+						"Name": "PreventiveActionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingStartTimestamp",
+					"Description": "The period start timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction",
+						"Name": "ReadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingPreventiveActionNote",
+					"Description": "A note, comment or additional information regarding a Component Reading Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction",
+						"Name": "ComponentReadingPreventiveActionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingPreventiveAction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingPreventiveAction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingTypeId\"},\"PreventiveActionId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"PreventiveActionId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingStartTimestamp\"},\"ComponentReadingPreventiveActionNote\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentReadingPreventiveActionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingPreventiveAction\",\"path\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\"},\"description\":\"A Preventive Action for a Network Component Reading that is associated with a Component Guideline.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"PreventiveActionId\",\"ReadingStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"PreventiveActionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preventive Action.\",\"isNullable\":false,\"name\":\"PreventiveActionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated reading is reported.\",\"isNullable\":false,\"name\":\"ReadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentReadingPreventiveActionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading Preventive Action.\",\"isNullable\":true,\"name\":\"ComponentReadingPreventiveActionNote\"}]}}}",
+			"Description": "A Preventive Action for a Network Component Reading that is associated with a Component Guideline.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,PreventiveActionId,ReadingStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uccsnsvtyg",
+	"properties": {
+		"Name": "relationship-uccsnsvtyg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetLocationPartyRelationshipType",
+		"ToTableName": "AssetLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetLocationPartyRelationshipTypeId",
+				"ToColumnName": "AssetLocationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"toEntity\":\"AssetLocationRelatedParty.cdm.json/AssetLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"AssetLocationPartyRelationshipTypeId\",\"toAttribute\":\"AssetLocationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ProductPartyRelationshipType",
+	"properties": {
+		"Name": "ProductPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the party and the Product over the indicated period.\n\nEx:\n- production manager\n- product manager\n- product support\n- support technician\n- plant manager\n- planning manager\n- pricing analyst\n- product development\n- production supervisor\n- safety officer\n- refinery scheduling analyst\n- sales manager\n- environmental engineer\n- sales manager\n- operations manager\n- process manager\n- maintenance\n- OEM Partner\n- issuer\n- co-branded affiliate\n- affinity organization \n\nwhere:\nISSUER\nThe cardholder's bank, or the bank which has issued a MasterCard, Visa or other payment card to an individual. A card issuer is the acceptor and approver of a transaction - the entity that maintains the account relationship with the cardholder.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nCO-BRANDED AFFILIATE\nA co-branded payment card is sponsored by both the issuing bank and a retail organization such as a department store or an airline. Cardholders may get benefits such as discounts or free merchandise from the sponsoring merchant based on account usage and terms.\n\nAFFINITY ORGANIZATION\nA card offered by a lending institution in conjunction with another organization. Schools, non-profit groups, pro wrestlers, popular singers and airlines are among those featured on these types of cards. Frequently, use of this card entitles holders to special discounts or deals from the non-financial group.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Product Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType",
+						"Name": "ProductPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductPartyRelationshipTypeName",
+					"Description": "The name of a Product Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType",
+						"Name": "ProductPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductPartyRelationshipTypeDescription",
+					"Description": "The description of a Product Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType",
+						"Name": "ProductPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductPartyRelationshipTypeId\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeId\"},\"ProductPartyRelationshipTypeName\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeName\"},\"ProductPartyRelationshipTypeDescription\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductPartyRelationshipType\",\"path\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the Product over the indicated period.\\n\\nEx:\\n- production manager\\n- product manager\\n- product support\\n- support technician\\n- plant manager\\n- planning manager\\n- pricing analyst\\n- product development\\n- production supervisor\\n- safety officer\\n- refinery scheduling analyst\\n- sales manager\\n- environmental engineer\\n- sales manager\\n- operations manager\\n- process manager\\n- maintenance\\n- OEM Partner\\n- issuer\\n- co-branded affiliate\\n- affinity organization \\n\\nwhere:\\nISSUER\\nThe cardholder's bank, or the bank which has issued a MasterCard, Visa or other payment card to an individual. A card issuer is the acceptor and approver of a transaction - the entity that maintains the account relationship with the cardholder.\\n\\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\\n\\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\\n\\nCO-BRANDED AFFILIATE\\nA co-branded payment card is sponsored by both the issuing bank and a retail organization such as a department store or an airline. Cardholders may get benefits such as discounts or free merchandise from the sponsoring merchant based on account usage and terms.\\n\\nAFFINITY ORGANIZATION\\nA card offered by a lending institution in conjunction with another organization. Schools, non-profit groups, pro wrestlers, popular singers and airlines are among those featured on these types of cards. Frequently, use of this card entitles holders to special discounts or deals from the non-financial group.\",\"primaryKey\":[\"ProductPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Product Party Relationship Type.\",\"isNullable\":false,\"name\":\"ProductPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Product Party Relationship Type.\",\"isNullable\":true,\"name\":\"ProductPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Product Party Relationship Type.\",\"isNullable\":true,\"name\":\"ProductPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the Product over the indicated period.\n\nEx:\n- production manager\n- product manager\n- product support\n- support technician\n- plant manager\n- planning manager\n- pricing analyst\n- product development\n- production supervisor\n- safety officer\n- refinery scheduling analyst\n- sales manager\n- environmental engineer\n- sales manager\n- operations manager\n- process manager\n- maintenance\n- OEM Partner\n- issuer\n- co-branded affiliate\n- affinity organization \n\nwhere:\nISSUER\nThe cardholder's bank, or the bank which has issued a MasterCard, Visa or other payment card to an individual. A card issuer is the acceptor and approver of a transaction - the entity that maintains the account relationship with the cardholder.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nCO-BRANDED AFFILIATE\nA co-branded payment card is sponsored by both the issuing bank and a retail organization such as a department store or an airline. Cardholders may get benefits such as discounts or free merchandise from the sponsoring merchant based on account usage and terms.\n\nAFFINITY ORGANIZATION\nA card offered by a lending institution in conjunction with another organization. Schools, non-profit groups, pro wrestlers, popular singers and airlines are among those featured on these types of cards. Frequently, use of this card entitles holders to special discounts or deals from the non-financial group.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ProductPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

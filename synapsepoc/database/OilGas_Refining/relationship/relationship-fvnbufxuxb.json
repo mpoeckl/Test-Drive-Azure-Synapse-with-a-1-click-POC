@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fvnbufxuxb",
+	"properties": {
+		"Name": "relationship-fvnbufxuxb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CostType",
+		"ToTableName": "RefineryCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostTypeId",
+				"ToColumnName": "CostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CostType.cdm.json/CostType\",\"toEntity\":\"RefineryCost.cdm.json/RefineryCost\",\"joinPairs\":[{\"fromAttribute\":\"CostTypeId\",\"toAttribute\":\"CostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,173 @@
+{
+	"name": "ComponentGuideline",
+	"properties": {
+		"Name": "ComponentGuideline",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Ranges of values associated with a reading on a component and how the results within those ranges should be interpreted and acted upon.\n\nThe intent is for this guideline table to contain non-overlapping values from 0 - infinity so that a single value delivered in a reading will have a single test guideline to provide additional data on how to interpret the result.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumReadingValue",
+					"Description": "The minimum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "MinimumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumReadingValue",
+					"Description": "The maximum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "MaximumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingResultTypeId",
+					"Description": "The unique identifier of a Reading Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "ReadingResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentGuidelineNote",
+					"Description": "A note, comment or additional information regarding the Component Guideline.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuideline.cdm.json/ComponentGuideline",
+						"Name": "ComponentGuidelineNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuideline",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuideline",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingTypeId\"},\"MinimumReadingValue\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MinimumReadingValue\"},\"MaximumReadingValue\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MaximumReadingValue\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"UnitOfMeasureId\"},\"ReadingResultTypeId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingResultTypeId\"},\"ComponentGuidelineNote\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentGuidelineNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentGuideline\",\"path\":\"ComponentGuideline.cdm.json/ComponentGuideline\"},\"description\":\"Ranges of values associated with a reading on a component and how the results within those ranges should be interpreted and acted upon.\\n\\nThe intent is for this guideline table to contain non-overlapping values from 0 - infinity so that a single value delivered in a reading will have a single test guideline to provide additional data on how to interpret the result.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"MinimumReadingValue\",\"MaximumReadingValue\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MinimumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MinimumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MaximumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MaximumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Result Type.\",\"isNullable\":true,\"name\":\"ReadingResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentGuidelineNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Component Guideline.\",\"isNullable\":true,\"name\":\"ComponentGuidelineNote\"}]}}}",
+			"Description": "Ranges of values associated with a reading on a component and how the results within those ranges should be interpreted and acted upon.\n\nThe intent is for this guideline table to contain non-overlapping values from 0 - infinity so that a single value delivered in a reading will have a single test guideline to provide additional data on how to interpret the result.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,MinimumReadingValue,MaximumReadingValue",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,417 @@
+{
+	"name": "RefineryTest",
+	"properties": {
+		"Name": "RefineryTest",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A refinery test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDescription",
+					"Description": "A description of the refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestMethodId",
+					"Description": "The unique identifier of a  refinery test method.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestPlannedTimestamp",
+					"Description": "The timestamp that the refinery test is planned.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestPlannedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestScheduledTimestamp",
+					"Description": "The timestamp that the refinery test is scheduled.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestScheduledTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestPerformedTimestamp",
+					"Description": "The timestamp that the refinery test is performed.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestPerformedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestSafetyStatement",
+					"Description": "A statement regarding the refinery test safety requirements and procedure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestSafetyStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestSamplePreparationStatement",
+					"Description": "A statement regarding the refinery test sample preparation procedures or requirements.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestSamplePreparationStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestSampleHandlingStatement",
+					"Description": "A statement regarding the refinery test sample handling and procedures.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestSampleHandlingStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestSampleDisposalStatement",
+					"Description": "A statement regarding the refinery test sample disposal procedures and requirements.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestSampleDisposalStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilTypeId",
+					"Description": "The unique identifier of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "CrudeOilTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WasteMaterialTypeId",
+					"Description": "The unique identifier of a waste material type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "WasteMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTypeId",
+					"Description": "The unique identifier of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "CatalystTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTypeId",
+					"Description": "The unique identifier of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "AdditiveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockTypeId",
+					"Description": "The unique identifier of a feedstock type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "FeedstockTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestLocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestResultTypeId",
+					"Description": "The unique identifier of a refinery test result type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCategoryId",
+					"Description": "The unique identifier of a refinery test category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestNote",
+					"Description": "A note, comment or additional information regarding the refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "RefineryTestNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankId",
+					"Description": "The unique identifier of a Storage Tank.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTest.cdm.json/RefineryTest",
+						"Name": "StorageTankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTest",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTest",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestId\"},\"RefineryTestDescription\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestDescription\"},\"RefineryTestMethodId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestMethodId\"},\"RefineryTestPlannedTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPlannedTimestamp\"},\"RefineryTestScheduledTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestScheduledTimestamp\"},\"RefineryTestPerformedTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPerformedTimestamp\"},\"RefineryTestSafetyStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSafetyStatement\"},\"RefineryTestSamplePreparationStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSamplePreparationStatement\"},\"RefineryTestSampleHandlingStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleHandlingStatement\"},\"RefineryTestSampleDisposalStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleDisposalStatement\"},\"ProductId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"ProductId\"},\"CrudeOilTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CrudeOilTypeId\"},\"WasteMaterialTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"WasteMaterialTypeId\"},\"CatalystTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CatalystTypeId\"},\"AdditiveTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"AdditiveTypeId\"},\"FeedstockTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"FeedstockTypeId\"},\"RefineryTestLocationId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestLocationId\"},\"RefineryTestResultTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestResultTypeId\"},\"RefineryProcessId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryProcessId\"},\"RefineryTestCategoryId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestCategoryId\"},\"RefineryTestNote\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestNote\"},\"StorageTankId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"StorageTankId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTest\",\"path\":\"RefineryTest.cdm.json/RefineryTest\"},\"description\":\"A refinery test.\",\"primaryKey\":[\"RefineryTestId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the refinery test.\",\"isNullable\":true,\"name\":\"RefineryTestDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a  refinery test method.\",\"isNullable\":false,\"name\":\"RefineryTestMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPlannedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the refinery test is planned.\",\"isNullable\":true,\"name\":\"RefineryTestPlannedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestScheduledTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the refinery test is scheduled.\",\"isNullable\":true,\"name\":\"RefineryTestScheduledTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPerformedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the refinery test is performed.\",\"isNullable\":true,\"name\":\"RefineryTestPerformedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSafetyStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the refinery test safety requirements and procedure.\",\"isNullable\":true,\"name\":\"RefineryTestSafetyStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSamplePreparationStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the refinery test sample preparation procedures or requirements.\",\"isNullable\":true,\"name\":\"RefineryTestSamplePreparationStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleHandlingStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the refinery test sample handling and procedures.\",\"isNullable\":true,\"name\":\"RefineryTestSampleHandlingStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleDisposalStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the refinery test sample disposal procedures and requirements.\",\"isNullable\":true,\"name\":\"RefineryTestSampleDisposalStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CrudeOilTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil type.\",\"isNullable\":true,\"name\":\"CrudeOilTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"WasteMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a waste material type.\",\"isNullable\":true,\"name\":\"WasteMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CatalystTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a catalyst type.\",\"isNullable\":false,\"name\":\"CatalystTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"AdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an additive type.\",\"isNullable\":false,\"name\":\"AdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"FeedstockTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feedstock type.\",\"isNullable\":true,\"name\":\"FeedstockTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"RefineryTestLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test result type.\",\"isNullable\":true,\"name\":\"RefineryTestResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test category.\",\"isNullable\":true,\"name\":\"RefineryTestCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery test.\",\"isNullable\":true,\"name\":\"RefineryTestNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"StorageTankId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Tank.\",\"isNullable\":true,\"name\":\"StorageTankId\"}]}}}",
+			"Description": "A refinery test.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

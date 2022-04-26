@@ -1,0 +1,26 @@
+{
+	"name": "relationship-foyexbbbbk",
+	"properties": {
+		"Name": "relationship-foyexbbbbk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FeedstockType",
+		"ToTableName": "StorageContainerContent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FeedstockTypeId",
+				"ToColumnName": "FeedstockTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FeedstockType.cdm.json/FeedstockType\",\"toEntity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"joinPairs\":[{\"fromAttribute\":\"FeedstockTypeId\",\"toAttribute\":\"FeedstockTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

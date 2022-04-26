@@ -1,0 +1,26 @@
+{
+	"name": "relationship-quemzzizij",
+	"properties": {
+		"Name": "relationship-quemzzizij",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Device",
+		"ToTableName": "MeterChannelDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Device.cdm.json/Device\",\"toEntity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

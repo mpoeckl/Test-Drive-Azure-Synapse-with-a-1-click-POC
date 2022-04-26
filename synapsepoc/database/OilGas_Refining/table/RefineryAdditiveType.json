@@ -1,0 +1,122 @@
+{
+	"name": "RefineryAdditiveType",
+	"properties": {
+		"Name": "RefineryAdditiveType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of additive, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Cold-Flow Improvers\n- Conductivity Improver\n- Dehazer\n- Hydrogen Sulfide Scavengers and Mercaptan Scavenger\n- Hydrogen Sulfide Scavengers for Asphalt\n- Octane Improver\n- Cetane Number Improver\n- Lubricity Improver\n- Metal Deactivator\n- Diesel Stabilizers\n- Corrosion Inhibitor\n- Phenylenediamines\n- Amine\n- Methylcyclopentadienyl manganese tricarbonyl (MMT)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AdditiveTypeId",
+					"Description": "The unique identifier of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAdditiveType.cdm.json/RefineryAdditiveType",
+						"Name": "AdditiveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTypeName",
+					"Description": "The name of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAdditiveType.cdm.json/RefineryAdditiveType",
+						"Name": "AdditiveTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTypeDescription",
+					"Description": "The description of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAdditiveType.cdm.json/RefineryAdditiveType",
+						"Name": "AdditiveTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAdditiveType.cdm.json/RefineryAdditiveType",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAdditiveType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAdditiveType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdditiveTypeId\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeId\"},\"AdditiveTypeName\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeName\"},\"AdditiveTypeDescription\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"CorrosiveQualityId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryAdditiveType\",\"path\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\"},\"description\":\"The type of additive, which is a chemical added to a process or product to improve the outcome or product properties.\\n\\nEx:\\n- Cold-Flow Improvers\\n- Conductivity Improver\\n- Dehazer\\n- Hydrogen Sulfide Scavengers and Mercaptan Scavenger\\n- Hydrogen Sulfide Scavengers for Asphalt\\n- Octane Improver\\n- Cetane Number Improver\\n- Lubricity Improver\\n- Metal Deactivator\\n- Diesel Stabilizers\\n- Corrosion Inhibitor\\n- Phenylenediamines\\n- Amine\\n- Methylcyclopentadienyl manganese tricarbonyl (MMT)\",\"primaryKey\":[\"AdditiveTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an additive type.\",\"isNullable\":false,\"name\":\"AdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an additive type.\",\"isNullable\":true,\"name\":\"AdditiveTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an additive type.\",\"isNullable\":true,\"name\":\"AdditiveTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityId\"}]}}}",
+			"Description": "The type of additive, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Cold-Flow Improvers\n- Conductivity Improver\n- Dehazer\n- Hydrogen Sulfide Scavengers and Mercaptan Scavenger\n- Hydrogen Sulfide Scavengers for Asphalt\n- Octane Improver\n- Cetane Number Improver\n- Lubricity Improver\n- Metal Deactivator\n- Diesel Stabilizers\n- Corrosion Inhibitor\n- Phenylenediamines\n- Amine\n- Methylcyclopentadienyl manganese tricarbonyl (MMT)",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "AdditiveTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

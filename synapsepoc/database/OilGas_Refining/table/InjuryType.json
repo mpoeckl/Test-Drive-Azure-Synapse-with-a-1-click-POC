@@ -1,0 +1,106 @@
+{
+	"name": "InjuryType",
+	"properties": {
+		"Name": "InjuryType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Types of injuries that may be incurred by parties involved in an accident.\n\nEx:\n- Abrasion\n- Brain Injuries\n- Broken arm\n- Bruising\n- Burns\n- Burn, Severe\n- Concussions\n- Construction Injuries\n- Dislocation\n- Fatality\n- Foreign Body\n- Fracture\n- Head Injury\n- Herniated Disc\n- Hypothermia\n- Lacerations\n- Pinched Nerve\n- Fracture\n- Sciatica\n- Spinal Cord Injury\n- Sprain\n- Trauma, Abdominal\n- Trauma, Chest\n- Trauma, Facial\n- Traumatic Brain Injury\n- Whiplash\n- Wound\n- Wound Infection",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InjuryTypeId",
+					"Description": "The unique identifier of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryType.cdm.json/InjuryType",
+						"Name": "InjuryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeName",
+					"Description": "The name of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryType.cdm.json/InjuryType",
+						"Name": "InjuryTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeDescription",
+					"Description": "The description of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "InjuryType.cdm.json/InjuryType",
+						"Name": "InjuryTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/InjuryType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/InjuryType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InjuryTypeId\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeId\"},\"InjuryTypeName\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeName\"},\"InjuryTypeDescription\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InjuryType\",\"path\":\"InjuryType.cdm.json/InjuryType\"},\"description\":\"Types of injuries that may be incurred by parties involved in an accident.\\n\\nEx:\\n- Abrasion\\n- Brain Injuries\\n- Broken arm\\n- Bruising\\n- Burns\\n- Burn, Severe\\n- Concussions\\n- Construction Injuries\\n- Dislocation\\n- Fatality\\n- Foreign Body\\n- Fracture\\n- Head Injury\\n- Herniated Disc\\n- Hypothermia\\n- Lacerations\\n- Pinched Nerve\\n- Fracture\\n- Sciatica\\n- Spinal Cord Injury\\n- Sprain\\n- Trauma, Abdominal\\n- Trauma, Chest\\n- Trauma, Facial\\n- Traumatic Brain Injury\\n- Whiplash\\n- Wound\\n- Wound Infection\",\"primaryKey\":[\"InjuryTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury type.\",\"isNullable\":false,\"name\":\"InjuryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an injury type.\",\"isNullable\":true,\"name\":\"InjuryTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an injury type.\",\"isNullable\":true,\"name\":\"InjuryTypeDescription\"}]}}}",
+			"Description": "Types of injuries that may be incurred by parties involved in an accident.\n\nEx:\n- Abrasion\n- Brain Injuries\n- Broken arm\n- Bruising\n- Burns\n- Burn, Severe\n- Concussions\n- Construction Injuries\n- Dislocation\n- Fatality\n- Foreign Body\n- Fracture\n- Head Injury\n- Herniated Disc\n- Hypothermia\n- Lacerations\n- Pinched Nerve\n- Fracture\n- Sciatica\n- Spinal Cord Injury\n- Sprain\n- Trauma, Abdominal\n- Trauma, Chest\n- Trauma, Facial\n- Traumatic Brain Injury\n- Whiplash\n- Wound\n- Wound Infection",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "InjuryTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

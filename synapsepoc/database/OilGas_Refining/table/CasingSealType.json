@@ -1,0 +1,106 @@
+{
+	"name": "CasingSealType",
+	"properties": {
+		"Name": "CasingSealType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The casing seal type associated with the component casing.\n\nEx:\n- Bolt On\n- Concrete\n- Epoxy\n- Link Seal\n- Rubber Boot\n- Case Seal\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CasingSealTypeId",
+					"Description": "The unique identifier of a casing seal type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingSealType.cdm.json/CasingSealType",
+						"Name": "CasingSealTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CasingSealTypeName",
+					"Description": "The name of a casing seal type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingSealType.cdm.json/CasingSealType",
+						"Name": "CasingSealTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CasingSealTypeDescription",
+					"Description": "The description of a casing seal type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingSealType.cdm.json/CasingSealType",
+						"Name": "CasingSealTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingSealType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingSealType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CasingSealTypeId\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeId\"},\"CasingSealTypeName\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeName\"},\"CasingSealTypeDescription\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CasingSealType\",\"path\":\"CasingSealType.cdm.json/CasingSealType\"},\"description\":\"The casing seal type associated with the component casing.\\n\\nEx:\\n- Bolt On\\n- Concrete\\n- Epoxy\\n- Link Seal\\n- Rubber Boot\\n- Case Seal\\n- Unknown\",\"primaryKey\":[\"CasingSealTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing seal type.\",\"isNullable\":false,\"name\":\"CasingSealTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a casing seal type.\",\"isNullable\":true,\"name\":\"CasingSealTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a casing seal type.\",\"isNullable\":true,\"name\":\"CasingSealTypeDescription\"}]}}}",
+			"Description": "The casing seal type associated with the component casing.\n\nEx:\n- Bolt On\n- Concrete\n- Epoxy\n- Link Seal\n- Rubber Boot\n- Case Seal\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CasingSealTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

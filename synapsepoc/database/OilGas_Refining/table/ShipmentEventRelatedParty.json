@@ -1,0 +1,171 @@
+{
+	"name": "ShipmentEventRelatedParty",
+	"properties": {
+		"Name": "ShipmentEventRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The party(s) having a relationship to the Shipment Event.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventTypeId",
+					"Description": "The unique identifier of a Shipment Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Shipment Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStartTimestamp",
+					"Description": "The start timestamp of an associated Shipment Event.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventEndTimestamp",
+					"Description": "The end timestamp of an associated Shipment Event.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Shipment Event Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty",
+						"Name": "ShipmentEventPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentId\"},\"ShipmentEventTypeId\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventTypeId\"},\"PartyId\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"PartyId\"},\"ShipmentEventPartyRelationshipTypeId\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventPartyRelationshipTypeId\"},\"ShipmentEventStartTimestamp\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventStartTimestamp\"},\"ShipmentEventEndTimestamp\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventEndTimestamp\"},\"ShipmentEventPartyRelationshipNote\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentEventRelatedParty\",\"path\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\"},\"description\":\"The party(s) having a relationship to the Shipment Event.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentEventTypeId\",\"PartyId\",\"ShipmentEventPartyRelationshipTypeId\",\"ShipmentEventStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Type.\",\"isNullable\":false,\"name\":\"ShipmentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Party Relationship Type.\",\"isNullable\":false,\"name\":\"ShipmentEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of an associated Shipment Event.\",\"isNullable\":false,\"name\":\"ShipmentEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of an associated Shipment Event.\",\"isNullable\":true,\"name\":\"ShipmentEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"name\":\"ShipmentEventPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Shipment Event Party Relationship.\",\"isNullable\":true,\"name\":\"ShipmentEventPartyRelationshipNote\"}]}}}",
+			"Description": "The party(s) having a relationship to the Shipment Event.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentEventTypeId,PartyId,ShipmentEventPartyRelationshipTypeId,ShipmentEventStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

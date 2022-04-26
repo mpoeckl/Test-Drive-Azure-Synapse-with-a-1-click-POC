@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tsafewbygm",
+	"properties": {
+		"Name": "relationship-tsafewbygm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentLocationType",
+		"ToTableName": "ComponentLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentLocationTypeId",
+				"ToColumnName": "ComponentLocationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"toEntity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"joinPairs\":[{\"fromAttribute\":\"ComponentLocationTypeId\",\"toAttribute\":\"ComponentLocationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

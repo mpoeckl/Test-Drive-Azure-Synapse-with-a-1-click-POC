@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aqvlfrpwok",
+	"properties": {
+		"Name": "relationship-aqvlfrpwok",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "Generator",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "GeneratorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"Generator.cdm.json/Generator\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"GeneratorId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

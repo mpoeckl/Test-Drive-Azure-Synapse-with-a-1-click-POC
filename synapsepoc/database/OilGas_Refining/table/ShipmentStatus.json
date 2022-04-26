@@ -1,0 +1,139 @@
+{
+	"name": "ShipmentStatus",
+	"properties": {
+		"Name": "ShipmentStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the associated shipment.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatus.cdm.json/ShipmentStatus",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentStatusTypeId",
+					"Description": "The unique identifier of a Shipment Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatus.cdm.json/ShipmentStatus",
+						"Name": "ShipmentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the shipment status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatus.cdm.json/ShipmentStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the shipment status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatus.cdm.json/ShipmentStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentStatusNote",
+					"Description": "A note, comment or additional information regarding the shipment status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentStatus.cdm.json/ShipmentStatus",
+						"Name": "ShipmentStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentId\"},\"ShipmentStatusTypeId\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentStatusNote\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentStatus\",\"path\":\"ShipmentStatus.cdm.json/ShipmentStatus\"},\"description\":\"The status of the associated shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentStatusTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Status Type.\",\"isNullable\":false,\"name\":\"ShipmentStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the shipment status.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the shipment status.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the shipment status.\",\"isNullable\":true,\"name\":\"ShipmentStatusNote\"}]}}}",
+			"Description": "The status of the associated shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentStatusTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

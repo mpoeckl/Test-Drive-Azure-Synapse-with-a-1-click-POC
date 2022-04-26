@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pxajbaibad",
+	"properties": {
+		"Name": "relationship-pxajbaibad",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessMethodType",
+		"ToTableName": "RefineryProcessType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessMethodTypeId",
+				"ToColumnName": "RefineryProcessMethodTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"toEntity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessMethodTypeId\",\"toAttribute\":\"RefineryProcessMethodTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

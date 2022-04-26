@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ryigerrkgi",
+	"properties": {
+		"Name": "relationship-ryigerrkgi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "MeterUsageForecast",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "MeterUsageForecastUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"MeterUsageForecastUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

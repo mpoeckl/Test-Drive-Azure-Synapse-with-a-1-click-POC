@@ -1,0 +1,105 @@
+{
+	"name": "RefineryIncident",
+	"properties": {
+		"Name": "RefineryIncident",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The incident(s) related to the refinery.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryIncident.cdm.json/RefineryIncident",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryIncident.cdm.json/RefineryIncident",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryIncidentNote",
+					"Description": "A note, comment or additional information regarding the refinery incident.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryIncident.cdm.json/RefineryIncident",
+						"Name": "RefineryIncidentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryIncident",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryIncident",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"RefineryId\"},\"IncidentId\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"IncidentId\"},\"RefineryIncidentNote\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"RefineryIncidentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryIncident\",\"path\":\"RefineryIncident.cdm.json/RefineryIncident\"},\"description\":\"The incident(s) related to the refinery.\",\"primaryKey\":[\"RefineryId\",\"IncidentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryIncident.cdm.json/RefineryIncident\",\"name\":\"RefineryIncidentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery incident.\",\"isNullable\":true,\"name\":\"RefineryIncidentNote\"}]}}}",
+			"Description": "The incident(s) related to the refinery.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,IncidentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

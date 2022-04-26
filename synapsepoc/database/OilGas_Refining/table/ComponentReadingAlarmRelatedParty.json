@@ -1,0 +1,170 @@
+{
+	"name": "ComponentReadingAlarmRelatedParty",
+	"properties": {
+		"Name": "ComponentReadingAlarmRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party related to the component reading alarm.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlarmTypeId",
+					"Description": "The unique identifier of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "AlarmTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingAlarmPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Reading Alarm Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "ComponentReadingAlarmPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingStartTimestamp",
+					"Description": "The period start timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "ReadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingAlarmRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding a Component Reading Alarm Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty",
+						"Name": "ComponentReadingAlarmRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarmRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarmRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ReadingTypeId\"},\"AlarmTypeId\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"AlarmTypeId\"},\"PartyId\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"PartyId\"},\"ComponentReadingAlarmPartyRelationshipTypeId\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ReadingStartTimestamp\"},\"ComponentReadingAlarmRelatedPartyNote\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentReadingAlarmRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingAlarmRelatedParty\",\"path\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\"},\"description\":\"A party related to the component reading alarm.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"AlarmTypeId\",\"PartyId\",\"ComponentReadingAlarmPartyRelationshipTypeId\",\"ReadingStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"AlarmTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm Type.\",\"isNullable\":false,\"name\":\"AlarmTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Reading Alarm Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentReadingAlarmPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ReadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated reading is reported.\",\"isNullable\":false,\"name\":\"ReadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"name\":\"ComponentReadingAlarmRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading Alarm Related Party.\",\"isNullable\":true,\"name\":\"ComponentReadingAlarmRelatedPartyNote\"}]}}}",
+			"Description": "A party related to the component reading alarm.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,AlarmTypeId,PartyId,ComponentReadingAlarmPartyRelationshipTypeId,ReadingStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

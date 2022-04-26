@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mcmykanruh",
+	"properties": {
+		"Name": "relationship-mcmykanruh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEventType",
+		"ToTableName": "ShipmentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventTypeId",
+				"ToColumnName": "ShipmentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"toEntity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventTypeId\",\"toAttribute\":\"ShipmentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

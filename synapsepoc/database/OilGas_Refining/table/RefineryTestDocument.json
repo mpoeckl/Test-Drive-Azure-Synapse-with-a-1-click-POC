@@ -1,0 +1,105 @@
+{
+	"name": "RefineryTestDocument",
+	"properties": {
+		"Name": "RefineryTestDocument",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Document(s) related to the refinery test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocument.cdm.json/RefineryTestDocument",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocument.cdm.json/RefineryTestDocument",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDocumentNote",
+					"Description": "A note, comment or additional information regarding the test document.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocument.cdm.json/RefineryTestDocument",
+						"Name": "RefineryTestDocumentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocument",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocument",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"RefineryTestId\"},\"DocumentId\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"DocumentId\"},\"RefineryTestDocumentNote\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"RefineryTestDocumentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestDocument\",\"path\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\"},\"description\":\"Document(s) related to the refinery test.\",\"primaryKey\":[\"RefineryTestId\",\"DocumentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"name\":\"RefineryTestDocumentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the test document.\",\"isNullable\":true,\"name\":\"RefineryTestDocumentNote\"}]}}}",
+			"Description": "Document(s) related to the refinery test.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,DocumentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

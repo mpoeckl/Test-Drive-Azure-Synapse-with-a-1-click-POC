@@ -1,0 +1,273 @@
+{
+	"name": "ComponentImprovement",
+	"properties": {
+		"Name": "ComponentImprovement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A capitalized expenditure that extends the useful life of a fixed asset or improves it in some manner over the original component.\n\nAn expenditure that adds years to a component or improves its rate of output is considered an improvement and is capitalized.\n\nMaintenance or repair expenses are not capitalized.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentImprovementId",
+					"Description": "The unique identifier of a Component Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ComponentImprovementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementTypeId",
+					"Description": "The unique identifier of an Improvement Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementDescription",
+					"Description": "The description of the Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementPlannedTimestamp",
+					"Description": "The timestamp that the Improvement is planned.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementPlannedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementStartedTimestamp",
+					"Description": "The timestamp that the Improvement was started.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementStartedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementCompletedTimestamp",
+					"Description": "The timestamp that the Improvement was completed.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementEstimatedCost",
+					"Description": "The estimated cost of the Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementEstimatedCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementActualCost",
+					"Description": "The actual cost of the Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementActualCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementNote",
+					"Description": "Notes, comments or additional information regarding the Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ImprovementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ContractId",
+					"Description": "The unique identifier of a Contract.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "ContractId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovement.cdm.json/ComponentImprovement",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentImprovement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentImprovement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentImprovementId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ComponentImprovementId\"},\"ComponentId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ComponentId\"},\"ImprovementTypeId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementTypeId\"},\"ImprovementDescription\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementDescription\"},\"ImprovementPlannedTimestamp\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementPlannedTimestamp\"},\"ImprovementStartedTimestamp\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementStartedTimestamp\"},\"ImprovementCompletedTimestamp\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementCompletedTimestamp\"},\"ImprovementEstimatedCost\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementEstimatedCost\"},\"ImprovementActualCost\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementActualCost\"},\"ImprovementNote\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementNote\"},\"VendorId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"VendorId\"},\"ContractId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ContractId\"},\"WorkOrderId\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"WorkOrderId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentImprovement\",\"path\":\"ComponentImprovement.cdm.json/ComponentImprovement\"},\"description\":\"A capitalized expenditure that extends the useful life of a fixed asset or improves it in some manner over the original component.\\n\\nAn expenditure that adds years to a component or improves its rate of output is considered an improvement and is capitalized.\\n\\nMaintenance or repair expenses are not capitalized.\",\"primaryKey\":[\"ComponentImprovementId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ComponentImprovementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Improvement.\",\"isNullable\":false,\"name\":\"ComponentImprovementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Improvement Type.\",\"isNullable\":false,\"name\":\"ImprovementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Improvement.\",\"isNullable\":true,\"name\":\"ImprovementDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementPlannedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Improvement is planned.\",\"isNullable\":true,\"name\":\"ImprovementPlannedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementStartedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Improvement was started.\",\"isNullable\":true,\"name\":\"ImprovementStartedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Improvement was completed.\",\"isNullable\":true,\"name\":\"ImprovementCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementEstimatedCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated cost of the Improvement.\",\"isNullable\":true,\"scale\":2,\"name\":\"ImprovementEstimatedCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementActualCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual cost of the Improvement.\",\"isNullable\":true,\"scale\":2,\"name\":\"ImprovementActualCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ImprovementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Improvement.\",\"isNullable\":true,\"name\":\"ImprovementNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":true,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"ContractId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Contract.\",\"isNullable\":true,\"name\":\"ContractId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderId\"}]}}}",
+			"Description": "A capitalized expenditure that extends the useful life of a fixed asset or improves it in some manner over the original component.\n\nAn expenditure that adds years to a component or improves its rate of output is considered an improvement and is capitalized.\n\nMaintenance or repair expenses are not capitalized.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentImprovementId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

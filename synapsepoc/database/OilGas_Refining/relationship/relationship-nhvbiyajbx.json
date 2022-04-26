@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nhvbiyajbx",
+	"properties": {
+		"Name": "relationship-nhvbiyajbx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpDriveType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpDriveTypeId",
+				"ToColumnName": "PumpDriveTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PumpDriveTypeId\",\"toAttribute\":\"PumpDriveTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

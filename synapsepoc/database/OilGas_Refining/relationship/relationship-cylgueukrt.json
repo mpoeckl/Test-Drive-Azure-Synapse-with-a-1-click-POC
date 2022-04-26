@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cylgueukrt",
+	"properties": {
+		"Name": "relationship-cylgueukrt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "StorageContainerAvailableStorage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "AvailableStorageUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"AvailableStorageUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-segarwbzwq",
+	"properties": {
+		"Name": "relationship-segarwbzwq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpRotationDirection",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpRotationDirectionId",
+				"ToColumnName": "PumpRotationDirectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PumpRotationDirectionId\",\"toAttribute\":\"PumpRotationDirectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "RiskPhrase",
+	"properties": {
+		"Name": "RiskPhrase",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Risk Phrase associated with an industrial chemical as defined by the International Occupational Safety and Health Information Centre (CIS) \n\nEx:\n\nR1      Explosive when dry. \nR2      Risk of explosion by shock, friction, fire or other sources of ignition. \nR3      Extreme Risk of explosion by shock, friction, fire or other sources of ignition. \nR4      Forms very sensitive explosive metallic compounds. \nR5      Heating may cause an explosion. \nR6      Explosive with or without contact with air. \nR7      May cause fire. \nR8      Contact with combustible material may cause fire. \nR9      Explosive when mixed with combustible material. \nR10     Flammable. \nR11     Highly flammable. \nR12     Extremely flammable. \nR13     Extremely flammable liquefied gas.\nR14     Reacts violently with water. \nR15     Contact with water liberates highly flammable gases. \nR16     Explosive when mixed with oxidizing substances. \nR17     Spontaneously flammable in air. \nR18     In use, may form flammable/explosive vapor-air mixture. \nR19     May form explosive peroxides. \nR20     Harmful by inhalation. \nR21     Harmful in contact with skin. \nR22     Harmful if swallowed. \nR23     Toxic by inhalation. \nR24     Toxic in contact with skin. \nR25     Toxic if swallowed. \nR26     Very toxic by inhalation. \nR27     Very toxic in contact with skin. \nR28     Very toxic if swallowed. \nR29     Contact with water liberates toxic gases. \nR30     Can become highly flammable in use. \nR31     Contact with acids liberates toxic gas. \nR32     Contact with acids liberates very toxic gas. \nR33     Danger of cumulative effects. \nR34     Causes burns. \nR35     Causes severe burns. \nR36     Irritating to eyes. \nR37     Irritating to Respiratory system. \nR38     Irritating to skin. \nR39     Danger of very serious irreversible effects. \nR40     Possible risks of irreversible effects. \nR41     Risk of serious damage to eyes. \nR42     May cause sensitization by inhalation. \nR43     May cause sensitization by skin contact. \nR44     Risk of explosion if heated under confinement. \nR45     May cause cancer. \nR46     May cause heritable genetic damage. \nR47     May cause birth defects.\nR48     Danger of serious damage to health by prolonged exposure. \nR49     May cause cancer by inhalation. \nR50     Very toxic to aquatic organisms. \nR51     Toxic to aquatic organisms. \nR52     Harmful to aquatic organisms. \nR53     May cause long-term adverse effects in the aquatic environment. \nR54     Toxic to flora. \nR55     Toxic to fauna. \nR56     Toxic to soil organisms. \nR57     Toxic to bees. \nR58     May cause long-term adverse effects in the environment. \nR59     Dangerous for the ozone layer. \nR60     May impair fertility. \nR61     May cause harm to the unborn child. \nR62     Possible risk of impaired fertility. \nR63     Possible risk of harm to the unborn child. \nR64     May cause harm to breastfed babies.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RiskPhraseId",
+					"Description": "The unique identifier associated with a Risk Phrase.",
+					"BaseAttributeReference": {
+						"Entity": "RiskPhrase.cdm.json/RiskPhrase",
+						"Name": "RiskPhraseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RiskPhraseName",
+					"Description": "The short name associated with a Risk Phrase.",
+					"BaseAttributeReference": {
+						"Entity": "RiskPhrase.cdm.json/RiskPhrase",
+						"Name": "RiskPhraseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RiskPhraseStatement",
+					"Description": "The description associated with a Risk Phrase.",
+					"BaseAttributeReference": {
+						"Entity": "RiskPhrase.cdm.json/RiskPhrase",
+						"Name": "RiskPhraseStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RiskPhrase",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RiskPhrase",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RiskPhraseId\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseId\"},\"RiskPhraseName\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseName\"},\"RiskPhraseStatement\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RiskPhrase\",\"path\":\"RiskPhrase.cdm.json/RiskPhrase\"},\"description\":\"The Risk Phrase associated with an industrial chemical as defined by the International Occupational Safety and Health Information Centre (CIS) \\n\\nEx:\\n\\nR1      Explosive when dry. \\nR2      Risk of explosion by shock, friction, fire or other sources of ignition. \\nR3      Extreme Risk of explosion by shock, friction, fire or other sources of ignition. \\nR4      Forms very sensitive explosive metallic compounds. \\nR5      Heating may cause an explosion. \\nR6      Explosive with or without contact with air. \\nR7      May cause fire. \\nR8      Contact with combustible material may cause fire. \\nR9      Explosive when mixed with combustible material. \\nR10     Flammable. \\nR11     Highly flammable. \\nR12     Extremely flammable. \\nR13     Extremely flammable liquefied gas.\\nR14     Reacts violently with water. \\nR15     Contact with water liberates highly flammable gases. \\nR16     Explosive when mixed with oxidizing substances. \\nR17     Spontaneously flammable in air. \\nR18     In use, may form flammable/explosive vapor-air mixture. \\nR19     May form explosive peroxides. \\nR20     Harmful by inhalation. \\nR21     Harmful in contact with skin. \\nR22     Harmful if swallowed. \\nR23     Toxic by inhalation. \\nR24     Toxic in contact with skin. \\nR25     Toxic if swallowed. \\nR26     Very toxic by inhalation. \\nR27     Very toxic in contact with skin. \\nR28     Very toxic if swallowed. \\nR29     Contact with water liberates toxic gases. \\nR30     Can become highly flammable in use. \\nR31     Contact with acids liberates toxic gas. \\nR32     Contact with acids liberates very toxic gas. \\nR33     Danger of cumulative effects. \\nR34     Causes burns. \\nR35     Causes severe burns. \\nR36     Irritating to eyes. \\nR37     Irritating to Respiratory system. \\nR38     Irritating to skin. \\nR39     Danger of very serious irreversible effects. \\nR40     Possible risks of irreversible effects. \\nR41     Risk of serious damage to eyes. \\nR42     May cause sensitization by inhalation. \\nR43     May cause sensitization by skin contact. \\nR44     Risk of explosion if heated under confinement. \\nR45     May cause cancer. \\nR46     May cause heritable genetic damage. \\nR47     May cause birth defects.\\nR48     Danger of serious damage to health by prolonged exposure. \\nR49     May cause cancer by inhalation. \\nR50     Very toxic to aquatic organisms. \\nR51     Toxic to aquatic organisms. \\nR52     Harmful to aquatic organisms. \\nR53     May cause long-term adverse effects in the aquatic environment. \\nR54     Toxic to flora. \\nR55     Toxic to fauna. \\nR56     Toxic to soil organisms. \\nR57     Toxic to bees. \\nR58     May cause long-term adverse effects in the environment. \\nR59     Dangerous for the ozone layer. \\nR60     May impair fertility. \\nR61     May cause harm to the unborn child. \\nR62     Possible risk of impaired fertility. \\nR63     Possible risk of harm to the unborn child. \\nR64     May cause harm to breastfed babies.\",\"primaryKey\":[\"RiskPhraseId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier associated with a Risk Phrase.\",\"isNullable\":false,\"name\":\"RiskPhraseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The short name associated with a Risk Phrase.\",\"isNullable\":true,\"name\":\"RiskPhraseName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"name\":\"RiskPhraseStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description associated with a Risk Phrase.\",\"isNullable\":true,\"name\":\"RiskPhraseStatement\"}]}}}",
+			"Description": "The Risk Phrase associated with an industrial chemical as defined by the International Occupational Safety and Health Information Centre (CIS) \n\nEx:\n\nR1      Explosive when dry. \nR2      Risk of explosion by shock, friction, fire or other sources of ignition. \nR3      Extreme Risk of explosion by shock, friction, fire or other sources of ignition. \nR4      Forms very sensitive explosive metallic compounds. \nR5      Heating may cause an explosion. \nR6      Explosive with or without contact with air. \nR7      May cause fire. \nR8      Contact with combustible material may cause fire. \nR9      Explosive when mixed with combustible material. \nR10     Flammable. \nR11     Highly flammable. \nR12     Extremely flammable. \nR13     Extremely flammable liquefied gas.\nR14     Reacts violently with water. \nR15     Contact with water liberates highly flammable gases. \nR16     Explosive when mixed with oxidizing substances. \nR17     Spontaneously flammable in air. \nR18     In use, may form flammable/explosive vapor-air mixture. \nR19     May form explosive peroxides. \nR20     Harmful by inhalation. \nR21     Harmful in contact with skin. \nR22     Harmful if swallowed. \nR23     Toxic by inhalation. \nR24     Toxic in contact with skin. \nR25     Toxic if swallowed. \nR26     Very toxic by inhalation. \nR27     Very toxic in contact with skin. \nR28     Very toxic if swallowed. \nR29     Contact with water liberates toxic gases. \nR30     Can become highly flammable in use. \nR31     Contact with acids liberates toxic gas. \nR32     Contact with acids liberates very toxic gas. \nR33     Danger of cumulative effects. \nR34     Causes burns. \nR35     Causes severe burns. \nR36     Irritating to eyes. \nR37     Irritating to Respiratory system. \nR38     Irritating to skin. \nR39     Danger of very serious irreversible effects. \nR40     Possible risks of irreversible effects. \nR41     Risk of serious damage to eyes. \nR42     May cause sensitization by inhalation. \nR43     May cause sensitization by skin contact. \nR44     Risk of explosion if heated under confinement. \nR45     May cause cancer. \nR46     May cause heritable genetic damage. \nR47     May cause birth defects.\nR48     Danger of serious damage to health by prolonged exposure. \nR49     May cause cancer by inhalation. \nR50     Very toxic to aquatic organisms. \nR51     Toxic to aquatic organisms. \nR52     Harmful to aquatic organisms. \nR53     May cause long-term adverse effects in the aquatic environment. \nR54     Toxic to flora. \nR55     Toxic to fauna. \nR56     Toxic to soil organisms. \nR57     Toxic to bees. \nR58     May cause long-term adverse effects in the environment. \nR59     Dangerous for the ozone layer. \nR60     May impair fertility. \nR61     May cause harm to the unborn child. \nR62     Possible risk of impaired fertility. \nR63     Possible risk of harm to the unborn child. \nR64     May cause harm to breastfed babies.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "RiskPhraseId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

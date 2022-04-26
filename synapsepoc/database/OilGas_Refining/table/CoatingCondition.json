@@ -1,0 +1,106 @@
+{
+	"name": "CoatingCondition",
+	"properties": {
+		"Name": "CoatingCondition",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The coating condition associated with a component.\n\nEx:\n- Completely Disbonded\n- Completely Intact\n- Extensive Disbonding\n- Isolated Disbonding\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CoatingConditionId",
+					"Description": "The unique identifier of a coating condition.",
+					"BaseAttributeReference": {
+						"Entity": "CoatingCondition.cdm.json/CoatingCondition",
+						"Name": "CoatingConditionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CoatingConditionName",
+					"Description": "The name of a coating condition.",
+					"BaseAttributeReference": {
+						"Entity": "CoatingCondition.cdm.json/CoatingCondition",
+						"Name": "CoatingConditionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CoatingConditionDescription",
+					"Description": "The description of a coating condition.",
+					"BaseAttributeReference": {
+						"Entity": "CoatingCondition.cdm.json/CoatingCondition",
+						"Name": "CoatingConditionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CoatingCondition",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CoatingCondition",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CoatingConditionId\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionId\"},\"CoatingConditionName\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionName\"},\"CoatingConditionDescription\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CoatingCondition\",\"path\":\"CoatingCondition.cdm.json/CoatingCondition\"},\"description\":\"The coating condition associated with a component.\\n\\nEx:\\n- Completely Disbonded\\n- Completely Intact\\n- Extensive Disbonding\\n- Isolated Disbonding\\n- Unknown\",\"primaryKey\":[\"CoatingConditionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a coating condition.\",\"isNullable\":false,\"name\":\"CoatingConditionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a coating condition.\",\"isNullable\":true,\"name\":\"CoatingConditionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"name\":\"CoatingConditionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a coating condition.\",\"isNullable\":true,\"name\":\"CoatingConditionDescription\"}]}}}",
+			"Description": "The coating condition associated with a component.\n\nEx:\n- Completely Disbonded\n- Completely Intact\n- Extensive Disbonding\n- Isolated Disbonding\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CoatingConditionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

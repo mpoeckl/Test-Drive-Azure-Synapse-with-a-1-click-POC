@@ -1,0 +1,106 @@
+{
+	"name": "PipeConstructionMaterialType",
+	"properties": {
+		"Name": "PipeConstructionMaterialType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of material from which the pipe is constructed.\n\nEx:\n- Bare steel\n- Cast Iron\n- Coated Steel\n- Composite\n- Copper\n- Ductile Iron\n- Plastic ABS\n- Plastic Other\n- Plastic PE\n- Plastic PVC\n- Reconditioned Cast Iron\n- Wrought Iron",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeConstructionMaterialTypeId",
+					"Description": "The unique identifier of a Pipe Construction Material Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType",
+						"Name": "PipeConstructionMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeConstructionMaterialTypeName",
+					"Description": "The name of a Pipe Construction Material Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType",
+						"Name": "PipeConstructionMaterialTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeConstructionMaterialTypeDescription",
+					"Description": "The description of a Pipe Construction Material Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType",
+						"Name": "PipeConstructionMaterialTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeConstructionMaterialType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeConstructionMaterialType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeConstructionMaterialTypeId\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeId\"},\"PipeConstructionMaterialTypeName\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeName\"},\"PipeConstructionMaterialTypeDescription\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeConstructionMaterialType\",\"path\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\"},\"description\":\"The type of material from which the pipe is constructed.\\n\\nEx:\\n- Bare steel\\n- Cast Iron\\n- Coated Steel\\n- Composite\\n- Copper\\n- Ductile Iron\\n- Plastic ABS\\n- Plastic Other\\n- Plastic PE\\n- Plastic PVC\\n- Reconditioned Cast Iron\\n- Wrought Iron\",\"primaryKey\":[\"PipeConstructionMaterialTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipe Construction Material Type.\",\"isNullable\":false,\"name\":\"PipeConstructionMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pipe Construction Material Type.\",\"isNullable\":true,\"name\":\"PipeConstructionMaterialTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"name\":\"PipeConstructionMaterialTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pipe Construction Material Type.\",\"isNullable\":true,\"name\":\"PipeConstructionMaterialTypeDescription\"}]}}}",
+			"Description": "The type of material from which the pipe is constructed.\n\nEx:\n- Bare steel\n- Cast Iron\n- Coated Steel\n- Composite\n- Copper\n- Ductile Iron\n- Plastic ABS\n- Plastic Other\n- Plastic PE\n- Plastic PVC\n- Reconditioned Cast Iron\n- Wrought Iron",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeConstructionMaterialTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

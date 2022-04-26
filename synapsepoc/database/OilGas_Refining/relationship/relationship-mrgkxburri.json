@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mrgkxburri",
+	"properties": {
+		"Name": "relationship-mrgkxburri",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryCatalystType",
+		"ToTableName": "RefineryProcessCatalyst",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CatalystTypeId",
+				"ToColumnName": "CatalystTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"toEntity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"joinPairs\":[{\"fromAttribute\":\"CatalystTypeId\",\"toAttribute\":\"CatalystTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

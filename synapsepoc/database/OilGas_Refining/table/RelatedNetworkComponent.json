@@ -1,0 +1,187 @@
+{
+	"name": "RelatedNetworkComponent",
+	"properties": {
+		"Name": "RelatedNetworkComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship between components for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "RelatedComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRelationshipTypeId",
+					"Description": "The unique identifier of a Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "ComponentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of a Component Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of a Component Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConnectionTypeId",
+					"Description": "The unique identifier of a component connection type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "ComponentConnectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WeldId",
+					"Description": "The unique identifier of a Weld.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "WeldId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRelationshipNote",
+					"Description": "A note, comment or additional information regarding a Component Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedNetworkComponent.cdm.json/RelatedNetworkComponent",
+						"Name": "ComponentRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedNetworkComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedNetworkComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentId\"},\"RelatedComponentId\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"RelatedComponentId\"},\"ComponentRelationshipTypeId\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"PeriodEndTimestamp\"},\"ComponentConnectionTypeId\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentConnectionTypeId\"},\"WeldId\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"WeldId\"},\"ComponentRelationshipNote\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedNetworkComponent\",\"path\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\"},\"description\":\"The relationship between components for the associated period.\",\"primaryKey\":[\"ComponentId\",\"RelatedComponentId\",\"ComponentRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"RelatedComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"RelatedComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of a Component Relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of a Component Relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentConnectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a component connection type.\",\"isNullable\":true,\"name\":\"ComponentConnectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"WeldId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Weld.\",\"isNullable\":true,\"name\":\"WeldId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"name\":\"ComponentRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Relationship.\",\"isNullable\":true,\"name\":\"ComponentRelationshipNote\"}]}}}",
+			"Description": "The relationship between components for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,RelatedComponentId,ComponentRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

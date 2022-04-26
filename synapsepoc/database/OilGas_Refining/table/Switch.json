@@ -1,0 +1,282 @@
+{
+	"name": "Switch",
+	"properties": {
+		"Name": "Switch",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A switch is an electrical component that can break an electrical circuit, interrupting the current or diverting it from one conductor to another.\n\nThe most familiar form of switch is a manually operated electromechanical device with one or more sets of electrical contacts. \n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SwitchId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "SwitchId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "NormalPosition",
+					"Description": "The normal position of the switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "NormalPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NormalStatus",
+					"Description": "The normal status of the switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "NormalStatus"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProtectedSwitchIndicator",
+					"Description": "A switch that can be operated by protection equipment.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "ProtectedSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BreakerIndicator",
+					"Description": "A specific sub type of Protected Switch, with additional attributes to define the current rating and transit time.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "BreakerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "LoadBreakSwitchIndicator",
+					"Description": "Indicates a switch that is a load breaking switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "LoadBreakSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AirGapSwitchIndicator",
+					"Description": "A mechanical switch or relay that disconnects power to a load by physically separating two contacts, resulting in an air gap between the contacts.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "AirGapSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BiasedSwitchIndicator",
+					"Description": "Indicates that the switch is a biased switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "BiasedSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "InertialSwitchIndicator",
+					"Description": "Indicates that the switch is an inertial switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "InertialSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DipSwitchIndicator",
+					"Description": "Indicates that the switch is a dip switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "DipSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CentrifugalSwitchIndicator",
+					"Description": "Indicates that the switch is a centrifugal switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "CentrifugalSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ToggleSwitchIndicator",
+					"Description": "Indicates that the switch is a toggle switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "ToggleSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TimeSwitchIndicator",
+					"Description": "Indicates that the switch is a time switch.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "TimeSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SwitchTypeId",
+					"Description": "The unique identifier of a Switch Type.",
+					"BaseAttributeReference": {
+						"Entity": "Switch.cdm.json/Switch",
+						"Name": "SwitchTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Switch",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Switch",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchId\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchId\"},\"NormalPosition\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalPosition\"},\"NormalStatus\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalStatus\"},\"ProtectedSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ProtectedSwitchIndicator\"},\"BreakerIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BreakerIndicator\"},\"LoadBreakSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"LoadBreakSwitchIndicator\"},\"AirGapSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"AirGapSwitchIndicator\"},\"BiasedSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BiasedSwitchIndicator\"},\"InertialSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"InertialSwitchIndicator\"},\"DipSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"DipSwitchIndicator\"},\"CentrifugalSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"CentrifugalSwitchIndicator\"},\"ToggleSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ToggleSwitchIndicator\"},\"TimeSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"TimeSwitchIndicator\"},\"SwitchTypeId\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Switch\",\"path\":\"Switch.cdm.json/Switch\"},\"description\":\"A switch is an electrical component that can break an electrical circuit, interrupting the current or diverting it from one conductor to another.\\n\\nThe most familiar form of switch is a manually operated electromechanical device with one or more sets of electrical contacts. \\n\\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.\",\"primaryKey\":[\"SwitchId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SwitchId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalPosition\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The normal position of the switch.\",\"isNullable\":true,\"name\":\"NormalPosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalStatus\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The normal status of the switch.\",\"isNullable\":true,\"name\":\"NormalStatus\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ProtectedSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"A switch that can be operated by protection equipment.\",\"isNullable\":true,\"name\":\"ProtectedSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BreakerIndicator\"},\"dataType\":\"boolean\",\"description\":\"A specific sub type of Protected Switch, with additional attributes to define the current rating and transit time.\",\"isNullable\":true,\"name\":\"BreakerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"LoadBreakSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates a switch that is a load breaking switch.\",\"isNullable\":true,\"name\":\"LoadBreakSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"AirGapSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"A mechanical switch or relay that disconnects power to a load by physically separating two contacts, resulting in an air gap between the contacts.\",\"isNullable\":true,\"name\":\"AirGapSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BiasedSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is a biased switch.\",\"isNullable\":true,\"name\":\"BiasedSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"InertialSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is an inertial switch.\",\"isNullable\":true,\"name\":\"InertialSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"DipSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is a dip switch.\",\"isNullable\":true,\"name\":\"DipSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"CentrifugalSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is a centrifugal switch.\",\"isNullable\":true,\"name\":\"CentrifugalSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ToggleSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is a toggle switch.\",\"isNullable\":true,\"name\":\"ToggleSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"TimeSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the switch is a time switch.\",\"isNullable\":true,\"name\":\"TimeSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Switch Type.\",\"isNullable\":true,\"name\":\"SwitchTypeId\"}]}}}",
+			"Description": "A switch is an electrical component that can break an electrical circuit, interrupting the current or diverting it from one conductor to another.\n\nThe most familiar form of switch is a manually operated electromechanical device with one or more sets of electrical contacts. \n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SwitchId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,155 @@
+{
+	"name": "ComponentInspectionRelatedParty",
+	"properties": {
+		"Name": "ComponentInspectionRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Party(s) related to the component inspection.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentInspectionId",
+					"Description": "The unique identifier of a Component Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "ComponentInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "ComponentInspectionPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which an associated Component Inspection - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which an associated Component Inspection - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding a Component Inspection Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty",
+						"Name": "ComponentInspectionRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspectionRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspectionRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentInspectionId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionId\"},\"PartyId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PartyId\"},\"ComponentInspectionPartyRelationshipTypeId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ComponentInspectionRelatedPartyNote\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentInspectionRelatedParty\",\"path\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\"},\"description\":\"Party(s) related to the component inspection.\",\"primaryKey\":[\"ComponentInspectionId\",\"PartyId\",\"ComponentInspectionPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Inspection.\",\"isNullable\":false,\"name\":\"ComponentInspectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Inspection Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which an associated Component Inspection - Party relationship is effective.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which an associated Component Inspection - Party relationship is effective.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Inspection Related Party.\",\"isNullable\":true,\"name\":\"ComponentInspectionRelatedPartyNote\"}]}}}",
+			"Description": "Party(s) related to the component inspection.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentInspectionId,PartyId,ComponentInspectionPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

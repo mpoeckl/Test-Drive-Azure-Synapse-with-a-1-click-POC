@@ -1,0 +1,26 @@
+{
+	"name": "relationship-asjdtpdiey",
+	"properties": {
+		"Name": "relationship-asjdtpdiey",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "ShuntReactiveDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ShuntReactiveDeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ShuntReactiveDeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

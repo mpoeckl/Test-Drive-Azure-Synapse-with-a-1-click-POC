@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankRoofType",
+	"properties": {
+		"Name": "StorageTankRoofType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of storage tank roof.\n\nEx:\n- Fixed Roof\n- Cone Roof\n- Dome Roof\n- Umbrella Roof\n- External Floating Roof\n- Internal Floating Roof\n\nwhere:\n\nFixed roof tanks are meant for liquids with very high flash points, (e.g. fuel oil, water, bitumen etc.) Cone roofs, dome roofs and umbrella roofs are usual. These are insulated to prevent the clogging of certain materials, wherein the heat is provided by steam coils within the tanks. Dome roof tanks are meant for tanks having slightly higher storage pressure than that of atmosphere (e.g. slop oil).\n\nFloating roof tanks are broadly divided into external floating roof tanks (usually called floating roof tanks: FR Tanks) and internal floating roof types (IFR Tanks).\n\nIFR tanks are used for liquids with low flash-points (e.g., ATF, MS. gasoline, ethanol). These tanks are nothing but cone roof tanks with a floating roof inside which travels up and down along with the liquid level. This floating roof traps the vapor from low flash-point fuels. Floating roofs are supported with legs or cables on which they rest. FR tanks do not have a fixed roof (it is open in the top) and has a floating roof only. Medium flash point liquids such as naphtha, kerosene, diesel, and crude oil are stored in these tanks.\n\nThe general types of atmospheric storage tanks (AST) in use may be open top tanks (OTT), fixed-roof tanks (FRT), external floating-roof tanks (EFRT), or internal floating-roof tanks (IFRT). Depending on the product, a closed floating-roof tank (CFRT) may even be selected.\n\nOpen top tanks\n\nThe OTT was one of the first tanks used to store petroleum products. While it provides liquid containment, direct exposure of the liquid surface to the atmosphere assures high evaporative losses, product odors, and increased potential for fires. The OTT has only limited use, primarily for collection of contaminated run-off or wash water and wastewater processes.\n\nFixed roof tanks\n\nThe FRT provides improved containment of product vapors and reduces the potential for fires. The FRT still exposes the liquid surface to the tank vapor space, producing significant product evaporative losses. This increases the possibility of forming a combustible gas mixture in the vapor space for certain more volatile petroleum products. For this reason fixed roof tanks in refineries are generally used for products with vapor pressures less than 1.5 psia.\n\nFloating roof tanks\n\nAlthough not normally used in production operations, floating roof tanks are often used in pump stations or terminals where the crude oil has been stabilized to a vapor pressure of less than 11.1 psia.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankRoofTypeId",
+					"Description": "The unique identifier of a storage tank roof type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankRoofType.cdm.json/StorageTankRoofType",
+						"Name": "StorageTankRoofTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankRoofTypeName",
+					"Description": "The name of a storage tank roof type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankRoofType.cdm.json/StorageTankRoofType",
+						"Name": "StorageTankRoofTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankRoofTypeDescription",
+					"Description": "The description of a storage tank roof type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankRoofType.cdm.json/StorageTankRoofType",
+						"Name": "StorageTankRoofTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankRoofType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankRoofType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankRoofTypeId\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeId\"},\"StorageTankRoofTypeName\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeName\"},\"StorageTankRoofTypeDescription\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankRoofType\",\"path\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\"},\"description\":\"The type of storage tank roof.\\n\\nEx:\\n- Fixed Roof\\n- Cone Roof\\n- Dome Roof\\n- Umbrella Roof\\n- External Floating Roof\\n- Internal Floating Roof\\n\\nwhere:\\n\\nFixed roof tanks are meant for liquids with very high flash points, (e.g. fuel oil, water, bitumen etc.) Cone roofs, dome roofs and umbrella roofs are usual. These are insulated to prevent the clogging of certain materials, wherein the heat is provided by steam coils within the tanks. Dome roof tanks are meant for tanks having slightly higher storage pressure than that of atmosphere (e.g. slop oil).\\n\\nFloating roof tanks are broadly divided into external floating roof tanks (usually called floating roof tanks: FR Tanks) and internal floating roof types (IFR Tanks).\\n\\nIFR tanks are used for liquids with low flash-points (e.g., ATF, MS. gasoline, ethanol). These tanks are nothing but cone roof tanks with a floating roof inside which travels up and down along with the liquid level. This floating roof traps the vapor from low flash-point fuels. Floating roofs are supported with legs or cables on which they rest. FR tanks do not have a fixed roof (it is open in the top) and has a floating roof only. Medium flash point liquids such as naphtha, kerosene, diesel, and crude oil are stored in these tanks.\\n\\nThe general types of atmospheric storage tanks (AST) in use may be open top tanks (OTT), fixed-roof tanks (FRT), external floating-roof tanks (EFRT), or internal floating-roof tanks (IFRT). Depending on the product, a closed floating-roof tank (CFRT) may even be selected.\\n\\nOpen top tanks\\n\\nThe OTT was one of the first tanks used to store petroleum products. While it provides liquid containment, direct exposure of the liquid surface to the atmosphere assures high evaporative losses, product odors, and increased potential for fires. The OTT has only limited use, primarily for collection of contaminated run-off or wash water and wastewater processes.\\n\\nFixed roof tanks\\n\\nThe FRT provides improved containment of product vapors and reduces the potential for fires. The FRT still exposes the liquid surface to the tank vapor space, producing significant product evaporative losses. This increases the possibility of forming a combustible gas mixture in the vapor space for certain more volatile petroleum products. For this reason fixed roof tanks in refineries are generally used for products with vapor pressures less than 1.5 psia.\\n\\nFloating roof tanks\\n\\nAlthough not normally used in production operations, floating roof tanks are often used in pump stations or terminals where the crude oil has been stabilized to a vapor pressure of less than 11.1 psia.\",\"primaryKey\":[\"StorageTankRoofTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank roof type.\",\"isNullable\":false,\"name\":\"StorageTankRoofTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank roof type.\",\"isNullable\":true,\"name\":\"StorageTankRoofTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank roof type.\",\"isNullable\":true,\"name\":\"StorageTankRoofTypeDescription\"}]}}}",
+			"Description": "The type of storage tank roof.\n\nEx:\n- Fixed Roof\n- Cone Roof\n- Dome Roof\n- Umbrella Roof\n- External Floating Roof\n- Internal Floating Roof\n\nwhere:\n\nFixed roof tanks are meant for liquids with very high flash points, (e.g. fuel oil, water, bitumen etc.) Cone roofs, dome roofs and umbrella roofs are usual. These are insulated to prevent the clogging of certain materials, wherein the heat is provided by steam coils within the tanks. Dome roof tanks are meant for tanks having slightly higher storage pressure than that of atmosphere (e.g. slop oil).\n\nFloating roof tanks are broadly divided into external floating roof tanks (usually called floating roof tanks: FR Tanks) and internal floating roof types (IFR Tanks).\n\nIFR tanks are used for liquids with low flash-points (e.g., ATF, MS. gasoline, ethanol). These tanks are nothing but cone roof tanks with a floating roof inside which travels up and down along with the liquid level. This floating roof traps the vapor from low flash-point fuels. Floating roofs are supported with legs or cables on which they rest. FR tanks do not have a fixed roof (it is open in the top) and has a floating roof only. Medium flash point liquids such as naphtha, kerosene, diesel, and crude oil are stored in these tanks.\n\nThe general types of atmospheric storage tanks (AST) in use may be open top tanks (OTT), fixed-roof tanks (FRT), external floating-roof tanks (EFRT), or internal floating-roof tanks (IFRT). Depending on the product, a closed floating-roof tank (CFRT) may even be selected.\n\nOpen top tanks\n\nThe OTT was one of the first tanks used to store petroleum products. While it provides liquid containment, direct exposure of the liquid surface to the atmosphere assures high evaporative losses, product odors, and increased potential for fires. The OTT has only limited use, primarily for collection of contaminated run-off or wash water and wastewater processes.\n\nFixed roof tanks\n\nThe FRT provides improved containment of product vapors and reduces the potential for fires. The FRT still exposes the liquid surface to the tank vapor space, producing significant product evaporative losses. This increases the possibility of forming a combustible gas mixture in the vapor space for certain more volatile petroleum products. For this reason fixed roof tanks in refineries are generally used for products with vapor pressures less than 1.5 psia.\n\nFloating roof tanks\n\nAlthough not normally used in production operations, floating roof tanks are often used in pump stations or terminals where the crude oil has been stabilized to a vapor pressure of less than 11.1 psia.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankRoofTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

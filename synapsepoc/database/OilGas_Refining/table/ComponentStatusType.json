@@ -1,0 +1,106 @@
+{
+	"name": "ComponentStatusType",
+	"properties": {
+		"Name": "ComponentStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A status that may be associated with a component.\n\nEx:\n- In-operation\n- Out-of-operation\n- Scheduled maintenance\n- In Repair",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentStatusTypeId",
+					"Description": "The unique identifier of a Component Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentStatusType.cdm.json/ComponentStatusType",
+						"Name": "ComponentStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentStatusTypeName",
+					"Description": "The name of a Component Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentStatusType.cdm.json/ComponentStatusType",
+						"Name": "ComponentStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentStatusTypeDescription",
+					"Description": "The description of a Component Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentStatusType.cdm.json/ComponentStatusType",
+						"Name": "ComponentStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentStatusTypeId\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeId\"},\"ComponentStatusTypeName\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeName\"},\"ComponentStatusTypeDescription\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentStatusType\",\"path\":\"ComponentStatusType.cdm.json/ComponentStatusType\"},\"description\":\"A status that may be associated with a component.\\n\\nEx:\\n- In-operation\\n- Out-of-operation\\n- Scheduled maintenance\\n- In Repair\",\"primaryKey\":[\"ComponentStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Status Type.\",\"isNullable\":false,\"name\":\"ComponentStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Status Type.\",\"isNullable\":true,\"name\":\"ComponentStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Status Type.\",\"isNullable\":true,\"name\":\"ComponentStatusTypeDescription\"}]}}}",
+			"Description": "A status that may be associated with a component.\n\nEx:\n- In-operation\n- Out-of-operation\n- Scheduled maintenance\n- In Repair",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mfzxwizuro",
+	"properties": {
+		"Name": "relationship-mfzxwizuro",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneratorSpecificationType",
+		"ToTableName": "GeneratorSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorSpecificationTypeId",
+				"ToColumnName": "GeneratorSpecificationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"toEntity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorSpecificationTypeId\",\"toAttribute\":\"GeneratorSpecificationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

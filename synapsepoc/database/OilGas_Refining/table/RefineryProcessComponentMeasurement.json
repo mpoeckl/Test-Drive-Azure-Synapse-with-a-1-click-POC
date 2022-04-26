@@ -1,0 +1,187 @@
+{
+	"name": "RefineryProcessComponentMeasurement",
+	"properties": {
+		"Name": "RefineryProcessComponentMeasurement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A measurement associated with the refinery process component as of the related time.\n\nEx:\n- Temperature\n- Humidity",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeId",
+					"Description": "The unique identifier of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "MeasurementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of a Refinery Process Component Measurement.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of a Refinery Process Component Measurement.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessComponentMeasurementUnits",
+					"Description": "The Refinery Process Component Measurement units/quantity.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "RefineryProcessComponentMeasurementUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProcessComponentMeasurementNote",
+					"Description": "A note, comment or additional information regarding a Refinery Process Component Measurement.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement",
+						"Name": "ProcessComponentMeasurementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentMeasurement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentMeasurement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"ComponentId\"},\"MeasurementTypeId\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessComponentMeasurementUnits\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"RefineryProcessComponentMeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"ProcessComponentMeasurementNote\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"ProcessComponentMeasurementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessComponentMeasurement\",\"path\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\"},\"description\":\"A measurement associated with the refinery process component as of the related time.\\n\\nEx:\\n- Temperature\\n- Humidity\",\"primaryKey\":[\"RefineryProcessId\",\"ComponentId\",\"MeasurementTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Measurement Type.\",\"isNullable\":false,\"name\":\"MeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of a Refinery Process Component Measurement.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of a Refinery Process Component Measurement.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"RefineryProcessComponentMeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The Refinery Process Component Measurement units/quantity.\",\"isNullable\":true,\"name\":\"RefineryProcessComponentMeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentMeasurement.cdm.json/RefineryProcessComponentMeasurement\",\"name\":\"ProcessComponentMeasurementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Refinery Process Component Measurement.\",\"isNullable\":true,\"name\":\"ProcessComponentMeasurementNote\"}]}}}",
+			"Description": "A measurement associated with the refinery process component as of the related time.\n\nEx:\n- Temperature\n- Humidity",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ComponentId,MeasurementTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

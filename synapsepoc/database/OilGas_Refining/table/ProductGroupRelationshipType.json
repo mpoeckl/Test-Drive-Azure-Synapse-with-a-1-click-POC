@@ -1,0 +1,106 @@
+{
+	"name": "ProductGroupRelationshipType",
+	"properties": {
+		"Name": "ProductGroupRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between Product Groups.\n\nEx:\n- Family/Line\n- Family/Subfamily\n- Product Type/Product Subtype",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductGroupRelationshipTypeId",
+					"Description": "The unique identifier of a Product Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType",
+						"Name": "ProductGroupRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductGroupRelationshipTypeName",
+					"Description": "The name of a Product Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType",
+						"Name": "ProductGroupRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProductGroupRelationshipTypeDescription",
+					"Description": "The description of a Product Group Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType",
+						"Name": "ProductGroupRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductGroupRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductGroupRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductGroupRelationshipTypeId\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeId\"},\"ProductGroupRelationshipTypeName\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeName\"},\"ProductGroupRelationshipTypeDescription\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ProductGroupRelationshipType\",\"path\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\"},\"description\":\"The nature of the relationship between Product Groups.\\n\\nEx:\\n- Family/Line\\n- Family/Subfamily\\n- Product Type/Product Subtype\",\"primaryKey\":[\"ProductGroupRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Product Group Relationship Type.\",\"isNullable\":false,\"name\":\"ProductGroupRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Product Group Relationship Type.\",\"isNullable\":true,\"name\":\"ProductGroupRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ProductGroupRelationshipType.cdm.json/ProductGroupRelationshipType\",\"name\":\"ProductGroupRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Product Group Relationship Type.\",\"isNullable\":true,\"name\":\"ProductGroupRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between Product Groups.\n\nEx:\n- Family/Line\n- Family/Subfamily\n- Product Type/Product Subtype",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ProductGroupRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

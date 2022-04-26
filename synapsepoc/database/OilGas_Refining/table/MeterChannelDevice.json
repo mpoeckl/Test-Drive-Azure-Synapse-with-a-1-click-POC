@@ -1,0 +1,155 @@
+{
+	"name": "MeterChannelDevice",
+	"properties": {
+		"Name": "MeterChannelDevice",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A device that is metered by the indicated meter channel during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterId",
+					"Description": "The unique identifier of a Meter.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "MeterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelId",
+					"Description": "The unique identifier of a meter channel.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "MeterChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the meter-device relationship.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the meter-device relationship.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeterDeviceNote",
+					"Description": "A note, comment or additional information regarding the meter device.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelDevice.cdm.json/MeterChannelDevice",
+						"Name": "MeterDeviceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelDevice",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelDevice",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterChannelId\"},\"DeviceId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"DeviceId\"},\"PeriodStartTimestamp\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodEndTimestamp\"},\"MeterDeviceNote\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterDeviceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterChannelDevice\",\"path\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\"},\"description\":\"A device that is metered by the indicated meter channel during the associated period.\",\"primaryKey\":[\"MeterId\",\"MeterChannelId\",\"DeviceId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Meter.\",\"isNullable\":false,\"name\":\"MeterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterChannelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter channel.\",\"isNullable\":false,\"name\":\"MeterChannelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"DeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Device.\",\"isNullable\":false,\"name\":\"DeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the meter-device relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the meter-device relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterDeviceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the meter device.\",\"isNullable\":true,\"name\":\"MeterDeviceNote\"}]}}}",
+			"Description": "A device that is metered by the indicated meter channel during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterId,MeterChannelId,DeviceId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

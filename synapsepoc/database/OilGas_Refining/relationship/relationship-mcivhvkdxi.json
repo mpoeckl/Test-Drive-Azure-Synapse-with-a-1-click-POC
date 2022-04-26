@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mcivhvkdxi",
+	"properties": {
+		"Name": "relationship-mcivhvkdxi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeasurementType",
+		"ToTableName": "NaphthaHydrotreatingComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeasurementTypeId",
+				"ToColumnName": "MeasurementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeasurementType.cdm.json/MeasurementType\",\"toEntity\":\"NaphthaHydrotreatingComponentMeasurement.cdm.json/NaphthaHydrotreatingComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"MeasurementTypeId\",\"toAttribute\":\"MeasurementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

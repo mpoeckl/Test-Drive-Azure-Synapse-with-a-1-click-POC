@@ -1,0 +1,106 @@
+{
+	"name": "FittingStyle",
+	"properties": {
+		"Name": "FittingStyle",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A fitting style associated with a component.\n\nEx:\n- Amp Fit\n- Back to Back Transition\n- Bonded Dresser Coupling\n- Bonded Hot Line Sleeve\n- Bonded Insulated Dresser Coupling\n- Branch Saddle\n- Chicago Sealastic\n- Compression\n- Cross\n- Dresser Coupling Fab\n- Drip\n- duPont Aladyl-A\n- Electrostop\n- Flange\n- Hi Vol Punch Tee\n- High Volume Tee\n- Hot Line Sleeve\n- Inline Tee\n- Insulated Dresser Coupling\n- Insulated Flange\n- Insulated Service\n- Locking Compression Coupling\n- Metal Cross\n- Metal Elbow\n- Metal Fab Cross\n- Metal Fab Reducer\n- Metal Fab Tee\n- Metal Miter\n- Metal Miter 22 Deg\n- Metal Miter 45 Deg\n- Metal Miter 90 Deg\n- Metal Pipe Coupling\n- Metal Reducer\n- Metal Tee\n- Multi Saddle\n- Normac\n- Plastic Elbow\n- Plastic Pipe Coupling\n- Plastic Reducer\n- Plastic Tee\n- Polyethylene\n- Posi-Hold\n- Punch Tee\n- PVC-Poly Vinyl Chloride\n- Reducer\n- Saddle\n- Shorted Insulated Dresser Coupling\n- Spiral\n- Tapping Sleeve\n- TR-418\n- Transition Fitting\n- Unknown\n- Weld",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FittingStyleId",
+					"Description": "The unique identifier of a fitting style.",
+					"BaseAttributeReference": {
+						"Entity": "FittingStyle.cdm.json/FittingStyle",
+						"Name": "FittingStyleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FittingStyleName",
+					"Description": "The name of a fitting style.",
+					"BaseAttributeReference": {
+						"Entity": "FittingStyle.cdm.json/FittingStyle",
+						"Name": "FittingStyleName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FittingStyleDescription",
+					"Description": "The description of a fitting style.",
+					"BaseAttributeReference": {
+						"Entity": "FittingStyle.cdm.json/FittingStyle",
+						"Name": "FittingStyleDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FittingStyle",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FittingStyle",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FittingStyleId\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleId\"},\"FittingStyleName\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleName\"},\"FittingStyleDescription\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FittingStyle\",\"path\":\"FittingStyle.cdm.json/FittingStyle\"},\"description\":\"A fitting style associated with a component.\\n\\nEx:\\n- Amp Fit\\n- Back to Back Transition\\n- Bonded Dresser Coupling\\n- Bonded Hot Line Sleeve\\n- Bonded Insulated Dresser Coupling\\n- Branch Saddle\\n- Chicago Sealastic\\n- Compression\\n- Cross\\n- Dresser Coupling Fab\\n- Drip\\n- duPont Aladyl-A\\n- Electrostop\\n- Flange\\n- Hi Vol Punch Tee\\n- High Volume Tee\\n- Hot Line Sleeve\\n- Inline Tee\\n- Insulated Dresser Coupling\\n- Insulated Flange\\n- Insulated Service\\n- Locking Compression Coupling\\n- Metal Cross\\n- Metal Elbow\\n- Metal Fab Cross\\n- Metal Fab Reducer\\n- Metal Fab Tee\\n- Metal Miter\\n- Metal Miter 22 Deg\\n- Metal Miter 45 Deg\\n- Metal Miter 90 Deg\\n- Metal Pipe Coupling\\n- Metal Reducer\\n- Metal Tee\\n- Multi Saddle\\n- Normac\\n- Plastic Elbow\\n- Plastic Pipe Coupling\\n- Plastic Reducer\\n- Plastic Tee\\n- Polyethylene\\n- Posi-Hold\\n- Punch Tee\\n- PVC-Poly Vinyl Chloride\\n- Reducer\\n- Saddle\\n- Shorted Insulated Dresser Coupling\\n- Spiral\\n- Tapping Sleeve\\n- TR-418\\n- Transition Fitting\\n- Unknown\\n- Weld\",\"primaryKey\":[\"FittingStyleId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fitting style.\",\"isNullable\":false,\"name\":\"FittingStyleId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a fitting style.\",\"isNullable\":true,\"name\":\"FittingStyleName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a fitting style.\",\"isNullable\":true,\"name\":\"FittingStyleDescription\"}]}}}",
+			"Description": "A fitting style associated with a component.\n\nEx:\n- Amp Fit\n- Back to Back Transition\n- Bonded Dresser Coupling\n- Bonded Hot Line Sleeve\n- Bonded Insulated Dresser Coupling\n- Branch Saddle\n- Chicago Sealastic\n- Compression\n- Cross\n- Dresser Coupling Fab\n- Drip\n- duPont Aladyl-A\n- Electrostop\n- Flange\n- Hi Vol Punch Tee\n- High Volume Tee\n- Hot Line Sleeve\n- Inline Tee\n- Insulated Dresser Coupling\n- Insulated Flange\n- Insulated Service\n- Locking Compression Coupling\n- Metal Cross\n- Metal Elbow\n- Metal Fab Cross\n- Metal Fab Reducer\n- Metal Fab Tee\n- Metal Miter\n- Metal Miter 22 Deg\n- Metal Miter 45 Deg\n- Metal Miter 90 Deg\n- Metal Pipe Coupling\n- Metal Reducer\n- Metal Tee\n- Multi Saddle\n- Normac\n- Plastic Elbow\n- Plastic Pipe Coupling\n- Plastic Reducer\n- Plastic Tee\n- Polyethylene\n- Posi-Hold\n- Punch Tee\n- PVC-Poly Vinyl Chloride\n- Reducer\n- Saddle\n- Shorted Insulated Dresser Coupling\n- Spiral\n- Tapping Sleeve\n- TR-418\n- Transition Fitting\n- Unknown\n- Weld",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "FittingStyleId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

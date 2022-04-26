@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ouencinzgc",
+	"properties": {
+		"Name": "relationship-ouencinzgc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestDocumentPartyRelationshipType",
+		"ToTableName": "RefineryTestDocumentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestDocumentPartyRelationshipTypeId",
+				"ToColumnName": "RefineryTestDocumentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"toEntity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestDocumentPartyRelationshipTypeId\",\"toAttribute\":\"RefineryTestDocumentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

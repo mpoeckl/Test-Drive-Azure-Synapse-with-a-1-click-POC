@@ -1,0 +1,26 @@
+{
+	"name": "relationship-slteuiccrm",
+	"properties": {
+		"Name": "relationship-slteuiccrm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpMotorType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpMotorTypeId",
+				"ToColumnName": "PumpMotorTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PumpMotorTypeId\",\"toAttribute\":\"PumpMotorTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

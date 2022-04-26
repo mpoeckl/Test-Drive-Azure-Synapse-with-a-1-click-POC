@@ -1,0 +1,121 @@
+{
+	"name": "RelatedRefineryEvent",
+	"properties": {
+		"Name": "RelatedRefineryEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship of two or more Refinery Events.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryEvent.cdm.json/RelatedRefineryEvent",
+						"Name": "RefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedRefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryEvent.cdm.json/RelatedRefineryEvent",
+						"Name": "RelatedRefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventRelationshipTypeId",
+					"Description": "The unique identifier of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryEvent.cdm.json/RelatedRefineryEvent",
+						"Name": "RefineryEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventRelationshipNote",
+					"Description": "A note, comment or additional information regarding the Related Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryEvent.cdm.json/RelatedRefineryEvent",
+						"Name": "RefineryEventRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventId\"},\"RelatedRefineryEventId\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RelatedRefineryEventId\"},\"RefineryEventRelationshipTypeId\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventRelationshipTypeId\"},\"RefineryEventRelationshipNote\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedRefineryEvent\",\"path\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\"},\"description\":\"The relationship of two or more Refinery Events.\",\"primaryKey\":[\"RefineryEventId\",\"RelatedRefineryEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RelatedRefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RelatedRefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryEvent.cdm.json/RelatedRefineryEvent\",\"name\":\"RefineryEventRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Related Refinery Event.\",\"isNullable\":true,\"name\":\"RefineryEventRelationshipNote\"}]}}}",
+			"Description": "The relationship of two or more Refinery Events.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventId,RelatedRefineryEventId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-azheidkhqu",
+	"properties": {
+		"Name": "relationship-azheidkhqu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Material",
+		"ToTableName": "ComponentCasingMaterial",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaterialId",
+				"ToColumnName": "MaterialId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Material.cdm.json/Material\",\"toEntity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"joinPairs\":[{\"fromAttribute\":\"MaterialId\",\"toAttribute\":\"MaterialId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

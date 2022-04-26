@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tpgcexesis",
+	"properties": {
+		"Name": "relationship-tpgcexesis",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneratorComponentType",
+		"ToTableName": "GeneratorComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorComponentTypeId",
+				"ToColumnName": "GeneratorComponentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"toEntity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorComponentTypeId\",\"toAttribute\":\"GeneratorComponentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

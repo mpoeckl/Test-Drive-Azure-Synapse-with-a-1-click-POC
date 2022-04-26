@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerSurfaceTreatmentCoatingType",
+	"properties": {
+		"Name": "HeatExchangerSurfaceTreatmentCoatingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The treatment or coating that covers the heat exchanger.\n\nEx:\n- Galvanized\n- Painted\n- Plastic covered\n- Plated\n- Unfinished",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerSurfaceTreatmentCoatingTypeId",
+					"Description": "The unique identifier of a heat exchanger surface treatment coating type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType",
+						"Name": "HeatExchangerSurfaceTreatmentCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerSurfaceTreatmentCoatingTypeName",
+					"Description": "The name of a heat exchanger surface treatment coating type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType",
+						"Name": "HeatExchangerSurfaceTreatmentCoatingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerSurfaceTreatmentCoatingTypeDescription",
+					"Description": "The description of a heat exchanger surface treatment coating type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType",
+						"Name": "HeatExchangerSurfaceTreatmentCoatingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerSurfaceTreatmentCoatingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerSurfaceTreatmentCoatingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerSurfaceTreatmentCoatingTypeId\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},\"HeatExchangerSurfaceTreatmentCoatingTypeName\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeName\"},\"HeatExchangerSurfaceTreatmentCoatingTypeDescription\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerSurfaceTreatmentCoatingType\",\"path\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\"},\"description\":\"The treatment or coating that covers the heat exchanger.\\n\\nEx:\\n- Galvanized\\n- Painted\\n- Plastic covered\\n- Plated\\n- Unfinished\",\"primaryKey\":[\"HeatExchangerSurfaceTreatmentCoatingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger surface treatment coating type.\",\"isNullable\":false,\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger surface treatment coating type.\",\"isNullable\":true,\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger surface treatment coating type.\",\"isNullable\":true,\"name\":\"HeatExchangerSurfaceTreatmentCoatingTypeDescription\"}]}}}",
+			"Description": "The treatment or coating that covers the heat exchanger.\n\nEx:\n- Galvanized\n- Painted\n- Plastic covered\n- Plated\n- Unfinished",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerSurfaceTreatmentCoatingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

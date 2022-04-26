@@ -1,0 +1,106 @@
+{
+	"name": "RefineryEventStatusType",
+	"properties": {
+		"Name": "RefineryEventStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A status type that may be associated with a refinery.\n\nEx:\n- Planned\n- In process\n- Issued\n- Recalled\n- Completed\n- Aborted\n- Unknown\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventStatusTypeId",
+					"Description": "The unique identifier of a refinery event status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventStatusType.cdm.json/RefineryEventStatusType",
+						"Name": "RefineryEventStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventStatusTypeName",
+					"Description": "The name of a refinery event status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventStatusType.cdm.json/RefineryEventStatusType",
+						"Name": "RefineryEventStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventStatusTypeDescription",
+					"Description": "The description of a refinery event status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventStatusType.cdm.json/RefineryEventStatusType",
+						"Name": "RefineryEventStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventStatusTypeId\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeId\"},\"RefineryEventStatusTypeName\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeName\"},\"RefineryEventStatusTypeDescription\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventStatusType\",\"path\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\"},\"description\":\"A status type that may be associated with a refinery.\\n\\nEx:\\n- Planned\\n- In process\\n- Issued\\n- Recalled\\n- Completed\\n- Aborted\\n- Unknown\\n- N/A\",\"primaryKey\":[\"RefineryEventStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery event status type.\",\"isNullable\":false,\"name\":\"RefineryEventStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery event status type.\",\"isNullable\":true,\"name\":\"RefineryEventStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"name\":\"RefineryEventStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery event status type.\",\"isNullable\":true,\"name\":\"RefineryEventStatusTypeDescription\"}]}}}",
+			"Description": "A status type that may be associated with a refinery.\n\nEx:\n- Planned\n- In process\n- Issued\n- Recalled\n- Completed\n- Aborted\n- Unknown\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

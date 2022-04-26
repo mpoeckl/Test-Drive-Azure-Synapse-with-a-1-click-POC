@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bqwhmtsnhh",
+	"properties": {
+		"Name": "relationship-bqwhmtsnhh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenancePartyRelationshipType",
+		"ToTableName": "ComponentMaintenanceRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenancePartyRelationshipTypeId",
+				"ToColumnName": "MaintenancePartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"toEntity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"MaintenancePartyRelationshipTypeId\",\"toAttribute\":\"MaintenancePartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

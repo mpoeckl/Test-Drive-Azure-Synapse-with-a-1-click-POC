@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hvwrmmrcrm",
+	"properties": {
+		"Name": "relationship-hvwrmmrcrm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentPartyInjury",
+		"ToTableName": "IncidentInjuryRelatedTreatment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InjuredPartyId",
+				"ToColumnName": "InjuredPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"toEntity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"joinPairs\":[{\"fromAttribute\":\"InjuredPartyId\",\"toAttribute\":\"InjuredPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

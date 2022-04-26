@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessCategory",
+	"properties": {
+		"Name": "RefineryProcessCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A categorization of refinery processes.\n\nEx:\n- Distillation \n- Thermal Cracking\n- Catalytic\n- Treatment\n\nWhere:\n\nDISTILLATION PROCESSES\nThe first refinery, opened in 1861, produced kerosene by simple atmospheric distillation. Its by-products included tar and naphtha. It was soon discovered that high-quality lubricating oils could be produced by distilling petroleum under vacuum. However, for the next 30 years kerosene was the product consumers wanted. Two significant events changed this situation: (1) invention of the electric light decreased the demand for kerosene, and (2) invention of the internal combustion engine created a demand for diesel fuel and gasoline (naphtha).\n\nTHERMAL CRACKING PROCESSES\nWith the advent of mass production and World War I, the number of gasoline-powered vehicles increased dramatically and the demand for gasoline grew accordingly. However, distillation processes produced only a certain amount of gasoline from crude oil. In 1913, the thermal cracking process was developed, which subjected heavy fuels to both pressure and intense heat, physically breaking the large molecules into smaller ones to produce additional gasoline and distillate fuels. Visbreaking, another form of thermal cracking, was developed in the late 1930's to produce more desirable and valuable products.\n\nCATALYTIC PROCESSES\nHigher-compression gasoline engines required higher-octane gasoline with better antiknock characteristics. The introduction of catalytic cracking and polymerization processes in the mid-to late 1930's met the demand by providing improved gasoline yields and higher octane numbers.\nAlkylation, another catalytic process developed in the early 1940's, produced more high-octane aviation gasoline and petrochemical feedstock for explosives and synthetic rubber. Subsequently, catalytic isomerization was developed to convert hydrocarbons to produce increased quantities of alkylation feedstock. Improved catalysts and process methods such as hydrocracking and reforming were developed throughout the 1960's to increase gasoline yields and improve antiknock characteristics. These catalytic processes also produced hydrocarbon molecules with a double bond (alkenes) and formed the basis of the modern petrochemical industry.\n   \nTREATMENT PROCESSES\nThroughout the history of refining, various treatment methods have been used to remove nonhydrocarbons, impurities, and other constituents that adversely affect the properties of finished products or reduce the efficiency of the conversion processes. Treating can involve chemical reaction and/or physical separation. Typical examples of treating are chemical sweetening, acid treating, clay contacting, caustic washing, hydrotreating, drying, solvent extraction, and solvent dewaxing. Sweetening compounds and acids desulfurize crude oil before processing and treat products during and after processing.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessCategoryId",
+					"Description": "The unique identifier of a refinery process category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCategory.cdm.json/RefineryProcessCategory",
+						"Name": "RefineryProcessCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCategoryName",
+					"Description": "The name of a refinery process category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCategory.cdm.json/RefineryProcessCategory",
+						"Name": "RefineryProcessCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCategoryDescription",
+					"Description": "The description of a refinery process category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCategory.cdm.json/RefineryProcessCategory",
+						"Name": "RefineryProcessCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCategory",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessCategoryId\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryId\"},\"RefineryProcessCategoryName\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryName\"},\"RefineryProcessCategoryDescription\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessCategory\",\"path\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\"},\"description\":\"A categorization of refinery processes.\\n\\nEx:\\n- Distillation \\n- Thermal Cracking\\n- Catalytic\\n- Treatment\\n\\nWhere:\\n\\nDISTILLATION PROCESSES\\nThe first refinery, opened in 1861, produced kerosene by simple atmospheric distillation. Its by-products included tar and naphtha. It was soon discovered that high-quality lubricating oils could be produced by distilling petroleum under vacuum. However, for the next 30 years kerosene was the product consumers wanted. Two significant events changed this situation: (1) invention of the electric light decreased the demand for kerosene, and (2) invention of the internal combustion engine created a demand for diesel fuel and gasoline (naphtha).\\n\\nTHERMAL CRACKING PROCESSES\\nWith the advent of mass production and World War I, the number of gasoline-powered vehicles increased dramatically and the demand for gasoline grew accordingly. However, distillation processes produced only a certain amount of gasoline from crude oil. In 1913, the thermal cracking process was developed, which subjected heavy fuels to both pressure and intense heat, physically breaking the large molecules into smaller ones to produce additional gasoline and distillate fuels. Visbreaking, another form of thermal cracking, was developed in the late 1930's to produce more desirable and valuable products.\\n\\nCATALYTIC PROCESSES\\nHigher-compression gasoline engines required higher-octane gasoline with better antiknock characteristics. The introduction of catalytic cracking and polymerization processes in the mid-to late 1930's met the demand by providing improved gasoline yields and higher octane numbers.\\nAlkylation, another catalytic process developed in the early 1940's, produced more high-octane aviation gasoline and petrochemical feedstock for explosives and synthetic rubber. Subsequently, catalytic isomerization was developed to convert hydrocarbons to produce increased quantities of alkylation feedstock. Improved catalysts and process methods such as hydrocracking and reforming were developed throughout the 1960's to increase gasoline yields and improve antiknock characteristics. These catalytic processes also produced hydrocarbon molecules with a double bond (alkenes) and formed the basis of the modern petrochemical industry.\\n   \\nTREATMENT PROCESSES\\nThroughout the history of refining, various treatment methods have been used to remove nonhydrocarbons, impurities, and other constituents that adversely affect the properties of finished products or reduce the efficiency of the conversion processes. Treating can involve chemical reaction and/or physical separation. Typical examples of treating are chemical sweetening, acid treating, clay contacting, caustic washing, hydrotreating, drying, solvent extraction, and solvent dewaxing. Sweetening compounds and acids desulfurize crude oil before processing and treat products during and after processing.\",\"primaryKey\":[\"RefineryProcessCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process category.\",\"isNullable\":false,\"name\":\"RefineryProcessCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery process category.\",\"isNullable\":true,\"name\":\"RefineryProcessCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"name\":\"RefineryProcessCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery process category.\",\"isNullable\":true,\"name\":\"RefineryProcessCategoryDescription\"}]}}}",
+			"Description": "A categorization of refinery processes.\n\nEx:\n- Distillation \n- Thermal Cracking\n- Catalytic\n- Treatment\n\nWhere:\n\nDISTILLATION PROCESSES\nThe first refinery, opened in 1861, produced kerosene by simple atmospheric distillation. Its by-products included tar and naphtha. It was soon discovered that high-quality lubricating oils could be produced by distilling petroleum under vacuum. However, for the next 30 years kerosene was the product consumers wanted. Two significant events changed this situation: (1) invention of the electric light decreased the demand for kerosene, and (2) invention of the internal combustion engine created a demand for diesel fuel and gasoline (naphtha).\n\nTHERMAL CRACKING PROCESSES\nWith the advent of mass production and World War I, the number of gasoline-powered vehicles increased dramatically and the demand for gasoline grew accordingly. However, distillation processes produced only a certain amount of gasoline from crude oil. In 1913, the thermal cracking process was developed, which subjected heavy fuels to both pressure and intense heat, physically breaking the large molecules into smaller ones to produce additional gasoline and distillate fuels. Visbreaking, another form of thermal cracking, was developed in the late 1930's to produce more desirable and valuable products.\n\nCATALYTIC PROCESSES\nHigher-compression gasoline engines required higher-octane gasoline with better antiknock characteristics. The introduction of catalytic cracking and polymerization processes in the mid-to late 1930's met the demand by providing improved gasoline yields and higher octane numbers.\nAlkylation, another catalytic process developed in the early 1940's, produced more high-octane aviation gasoline and petrochemical feedstock for explosives and synthetic rubber. Subsequently, catalytic isomerization was developed to convert hydrocarbons to produce increased quantities of alkylation feedstock. Improved catalysts and process methods such as hydrocracking and reforming were developed throughout the 1960's to increase gasoline yields and improve antiknock characteristics. These catalytic processes also produced hydrocarbon molecules with a double bond (alkenes) and formed the basis of the modern petrochemical industry.\n   \nTREATMENT PROCESSES\nThroughout the history of refining, various treatment methods have been used to remove nonhydrocarbons, impurities, and other constituents that adversely affect the properties of finished products or reduce the efficiency of the conversion processes. Treating can involve chemical reaction and/or physical separation. Typical examples of treating are chemical sweetening, acid treating, clay contacting, caustic washing, hydrotreating, drying, solvent extraction, and solvent dewaxing. Sweetening compounds and acids desulfurize crude oil before processing and treat products during and after processing.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessCategoryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

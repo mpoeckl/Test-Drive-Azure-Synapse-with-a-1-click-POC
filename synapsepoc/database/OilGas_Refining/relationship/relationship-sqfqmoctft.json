@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sqfqmoctft",
+	"properties": {
+		"Name": "relationship-sqfqmoctft",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTank",
+		"ToTableName": "RefineryProcessSourceCrudeOil",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankId",
+				"ToColumnName": "StorageTankId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTank.cdm.json/StorageTank\",\"toEntity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankId\",\"toAttribute\":\"StorageTankId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

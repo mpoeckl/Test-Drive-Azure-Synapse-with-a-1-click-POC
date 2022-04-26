@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestCategory",
+	"properties": {
+		"Name": "RefineryTestCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The category of refinery test.\n\nEx:\n-  Petroleum Analysis\n-  Petroleum Trace Analysis Base Oil\n-  Chemical Analysis\n-  Emission Test\n-  Fuel Stability\n-  Fuel Testing\n-  Gas Chromatography\n-  Hydrocarbon Analysis\n-  Mercury In Crude\n-  Middle Distillates Analysis And 2-Dimensional Gas Chromatography\n-  Sulfur Test",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestCategoryId",
+					"Description": "The unique identifier of a refinery test category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCategory.cdm.json/RefineryTestCategory",
+						"Name": "RefineryTestCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCategoryName",
+					"Description": "The name of a refinery test category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCategory.cdm.json/RefineryTestCategory",
+						"Name": "RefineryTestCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCategoryDescription",
+					"Description": "The description of a refinery test category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCategory.cdm.json/RefineryTestCategory",
+						"Name": "RefineryTestCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCategory",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestCategoryId\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryId\"},\"RefineryTestCategoryName\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryName\"},\"RefineryTestCategoryDescription\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestCategory\",\"path\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\"},\"description\":\"The category of refinery test.\\n\\nEx:\\n-  Petroleum Analysis\\n-  Petroleum Trace Analysis Base Oil\\n-  Chemical Analysis\\n-  Emission Test\\n-  Fuel Stability\\n-  Fuel Testing\\n-  Gas Chromatography\\n-  Hydrocarbon Analysis\\n-  Mercury In Crude\\n-  Middle Distillates Analysis And 2-Dimensional Gas Chromatography\\n-  Sulfur Test\",\"primaryKey\":[\"RefineryTestCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test category.\",\"isNullable\":false,\"name\":\"RefineryTestCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test category.\",\"isNullable\":true,\"name\":\"RefineryTestCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCategory.cdm.json/RefineryTestCategory\",\"name\":\"RefineryTestCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test category.\",\"isNullable\":true,\"name\":\"RefineryTestCategoryDescription\"}]}}}",
+			"Description": "The category of refinery test.\n\nEx:\n-  Petroleum Analysis\n-  Petroleum Trace Analysis Base Oil\n-  Chemical Analysis\n-  Emission Test\n-  Fuel Stability\n-  Fuel Testing\n-  Gas Chromatography\n-  Hydrocarbon Analysis\n-  Mercury In Crude\n-  Middle Distillates Analysis And 2-Dimensional Gas Chromatography\n-  Sulfur Test",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestCategoryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

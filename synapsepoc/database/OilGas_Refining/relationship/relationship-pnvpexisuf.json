@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pnvpexisuf",
+	"properties": {
+		"Name": "relationship-pnvpexisuf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestAssetPartyRelationshipType",
+		"ToTableName": "RefineryTestAssetRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestAssetPartyRelationshipTypeId",
+				"ToColumnName": "RefineryTestAssetPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestAssetPartyRelationshipType.cdm.json/RefineryTestAssetPartyRelationshipType\",\"toEntity\":\"RefineryTestAssetRelatedParty.cdm.json/RefineryTestAssetRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestAssetPartyRelationshipTypeId\",\"toAttribute\":\"RefineryTestAssetPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

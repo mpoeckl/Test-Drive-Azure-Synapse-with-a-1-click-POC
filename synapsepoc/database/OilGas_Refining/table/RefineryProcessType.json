@@ -1,0 +1,154 @@
+{
+	"name": "RefineryProcessType",
+	"properties": {
+		"Name": "RefineryProcessType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of refinery processing activity.\n\nEx:\n\nPRETREATMENT ('Salting')\nChemical Separation\nElectrostatic Separation\n\nFRACTIONATION PROCESS:\nAtmospheric distillation (Separate fractions) -> Gas, gas oil, distillate, residual\nVacuum distillation (Separate w/o cracking) -> Gas oil, lube stock, residual\n\nCONVERSION PROCESSES - DECOMPOSITION:\nCatalytic cracking (Upgrade gasoline) -> Gasoline, petrochemical feedstock\nCoking (Convert vacuum residuals) -> Gasoline, petrochemical feedstock\nHydro-cracking  (Convert to lighter HC's) -> Lighter, higher quality products forming \nHydrogen steam reforming  (Produce hydrogen) -> Hydrogen, CO, CO2\nSteam cracking  (Crack large molecules) ->Cracked naphtha, coke, residual\nVisbreaking  (Reduce viscosity) -> Distillate, tar\n\nCONVERSION PROCESSES - UNIFICATION:\nAlkylation  (Unite olefins & isoparaffins) -> Iso-octane (alkylate)\nGrease compounding  (Combine soaps & oils) -> Lubricating grease\nPolymerizing  (Unite 2 or more olefins) -> High-octane naphtha, petrochemical stocks\n\nCONVERSION PROCESSES - ALTERATION OR REARRANGEMENT:\nCatalytic reforming (Upgrade low-octane naphtha) -> High oct. Reformate/aromatic\nIsomerization (Convert straight chain to branch) -> Isobutane/pentane/hexane\n\nTREATMENT PROCESSES:\nAmine treating (Remove acidic contaminants) -> Acid free gases & liquid HCs\nDesalting (Remove contaminants) -> Desalted crude oil\nDrying & sweetening (Remove H2O & sulfur compounds)  -> Sweet & dry hydrocarbons\nFurfural extraction (Upgrade mid distillate & lubes) -> High quality diesel & lube oil\nHydrodesulfurization (Remove sulfur, contaminants) -> Desulfurized olefins\nHydrotreating (Remove impurities, saturate HC's) -> Cracker feed, distillate, lube\nPhenol extraction (Improve viscosity index, color) -> High quality lube oils\nSolvent deasphalting (Remove asphalt) -> Heavy lube oil, asphalt\nSolvent dewaxing (Remove wax from lube stocks) -> Dewaxed lube basestock\nSolvent extraction (Separate unsat. oils)  -> High-octane gasoline\nSweetening (Remove H2S, convert mercaptan)-> High-quality distillate/gasoline\n\nwhere:\n\nSOLVENT EXTRACTION/DEWAXING\nThe purpose of solvent extraction is to prevent corrosion, protect catalyst in subsequent processes, and improve finished products by removing\nunsaturated, aromatic hydrocarbons from lubricant and grease stocks. The solvent extraction process separates aromatics, naphthenes, and impurities from the product stream by dissolving or precipitation.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessTypeId",
+					"Description": "The unique identifier of a Refinery Process Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessTypeName",
+					"Description": "The name of a Refinery Process Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessTypeDescription",
+					"Description": "The description of a Refinery Process Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessMethodTypeId",
+					"Description": "The unique identifier of a refinery process method type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessActionTypeId",
+					"Description": "The unique identifier of a refinery process action type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessActionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCategoryId",
+					"Description": "The unique identifier of a refinery process category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessType.cdm.json/RefineryProcessType",
+						"Name": "RefineryProcessCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeId\"},\"RefineryProcessTypeName\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeName\"},\"RefineryProcessTypeDescription\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeDescription\"},\"RefineryProcessMethodTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessMethodTypeId\"},\"RefineryProcessActionTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessActionTypeId\"},\"RefineryProcessCategoryId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessType\",\"path\":\"RefineryProcessType.cdm.json/RefineryProcessType\"},\"description\":\"The type of refinery processing activity.\\n\\nEx:\\n\\nPRETREATMENT ('Salting')\\nChemical Separation\\nElectrostatic Separation\\n\\nFRACTIONATION PROCESS:\\nAtmospheric distillation (Separate fractions) -> Gas, gas oil, distillate, residual\\nVacuum distillation (Separate w/o cracking) -> Gas oil, lube stock, residual\\n\\nCONVERSION PROCESSES - DECOMPOSITION:\\nCatalytic cracking (Upgrade gasoline) -> Gasoline, petrochemical feedstock\\nCoking (Convert vacuum residuals) -> Gasoline, petrochemical feedstock\\nHydro-cracking  (Convert to lighter HC's) -> Lighter, higher quality products forming \\nHydrogen steam reforming  (Produce hydrogen) -> Hydrogen, CO, CO2\\nSteam cracking  (Crack large molecules) ->Cracked naphtha, coke, residual\\nVisbreaking  (Reduce viscosity) -> Distillate, tar\\n\\nCONVERSION PROCESSES - UNIFICATION:\\nAlkylation  (Unite olefins & isoparaffins) -> Iso-octane (alkylate)\\nGrease compounding  (Combine soaps & oils) -> Lubricating grease\\nPolymerizing  (Unite 2 or more olefins) -> High-octane naphtha, petrochemical stocks\\n\\nCONVERSION PROCESSES - ALTERATION OR REARRANGEMENT:\\nCatalytic reforming (Upgrade low-octane naphtha) -> High oct. Reformate/aromatic\\nIsomerization (Convert straight chain to branch) -> Isobutane/pentane/hexane\\n\\nTREATMENT PROCESSES:\\nAmine treating (Remove acidic contaminants) -> Acid free gases & liquid HCs\\nDesalting (Remove contaminants) -> Desalted crude oil\\nDrying & sweetening (Remove H2O & sulfur compounds)  -> Sweet & dry hydrocarbons\\nFurfural extraction (Upgrade mid distillate & lubes) -> High quality diesel & lube oil\\nHydrodesulfurization (Remove sulfur, contaminants) -> Desulfurized olefins\\nHydrotreating (Remove impurities, saturate HC's) -> Cracker feed, distillate, lube\\nPhenol extraction (Improve viscosity index, color) -> High quality lube oils\\nSolvent deasphalting (Remove asphalt) -> Heavy lube oil, asphalt\\nSolvent dewaxing (Remove wax from lube stocks) -> Dewaxed lube basestock\\nSolvent extraction (Separate unsat. oils)  -> High-octane gasoline\\nSweetening (Remove H2S, convert mercaptan)-> High-quality distillate/gasoline\\n\\nwhere:\\n\\nSOLVENT EXTRACTION/DEWAXING\\nThe purpose of solvent extraction is to prevent corrosion, protect catalyst in subsequent processes, and improve finished products by removing\\nunsaturated, aromatic hydrocarbons from lubricant and grease stocks. The solvent extraction process separates aromatics, naphthenes, and impurities from the product stream by dissolving or precipitation.\",\"primaryKey\":[\"RefineryProcessTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Process Type.\",\"isNullable\":false,\"name\":\"RefineryProcessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Process Type.\",\"isNullable\":true,\"name\":\"RefineryProcessTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Process Type.\",\"isNullable\":true,\"name\":\"RefineryProcessTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process method type.\",\"isNullable\":true,\"name\":\"RefineryProcessMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessActionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process action type.\",\"isNullable\":true,\"name\":\"RefineryProcessActionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process category.\",\"isNullable\":true,\"name\":\"RefineryProcessCategoryId\"}]}}}",
+			"Description": "The type of refinery processing activity.\n\nEx:\n\nPRETREATMENT ('Salting')\nChemical Separation\nElectrostatic Separation\n\nFRACTIONATION PROCESS:\nAtmospheric distillation (Separate fractions) -> Gas, gas oil, distillate, residual\nVacuum distillation (Separate w/o cracking) -> Gas oil, lube stock, residual\n\nCONVERSION PROCESSES - DECOMPOSITION:\nCatalytic cracking (Upgrade gasoline) -> Gasoline, petrochemical feedstock\nCoking (Convert vacuum residuals) -> Gasoline, petrochemical feedstock\nHydro-cracking  (Convert to lighter HC's) -> Lighter, higher quality products forming \nHydrogen steam reforming  (Produce hydrogen) -> Hydrogen, CO, CO2\nSteam cracking  (Crack large molecules) ->Cracked naphtha, coke, residual\nVisbreaking  (Reduce viscosity) -> Distillate, tar\n\nCONVERSION PROCESSES - UNIFICATION:\nAlkylation  (Unite olefins & isoparaffins) -> Iso-octane (alkylate)\nGrease compounding  (Combine soaps & oils) -> Lubricating grease\nPolymerizing  (Unite 2 or more olefins) -> High-octane naphtha, petrochemical stocks\n\nCONVERSION PROCESSES - ALTERATION OR REARRANGEMENT:\nCatalytic reforming (Upgrade low-octane naphtha) -> High oct. Reformate/aromatic\nIsomerization (Convert straight chain to branch) -> Isobutane/pentane/hexane\n\nTREATMENT PROCESSES:\nAmine treating (Remove acidic contaminants) -> Acid free gases & liquid HCs\nDesalting (Remove contaminants) -> Desalted crude oil\nDrying & sweetening (Remove H2O & sulfur compounds)  -> Sweet & dry hydrocarbons\nFurfural extraction (Upgrade mid distillate & lubes) -> High quality diesel & lube oil\nHydrodesulfurization (Remove sulfur, contaminants) -> Desulfurized olefins\nHydrotreating (Remove impurities, saturate HC's) -> Cracker feed, distillate, lube\nPhenol extraction (Improve viscosity index, color) -> High quality lube oils\nSolvent deasphalting (Remove asphalt) -> Heavy lube oil, asphalt\nSolvent dewaxing (Remove wax from lube stocks) -> Dewaxed lube basestock\nSolvent extraction (Separate unsat. oils)  -> High-octane gasoline\nSweetening (Remove H2S, convert mercaptan)-> High-quality distillate/gasoline\n\nwhere:\n\nSOLVENT EXTRACTION/DEWAXING\nThe purpose of solvent extraction is to prevent corrosion, protect catalyst in subsequent processes, and improve finished products by removing\nunsaturated, aromatic hydrocarbons from lubricant and grease stocks. The solvent extraction process separates aromatics, naphthenes, and impurities from the product stream by dissolving or precipitation.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

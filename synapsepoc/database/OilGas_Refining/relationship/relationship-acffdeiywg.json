@@ -1,0 +1,26 @@
+{
+	"name": "relationship-acffdeiywg",
+	"properties": {
+		"Name": "relationship-acffdeiywg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HydrocrackerUnitComponent",
+		"ToTableName": "HydrocrackerUnitComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HydrocrackerUnitComponentId",
+				"ToColumnName": "HydrocrackerUnitComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"toEntity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"HydrocrackerUnitComponentId\",\"toAttribute\":\"HydrocrackerUnitComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

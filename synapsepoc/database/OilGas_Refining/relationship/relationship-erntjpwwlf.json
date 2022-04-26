@@ -1,0 +1,26 @@
+{
+	"name": "relationship-erntjpwwlf",
+	"properties": {
+		"Name": "relationship-erntjpwwlf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetStatusType",
+		"ToTableName": "AssetLocationStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetStatusTypeId",
+				"ToColumnName": "AssetStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"toEntity\":\"AssetLocationStatus.cdm.json/AssetLocationStatus\",\"joinPairs\":[{\"fromAttribute\":\"AssetStatusTypeId\",\"toAttribute\":\"AssetStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

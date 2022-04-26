@@ -1,0 +1,106 @@
+{
+	"name": "ExtraordinaryRepairType",
+	"properties": {
+		"Name": "ExtraordinaryRepairType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A classification or categorization of types of Extraordinary Repairs based upon common characteristics or functions performed.\n\nThis would be dependent upon the type of Asset.\n\nEx:\n- Component Update\n- Motor repair\n- Upgrade\n- Overhaul\n- Value Retrofit",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ExtraordinaryRepairTypeId",
+					"Description": "The unique identifier of an Extraordinary Repairs Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType",
+						"Name": "ExtraordinaryRepairTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairTypeName",
+					"Description": "The name of an Extraordinary Repairs Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType",
+						"Name": "ExtraordinaryRepairTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairTypeDescription",
+					"Description": "The description of an Extraordinary Repairs Type.",
+					"BaseAttributeReference": {
+						"Entity": "ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType",
+						"Name": "ExtraordinaryRepairTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ExtraordinaryRepairType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ExtraordinaryRepairType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExtraordinaryRepairTypeId\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeId\"},\"ExtraordinaryRepairTypeName\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeName\"},\"ExtraordinaryRepairTypeDescription\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ExtraordinaryRepairType\",\"path\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\"},\"description\":\"A classification or categorization of types of Extraordinary Repairs based upon common characteristics or functions performed.\\n\\nThis would be dependent upon the type of Asset.\\n\\nEx:\\n- Component Update\\n- Motor repair\\n- Upgrade\\n- Overhaul\\n- Value Retrofit\",\"primaryKey\":[\"ExtraordinaryRepairTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Extraordinary Repairs Type.\",\"isNullable\":false,\"name\":\"ExtraordinaryRepairTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Extraordinary Repairs Type.\",\"isNullable\":true,\"name\":\"ExtraordinaryRepairTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ExtraordinaryRepairType.cdm.json/ExtraordinaryRepairType\",\"name\":\"ExtraordinaryRepairTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Extraordinary Repairs Type.\",\"isNullable\":true,\"name\":\"ExtraordinaryRepairTypeDescription\"}]}}}",
+			"Description": "A classification or categorization of types of Extraordinary Repairs based upon common characteristics or functions performed.\n\nThis would be dependent upon the type of Asset.\n\nEx:\n- Component Update\n- Motor repair\n- Upgrade\n- Overhaul\n- Value Retrofit",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ExtraordinaryRepairTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

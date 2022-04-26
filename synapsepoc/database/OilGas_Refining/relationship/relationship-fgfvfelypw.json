@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fgfvfelypw",
+	"properties": {
+		"Name": "relationship-fgfvfelypw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Refinery",
+		"ToTableName": "RefineryMetrics",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryId",
+				"ToColumnName": "RefineryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Refinery.cdm.json/Refinery\",\"toEntity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"joinPairs\":[{\"fromAttribute\":\"RefineryId\",\"toAttribute\":\"RefineryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

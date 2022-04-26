@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sgefsiwpuc",
+	"properties": {
+		"Name": "relationship-sgefsiwpuc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Incident",
+		"ToTableName": "IncidentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Incident.cdm.json/Incident\",\"toEntity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "OdorIntensityType",
+	"properties": {
+		"Name": "OdorIntensityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Odor intensity can be divided into the following categories according to intensity:\n\n0 - no odor\n1 - very weak (odor threshold)\n2 - weak\n3 - distinct\n4 - strong\n5 - very strong\n6 - intolerable",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OdorIntensityTypeId",
+					"Description": "The unique identifier of an odor intensity type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorIntensityType.cdm.json/OdorIntensityType",
+						"Name": "OdorIntensityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OdorIntensityTypeName",
+					"Description": "The name of an odor intensity type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorIntensityType.cdm.json/OdorIntensityType",
+						"Name": "OdorIntensityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OdorIntensityTypeDescription",
+					"Description": "The description of an odor intensity type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorIntensityType.cdm.json/OdorIntensityType",
+						"Name": "OdorIntensityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorIntensityType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorIntensityType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OdorIntensityTypeId\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeId\"},\"OdorIntensityTypeName\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeName\"},\"OdorIntensityTypeDescription\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OdorIntensityType\",\"path\":\"OdorIntensityType.cdm.json/OdorIntensityType\"},\"description\":\"Odor intensity can be divided into the following categories according to intensity:\\n\\n0 - no odor\\n1 - very weak (odor threshold)\\n2 - weak\\n3 - distinct\\n4 - strong\\n5 - very strong\\n6 - intolerable\",\"primaryKey\":[\"OdorIntensityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an odor intensity type.\",\"isNullable\":false,\"name\":\"OdorIntensityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an odor intensity type.\",\"isNullable\":true,\"name\":\"OdorIntensityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"name\":\"OdorIntensityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an odor intensity type.\",\"isNullable\":true,\"name\":\"OdorIntensityTypeDescription\"}]}}}",
+			"Description": "Odor intensity can be divided into the following categories according to intensity:\n\n0 - no odor\n1 - very weak (odor threshold)\n2 - weak\n3 - distinct\n4 - strong\n5 - very strong\n6 - intolerable",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "OdorIntensityTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

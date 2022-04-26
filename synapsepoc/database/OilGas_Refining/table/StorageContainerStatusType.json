@@ -1,0 +1,106 @@
+{
+	"name": "StorageContainerStatusType",
+	"properties": {
+		"Name": "StorageContainerStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the storage container.\n\nEx:\n- In operation/full\n- In operation/empty\n- In operation/capacity available\n- In maintenance\n- Out of operation\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageContainerStatusTypeId",
+					"Description": "The unique identifier of the Storage Container Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStatusType.cdm.json/StorageContainerStatusType",
+						"Name": "StorageContainerStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageContainerStatusTypeName",
+					"Description": "The name of the Storage Container Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStatusType.cdm.json/StorageContainerStatusType",
+						"Name": "StorageContainerStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageContainerStatusTypeDescription",
+					"Description": "The description of the Storage Container Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStatusType.cdm.json/StorageContainerStatusType",
+						"Name": "StorageContainerStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerStatusTypeId\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeId\"},\"StorageContainerStatusTypeName\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeName\"},\"StorageContainerStatusTypeDescription\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageContainerStatusType\",\"path\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\"},\"description\":\"The status of the storage container.\\n\\nEx:\\n- In operation/full\\n- In operation/empty\\n- In operation/capacity available\\n- In maintenance\\n- Out of operation\\n- Unknown\",\"primaryKey\":[\"StorageContainerStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Storage Container Status Type.\",\"isNullable\":false,\"name\":\"StorageContainerStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Storage Container Status Type.\",\"isNullable\":true,\"name\":\"StorageContainerStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStatusType.cdm.json/StorageContainerStatusType\",\"name\":\"StorageContainerStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Storage Container Status Type.\",\"isNullable\":true,\"name\":\"StorageContainerStatusTypeDescription\"}]}}}",
+			"Description": "The status of the storage container.\n\nEx:\n- In operation/full\n- In operation/empty\n- In operation/capacity available\n- In maintenance\n- Out of operation\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageContainerStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

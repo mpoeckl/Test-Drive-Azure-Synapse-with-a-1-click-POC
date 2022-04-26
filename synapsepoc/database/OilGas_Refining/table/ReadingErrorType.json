@@ -1,0 +1,106 @@
+{
+	"name": "ReadingErrorType",
+	"properties": {
+		"Name": "ReadingErrorType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of reading error that is associated with a component.\n\nEx:\n- Equipment Failure\n- Communication Failure\n- Friction Error\n- Creeping Error\n- Temperature Error\n- Speed Error\n- Calibration Error\n- Miscellaneous Error",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReadingErrorTypeId",
+					"Description": "The unique identifier of a Reading Error Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingErrorType.cdm.json/ReadingErrorType",
+						"Name": "ReadingErrorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingErrorTypeName",
+					"Description": "The name of a Reading Error Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingErrorType.cdm.json/ReadingErrorType",
+						"Name": "ReadingErrorTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReadingErrorTypeDescription",
+					"Description": "The description of a Reading Error Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingErrorType.cdm.json/ReadingErrorType",
+						"Name": "ReadingErrorTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingErrorType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingErrorType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReadingErrorTypeId\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeId\"},\"ReadingErrorTypeName\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeName\"},\"ReadingErrorTypeDescription\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReadingErrorType\",\"path\":\"ReadingErrorType.cdm.json/ReadingErrorType\"},\"description\":\"A type of reading error that is associated with a component.\\n\\nEx:\\n- Equipment Failure\\n- Communication Failure\\n- Friction Error\\n- Creeping Error\\n- Temperature Error\\n- Speed Error\\n- Calibration Error\\n- Miscellaneous Error\",\"primaryKey\":[\"ReadingErrorTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Error Type.\",\"isNullable\":false,\"name\":\"ReadingErrorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Reading Error Type.\",\"isNullable\":true,\"name\":\"ReadingErrorTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingErrorType.cdm.json/ReadingErrorType\",\"name\":\"ReadingErrorTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Reading Error Type.\",\"isNullable\":true,\"name\":\"ReadingErrorTypeDescription\"}]}}}",
+			"Description": "A type of reading error that is associated with a component.\n\nEx:\n- Equipment Failure\n- Communication Failure\n- Friction Error\n- Creeping Error\n- Temperature Error\n- Speed Error\n- Calibration Error\n- Miscellaneous Error",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ReadingErrorTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

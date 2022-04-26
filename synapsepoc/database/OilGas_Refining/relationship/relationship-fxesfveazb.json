@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fxesfveazb",
+	"properties": {
+		"Name": "relationship-fxesfveazb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentInspection",
+		"ToTableName": "ComponentCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentInspectionId",
+				"ToColumnName": "ComponentInspectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"toEntity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"joinPairs\":[{\"fromAttribute\":\"ComponentInspectionId\",\"toAttribute\":\"ComponentInspectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

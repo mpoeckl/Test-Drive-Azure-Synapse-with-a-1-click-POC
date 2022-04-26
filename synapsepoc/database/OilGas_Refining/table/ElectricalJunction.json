@@ -1,0 +1,126 @@
+{
+	"name": "ElectricalJunction",
+	"properties": {
+		"Name": "ElectricalJunction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "This is a term used to reflect the zero impedance connection point\" of the terminals of two or more devices",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ElectricalJunctionId",
+					"Description": "The unique identifier of an Electrical Junction.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricalJunction.cdm.json/ElectricalJunction",
+						"Name": "ElectricalJunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BaseNominalKv",
+					"Description": "The junction nominal kV.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricalJunction.cdm.json/ElectricalJunction",
+						"Name": "BaseNominalKv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LowNormalLimitKv",
+					"Description": "The junction low normal kV.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricalJunction.cdm.json/ElectricalJunction",
+						"Name": "LowNormalLimitKv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "HighNormalLimitKv",
+					"Description": "The junction high normal kV.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricalJunction.cdm.json/ElectricalJunction",
+						"Name": "HighNormalLimitKv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ElectricalJunction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ElectricalJunction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ElectricalJunctionId\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"ElectricalJunctionId\"},\"BaseNominalKv\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"BaseNominalKv\"},\"LowNormalLimitKv\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"LowNormalLimitKv\"},\"HighNormalLimitKv\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"HighNormalLimitKv\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ElectricalJunction\",\"path\":\"ElectricalJunction.cdm.json/ElectricalJunction\"},\"description\":\"This is a term used to reflect the zero impedance connection point\\\" of the terminals of two or more devices\",\"primaryKey\":[\"ElectricalJunctionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"ElectricalJunctionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Electrical Junction.\",\"isNullable\":false,\"name\":\"ElectricalJunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"BaseNominalKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The junction nominal kV.\",\"isNullable\":true,\"scale\":8,\"name\":\"BaseNominalKv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"LowNormalLimitKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The junction low normal kV.\",\"isNullable\":true,\"scale\":8,\"name\":\"LowNormalLimitKv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"name\":\"HighNormalLimitKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The junction high normal kV.\",\"isNullable\":true,\"scale\":8,\"name\":\"HighNormalLimitKv\"}]}}}",
+			"Description": "This is a term used to reflect the zero impedance connection point\" of the terminals of two or more devices",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ElectricalJunctionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "CasingInsulatorType",
+	"properties": {
+		"Name": "CasingInsulatorType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The casing insulator type associated with the component casing.\n\nEx:\n- Concrete\n- Cradle\n- Centering Cradle\n- Plastic\n- Rock Shield\n- Thinsulators\n- Wood\n- None\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CasingInsulatorTypeId",
+					"Description": "The unique identifier of a casing insulator type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingInsulatorType.cdm.json/CasingInsulatorType",
+						"Name": "CasingInsulatorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CasingInsulatorTypeName",
+					"Description": "The name of a casing insulator type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingInsulatorType.cdm.json/CasingInsulatorType",
+						"Name": "CasingInsulatorTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CasingInsulatorTypeDescription",
+					"Description": "The description of a casing insulator type.",
+					"BaseAttributeReference": {
+						"Entity": "CasingInsulatorType.cdm.json/CasingInsulatorType",
+						"Name": "CasingInsulatorTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingInsulatorType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingInsulatorType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CasingInsulatorTypeId\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeId\"},\"CasingInsulatorTypeName\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeName\"},\"CasingInsulatorTypeDescription\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CasingInsulatorType\",\"path\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\"},\"description\":\"The casing insulator type associated with the component casing.\\n\\nEx:\\n- Concrete\\n- Cradle\\n- Centering Cradle\\n- Plastic\\n- Rock Shield\\n- Thinsulators\\n- Wood\\n- None\\n- Unknown\",\"primaryKey\":[\"CasingInsulatorTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing insulator type.\",\"isNullable\":false,\"name\":\"CasingInsulatorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a casing insulator type.\",\"isNullable\":true,\"name\":\"CasingInsulatorTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CasingInsulatorType.cdm.json/CasingInsulatorType\",\"name\":\"CasingInsulatorTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a casing insulator type.\",\"isNullable\":true,\"name\":\"CasingInsulatorTypeDescription\"}]}}}",
+			"Description": "The casing insulator type associated with the component casing.\n\nEx:\n- Concrete\n- Cradle\n- Centering Cradle\n- Plastic\n- Rock Shield\n- Thinsulators\n- Wood\n- None\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CasingInsulatorTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

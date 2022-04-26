@@ -1,0 +1,157 @@
+{
+	"name": "ComponentGuidelinePreventiveAction",
+	"properties": {
+		"Name": "ComponentGuidelinePreventiveAction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Preventive Action that is associated with a Component Guideline.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionId",
+					"Description": "The unique identifier of a Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "PreventiveActionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumReadingValue",
+					"Description": "The minimum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "MinimumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumReadingValue",
+					"Description": "The maximum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "MaximumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPreventiveActionNote",
+					"Description": "A note, comment or additional information regarding the Component Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction",
+						"Name": "ComponentPreventiveActionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuidelinePreventiveAction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuidelinePreventiveAction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ReadingTypeId\"},\"PreventiveActionId\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"PreventiveActionId\"},\"MinimumReadingValue\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"MinimumReadingValue\"},\"MaximumReadingValue\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"MaximumReadingValue\"},\"ComponentPreventiveActionNote\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ComponentPreventiveActionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentGuidelinePreventiveAction\",\"path\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\"},\"description\":\"A Preventive Action that is associated with a Component Guideline.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"PreventiveActionId\",\"MinimumReadingValue\",\"MaximumReadingValue\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"PreventiveActionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preventive Action.\",\"isNullable\":false,\"name\":\"PreventiveActionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"MinimumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MinimumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"MaximumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MaximumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"name\":\"ComponentPreventiveActionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Component Preventive Action.\",\"isNullable\":true,\"name\":\"ComponentPreventiveActionNote\"}]}}}",
+			"Description": "A Preventive Action that is associated with a Component Guideline.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,PreventiveActionId,MinimumReadingValue,MaximumReadingValue",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

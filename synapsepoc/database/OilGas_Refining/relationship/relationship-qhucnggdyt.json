@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qhucnggdyt",
+	"properties": {
+		"Name": "relationship-qhucnggdyt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "DeviceSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "DeviceSpecificationUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"DeviceSpecificationUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

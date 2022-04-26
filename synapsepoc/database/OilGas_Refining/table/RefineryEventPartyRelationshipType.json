@@ -1,0 +1,106 @@
+{
+	"name": "RefineryEventPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryEventPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The role or relationship played by the party in relationship to the Refinery Event.\n\nEx:\n- Managed-by Party\n- Planned-by Party\n- Reported-by Party\n- Reported-to Party\n- Paid-by Party\n- Allocated Costs-To Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType",
+						"Name": "RefineryEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventPartyRelationshipTypeName",
+					"Description": "The name of a Refinery Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType",
+						"Name": "RefineryEventPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventPartyRelationshipTypeDescription",
+					"Description": "The description of a Refinery Event Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType",
+						"Name": "RefineryEventPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventPartyRelationshipTypeId\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeId\"},\"RefineryEventPartyRelationshipTypeName\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeName\"},\"RefineryEventPartyRelationshipTypeDescription\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventPartyRelationshipType\",\"path\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\"},\"description\":\"The role or relationship played by the party in relationship to the Refinery Event.\\n\\nEx:\\n- Managed-by Party\\n- Planned-by Party\\n- Reported-by Party\\n- Reported-to Party\\n- Paid-by Party\\n- Allocated Costs-To Party\",\"primaryKey\":[\"RefineryEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Party Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Event Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Event Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The role or relationship played by the party in relationship to the Refinery Event.\n\nEx:\n- Managed-by Party\n- Planned-by Party\n- Reported-by Party\n- Reported-to Party\n- Paid-by Party\n- Allocated Costs-To Party",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

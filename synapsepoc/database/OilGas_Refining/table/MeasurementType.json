@@ -1,0 +1,106 @@
+{
+	"name": "MeasurementType",
+	"properties": {
+		"Name": "MeasurementType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of measurement.\n\nEx:\n- Temperature\n- Humidity\n- Moisture\n- Pressure\n- Precipitation\n- Atmospheric pressure\n- Wind speed\n- Visibility\n- RPM\n- Depth\n- Fuel Usage\n- Boiling point \n- Charge Flow \n- Oil Pressure\n- Crusher Operating Temperature\n- Vibrations/Second\n- Barrels Per Minute\n- Reaction temperature\n- Hourly feed velocity of the feed\n- Hydrogen recycle ratio\n- Absolute Pressure\n- Boiling point \n- Charge Line Pressure \n- Barrels Per Minute\n- Hydrogen partial pressure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeasurementTypeId",
+					"Description": "The unique identifier of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeasurementType.cdm.json/MeasurementType",
+						"Name": "MeasurementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeName",
+					"Description": "The name of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeasurementType.cdm.json/MeasurementType",
+						"Name": "MeasurementTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeDescription",
+					"Description": "The description of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeasurementType.cdm.json/MeasurementType",
+						"Name": "MeasurementTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeasurementType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeasurementType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeasurementTypeId\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeId\"},\"MeasurementTypeName\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeName\"},\"MeasurementTypeDescription\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeasurementType\",\"path\":\"MeasurementType.cdm.json/MeasurementType\"},\"description\":\"The type of measurement.\\n\\nEx:\\n- Temperature\\n- Humidity\\n- Moisture\\n- Pressure\\n- Precipitation\\n- Atmospheric pressure\\n- Wind speed\\n- Visibility\\n- RPM\\n- Depth\\n- Fuel Usage\\n- Boiling point \\n- Charge Flow \\n- Oil Pressure\\n- Crusher Operating Temperature\\n- Vibrations/Second\\n- Barrels Per Minute\\n- Reaction temperature\\n- Hourly feed velocity of the feed\\n- Hydrogen recycle ratio\\n- Absolute Pressure\\n- Boiling point \\n- Charge Line Pressure \\n- Barrels Per Minute\\n- Hydrogen partial pressure\",\"primaryKey\":[\"MeasurementTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Measurement Type.\",\"isNullable\":false,\"name\":\"MeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Measurement Type.\",\"isNullable\":true,\"name\":\"MeasurementTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeasurementType.cdm.json/MeasurementType\",\"name\":\"MeasurementTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Measurement Type.\",\"isNullable\":true,\"name\":\"MeasurementTypeDescription\"}]}}}",
+			"Description": "The type of measurement.\n\nEx:\n- Temperature\n- Humidity\n- Moisture\n- Pressure\n- Precipitation\n- Atmospheric pressure\n- Wind speed\n- Visibility\n- RPM\n- Depth\n- Fuel Usage\n- Boiling point \n- Charge Flow \n- Oil Pressure\n- Crusher Operating Temperature\n- Vibrations/Second\n- Barrels Per Minute\n- Reaction temperature\n- Hourly feed velocity of the feed\n- Hydrogen recycle ratio\n- Absolute Pressure\n- Boiling point \n- Charge Line Pressure \n- Barrels Per Minute\n- Hydrogen partial pressure",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeasurementTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

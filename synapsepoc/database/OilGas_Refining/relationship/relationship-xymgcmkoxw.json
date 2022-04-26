@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xymgcmkoxw",
+	"properties": {
+		"Name": "relationship-xymgcmkoxw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "ComponentCertification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "CertifiedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"CertifiedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

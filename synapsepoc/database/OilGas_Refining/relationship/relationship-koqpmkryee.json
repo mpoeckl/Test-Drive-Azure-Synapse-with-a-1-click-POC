@@ -1,0 +1,26 @@
+{
+	"name": "relationship-koqpmkryee",
+	"properties": {
+		"Name": "relationship-koqpmkryee",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentType",
+		"ToTableName": "Incident",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentTypeId",
+				"ToColumnName": "IncidentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentType.cdm.json/IncidentType\",\"toEntity\":\"Incident.cdm.json/Incident\",\"joinPairs\":[{\"fromAttribute\":\"IncidentTypeId\",\"toAttribute\":\"IncidentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

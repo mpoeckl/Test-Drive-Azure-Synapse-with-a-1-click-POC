@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yuqdcrdfnw",
+	"properties": {
+		"Name": "relationship-yuqdcrdfnw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankLeakDetectionType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankLeakDetectionTypeId",
+				"ToColumnName": "StorageTankLeakDetectionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankLeakDetectionType.cdm.json/StorageTankLeakDetectionType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankLeakDetectionTypeId\",\"toAttribute\":\"StorageTankLeakDetectionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tvgesrnmqt",
+	"properties": {
+		"Name": "relationship-tvgesrnmqt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentLocation",
+		"ToTableName": "ComponentLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"toEntity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

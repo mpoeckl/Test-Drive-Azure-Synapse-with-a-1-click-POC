@@ -1,0 +1,540 @@
+{
+	"name": "RefineryProductShipmentMetrics",
+	"properties": {
+		"Name": "RefineryProductShipmentMetrics",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Metrics related to shipment of products from the refinery for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the metrics are calculated.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the metrics are calculated.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TotalProductProducedBarrels",
+					"Description": "The total barrels of product produced by the refinery during the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalProductProducedBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberOfDomesticProductShipments",
+					"Description": "The total number of domestic product shipments from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalNumberOfDomesticProductShipments"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalProductDomesticShipmentBarrels",
+					"Description": "The total number of barrels of product shipped domestically from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalProductDomesticShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberOfInternationalShipments",
+					"Description": "The total number of international shipments from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalNumberOfInternationalShipments"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalPeriodProductShipmentCostAmount",
+					"Description": "The total amount of shipping related product costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalPeriodProductShipmentCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalProductInternationalShipmentBarrels",
+					"Description": "The total number of barrels of product shipped internationally from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalProductInternationalShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfRailProductShipments",
+					"Description": "The total number of product shipment by rail from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "NumberOfRailProductShipments"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRailProductShipmentBarrels",
+					"Description": "The total number of rail products shipments in barrels from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalRailProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AverageRailProductShipmentBarrels",
+					"Description": "The average rail shipment in barrels from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageRailProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRailShipmentCostsAmount",
+					"Description": "The total amount of rail product shipment costs by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalRailShipmentCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AverageRailShipmentCostAmount",
+					"Description": "The average rail product shipment cost incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageRailShipmentCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipProductShipmentBarrels",
+					"Description": "The total ship product shipments in barrels from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AverageShipProductShipmentBarrels",
+					"Description": "The average ship product shipment in barrels from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageShipProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipProductShipmentCostsAmount",
+					"Description": "The total ship product shipment costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipProductShipmentCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AverageShipProductShipmentCostAmount",
+					"Description": "The average ship product shipment cost from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageShipProductShipmentCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipProductDutiesIncurredAmount",
+					"Description": "The total ship product shipment duties incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipProductDutiesIncurredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AverageShipProductDutiesIncurredAmount",
+					"Description": "The average ship product duties incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageShipProductDutiesIncurredAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfTruckProductShipments",
+					"Description": "The total number of truck product shipments from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "NumberOfTruckProductShipments"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalTruckProductShipmentBarrels",
+					"Description": "The total number of barrels of truck shipments from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalTruckProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AverageTruckProductShipmentBarrels",
+					"Description": "The average truck product shipment in barrels from the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageTruckProductShipmentBarrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalTruckShipmentProductCostsAmount",
+					"Description": "The total amount of truck product shipment costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalTruckShipmentProductCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AverageTruckProductShipmentCostAmount",
+					"Description": "The average amount of truck shipment costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "AverageTruckProductShipmentCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipmentRelatedInjuries",
+					"Description": "The number of truck shipment-related injuries at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipmentRelatedInjuries"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipmentRelatedFatalities",
+					"Description": "The number of truck shipment-related fatalities at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipmentRelatedFatalities"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalShipmentRelatedLostWorkDays",
+					"Description": "The total number of work days lost to injuries or fatalities at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics",
+						"Name": "TotalShipmentRelatedLostWorkDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProductShipmentMetrics",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProductShipmentMetrics",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"RefineryId\"},\"ProductId\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"ProductId\"},\"PeriodStartDate\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"PeriodEndDate\"},\"TotalProductProducedBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductProducedBarrels\"},\"TotalNumberOfDomesticProductShipments\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalNumberOfDomesticProductShipments\"},\"TotalProductDomesticShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductDomesticShipmentBarrels\"},\"TotalNumberOfInternationalShipments\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalNumberOfInternationalShipments\"},\"TotalPeriodProductShipmentCostAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalPeriodProductShipmentCostAmount\"},\"TotalProductInternationalShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductInternationalShipmentBarrels\"},\"NumberOfRailProductShipments\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"NumberOfRailProductShipments\"},\"TotalRailProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalRailProductShipmentBarrels\"},\"AverageRailProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageRailProductShipmentBarrels\"},\"TotalRailShipmentCostsAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalRailShipmentCostsAmount\"},\"AverageRailShipmentCostAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageRailShipmentCostAmount\"},\"TotalShipProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductShipmentBarrels\"},\"AverageShipProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductShipmentBarrels\"},\"TotalShipProductShipmentCostsAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductShipmentCostsAmount\"},\"AverageShipProductShipmentCostAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductShipmentCostAmount\"},\"TotalShipProductDutiesIncurredAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductDutiesIncurredAmount\"},\"AverageShipProductDutiesIncurredAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductDutiesIncurredAmount\"},\"NumberOfTruckProductShipments\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"NumberOfTruckProductShipments\"},\"TotalTruckProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalTruckProductShipmentBarrels\"},\"AverageTruckProductShipmentBarrels\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageTruckProductShipmentBarrels\"},\"TotalTruckShipmentProductCostsAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalTruckShipmentProductCostsAmount\"},\"AverageTruckProductShipmentCostAmount\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageTruckProductShipmentCostAmount\"},\"TotalShipmentRelatedInjuries\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedInjuries\"},\"TotalShipmentRelatedFatalities\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedFatalities\"},\"TotalShipmentRelatedLostWorkDays\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedLostWorkDays\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProductShipmentMetrics\",\"path\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\"},\"description\":\"Metrics related to shipment of products from the refinery for the associated period.\",\"primaryKey\":[\"RefineryId\",\"ProductId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the metrics are calculated.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the metrics are calculated.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductProducedBarrels\"},\"dataType\":\"integer\",\"description\":\"The total barrels of product produced by the refinery during the period.\",\"isNullable\":true,\"name\":\"TotalProductProducedBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalNumberOfDomesticProductShipments\"},\"dataType\":\"integer\",\"description\":\"The total number of domestic product shipments from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalNumberOfDomesticProductShipments\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductDomesticShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The total number of barrels of product shipped domestically from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalProductDomesticShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalNumberOfInternationalShipments\"},\"dataType\":\"integer\",\"description\":\"The total number of international shipments from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalNumberOfInternationalShipments\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalPeriodProductShipmentCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of shipping related product costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalPeriodProductShipmentCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalProductInternationalShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The total number of barrels of product shipped internationally from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalProductInternationalShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"NumberOfRailProductShipments\"},\"dataType\":\"integer\",\"description\":\"The total number of product shipment by rail from the refinery for the period.\",\"isNullable\":true,\"name\":\"NumberOfRailProductShipments\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalRailProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The total number of rail products shipments in barrels from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRailProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageRailProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The average rail shipment in barrels from the refinery for the period.\",\"isNullable\":true,\"name\":\"AverageRailProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalRailShipmentCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of rail product shipment costs by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRailShipmentCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageRailShipmentCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The average rail product shipment cost incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"AverageRailShipmentCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The total ship product shipments in barrels from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalShipProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The average ship product shipment in barrels from the refinery for the period.\",\"isNullable\":true,\"name\":\"AverageShipProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductShipmentCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total ship product shipment costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalShipProductShipmentCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductShipmentCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The average ship product shipment cost from the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"AverageShipProductShipmentCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipProductDutiesIncurredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total ship product shipment duties incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalShipProductDutiesIncurredAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageShipProductDutiesIncurredAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The average ship product duties incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"AverageShipProductDutiesIncurredAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"NumberOfTruckProductShipments\"},\"dataType\":\"integer\",\"description\":\"The total number of truck product shipments from the refinery for the period.\",\"isNullable\":true,\"name\":\"NumberOfTruckProductShipments\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalTruckProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The total number of barrels of truck shipments from the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalTruckProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageTruckProductShipmentBarrels\"},\"dataType\":\"integer\",\"description\":\"The average truck product shipment in barrels from the refinery for the period.\",\"isNullable\":true,\"name\":\"AverageTruckProductShipmentBarrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalTruckShipmentProductCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of truck product shipment costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalTruckShipmentProductCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"AverageTruckProductShipmentCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The average amount of truck shipment costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"AverageTruckProductShipmentCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedInjuries\"},\"dataType\":\"integer\",\"description\":\"The number of truck shipment-related injuries at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalShipmentRelatedInjuries\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedFatalities\"},\"dataType\":\"integer\",\"description\":\"The number of truck shipment-related fatalities at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalShipmentRelatedFatalities\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProductShipmentMetrics.cdm.json/RefineryProductShipmentMetrics\",\"name\":\"TotalShipmentRelatedLostWorkDays\"},\"dataType\":\"integer\",\"description\":\"The total number of work days lost to injuries or fatalities at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalShipmentRelatedLostWorkDays\"}]}}}",
+			"Description": "Metrics related to shipment of products from the refinery for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "RefineryId,ProductId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

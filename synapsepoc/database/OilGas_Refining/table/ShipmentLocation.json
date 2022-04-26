@@ -1,0 +1,288 @@
+{
+	"name": "ShipmentLocation",
+	"properties": {
+		"Name": "ShipmentLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A location of a shipment.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the shipment was at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the shipment was at the shipping location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RfidTagId",
+					"Description": "The unique identifier of a RFID Tag.\n\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \n\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "RfidTagId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationGpsLongitudePosition",
+					"Description": "The GPS position of the Shipment expressed in longitude. This may be an in-transit location.\n\nEx:\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ShipmentLocationGpsLongitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLocationGpsLatitudePosition",
+					"Description": "The GPS position of the Shipment Location. expressed in latitude. This may be an in-transit location.\n\nEx:\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ShipmentLocationGpsLatitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedShipmentLocationTurnaroundTime",
+					"Description": "The planned amount of turnaround time to transit the shipment to the next shipment location of the route.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "PlannedShipmentLocationTurnaroundTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ActualShipmentLocationTurnaroundTime",
+					"Description": "The amount of turnaround time to transit the shipment to the next shipment location of the route.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ActualShipmentLocationTurnaroundTime"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InformationAcquisitionMethodId",
+					"Description": "The unique identifier of an Information Acquisition Method.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "InformationAcquisitionMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentLegNumber",
+					"Description": "The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ShipmentLegNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ApplicationCommunicationId",
+					"Description": "The unique identifier of an Application Communication.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentLocation.cdm.json/ShipmentLocation",
+						"Name": "ApplicationCommunicationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentLocation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentLocation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodEndTimestamp\"},\"VendorId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"VendorId\"},\"RfidTagId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"RfidTagId\"},\"ShipmentLocationGpsLongitudePosition\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLongitudePosition\"},\"ShipmentLocationGpsLatitudePosition\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLatitudePosition\"},\"ShippingLocationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShippingLocationId\"},\"LocationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"LocationId\"},\"PlannedShipmentLocationTurnaroundTime\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PlannedShipmentLocationTurnaroundTime\"},\"ActualShipmentLocationTurnaroundTime\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ActualShipmentLocationTurnaroundTime\"},\"InformationAcquisitionMethodId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"InformationAcquisitionMethodId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLegNumber\"},\"ApplicationCommunicationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ApplicationCommunicationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentLocation\",\"path\":\"ShipmentLocation.cdm.json/ShipmentLocation\"},\"description\":\"A location of a shipment.\",\"primaryKey\":[\"ShipmentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp that the shipment was at the shipping location.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp that the shipment was at the shipping location.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":true,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"RfidTagId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a RFID Tag.\\n\\nThe transmitter/receiver pair or transceiver plus the information storage mechanism attached to the object is referred to as the tag, transponder, electronic label, code plate and various other terms. \\n\\nAlthough transponder is technically the most accurate, the most common term and the one preferred by the Automatic Identification Manufacturers is tag.\",\"isNullable\":true,\"name\":\"RfidTagId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLongitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS position of the Shipment expressed in longitude. This may be an in-transit location.\\n\\nEx:\\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.\",\"isNullable\":false,\"scale\":4,\"name\":\"ShipmentLocationGpsLongitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLatitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS position of the Shipment Location. expressed in latitude. This may be an in-transit location.\\n\\nEx:\\nGPS Coords (Ex= 39deg 58.589min) - seconds are converted to decimal format.\",\"isNullable\":false,\"scale\":4,\"name\":\"ShipmentLocationGpsLatitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipping Location.\",\"isNullable\":true,\"name\":\"ShippingLocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PlannedShipmentLocationTurnaroundTime\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The planned amount of turnaround time to transit the shipment to the next shipment location of the route.\",\"isNullable\":true,\"name\":\"PlannedShipmentLocationTurnaroundTime\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ActualShipmentLocationTurnaroundTime\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The amount of turnaround time to transit the shipment to the next shipment location of the route.\",\"isNullable\":true,\"name\":\"ActualShipmentLocationTurnaroundTime\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"InformationAcquisitionMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Information Acquisition Method.\",\"isNullable\":true,\"name\":\"InformationAcquisitionMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLegNumber\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Shipment Leg Number, which equals the shipment leg 'sequence number'.\",\"isNullable\":true,\"name\":\"ShipmentLegNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ApplicationCommunicationId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Application Communication.\",\"isNullable\":true,\"name\":\"ApplicationCommunicationId\"}]}}}",
+			"Description": "A location of a shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

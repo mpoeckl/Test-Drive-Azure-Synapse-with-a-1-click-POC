@@ -1,0 +1,106 @@
+{
+	"name": "ImpellerCategory",
+	"properties": {
+		"Name": "ImpellerCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The category of pump impeller system.\n\nImpellers are classified by the number of points that liquid can enter the impeller and the amount of webbing between the impeller blades.\n\nEx:\n- Open \n- Closed  \n- Semi-open\n\nOpen impellers consist only of blades attached to a hub.\n\nSemi-open impeller is constructed with a circular plate.\n\nEnclosed impellers are referred to a shrouded impellers.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ImpellerCategoryId",
+					"Description": "The unique identifier of an impeller category.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerCategory.cdm.json/ImpellerCategory",
+						"Name": "ImpellerCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerCategoryName",
+					"Description": "The name of an impeller category.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerCategory.cdm.json/ImpellerCategory",
+						"Name": "ImpellerCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ImpellerCategoryDescription",
+					"Description": "The description of an impeller category.",
+					"BaseAttributeReference": {
+						"Entity": "ImpellerCategory.cdm.json/ImpellerCategory",
+						"Name": "ImpellerCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImpellerCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImpellerCategory",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ImpellerCategoryId\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryId\"},\"ImpellerCategoryName\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryName\"},\"ImpellerCategoryDescription\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ImpellerCategory\",\"path\":\"ImpellerCategory.cdm.json/ImpellerCategory\"},\"description\":\"The category of pump impeller system.\\n\\nImpellers are classified by the number of points that liquid can enter the impeller and the amount of webbing between the impeller blades.\\n\\nEx:\\n- Open \\n- Closed  \\n- Semi-open\\n\\nOpen impellers consist only of blades attached to a hub.\\n\\nSemi-open impeller is constructed with a circular plate.\\n\\nEnclosed impellers are referred to a shrouded impellers.\",\"primaryKey\":[\"ImpellerCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an impeller category.\",\"isNullable\":false,\"name\":\"ImpellerCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an impeller category.\",\"isNullable\":true,\"name\":\"ImpellerCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImpellerCategory.cdm.json/ImpellerCategory\",\"name\":\"ImpellerCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an impeller category.\",\"isNullable\":true,\"name\":\"ImpellerCategoryDescription\"}]}}}",
+			"Description": "The category of pump impeller system.\n\nImpellers are classified by the number of points that liquid can enter the impeller and the amount of webbing between the impeller blades.\n\nEx:\n- Open \n- Closed  \n- Semi-open\n\nOpen impellers consist only of blades attached to a hub.\n\nSemi-open impeller is constructed with a circular plate.\n\nEnclosed impellers are referred to a shrouded impellers.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ImpellerCategoryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

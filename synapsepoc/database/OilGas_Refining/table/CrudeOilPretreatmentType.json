@@ -1,0 +1,106 @@
+{
+	"name": "CrudeOilPretreatmentType",
+	"properties": {
+		"Name": "CrudeOilPretreatmentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of crude oil pre-treatment applied to the crude oil.\n\nEx:\n- Chemical Separation\n- Electrostatic Separation\n\nwhere:\nThe two most typical methods of crude-oil desalting, chemical and electrostatic separation, use hot water as the extraction agent. In chemical desalting, water and chemical surfactant (demulsifiers) are added to the crude, heated so that salts and other impurities dissolve into the water or attach to the water, and then held in a tank where they settle out. Electrical desalting is the application of high-voltage electrostatic charges to concentrate suspended water globules in the bottom of the settling tank. Surfactants are added only when the crude has a large amount of suspended solids. Both methods of desalting are continuous. A third and less-common process involves filtering heated crude using diatomaceous earth.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CrudeOilPretreatmentTypeId",
+					"Description": "The unique identifier of a crude oil pretreatment type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType",
+						"Name": "CrudeOilPretreatmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPretreatmentTypeName",
+					"Description": "The name of a crude oil pretreatment type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType",
+						"Name": "CrudeOilPretreatmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPretreatmentTypeDescription",
+					"Description": "The description of a crude oil pretreatment type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType",
+						"Name": "CrudeOilPretreatmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilPretreatmentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilPretreatmentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilPretreatmentTypeId\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"CrudeOilPretreatmentTypeName\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeName\"},\"CrudeOilPretreatmentTypeDescription\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CrudeOilPretreatmentType\",\"path\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\"},\"description\":\"The type of crude oil pre-treatment applied to the crude oil.\\n\\nEx:\\n- Chemical Separation\\n- Electrostatic Separation\\n\\nwhere:\\nThe two most typical methods of crude-oil desalting, chemical and electrostatic separation, use hot water as the extraction agent. In chemical desalting, water and chemical surfactant (demulsifiers) are added to the crude, heated so that salts and other impurities dissolve into the water or attach to the water, and then held in a tank where they settle out. Electrical desalting is the application of high-voltage electrostatic charges to concentrate suspended water globules in the bottom of the settling tank. Surfactants are added only when the crude has a large amount of suspended solids. Both methods of desalting are continuous. A third and less-common process involves filtering heated crude using diatomaceous earth.\",\"primaryKey\":[\"CrudeOilPretreatmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil pretreatment type.\",\"isNullable\":false,\"name\":\"CrudeOilPretreatmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a crude oil pretreatment type.\",\"isNullable\":true,\"name\":\"CrudeOilPretreatmentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a crude oil pretreatment type.\",\"isNullable\":true,\"name\":\"CrudeOilPretreatmentTypeDescription\"}]}}}",
+			"Description": "The type of crude oil pre-treatment applied to the crude oil.\n\nEx:\n- Chemical Separation\n- Electrostatic Separation\n\nwhere:\nThe two most typical methods of crude-oil desalting, chemical and electrostatic separation, use hot water as the extraction agent. In chemical desalting, water and chemical surfactant (demulsifiers) are added to the crude, heated so that salts and other impurities dissolve into the water or attach to the water, and then held in a tank where they settle out. Electrical desalting is the application of high-voltage electrostatic charges to concentrate suspended water globules in the bottom of the settling tank. Surfactants are added only when the crude has a large amount of suspended solids. Both methods of desalting are continuous. A third and less-common process involves filtering heated crude using diatomaceous earth.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "CrudeOilPretreatmentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

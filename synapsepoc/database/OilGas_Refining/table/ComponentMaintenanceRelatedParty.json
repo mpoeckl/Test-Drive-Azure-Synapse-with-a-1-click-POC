@@ -1,0 +1,155 @@
+{
+	"name": "ComponentMaintenanceRelatedParty",
+	"properties": {
+		"Name": "ComponentMaintenanceRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party related to the component maintenance.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentMaintenanceId",
+					"Description": "The unique identifier of a Component Maintenance.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "ComponentMaintenanceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePartyRelationshipTypeId",
+					"Description": "The unique identifier of a maintenance party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "MaintenancePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StartTimestamp",
+					"Description": "The start timestamp for which an associated Component Maintenance - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "StartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EndTimestamp",
+					"Description": "The end timestamp for which an associated Component Maintenance - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "EndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentMaintenanceRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding a Component Maintenance Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty",
+						"Name": "ComponentMaintenanceRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentMaintenanceRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentMaintenanceRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentMaintenanceId\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"ComponentMaintenanceId\"},\"PartyId\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"PartyId\"},\"MaintenancePartyRelationshipTypeId\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"MaintenancePartyRelationshipTypeId\"},\"StartTimestamp\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"StartTimestamp\"},\"EndTimestamp\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"EndTimestamp\"},\"ComponentMaintenanceRelatedPartyNote\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"ComponentMaintenanceRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentMaintenanceRelatedParty\",\"path\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\"},\"description\":\"A party related to the component maintenance.\",\"primaryKey\":[\"ComponentMaintenanceId\",\"PartyId\",\"MaintenancePartyRelationshipTypeId\",\"StartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"ComponentMaintenanceId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Maintenance.\",\"isNullable\":false,\"name\":\"ComponentMaintenanceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"MaintenancePartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a maintenance party relationship type.\",\"isNullable\":false,\"name\":\"MaintenancePartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"StartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp for which an associated Component Maintenance - Party relationship is effective.\",\"isNullable\":false,\"name\":\"StartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"EndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp for which an associated Component Maintenance - Party relationship is effective.\",\"isNullable\":true,\"name\":\"EndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentMaintenanceRelatedParty.cdm.json/ComponentMaintenanceRelatedParty\",\"name\":\"ComponentMaintenanceRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Maintenance Related Party.\",\"isNullable\":true,\"name\":\"ComponentMaintenanceRelatedPartyNote\"}]}}}",
+			"Description": "A party related to the component maintenance.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentMaintenanceId,PartyId,MaintenancePartyRelationshipTypeId,StartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

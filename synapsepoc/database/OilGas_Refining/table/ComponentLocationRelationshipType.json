@@ -1,0 +1,106 @@
+{
+	"name": "ComponentLocationRelationshipType",
+	"properties": {
+		"Name": "ComponentLocationRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a component and a location.\n\nEx:\n- In-Operation-at location\n- In-transit location\n- Storage location",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentLocationRelationshipTypeId",
+					"Description": "The unique identifier of a Component Location Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType",
+						"Name": "ComponentLocationRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationRelationshipTypeName",
+					"Description": "The name of a Component Location Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType",
+						"Name": "ComponentLocationRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationRelationshipTypeDescription",
+					"Description": "The description of a Component Location Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType",
+						"Name": "ComponentLocationRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentLocationRelationshipTypeId\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"ComponentLocationRelationshipTypeName\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeName\"},\"ComponentLocationRelationshipTypeDescription\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentLocationRelationshipType\",\"path\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\"},\"description\":\"The nature of the relationship between a component and a location.\\n\\nEx:\\n- In-Operation-at location\\n- In-transit location\\n- Storage location\",\"primaryKey\":[\"ComponentLocationRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentLocationRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Location Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentLocationRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Location Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentLocationRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a component and a location.\n\nEx:\n- In-Operation-at location\n- In-transit location\n- Storage location",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentLocationRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

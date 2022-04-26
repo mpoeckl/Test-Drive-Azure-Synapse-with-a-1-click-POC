@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestResultType",
+	"properties": {
+		"Name": "RefineryTestResultType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The result of the refinery test.\n\nEx:\n- Within guideline standards\n- Exceeds guideline standards\n- Report to regulatory body required\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestResultTypeId",
+					"Description": "The unique identifier of a refinery test result type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestResultType.cdm.json/RefineryTestResultType",
+						"Name": "RefineryTestResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestResultTypeName",
+					"Description": "The name of a refinery test result type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestResultType.cdm.json/RefineryTestResultType",
+						"Name": "RefineryTestResultTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestResultTypeDescription",
+					"Description": "The description of a refinery test result type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestResultType.cdm.json/RefineryTestResultType",
+						"Name": "RefineryTestResultTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestResultType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestResultType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestResultTypeId\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeId\"},\"RefineryTestResultTypeName\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeName\"},\"RefineryTestResultTypeDescription\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestResultType\",\"path\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\"},\"description\":\"The result of the refinery test.\\n\\nEx:\\n- Within guideline standards\\n- Exceeds guideline standards\\n- Report to regulatory body required\\n- N/A\",\"primaryKey\":[\"RefineryTestResultTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test result type.\",\"isNullable\":false,\"name\":\"RefineryTestResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test result type.\",\"isNullable\":true,\"name\":\"RefineryTestResultTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test result type.\",\"isNullable\":true,\"name\":\"RefineryTestResultTypeDescription\"}]}}}",
+			"Description": "The result of the refinery test.\n\nEx:\n- Within guideline standards\n- Exceeds guideline standards\n- Report to regulatory body required\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestResultTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

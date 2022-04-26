@@ -1,0 +1,106 @@
+{
+	"name": "MeterModelSpecificationType",
+	"properties": {
+		"Name": "MeterModelSpecificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of meter model specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Nominal Frequency\n- Power Supply Nominal Power\n- Starting current\n- Maximum Current\n- Minimum Operating Temperature\n- Maximum Operating Temperature",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterModelSpecificationTypeId",
+					"Description": "The unique identifier of a meter model specification type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecificationType.cdm.json/MeterModelSpecificationType",
+						"Name": "MeterModelSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationTypeName",
+					"Description": "The name of a meter model specification type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecificationType.cdm.json/MeterModelSpecificationType",
+						"Name": "MeterModelSpecificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationTypeDescription",
+					"Description": "The description of a meter model specification type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecificationType.cdm.json/MeterModelSpecificationType",
+						"Name": "MeterModelSpecificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModelSpecificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModelSpecificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterModelSpecificationTypeId\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeId\"},\"MeterModelSpecificationTypeName\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeName\"},\"MeterModelSpecificationTypeDescription\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterModelSpecificationType\",\"path\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\"},\"description\":\"A type of meter model specification.\\n\\nEx:\\n- Weight\\n- Length\\n- Width\\n- Height\\n- Minimum Operating Temperature\\n- Maximum Operating Temperature\\n- Minimum Operating Humidity Range\\n- Maximum Operating Humidity Range\\n- Nominal Current\\n- Nominal Voltage\\n- Nominal Frequency\\n- Power Supply Nominal Power\\n- Starting current\\n- Maximum Current\\n- Minimum Operating Temperature\\n- Maximum Operating Temperature\",\"primaryKey\":[\"MeterModelSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter model specification type.\",\"isNullable\":false,\"name\":\"MeterModelSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a meter model specification type.\",\"isNullable\":true,\"name\":\"MeterModelSpecificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a meter model specification type.\",\"isNullable\":true,\"name\":\"MeterModelSpecificationTypeDescription\"}]}}}",
+			"Description": "A type of meter model specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Nominal Frequency\n- Power Supply Nominal Power\n- Starting current\n- Maximum Current\n- Minimum Operating Temperature\n- Maximum Operating Temperature",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterModelSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

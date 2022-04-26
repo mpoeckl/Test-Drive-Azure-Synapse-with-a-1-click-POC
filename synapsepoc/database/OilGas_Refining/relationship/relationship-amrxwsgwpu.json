@@ -1,0 +1,26 @@
+{
+	"name": "relationship-amrxwsgwpu",
+	"properties": {
+		"Name": "relationship-amrxwsgwpu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructurePartyRelationshipType",
+		"ToTableName": "StructureRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructurePartyRelationshipTypeId",
+				"ToColumnName": "StructurePartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructurePartyRelationshipType.cdm.json/StructurePartyRelationshipType\",\"toEntity\":\"StructureRelatedParty.cdm.json/StructureRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"StructurePartyRelationshipTypeId\",\"toAttribute\":\"StructurePartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

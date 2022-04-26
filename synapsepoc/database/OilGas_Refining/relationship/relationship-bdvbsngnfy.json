@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bdvbsngnfy",
+	"properties": {
+		"Name": "relationship-bdvbsngnfy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Refinery",
+		"ToTableName": "RefineryDocument",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryId",
+				"ToColumnName": "RefineryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Refinery.cdm.json/Refinery\",\"toEntity\":\"RefineryDocument.cdm.json/RefineryDocument\",\"joinPairs\":[{\"fromAttribute\":\"RefineryId\",\"toAttribute\":\"RefineryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

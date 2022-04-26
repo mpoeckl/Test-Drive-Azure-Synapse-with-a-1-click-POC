@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eclxwmrred",
+	"properties": {
+		"Name": "relationship-eclxwmrred",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "ComponentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

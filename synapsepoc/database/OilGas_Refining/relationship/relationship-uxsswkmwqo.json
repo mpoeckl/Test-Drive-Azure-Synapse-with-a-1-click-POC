@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uxsswkmwqo",
+	"properties": {
+		"Name": "relationship-uxsswkmwqo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Facility",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FacilityId",
+				"ToColumnName": "FacilityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Facility.cdm.json/Facility\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"FacilityId\",\"toAttribute\":\"FacilityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

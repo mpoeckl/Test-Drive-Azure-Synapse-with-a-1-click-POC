@@ -1,0 +1,139 @@
+{
+	"name": "RefineryEventAsset",
+	"properties": {
+		"Name": "RefineryEventAsset",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Assets related to the associated Refinery Event and period of time.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAsset.cdm.json/RefineryEventAsset",
+						"Name": "RefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAsset.cdm.json/RefineryEventAsset",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAsset.cdm.json/RefineryEventAsset",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAsset.cdm.json/RefineryEventAsset",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventAssetNote",
+					"Description": "A note, comment or additional information regarding the refinery event asset.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAsset.cdm.json/RefineryEventAsset",
+						"Name": "RefineryEventAssetNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAsset",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAsset",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"RefineryEventId\"},\"AssetId\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"PeriodEndTimestamp\"},\"RefineryEventAssetNote\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"RefineryEventAssetNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventAsset\",\"path\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\"},\"description\":\"Assets related to the associated Refinery Event and period of time.\",\"primaryKey\":[\"RefineryEventId\",\"AssetId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"RefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"name\":\"RefineryEventAssetNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery event asset.\",\"isNullable\":true,\"name\":\"RefineryEventAssetNote\"}]}}}",
+			"Description": "Assets related to the associated Refinery Event and period of time.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventId,AssetId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

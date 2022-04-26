@@ -1,0 +1,155 @@
+{
+	"name": "RefineryEventRelatedComponent",
+	"properties": {
+		"Name": "RefineryEventRelatedComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A component related to the refinery event.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "RefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventComponentRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Event Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "RefineryEventComponentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period  end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventRelatedComponentNote",
+					"Description": "A note, comment or additional information regarding a Refinery Event Related Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent",
+						"Name": "RefineryEventRelatedComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventRelatedComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventRelatedComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventId\"},\"ComponentId\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"ComponentId\"},\"RefineryEventComponentRelationshipTypeId\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventComponentRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"PeriodEndTimestamp\"},\"RefineryEventRelatedComponentNote\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventRelatedComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventRelatedComponent\",\"path\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\"},\"description\":\"A component related to the refinery event.\",\"primaryKey\":[\"RefineryEventId\",\"ComponentId\",\"RefineryEventComponentRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventComponentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Component Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryEventComponentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period  end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelatedComponent.cdm.json/RefineryEventRelatedComponent\",\"name\":\"RefineryEventRelatedComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Refinery Event Related Component.\",\"isNullable\":true,\"name\":\"RefineryEventRelatedComponentNote\"}]}}}",
+			"Description": "A component related to the refinery event.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventId,ComponentId,RefineryEventComponentRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

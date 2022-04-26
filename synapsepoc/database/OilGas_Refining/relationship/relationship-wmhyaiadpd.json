@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wmhyaiadpd",
+	"properties": {
+		"Name": "relationship-wmhyaiadpd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankFireSystemType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankFireSystemTypeId",
+				"ToColumnName": "StorageTankFireSystemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankFireSystemTypeId\",\"toAttribute\":\"StorageTankFireSystemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

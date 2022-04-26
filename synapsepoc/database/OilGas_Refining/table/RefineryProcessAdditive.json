@@ -1,0 +1,220 @@
+{
+	"name": "RefineryProcessAdditive",
+	"properties": {
+		"Name": "RefineryProcessAdditive",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of additive input into the refinery process component from the indicated storage tank during the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTypeId",
+					"Description": "The unique identifier of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "AdditiveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated refinery process - additive relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated refinery process - additive relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveUnits",
+					"Description": "The additive units/quantity.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "AdditiveUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTradeName",
+					"Description": "The trade name of the additive added.\n\nEx:\nKeroflux®    (BASF)\nAerostat®    (BASF)\nKerobit®    (BASF) \nKeropon®    (BASF) \nKerofine®    (BASF) \nKerobrisol®    (BASF) \nKerofluid®    (BASF) \nKeromet®    (BASF)\nUOP5    (Dorf Ketal)\nUOP6    (Dorf Ketal)\nUOP3452    (Dorf Ketal)\nUOP344    (Dorf Ketal)\nUOP344-50    (Dorf Ketal)",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "AdditiveTradeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveSupplierId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "AdditiveSupplierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessAdditiveNote",
+					"Description": "A note, comment or additional information regarding the refinery process additive note.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessAdditive.cdm.json/RefineryProcessAdditive",
+						"Name": "RefineryProcessAdditiveNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessAdditive",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessAdditive",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"ComponentId\"},\"AdditiveTypeId\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"PeriodEndTimestamp\"},\"AdditiveUnits\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"UnitOfMeasureId\"},\"AdditiveTradeName\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveTradeName\"},\"AdditiveSupplierId\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveSupplierId\"},\"RefineryProcessAdditiveNote\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"RefineryProcessAdditiveNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessAdditive\",\"path\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\"},\"description\":\"The quantity of additive input into the refinery process component from the indicated storage tank during the indicated period.\",\"primaryKey\":[\"RefineryProcessId\",\"ComponentId\",\"AdditiveTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an additive type.\",\"isNullable\":false,\"name\":\"AdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated refinery process - additive relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated refinery process - additive relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveUnits\"},\"dataType\":\"integer\",\"description\":\"The additive units/quantity.\",\"isNullable\":true,\"name\":\"AdditiveUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveTradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The trade name of the additive added.\\n\\nEx:\\nKeroflux®    (BASF)\\nAerostat®    (BASF)\\nKerobit®    (BASF) \\nKeropon®    (BASF) \\nKerofine®    (BASF) \\nKerobrisol®    (BASF) \\nKerofluid®    (BASF) \\nKeromet®    (BASF)\\nUOP5    (Dorf Ketal)\\nUOP6    (Dorf Ketal)\\nUOP3452    (Dorf Ketal)\\nUOP344    (Dorf Ketal)\\nUOP344-50    (Dorf Ketal)\",\"isNullable\":true,\"name\":\"AdditiveTradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"AdditiveSupplierId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"AdditiveSupplierId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"name\":\"RefineryProcessAdditiveNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process additive note.\",\"isNullable\":true,\"name\":\"RefineryProcessAdditiveNote\"}]}}}",
+			"Description": "The quantity of additive input into the refinery process component from the indicated storage tank during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ComponentId,AdditiveTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

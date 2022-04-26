@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hjmijexmal",
+	"properties": {
+		"Name": "relationship-hjmijexmal",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankRoofType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankRoofTypeId",
+				"ToColumnName": "StorageTankRoofTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankRoofTypeId\",\"toAttribute\":\"StorageTankRoofTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

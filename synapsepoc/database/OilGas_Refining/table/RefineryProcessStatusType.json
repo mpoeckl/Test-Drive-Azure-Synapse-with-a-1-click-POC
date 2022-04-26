@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessStatusType",
+	"properties": {
+		"Name": "RefineryProcessStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A status associated with a refinery process.\n\nEx:\n- In-Process\n- Completed\n- Terminated\n- Planned\n- Scheduled\n- Failed\n- Emergency Shutdown\n- Fire\n- Explosion",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessStatusTypeId",
+					"Description": "The unique identifier of a refinery process status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessStatusType.cdm.json/RefineryProcessStatusType",
+						"Name": "RefineryProcessStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessStatusTypeName",
+					"Description": "The name of a refinery process status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessStatusType.cdm.json/RefineryProcessStatusType",
+						"Name": "RefineryProcessStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessStatusTypeDescription",
+					"Description": "The description of a refinery process status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessStatusType.cdm.json/RefineryProcessStatusType",
+						"Name": "RefineryProcessStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessStatusTypeId\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeId\"},\"RefineryProcessStatusTypeName\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeName\"},\"RefineryProcessStatusTypeDescription\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessStatusType\",\"path\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\"},\"description\":\"A status associated with a refinery process.\\n\\nEx:\\n- In-Process\\n- Completed\\n- Terminated\\n- Planned\\n- Scheduled\\n- Failed\\n- Emergency Shutdown\\n- Fire\\n- Explosion\",\"primaryKey\":[\"RefineryProcessStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process status type.\",\"isNullable\":false,\"name\":\"RefineryProcessStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery process status type.\",\"isNullable\":true,\"name\":\"RefineryProcessStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"name\":\"RefineryProcessStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery process status type.\",\"isNullable\":true,\"name\":\"RefineryProcessStatusTypeDescription\"}]}}}",
+			"Description": "A status associated with a refinery process.\n\nEx:\n- In-Process\n- Completed\n- Terminated\n- Planned\n- Scheduled\n- Failed\n- Emergency Shutdown\n- Fire\n- Explosion",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

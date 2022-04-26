@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ctqfidnxiz",
+	"properties": {
+		"Name": "relationship-ctqfidnxiz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "GeographicArea",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "GeographicAreaUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"GeographicArea.cdm.json/GeographicArea\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"GeographicAreaUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

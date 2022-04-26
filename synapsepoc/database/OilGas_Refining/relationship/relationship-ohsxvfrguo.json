@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ohsxvfrguo",
+	"properties": {
+		"Name": "relationship-ohsxvfrguo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Refinery",
+		"ToTableName": "RefineryProduction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryId",
+				"ToColumnName": "RefineryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Refinery.cdm.json/Refinery\",\"toEntity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"joinPairs\":[{\"fromAttribute\":\"RefineryId\",\"toAttribute\":\"RefineryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

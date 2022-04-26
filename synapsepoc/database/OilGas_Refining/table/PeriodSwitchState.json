@@ -1,0 +1,139 @@
+{
+	"name": "PeriodSwitchState",
+	"properties": {
+		"Name": "PeriodSwitchState",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The switch state for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SwitchId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodSwitchState.cdm.json/PeriodSwitchState",
+						"Name": "SwitchId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the switch state.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodSwitchState.cdm.json/PeriodSwitchState",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the switch state.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodSwitchState.cdm.json/PeriodSwitchState",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "SwitchStateId",
+					"Description": "The unique identifier of a switch state.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodSwitchState.cdm.json/PeriodSwitchState",
+						"Name": "SwitchStateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodSwitchStateNote",
+					"Description": "A note, comment or additional information regarding the period switch state.",
+					"BaseAttributeReference": {
+						"Entity": "PeriodSwitchState.cdm.json/PeriodSwitchState",
+						"Name": "PeriodSwitchStateNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PeriodSwitchState",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PeriodSwitchState",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchId\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"SwitchId\"},\"PeriodStartTimestamp\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodEndTimestamp\"},\"SwitchStateId\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"SwitchStateId\"},\"PeriodSwitchStateNote\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodSwitchStateNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PeriodSwitchState\",\"path\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\"},\"description\":\"The switch state for the associated period.\",\"primaryKey\":[\"SwitchId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"SwitchId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SwitchId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the switch state.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the switch state.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"SwitchStateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a switch state.\",\"isNullable\":true,\"name\":\"SwitchStateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PeriodSwitchState.cdm.json/PeriodSwitchState\",\"name\":\"PeriodSwitchStateNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the period switch state.\",\"isNullable\":true,\"name\":\"PeriodSwitchStateNote\"}]}}}",
+			"Description": "The switch state for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SwitchId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

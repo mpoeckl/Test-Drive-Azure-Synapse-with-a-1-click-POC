@@ -1,0 +1,106 @@
+{
+	"name": "RefineryAssetRelationshipType",
+	"properties": {
+		"Name": "RefineryAssetRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the refinery and asset during the associated period.\n\nEx:\n- Installed \n- Inventoried\n- Salvaged\n- In repair",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryAssetRelationshipTypeId",
+					"Description": "The unique identifier of a refinery asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType",
+						"Name": "RefineryAssetRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryAssetRelationshipTypeName",
+					"Description": "The name of a refinery asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType",
+						"Name": "RefineryAssetRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryAssetRelationshipTypeDescription",
+					"Description": "The description of a refinery asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType",
+						"Name": "RefineryAssetRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryAssetRelationshipTypeId\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeId\"},\"RefineryAssetRelationshipTypeName\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeName\"},\"RefineryAssetRelationshipTypeDescription\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryAssetRelationshipType\",\"path\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\"},\"description\":\"The nature of the relationship between the refinery and asset during the associated period.\\n\\nEx:\\n- Installed \\n- Inventoried\\n- Salvaged\\n- In repair\",\"primaryKey\":[\"RefineryAssetRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery asset relationship type.\",\"isNullable\":false,\"name\":\"RefineryAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery asset relationship type.\",\"isNullable\":true,\"name\":\"RefineryAssetRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery asset relationship type.\",\"isNullable\":true,\"name\":\"RefineryAssetRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the refinery and asset during the associated period.\n\nEx:\n- Installed \n- Inventoried\n- Salvaged\n- In repair",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryAssetRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

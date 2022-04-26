@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mhuqwxudxa",
+	"properties": {
+		"Name": "relationship-mhuqwxudxa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PowerPhaseType",
+		"ToTableName": "Device",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PowerPhaseTypeId",
+				"ToColumnName": "PowerPhaseTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PowerPhaseType.cdm.json/PowerPhaseType\",\"toEntity\":\"Device.cdm.json/Device\",\"joinPairs\":[{\"fromAttribute\":\"PowerPhaseTypeId\",\"toAttribute\":\"PowerPhaseTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

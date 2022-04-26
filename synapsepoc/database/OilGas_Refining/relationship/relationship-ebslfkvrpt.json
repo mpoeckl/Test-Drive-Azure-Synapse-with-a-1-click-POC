@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ebslfkvrpt",
+	"properties": {
+		"Name": "relationship-ebslfkvrpt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEvent",
+		"ToTableName": "ShipmentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventStartTimestamp",
+				"ToColumnName": "ShipmentEventStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"toEntity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventStartTimestamp\",\"toAttribute\":\"ShipmentEventStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

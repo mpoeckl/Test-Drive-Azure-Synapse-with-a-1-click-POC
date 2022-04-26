@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cnecqqzojg",
+	"properties": {
+		"Name": "relationship-cnecqqzojg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "FeedstockType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "FeedstockEmissionFactorUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"FeedstockType.cdm.json/FeedstockType\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"FeedstockEmissionFactorUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

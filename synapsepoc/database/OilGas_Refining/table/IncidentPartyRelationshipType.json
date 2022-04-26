@@ -1,0 +1,106 @@
+{
+	"name": "IncidentPartyRelationshipType",
+	"properties": {
+		"Name": "IncidentPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the party and the incident over the indicated period.\n\nEx:\n- Witnessed\n- Provided First Aid\n- Secured Location\n- Reported\n- Injured\n- Caused",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType",
+						"Name": "IncidentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyRelationshipTypeName",
+					"Description": "The name of an Incident Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType",
+						"Name": "IncidentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyRelationshipTypeDescription",
+					"Description": "The description of an Incident Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType",
+						"Name": "IncidentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentPartyRelationshipTypeId\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"IncidentPartyRelationshipTypeName\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeName\"},\"IncidentPartyRelationshipTypeDescription\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentPartyRelationshipType\",\"path\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the incident over the indicated period.\\n\\nEx:\\n- Witnessed\\n- Provided First Aid\\n- Secured Location\\n- Reported\\n- Injured\\n- Caused\",\"primaryKey\":[\"IncidentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Party relationship type.\",\"isNullable\":false,\"name\":\"IncidentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the incident over the indicated period.\n\nEx:\n- Witnessed\n- Provided First Aid\n- Secured Location\n- Reported\n- Injured\n- Caused",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

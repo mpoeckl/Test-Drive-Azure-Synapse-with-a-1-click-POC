@@ -1,0 +1,155 @@
+{
+	"name": "RefineryEventAssetStatus",
+	"properties": {
+		"Name": "RefineryEventAssetStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the refinery event asset for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventId",
+					"Description": "The unique identifier of a Refinery Event.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "RefineryEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the refinery event asset status.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the refinery event asset status.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AssetStatusTypeId",
+					"Description": "The unique identifier of an Asset Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "AssetStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventAssetStatusNote",
+					"Description": "A note, comment or additional information regarding the refinery event asset status.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus",
+						"Name": "RefineryEventAssetStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAssetStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAssetStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventId\"},\"AssetId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodEndTimestamp\"},\"AssetStatusTypeId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetStatusTypeId\"},\"RefineryEventAssetStatusNote\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventAssetStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventAssetStatus\",\"path\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\"},\"description\":\"The status of the refinery event asset for the associated period.\",\"primaryKey\":[\"RefineryEventId\",\"AssetId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event.\",\"isNullable\":false,\"name\":\"RefineryEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the refinery event asset status.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the refinery event asset status.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Status Type.\",\"isNullable\":true,\"name\":\"AssetStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventAssetStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery event asset status.\",\"isNullable\":true,\"name\":\"RefineryEventAssetStatusNote\"}]}}}",
+			"Description": "The status of the refinery event asset for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventId,AssetId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-etgaltxvtf",
+	"properties": {
+		"Name": "relationship-etgaltxvtf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcess",
+		"ToTableName": "RefineryProcessProductShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessId",
+				"ToColumnName": "RefineryProcessId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"toEntity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessId\",\"toAttribute\":\"RefineryProcessId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lfdzxflehj",
+	"properties": {
+		"Name": "relationship-lfdzxflehj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PressureRating",
+		"ToTableName": "Pipe",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PressureRatingId",
+				"ToColumnName": "PressureRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PressureRating.cdm.json/PressureRating\",\"toEntity\":\"Pipe.cdm.json/Pipe\",\"joinPairs\":[{\"fromAttribute\":\"PressureRatingId\",\"toAttribute\":\"PressureRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

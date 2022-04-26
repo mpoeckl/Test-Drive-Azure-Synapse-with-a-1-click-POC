@@ -1,0 +1,155 @@
+{
+	"name": "ComponentImprovementRelatedParty",
+	"properties": {
+		"Name": "ComponentImprovementRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party related to the component improvement.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentImprovementId",
+					"Description": "The unique identifier of a Component Improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "ComponentImprovementId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementPartyRelationshipTypeId",
+					"Description": "The unique identifier of an improvement party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "ImprovementPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StartTimestamp",
+					"Description": "The start timestamp of the associated component improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "StartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EndTimestamp",
+					"Description": "The end timestamp of the associated component improvement.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "EndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentImprovementRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding a Component Improvement Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty",
+						"Name": "ComponentImprovementRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentImprovementRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentImprovementRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentImprovementId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementId\"},\"PartyId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"PartyId\"},\"ImprovementPartyRelationshipTypeId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ImprovementPartyRelationshipTypeId\"},\"StartTimestamp\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"StartTimestamp\"},\"EndTimestamp\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"EndTimestamp\"},\"ComponentImprovementRelatedPartyNote\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentImprovementRelatedParty\",\"path\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\"},\"description\":\"A party related to the component improvement.\",\"primaryKey\":[\"ComponentImprovementId\",\"PartyId\",\"ImprovementPartyRelationshipTypeId\",\"StartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Improvement.\",\"isNullable\":false,\"name\":\"ComponentImprovementId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ImprovementPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an improvement party relationship type.\",\"isNullable\":false,\"name\":\"ImprovementPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"StartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the associated component improvement.\",\"isNullable\":false,\"name\":\"StartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"EndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of the associated component improvement.\",\"isNullable\":true,\"name\":\"EndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Improvement Related Party.\",\"isNullable\":true,\"name\":\"ComponentImprovementRelatedPartyNote\"}]}}}",
+			"Description": "A party related to the component improvement.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentImprovementId,PartyId,ImprovementPartyRelationshipTypeId,StartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

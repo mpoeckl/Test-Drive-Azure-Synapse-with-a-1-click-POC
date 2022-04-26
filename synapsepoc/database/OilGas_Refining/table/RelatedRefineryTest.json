@@ -1,0 +1,155 @@
+{
+	"name": "RelatedRefineryTest",
+	"properties": {
+		"Name": "RelatedRefineryTest",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship between refinery tests.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedRefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "RelatedRefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "RefineryTestRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the related refinery test relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the refinery test relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RelatedRefineryTestNote",
+					"Description": "A note, comment or additional information regarding the related refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedRefineryTest.cdm.json/RelatedRefineryTest",
+						"Name": "RelatedRefineryTestNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryTest",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryTest",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestId\"},\"RelatedRefineryTestId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestId\"},\"RefineryTestRelationshipTypeId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodEndTimestamp\"},\"RelatedRefineryTestNote\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedRefineryTest\",\"path\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\"},\"description\":\"The relationship between refinery tests.\",\"primaryKey\":[\"RefineryTestId\",\"RelatedRefineryTestId\",\"RefineryTestRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":false,\"name\":\"RelatedRefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the related refinery test relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the refinery test relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related refinery test.\",\"isNullable\":true,\"name\":\"RelatedRefineryTestNote\"}]}}}",
+			"Description": "The relationship between refinery tests.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,RelatedRefineryTestId,RefineryTestRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

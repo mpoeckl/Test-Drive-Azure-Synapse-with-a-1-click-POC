@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankShapeType",
+	"properties": {
+		"Name": "StorageTankShapeType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of storage tank shape.\n\nEx:\n- Vertical cylindrical\n- Horizontal cylindrical\n- Open top\n- Closed top\n- Flat bottom\n- Cone bottom\n- Slope bottom\n- Dish bottom",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankShapeTypeId",
+					"Description": "The unique identifier of a storage tank shape type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankShapeType.cdm.json/StorageTankShapeType",
+						"Name": "StorageTankShapeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankShapeTypeName",
+					"Description": "The name of a storage tank shape type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankShapeType.cdm.json/StorageTankShapeType",
+						"Name": "StorageTankShapeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankShapeTypeDescription",
+					"Description": "The description of a storage tank shape type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankShapeType.cdm.json/StorageTankShapeType",
+						"Name": "StorageTankShapeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankShapeType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankShapeType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankShapeTypeId\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeId\"},\"StorageTankShapeTypeName\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeName\"},\"StorageTankShapeTypeDescription\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankShapeType\",\"path\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\"},\"description\":\"The type of storage tank shape.\\n\\nEx:\\n- Vertical cylindrical\\n- Horizontal cylindrical\\n- Open top\\n- Closed top\\n- Flat bottom\\n- Cone bottom\\n- Slope bottom\\n- Dish bottom\",\"primaryKey\":[\"StorageTankShapeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank shape type.\",\"isNullable\":false,\"name\":\"StorageTankShapeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank shape type.\",\"isNullable\":true,\"name\":\"StorageTankShapeTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"name\":\"StorageTankShapeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank shape type.\",\"isNullable\":true,\"name\":\"StorageTankShapeTypeDescription\"}]}}}",
+			"Description": "The type of storage tank shape.\n\nEx:\n- Vertical cylindrical\n- Horizontal cylindrical\n- Open top\n- Closed top\n- Flat bottom\n- Cone bottom\n- Slope bottom\n- Dish bottom",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankShapeTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

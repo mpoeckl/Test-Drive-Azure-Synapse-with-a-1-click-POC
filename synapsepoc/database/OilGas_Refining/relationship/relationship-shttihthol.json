@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shttihthol",
+	"properties": {
+		"Name": "relationship-shttihthol",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestMethod",
+		"ToTableName": "RefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestMethodId",
+				"ToColumnName": "RefineryTestMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"toEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestMethodId\",\"toAttribute\":\"RefineryTestMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

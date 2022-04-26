@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cusaxvrqfs",
+	"properties": {
+		"Name": "relationship-cusaxvrqfs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Meter",
+		"ToTableName": "MeterUsageForecast",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeterId",
+				"ToColumnName": "MeterId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Meter.cdm.json/Meter\",\"toEntity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"joinPairs\":[{\"fromAttribute\":\"MeterId\",\"toAttribute\":\"MeterId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "DeviceCommunicationToDisplayType",
+	"properties": {
+		"Name": "DeviceCommunicationToDisplayType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of means by which the device communicates to the display.\n\nEx:\n- Power line carrier\n- Wireless 433 MHz\n- Wireless 433.52 MHz",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceCommunicationToDisplayTypeId",
+					"Description": "The unique identifier of a Device Communication To Display Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType",
+						"Name": "DeviceCommunicationToDisplayTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToDisplayTypeName",
+					"Description": "The name of a Device Communication To Display Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType",
+						"Name": "DeviceCommunicationToDisplayTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToDisplayTypeDescription",
+					"Description": "The description of a Device Communication To Display Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType",
+						"Name": "DeviceCommunicationToDisplayTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceCommunicationToDisplayType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceCommunicationToDisplayType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceCommunicationToDisplayTypeId\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"DeviceCommunicationToDisplayTypeName\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeName\"},\"DeviceCommunicationToDisplayTypeDescription\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceCommunicationToDisplayType\",\"path\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\"},\"description\":\"The type of means by which the device communicates to the display.\\n\\nEx:\\n- Power line carrier\\n- Wireless 433 MHz\\n- Wireless 433.52 MHz\",\"primaryKey\":[\"DeviceCommunicationToDisplayTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Display Type.\",\"isNullable\":false,\"name\":\"DeviceCommunicationToDisplayTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Device Communication To Display Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToDisplayTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Device Communication To Display Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToDisplayTypeDescription\"}]}}}",
+			"Description": "The type of means by which the device communicates to the display.\n\nEx:\n- Power line carrier\n- Wireless 433 MHz\n- Wireless 433.52 MHz",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceCommunicationToDisplayTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

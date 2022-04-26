@@ -1,0 +1,106 @@
+{
+	"name": "NfpaReactivityRating",
+	"properties": {
+		"Name": "NfpaReactivityRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \n\nThis standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire \n\n4  Explosive material at room temperature\n3  May be explosive if shocked, heated under confinement or mixed with water\n2  Unstable or may react violently if mixed with water\n1  May react if heated or mixed with water but not violently\n0  Not reactive when mixed with water",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NfpaReactivityRatingId",
+					"Description": "The unique identifier of a NFPA Reactivity Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaReactivityRating.cdm.json/NfpaReactivityRating",
+						"Name": "NfpaReactivityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NfpaReactivityRatingName",
+					"Description": "The name of a NFPA Reactivity Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaReactivityRating.cdm.json/NfpaReactivityRating",
+						"Name": "NfpaReactivityRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NfpaReactivityRatingDescription",
+					"Description": "The description of a NFPA Reactivity Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaReactivityRating.cdm.json/NfpaReactivityRating",
+						"Name": "NfpaReactivityRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaReactivityRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaReactivityRating",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NfpaReactivityRatingId\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingId\"},\"NfpaReactivityRatingName\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingName\"},\"NfpaReactivityRatingDescription\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NfpaReactivityRating\",\"path\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\"},\"description\":\"NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \\n\\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \\n\\nThis standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire \\n\\n4  Explosive material at room temperature\\n3  May be explosive if shocked, heated under confinement or mixed with water\\n2  Unstable or may react violently if mixed with water\\n1  May react if heated or mixed with water but not violently\\n0  Not reactive when mixed with water\",\"primaryKey\":[\"NfpaReactivityRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a NFPA Reactivity Rating.\",\"isNullable\":false,\"name\":\"NfpaReactivityRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a NFPA Reactivity Rating.\",\"isNullable\":true,\"name\":\"NfpaReactivityRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a NFPA Reactivity Rating.\",\"isNullable\":true,\"name\":\"NfpaReactivityRatingDescription\"}]}}}",
+			"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \n\nThis standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire \n\n4  Explosive material at room temperature\n3  May be explosive if shocked, heated under confinement or mixed with water\n2  Unstable or may react violently if mixed with water\n1  May react if heated or mixed with water but not violently\n0  Not reactive when mixed with water",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "NfpaReactivityRatingId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "HydrotreatingProcessType",
+	"properties": {
+		"Name": "HydrotreatingProcessType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of hydrotreating process.\n\nEx:\n- Liquid Phase Process\n- Vapor Phase Process\n\nwhere:\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\nVapor phase process for light straight-run and cracked fractions\n\nFor Hydrotreating, two basic processes are applied:\n\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\nVapor phase process for light straight-run and cracked fractions.\nThe basic configuration of the process is as follows:\n\nThe feedstock is mixed with hydrogen-rich make up gas and recycle gas from the reactor. The mixture exchanges heat with the reactor effluent and is heated in a furnace. It enters a reactor loaded with catalyst. In the reactor, the sulfur and the nitrogen compounds present in the feedstock are converted into hydrogen sulfide and ammonia respectively. The olefins present are saturated with hydrogen to become di-olefins and part of the aromatics will be hydrogenated. For hydrogenation of aromatics, a higher pressure is needed in the reactor compared to the normal operating conditions.\n\nThe reactor operating conditions are:\n\nTemperatures in the range of 300-380 degrees C\nPressure ranging from 10-20 bar for naphtha to 30-45 bar for gasoil.\nThe catalyst used is normally cobalt, molybdenum and nickel finely distributed on alumina extrudates. It slowly gets deactivated by coke deposit. It is renewed every 2/3 years. It can be regenerated (by burning off the coke) and reused typically once or twice before its activity degenerates. Catalyst regeneration is, nowadays, mainly carried out ex- situ by specialized firms.\nThe reaction products leave the reactor and, after having been cooled to a low temperature, typically 40-50 degrees C, enter a liquid/gas separation stage. The hydrogen-rich gas from the high pressure separation is recycled to combine with the feedstock, and the low pressure off-gas stream rich in hydrogen sulfide is sent to a gas-treating unit, where hydrogen sulfide is removed. The clean gas is used as refinery fuel. The liquid stream is  sent to a stripping column where H2S and other undesirable components are removed, and to a vacuum drier for removal of water.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrotreatingProcessTypeId",
+					"Description": "The unique identifier of a hydrotreating process type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreatingProcessType.cdm.json/HydrotreatingProcessType",
+						"Name": "HydrotreatingProcessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreatingProcessTypeName",
+					"Description": "The name of a hydrotreating process type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreatingProcessType.cdm.json/HydrotreatingProcessType",
+						"Name": "HydrotreatingProcessTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreatingProcessTypeDescription",
+					"Description": "The description of a hydrotreating process type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreatingProcessType.cdm.json/HydrotreatingProcessType",
+						"Name": "HydrotreatingProcessTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrotreatingProcessType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrotreatingProcessType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrotreatingProcessTypeId\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeId\"},\"HydrotreatingProcessTypeName\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeName\"},\"HydrotreatingProcessTypeDescription\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrotreatingProcessType\",\"path\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\"},\"description\":\"The type of hydrotreating process.\\n\\nEx:\\n- Liquid Phase Process\\n- Vapor Phase Process\\n\\nwhere:\\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\\nVapor phase process for light straight-run and cracked fractions\\n\\nFor Hydrotreating, two basic processes are applied:\\n\\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\\nVapor phase process for light straight-run and cracked fractions.\\nThe basic configuration of the process is as follows:\\n\\nThe feedstock is mixed with hydrogen-rich make up gas and recycle gas from the reactor. The mixture exchanges heat with the reactor effluent and is heated in a furnace. It enters a reactor loaded with catalyst. In the reactor, the sulfur and the nitrogen compounds present in the feedstock are converted into hydrogen sulfide and ammonia respectively. The olefins present are saturated with hydrogen to become di-olefins and part of the aromatics will be hydrogenated. For hydrogenation of aromatics, a higher pressure is needed in the reactor compared to the normal operating conditions.\\n\\nThe reactor operating conditions are:\\n\\nTemperatures in the range of 300-380 degrees C\\nPressure ranging from 10-20 bar for naphtha to 30-45 bar for gasoil.\\nThe catalyst used is normally cobalt, molybdenum and nickel finely distributed on alumina extrudates. It slowly gets deactivated by coke deposit. It is renewed every 2/3 years. It can be regenerated (by burning off the coke) and reused typically once or twice before its activity degenerates. Catalyst regeneration is, nowadays, mainly carried out ex- situ by specialized firms.\\nThe reaction products leave the reactor and, after having been cooled to a low temperature, typically 40-50 degrees C, enter a liquid/gas separation stage. The hydrogen-rich gas from the high pressure separation is recycled to combine with the feedstock, and the low pressure off-gas stream rich in hydrogen sulfide is sent to a gas-treating unit, where hydrogen sulfide is removed. The clean gas is used as refinery fuel. The liquid stream is  sent to a stripping column where H2S and other undesirable components are removed, and to a vacuum drier for removal of water.\",\"primaryKey\":[\"HydrotreatingProcessTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrotreating process type.\",\"isNullable\":false,\"name\":\"HydrotreatingProcessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a hydrotreating process type.\",\"isNullable\":true,\"name\":\"HydrotreatingProcessTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreatingProcessType.cdm.json/HydrotreatingProcessType\",\"name\":\"HydrotreatingProcessTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a hydrotreating process type.\",\"isNullable\":true,\"name\":\"HydrotreatingProcessTypeDescription\"}]}}}",
+			"Description": "The type of hydrotreating process.\n\nEx:\n- Liquid Phase Process\n- Vapor Phase Process\n\nwhere:\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\nVapor phase process for light straight-run and cracked fractions\n\nFor Hydrotreating, two basic processes are applied:\n\nLiquid phase process for kerosene and heavier straight-run, cracked distillates and vacuum gas oil\nVapor phase process for light straight-run and cracked fractions.\nThe basic configuration of the process is as follows:\n\nThe feedstock is mixed with hydrogen-rich make up gas and recycle gas from the reactor. The mixture exchanges heat with the reactor effluent and is heated in a furnace. It enters a reactor loaded with catalyst. In the reactor, the sulfur and the nitrogen compounds present in the feedstock are converted into hydrogen sulfide and ammonia respectively. The olefins present are saturated with hydrogen to become di-olefins and part of the aromatics will be hydrogenated. For hydrogenation of aromatics, a higher pressure is needed in the reactor compared to the normal operating conditions.\n\nThe reactor operating conditions are:\n\nTemperatures in the range of 300-380 degrees C\nPressure ranging from 10-20 bar for naphtha to 30-45 bar for gasoil.\nThe catalyst used is normally cobalt, molybdenum and nickel finely distributed on alumina extrudates. It slowly gets deactivated by coke deposit. It is renewed every 2/3 years. It can be regenerated (by burning off the coke) and reused typically once or twice before its activity degenerates. Catalyst regeneration is, nowadays, mainly carried out ex- situ by specialized firms.\nThe reaction products leave the reactor and, after having been cooled to a low temperature, typically 40-50 degrees C, enter a liquid/gas separation stage. The hydrogen-rich gas from the high pressure separation is recycled to combine with the feedstock, and the low pressure off-gas stream rich in hydrogen sulfide is sent to a gas-treating unit, where hydrogen sulfide is removed. The clean gas is used as refinery fuel. The liquid stream is  sent to a stripping column where H2S and other undesirable components are removed, and to a vacuum drier for removal of water.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrotreatingProcessTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

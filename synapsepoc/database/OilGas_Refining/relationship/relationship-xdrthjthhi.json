@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xdrthjthhi",
+	"properties": {
+		"Name": "relationship-xdrthjthhi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryFacilityRelationshipType",
+		"ToTableName": "RefineryRelatedFacility",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryFacilityRelationshipTypeId",
+				"ToColumnName": "RefineryFacilityRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryFacilityRelationshipType.cdm.json/RefineryFacilityRelationshipType\",\"toEntity\":\"RefineryRelatedFacility.cdm.json/RefineryRelatedFacility\",\"joinPairs\":[{\"fromAttribute\":\"RefineryFacilityRelationshipTypeId\",\"toAttribute\":\"RefineryFacilityRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

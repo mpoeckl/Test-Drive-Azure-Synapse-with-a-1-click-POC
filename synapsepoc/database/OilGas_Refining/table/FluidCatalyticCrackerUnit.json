@@ -1,0 +1,317 @@
+{
+	"name": "FluidCatalyticCrackerUnit",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnit",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Fluid Catalytic Cracker Unit is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\n\nFluid catalytic cracking (FCC) is one of the most important conversion processes used in petroleum refineries.   It is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\n\nCracking of petroleum hydrocarbons was originally done by thermal cracking, which has been almost completely replaced by catalytic cracking because it produces more gasoline with a higher octane rating. It also produces byproduct gases that have more carbon-carbon double bonds (i.e. more olefins), and hence more economic value, than those produced by thermal cracking.\n\nThe feedstock to FCC is usually that portion of the crude oil that has an initial boiling point of 340 °C or higher at atmospheric pressure and an average molecular weight ranging from about 200 to 600 or higher.    This portion of crude oil is often referred to as heavy gas oil or vacuum gas oil (HVGO). In the FCC process, the feedstock is heated to a high temperature and moderate pressure, and brought into contact with a hot, powdered catalyst. \n\nThe catalyst breaks the long-chain molecules of the high-boiling hydrocarbon liquids into much shorter molecules, which are collected as a vapor.\n\nThe modern FCC units are all continuous processes which operate 24 hours a day for as long as 3 to 5 years between scheduled shutdowns for routine maintenance.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitManufacturerName",
+					"Description": "The manufacturer name of the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitModelNumber",
+					"Description": "The model number of the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitConstructionCompletedDate",
+					"Description": "The date that the fluid catalytic cracker unit construction was completed.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitConstructionCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitFirstOperationDate",
+					"Description": "The first operational date of the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitFirstOperationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitDesignGraphic",
+					"Description": "The design specification graphic of the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitDesignGraphic"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitHeightMeters",
+					"Description": "The height of the fluid catalytic cracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitLengthMeters",
+					"Description": "The length of the fluid catalytic cracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitLengthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitWidthMeters",
+					"Description": "The width of the fluid catalytic cracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitWidthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitAreaSquareMeters",
+					"Description": "The square area of the fluid catalytic cracker unit in meters.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitAreaSquareMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitCapacityBpd",
+					"Description": "The capacity of the fluid catalytic cracker unit in barrels per day.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitCapacityBpd"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsalRefineryProcessFccuIndicator",
+					"Description": "The ISAL process is a two-reactor, selective hydrotreating process for treating a wide range of naphtha feedstocks. \n\nThe process uses a bifunctional catalyst system to desulfurize FCC gasoline and to achieve a controlled transformation of the gasoline hydrocarbons. \n\nThe ISAL process reduces the sulfur content to very low levels, saturates almost all of the olefins and restore the octanes through the specific hydro conversion reactions.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "IsalRefineryProcessFccuIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ContinuousGasDensityMeasurementIndicator",
+					"Description": "Indicates that the fluid catalyst cracker unit integrates continuous gas density measurement and reporting.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "ContinuousGasDensityMeasurementIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitConfigurationTypeId",
+					"Description": "The unique identifier of a fluid catalytic cracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitNote",
+					"Description": "A note, comment or additional information regarding the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit",
+						"Name": "FluidCatalyticCrackerUnitNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnit",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnit",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"FluidCatalyticCrackerUnitManufacturerName\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitManufacturerName\"},\"FluidCatalyticCrackerUnitModelNumber\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitModelNumber\"},\"FluidCatalyticCrackerUnitConstructionCompletedDate\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitConstructionCompletedDate\"},\"FluidCatalyticCrackerUnitFirstOperationDate\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitFirstOperationDate\"},\"FluidCatalyticCrackerUnitDesignGraphic\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitDesignGraphic\"},\"FluidCatalyticCrackerUnitHeightMeters\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitHeightMeters\"},\"FluidCatalyticCrackerUnitLengthMeters\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitLengthMeters\"},\"FluidCatalyticCrackerUnitWidthMeters\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitWidthMeters\"},\"FluidCatalyticCrackerUnitAreaSquareMeters\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitAreaSquareMeters\"},\"FluidCatalyticCrackerUnitCapacityBpd\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitCapacityBpd\"},\"IsalRefineryProcessFccuIndicator\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"IsalRefineryProcessFccuIndicator\"},\"ContinuousGasDensityMeasurementIndicator\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"ContinuousGasDensityMeasurementIndicator\"},\"FluidCatalyticCrackerUnitConfigurationTypeId\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},\"MaterialId\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"MaterialId\"},\"FluidCatalyticCrackerUnitNote\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnit\",\"path\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\"},\"description\":\"The Fluid Catalytic Cracker Unit is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\\n\\nFluid catalytic cracking (FCC) is one of the most important conversion processes used in petroleum refineries.   It is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\\n\\nCracking of petroleum hydrocarbons was originally done by thermal cracking, which has been almost completely replaced by catalytic cracking because it produces more gasoline with a higher octane rating. It also produces byproduct gases that have more carbon-carbon double bonds (i.e. more olefins), and hence more economic value, than those produced by thermal cracking.\\n\\nThe feedstock to FCC is usually that portion of the crude oil that has an initial boiling point of 340 °C or higher at atmospheric pressure and an average molecular weight ranging from about 200 to 600 or higher.    This portion of crude oil is often referred to as heavy gas oil or vacuum gas oil (HVGO). In the FCC process, the feedstock is heated to a high temperature and moderate pressure, and brought into contact with a hot, powdered catalyst. \\n\\nThe catalyst breaks the long-chain molecules of the high-boiling hydrocarbon liquids into much shorter molecules, which are collected as a vapor.\\n\\nThe modern FCC units are all continuous processes which operate 24 hours a day for as long as 3 to 5 years between scheduled shutdowns for routine maintenance.\",\"primaryKey\":[\"FluidCatalyticCrackerUnitId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The manufacturer name of the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitManufacturerName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The model number of the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitConstructionCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the fluid catalytic cracker unit construction was completed.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitConstructionCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitFirstOperationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operational date of the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitFirstOperationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitDesignGraphic\"},\"dataType\":\"binary\",\"description\":\"The design specification graphic of the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitDesignGraphic\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the fluid catalytic cracker unit in meters.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitLengthMeters\"},\"dataType\":\"integer\",\"description\":\"The length of the fluid catalytic cracker unit in meters.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitLengthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitWidthMeters\"},\"dataType\":\"integer\",\"description\":\"The width of the fluid catalytic cracker unit in meters.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitWidthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitAreaSquareMeters\"},\"dataType\":\"integer\",\"description\":\"The square area of the fluid catalytic cracker unit in meters.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitAreaSquareMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitCapacityBpd\"},\"dataType\":\"integer\",\"description\":\"The capacity of the fluid catalytic cracker unit in barrels per day.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitCapacityBpd\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"IsalRefineryProcessFccuIndicator\"},\"dataType\":\"boolean\",\"description\":\"The ISAL process is a two-reactor, selective hydrotreating process for treating a wide range of naphtha feedstocks. \\n\\nThe process uses a bifunctional catalyst system to desulfurize FCC gasoline and to achieve a controlled transformation of the gasoline hydrocarbons. \\n\\nThe ISAL process reduces the sulfur content to very low levels, saturates almost all of the olefins and restore the octanes through the specific hydro conversion reactions.\",\"isNullable\":true,\"name\":\"IsalRefineryProcessFccuIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"ContinuousGasDensityMeasurementIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the fluid catalyst cracker unit integrates continuous gas density measurement and reporting.\",\"isNullable\":true,\"name\":\"ContinuousGasDensityMeasurementIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fluid catalytic cracker unit configuration type.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"name\":\"FluidCatalyticCrackerUnitNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitNote\"}]}}}",
+			"Description": "The Fluid Catalytic Cracker Unit is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\n\nFluid catalytic cracking (FCC) is one of the most important conversion processes used in petroleum refineries.   It is widely used to convert the high-boiling, high-molecular weight hydrocarbon fractions of petroleum crude oils into more valuable gasoline, olefinic gases, and other products.\n\nCracking of petroleum hydrocarbons was originally done by thermal cracking, which has been almost completely replaced by catalytic cracking because it produces more gasoline with a higher octane rating. It also produces byproduct gases that have more carbon-carbon double bonds (i.e. more olefins), and hence more economic value, than those produced by thermal cracking.\n\nThe feedstock to FCC is usually that portion of the crude oil that has an initial boiling point of 340 °C or higher at atmospheric pressure and an average molecular weight ranging from about 200 to 600 or higher.    This portion of crude oil is often referred to as heavy gas oil or vacuum gas oil (HVGO). In the FCC process, the feedstock is heated to a high temperature and moderate pressure, and brought into contact with a hot, powdered catalyst. \n\nThe catalyst breaks the long-chain molecules of the high-boiling hydrocarbon liquids into much shorter molecules, which are collected as a vapor.\n\nThe modern FCC units are all continuous processes which operate 24 hours a day for as long as 3 to 5 years between scheduled shutdowns for routine maintenance.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

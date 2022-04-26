@@ -1,0 +1,256 @@
+{
+	"name": "ComponentLocation",
+	"properties": {
+		"Name": "ComponentLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The location of a component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationTypeId",
+					"Description": "The unique identifier of a Component Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "ComponentLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which an associated Component - Location relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which an associated Component - Location relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GpsLatitude",
+					"Description": "The GPS latitude.\n\nWide Area Augmentation System GPS technology is accurate to 1-1.5 meters.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "GpsLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GpsLongitude",
+					"Description": "The GPS longitude.\n\nWide Area Augmentation System GPS technology is accurate to 1-1.5 meters.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "GpsLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationRelationshipTypeId",
+					"Description": "The unique identifier of a Component Location Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "ComponentLocationRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationInstallationTimestamp",
+					"Description": "The timestamp that a component was installed at the associated location.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "ComponentLocationInstallationTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LocationElevation",
+					"Description": "The distance above/below ground level of the location where the component is located. If the location is above ground level this measurement will be positive, if the location is below ground level this measurement will be negative.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "LocationElevation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationElevationUnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "LocationElevationUnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationNote",
+					"Description": "A note, comment or additional information regarding a Component Location.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocation.cdm.json/ComponentLocation",
+						"Name": "ComponentLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentId\"},\"ComponentLocationTypeId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationId\"},\"GpsLatitude\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLatitude\"},\"GpsLongitude\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLongitude\"},\"ComponentLocationRelationshipTypeId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"ComponentLocationInstallationTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationInstallationTimestamp\"},\"LocationElevation\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevation\"},\"LocationElevationUnitOfMeasureId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevationUnitOfMeasureId\"},\"ComponentLocationNote\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentLocation\",\"path\":\"ComponentLocation.cdm.json/ComponentLocation\"},\"description\":\"The location of a component.\",\"primaryKey\":[\"ComponentId\",\"ComponentLocationTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Type.\",\"isNullable\":false,\"name\":\"ComponentLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which an associated Component - Location relationship is effective.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which an associated Component - Location relationship is effective.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":false,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS latitude.\\n\\nWide Area Augmentation System GPS technology is accurate to 1-1.5 meters.\",\"isNullable\":true,\"scale\":4,\"name\":\"GpsLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS longitude.\\n\\nWide Area Augmentation System GPS technology is accurate to 1-1.5 meters.\",\"isNullable\":true,\"scale\":4,\"name\":\"GpsLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentLocationRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationInstallationTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that a component was installed at the associated location.\",\"isNullable\":true,\"name\":\"ComponentLocationInstallationTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevation\"},\"dataType\":\"integer\",\"description\":\"The distance above/below ground level of the location where the component is located. If the location is above ground level this measurement will be positive, if the location is below ground level this measurement will be negative.\",\"isNullable\":true,\"name\":\"LocationElevation\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevationUnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"LocationElevationUnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Location.\",\"isNullable\":true,\"name\":\"ComponentLocationNote\"}]}}}",
+			"Description": "The location of a component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ComponentLocationTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

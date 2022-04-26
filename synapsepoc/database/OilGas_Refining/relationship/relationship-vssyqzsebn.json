@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vssyqzsebn",
+	"properties": {
+		"Name": "relationship-vssyqzsebn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "FieldDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "FieldDeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"FieldDevice.cdm.json/FieldDevice\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"FieldDeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

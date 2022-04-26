@@ -1,0 +1,105 @@
+{
+	"name": "ComponentProtocol",
+	"properties": {
+		"Name": "ComponentProtocol",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Protocol(s) supported by the associated component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentProtocol.cdm.json/ComponentProtocol",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProtocolId",
+					"Description": "The unique identifier of a Meter Protocol.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentProtocol.cdm.json/ComponentProtocol",
+						"Name": "ProtocolId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentProtocolNote",
+					"Description": "A note, comment or additional information regarding a Component Protocol.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentProtocol.cdm.json/ComponentProtocol",
+						"Name": "ComponentProtocolNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentProtocol",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentProtocol",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ComponentId\"},\"ProtocolId\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ProtocolId\"},\"ComponentProtocolNote\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ComponentProtocolNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentProtocol\",\"path\":\"ComponentProtocol.cdm.json/ComponentProtocol\"},\"description\":\"The Protocol(s) supported by the associated component.\",\"primaryKey\":[\"ComponentId\",\"ProtocolId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ProtocolId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Protocol.\",\"isNullable\":false,\"name\":\"ProtocolId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"name\":\"ComponentProtocolNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Protocol.\",\"isNullable\":true,\"name\":\"ComponentProtocolNote\"}]}}}",
+			"Description": "The Protocol(s) supported by the associated component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ProtocolId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

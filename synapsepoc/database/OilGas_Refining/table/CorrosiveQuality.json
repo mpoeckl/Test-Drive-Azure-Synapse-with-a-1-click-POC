@@ -1,0 +1,106 @@
+{
+	"name": "CorrosiveQuality",
+	"properties": {
+		"Name": "CorrosiveQuality",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the corrosive quality of the associated component or material.\n\nEx:\n- High\n- Moderate\n- Low",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "CorrosiveQuality.cdm.json/CorrosiveQuality",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityName",
+					"Description": "The name of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "CorrosiveQuality.cdm.json/CorrosiveQuality",
+						"Name": "CorrosiveQualityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityDescription",
+					"Description": "The description of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "CorrosiveQuality.cdm.json/CorrosiveQuality",
+						"Name": "CorrosiveQualityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CorrosiveQuality",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CorrosiveQuality",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CorrosiveQualityId\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityId\"},\"CorrosiveQualityName\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityName\"},\"CorrosiveQualityDescription\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CorrosiveQuality\",\"path\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\"},\"description\":\"The nature of the corrosive quality of the associated component or material.\\n\\nEx:\\n- High\\n- Moderate\\n- Low\",\"primaryKey\":[\"CorrosiveQualityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":false,\"name\":\"CorrosiveQualityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"name\":\"CorrosiveQualityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityDescription\"}]}}}",
+			"Description": "The nature of the corrosive quality of the associated component or material.\n\nEx:\n- High\n- Moderate\n- Low",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "CorrosiveQualityId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

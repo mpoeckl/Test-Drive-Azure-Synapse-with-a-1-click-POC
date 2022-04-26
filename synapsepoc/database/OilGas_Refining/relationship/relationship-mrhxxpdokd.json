@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mrhxxpdokd",
+	"properties": {
+		"Name": "relationship-mrhxxpdokd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CasingSealType",
+		"ToTableName": "ComponentCasingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CasingSealTypeId",
+				"ToColumnName": "CasingSealTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CasingSealType.cdm.json/CasingSealType\",\"toEntity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"joinPairs\":[{\"fromAttribute\":\"CasingSealTypeId\",\"toAttribute\":\"CasingSealTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

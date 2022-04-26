@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nappfoobap",
+	"properties": {
+		"Name": "relationship-nappfoobap",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CorrosiveQuality",
+		"ToTableName": "BituminousSandType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CorrosiveQualityId",
+				"ToColumnName": "CorrosiveQualityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"toEntity\":\"BituminousSandType.cdm.json/BituminousSandType\",\"joinPairs\":[{\"fromAttribute\":\"CorrosiveQualityId\",\"toAttribute\":\"CorrosiveQualityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ntmwhgapbd",
+	"properties": {
+		"Name": "relationship-ntmwhgapbd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessItemRelationshipType",
+		"ToTableName": "RefineryProcessItem",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessItemRelationshipTypeId",
+				"ToColumnName": "RefineryProcessItemRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"toEntity\":\"RefineryProcessItem.cdm.json/RefineryProcessItem\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessItemRelationshipTypeId\",\"toAttribute\":\"RefineryProcessItemRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

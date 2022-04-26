@@ -1,0 +1,121 @@
+{
+	"name": "MeterChannel",
+	"properties": {
+		"Name": "MeterChannel",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The one or more meter channel(s) associated with the meter.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterId",
+					"Description": "The unique identifier of a Meter.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannel.cdm.json/MeterChannel",
+						"Name": "MeterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelId",
+					"Description": "The unique identifier of a meter channel.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannel.cdm.json/MeterChannel",
+						"Name": "MeterChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelTypeId",
+					"Description": "The unique identifier of a meter channel type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannel.cdm.json/MeterChannel",
+						"Name": "MeterChannelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelNote",
+					"Description": "A note, comment or additional information regarding the meter channel/register.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannel.cdm.json/MeterChannel",
+						"Name": "MeterChannelNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannel",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannel",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelId\"},\"MeterChannelTypeId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelTypeId\"},\"MeterChannelNote\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterChannel\",\"path\":\"MeterChannel.cdm.json/MeterChannel\"},\"description\":\"The one or more meter channel(s) associated with the meter.\",\"primaryKey\":[\"MeterId\",\"MeterChannelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Meter.\",\"isNullable\":false,\"name\":\"MeterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter channel.\",\"isNullable\":false,\"name\":\"MeterChannelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter channel type.\",\"isNullable\":true,\"name\":\"MeterChannelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the meter channel/register.\",\"isNullable\":true,\"name\":\"MeterChannelNote\"}]}}}",
+			"Description": "The one or more meter channel(s) associated with the meter.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterId,MeterChannelId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

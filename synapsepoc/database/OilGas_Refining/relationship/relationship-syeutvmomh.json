@@ -1,0 +1,26 @@
+{
+	"name": "relationship-syeutvmomh",
+	"properties": {
+		"Name": "relationship-syeutvmomh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "ComponentCertification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

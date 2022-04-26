@@ -1,0 +1,1708 @@
+{
+	"name": "RefineryMetrics",
+	"properties": {
+		"Name": "RefineryMetrics",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Refinery metrics for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period date associated with the refinery metric.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end associated with the refinery metric.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberRefineryEmployeesBeginningOfPeriod",
+					"Description": "The total number of refinery employees at the beginning of the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberRefineryEmployeesBeginningOfPeriod"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberRefineryEmployeesHired",
+					"Description": "The total number of refinery employees hired at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberRefineryEmployeesHired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberRefineryEmployeesTerminated",
+					"Description": "The total number of refinery employees terminated during the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberRefineryEmployeesTerminated"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberRefineryEmployeesRetired",
+					"Description": "The total number of refinery employees that retired during the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberRefineryEmployeesRetired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalContractorsHired",
+					"Description": "The total number of contractors hired by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalContractorsHired"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalContractorsTerminated",
+					"Description": "The total number of contractors terminated during the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalContractorsTerminated"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeLaborCostsAmount",
+					"Description": "the total refinery employee-related labor costs incurred by the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeLaborCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeBenefitsCostsAmount",
+					"Description": "The total amount of refinery benefit-related costs incurred during the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeBenefitsCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeDependentBenefitsCostsAmount",
+					"Description": "The total amount of refinery employee dependent benefit costs incurred for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeDependentBenefitsCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeHealthBenefitCostsAmount",
+					"Description": "The total amount of refinery employee health benefit costs incurred by the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeHealthBenefitCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberOfRefineryEmployeeWorkDays",
+					"Description": "The total number of refinery employee work days recorded for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberOfRefineryEmployeeWorkDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberOfRefineryEmployeeLostWorkDays",
+					"Description": "The total number of lost work days by employees at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberOfRefineryEmployeeLostWorkDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWorkRelatedInjures",
+					"Description": "The total number of work-related injuries at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWorkRelatedInjures"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalNumberOfRefineryDaysLostToWorkRelatedInjuries",
+					"Description": "The total number of refinery work days lost to work-related injuries at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalNumberOfRefineryDaysLostToWorkRelatedInjuries"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWorkerHoursLostToInjuries",
+					"Description": "The total number of refinery worker hours lost to injuries at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWorkerHoursLostToInjuries"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWorkerInjuriesMedicalCostsIncurred",
+					"Description": "The total amount of refinery worker injury medical costs incurred at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWorkerInjuriesMedicalCostsIncurred"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWorkerFatalities",
+					"Description": "The total number of worker fatalities incurred by the refinery at the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWorkerFatalities"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeComplianceCostsAmount",
+					"Description": "The total amount of employee compliance costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeComplianceCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWorkerLegalCompensationPaidAmount",
+					"Description": "The total amount of worker legal compensation costs paid for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWorkerLegalCompensationPaidAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeProgramCostsAmount",
+					"Description": "The total amount of employee program costs incurred at the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeProgramCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEmployeeSubstanceAbuseIncidents",
+					"Description": "The total number of employee substance abuse-related incidents at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEmployeeSubstanceAbuseIncidents"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberRefineryIncidentsReported",
+					"Description": "The total number of refinery incidents reported for the period (see INCIDENT Section).",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberRefineryIncidentsReported"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberRefineryInjuryIncidentsReported",
+					"Description": "The number of injury-related incidents reported at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberRefineryInjuryIncidentsReported"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberRefineryDeathIncidentsReported",
+					"Description": "The number of death-related incidents reported at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberRefineryDeathIncidentsReported"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryExcessiveEmissionsEvents",
+					"Description": "The total refinery excessive emissions events recorded at the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryExcessiveEmissionsEvents"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEnvironmentalFinesAmount",
+					"Description": "The total amount of refinery environmental fines incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEnvironmentalFinesAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEnvironmentalComplianceCostsAmount",
+					"Description": "The total amount of refinery environmental compliance costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEnvironmentalComplianceCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryDevelopmentCostsAmount",
+					"Description": "The total amount of refinery development costs expended by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryDevelopmentCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryAdministrativeCostsAmount",
+					"Description": "The total refinery administrative costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryAdministrativeCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryLaborsCostsAmount",
+					"Description": "The total refinery labor costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryLaborsCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEquipmentCostsAmount",
+					"Description": "The total refinery equipment costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEquipmentCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryMaintenanceCostsAmount",
+					"Description": "The total refinery maintenance costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryMaintenanceCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryInventoryCostsAmount",
+					"Description": "The total inventory costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryInventoryCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryConstructionCostsAmount",
+					"Description": "The total refinery construction costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryConstructionCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWaterUsageGallons",
+					"Description": "The total water usage in gallons used by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWaterUsageGallons"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryWaterCostsAmount",
+					"Description": "The total water-related costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryWaterCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryElectricalUsageCostsAmount",
+					"Description": "The total electrical usage costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryElectricalUsageCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryElectricalUsageMw",
+					"Description": "The total refinery electrical usage by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryElectricalUsageMw"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEnvironmentalMonitoringCostsAmount",
+					"Description": "The total environment monitoring costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEnvironmentalMonitoringCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEnvironmentalFinesCostsAmount",
+					"Description": "The total environmental fines incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEnvironmentalFinesCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryTestingCostsAmount",
+					"Description": "The total refinery Testing Costs Amount incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryTestingCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryEnergyCostsAmount",
+					"Description": "The total energy usage costs incurred by the refinery for the period.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalRefineryEnergyCostsAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberEmployeesToInjuriesRatio",
+					"Description": "The employees to injuries ratio for the period.\n\n(Number of Employees/Injuries) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberEmployeesToInjuriesRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberEmployeesToFatalitiesRatio",
+					"Description": "The employees to fatalities ratio for the period.\n\n(Number of Employees/fatalities) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberEmployeesToFatalitiesRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberEmployeesToHealthBenefitsCostsRatio",
+					"Description": "Number Employees To Health Benefits Costs Ratio:\n\n(Number Of Employees/Health Benefit Costs) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberEmployeesToHealthBenefitsCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberEmployeesToDependentBenefitsCostsRatio",
+					"Description": "Number Employees To Dependent Benefits Costs Ratio:\n\n(Number of Employees/Dependent Benefits Costs) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberEmployeesToDependentBenefitsCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NumberEmployeesToSalaryCostsRatio",
+					"Description": "Number Employees To Salary Costs Ratio\n\n(Number Employees/Salary Costs Ratio) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NumberEmployeesToSalaryCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeToContractorRatio",
+					"Description": "Employee To Contractor Ratio:\n\n(Number of Employee/Number of Contractors) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "EmployeeToContractorRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEmployeesToRefineryExpensesRatio",
+					"Description": "Refinery Employees To Refinery Expenses Ratio:\n\n(Number Of Employees/Refinery Expense Cost) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "RefineryEmployeesToRefineryExpensesRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeSalaryCostsToContractorCostsRatio",
+					"Description": "Employee Salary Costs To Contractor Costs Ratio\n\n(Employee Salary Costs Amount/Contractor Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "EmployeeSalaryCostsToContractorCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToEnvironmentalComplianceCostsRatio",
+					"Description": "Production Revenue To Environmental Compliance Costs Ratio:\n\n(Production Revenues Amount/ Environmental Compliance Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToEnvironmentalComplianceCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToEmployeeSalariesCostsRatio",
+					"Description": "Production Revenue To Employee Salaries Costs Ratio:\n\n(Production Revenue Amount/ Employee Salaries Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToEmployeeSalariesCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToPowerUsageCostsRatio",
+					"Description": "Production Revenue To Power Usage Costs Ratio:\n\n(Production Revenue Amount/Power Usage Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToPowerUsageCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToMaintenanceCostsRatio",
+					"Description": "Production Revenue To Maintenance Costs Ratio:\n\n(Production Revenue Amount/ Maintenance Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToMaintenanceCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToDevelopmentCostsRatio",
+					"Description": "Production Revenue To Development Costs Ratio:\n\n(Production Revenue Amount/Development Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToDevelopmentCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToElectricalCostsRatio",
+					"Description": "Production Revenue To Electrical Costs Ratio:\n\n(Production Revenue Amount/Electrical Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToElectricalCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToWaterCostsRatio",
+					"Description": "Production Revenue To Water Costs Ratio:\n\n(Production Revenue Amount/ Water Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToWaterCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToShippingCostsRatio",
+					"Description": "Production Revenue To Shipping Costs Ratio:\n\n(Production Revenue Amount/Shipping Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToShippingCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToElectricalCostsRatio",
+					"Description": "Production Costs To Electrical Costs Ratio:\n\n(Production Costs Amount/ Electrical Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToElectricalCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToComplianceCostsRatio",
+					"Description": "Production Costs To Compliance Costs Ratio:\n\n(Production Costs Amount/Compliance Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToComplianceCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToEmployeeLaborCostsRatio",
+					"Description": "Production Costs To Employee Labor Costs Ratio:\n\n(Production Costs Amount/Employee Labor Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToEmployeeLaborCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToEmployeeBenefitCostsRatio",
+					"Description": "Production Costs To Employee Benefit Costs Ratio:\n\n(Production Costs Amount/ Employee Benefit Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToEmployeeBenefitCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToEmployeeHealthCostsRatio",
+					"Description": "Production Costs To Employee Health Costs Ratio:\n\n(Production Costs Amount/Employee Health Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToEmployeeHealthCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToDepreciationCostsRatio",
+					"Description": "Production Costs To Depreciation Costs Ratio:\n\n(Production Costs Amount/ Depreciation Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToDepreciationCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToCatalystsCostsRatio",
+					"Description": "Production Costs To Catalysts Costs Ratio:\n\n(Production Costs Amount/Catalysts Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToCatalystsCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToAdditivesCostsRatio",
+					"Description": "Production Costs To Additives Costs Ratio:\n\n(Production Costs Amount/ Additives Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToAdditivesCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToCrudeOilCostsRatio",
+					"Description": "Production Costs To Crude Oil Costs Ratio:\n\n(Production Costs Amount/ Crude Oil Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToCrudeOilCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionCostsToFeedstockCostsRatio",
+					"Description": "Production Costs To Feedstock Costs Ratio:\n\n(Production Costs Amount/Feedstock Costs Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionCostsToFeedstockCostsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CrackSpreadRatio",
+					"Description": "The crack spread is the difference in the sales price of the refined product (gasoline and fuel oil distillates) and the price of crude oil. An average refinery would follow what is known as the 3-2-1 crack spread, meaning for every three barrels of oil the refinery produces an equivalent two barrels of gasoline and one barrel of distillate fuels (diesel and heating oil).\n\n(Product Sales Price Amount/Price of Crude Oil Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "CrackSpreadRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToAssetsRatio",
+					"Description": "Production Revenue To Assets Ratio:\n\n(Production Revenue Amount/ Assets Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToAssetsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenueToInventoryRatio",
+					"Description": "Production Revenue To Inventory Ratio:\n\n(Production Revenue Amount/Inventory Amount) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenueToInventoryRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProductionRevenuePerEmployeeRatio",
+					"Description": "Production Revenue Per Employee Ratio:\n\n(Production Revenue Amount/Number of Employees) * 100",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProductionRevenuePerEmployeeRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ReturnOnAssetsRatio",
+					"Description": "Return On Assets Ratio = (Net Profit After Taxes / Tangible Total Assets Last Year) * 100\n\nThis ratio indicates how well management is in apply assets to making profits, which is another measure of the ability to earn profits.\n\nNote that creditor equity is not differentiated from owner equity in this equation.\n\nSince management in theory only as assets from which to make profits, this is a good measure of efficiency and ability.   If there is a large change in the number of assets, an average over time should be applied.\n\nVariations of this ratio can focus upon different asset classes.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ReturnOnAssetsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "OperatingIncomeRatio",
+					"Description": "Operating Income Ratio = (Sales - (Cost Of Sales + General & Administrative Expenses + Selling Expenses)) * 100\n\nIncome From Operations = Operating income - all expenses, which are costs of sales, G&A expenses, selling expenses etc.\n\nThis ratio is valuable for tracking and comparing operations between periods.  It shows the relationship between sales and expenses, which is an indication of the company's ability to make profits.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "OperatingIncomeRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NetIncomeRatio",
+					"Description": "(Sales + Other Income) = (All Expenses + All Taxes)\n\nNet income is the amount remaining after adding income from all sources and deducting expenses and taxes from total sales.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NetIncomeRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProfitPerEmployeeRatio",
+					"Description": "Profit Per Employee Ratio = (Net Profit After Taxes / Number Of Employees)\n\nThis ratio compares the earnings against the number of employees that were required to achieve those earnings.   Over time, the ratio is reflective of efficiency and can be compared against other companies in the same industry.\n\nIt can be used by management for negotiating salaries, bonuses and pension/profit sharing contributions.\n\nIf the number of workers is seasonal, an average is used.\n\nThis ratio is expressed in dollars, not a percentage.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProfitPerEmployeeRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ProfitGrowthRatio",
+					"Description": "Profit Growth Ratio = ((Net Profit After Taxes - Net Profit After Taxes Previous Year) / Net Profit After Taxes Previous Year) * 100\n\nThis ratio measures the ability of the business to maintain bottom line growth by turning sales in profits.\n\nWhen sales growth does not correlate into increased profits there is a fundamental problem that needs to be discovered such as:\n\n- inadequate expense controls\n- reduced pricing resulting in increased sales but reduced profits.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ProfitGrowthRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DepreciationRatio",
+					"Description": "Depreciation Ratio = (Depreciation Expense / Fixed Assets) * 100\n\nDepreciation is related to how assets costs are spread over the life of an asset not the actual wear upon the asset.\n\nThis can be a good reference for how aggressive the accounting policies of the business are.  \n\nThe higher the ratio the more likely the company is conservative in its bookkeeping.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "DepreciationRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NetIncomeToCapitalRatio",
+					"Description": "Net Income To Capital Ratio = ((Net Income - Preferred Dividends) / (Capital - Preferred Stock Par Value)) * 100\n\nThis ratio describes the return on capital in terms of unburdened or free-and-clear earnings (profit before taxes and expenses are applied).\n\nThe higher the ratio the better management is doing.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NetIncomeToCapitalRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "InsuranceExpenseRatio",
+					"Description": "Insurance Expense Ratio = (Insurance Expense / Net Sales) * 100\n\nThis ratio measures the ability of management to control insurance expenses relative to net sales.\n\nIt is also an indicator of the responsibility business assumes for its own risks through self-insurance.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "InsuranceExpenseRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExpenseGrowthRatio",
+					"Description": "Expense Growth Ratio = ((Total Current Year Expenses - Total Previous Year Expenses) / Total Previous Year Expenses) * 100\n\nThe ability to translate sales and pricing to the bottom line, profit, is dependent upon controlling expenses.    \n\nThis ratio is a measure of expense growth over a two year period.   An effective measure of expenses is this ratio extended over a longer period of time.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ExpenseGrowthRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalExpenseRatio",
+					"Description": "Total Expense Ratio = (Total Expenses / Net Sales) * 100\n\nControlling expenses is one of the most important measures of good management.\n\nThis ratio measures total expenses as a function of net sales, which is then expressed as a percentage.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "TotalExpenseRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UtilitiesExpenseRatio",
+					"Description": "Utilities Expense Ratio = (Utilities Expense / Net Sales) * 100\n\nUtilities expense are those expense required to support the physical operations of the business (electricity, garbage etc.).",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "UtilitiesExpenseRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeTurnoverRatio",
+					"Description": "Employee Turnover Ratio = (Number Employee Terminations / Number Employees) * 100\n\nRetaining trained employees is of real value to a business.   \n\nThis ratio measures turnover of employees, which can be a result of any number of internal or economic factors.\n\nManagement must determine the cause of employee turnover and what an acceptable turnover ratio for current conditions is.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "EmployeeTurnoverRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "IncomeFromOperationsRatio",
+					"Description": "Income From Operations Ratio = (Sales - (Costs Of Sales + Indirect Expenses)) * 100\n\nIncome from operations ('Operating Income') = sales (revenues) minus all direct and indirect expenses such as cost of sales, G&A, selling expenses, overhead etc.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "IncomeFromOperationsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "NewFixedAssetsRatio",
+					"Description": "Fixed Assets Ratio = (New Fixed Assets This Year / New Fixed Assets Previous Year) * 100\n\nThis ratio is a measure of the increase in the amount of new fixed assets.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "NewFixedAssetsRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ExpensesToGrossProfitRatio",
+					"Description": "Expenses To Gross Profit Ratio = (Total Expenses / Gross Profit) * 100\n\nThis ratio compares total expenses to realized sales.  \n\nIf sales are different from those forecast, expenses must be adjusted in order to meet the profit levels desired.   \n\nThis ratio is particularly important when product prices must be adjusted downward.\nEmployee Compensation Ratio",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ExpensesToGrossProfitRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "EmployeeCompensationRatio",
+					"Description": "Employee Compensation Ratio = (Total Wages Expense / Net Sales) * 100\n\nEmployee expense is the largest single expense for many companies.\n\nTherefore, this ratio is very important to maintaining profits when expenses rise or pricing falls.\n\nThis ratio is most effective when all associated employee expenses are included such as insurance, benefits etc.\n\nThis is a measurement for identifying the efficiency of management in controlling employee expenses over an extended period of time.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "EmployeeCompensationRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "BudgetExpenseRatio",
+					"Description": "Budget Expense Compliance Ratio = (Total Expenses / Budgeted Total Expenses) * 100\n\nThis ratio measures the ability of management to live within their budgeted/planned expenses.\n\nThere is a problem with expense control if the ratio exceeds 100%.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "BudgetExpenseRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ReturnOnWorkingCapitalRatio",
+					"Description": "Return On Working Capital Ratio = (Net Profit After Taxes / Working Capital Last Year) * 100\n\nThis measures the return of working capital, which is that in excess of current assets (inventory, cash, notes and accounts receivable) over current liabilities.\n\nWorking capital is what management has to earn profits.   \n\nThis is a more accurate measurement of the abilities of management because it takes assets out of the equation.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "ReturnOnWorkingCapitalRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "WorkingCapitalEfficiencyRatio",
+					"Description": "Working Capital Efficiency Ratio = ((Net Sales / (Current Assets - Current Liabilities)) * 100\n\nCurrent Assets are assets that are intended to be converted to cash, used up, exchanged or sold within one accounting period, typically one year.\n\nCurrent Liabilities consist of accounts payable, notes payable, accrued expenses and long-term debt due within one year.\n\nThis ratio measures how efficiently available capital, working capital, is used to generate sales.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryMetrics.cdm.json/RefineryMetrics",
+						"Name": "WorkingCapitalEfficiencyRatio"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryMetrics",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryMetrics",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"RefineryId\"},\"PeriodStartDate\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"PeriodEndDate\"},\"TotalNumberRefineryEmployeesBeginningOfPeriod\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesBeginningOfPeriod\"},\"TotalNumberRefineryEmployeesHired\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesHired\"},\"TotalNumberRefineryEmployeesTerminated\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesTerminated\"},\"TotalNumberRefineryEmployeesRetired\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesRetired\"},\"TotalContractorsHired\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalContractorsHired\"},\"TotalContractorsTerminated\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalContractorsTerminated\"},\"TotalRefineryEmployeeLaborCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeLaborCostsAmount\"},\"TotalRefineryEmployeeBenefitsCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeBenefitsCostsAmount\"},\"TotalRefineryEmployeeDependentBenefitsCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeDependentBenefitsCostsAmount\"},\"TotalRefineryEmployeeHealthBenefitCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeHealthBenefitCostsAmount\"},\"TotalNumberOfRefineryEmployeeWorkDays\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryEmployeeWorkDays\"},\"TotalNumberOfRefineryEmployeeLostWorkDays\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryEmployeeLostWorkDays\"},\"TotalRefineryWorkRelatedInjures\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkRelatedInjures\"},\"TotalNumberOfRefineryDaysLostToWorkRelatedInjuries\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryDaysLostToWorkRelatedInjuries\"},\"TotalRefineryWorkerHoursLostToInjuries\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerHoursLostToInjuries\"},\"TotalRefineryWorkerInjuriesMedicalCostsIncurred\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerInjuriesMedicalCostsIncurred\"},\"TotalRefineryWorkerFatalities\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerFatalities\"},\"TotalRefineryEmployeeComplianceCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeComplianceCostsAmount\"},\"TotalRefineryWorkerLegalCompensationPaidAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerLegalCompensationPaidAmount\"},\"TotalRefineryEmployeeProgramCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeProgramCostsAmount\"},\"TotalRefineryEmployeeSubstanceAbuseIncidents\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeSubstanceAbuseIncidents\"},\"NumberRefineryIncidentsReported\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryIncidentsReported\"},\"NumberRefineryInjuryIncidentsReported\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryInjuryIncidentsReported\"},\"NumberRefineryDeathIncidentsReported\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryDeathIncidentsReported\"},\"TotalRefineryExcessiveEmissionsEvents\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryExcessiveEmissionsEvents\"},\"TotalRefineryEnvironmentalFinesAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalFinesAmount\"},\"TotalRefineryEnvironmentalComplianceCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalComplianceCostsAmount\"},\"TotalRefineryDevelopmentCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryDevelopmentCostsAmount\"},\"TotalRefineryAdministrativeCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryAdministrativeCostsAmount\"},\"TotalRefineryLaborsCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryLaborsCostsAmount\"},\"TotalRefineryEquipmentCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEquipmentCostsAmount\"},\"TotalRefineryMaintenanceCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryMaintenanceCostsAmount\"},\"TotalRefineryInventoryCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryInventoryCostsAmount\"},\"TotalRefineryConstructionCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryConstructionCostsAmount\"},\"TotalRefineryWaterUsageGallons\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWaterUsageGallons\"},\"TotalRefineryWaterCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWaterCostsAmount\"},\"TotalRefineryElectricalUsageCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryElectricalUsageCostsAmount\"},\"TotalRefineryElectricalUsageMw\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryElectricalUsageMw\"},\"TotalRefineryEnvironmentalMonitoringCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalMonitoringCostsAmount\"},\"TotalRefineryEnvironmentalFinesCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalFinesCostsAmount\"},\"TotalRefineryTestingCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryTestingCostsAmount\"},\"TotalRefineryEnergyCostsAmount\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnergyCostsAmount\"},\"NumberEmployeesToInjuriesRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToInjuriesRatio\"},\"NumberEmployeesToFatalitiesRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToFatalitiesRatio\"},\"NumberEmployeesToHealthBenefitsCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToHealthBenefitsCostsRatio\"},\"NumberEmployeesToDependentBenefitsCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToDependentBenefitsCostsRatio\"},\"NumberEmployeesToSalaryCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToSalaryCostsRatio\"},\"EmployeeToContractorRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeToContractorRatio\"},\"RefineryEmployeesToRefineryExpensesRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"RefineryEmployeesToRefineryExpensesRatio\"},\"EmployeeSalaryCostsToContractorCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeSalaryCostsToContractorCostsRatio\"},\"ProductionRevenueToEnvironmentalComplianceCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToEnvironmentalComplianceCostsRatio\"},\"ProductionRevenueToEmployeeSalariesCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToEmployeeSalariesCostsRatio\"},\"ProductionRevenueToPowerUsageCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToPowerUsageCostsRatio\"},\"ProductionRevenueToMaintenanceCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToMaintenanceCostsRatio\"},\"ProductionRevenueToDevelopmentCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToDevelopmentCostsRatio\"},\"ProductionRevenueToElectricalCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToElectricalCostsRatio\"},\"ProductionRevenueToWaterCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToWaterCostsRatio\"},\"ProductionRevenueToShippingCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToShippingCostsRatio\"},\"ProductionCostsToElectricalCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToElectricalCostsRatio\"},\"ProductionCostsToComplianceCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToComplianceCostsRatio\"},\"ProductionCostsToEmployeeLaborCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeLaborCostsRatio\"},\"ProductionCostsToEmployeeBenefitCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeBenefitCostsRatio\"},\"ProductionCostsToEmployeeHealthCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeHealthCostsRatio\"},\"ProductionCostsToDepreciationCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToDepreciationCostsRatio\"},\"ProductionCostsToCatalystsCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToCatalystsCostsRatio\"},\"ProductionCostsToAdditivesCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToAdditivesCostsRatio\"},\"ProductionCostsToCrudeOilCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToCrudeOilCostsRatio\"},\"ProductionCostsToFeedstockCostsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToFeedstockCostsRatio\"},\"CrackSpreadRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"CrackSpreadRatio\"},\"ProductionRevenueToAssetsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToAssetsRatio\"},\"ProductionRevenueToInventoryRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToInventoryRatio\"},\"ProductionRevenuePerEmployeeRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenuePerEmployeeRatio\"},\"ReturnOnAssetsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ReturnOnAssetsRatio\"},\"OperatingIncomeRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"OperatingIncomeRatio\"},\"NetIncomeRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NetIncomeRatio\"},\"ProfitPerEmployeeRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProfitPerEmployeeRatio\"},\"ProfitGrowthRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProfitGrowthRatio\"},\"DepreciationRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"DepreciationRatio\"},\"NetIncomeToCapitalRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NetIncomeToCapitalRatio\"},\"InsuranceExpenseRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"InsuranceExpenseRatio\"},\"ExpenseGrowthRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ExpenseGrowthRatio\"},\"TotalExpenseRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalExpenseRatio\"},\"UtilitiesExpenseRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"UtilitiesExpenseRatio\"},\"EmployeeTurnoverRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeTurnoverRatio\"},\"IncomeFromOperationsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"IncomeFromOperationsRatio\"},\"NewFixedAssetsRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NewFixedAssetsRatio\"},\"ExpensesToGrossProfitRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ExpensesToGrossProfitRatio\"},\"EmployeeCompensationRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeCompensationRatio\"},\"BudgetExpenseRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"BudgetExpenseRatio\"},\"ReturnOnWorkingCapitalRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ReturnOnWorkingCapitalRatio\"},\"WorkingCapitalEfficiencyRatio\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"WorkingCapitalEfficiencyRatio\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryMetrics\",\"path\":\"RefineryMetrics.cdm.json/RefineryMetrics\"},\"description\":\"Refinery metrics for the associated period.\",\"primaryKey\":[\"RefineryId\",\"PeriodStartDate\",\"PeriodEndDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period date associated with the refinery metric.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end associated with the refinery metric.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesBeginningOfPeriod\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery employees at the beginning of the period.\",\"isNullable\":true,\"name\":\"TotalNumberRefineryEmployeesBeginningOfPeriod\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesHired\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery employees hired at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalNumberRefineryEmployeesHired\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesTerminated\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery employees terminated during the period.\",\"isNullable\":true,\"name\":\"TotalNumberRefineryEmployeesTerminated\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberRefineryEmployeesRetired\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery employees that retired during the period.\",\"isNullable\":true,\"name\":\"TotalNumberRefineryEmployeesRetired\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalContractorsHired\"},\"dataType\":\"integer\",\"description\":\"The total number of contractors hired by the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalContractorsHired\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalContractorsTerminated\"},\"dataType\":\"integer\",\"description\":\"The total number of contractors terminated during the period.\",\"isNullable\":true,\"name\":\"TotalContractorsTerminated\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeLaborCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"the total refinery employee-related labor costs incurred by the refinery.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeLaborCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeBenefitsCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery benefit-related costs incurred during the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeBenefitsCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeDependentBenefitsCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery employee dependent benefit costs incurred for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeDependentBenefitsCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeHealthBenefitCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery employee health benefit costs incurred by the refinery.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeHealthBenefitCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryEmployeeWorkDays\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery employee work days recorded for the period.\",\"isNullable\":true,\"name\":\"TotalNumberOfRefineryEmployeeWorkDays\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryEmployeeLostWorkDays\"},\"dataType\":\"integer\",\"description\":\"The total number of lost work days by employees at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalNumberOfRefineryEmployeeLostWorkDays\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkRelatedInjures\"},\"dataType\":\"integer\",\"description\":\"The total number of work-related injuries at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRefineryWorkRelatedInjures\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalNumberOfRefineryDaysLostToWorkRelatedInjuries\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery work days lost to work-related injuries at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalNumberOfRefineryDaysLostToWorkRelatedInjuries\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerHoursLostToInjuries\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery worker hours lost to injuries at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRefineryWorkerHoursLostToInjuries\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerInjuriesMedicalCostsIncurred\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery worker injury medical costs incurred at the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryWorkerInjuriesMedicalCostsIncurred\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerFatalities\"},\"dataType\":\"integer\",\"description\":\"The total number of worker fatalities incurred by the refinery at the period.\",\"isNullable\":true,\"name\":\"TotalRefineryWorkerFatalities\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeComplianceCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of employee compliance costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeComplianceCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWorkerLegalCompensationPaidAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of worker legal compensation costs paid for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryWorkerLegalCompensationPaidAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeProgramCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of employee program costs incurred at the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEmployeeProgramCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEmployeeSubstanceAbuseIncidents\"},\"dataType\":\"integer\",\"description\":\"The total number of employee substance abuse-related incidents at the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRefineryEmployeeSubstanceAbuseIncidents\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryIncidentsReported\"},\"dataType\":\"integer\",\"description\":\"The total number of refinery incidents reported for the period (see INCIDENT Section).\",\"isNullable\":true,\"name\":\"NumberRefineryIncidentsReported\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryInjuryIncidentsReported\"},\"dataType\":\"integer\",\"description\":\"The number of injury-related incidents reported at the refinery for the period.\",\"isNullable\":true,\"name\":\"NumberRefineryInjuryIncidentsReported\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberRefineryDeathIncidentsReported\"},\"dataType\":\"integer\",\"description\":\"The number of death-related incidents reported at the refinery for the period.\",\"isNullable\":true,\"name\":\"NumberRefineryDeathIncidentsReported\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryExcessiveEmissionsEvents\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery excessive emissions events recorded at the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryExcessiveEmissionsEvents\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalFinesAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery environmental fines incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEnvironmentalFinesAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalComplianceCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery environmental compliance costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEnvironmentalComplianceCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryDevelopmentCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total amount of refinery development costs expended by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryDevelopmentCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryAdministrativeCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery administrative costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryAdministrativeCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryLaborsCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery labor costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryLaborsCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEquipmentCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery equipment costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEquipmentCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryMaintenanceCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery maintenance costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryMaintenanceCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryInventoryCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total inventory costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryInventoryCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryConstructionCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery construction costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryConstructionCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWaterUsageGallons\"},\"dataType\":\"integer\",\"description\":\"The total water usage in gallons used by the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRefineryWaterUsageGallons\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryWaterCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total water-related costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryWaterCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryElectricalUsageCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total electrical usage costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryElectricalUsageCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryElectricalUsageMw\"},\"dataType\":\"integer\",\"description\":\"The total refinery electrical usage by the refinery for the period.\",\"isNullable\":true,\"name\":\"TotalRefineryElectricalUsageMw\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalMonitoringCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total environment monitoring costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEnvironmentalMonitoringCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnvironmentalFinesCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total environmental fines incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEnvironmentalFinesCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryTestingCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total refinery Testing Costs Amount incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryTestingCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalRefineryEnergyCostsAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total energy usage costs incurred by the refinery for the period.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalRefineryEnergyCostsAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToInjuriesRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The employees to injuries ratio for the period.\\n\\n(Number of Employees/Injuries) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"NumberEmployeesToInjuriesRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToFatalitiesRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The employees to fatalities ratio for the period.\\n\\n(Number of Employees/fatalities) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"NumberEmployeesToFatalitiesRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToHealthBenefitsCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Number Employees To Health Benefits Costs Ratio:\\n\\n(Number Of Employees/Health Benefit Costs) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"NumberEmployeesToHealthBenefitsCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToDependentBenefitsCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Number Employees To Dependent Benefits Costs Ratio:\\n\\n(Number of Employees/Dependent Benefits Costs) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"NumberEmployeesToDependentBenefitsCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NumberEmployeesToSalaryCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Number Employees To Salary Costs Ratio\\n\\n(Number Employees/Salary Costs Ratio) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"NumberEmployeesToSalaryCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeToContractorRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Employee To Contractor Ratio:\\n\\n(Number of Employee/Number of Contractors) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"EmployeeToContractorRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"RefineryEmployeesToRefineryExpensesRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Refinery Employees To Refinery Expenses Ratio:\\n\\n(Number Of Employees/Refinery Expense Cost) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"RefineryEmployeesToRefineryExpensesRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeSalaryCostsToContractorCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Employee Salary Costs To Contractor Costs Ratio\\n\\n(Employee Salary Costs Amount/Contractor Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"EmployeeSalaryCostsToContractorCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToEnvironmentalComplianceCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Environmental Compliance Costs Ratio:\\n\\n(Production Revenues Amount/ Environmental Compliance Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToEnvironmentalComplianceCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToEmployeeSalariesCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Employee Salaries Costs Ratio:\\n\\n(Production Revenue Amount/ Employee Salaries Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToEmployeeSalariesCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToPowerUsageCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Power Usage Costs Ratio:\\n\\n(Production Revenue Amount/Power Usage Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToPowerUsageCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToMaintenanceCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Maintenance Costs Ratio:\\n\\n(Production Revenue Amount/ Maintenance Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToMaintenanceCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToDevelopmentCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Development Costs Ratio:\\n\\n(Production Revenue Amount/Development Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToDevelopmentCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToElectricalCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Electrical Costs Ratio:\\n\\n(Production Revenue Amount/Electrical Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToElectricalCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToWaterCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Water Costs Ratio:\\n\\n(Production Revenue Amount/ Water Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToWaterCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToShippingCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Shipping Costs Ratio:\\n\\n(Production Revenue Amount/Shipping Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToShippingCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToElectricalCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Electrical Costs Ratio:\\n\\n(Production Costs Amount/ Electrical Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToElectricalCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToComplianceCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Compliance Costs Ratio:\\n\\n(Production Costs Amount/Compliance Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToComplianceCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeLaborCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Employee Labor Costs Ratio:\\n\\n(Production Costs Amount/Employee Labor Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToEmployeeLaborCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeBenefitCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Employee Benefit Costs Ratio:\\n\\n(Production Costs Amount/ Employee Benefit Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToEmployeeBenefitCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToEmployeeHealthCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Employee Health Costs Ratio:\\n\\n(Production Costs Amount/Employee Health Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToEmployeeHealthCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToDepreciationCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Depreciation Costs Ratio:\\n\\n(Production Costs Amount/ Depreciation Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToDepreciationCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToCatalystsCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Catalysts Costs Ratio:\\n\\n(Production Costs Amount/Catalysts Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToCatalystsCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToAdditivesCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Additives Costs Ratio:\\n\\n(Production Costs Amount/ Additives Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToAdditivesCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToCrudeOilCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Crude Oil Costs Ratio:\\n\\n(Production Costs Amount/ Crude Oil Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToCrudeOilCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionCostsToFeedstockCostsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Costs To Feedstock Costs Ratio:\\n\\n(Production Costs Amount/Feedstock Costs Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionCostsToFeedstockCostsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"CrackSpreadRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The crack spread is the difference in the sales price of the refined product (gasoline and fuel oil distillates) and the price of crude oil. An average refinery would follow what is known as the 3-2-1 crack spread, meaning for every three barrels of oil the refinery produces an equivalent two barrels of gasoline and one barrel of distillate fuels (diesel and heating oil).\\n\\n(Product Sales Price Amount/Price of Crude Oil Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"CrackSpreadRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToAssetsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Assets Ratio:\\n\\n(Production Revenue Amount/ Assets Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToAssetsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenueToInventoryRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue To Inventory Ratio:\\n\\n(Production Revenue Amount/Inventory Amount) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenueToInventoryRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProductionRevenuePerEmployeeRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Production Revenue Per Employee Ratio:\\n\\n(Production Revenue Amount/Number of Employees) * 100\",\"isNullable\":true,\"scale\":8,\"name\":\"ProductionRevenuePerEmployeeRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ReturnOnAssetsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Return On Assets Ratio = (Net Profit After Taxes / Tangible Total Assets Last Year) * 100\\n\\nThis ratio indicates how well management is in apply assets to making profits, which is another measure of the ability to earn profits.\\n\\nNote that creditor equity is not differentiated from owner equity in this equation.\\n\\nSince management in theory only as assets from which to make profits, this is a good measure of efficiency and ability.   If there is a large change in the number of assets, an average over time should be applied.\\n\\nVariations of this ratio can focus upon different asset classes.\",\"isNullable\":true,\"scale\":8,\"name\":\"ReturnOnAssetsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"OperatingIncomeRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Operating Income Ratio = (Sales - (Cost Of Sales + General & Administrative Expenses + Selling Expenses)) * 100\\n\\nIncome From Operations = Operating income - all expenses, which are costs of sales, G&A expenses, selling expenses etc.\\n\\nThis ratio is valuable for tracking and comparing operations between periods.  It shows the relationship between sales and expenses, which is an indication of the company's ability to make profits.\",\"isNullable\":true,\"scale\":8,\"name\":\"OperatingIncomeRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NetIncomeRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"(Sales + Other Income) = (All Expenses + All Taxes)\\n\\nNet income is the amount remaining after adding income from all sources and deducting expenses and taxes from total sales.\",\"isNullable\":true,\"scale\":8,\"name\":\"NetIncomeRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProfitPerEmployeeRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Profit Per Employee Ratio = (Net Profit After Taxes / Number Of Employees)\\n\\nThis ratio compares the earnings against the number of employees that were required to achieve those earnings.   Over time, the ratio is reflective of efficiency and can be compared against other companies in the same industry.\\n\\nIt can be used by management for negotiating salaries, bonuses and pension/profit sharing contributions.\\n\\nIf the number of workers is seasonal, an average is used.\\n\\nThis ratio is expressed in dollars, not a percentage.\",\"isNullable\":true,\"scale\":8,\"name\":\"ProfitPerEmployeeRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ProfitGrowthRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Profit Growth Ratio = ((Net Profit After Taxes - Net Profit After Taxes Previous Year) / Net Profit After Taxes Previous Year) * 100\\n\\nThis ratio measures the ability of the business to maintain bottom line growth by turning sales in profits.\\n\\nWhen sales growth does not correlate into increased profits there is a fundamental problem that needs to be discovered such as:\\n\\n- inadequate expense controls\\n- reduced pricing resulting in increased sales but reduced profits.\",\"isNullable\":true,\"scale\":8,\"name\":\"ProfitGrowthRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"DepreciationRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Depreciation Ratio = (Depreciation Expense / Fixed Assets) * 100\\n\\nDepreciation is related to how assets costs are spread over the life of an asset not the actual wear upon the asset.\\n\\nThis can be a good reference for how aggressive the accounting policies of the business are.  \\n\\nThe higher the ratio the more likely the company is conservative in its bookkeeping.\",\"isNullable\":true,\"scale\":8,\"name\":\"DepreciationRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NetIncomeToCapitalRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Net Income To Capital Ratio = ((Net Income - Preferred Dividends) / (Capital - Preferred Stock Par Value)) * 100\\n\\nThis ratio describes the return on capital in terms of unburdened or free-and-clear earnings (profit before taxes and expenses are applied).\\n\\nThe higher the ratio the better management is doing.\",\"isNullable\":true,\"scale\":8,\"name\":\"NetIncomeToCapitalRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"InsuranceExpenseRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Insurance Expense Ratio = (Insurance Expense / Net Sales) * 100\\n\\nThis ratio measures the ability of management to control insurance expenses relative to net sales.\\n\\nIt is also an indicator of the responsibility business assumes for its own risks through self-insurance.\",\"isNullable\":true,\"scale\":8,\"name\":\"InsuranceExpenseRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ExpenseGrowthRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Expense Growth Ratio = ((Total Current Year Expenses - Total Previous Year Expenses) / Total Previous Year Expenses) * 100\\n\\nThe ability to translate sales and pricing to the bottom line, profit, is dependent upon controlling expenses.    \\n\\nThis ratio is a measure of expense growth over a two year period.   An effective measure of expenses is this ratio extended over a longer period of time.\",\"isNullable\":true,\"scale\":8,\"name\":\"ExpenseGrowthRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"TotalExpenseRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Total Expense Ratio = (Total Expenses / Net Sales) * 100\\n\\nControlling expenses is one of the most important measures of good management.\\n\\nThis ratio measures total expenses as a function of net sales, which is then expressed as a percentage.\",\"isNullable\":true,\"scale\":8,\"name\":\"TotalExpenseRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"UtilitiesExpenseRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Utilities Expense Ratio = (Utilities Expense / Net Sales) * 100\\n\\nUtilities expense are those expense required to support the physical operations of the business (electricity, garbage etc.).\",\"isNullable\":true,\"scale\":8,\"name\":\"UtilitiesExpenseRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeTurnoverRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Employee Turnover Ratio = (Number Employee Terminations / Number Employees) * 100\\n\\nRetaining trained employees is of real value to a business.   \\n\\nThis ratio measures turnover of employees, which can be a result of any number of internal or economic factors.\\n\\nManagement must determine the cause of employee turnover and what an acceptable turnover ratio for current conditions is.\",\"isNullable\":true,\"scale\":8,\"name\":\"EmployeeTurnoverRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"IncomeFromOperationsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Income From Operations Ratio = (Sales - (Costs Of Sales + Indirect Expenses)) * 100\\n\\nIncome from operations ('Operating Income') = sales (revenues) minus all direct and indirect expenses such as cost of sales, G&A, selling expenses, overhead etc.\",\"isNullable\":true,\"scale\":8,\"name\":\"IncomeFromOperationsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"NewFixedAssetsRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Fixed Assets Ratio = (New Fixed Assets This Year / New Fixed Assets Previous Year) * 100\\n\\nThis ratio is a measure of the increase in the amount of new fixed assets.\",\"isNullable\":true,\"scale\":8,\"name\":\"NewFixedAssetsRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ExpensesToGrossProfitRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Expenses To Gross Profit Ratio = (Total Expenses / Gross Profit) * 100\\n\\nThis ratio compares total expenses to realized sales.  \\n\\nIf sales are different from those forecast, expenses must be adjusted in order to meet the profit levels desired.   \\n\\nThis ratio is particularly important when product prices must be adjusted downward.\\nEmployee Compensation Ratio\",\"isNullable\":true,\"scale\":8,\"name\":\"ExpensesToGrossProfitRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"EmployeeCompensationRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Employee Compensation Ratio = (Total Wages Expense / Net Sales) * 100\\n\\nEmployee expense is the largest single expense for many companies.\\n\\nTherefore, this ratio is very important to maintaining profits when expenses rise or pricing falls.\\n\\nThis ratio is most effective when all associated employee expenses are included such as insurance, benefits etc.\\n\\nThis is a measurement for identifying the efficiency of management in controlling employee expenses over an extended period of time.\",\"isNullable\":true,\"scale\":8,\"name\":\"EmployeeCompensationRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"BudgetExpenseRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Budget Expense Compliance Ratio = (Total Expenses / Budgeted Total Expenses) * 100\\n\\nThis ratio measures the ability of management to live within their budgeted/planned expenses.\\n\\nThere is a problem with expense control if the ratio exceeds 100%.\",\"isNullable\":true,\"scale\":8,\"name\":\"BudgetExpenseRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"ReturnOnWorkingCapitalRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Return On Working Capital Ratio = (Net Profit After Taxes / Working Capital Last Year) * 100\\n\\nThis measures the return of working capital, which is that in excess of current assets (inventory, cash, notes and accounts receivable) over current liabilities.\\n\\nWorking capital is what management has to earn profits.   \\n\\nThis is a more accurate measurement of the abilities of management because it takes assets out of the equation.\",\"isNullable\":true,\"scale\":8,\"name\":\"ReturnOnWorkingCapitalRatio\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryMetrics.cdm.json/RefineryMetrics\",\"name\":\"WorkingCapitalEfficiencyRatio\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Working Capital Efficiency Ratio = ((Net Sales / (Current Assets - Current Liabilities)) * 100\\n\\nCurrent Assets are assets that are intended to be converted to cash, used up, exchanged or sold within one accounting period, typically one year.\\n\\nCurrent Liabilities consist of accounts payable, notes payable, accrued expenses and long-term debt due within one year.\\n\\nThis ratio measures how efficiently available capital, working capital, is used to generate sales.\",\"isNullable\":true,\"scale\":8,\"name\":\"WorkingCapitalEfficiencyRatio\"}]}}}",
+			"Description": "Refinery metrics for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,PeriodStartDate,PeriodEndDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

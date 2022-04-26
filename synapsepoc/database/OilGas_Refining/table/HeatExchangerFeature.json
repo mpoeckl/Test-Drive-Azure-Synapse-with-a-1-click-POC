@@ -1,0 +1,105 @@
+{
+	"name": "HeatExchangerFeature",
+	"properties": {
+		"Name": "HeatExchangerFeature",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The feature(s) characterizing the heat exchanger.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeature.cdm.json/HeatExchangerFeature",
+						"Name": "HeatExchangerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFeatureTypeId",
+					"Description": "The unique identifier of a heat exchanger feature type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeature.cdm.json/HeatExchangerFeature",
+						"Name": "HeatExchangerFeatureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangeFeatureNote",
+					"Description": "The unique identifier of a heat exchange feature.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeature.cdm.json/HeatExchangerFeature",
+						"Name": "HeatExchangeFeatureNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFeature",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFeature",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerId\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangerId\"},\"HeatExchangerFeatureTypeId\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangerFeatureTypeId\"},\"HeatExchangeFeatureNote\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangeFeatureNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerFeature\",\"path\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\"},\"description\":\"The feature(s) characterizing the heat exchanger.\",\"primaryKey\":[\"HeatExchangerId\",\"HeatExchangerFeatureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HeatExchangerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangerFeatureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger feature type.\",\"isNullable\":false,\"name\":\"HeatExchangerFeatureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"name\":\"HeatExchangeFeatureNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of a heat exchange feature.\",\"isNullable\":true,\"name\":\"HeatExchangeFeatureNote\"}]}}}",
+			"Description": "The feature(s) characterizing the heat exchanger.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerId,HeatExchangerFeatureTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

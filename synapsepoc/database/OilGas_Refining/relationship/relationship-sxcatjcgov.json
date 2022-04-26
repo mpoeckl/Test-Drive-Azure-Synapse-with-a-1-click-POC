@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sxcatjcgov",
+	"properties": {
+		"Name": "relationship-sxcatjcgov",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "ComponentExtraordinaryRepair",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

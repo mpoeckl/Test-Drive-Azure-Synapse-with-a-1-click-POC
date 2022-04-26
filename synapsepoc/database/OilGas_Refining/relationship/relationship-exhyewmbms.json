@@ -1,0 +1,26 @@
+{
+	"name": "relationship-exhyewmbms",
+	"properties": {
+		"Name": "relationship-exhyewmbms",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "Certification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "CertificationBodyPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"Certification.cdm.json/Certification\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"CertificationBodyPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ValveCouplingType",
+	"properties": {
+		"Name": "ValveCouplingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The coupling type associated with the valve.\n\nEx:\n- Dresser Coupling\n- Style 39\n- Style 40\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveCouplingTypeId",
+					"Description": "The unique identifier of a valve couple type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveCouplingType.cdm.json/ValveCouplingType",
+						"Name": "ValveCouplingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveCouplingTypeName",
+					"Description": "The name of a valve couple type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveCouplingType.cdm.json/ValveCouplingType",
+						"Name": "ValveCouplingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveCouplingTypeDescription",
+					"Description": "The description of a valve couple type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveCouplingType.cdm.json/ValveCouplingType",
+						"Name": "ValveCouplingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveCouplingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveCouplingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveCouplingTypeId\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeId\"},\"ValveCouplingTypeName\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeName\"},\"ValveCouplingTypeDescription\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveCouplingType\",\"path\":\"ValveCouplingType.cdm.json/ValveCouplingType\"},\"description\":\"The coupling type associated with the valve.\\n\\nEx:\\n- Dresser Coupling\\n- Style 39\\n- Style 40\\n- Unknown\",\"primaryKey\":[\"ValveCouplingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve couple type.\",\"isNullable\":false,\"name\":\"ValveCouplingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a valve couple type.\",\"isNullable\":true,\"name\":\"ValveCouplingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"name\":\"ValveCouplingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a valve couple type.\",\"isNullable\":true,\"name\":\"ValveCouplingTypeDescription\"}]}}}",
+			"Description": "The coupling type associated with the valve.\n\nEx:\n- Dresser Coupling\n- Style 39\n- Style 40\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveCouplingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wkwwkiboqr",
+	"properties": {
+		"Name": "relationship-wkwwkiboqr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CoatingType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CoatingTypeId",
+				"ToColumnName": "CoatingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CoatingType.cdm.json/CoatingType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"CoatingTypeId\",\"toAttribute\":\"CoatingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

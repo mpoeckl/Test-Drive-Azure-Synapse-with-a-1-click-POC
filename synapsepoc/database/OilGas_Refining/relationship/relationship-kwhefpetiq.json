@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kwhefpetiq",
+	"properties": {
+		"Name": "relationship-kwhefpetiq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NaphthaHydrotreatingUnitComponent",
+		"ToTableName": "NaphthaHydrotreatingUnitComponentConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NaphthaHydrotreatingUnitComponentId",
+				"ToColumnName": "NaphthaHydrotreatingUnitComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NaphthaHydrotreatingUnitComponent.cdm.json/NaphthaHydrotreatingUnitComponent\",\"toEntity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"NaphthaHydrotreatingUnitComponentId\",\"toAttribute\":\"NaphthaHydrotreatingUnitComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

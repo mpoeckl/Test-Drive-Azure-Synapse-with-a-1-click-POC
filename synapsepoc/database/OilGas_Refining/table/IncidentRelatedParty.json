@@ -1,0 +1,155 @@
+{
+	"name": "IncidentRelatedParty",
+	"properties": {
+		"Name": "IncidentRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party that has a relationship with the Incident over the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "IncidentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated incident - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated incident - party relationship is valid or in-effect.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding the incident - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedParty.cdm.json/IncidentRelatedParty",
+						"Name": "IncidentPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentId\"},\"PartyId\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PartyId\"},\"IncidentPartyRelationshipTypeId\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"IncidentPartyRelationshipNote\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentRelatedParty\",\"path\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\"},\"description\":\"A party that has a relationship with the Incident over the indicated period.\",\"primaryKey\":[\"IncidentId\",\"PartyId\",\"IncidentPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Party relationship type.\",\"isNullable\":false,\"name\":\"IncidentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated incident - party relationship is valid or in-effect.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated incident - party relationship is valid or in-effect.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedParty.cdm.json/IncidentRelatedParty\",\"name\":\"IncidentPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the incident - party relationship.\",\"isNullable\":true,\"name\":\"IncidentPartyRelationshipNote\"}]}}}",
+			"Description": "A party that has a relationship with the Incident over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,PartyId,IncidentPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

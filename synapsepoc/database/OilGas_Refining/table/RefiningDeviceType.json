@@ -1,0 +1,106 @@
+{
+	"name": "RefiningDeviceType",
+	"properties": {
+		"Name": "RefiningDeviceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of device based on its function, common characteristics.\n\nEx:\n- Solenoid \n- Clamp meter (current transducer)\n- Wheatstone bridge (measures resistance)\n- Capacitance meter (measures capacitance)\n- LCR meter (measures inductance, capacitance, resistance)\n- EMF Meter (measures Electric and Magnetic Fields)\n- Electrometer (measures voltages)\n- RF probe\n- Signal tracer\n- Logic analyzer (tests digital circuits)\n- Spectrum analyzer (measures spectral energy of signals)\n- Protocol analyzer \n- Vector signal analyzer (\n- Time-domain reflectometer (Tests integrity of long cables)\n- Semiconductor curve tracer\n- Frequency synthesizer\n- Function generator\n- Digital pattern generator\n- Pulse generator\n- Signal injector",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceTypeId",
+					"Description": "The unique identifier of a Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningDeviceType.cdm.json/RefiningDeviceType",
+						"Name": "DeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceTypeName",
+					"Description": "The name of a Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningDeviceType.cdm.json/RefiningDeviceType",
+						"Name": "DeviceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceTypeDescription",
+					"Description": "The description of a Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningDeviceType.cdm.json/RefiningDeviceType",
+						"Name": "DeviceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningDeviceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningDeviceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceTypeId\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeId\"},\"DeviceTypeName\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeName\"},\"DeviceTypeDescription\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefiningDeviceType\",\"path\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\"},\"description\":\"The type of device based on its function, common characteristics.\\n\\nEx:\\n- Solenoid \\n- Clamp meter (current transducer)\\n- Wheatstone bridge (measures resistance)\\n- Capacitance meter (measures capacitance)\\n- LCR meter (measures inductance, capacitance, resistance)\\n- EMF Meter (measures Electric and Magnetic Fields)\\n- Electrometer (measures voltages)\\n- RF probe\\n- Signal tracer\\n- Logic analyzer (tests digital circuits)\\n- Spectrum analyzer (measures spectral energy of signals)\\n- Protocol analyzer \\n- Vector signal analyzer (\\n- Time-domain reflectometer (Tests integrity of long cables)\\n- Semiconductor curve tracer\\n- Frequency synthesizer\\n- Function generator\\n- Digital pattern generator\\n- Pulse generator\\n- Signal injector\",\"primaryKey\":[\"DeviceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Type.\",\"isNullable\":false,\"name\":\"DeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Device Type.\",\"isNullable\":true,\"name\":\"DeviceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Device Type.\",\"isNullable\":true,\"name\":\"DeviceTypeDescription\"}]}}}",
+			"Description": "The type of device based on its function, common characteristics.\n\nEx:\n- Solenoid \n- Clamp meter (current transducer)\n- Wheatstone bridge (measures resistance)\n- Capacitance meter (measures capacitance)\n- LCR meter (measures inductance, capacitance, resistance)\n- EMF Meter (measures Electric and Magnetic Fields)\n- Electrometer (measures voltages)\n- RF probe\n- Signal tracer\n- Logic analyzer (tests digital circuits)\n- Spectrum analyzer (measures spectral energy of signals)\n- Protocol analyzer \n- Vector signal analyzer (\n- Time-domain reflectometer (Tests integrity of long cables)\n- Semiconductor curve tracer\n- Frequency synthesizer\n- Function generator\n- Digital pattern generator\n- Pulse generator\n- Signal injector",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DeviceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

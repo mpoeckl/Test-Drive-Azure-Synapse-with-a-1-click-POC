@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessMethodType",
+	"properties": {
+		"Name": "RefineryProcessMethodType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The method associated with the refinery process.\n\nEx:\n- Thermal\n- Catalytic\n- Thermal/Catalytic\n- Adsorption\n- Adsorption/Thermal\n- Cool/Filter\n- Absorption/Precipitate",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessMethodTypeId",
+					"Description": "The unique identifier of a refinery process method type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessMethodType.cdm.json/RefineryProcessMethodType",
+						"Name": "RefineryProcessMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessMethodTypeName",
+					"Description": "The name of a refinery process method type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessMethodType.cdm.json/RefineryProcessMethodType",
+						"Name": "RefineryProcessMethodTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessMethodTypeDescription",
+					"Description": "The description of a refinery process method type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessMethodType.cdm.json/RefineryProcessMethodType",
+						"Name": "RefineryProcessMethodTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessMethodType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessMethodType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessMethodTypeId\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeId\"},\"RefineryProcessMethodTypeName\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeName\"},\"RefineryProcessMethodTypeDescription\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessMethodType\",\"path\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\"},\"description\":\"The method associated with the refinery process.\\n\\nEx:\\n- Thermal\\n- Catalytic\\n- Thermal/Catalytic\\n- Adsorption\\n- Adsorption/Thermal\\n- Cool/Filter\\n- Absorption/Precipitate\",\"primaryKey\":[\"RefineryProcessMethodTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process method type.\",\"isNullable\":false,\"name\":\"RefineryProcessMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery process method type.\",\"isNullable\":true,\"name\":\"RefineryProcessMethodTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery process method type.\",\"isNullable\":true,\"name\":\"RefineryProcessMethodTypeDescription\"}]}}}",
+			"Description": "The method associated with the refinery process.\n\nEx:\n- Thermal\n- Catalytic\n- Thermal/Catalytic\n- Adsorption\n- Adsorption/Thermal\n- Cool/Filter\n- Absorption/Precipitate",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessMethodTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eylrsquldn",
+	"properties": {
+		"Name": "relationship-eylrsquldn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTank",
+		"ToTableName": "RefineryProcessProductStorage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankId",
+				"ToColumnName": "StorageTankId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTank.cdm.json/StorageTank\",\"toEntity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankId\",\"toAttribute\":\"StorageTankId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

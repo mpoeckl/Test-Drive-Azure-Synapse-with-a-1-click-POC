@@ -1,0 +1,106 @@
+{
+	"name": "MaintenancePeriod",
+	"properties": {
+		"Name": "MaintenancePeriod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The maintenance period associated with the asset.\n\nEx:\n- daily\n- weekly\n- bi-weekly\n- monthly\n- quarterly\n- semi-annual\n- annual",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenancePeriodId",
+					"Description": "The unique identifier of a Maintenance Period.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePeriod.cdm.json/MaintenancePeriod",
+						"Name": "MaintenancePeriodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePeriodName",
+					"Description": "The name of the Maintenance Period.\n\nExamples:\n\n- \"Weekly\"\n- \"Bi-weekly\"\n- \"Monthly\"",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePeriod.cdm.json/MaintenancePeriod",
+						"Name": "MaintenancePeriodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePeriodDescription",
+					"Description": "The description of the Maintenance Period.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePeriod.cdm.json/MaintenancePeriod",
+						"Name": "MaintenancePeriodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenancePeriod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenancePeriod",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenancePeriodId\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodId\"},\"MaintenancePeriodName\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodName\"},\"MaintenancePeriodDescription\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenancePeriod\",\"path\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\"},\"description\":\"The maintenance period associated with the asset.\\n\\nEx:\\n- daily\\n- weekly\\n- bi-weekly\\n- monthly\\n- quarterly\\n- semi-annual\\n- annual\",\"primaryKey\":[\"MaintenancePeriodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Period.\",\"isNullable\":false,\"name\":\"MaintenancePeriodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Maintenance Period.\\n\\nExamples:\\n\\n- \\\"Weekly\\\"\\n- \\\"Bi-weekly\\\"\\n- \\\"Monthly\\\"\",\"isNullable\":true,\"name\":\"MaintenancePeriodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"name\":\"MaintenancePeriodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Maintenance Period.\",\"isNullable\":true,\"name\":\"MaintenancePeriodDescription\"}]}}}",
+			"Description": "The maintenance period associated with the asset.\n\nEx:\n- daily\n- weekly\n- bi-weekly\n- monthly\n- quarterly\n- semi-annual\n- annual",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "MaintenancePeriodId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

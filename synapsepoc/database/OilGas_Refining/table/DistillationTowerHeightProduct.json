@@ -1,0 +1,187 @@
+{
+	"name": "DistillationTowerHeightProduct",
+	"properties": {
+		"Name": "DistillationTowerHeightProduct",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The product(s) produced by the distillation tower at the associated height and period of time.\n\nAt successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\n\nEx:\n- Gas oils\n- Lubricating-oil base stock\n- Heavy residual for propane deasphalting",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DistillationTowerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "DistillationTowerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TowerHeightMeters",
+					"Description": "The distillation tower height in meters.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "TowerHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProducedUnits",
+					"Description": "The quantity/units produced.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "ProducedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerHeightProductNote",
+					"Description": "A note, comment or additional information regarding the distillation tower height product.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct",
+						"Name": "DistillationTowerHeightProductNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerHeightProduct",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerHeightProduct",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerId\"},\"ProductId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProductId\"},\"TowerHeightMeters\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"TowerHeightMeters\"},\"PeriodStartTimestamp\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"UnitOfMeasureId\"},\"DistillationTowerHeightProductNote\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerHeightProductNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DistillationTowerHeightProduct\",\"path\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\"},\"description\":\"The product(s) produced by the distillation tower at the associated height and period of time.\\n\\nAt successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\\n\\nEx:\\n- Gas oils\\n- Lubricating-oil base stock\\n- Heavy residual for propane deasphalting\",\"primaryKey\":[\"DistillationTowerId\",\"ProductId\",\"TowerHeightMeters\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"DistillationTowerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"TowerHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The distillation tower height in meters.\",\"isNullable\":false,\"name\":\"TowerHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProducedUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity/units produced.\",\"isNullable\":true,\"name\":\"ProducedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerHeightProductNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the distillation tower height product.\",\"isNullable\":true,\"name\":\"DistillationTowerHeightProductNote\"}]}}}",
+			"Description": "The product(s) produced by the distillation tower at the associated height and period of time.\n\nAt successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\n\nEx:\n- Gas oils\n- Lubricating-oil base stock\n- Heavy residual for propane deasphalting",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DistillationTowerId,ProductId,TowerHeightMeters,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

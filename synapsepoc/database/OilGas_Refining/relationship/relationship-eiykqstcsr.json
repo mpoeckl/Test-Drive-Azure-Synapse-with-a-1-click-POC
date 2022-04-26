@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eiykqstcsr",
+	"properties": {
+		"Name": "relationship-eiykqstcsr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ExtraordinaryRepairPartyRelationshipType",
+		"ToTableName": "ComponentExtraordinaryRepairRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ExtraordinaryRepairPartyRelationshipTypeId",
+				"ToColumnName": "ExtraordinaryRepairPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"toEntity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ExtraordinaryRepairPartyRelationshipTypeId\",\"toAttribute\":\"ExtraordinaryRepairPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

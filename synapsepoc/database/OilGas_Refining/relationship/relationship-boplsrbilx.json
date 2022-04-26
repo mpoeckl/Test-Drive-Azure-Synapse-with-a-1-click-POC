@@ -1,0 +1,26 @@
+{
+	"name": "relationship-boplsrbilx",
+	"properties": {
+		"Name": "relationship-boplsrbilx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEventPartyRelationshipType",
+		"ToTableName": "ShipmentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventPartyRelationshipTypeId",
+				"ToColumnName": "ShipmentEventPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEventPartyRelationshipType.cdm.json/ShipmentEventPartyRelationshipType\",\"toEntity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventPartyRelationshipTypeId\",\"toAttribute\":\"ShipmentEventPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

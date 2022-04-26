@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankFireSystemType",
+	"properties": {
+		"Name": "StorageTankFireSystemType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of integrated or associated storage tank fire system.\n\nEx:\n- Water\n- Foam\n- Chemical",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankFireSystemTypeId",
+					"Description": "The unique identifier of a storage tank fire system type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankFireSystemType.cdm.json/StorageTankFireSystemType",
+						"Name": "StorageTankFireSystemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankFireSystemTypeName",
+					"Description": "The name of a storage tank fire system type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankFireSystemType.cdm.json/StorageTankFireSystemType",
+						"Name": "StorageTankFireSystemTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankFireSystemTypeDescription",
+					"Description": "The description of a storage tank fire system type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankFireSystemType.cdm.json/StorageTankFireSystemType",
+						"Name": "StorageTankFireSystemTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankFireSystemType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankFireSystemType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankFireSystemTypeId\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeId\"},\"StorageTankFireSystemTypeName\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeName\"},\"StorageTankFireSystemTypeDescription\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankFireSystemType\",\"path\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\"},\"description\":\"The type of integrated or associated storage tank fire system.\\n\\nEx:\\n- Water\\n- Foam\\n- Chemical\",\"primaryKey\":[\"StorageTankFireSystemTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank fire system type.\",\"isNullable\":false,\"name\":\"StorageTankFireSystemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank fire system type.\",\"isNullable\":true,\"name\":\"StorageTankFireSystemTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankFireSystemType.cdm.json/StorageTankFireSystemType\",\"name\":\"StorageTankFireSystemTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank fire system type.\",\"isNullable\":true,\"name\":\"StorageTankFireSystemTypeDescription\"}]}}}",
+			"Description": "The type of integrated or associated storage tank fire system.\n\nEx:\n- Water\n- Foam\n- Chemical",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankFireSystemTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

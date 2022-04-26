@@ -1,0 +1,237 @@
+{
+	"name": "CrudeOilComponent",
+	"properties": {
+		"Name": "CrudeOilComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of crude and properties of the crude oil type during the associated period and input into the process.\n\nRefinery crude base stocks usually consist of mixtures of two or more different crude oils.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CrudeOilTypeId",
+					"Description": "The unique identifier of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "CrudeOilTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPetroleumComponentTypeId",
+					"Description": "The unique identifier of a crude oil petroleum component type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "CrudeOilPetroleumComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the related components.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the related components.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilComponentPercentage",
+					"Description": "The percentage of the component.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "CrudeOilComponentPercentage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ApiGravityNumber",
+					"Description": "Crude oils are also defined in terms of API (American Petroleum Institute) gravity. The higher the API gravity, the lighter the crude. For example, light crude oils have high API gravities and low specific gravities. Crude oils with low carbon, high hydrogen, and high API gravity are usually rich in paraffins and tend to yield greater proportions of gasoline and light petroleum products; those with high carbon, low hydrogen, and low API gravities are usually rich in aromatics.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "ApiGravityNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OctaneNumber",
+					"Description": "The Octane Number or octane rating is a standard measure of a fuel's ability to resist knock. The Octane requirement of an engine varies with compression ratio, geometrical and mechanical considerations and operating conditions. The higher the octane number the greater the fuel's resistance to knocking or pinging during combustion.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "OctaneNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SourCrudeIndicator",
+					"Description": "Crude oils that contain appreciable quantities of hydrogen sulfide or other reactive sulfur compounds are called \"sour.\" Those with less sulfur are called \"sweet.\"",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "SourCrudeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SweetCrudeIndicator",
+					"Description": "Crude oils that contain appreciable quantities of hydrogen sulfide or other reactive sulfur compounds are called \"sour.\" Those with less sulfur are called \"sweet.\" Some exceptions to this rule are West Texas crudes, which are always considered \"sour\" regardless of their H2S content, and Arabian high-sulfur crudes, which are not considered \"sour\" because their sulfur compounds are not highly reactive.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "SweetCrudeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPropertyNote",
+					"Description": "A note, comment or additional information regarding the crude oil property.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilComponent.cdm.json/CrudeOilComponent",
+						"Name": "CrudeOilPropertyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilTypeId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilTypeId\"},\"CrudeOilPetroleumComponentTypeId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPetroleumComponentTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodEndTimestamp\"},\"CrudeOilComponentPercentage\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilComponentPercentage\"},\"ApiGravityNumber\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"ApiGravityNumber\"},\"OctaneNumber\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"OctaneNumber\"},\"SourCrudeIndicator\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SourCrudeIndicator\"},\"SweetCrudeIndicator\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SweetCrudeIndicator\"},\"RefineryTestId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"RefineryTestId\"},\"CrudeOilPropertyNote\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPropertyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CrudeOilComponent\",\"path\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\"},\"description\":\"The type of crude and properties of the crude oil type during the associated period and input into the process.\\n\\nRefinery crude base stocks usually consist of mixtures of two or more different crude oils.\",\"primaryKey\":[\"CrudeOilTypeId\",\"CrudeOilPetroleumComponentTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil type.\",\"isNullable\":false,\"name\":\"CrudeOilTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPetroleumComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil petroleum component type.\",\"isNullable\":false,\"name\":\"CrudeOilPetroleumComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the related components.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the related components.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilComponentPercentage\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The percentage of the component.\",\"isNullable\":true,\"scale\":8,\"name\":\"CrudeOilComponentPercentage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"ApiGravityNumber\"},\"dataType\":\"integer\",\"description\":\"Crude oils are also defined in terms of API (American Petroleum Institute) gravity. The higher the API gravity, the lighter the crude. For example, light crude oils have high API gravities and low specific gravities. Crude oils with low carbon, high hydrogen, and high API gravity are usually rich in paraffins and tend to yield greater proportions of gasoline and light petroleum products; those with high carbon, low hydrogen, and low API gravities are usually rich in aromatics.\",\"isNullable\":true,\"name\":\"ApiGravityNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"OctaneNumber\"},\"dataType\":\"integer\",\"description\":\"The Octane Number or octane rating is a standard measure of a fuel's ability to resist knock. The Octane requirement of an engine varies with compression ratio, geometrical and mechanical considerations and operating conditions. The higher the octane number the greater the fuel's resistance to knocking or pinging during combustion.\",\"isNullable\":true,\"name\":\"OctaneNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SourCrudeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Crude oils that contain appreciable quantities of hydrogen sulfide or other reactive sulfur compounds are called \\\"sour.\\\" Those with less sulfur are called \\\"sweet.\\\"\",\"isNullable\":true,\"name\":\"SourCrudeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SweetCrudeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Crude oils that contain appreciable quantities of hydrogen sulfide or other reactive sulfur compounds are called \\\"sour.\\\" Those with less sulfur are called \\\"sweet.\\\" Some exceptions to this rule are West Texas crudes, which are always considered \\\"sour\\\" regardless of their H2S content, and Arabian high-sulfur crudes, which are not considered \\\"sour\\\" because their sulfur compounds are not highly reactive.\",\"isNullable\":true,\"name\":\"SweetCrudeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":true,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPropertyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the crude oil property.\",\"isNullable\":true,\"name\":\"CrudeOilPropertyNote\"}]}}}",
+			"Description": "The type of crude and properties of the crude oil type during the associated period and input into the process.\n\nRefinery crude base stocks usually consist of mixtures of two or more different crude oils.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "CrudeOilTypeId,CrudeOilPetroleumComponentTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rzflkufbqf",
+	"properties": {
+		"Name": "relationship-rzflkufbqf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NfpaHealthRating",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NfpaHealthRatingId",
+				"ToColumnName": "NfpaHealthRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"NfpaHealthRatingId\",\"toAttribute\":\"NfpaHealthRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

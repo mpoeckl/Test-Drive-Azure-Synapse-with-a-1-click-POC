@@ -1,0 +1,26 @@
+{
+	"name": "relationship-scgtuwgxvh",
+	"properties": {
+		"Name": "relationship-scgtuwgxvh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ValveUse",
+		"ToTableName": "Valve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ValveUseId",
+				"ToColumnName": "ValveUseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ValveUse.cdm.json/ValveUse\",\"toEntity\":\"Valve.cdm.json/Valve\",\"joinPairs\":[{\"fromAttribute\":\"ValveUseId\",\"toAttribute\":\"ValveUseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

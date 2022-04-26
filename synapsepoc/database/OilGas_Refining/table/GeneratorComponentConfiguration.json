@@ -1,0 +1,139 @@
+{
+	"name": "GeneratorComponentConfiguration",
+	"properties": {
+		"Name": "GeneratorComponentConfiguration",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Generator Component(s) installed and operating during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorId",
+					"Description": "The unique identifier of a Generator.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration",
+						"Name": "GeneratorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorComponentId",
+					"Description": "The unique identifier of a Generator Component.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration",
+						"Name": "GeneratorComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorConfigurationNote",
+					"Description": "A note, comment or additional information regarding the generator component configuration.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration",
+						"Name": "GeneratorConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentConfiguration",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentConfiguration",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorId\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorId\"},\"GeneratorComponentId\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"GeneratorConfigurationNote\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorComponentConfiguration\",\"path\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\"},\"description\":\"The Generator Component(s) installed and operating during the associated period.\",\"primaryKey\":[\"GeneratorId\",\"GeneratorComponentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generator.\",\"isNullable\":false,\"name\":\"GeneratorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generator Component.\",\"isNullable\":false,\"name\":\"GeneratorComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the generator component configuration.\",\"isNullable\":true,\"name\":\"GeneratorConfigurationNote\"}]}}}",
+			"Description": "The Generator Component(s) installed and operating during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorId,GeneratorComponentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

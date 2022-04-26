@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dtlfqkwrym",
+	"properties": {
+		"Name": "relationship-dtlfqkwrym",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryAsset",
+		"ToTableName": "RefineryAssetLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryAsset.cdm.json/RefineryAsset\",\"toEntity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

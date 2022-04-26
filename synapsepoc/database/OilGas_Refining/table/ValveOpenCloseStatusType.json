@@ -1,0 +1,106 @@
+{
+	"name": "ValveOpenCloseStatusType",
+	"properties": {
+		"Name": "ValveOpenCloseStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The open close status of the valve.\n\nEx:\n- Bi-Directional\n- Check\n- Custody Transfer\n- Delivery\n- Fuel\n- Receipt\n- Storage Inject-Withdraw\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveOpenCloseStatusTypeId",
+					"Description": "The unique identifier of the value open close status type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType",
+						"Name": "ValveOpenCloseStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveOpenCloseStatusTypeName",
+					"Description": "The name of the value open close status type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType",
+						"Name": "ValveOpenCloseStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveOpenCloseStatusTypeDescription",
+					"Description": "The description of the value open close status type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType",
+						"Name": "ValveOpenCloseStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveOpenCloseStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveOpenCloseStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveOpenCloseStatusTypeId\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeId\"},\"ValveOpenCloseStatusTypeName\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeName\"},\"ValveOpenCloseStatusTypeDescription\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveOpenCloseStatusType\",\"path\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\"},\"description\":\"The open close status of the valve.\\n\\nEx:\\n- Bi-Directional\\n- Check\\n- Custody Transfer\\n- Delivery\\n- Fuel\\n- Receipt\\n- Storage Inject-Withdraw\\n- Unknown\",\"primaryKey\":[\"ValveOpenCloseStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the value open close status type.\",\"isNullable\":false,\"name\":\"ValveOpenCloseStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the value open close status type.\",\"isNullable\":true,\"name\":\"ValveOpenCloseStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"name\":\"ValveOpenCloseStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the value open close status type.\",\"isNullable\":true,\"name\":\"ValveOpenCloseStatusTypeDescription\"}]}}}",
+			"Description": "The open close status of the valve.\n\nEx:\n- Bi-Directional\n- Check\n- Custody Transfer\n- Delivery\n- Fuel\n- Receipt\n- Storage Inject-Withdraw\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveOpenCloseStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

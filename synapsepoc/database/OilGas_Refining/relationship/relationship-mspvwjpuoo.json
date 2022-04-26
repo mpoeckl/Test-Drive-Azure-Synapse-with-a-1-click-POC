@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mspvwjpuoo",
+	"properties": {
+		"Name": "relationship-mspvwjpuoo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DocumentType",
+		"ToTableName": "Document",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentTypeId",
+				"ToColumnName": "DocumentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DocumentType.cdm.json/DocumentType\",\"toEntity\":\"Document.cdm.json/Document\",\"joinPairs\":[{\"fromAttribute\":\"DocumentTypeId\",\"toAttribute\":\"DocumentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

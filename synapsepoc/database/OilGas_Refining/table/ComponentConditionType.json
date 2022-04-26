@@ -1,0 +1,106 @@
+{
+	"name": "ComponentConditionType",
+	"properties": {
+		"Name": "ComponentConditionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A rating or ranking of the condition of a Component Condition Type.\n\nEx:\n- Optimum operating condition\n- Inoperable/repairable\n- Inoperable/salvage value only",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentConditionTypeId",
+					"Description": "The unique identifier of a Component Condition Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConditionType.cdm.json/ComponentConditionType",
+						"Name": "ComponentConditionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConditionTypeName",
+					"Description": "The name of a Component Condition Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConditionType.cdm.json/ComponentConditionType",
+						"Name": "ComponentConditionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConditionTypeDescription",
+					"Description": "The description of a Component Condition Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConditionType.cdm.json/ComponentConditionType",
+						"Name": "ComponentConditionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConditionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConditionType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentConditionTypeId\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeId\"},\"ComponentConditionTypeName\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeName\"},\"ComponentConditionTypeDescription\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentConditionType\",\"path\":\"ComponentConditionType.cdm.json/ComponentConditionType\"},\"description\":\"A rating or ranking of the condition of a Component Condition Type.\\n\\nEx:\\n- Optimum operating condition\\n- Inoperable/repairable\\n- Inoperable/salvage value only\",\"primaryKey\":[\"ComponentConditionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Condition Type.\",\"isNullable\":false,\"name\":\"ComponentConditionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Condition Type.\",\"isNullable\":true,\"name\":\"ComponentConditionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Condition Type.\",\"isNullable\":true,\"name\":\"ComponentConditionTypeDescription\"}]}}}",
+			"Description": "A rating or ranking of the condition of a Component Condition Type.\n\nEx:\n- Optimum operating condition\n- Inoperable/repairable\n- Inoperable/salvage value only",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentConditionTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

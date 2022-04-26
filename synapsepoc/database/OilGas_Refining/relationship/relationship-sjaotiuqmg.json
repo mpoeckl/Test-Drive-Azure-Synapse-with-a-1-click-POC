@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sjaotiuqmg",
+	"properties": {
+		"Name": "relationship-sjaotiuqmg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "PipelineTransferredSubstance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "TransferredUnitsUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"TransferredUnitsUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

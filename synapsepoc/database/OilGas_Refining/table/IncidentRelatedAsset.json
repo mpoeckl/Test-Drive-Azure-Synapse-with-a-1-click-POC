@@ -1,0 +1,155 @@
+{
+	"name": "IncidentRelatedAsset",
+	"properties": {
+		"Name": "IncidentRelatedAsset",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An asset related to the incident.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentAssetRelationshipTypeId",
+					"Description": "The unique identifier of an incident asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "IncidentAssetRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the incident-asset relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the incident-asset relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentRelatedAssetNote",
+					"Description": "A note, comment or additional information regarding the incident related asset.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRelatedAsset.cdm.json/IncidentRelatedAsset",
+						"Name": "IncidentRelatedAssetNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRelatedAsset",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRelatedAsset",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentId\"},\"AssetId\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"AssetId\"},\"IncidentAssetRelationshipTypeId\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentAssetRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"PeriodEndTimestamp\"},\"IncidentRelatedAssetNote\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentRelatedAssetNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentRelatedAsset\",\"path\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\"},\"description\":\"An asset related to the incident.\",\"primaryKey\":[\"IncidentId\",\"AssetId\",\"IncidentAssetRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident asset relationship type.\",\"isNullable\":false,\"name\":\"IncidentAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the incident-asset relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the incident-asset relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"name\":\"IncidentRelatedAssetNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the incident related asset.\",\"isNullable\":true,\"name\":\"IncidentRelatedAssetNote\"}]}}}",
+			"Description": "An asset related to the incident.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,AssetId,IncidentAssetRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,138 @@
+{
+	"name": "MaintenanceOperation",
+	"properties": {
+		"Name": "MaintenanceOperation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Periodic expenditures undertaken to preserve or retain an asset for its original use.\n\nMaintenance does not improve or extend the life of the asset.\n\nMaintenance is an expense and is not capitalized.\n\nA specific maintenance operation that is performed upon an asset.\n\nEx:\n- Software Update\n- Lubrication\n- Replacing worn or damage parts",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceOperationId",
+					"Description": "The unique identifier of a maintenance operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperation.cdm.json/MaintenanceOperation",
+						"Name": "MaintenanceOperationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationName",
+					"Description": "The name of a maintenance operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperation.cdm.json/MaintenanceOperation",
+						"Name": "MaintenanceOperationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationDescription",
+					"Description": "The description of a maintenance operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperation.cdm.json/MaintenanceOperation",
+						"Name": "MaintenanceOperationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationStandardNumberHours",
+					"Description": "The standard number of hours to complete a specific Maintenance Operation.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperation.cdm.json/MaintenanceOperation",
+						"Name": "MaintenanceOperationStandardNumberHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationTypeId",
+					"Description": "The unique identifier of a Maintenance Operation Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperation.cdm.json/MaintenanceOperation",
+						"Name": "MaintenanceOperationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceOperation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceOperation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceOperationId\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationId\"},\"MaintenanceOperationName\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationName\"},\"MaintenanceOperationDescription\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationDescription\"},\"MaintenanceOperationStandardNumberHours\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationStandardNumberHours\"},\"MaintenanceOperationTypeId\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceOperation\",\"path\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\"},\"description\":\"Periodic expenditures undertaken to preserve or retain an asset for its original use.\\n\\nMaintenance does not improve or extend the life of the asset.\\n\\nMaintenance is an expense and is not capitalized.\\n\\nA specific maintenance operation that is performed upon an asset.\\n\\nEx:\\n- Software Update\\n- Lubrication\\n- Replacing worn or damage parts\",\"primaryKey\":[\"MaintenanceOperationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a maintenance operation.\",\"isNullable\":false,\"name\":\"MaintenanceOperationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a maintenance operation.\",\"isNullable\":true,\"name\":\"MaintenanceOperationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a maintenance operation.\",\"isNullable\":true,\"name\":\"MaintenanceOperationDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationStandardNumberHours\"},\"dataType\":\"integer\",\"description\":\"The standard number of hours to complete a specific Maintenance Operation.\",\"isNullable\":true,\"name\":\"MaintenanceOperationStandardNumberHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Operation Type.\",\"isNullable\":true,\"name\":\"MaintenanceOperationTypeId\"}]}}}",
+			"Description": "Periodic expenditures undertaken to preserve or retain an asset for its original use.\n\nMaintenance does not improve or extend the life of the asset.\n\nMaintenance is an expense and is not capitalized.\n\nA specific maintenance operation that is performed upon an asset.\n\nEx:\n- Software Update\n- Lubrication\n- Replacing worn or damage parts",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MaintenanceOperationId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eaieorpttl",
+	"properties": {
+		"Name": "relationship-eaieorpttl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ValveCouplingType",
+		"ToTableName": "Valve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ValveCouplingTypeId",
+				"ToColumnName": "ValveCouplingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ValveCouplingType.cdm.json/ValveCouplingType\",\"toEntity\":\"Valve.cdm.json/Valve\",\"joinPairs\":[{\"fromAttribute\":\"ValveCouplingTypeId\",\"toAttribute\":\"ValveCouplingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

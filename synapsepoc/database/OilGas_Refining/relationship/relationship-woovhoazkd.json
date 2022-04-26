@@ -1,0 +1,26 @@
+{
+	"name": "relationship-woovhoazkd",
+	"properties": {
+		"Name": "relationship-woovhoazkd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeasurementType",
+		"ToTableName": "DistillationTowerComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeasurementTypeId",
+				"ToColumnName": "MeasurementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeasurementType.cdm.json/MeasurementType\",\"toEntity\":\"DistillationTowerComponentMeasurement.cdm.json/DistillationTowerComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"MeasurementTypeId\",\"toAttribute\":\"MeasurementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

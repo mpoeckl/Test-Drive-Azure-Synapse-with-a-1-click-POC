@@ -1,0 +1,187 @@
+{
+	"name": "DistillationTowerMeasurement",
+	"properties": {
+		"Name": "DistillationTowerMeasurement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The tower measurement(s) determined by tower height and period of time.\n\nEx:\n- Temperature\n- Pressure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DistillationTowerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "DistillationTowerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeId",
+					"Description": "The unique identifier of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "MeasurementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TowerHeightMeters",
+					"Description": "The tower height in meters.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "TowerHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the recorded measurement.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the recorded measurement.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementUnits",
+					"Description": "The units recorded.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "MeasurementUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerMeasurementNote",
+					"Description": "A note, comment or additional information regarding the distillation tower measurement.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement",
+						"Name": "DistillationTowerMeasurementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerMeasurement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerMeasurement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerId\"},\"MeasurementTypeId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementTypeId\"},\"TowerHeightMeters\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"TowerHeightMeters\"},\"PeriodStartTimestamp\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"UnitOfMeasureId\"},\"DistillationTowerMeasurementNote\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerMeasurementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DistillationTowerMeasurement\",\"path\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\"},\"description\":\"The tower measurement(s) determined by tower height and period of time.\\n\\nEx:\\n- Temperature\\n- Pressure\",\"primaryKey\":[\"DistillationTowerId\",\"MeasurementTypeId\",\"TowerHeightMeters\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"DistillationTowerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Measurement Type.\",\"isNullable\":false,\"name\":\"MeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"TowerHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The tower height in meters.\",\"isNullable\":false,\"name\":\"TowerHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the recorded measurement.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the recorded measurement.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The units recorded.\",\"isNullable\":true,\"name\":\"MeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerMeasurementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the distillation tower measurement.\",\"isNullable\":true,\"name\":\"DistillationTowerMeasurementNote\"}]}}}",
+			"Description": "The tower measurement(s) determined by tower height and period of time.\n\nEx:\n- Temperature\n- Pressure",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DistillationTowerId,MeasurementTypeId,TowerHeightMeters,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

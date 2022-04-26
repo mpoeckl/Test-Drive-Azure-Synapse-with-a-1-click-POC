@@ -1,0 +1,122 @@
+{
+	"name": "FluidCatalyticCrackerUnitSection",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitSection",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The FCCU unit consists of the following sections:\n\n-  First stage Reactor section\n-  Second stage Reactor section\n-  Third stage Reactor section\n-  High pressure separator\n-  Fractionation section\n-  Light Ends Recovery section \n-  Furnace\n-  Light Ends Recovery section",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitSectionId",
+					"Description": "The unique identifier of a fluid catalytic cracker unit section.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection",
+						"Name": "FluidCatalyticCrackerUnitSectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitSectionName",
+					"Description": "The name of a fluid catalytic cracker unit section.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection",
+						"Name": "FluidCatalyticCrackerUnitSectionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitSectionDescription",
+					"Description": "The description of a fluid catalytic cracker unit section.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection",
+						"Name": "FluidCatalyticCrackerUnitSectionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitSection",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitSection",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitSectionId\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionId\"},\"FluidCatalyticCrackerUnitSectionName\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionName\"},\"FluidCatalyticCrackerUnitSectionDescription\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionDescription\"},\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitSection\",\"path\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\"},\"description\":\"The FCCU unit consists of the following sections:\\n\\n-  First stage Reactor section\\n-  Second stage Reactor section\\n-  Third stage Reactor section\\n-  High pressure separator\\n-  Fractionation section\\n-  Light Ends Recovery section \\n-  Furnace\\n-  Light Ends Recovery section\",\"primaryKey\":[\"FluidCatalyticCrackerUnitSectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fluid catalytic cracker unit section.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitSectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a fluid catalytic cracker unit section.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitSectionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitSectionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a fluid catalytic cracker unit section.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitSectionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitId\"}]}}}",
+			"Description": "The FCCU unit consists of the following sections:\n\n-  First stage Reactor section\n-  Second stage Reactor section\n-  Third stage Reactor section\n-  High pressure separator\n-  Fractionation section\n-  Light Ends Recovery section \n-  Furnace\n-  Light Ends Recovery section",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitSectionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

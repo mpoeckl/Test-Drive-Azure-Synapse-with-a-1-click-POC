@@ -1,0 +1,286 @@
+{
+	"name": "Incident",
+	"properties": {
+		"Name": "Incident",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A distinct event that might have serious consequences, require attention or have reporting requirements associated with it.\n\nThis may include major weather events such as Hurricane Katrina or more minor events like a blown transformer.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPeriodStartTimestamp",
+					"Description": "The timestamp when the incident started.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPeriodEndTimestamp",
+					"Description": "The timestamp when the incident ended.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentDescription",
+					"Description": "The description of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTypeId",
+					"Description": "The unique identifier of an Incident Type.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IssueId",
+					"Description": "The unique identifier of an Issue.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IssueId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfInjuries",
+					"Description": "The number of injuries that resulted from the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "NumberOfInjuries"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfFatalities",
+					"Description": "The number of fatalities that resulted from the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "NumberOfFatalities"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalWorkerHoursLost",
+					"Description": "The total number of work hours lost as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "TotalWorkerHoursLost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalIncidentCost",
+					"Description": "The total costs incurred as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "TotalIncidentCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "TotalOutageHoursLost",
+					"Description": "The total number of outage hours lost as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "TotalOutageHoursLost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPreventableIndicator",
+					"Description": "Indicates whether the incident was preventable.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentPreventableIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IncidentNote",
+					"Description": "A note, comment or additional information regarding an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "Incident.cdm.json/Incident",
+						"Name": "IncidentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Incident",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Incident",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentId\"},\"IncidentPeriodStartTimestamp\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodStartTimestamp\"},\"IncidentPeriodEndTimestamp\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodEndTimestamp\"},\"IncidentDescription\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentDescription\"},\"IncidentTypeId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentTypeId\"},\"LocationId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"LocationId\"},\"IssueId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IssueId\"},\"NumberOfInjuries\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfInjuries\"},\"NumberOfFatalities\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfFatalities\"},\"TotalWorkerHoursLost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalWorkerHoursLost\"},\"TotalIncidentCost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalIncidentCost\"},\"TotalOutageHoursLost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalOutageHoursLost\"},\"IncidentPreventableIndicator\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPreventableIndicator\"},\"IncidentNote\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Incident\",\"path\":\"Incident.cdm.json/Incident\"},\"description\":\"A distinct event that might have serious consequences, require attention or have reporting requirements associated with it.\\n\\nThis may include major weather events such as Hurricane Katrina or more minor events like a blown transformer.\",\"primaryKey\":[\"IncidentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the incident started.\",\"isNullable\":true,\"name\":\"IncidentPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the incident ended.\",\"isNullable\":true,\"name\":\"IncidentPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the incident.\",\"isNullable\":true,\"name\":\"IncidentDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Type.\",\"isNullable\":true,\"name\":\"IncidentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IssueId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Issue.\",\"isNullable\":true,\"name\":\"IssueId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfInjuries\"},\"dataType\":\"integer\",\"description\":\"The number of injuries that resulted from the incident.\",\"isNullable\":true,\"name\":\"NumberOfInjuries\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfFatalities\"},\"dataType\":\"integer\",\"description\":\"The number of fatalities that resulted from the incident.\",\"isNullable\":true,\"name\":\"NumberOfFatalities\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalWorkerHoursLost\"},\"dataType\":\"integer\",\"description\":\"The total number of work hours lost as a result of the incident.\",\"isNullable\":true,\"name\":\"TotalWorkerHoursLost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalIncidentCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The total costs incurred as a result of the incident.\",\"isNullable\":true,\"scale\":2,\"name\":\"TotalIncidentCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalOutageHoursLost\"},\"dataType\":\"integer\",\"description\":\"The total number of outage hours lost as a result of the incident.\",\"isNullable\":true,\"name\":\"TotalOutageHoursLost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPreventableIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the incident was preventable.\",\"isNullable\":true,\"name\":\"IncidentPreventableIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding an Incident.\",\"isNullable\":true,\"name\":\"IncidentNote\"}]}}}",
+			"Description": "A distinct event that might have serious consequences, require attention or have reporting requirements associated with it.\n\nThis may include major weather events such as Hurricane Katrina or more minor events like a blown transformer.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lwgaecfkpn",
+	"properties": {
+		"Name": "relationship-lwgaecfkpn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneratorComponent",
+		"ToTableName": "GeneratorComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorComponentId",
+				"ToColumnName": "GeneratorComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"toEntity\":\"GeneratorComponentMeasurement.cdm.json/GeneratorComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorComponentId\",\"toAttribute\":\"GeneratorComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

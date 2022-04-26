@@ -1,0 +1,173 @@
+{
+	"name": "StorageContainerStorageCapacity",
+	"properties": {
+		"Name": "StorageContainerStorageCapacity",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The storage container capacity as of the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageContainerId",
+					"Description": "The unique identifier of a Storage Container.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "StorageContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "StorageCapacityUnits",
+					"Description": "The units associated with the storage capacity.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "StorageCapacityUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "StorageCapacityUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "StorageCapacityUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageContainerStorageCapacityNote",
+					"Description": "A note, comment or additional information regarding the storage container storage capacity.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity",
+						"Name": "StorageContainerStorageCapacityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerStorageCapacity",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerStorageCapacity",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerId\"},\"ProductId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodEndTimestamp\"},\"StorageCapacityUnits\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUnits\"},\"StorageCapacityUomId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUomId\"},\"StorageContainerStorageCapacityNote\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerStorageCapacityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageContainerStorageCapacity\",\"path\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\"},\"description\":\"The storage container capacity as of the associated period.\",\"primaryKey\":[\"StorageContainerId\",\"ProductId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Container.\",\"isNullable\":false,\"name\":\"StorageContainerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUnits\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The units associated with the storage capacity.\",\"isNullable\":true,\"scale\":8,\"name\":\"StorageCapacityUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"StorageCapacityUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerStorageCapacityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the storage container storage capacity.\",\"isNullable\":true,\"name\":\"StorageContainerStorageCapacityNote\"}]}}}",
+			"Description": "The storage container capacity as of the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageContainerId,ProductId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

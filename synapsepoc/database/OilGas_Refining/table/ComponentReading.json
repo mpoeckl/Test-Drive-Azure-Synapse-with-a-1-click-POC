@@ -1,0 +1,271 @@
+{
+	"name": "ComponentReading",
+	"properties": {
+		"Name": "ComponentReading",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The reading associated with the component for a period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingStartTimestamp",
+					"Description": "The period start timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReadingEndTimestamp",
+					"Description": "The period end timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReadingValue",
+					"Description": "The value of the associated reading.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReadingUnits",
+					"Description": "The measurement units for the associated reading.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ScheduleReadingTimestamp",
+					"Description": "The timestamp of the scheduled reading of the testing equipment of the associated reading type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ScheduleReadingTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingStatusId",
+					"Description": "The unique identifier of a Component Reading Status.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ComponentReadingStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingModeId",
+					"Description": "The unique identifier of a Reading Mode.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingModeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingResultTypeId",
+					"Description": "The unique identifier of a Reading Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ReadingResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingNote",
+					"Description": "A note, comment or additional information regarding a Component Reading.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "ComponentReadingNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PiPointId",
+					"Description": "The unique identifier of a PI Point.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReading.cdm.json/ComponentReading",
+						"Name": "PiPointId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReading",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReading",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingStartTimestamp\"},\"ReadingEndTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingEndTimestamp\"},\"ReadingValue\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingValue\"},\"ReadingUnits\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingUnits\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"UnitOfMeasureId\"},\"ScheduleReadingTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ScheduleReadingTimestamp\"},\"ComponentReadingStatusId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingStatusId\"},\"ReadingModeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingModeId\"},\"ReadingResultTypeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingResultTypeId\"},\"ComponentReadingNote\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingNote\"},\"PiPointId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"PiPointId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReading\",\"path\":\"ComponentReading.cdm.json/ComponentReading\"},\"description\":\"The reading associated with the component for a period.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"ReadingStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated reading is reported.\",\"isNullable\":false,\"name\":\"ReadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated reading is reported.\",\"isNullable\":true,\"name\":\"ReadingEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingValue\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The value of the associated reading.\",\"isNullable\":true,\"name\":\"ReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingUnits\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The measurement units for the associated reading.\",\"isNullable\":true,\"scale\":8,\"name\":\"ReadingUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ScheduleReadingTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp of the scheduled reading of the testing equipment of the associated reading type.\",\"isNullable\":true,\"name\":\"ScheduleReadingTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Reading Status.\",\"isNullable\":true,\"name\":\"ComponentReadingStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingModeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Mode.\",\"isNullable\":true,\"name\":\"ReadingModeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Result Type.\",\"isNullable\":true,\"name\":\"ReadingResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading.\",\"isNullable\":true,\"name\":\"ComponentReadingNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"PiPointId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a PI Point.\",\"isNullable\":true,\"name\":\"PiPointId\"}]}}}",
+			"Description": "The reading associated with the component for a period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,ReadingStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

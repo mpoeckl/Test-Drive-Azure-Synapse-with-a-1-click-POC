@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aoyzjtpdmg",
+	"properties": {
+		"Name": "relationship-aoyzjtpdmg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentAssetRelationshipType",
+		"ToTableName": "IncidentRelatedAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentAssetRelationshipTypeId",
+				"ToColumnName": "IncidentAssetRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"toEntity\":\"IncidentRelatedAsset.cdm.json/IncidentRelatedAsset\",\"joinPairs\":[{\"fromAttribute\":\"IncidentAssetRelationshipTypeId\",\"toAttribute\":\"IncidentAssetRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

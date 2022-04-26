@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xmeyigvarb",
+	"properties": {
+		"Name": "relationship-xmeyigvarb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTank",
+		"ToTableName": "StorageTankLeakage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankId",
+				"ToColumnName": "StorageTankId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTank.cdm.json/StorageTank\",\"toEntity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankId\",\"toAttribute\":\"StorageTankId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eorayyxglf",
+	"properties": {
+		"Name": "relationship-eorayyxglf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StructureType",
+		"ToTableName": "Structure",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureTypeId",
+				"ToColumnName": "StructureTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StructureType.cdm.json/StructureType\",\"toEntity\":\"Structure.cdm.json/Structure\",\"joinPairs\":[{\"fromAttribute\":\"StructureTypeId\",\"toAttribute\":\"StructureTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

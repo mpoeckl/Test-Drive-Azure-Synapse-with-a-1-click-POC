@@ -1,0 +1,26 @@
+{
+	"name": "relationship-amuriwpxkf",
+	"properties": {
+		"Name": "relationship-amuriwpxkf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DistillationTower",
+		"ToTableName": "DistillationTowerMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DistillationTowerId",
+				"ToColumnName": "DistillationTowerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DistillationTower.cdm.json/DistillationTower\",\"toEntity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"DistillationTowerId\",\"toAttribute\":\"DistillationTowerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

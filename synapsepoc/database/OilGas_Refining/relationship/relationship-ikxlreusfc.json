@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ikxlreusfc",
+	"properties": {
+		"Name": "relationship-ikxlreusfc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningDeviceType",
+		"ToTableName": "Device",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceTypeId",
+				"ToColumnName": "DeviceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"toEntity\":\"Device.cdm.json/Device\",\"joinPairs\":[{\"fromAttribute\":\"DeviceTypeId\",\"toAttribute\":\"DeviceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

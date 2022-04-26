@@ -1,0 +1,221 @@
+{
+	"name": "MeterChannelReading",
+	"properties": {
+		"Name": "MeterChannelReading",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A specific meter reading as of a timestamp.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterId",
+					"Description": "The unique identifier of a Meter.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelId",
+					"Description": "The unique identifier of a meter channel.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterChannelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterReadingTypeId",
+					"Description": "The unique identifier of a Meter Reading Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelReadingPeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the meter channel reading.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterChannelReadingPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelReadingPeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the meter channel reading.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterChannelReadingPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ReadingUnits",
+					"Description": "The number of units read.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "ReadingUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NumberOfUsageDays",
+					"Description": "The number of usage days associated with the meter reading.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "NumberOfUsageDays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterChannelReadingNote",
+					"Description": "A note, comment or additional information regarding the Meter Channel Reading.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterChannelReadingNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterReadingCycleId",
+					"Description": "The unique identifier of a Meter Reading Cycle.",
+					"BaseAttributeReference": {
+						"Entity": "MeterChannelReading.cdm.json/MeterChannelReading",
+						"Name": "MeterReadingCycleId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelReading",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelReading",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelId\"},\"MeterReadingTypeId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingTypeId\"},\"MeterChannelReadingPeriodStartTimestamp\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodStartTimestamp\"},\"MeterChannelReadingPeriodEndTimestamp\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodEndTimestamp\"},\"ReadingUnits\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"ReadingUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"UnitOfMeasureId\"},\"NumberOfUsageDays\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"NumberOfUsageDays\"},\"MeterChannelReadingNote\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingNote\"},\"MeterReadingCycleId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingCycleId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterChannelReading\",\"path\":\"MeterChannelReading.cdm.json/MeterChannelReading\"},\"description\":\"A specific meter reading as of a timestamp.\",\"primaryKey\":[\"MeterId\",\"MeterChannelId\",\"MeterReadingTypeId\",\"MeterChannelReadingPeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Meter.\",\"isNullable\":false,\"name\":\"MeterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter channel.\",\"isNullable\":false,\"name\":\"MeterChannelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Reading Type.\",\"isNullable\":false,\"name\":\"MeterReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the meter channel reading.\",\"isNullable\":false,\"name\":\"MeterChannelReadingPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the meter channel reading.\",\"isNullable\":true,\"name\":\"MeterChannelReadingPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"ReadingUnits\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The number of units read.\",\"isNullable\":true,\"scale\":8,\"name\":\"ReadingUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"NumberOfUsageDays\"},\"dataType\":\"integer\",\"description\":\"The number of usage days associated with the meter reading.\",\"isNullable\":true,\"name\":\"NumberOfUsageDays\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Meter Channel Reading.\",\"isNullable\":true,\"name\":\"MeterChannelReadingNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingCycleId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Reading Cycle.\",\"isNullable\":true,\"name\":\"MeterReadingCycleId\"}]}}}",
+			"Description": "A specific meter reading as of a timestamp.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterId,MeterChannelId,MeterReadingTypeId,MeterChannelReadingPeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

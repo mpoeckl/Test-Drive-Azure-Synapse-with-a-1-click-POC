@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zcuttpmmzw",
+	"properties": {
+		"Name": "relationship-zcuttpmmzw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FeedstockType",
+		"ToTableName": "RefineryProcessFeedstock",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FeedstockTypeId",
+				"ToColumnName": "FeedstockTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FeedstockType.cdm.json/FeedstockType\",\"toEntity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"joinPairs\":[{\"fromAttribute\":\"FeedstockTypeId\",\"toAttribute\":\"FeedstockTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

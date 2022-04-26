@@ -1,0 +1,225 @@
+{
+	"name": "ShippingFacility",
+	"properties": {
+		"Name": "ShippingFacility",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A facility related to rail or ship shipping.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShippingFacilityId",
+					"Description": "The unique identifier of a shipping facility.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityName",
+					"Description": "The name of the shipping facility.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityDescription",
+					"Description": "A description of the shipping facility.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityAddress",
+					"Description": "The 'street/location' component of the shipping facility address.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityAddress"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityCity",
+					"Description": "The 'city' component of the shipping facility address.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityCity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityState",
+					"Description": "The 'state' component of the shipping facility address.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityState"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityZipCode",
+					"Description": "The 'zip code' component of the shipping facility address.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityZipCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 11,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityCountry",
+					"Description": "The 'country' component of the shipping facility address.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityCountry"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShippingFacilityNote",
+					"Description": "A note, comment or additional information regarding the shipping facility.",
+					"BaseAttributeReference": {
+						"Entity": "ShippingFacility.cdm.json/ShippingFacility",
+						"Name": "ShippingFacilityNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShippingFacility",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShippingFacility",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingFacilityId\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityId\"},\"ShippingFacilityName\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityName\"},\"ShippingFacilityDescription\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityDescription\"},\"ShippingFacilityAddress\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityAddress\"},\"ShippingFacilityCity\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCity\"},\"ShippingFacilityState\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityState\"},\"ShippingFacilityZipCode\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityZipCode\"},\"ShippingFacilityCountry\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCountry\"},\"LocationId\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"LocationId\"},\"ShippingFacilityNote\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShippingFacility\",\"path\":\"ShippingFacility.cdm.json/ShippingFacility\"},\"description\":\"A facility related to rail or ship shipping.\",\"primaryKey\":[\"ShippingFacilityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a shipping facility.\",\"isNullable\":false,\"name\":\"ShippingFacilityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the shipping facility.\",\"isNullable\":true,\"name\":\"ShippingFacilityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the shipping facility.\",\"isNullable\":true,\"name\":\"ShippingFacilityDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityAddress\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The 'street/location' component of the shipping facility address.\",\"isNullable\":true,\"name\":\"ShippingFacilityAddress\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCity\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The 'city' component of the shipping facility address.\",\"isNullable\":true,\"name\":\"ShippingFacilityCity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityState\"},\"dataType\":\"string\",\"dataTypeLength\":64,\"description\":\"The 'state' component of the shipping facility address.\",\"isNullable\":true,\"name\":\"ShippingFacilityState\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityZipCode\"},\"dataType\":\"decimal\",\"dataTypeLength\":11,\"description\":\"The 'zip code' component of the shipping facility address.\",\"isNullable\":true,\"scale\":0,\"name\":\"ShippingFacilityZipCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCountry\"},\"dataType\":\"string\",\"dataTypeLength\":64,\"description\":\"The 'country' component of the shipping facility address.\",\"isNullable\":true,\"name\":\"ShippingFacilityCountry\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":true,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the shipping facility.\",\"isNullable\":true,\"name\":\"ShippingFacilityNote\"}]}}}",
+			"Description": "A facility related to rail or ship shipping.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShippingFacilityId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

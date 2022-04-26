@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerTubeLayoutType",
+	"properties": {
+		"Name": "HeatExchangerTubeLayoutType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of heat exchanger tube layout.\n\nEx:\n- Triangular 30'\n- Triangular 60'\n- Rotated square 45'\n- Square 90'\n\nTube Layout: refers to how tubes are positioned within the shell. There are four main types of tube layout, which are, triangular (30°), rotated triangular (60°), square (90°) and rotated square (45°). The triangular patterns are employed to give greater heat transfer as they force the fluid to flow in a more turbulent fashion around the piping. Square patterns are employed where high fouling is experienced and cleaning is more regular.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerTubeLayoutTypeId",
+					"Description": "The unique identifier of a heat exchanger tube layout type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType",
+						"Name": "HeatExchangerTubeLayoutTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTubeLayoutTypeName",
+					"Description": "The name of a heat exchanger tube layout type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType",
+						"Name": "HeatExchangerTubeLayoutTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTubeLayoutTypeDescription",
+					"Description": "The description of a heat exchanger tube layout type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType",
+						"Name": "HeatExchangerTubeLayoutTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerTubeLayoutType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerTubeLayoutType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerTubeLayoutTypeId\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeId\"},\"HeatExchangerTubeLayoutTypeName\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeName\"},\"HeatExchangerTubeLayoutTypeDescription\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerTubeLayoutType\",\"path\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\"},\"description\":\"The type of heat exchanger tube layout.\\n\\nEx:\\n- Triangular 30'\\n- Triangular 60'\\n- Rotated square 45'\\n- Square 90'\\n\\nTube Layout: refers to how tubes are positioned within the shell. There are four main types of tube layout, which are, triangular (30°), rotated triangular (60°), square (90°) and rotated square (45°). The triangular patterns are employed to give greater heat transfer as they force the fluid to flow in a more turbulent fashion around the piping. Square patterns are employed where high fouling is experienced and cleaning is more regular.\",\"primaryKey\":[\"HeatExchangerTubeLayoutTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger tube layout type.\",\"isNullable\":false,\"name\":\"HeatExchangerTubeLayoutTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger tube layout type.\",\"isNullable\":true,\"name\":\"HeatExchangerTubeLayoutTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger tube layout type.\",\"isNullable\":true,\"name\":\"HeatExchangerTubeLayoutTypeDescription\"}]}}}",
+			"Description": "The type of heat exchanger tube layout.\n\nEx:\n- Triangular 30'\n- Triangular 60'\n- Rotated square 45'\n- Square 90'\n\nTube Layout: refers to how tubes are positioned within the shell. There are four main types of tube layout, which are, triangular (30°), rotated triangular (60°), square (90°) and rotated square (45°). The triangular patterns are employed to give greater heat transfer as they force the fluid to flow in a more turbulent fashion around the piping. Square patterns are employed where high fouling is experienced and cleaning is more regular.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerTubeLayoutTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

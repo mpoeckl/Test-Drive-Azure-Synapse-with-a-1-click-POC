@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jptmcuenvc",
+	"properties": {
+		"Name": "relationship-jptmcuenvc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FittingStyle",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FittingStyleId",
+				"ToColumnName": "FittingStyleId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FittingStyle.cdm.json/FittingStyle\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"FittingStyleId\",\"toAttribute\":\"FittingStyleId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

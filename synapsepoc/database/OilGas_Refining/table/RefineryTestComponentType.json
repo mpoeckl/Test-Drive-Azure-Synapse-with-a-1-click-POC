@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestComponentType",
+	"properties": {
+		"Name": "RefineryTestComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A component that is tested for.\n\nEx\n1,2-Dichloroethane \n2-Ethylhexanol \nAcetic Acid \nAcrylonitrile \nAlkylbenzene \nAlpha-Olefins \nAmmonia \nAniline \nAntimony\nArsenic\nBenzene\nBeryllium\nBisphenol-A\nBTX\nButadiene \nButadiene\nCadmium\nCaprolactum \nChlorobenzene \nChromium\nCobalt\nCrude Oil\nCumene \nCyclohexane \nDimethyl Terephthalate\nDioctyl Phthalate \nDodecylbenzene \nEthanol \nEthanolamine \nEthoxylate \nEthylbenzene \nEthylene \nEthylene Glycol \nEthylene Oxide\nEpoxy Resins \nFormaldehyde \nGas Oil\nKetones\nLead\nLinear Alkyl Benzene\nMaleic Anhydride\nManganese\nMercury\nMethanol\nMethyl Tert-Butyl Ether \nMixed Xylenes \nMolybdenum\nN-Butene \nN-Hexene \nNaphtha \nNickel\nNitrobenzene \nNylons\nOlefins\nOrtho-Xylene\nPara-Xylene \nPara-Xylene\nPhenol\nPhosgene\nPolyalpha-Olefins\nPolyamides\nPolyol \nPolyolefins \nPolypropylene \nPolyurethane \nPropylene \nPropylene Glycol \nPropylene Oxide\nPurified Terephthalic Acid \nResins\nSelenium\nSolvents\nStyrene\nStyrene Monomer \nTerephthalic Acid\nTitanium Dioxide\nToluene \nToluene Diisocyanate\nUrea \nVanadium\nVinyl Acetate Monomer \nVinyl Chloride Monomer, VCM\nXylenes",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestComponentTypeId",
+					"Description": "The unique identifier of a refinery test component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponentType.cdm.json/RefineryTestComponentType",
+						"Name": "RefineryTestComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestComponentTypeName",
+					"Description": "The name of a refinery test component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponentType.cdm.json/RefineryTestComponentType",
+						"Name": "RefineryTestComponentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestComponentTypeDescription",
+					"Description": "The description of a refinery test component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponentType.cdm.json/RefineryTestComponentType",
+						"Name": "RefineryTestComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestComponentTypeId\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeId\"},\"RefineryTestComponentTypeName\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeName\"},\"RefineryTestComponentTypeDescription\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestComponentType\",\"path\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\"},\"description\":\"A component that is tested for.\\n\\nEx\\n1,2-Dichloroethane \\n2-Ethylhexanol \\nAcetic Acid \\nAcrylonitrile \\nAlkylbenzene \\nAlpha-Olefins \\nAmmonia \\nAniline \\nAntimony\\nArsenic\\nBenzene\\nBeryllium\\nBisphenol-A\\nBTX\\nButadiene \\nButadiene\\nCadmium\\nCaprolactum \\nChlorobenzene \\nChromium\\nCobalt\\nCrude Oil\\nCumene \\nCyclohexane \\nDimethyl Terephthalate\\nDioctyl Phthalate \\nDodecylbenzene \\nEthanol \\nEthanolamine \\nEthoxylate \\nEthylbenzene \\nEthylene \\nEthylene Glycol \\nEthylene Oxide\\nEpoxy Resins \\nFormaldehyde \\nGas Oil\\nKetones\\nLead\\nLinear Alkyl Benzene\\nMaleic Anhydride\\nManganese\\nMercury\\nMethanol\\nMethyl Tert-Butyl Ether \\nMixed Xylenes \\nMolybdenum\\nN-Butene \\nN-Hexene \\nNaphtha \\nNickel\\nNitrobenzene \\nNylons\\nOlefins\\nOrtho-Xylene\\nPara-Xylene \\nPara-Xylene\\nPhenol\\nPhosgene\\nPolyalpha-Olefins\\nPolyamides\\nPolyol \\nPolyolefins \\nPolypropylene \\nPolyurethane \\nPropylene \\nPropylene Glycol \\nPropylene Oxide\\nPurified Terephthalic Acid \\nResins\\nSelenium\\nSolvents\\nStyrene\\nStyrene Monomer \\nTerephthalic Acid\\nTitanium Dioxide\\nToluene \\nToluene Diisocyanate\\nUrea \\nVanadium\\nVinyl Acetate Monomer \\nVinyl Chloride Monomer, VCM\\nXylenes\",\"primaryKey\":[\"RefineryTestComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test component type.\",\"isNullable\":false,\"name\":\"RefineryTestComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test component type.\",\"isNullable\":true,\"name\":\"RefineryTestComponentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test component type.\",\"isNullable\":true,\"name\":\"RefineryTestComponentTypeDescription\"}]}}}",
+			"Description": "A component that is tested for.\n\nEx\n1,2-Dichloroethane \n2-Ethylhexanol \nAcetic Acid \nAcrylonitrile \nAlkylbenzene \nAlpha-Olefins \nAmmonia \nAniline \nAntimony\nArsenic\nBenzene\nBeryllium\nBisphenol-A\nBTX\nButadiene \nButadiene\nCadmium\nCaprolactum \nChlorobenzene \nChromium\nCobalt\nCrude Oil\nCumene \nCyclohexane \nDimethyl Terephthalate\nDioctyl Phthalate \nDodecylbenzene \nEthanol \nEthanolamine \nEthoxylate \nEthylbenzene \nEthylene \nEthylene Glycol \nEthylene Oxide\nEpoxy Resins \nFormaldehyde \nGas Oil\nKetones\nLead\nLinear Alkyl Benzene\nMaleic Anhydride\nManganese\nMercury\nMethanol\nMethyl Tert-Butyl Ether \nMixed Xylenes \nMolybdenum\nN-Butene \nN-Hexene \nNaphtha \nNickel\nNitrobenzene \nNylons\nOlefins\nOrtho-Xylene\nPara-Xylene \nPara-Xylene\nPhenol\nPhosgene\nPolyalpha-Olefins\nPolyamides\nPolyol \nPolyolefins \nPolypropylene \nPolyurethane \nPropylene \nPropylene Glycol \nPropylene Oxide\nPurified Terephthalic Acid \nResins\nSelenium\nSolvents\nStyrene\nStyrene Monomer \nTerephthalic Acid\nTitanium Dioxide\nToluene \nToluene Diisocyanate\nUrea \nVanadium\nVinyl Acetate Monomer \nVinyl Chloride Monomer, VCM\nXylenes",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

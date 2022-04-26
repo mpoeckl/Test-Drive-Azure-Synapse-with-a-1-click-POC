@@ -1,0 +1,26 @@
+{
+	"name": "relationship-obfjgjmaxc",
+	"properties": {
+		"Name": "relationship-obfjgjmaxc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningFacilityType",
+		"ToTableName": "Facility",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FacilityTypeId",
+				"ToColumnName": "FacilityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"toEntity\":\"Facility.cdm.json/Facility\",\"joinPairs\":[{\"fromAttribute\":\"FacilityTypeId\",\"toAttribute\":\"FacilityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ddskkpdcbd",
+	"properties": {
+		"Name": "relationship-ddskkpdcbd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentGuideline",
+		"ToTableName": "ComponentGuidelinePreventiveAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"toEntity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

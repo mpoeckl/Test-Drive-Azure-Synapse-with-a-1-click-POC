@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ovurzzvdes",
+	"properties": {
+		"Name": "relationship-ovurzzvdes",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FieldDeviceType",
+		"ToTableName": "FieldDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FieldDeviceTypeId",
+				"ToColumnName": "FieldDeviceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"toEntity\":\"FieldDevice.cdm.json/FieldDevice\",\"joinPairs\":[{\"fromAttribute\":\"FieldDeviceTypeId\",\"toAttribute\":\"FieldDeviceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

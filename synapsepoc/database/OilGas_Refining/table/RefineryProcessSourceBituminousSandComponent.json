@@ -1,0 +1,137 @@
+{
+	"name": "RefineryProcessSourceBituminousSandComponent",
+	"properties": {
+		"Name": "RefineryProcessSourceBituminousSandComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The component(s) of the associated process source bituminous sand.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BituminousSandComponentTypeId",
+					"Description": "The unique identifier of a bituminous sand component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent",
+						"Name": "BituminousSandComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BituminousSandTypeId",
+					"Description": "The unique identifier of a bituminous sand type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent",
+						"Name": "BituminousSandTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentUnits",
+					"Description": "The units of the associated bituminous sand component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent",
+						"Name": "ComponentUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessSourceBituminousSandComponentNote",
+					"Description": "A note, comment or additional information regarding the refinery process source bituminous sand component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent",
+						"Name": "RefineryProcessSourceBituminousSandComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceBituminousSandComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceBituminousSandComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BituminousSandComponentTypeId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandComponentTypeId\"},\"BituminousSandTypeId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandTypeId\"},\"ComponentUnits\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"ComponentUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessSourceBituminousSandComponentNote\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"RefineryProcessSourceBituminousSandComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessSourceBituminousSandComponent\",\"path\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\"},\"description\":\"The component(s) of the associated process source bituminous sand.\",\"primaryKey\":[\"BituminousSandComponentTypeId\",\"BituminousSandTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a bituminous sand component type.\",\"isNullable\":false,\"name\":\"BituminousSandComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a bituminous sand type.\",\"isNullable\":false,\"name\":\"BituminousSandTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"ComponentUnits\"},\"dataType\":\"integer\",\"description\":\"The units of the associated bituminous sand component type.\",\"isNullable\":true,\"name\":\"ComponentUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"RefineryProcessSourceBituminousSandComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process source bituminous sand component.\",\"isNullable\":true,\"name\":\"RefineryProcessSourceBituminousSandComponentNote\"}]}}}",
+			"Description": "The component(s) of the associated process source bituminous sand.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "BituminousSandComponentTypeId,BituminousSandTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

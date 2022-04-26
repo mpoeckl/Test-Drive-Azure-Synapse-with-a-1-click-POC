@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xiokastqbs",
+	"properties": {
+		"Name": "relationship-xiokastqbs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetLocation",
+		"ToTableName": "AssetLocationStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationTypeId",
+				"ToColumnName": "LocationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetLocation.cdm.json/AssetLocation\",\"toEntity\":\"AssetLocationStatus.cdm.json/AssetLocationStatus\",\"joinPairs\":[{\"fromAttribute\":\"LocationTypeId\",\"toAttribute\":\"LocationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

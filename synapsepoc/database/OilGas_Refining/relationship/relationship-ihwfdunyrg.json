@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ihwfdunyrg",
+	"properties": {
+		"Name": "relationship-ihwfdunyrg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FluidCatalyticCrackerUnitSection",
+		"ToTableName": "FluidCatalyticCrackerUnitComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FluidCatalyticCrackerUnitSectionId",
+				"ToColumnName": "FluidCatalyticCrackerUnitSectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FluidCatalyticCrackerUnitSection.cdm.json/FluidCatalyticCrackerUnitSection\",\"toEntity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"joinPairs\":[{\"fromAttribute\":\"FluidCatalyticCrackerUnitSectionId\",\"toAttribute\":\"FluidCatalyticCrackerUnitSectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pnhivrldkh",
+	"properties": {
+		"Name": "relationship-pnhivrldkh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "LocationPartyRelationshipType",
+		"ToTableName": "LocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "LocationPartyRelationshipTypeId",
+				"ToColumnName": "LocationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"LocationPartyRelationshipType.cdm.json/LocationPartyRelationshipType\",\"toEntity\":\"LocationRelatedParty.cdm.json/LocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"LocationPartyRelationshipTypeId\",\"toAttribute\":\"LocationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

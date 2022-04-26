@@ -1,0 +1,106 @@
+{
+	"name": "ReadingScanRate",
+	"properties": {
+		"Name": "ReadingScanRate",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The rate at which reading are taken.\n\nEx:\n- Each second\n- Each minute\n- Each hour\n- Each day\n- Each week\n- Each month\n- Upon demand",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReadingScanRateId",
+					"Description": "The unique identifier of a Reading Scan Rate.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingScanRate.cdm.json/ReadingScanRate",
+						"Name": "ReadingScanRateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingScanRateValue",
+					"Description": "The value of a Reading Scan Rate.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingScanRate.cdm.json/ReadingScanRate",
+						"Name": "ReadingScanRateValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingScanRate.cdm.json/ReadingScanRate",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingScanRate",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingScanRate",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReadingScanRateId\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"ReadingScanRateId\"},\"ReadingScanRateValue\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"ReadingScanRateValue\"},\"UnitOfMeasureId\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReadingScanRate\",\"path\":\"ReadingScanRate.cdm.json/ReadingScanRate\"},\"description\":\"The rate at which reading are taken.\\n\\nEx:\\n- Each second\\n- Each minute\\n- Each hour\\n- Each day\\n- Each week\\n- Each month\\n- Upon demand\",\"primaryKey\":[\"ReadingScanRateId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"ReadingScanRateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Scan Rate.\",\"isNullable\":false,\"name\":\"ReadingScanRateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"ReadingScanRateValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of a Reading Scan Rate.\",\"isNullable\":true,\"scale\":2,\"name\":\"ReadingScanRateValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "The rate at which reading are taken.\n\nEx:\n- Each second\n- Each minute\n- Each hour\n- Each day\n- Each week\n- Each month\n- Upon demand",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ReadingScanRateId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

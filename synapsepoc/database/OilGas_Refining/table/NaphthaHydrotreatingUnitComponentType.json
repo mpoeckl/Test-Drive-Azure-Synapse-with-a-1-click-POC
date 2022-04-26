@@ -1,0 +1,106 @@
+{
+	"name": "NaphthaHydrotreatingUnitComponentType",
+	"properties": {
+		"Name": "NaphthaHydrotreatingUnitComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of naphtha hydrotreater component.\n\nEx:\n- Mixed Gas Oil Feed Pump \n- Mixed Gas Oil Feed / Stripper Bottoms Heat Exchanger  \n- Light Gas Oil Feed Surge Drum \n- Light Gas Oil Feed / Stripper Bottoms Heat Exchanger \n- Reactor Feed / Effluent Heat Exchanger \n- Reactor Charge Heater  \n- Reactor Effluent / Recycle Gas Heat Exchanger \n- Low Temperature Separator  \n- Gas Stream Exit High Temperature Separator \n- Recycle Gas System  \n- Product Stripper  \n- Recycle H2 compressor\n- Feed Heater\n- Reactor\n- Feed\n- Stripper\n- Fin-Fan Cooler\n- LP Separator",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentTypeId",
+					"Description": "The unique identifier of a naphtha hydrotreating unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType",
+						"Name": "NaphthaHydrotreatingUnitComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentTypeDescription",
+					"Description": "The description of a naphtha hydrotreating unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType",
+						"Name": "NaphthaHydrotreatingUnitComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitComponentTypeNote",
+					"Description": "A note, comment or additional information regarding the naphtha hydrotreating unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType",
+						"Name": "NaphthaHydrotreatingUnitComponentTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitComponentTypeId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},\"NaphthaHydrotreatingUnitComponentTypeDescription\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeDescription\"},\"NaphthaHydrotreatingUnitComponentTypeNote\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreatingUnitComponentType\",\"path\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\"},\"description\":\"A type of naphtha hydrotreater component.\\n\\nEx:\\n- Mixed Gas Oil Feed Pump \\n- Mixed Gas Oil Feed / Stripper Bottoms Heat Exchanger  \\n- Light Gas Oil Feed Surge Drum \\n- Light Gas Oil Feed / Stripper Bottoms Heat Exchanger \\n- Reactor Feed / Effluent Heat Exchanger \\n- Reactor Charge Heater  \\n- Reactor Effluent / Recycle Gas Heat Exchanger \\n- Low Temperature Separator  \\n- Gas Stream Exit High Temperature Separator \\n- Recycle Gas System  \\n- Product Stripper  \\n- Recycle H2 compressor\\n- Feed Heater\\n- Reactor\\n- Feed\\n- Stripper\\n- Fin-Fan Cooler\\n- LP Separator\",\"primaryKey\":[\"NaphthaHydrotreatingUnitComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a naphtha hydrotreating unit component type.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a naphtha hydrotreating unit component type.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the naphtha hydrotreating unit component type.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreatingUnitComponentTypeNote\"}]}}}",
+			"Description": "A type of naphtha hydrotreater component.\n\nEx:\n- Mixed Gas Oil Feed Pump \n- Mixed Gas Oil Feed / Stripper Bottoms Heat Exchanger  \n- Light Gas Oil Feed Surge Drum \n- Light Gas Oil Feed / Stripper Bottoms Heat Exchanger \n- Reactor Feed / Effluent Heat Exchanger \n- Reactor Charge Heater  \n- Reactor Effluent / Recycle Gas Heat Exchanger \n- Low Temperature Separator  \n- Gas Stream Exit High Temperature Separator \n- Recycle Gas System  \n- Product Stripper  \n- Recycle H2 compressor\n- Feed Heater\n- Reactor\n- Feed\n- Stripper\n- Fin-Fan Cooler\n- LP Separator",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "NaphthaHydrotreatingUnitComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

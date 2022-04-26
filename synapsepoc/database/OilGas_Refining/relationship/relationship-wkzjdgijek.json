@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wkzjdgijek",
+	"properties": {
+		"Name": "relationship-wkzjdgijek",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CostType",
+		"ToTableName": "RefineryProcessCost",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostTypeId",
+				"ToColumnName": "CostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CostType.cdm.json/CostType\",\"toEntity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"joinPairs\":[{\"fromAttribute\":\"CostTypeId\",\"toAttribute\":\"CostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "IncidentType",
+	"properties": {
+		"Name": "IncidentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of incident.\n\nEx:\n- Incident with no injuries\n- Incident involving one Injury\n- Incident involving multiple injuries\n- Incident involving one fatality\n- Incident involving more than one fatality\n- Network Failure\n- Equipment Failure\n- Power Failure\n- Unplanned Environmental Emission\n- Water Contamination\n- Sewage Spill\n- Broken Water Main\n- Pipeline Leak\n- Fire\n- Explosion\n- Theft\n- Bird Strike\n- Fall",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentTypeId",
+					"Description": "The unique identifier of an Incident Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentType.cdm.json/IncidentType",
+						"Name": "IncidentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTypeName",
+					"Description": "The name of an Incident Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentType.cdm.json/IncidentType",
+						"Name": "IncidentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTypeDescription",
+					"Description": "The description of an Incident Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentType.cdm.json/IncidentType",
+						"Name": "IncidentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentTypeId\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeId\"},\"IncidentTypeName\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeName\"},\"IncidentTypeDescription\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentType\",\"path\":\"IncidentType.cdm.json/IncidentType\"},\"description\":\"The type of incident.\\n\\nEx:\\n- Incident with no injuries\\n- Incident involving one Injury\\n- Incident involving multiple injuries\\n- Incident involving one fatality\\n- Incident involving more than one fatality\\n- Network Failure\\n- Equipment Failure\\n- Power Failure\\n- Unplanned Environmental Emission\\n- Water Contamination\\n- Sewage Spill\\n- Broken Water Main\\n- Pipeline Leak\\n- Fire\\n- Explosion\\n- Theft\\n- Bird Strike\\n- Fall\",\"primaryKey\":[\"IncidentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Type.\",\"isNullable\":false,\"name\":\"IncidentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Type.\",\"isNullable\":true,\"name\":\"IncidentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Type.\",\"isNullable\":true,\"name\":\"IncidentTypeDescription\"}]}}}",
+			"Description": "The type of incident.\n\nEx:\n- Incident with no injuries\n- Incident involving one Injury\n- Incident involving multiple injuries\n- Incident involving one fatality\n- Incident involving more than one fatality\n- Network Failure\n- Equipment Failure\n- Power Failure\n- Unplanned Environmental Emission\n- Water Contamination\n- Sewage Spill\n- Broken Water Main\n- Pipeline Leak\n- Fire\n- Explosion\n- Theft\n- Bird Strike\n- Fall",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

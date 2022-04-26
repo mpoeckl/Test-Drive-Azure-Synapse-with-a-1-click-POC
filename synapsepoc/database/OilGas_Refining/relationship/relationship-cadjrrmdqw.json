@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cadjrrmdqw",
+	"properties": {
+		"Name": "relationship-cadjrrmdqw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FeedstockType",
+		"ToTableName": "RefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FeedstockTypeId",
+				"ToColumnName": "FeedstockTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FeedstockType.cdm.json/FeedstockType\",\"toEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"FeedstockTypeId\",\"toAttribute\":\"FeedstockTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

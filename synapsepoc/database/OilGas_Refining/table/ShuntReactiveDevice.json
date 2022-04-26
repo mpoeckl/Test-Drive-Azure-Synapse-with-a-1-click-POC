@@ -1,0 +1,140 @@
+{
+	"name": "ShuntReactiveDevice",
+	"properties": {
+		"Name": "ShuntReactiveDevice",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A shunt is a device which allows electric current to pass around another point in the circuit.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShuntReactiveDeviceId",
+					"Description": "The unique identifier of a Shunt Reactive Device.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDevice.cdm.json/ShuntReactiveDevice",
+						"Name": "ShuntReactiveDeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ShuntReactiveDeviceTypeId",
+					"Description": "The unique identifier of a Shunt Reactive Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDevice.cdm.json/ShuntReactiveDevice",
+						"Name": "ShuntReactiveDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DesiredMinimumVoltageControlValueKv",
+					"Description": "The designed or desired minimum control value voltage kV.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDevice.cdm.json/ShuntReactiveDevice",
+						"Name": "DesiredMinimumVoltageControlValueKv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DesiredMaximumVoltageControlValueKv",
+					"Description": "The designed or desired maximum control value voltage kV.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDevice.cdm.json/ShuntReactiveDevice",
+						"Name": "DesiredMaximumVoltageControlValueKv"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ElectricalJunctionId",
+					"Description": "The unique identifier of an Electrical Junction.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDevice.cdm.json/ShuntReactiveDevice",
+						"Name": "ElectricalJunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShuntReactiveDevice",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShuntReactiveDevice",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShuntReactiveDeviceId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceId\"},\"ShuntReactiveDeviceTypeId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceTypeId\"},\"DesiredMinimumVoltageControlValueKv\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMinimumVoltageControlValueKv\"},\"DesiredMaximumVoltageControlValueKv\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMaximumVoltageControlValueKv\"},\"ElectricalJunctionId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ElectricalJunctionId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShuntReactiveDevice\",\"path\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\"},\"description\":\"A shunt is a device which allows electric current to pass around another point in the circuit.\",\"primaryKey\":[\"ShuntReactiveDeviceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Shunt Reactive Device.\",\"isNullable\":false,\"name\":\"ShuntReactiveDeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shunt Reactive Device Type.\",\"isNullable\":true,\"name\":\"ShuntReactiveDeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMinimumVoltageControlValueKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The designed or desired minimum control value voltage kV.\",\"isNullable\":true,\"scale\":8,\"name\":\"DesiredMinimumVoltageControlValueKv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMaximumVoltageControlValueKv\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The designed or desired maximum control value voltage kV.\",\"isNullable\":true,\"scale\":8,\"name\":\"DesiredMaximumVoltageControlValueKv\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ElectricalJunctionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Electrical Junction.\",\"isNullable\":true,\"name\":\"ElectricalJunctionId\"}]}}}",
+			"Description": "A shunt is a device which allows electric current to pass around another point in the circuit.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ShuntReactiveDeviceId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

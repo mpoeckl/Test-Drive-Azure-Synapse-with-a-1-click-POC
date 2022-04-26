@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gyjhxrtxgi",
+	"properties": {
+		"Name": "relationship-gyjhxrtxgi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEventStatus",
+		"ToTableName": "ShipmentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventStatusId",
+				"ToColumnName": "ShipmentEventStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEventStatus.cdm.json/ShipmentEventStatus\",\"toEntity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventStatusId\",\"toAttribute\":\"ShipmentEventStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

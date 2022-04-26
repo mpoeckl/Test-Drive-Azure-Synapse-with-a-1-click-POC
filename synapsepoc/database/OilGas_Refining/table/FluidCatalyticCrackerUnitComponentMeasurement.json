@@ -1,0 +1,187 @@
+{
+	"name": "FluidCatalyticCrackerUnitComponentMeasurement",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitComponentMeasurement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The FCCU component measurement(s) for the associated period.\n\nEx:\n- Raw oil feed at heater inlet : 114 cubic meter /h\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "FluidCatalyticCrackerUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeId",
+					"Description": "The unique identifier of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "MeasurementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementUnits",
+					"Description": "The measurement units recorded by the component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "MeasurementUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitComponentMeasurementNote",
+					"Description": "A note, comment or additional information regarding a Fluid Catalytic Cracker Unit Component Measurement.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement",
+						"Name": "FluidCatalyticCrackerUnitComponentMeasurementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponentMeasurement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponentMeasurement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"FluidCatalyticCrackerUnitComponentId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"MeasurementTypeId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"FluidCatalyticCrackerUnitComponentMeasurementNote\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentMeasurementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitComponentMeasurement\",\"path\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\"},\"description\":\"The FCCU component measurement(s) for the associated period.\\n\\nEx:\\n- Raw oil feed at heater inlet : 114 cubic meter /h\\n- Furnace outlet temperature : 291 C\\n- Reactor feed temperature : 371 C\\n- Reactor Vapor temperature : 549 C\",\"primaryKey\":[\"FluidCatalyticCrackerUnitId\",\"FluidCatalyticCrackerUnitComponentId\",\"MeasurementTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Measurement Type.\",\"isNullable\":false,\"name\":\"MeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The measurement units recorded by the component.\",\"isNullable\":true,\"name\":\"MeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentMeasurementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Fluid Catalytic Cracker Unit Component Measurement.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitComponentMeasurementNote\"}]}}}",
+			"Description": "The FCCU component measurement(s) for the associated period.\n\nEx:\n- Raw oil feed at heater inlet : 114 cubic meter /h\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitId,FluidCatalyticCrackerUnitComponentId,MeasurementTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

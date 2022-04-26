@@ -1,0 +1,220 @@
+{
+	"name": "Structure",
+	"properties": {
+		"Name": "Structure",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A man-made architectural construction.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureName",
+					"Description": "The name of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureDescription",
+					"Description": "The description of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureConstructionCompletedDate",
+					"Description": "The construction completed date of the structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureConstructionCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "StructureLengthMeters",
+					"Description": "The length of the structure in meters.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureLengthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureWidthMeters",
+					"Description": "The width of the structure in meters.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureWidthMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureHeightMeters",
+					"Description": "The height of the structure in meters.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ConstructionArchitecturalDiagram",
+					"Description": "A diagram or architecture drawing depicting the structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "ConstructionArchitecturalDiagram"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "StructureTypeId",
+					"Description": "The unique identifier of a structure type.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureNote",
+					"Description": "A note, comment or additional information regarding the structure.",
+					"BaseAttributeReference": {
+						"Entity": "Structure.cdm.json/Structure",
+						"Name": "StructureNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Structure",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Structure",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureId\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureId\"},\"StructureName\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureName\"},\"StructureDescription\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureDescription\"},\"StructureConstructionCompletedDate\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureConstructionCompletedDate\"},\"StructureLengthMeters\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureLengthMeters\"},\"StructureWidthMeters\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureWidthMeters\"},\"StructureHeightMeters\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureHeightMeters\"},\"ConstructionArchitecturalDiagram\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"ConstructionArchitecturalDiagram\"},\"StructureTypeId\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureTypeId\"},\"StructureNote\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Structure\",\"path\":\"Structure.cdm.json/Structure\"},\"description\":\"A man-made architectural construction.\",\"primaryKey\":[\"StructureId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a structure.\",\"isNullable\":true,\"name\":\"StructureName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a structure.\",\"isNullable\":true,\"name\":\"StructureDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureConstructionCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The construction completed date of the structure.\",\"isNullable\":true,\"name\":\"StructureConstructionCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureLengthMeters\"},\"dataType\":\"integer\",\"description\":\"The length of the structure in meters.\",\"isNullable\":true,\"name\":\"StructureLengthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureWidthMeters\"},\"dataType\":\"integer\",\"description\":\"The width of the structure in meters.\",\"isNullable\":true,\"name\":\"StructureWidthMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the structure in meters.\",\"isNullable\":true,\"name\":\"StructureHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"ConstructionArchitecturalDiagram\"},\"dataType\":\"binary\",\"description\":\"A diagram or architecture drawing depicting the structure.\",\"isNullable\":true,\"name\":\"ConstructionArchitecturalDiagram\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure type.\",\"isNullable\":true,\"name\":\"StructureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Structure.cdm.json/Structure\",\"name\":\"StructureNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the structure.\",\"isNullable\":true,\"name\":\"StructureNote\"}]}}}",
+			"Description": "A man-made architectural construction.",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "StructureId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,122 @@
+{
+	"name": "RefineryEventType",
+	"properties": {
+		"Name": "RefineryEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of event that is recorded for a refinery.\n\nEx:\n- Inspection\n- Planned shut-down\n- Unplanned shut-down\n- Environmental Non-Compliant Emissions Release\n- Emergency Shutdown\n- Hazard alert\n- Emergency repairs",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventTypeId",
+					"Description": "The unique identifier of a Refinery Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventType.cdm.json/RefineryEventType",
+						"Name": "RefineryEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventTypeName",
+					"Description": "The name of a Refinery Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventType.cdm.json/RefineryEventType",
+						"Name": "RefineryEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventTypeDescription",
+					"Description": "The description of a Refinery Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventType.cdm.json/RefineryEventType",
+						"Name": "RefineryEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventCategoryId",
+					"Description": "The unique identifier of a Refinery Event Category.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventType.cdm.json/RefineryEventType",
+						"Name": "RefineryEventCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventTypeId\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeId\"},\"RefineryEventTypeName\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeName\"},\"RefineryEventTypeDescription\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeDescription\"},\"RefineryEventCategoryId\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventType\",\"path\":\"RefineryEventType.cdm.json/RefineryEventType\"},\"description\":\"A type of event that is recorded for a refinery.\\n\\nEx:\\n- Inspection\\n- Planned shut-down\\n- Unplanned shut-down\\n- Environmental Non-Compliant Emissions Release\\n- Emergency Shutdown\\n- Hazard alert\\n- Emergency repairs\",\"primaryKey\":[\"RefineryEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Type.\",\"isNullable\":false,\"name\":\"RefineryEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Event Type.\",\"isNullable\":true,\"name\":\"RefineryEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Event Type.\",\"isNullable\":true,\"name\":\"RefineryEventTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Category.\",\"isNullable\":true,\"name\":\"RefineryEventCategoryId\"}]}}}",
+			"Description": "A type of event that is recorded for a refinery.\n\nEx:\n- Inspection\n- Planned shut-down\n- Unplanned shut-down\n- Environmental Non-Compliant Emissions Release\n- Emergency Shutdown\n- Hazard alert\n- Emergency repairs",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

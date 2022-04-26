@@ -1,0 +1,155 @@
+{
+	"name": "DistillationTowerComponent",
+	"properties": {
+		"Name": "DistillationTowerComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A distillation tower component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DistillationTowerComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "DistillationTowerComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerComponentName",
+					"Description": "The name of the distillation tower component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "DistillationTowerComponentName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerComponentDescription",
+					"Description": "The description of the distillation tower component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "DistillationTowerComponentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerComponentTypeId",
+					"Description": "The unique identifier of a distillation tower component type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "DistillationTowerComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerComponentNote",
+					"Description": "A note, comment or additional information regarding the distillation tower component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "DistillationTowerComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerComponent.cdm.json/DistillationTowerComponent",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerComponentId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentId\"},\"DistillationTowerComponentName\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentName\"},\"DistillationTowerComponentDescription\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentDescription\"},\"DistillationTowerComponentTypeId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentTypeId\"},\"DistillationTowerComponentNote\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentNote\"},\"MaterialId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"MaterialId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DistillationTowerComponent\",\"path\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\"},\"description\":\"A distillation tower component.\",\"primaryKey\":[\"DistillationTowerComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"DistillationTowerComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the distillation tower component.\",\"isNullable\":true,\"name\":\"DistillationTowerComponentName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the distillation tower component.\",\"isNullable\":true,\"name\":\"DistillationTowerComponentDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a distillation tower component type.\",\"isNullable\":false,\"name\":\"DistillationTowerComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the distillation tower component.\",\"isNullable\":true,\"name\":\"DistillationTowerComponentNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"}]}}}",
+			"Description": "A distillation tower component.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DistillationTowerComponentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

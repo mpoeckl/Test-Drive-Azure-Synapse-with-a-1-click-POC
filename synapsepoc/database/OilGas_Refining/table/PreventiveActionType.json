@@ -1,0 +1,106 @@
+{
+	"name": "PreventiveActionType",
+	"properties": {
+		"Name": "PreventiveActionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of preventive action that categorizes a Preventive Action.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PreventiveActionTypeId",
+					"Description": "The unique identifier of a Preventive Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveActionType.cdm.json/PreventiveActionType",
+						"Name": "PreventiveActionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionTypeName",
+					"Description": "The name of a Preventive Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveActionType.cdm.json/PreventiveActionType",
+						"Name": "PreventiveActionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionTypeDescription",
+					"Description": "The description of a Preventive Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveActionType.cdm.json/PreventiveActionType",
+						"Name": "PreventiveActionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PreventiveActionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PreventiveActionType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PreventiveActionTypeId\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeId\"},\"PreventiveActionTypeName\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeName\"},\"PreventiveActionTypeDescription\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PreventiveActionType\",\"path\":\"PreventiveActionType.cdm.json/PreventiveActionType\"},\"description\":\"A type of preventive action that categorizes a Preventive Action.\",\"primaryKey\":[\"PreventiveActionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preventive Action Type.\",\"isNullable\":false,\"name\":\"PreventiveActionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Preventive Action Type.\",\"isNullable\":true,\"name\":\"PreventiveActionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveActionType.cdm.json/PreventiveActionType\",\"name\":\"PreventiveActionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Preventive Action Type.\",\"isNullable\":true,\"name\":\"PreventiveActionTypeDescription\"}]}}}",
+			"Description": "A type of preventive action that categorizes a Preventive Action.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "PreventiveActionTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

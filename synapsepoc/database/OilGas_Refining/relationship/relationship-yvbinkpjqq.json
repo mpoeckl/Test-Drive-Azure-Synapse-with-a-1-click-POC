@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yvbinkpjqq",
+	"properties": {
+		"Name": "relationship-yvbinkpjqq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PriceListType",
+		"ToTableName": "RefiningProductPriceList",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PriceListTypeId",
+				"ToColumnName": "PriceListTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PriceListType.cdm.json/PriceListType\",\"toEntity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"joinPairs\":[{\"fromAttribute\":\"PriceListTypeId\",\"toAttribute\":\"PriceListTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

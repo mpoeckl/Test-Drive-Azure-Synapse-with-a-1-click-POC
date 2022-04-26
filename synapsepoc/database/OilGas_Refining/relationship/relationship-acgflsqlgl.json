@@ -1,0 +1,26 @@
+{
+	"name": "relationship-acgflsqlgl",
+	"properties": {
+		"Name": "relationship-acgflsqlgl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetStatusType",
+		"ToTableName": "RefineryEventAssetStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetStatusTypeId",
+				"ToColumnName": "AssetStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"toEntity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"joinPairs\":[{\"fromAttribute\":\"AssetStatusTypeId\",\"toAttribute\":\"AssetStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

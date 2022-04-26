@@ -1,0 +1,106 @@
+{
+	"name": "DistillationTowerType",
+	"properties": {
+		"Name": "DistillationTowerType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of distillation tower.\n\nEx:\n- Atmospheric Distillation \n- Vacuum Distillation\n- Depropanizer Column\n- Ethyl Benzene/Xylene Column\n- Bubble Tower\n\nwhere:\n\nATMOSPHERIC DISTILLATION TOWER\nAt the refinery, the desalted crude feedstock is preheated using recovered process heat. The feedstock then flows to a direct-fired crude charge heater where it is fed into the vertical distillation column just above the bottom, at pressures slightly above atmospheric and at temperatures ranging from 650° to 700° F (heating crude oil above these temperatures may cause undesirable thermal cracking). All but the heaviest fractions flash into vapor. As the hot vapor rises in the tower, its temperature is reduced. Heavy fuel oil or asphalt residue is taken from the bottom. At successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\n\nVACUUM DISTILLATION TOWER\nIn order to further distill the residuum or topped crude from the atmospheric tower at higher temperatures, reduced pressure is required to prevent thermal cracking. The process takes place in one or more vacuum distillation towers. The principles of vacuum distillation resemble those of fractional distillation and, except that larger-diameter columns are used to maintain comparable vapor velocities at the reduced pressures, the equipment is also similar. The internal designs of some vacuum towers are different from atmospheric towers in that random packing and demister pads are used instead of trays. A typical first-phase vacuum tower may produce gas oils, lubricating-oil base stocks, and heavy residual for propane deasphalting. A second-phase tower operating at lower vacuum may distill surplus residuum from the atmospheric tower, which is not used for lube-stock processing, and surplus residuum from the first vacuum tower not used for deasphalting. Vacuum towers are typically used to separate catalytic cracking feedstock from surplus residuum.\n\nDEPROPANIZER COLUMN\nA depropanizer is a small column designed to separate propane and lighter gases from butane and heavier components\n\nETHYL BENZENE/XYLENE COLUMN\nAnother larger column is used to separate ethyl benzene and xylene.\n\nBUBBLE TOWER\nSmall \"bubble\" towers called strippers use steam to remove trace amounts of light products from heavier product streams.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DistillationTowerTypeId",
+					"Description": "The unique identifier of a distillation tower type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerType.cdm.json/DistillationTowerType",
+						"Name": "DistillationTowerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerTypeName",
+					"Description": "The name of a distillation tower type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerType.cdm.json/DistillationTowerType",
+						"Name": "DistillationTowerTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerTypeDescription",
+					"Description": "The description of a distillation tower type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTowerType.cdm.json/DistillationTowerType",
+						"Name": "DistillationTowerTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerTypeId\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeId\"},\"DistillationTowerTypeName\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeName\"},\"DistillationTowerTypeDescription\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DistillationTowerType\",\"path\":\"DistillationTowerType.cdm.json/DistillationTowerType\"},\"description\":\"The type of distillation tower.\\n\\nEx:\\n- Atmospheric Distillation \\n- Vacuum Distillation\\n- Depropanizer Column\\n- Ethyl Benzene/Xylene Column\\n- Bubble Tower\\n\\nwhere:\\n\\nATMOSPHERIC DISTILLATION TOWER\\nAt the refinery, the desalted crude feedstock is preheated using recovered process heat. The feedstock then flows to a direct-fired crude charge heater where it is fed into the vertical distillation column just above the bottom, at pressures slightly above atmospheric and at temperatures ranging from 650° to 700° F (heating crude oil above these temperatures may cause undesirable thermal cracking). All but the heaviest fractions flash into vapor. As the hot vapor rises in the tower, its temperature is reduced. Heavy fuel oil or asphalt residue is taken from the bottom. At successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\\n\\nVACUUM DISTILLATION TOWER\\nIn order to further distill the residuum or topped crude from the atmospheric tower at higher temperatures, reduced pressure is required to prevent thermal cracking. The process takes place in one or more vacuum distillation towers. The principles of vacuum distillation resemble those of fractional distillation and, except that larger-diameter columns are used to maintain comparable vapor velocities at the reduced pressures, the equipment is also similar. The internal designs of some vacuum towers are different from atmospheric towers in that random packing and demister pads are used instead of trays. A typical first-phase vacuum tower may produce gas oils, lubricating-oil base stocks, and heavy residual for propane deasphalting. A second-phase tower operating at lower vacuum may distill surplus residuum from the atmospheric tower, which is not used for lube-stock processing, and surplus residuum from the first vacuum tower not used for deasphalting. Vacuum towers are typically used to separate catalytic cracking feedstock from surplus residuum.\\n\\nDEPROPANIZER COLUMN\\nA depropanizer is a small column designed to separate propane and lighter gases from butane and heavier components\\n\\nETHYL BENZENE/XYLENE COLUMN\\nAnother larger column is used to separate ethyl benzene and xylene.\\n\\nBUBBLE TOWER\\nSmall \\\"bubble\\\" towers called strippers use steam to remove trace amounts of light products from heavier product streams.\",\"primaryKey\":[\"DistillationTowerTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a distillation tower type.\",\"isNullable\":false,\"name\":\"DistillationTowerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a distillation tower type.\",\"isNullable\":true,\"name\":\"DistillationTowerTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTowerType.cdm.json/DistillationTowerType\",\"name\":\"DistillationTowerTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a distillation tower type.\",\"isNullable\":true,\"name\":\"DistillationTowerTypeDescription\"}]}}}",
+			"Description": "The type of distillation tower.\n\nEx:\n- Atmospheric Distillation \n- Vacuum Distillation\n- Depropanizer Column\n- Ethyl Benzene/Xylene Column\n- Bubble Tower\n\nwhere:\n\nATMOSPHERIC DISTILLATION TOWER\nAt the refinery, the desalted crude feedstock is preheated using recovered process heat. The feedstock then flows to a direct-fired crude charge heater where it is fed into the vertical distillation column just above the bottom, at pressures slightly above atmospheric and at temperatures ranging from 650° to 700° F (heating crude oil above these temperatures may cause undesirable thermal cracking). All but the heaviest fractions flash into vapor. As the hot vapor rises in the tower, its temperature is reduced. Heavy fuel oil or asphalt residue is taken from the bottom. At successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\n\nVACUUM DISTILLATION TOWER\nIn order to further distill the residuum or topped crude from the atmospheric tower at higher temperatures, reduced pressure is required to prevent thermal cracking. The process takes place in one or more vacuum distillation towers. The principles of vacuum distillation resemble those of fractional distillation and, except that larger-diameter columns are used to maintain comparable vapor velocities at the reduced pressures, the equipment is also similar. The internal designs of some vacuum towers are different from atmospheric towers in that random packing and demister pads are used instead of trays. A typical first-phase vacuum tower may produce gas oils, lubricating-oil base stocks, and heavy residual for propane deasphalting. A second-phase tower operating at lower vacuum may distill surplus residuum from the atmospheric tower, which is not used for lube-stock processing, and surplus residuum from the first vacuum tower not used for deasphalting. Vacuum towers are typically used to separate catalytic cracking feedstock from surplus residuum.\n\nDEPROPANIZER COLUMN\nA depropanizer is a small column designed to separate propane and lighter gases from butane and heavier components\n\nETHYL BENZENE/XYLENE COLUMN\nAnother larger column is used to separate ethyl benzene and xylene.\n\nBUBBLE TOWER\nSmall \"bubble\" towers called strippers use steam to remove trace amounts of light products from heavier product streams.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DistillationTowerTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

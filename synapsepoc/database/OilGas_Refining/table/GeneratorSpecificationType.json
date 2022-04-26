@@ -1,0 +1,106 @@
+{
+	"name": "GeneratorSpecificationType",
+	"properties": {
+		"Name": "GeneratorSpecificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of pipe specification.\n\nEx:\n- Generator length\n- Generator width\n- Generator height\n- Generator height\n- Generator minimum generator limit\n- Generator maximum generator limit\n- Generator designed minimum power\n- Generator designed maximum power\n- Generator active power\n- Generator apparent power\n- Generator maximum power\n- Generator frequency\n- Generator output phase\n- Generator engine bore\n- Generator engine stroke\n- Generator cylinder displacement\n- Generator cylinder output\n- Generator mean piston speed\n- Generator engine rating\n- Generator normal life span",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorSpecificationTypeId",
+					"Description": "The unique identifier of a generator specification type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecificationType.cdm.json/GeneratorSpecificationType",
+						"Name": "GeneratorSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorSpecificationTypeName",
+					"Description": "The name of a generator specification type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecificationType.cdm.json/GeneratorSpecificationType",
+						"Name": "GeneratorSpecificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorSpecificationTypeDescription",
+					"Description": "The description of a generator specification type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecificationType.cdm.json/GeneratorSpecificationType",
+						"Name": "GeneratorSpecificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorSpecificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorSpecificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorSpecificationTypeId\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeId\"},\"GeneratorSpecificationTypeName\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeName\"},\"GeneratorSpecificationTypeDescription\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorSpecificationType\",\"path\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\"},\"description\":\"A type of pipe specification.\\n\\nEx:\\n- Generator length\\n- Generator width\\n- Generator height\\n- Generator height\\n- Generator minimum generator limit\\n- Generator maximum generator limit\\n- Generator designed minimum power\\n- Generator designed maximum power\\n- Generator active power\\n- Generator apparent power\\n- Generator maximum power\\n- Generator frequency\\n- Generator output phase\\n- Generator engine bore\\n- Generator engine stroke\\n- Generator cylinder displacement\\n- Generator cylinder output\\n- Generator mean piston speed\\n- Generator engine rating\\n- Generator normal life span\",\"primaryKey\":[\"GeneratorSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator specification type.\",\"isNullable\":false,\"name\":\"GeneratorSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a generator specification type.\",\"isNullable\":true,\"name\":\"GeneratorSpecificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a generator specification type.\",\"isNullable\":true,\"name\":\"GeneratorSpecificationTypeDescription\"}]}}}",
+			"Description": "A type of pipe specification.\n\nEx:\n- Generator length\n- Generator width\n- Generator height\n- Generator height\n- Generator minimum generator limit\n- Generator maximum generator limit\n- Generator designed minimum power\n- Generator designed maximum power\n- Generator active power\n- Generator apparent power\n- Generator maximum power\n- Generator frequency\n- Generator output phase\n- Generator engine bore\n- Generator engine stroke\n- Generator cylinder displacement\n- Generator cylinder output\n- Generator mean piston speed\n- Generator engine rating\n- Generator normal life span",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

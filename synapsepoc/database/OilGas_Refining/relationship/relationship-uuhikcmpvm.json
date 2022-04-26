@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uuhikcmpvm",
+	"properties": {
+		"Name": "relationship-uuhikcmpvm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "PumpSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "PumpSpecificationUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"PumpSpecificationUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

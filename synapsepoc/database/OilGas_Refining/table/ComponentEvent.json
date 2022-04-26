@@ -1,0 +1,155 @@
+{
+	"name": "ComponentEvent",
+	"properties": {
+		"Name": "ComponentEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An event associated with a component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentEventId",
+					"Description": "The unique identifier of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventTypeId",
+					"Description": "The unique identifier of a Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventStartTimestamp",
+					"Description": "The start timestamp of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventEndTimestamp",
+					"Description": "The end timestamp of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventNote",
+					"Description": "A note, comment or additional information regarding the Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEvent.cdm.json/ComponentEvent",
+						"Name": "ComponentEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventId\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventId\"},\"ComponentId\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentId\"},\"ComponentEventTypeId\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventTypeId\"},\"ComponentEventStartTimestamp\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventStartTimestamp\"},\"ComponentEventEndTimestamp\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventEndTimestamp\"},\"ComponentEventNote\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentEvent\",\"path\":\"ComponentEvent.cdm.json/ComponentEvent\"},\"description\":\"An event associated with a component.\",\"primaryKey\":[\"ComponentEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event.\",\"isNullable\":false,\"name\":\"ComponentEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event Type.\",\"isNullable\":false,\"name\":\"ComponentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of a Component Event.\",\"isNullable\":true,\"name\":\"ComponentEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of a Component Event.\",\"isNullable\":true,\"name\":\"ComponentEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"name\":\"ComponentEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Component Event.\",\"isNullable\":true,\"name\":\"ComponentEventNote\"}]}}}",
+			"Description": "An event associated with a component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentEventId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

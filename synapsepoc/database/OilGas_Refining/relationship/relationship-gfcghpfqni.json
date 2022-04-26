@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gfcghpfqni",
+	"properties": {
+		"Name": "relationship-gfcghpfqni",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ImpellerSystemType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ImpellerSystemTypeId",
+				"ToColumnName": "ImpellerSystemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"ImpellerSystemTypeId\",\"toAttribute\":\"ImpellerSystemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

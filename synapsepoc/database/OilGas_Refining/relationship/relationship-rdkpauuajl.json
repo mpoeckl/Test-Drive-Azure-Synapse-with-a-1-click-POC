@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rdkpauuajl",
+	"properties": {
+		"Name": "relationship-rdkpauuajl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenancePeriod",
+		"ToTableName": "Asset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenancePeriodId",
+				"ToColumnName": "MaintenancePeriodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenancePeriod.cdm.json/MaintenancePeriod\",\"toEntity\":\"Asset.cdm.json/Asset\",\"joinPairs\":[{\"fromAttribute\":\"MaintenancePeriodId\",\"toAttribute\":\"MaintenancePeriodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

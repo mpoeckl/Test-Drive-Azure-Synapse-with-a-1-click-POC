@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bymktjxlvc",
+	"properties": {
+		"Name": "relationship-bymktjxlvc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessCategory",
+		"ToTableName": "RefineryProcessType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessCategoryId",
+				"ToColumnName": "RefineryProcessCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessCategory.cdm.json/RefineryProcessCategory\",\"toEntity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessCategoryId\",\"toAttribute\":\"RefineryProcessCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cinrmpaebu",
+	"properties": {
+		"Name": "relationship-cinrmpaebu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryType",
+		"ToTableName": "Refinery",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTypeId",
+				"ToColumnName": "RefineryTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryType.cdm.json/RefineryType\",\"toEntity\":\"Refinery.cdm.json/Refinery\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTypeId\",\"toAttribute\":\"RefineryTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

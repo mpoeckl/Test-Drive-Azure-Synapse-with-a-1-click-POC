@@ -1,0 +1,155 @@
+{
+	"name": "RefineryProcessRelatedParty",
+	"properties": {
+		"Name": "RefineryProcessRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The party(s) associated with the Refinery Process.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessPartyRelationshipTypeId",
+					"Description": "The unique identifier of a refinery process party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "RefineryProcessPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated refinery process - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated refinery process - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the refinery process related party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty",
+						"Name": "RefineryProcessRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessId\"},\"PartyId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PartyId\"},\"RefineryProcessPartyRelationshipTypeId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessRelatedPartyNote\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessRelatedParty\",\"path\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\"},\"description\":\"The party(s) associated with the Refinery Process.\",\"primaryKey\":[\"RefineryProcessId\",\"PartyId\",\"RefineryProcessPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process party relationship type.\",\"isNullable\":false,\"name\":\"RefineryProcessPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated refinery process - party relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated refinery process - party relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process related party.\",\"isNullable\":true,\"name\":\"RefineryProcessRelatedPartyNote\"}]}}}",
+			"Description": "The party(s) associated with the Refinery Process.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,PartyId,RefineryProcessPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lnqinkkiup",
+	"properties": {
+		"Name": "relationship-lnqinkkiup",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PlantInformationPoint",
+		"ToTableName": "ComponentReading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PiPointId",
+				"ToColumnName": "PiPointId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"toEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"joinPairs\":[{\"fromAttribute\":\"PiPointId\",\"toAttribute\":\"PiPointId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

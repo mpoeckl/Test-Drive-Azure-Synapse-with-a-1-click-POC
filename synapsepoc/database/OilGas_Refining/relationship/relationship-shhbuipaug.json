@@ -1,0 +1,26 @@
+{
+	"name": "relationship-shhbuipaug",
+	"properties": {
+		"Name": "relationship-shhbuipaug",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OilAndGasProduct",
+		"ToTableName": "StorageContainerContent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"toEntity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

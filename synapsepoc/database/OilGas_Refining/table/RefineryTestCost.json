@@ -1,0 +1,123 @@
+{
+	"name": "RefineryTestCost",
+	"properties": {
+		"Name": "RefineryTestCost",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A cost associated with the refinery test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCost.cdm.json/RefineryTestCost",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCost.cdm.json/RefineryTestCost",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCostAmount",
+					"Description": "The amount of the refinery test cost.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCost.cdm.json/RefineryTestCost",
+						"Name": "RefineryTestCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCostNote",
+					"Description": "A note, comment or additional information regarding the refinery test cost.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCost.cdm.json/RefineryTestCost",
+						"Name": "RefineryTestCostNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCost",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCost",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestId\"},\"CostTypeId\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"CostTypeId\"},\"RefineryTestCostAmount\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestCostAmount\"},\"RefineryTestCostNote\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestCostNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestCost\",\"path\":\"RefineryTestCost.cdm.json/RefineryTestCost\"},\"description\":\"A cost associated with the refinery test.\",\"primaryKey\":[\"RefineryTestId\",\"CostTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The amount of the refinery test cost.\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryTestCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"name\":\"RefineryTestCostNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery test cost.\",\"isNullable\":true,\"name\":\"RefineryTestCostNote\"}]}}}",
+			"Description": "A cost associated with the refinery test.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,CostTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

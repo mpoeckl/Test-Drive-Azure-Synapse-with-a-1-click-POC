@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ywimatanll",
+	"properties": {
+		"Name": "relationship-ywimatanll",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IndustrySpecification",
+		"ToTableName": "ComponentIndustrySpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IndustrySpecificationId",
+				"ToColumnName": "IndustrySpecificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"toEntity\":\"ComponentIndustrySpecification.cdm.json/ComponentIndustrySpecification\",\"joinPairs\":[{\"fromAttribute\":\"IndustrySpecificationId\",\"toAttribute\":\"IndustrySpecificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

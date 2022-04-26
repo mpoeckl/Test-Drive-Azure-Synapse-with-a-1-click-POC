@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uiqborpjlt",
+	"properties": {
+		"Name": "relationship-uiqborpjlt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryLegalEntityRelationshipType",
+		"ToTableName": "RefineryRelatedLegalEntity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryLegalEntityRelationshipTypeId",
+				"ToColumnName": "RefineryLegalEntityRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"toEntity\":\"RefineryRelatedLegalEntity.cdm.json/RefineryRelatedLegalEntity\",\"joinPairs\":[{\"fromAttribute\":\"RefineryLegalEntityRelationshipTypeId\",\"toAttribute\":\"RefineryLegalEntityRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

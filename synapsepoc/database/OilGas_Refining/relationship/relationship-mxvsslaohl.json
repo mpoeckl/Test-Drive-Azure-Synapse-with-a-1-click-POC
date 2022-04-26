@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mxvsslaohl",
+	"properties": {
+		"Name": "relationship-mxvsslaohl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReading",
+		"ToTableName": "ComponentReadingError",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingTypeId",
+				"ToColumnName": "ReadingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"toEntity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"joinPairs\":[{\"fromAttribute\":\"ReadingTypeId\",\"toAttribute\":\"ReadingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

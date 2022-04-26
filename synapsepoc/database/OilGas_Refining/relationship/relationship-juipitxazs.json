@@ -1,0 +1,26 @@
+{
+	"name": "relationship-juipitxazs",
+	"properties": {
+		"Name": "relationship-juipitxazs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OilAndGasProduct",
+		"ToTableName": "StorageContainerActualStorage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"toEntity\":\"StorageContainerActualStorage.cdm.json/StorageContainerActualStorage\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

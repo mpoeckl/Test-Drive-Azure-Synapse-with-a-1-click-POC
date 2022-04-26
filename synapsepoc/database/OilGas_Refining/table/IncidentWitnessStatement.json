@@ -1,0 +1,122 @@
+{
+	"name": "IncidentWitnessStatement",
+	"properties": {
+		"Name": "IncidentWitnessStatement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A statement by a witnessing party related to the incident.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentWitnessStatement.cdm.json/IncidentWitnessStatement",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentWitnessStatement.cdm.json/IncidentWitnessStatement",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentWitnessStatementTimestamp",
+					"Description": "The timestamp when the incident witness statement was provided.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentWitnessStatement.cdm.json/IncidentWitnessStatement",
+						"Name": "IncidentWitnessStatementTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentWitnessStatement",
+					"Description": "A statement by a witness regarding the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentWitnessStatement.cdm.json/IncidentWitnessStatement",
+						"Name": "IncidentWitnessStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentWitnessStatement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentWitnessStatement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentId\"},\"PartyId\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"PartyId\"},\"IncidentWitnessStatementTimestamp\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentWitnessStatementTimestamp\"},\"IncidentWitnessStatement\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentWitnessStatement\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentWitnessStatement\",\"path\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\"},\"description\":\"A statement by a witnessing party related to the incident.\",\"primaryKey\":[\"IncidentId\",\"PartyId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentWitnessStatementTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp when the incident witness statement was provided.\",\"isNullable\":true,\"name\":\"IncidentWitnessStatementTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentWitnessStatement.cdm.json/IncidentWitnessStatement\",\"name\":\"IncidentWitnessStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement by a witness regarding the incident.\",\"isNullable\":true,\"name\":\"IncidentWitnessStatement\"}]}}}",
+			"Description": "A statement by a witnessing party related to the incident.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,PartyId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

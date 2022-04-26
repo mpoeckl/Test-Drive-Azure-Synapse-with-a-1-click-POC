@@ -1,0 +1,106 @@
+{
+	"name": "RefineryEventComponentRelationshipType",
+	"properties": {
+		"Name": "RefineryEventComponentRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a Refinery Event and Component.\n\nEx:\n- Caused-by Component\n- Damaged-by Component\n- Destroyed-by Component\n- Replaced due to - Component\n- Suspect Component\n- Repaired-due to - Component",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventComponentRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Event Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType",
+						"Name": "RefineryEventComponentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventComponentRelationshipTypeName",
+					"Description": "The name of a Refinery Event Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType",
+						"Name": "RefineryEventComponentRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventComponentRelationshipTypeDescription",
+					"Description": "The description of a Refinery Event Component Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType",
+						"Name": "RefineryEventComponentRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventComponentRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventComponentRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventComponentRelationshipTypeId\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeId\"},\"RefineryEventComponentRelationshipTypeName\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeName\"},\"RefineryEventComponentRelationshipTypeDescription\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventComponentRelationshipType\",\"path\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\"},\"description\":\"The nature of the relationship between a Refinery Event and Component.\\n\\nEx:\\n- Caused-by Component\\n- Damaged-by Component\\n- Destroyed-by Component\\n- Replaced due to - Component\\n- Suspect Component\\n- Repaired-due to - Component\",\"primaryKey\":[\"RefineryEventComponentRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Component Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryEventComponentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Event Component Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventComponentRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Event Component Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventComponentRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a Refinery Event and Component.\n\nEx:\n- Caused-by Component\n- Damaged-by Component\n- Destroyed-by Component\n- Replaced due to - Component\n- Suspect Component\n- Repaired-due to - Component",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventComponentRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

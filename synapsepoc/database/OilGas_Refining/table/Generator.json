@@ -1,0 +1,638 @@
+{
+	"name": "Generator",
+	"properties": {
+		"Name": "Generator",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A device that converts a source of mechanical energy (for example, a diesel or natural gas engine) into electrical energy. \n\nAn electromagnetic device that converts mechanical (rotational) energy into electrical energy. Most large electrical generators are driven by steam or water turbine systems.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorId",
+					"Description": "The unique identifier of a Generator.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturerName",
+					"Description": "The name of the party that manufactured the generator.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "ManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ModelNumber",
+					"Description": "The generator model number.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "ModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The generator serial number.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "SerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CountryOfManufacture",
+					"Description": "The country of manufacturer of the generator.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "CountryOfManufacture"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 64,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NormalLifeSpanYears",
+					"Description": "The normal life span of the generator expressed in years.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "NormalLifeSpanYears"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ScheduledGeneratorIndicator",
+					"Description": "A generating unit which has a nameplate rating of 30 MW or greater or is part of a group of generating units connected at a common connection point with a combined nameplate rating of 30 MW or greater must be classified as a scheduled generating unit unless NEMMCO approves its classification as:\n(1) a semi-scheduled generating unit under clause 2.2.7(b); or\n(2) a non-scheduled generating unit in accordance with clause 2.2.3(b). Refer to the National Electricity Rules",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "ScheduledGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SemiScheduledGeneratorIndicator",
+					"Description": "A generating unit which has a nameplate rating of 30 MW or greater or is part of a group of generating units connected at a common connection point with a combined nameplate rated of 30 MW or greater, must be classified as a semi- scheduled generating unit where the output of the generating unit is intermittent unless NEMMCO approves its classification as :\n(1) a scheduled generating unit under clause 2.2.2(b); or\n(2) a non-scheduled generating unit under clause 2.2.3(b). Refer to the National Electricity Rules.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "SemiScheduledGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BaseLoadGeneratingFacilityIndicator",
+					"Description": "Those generating facilities within a utility system that are operated to the greatest extent possible to maximize system mechanical and thermal efficiency and minimize system operating costs.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "BaseLoadGeneratingFacilityIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "IntermittentGeneratorIndicator",
+					"Description": "A description of a generating unit whose output is not readily predictable, including, without limitation, solar generators, wave turbine generators, wind turbine generators and hydro-generators without any material storage capability",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "IntermittentGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AlternatingGeneratorIndicator",
+					"Description": "An electric generator for producing alternating current.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AlternatingGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AsynchronousGeneratingUnitIndicator",
+					"Description": "Generators that are not synchronized to the system frequency, typically wind turbines and Photovoltaic cells",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AsynchronousGeneratingUnitIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PeakingGeneratorIndicator",
+					"Description": "A generating system designed to run almost constantly at near maximum capacity levels, usually at lower cost than intermediate or peaking generating systems.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "PeakingGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BackStartCapabilityIndicator",
+					"Description": "In relation to a generating unit, the ability to start and synchronize without using supply from the power system. \n\nA capability that allows a generating unit, following its disconnection from the power system, to be able to deliver electricity to either: (a) its connection point; or (b) a suitable point in the network from which supply can be made available to other generating units, without taking supply from any part of the power system following disconnection.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "BackStartCapabilityIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "EmbeddedGeneratorIndicator",
+					"Description": "A generator connected to the distribution network, or connected to a distribution network customer.  (Not a transmission connected generator).\n\nNational Electricity Rules Definition :\nA generator connected within a distribution network and not having direct access to the transmission network.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "EmbeddedGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ExemptedGeneratorIndicator",
+					"Description": "A generator exempted from the registration process, typically below 5MW and non-market.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "ExemptedGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NonScheduledGeneratorIndicator",
+					"Description": "A generator that: \n\nsells energy into the energy spot market, and \nis not scheduled by AERO as part of central dispatch, and \nhas been classified as an MNS generating unit in accordance with Chapter 2 of the NER.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "NonScheduledGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MarketScheduledGeneratorIndicator",
+					"Description": "A generator that: \n\nsells energy into the energy spot market\nis scheduled by AERO as part of central dispatch, and \nhas been classified as an MS generating unit in accordance with Chapter 2 of the NER.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "MarketScheduledGeneratorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "NonMarketScheduledGeneratorNmsIndicator",
+					"Description": "A generator that: \n\nsells its entire output directly to a local retailer or customer at the same connection point under a power purchase agreement (not through the spot market), and \nis scheduled by AERO as part of central dispatch, and \nhas been classified as an NMS generating unit in accordance with Chapter 2 of the NER.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "NonMarketScheduledGeneratorNmsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TimeToFireupFromColdStateMinutes",
+					"Description": "Gas and Coal-fired Boilers   8-48 hours\nGas Turbine   20 minutes\nWater (Hydro)   1 minute\nRenewable (Wind/Solar)   dependent on prevailing weather",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "TimeToFireupFromColdStateMinutes"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CompanyOwnedIndicator",
+					"Description": "Indicates whether the generator is owned by the company or an external party.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "CompanyOwnedIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorTypeId",
+					"Description": "The unique identifier of a Generator Type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratingStationId",
+					"Description": "The unique identifier of a Generating Station.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratingStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorCoolingMethodTypeId",
+					"Description": "The unique identifier of a Generator Cooling Method.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorCoolingMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TurbineId",
+					"Description": "The unique identifier of a Turbine.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "TurbineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DamId",
+					"Description": "The unique identifier of a Dam.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "DamId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FuelTypeId",
+					"Description": "The unique identifier of a fuel type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "FuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AsperationTypeId",
+					"Description": "The unique identifier of an asperation type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AsperationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorCoolingSystemTypeId",
+					"Description": "The unique identifier of a Generator Cooling System Type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorCoolingSystemTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UninterruptablePowerSupplyIndicator",
+					"Description": "Indicates that the generator has an uninterruptable power supply.\n\nA system designed to provide power without delay or transients during any period that the normal power supply is incapable of performing acceptably. To avoid a brief (10-20 second) interruption of power, a UPS can be used on critical equipment to provide continuous power during the seconds between a utility outage and the restoration of back-up power provided by a standby generator.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "UninterruptablePowerSupplyIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticTransferSwitchIndicator",
+					"Description": "Indicates that the generator has an automatic transfer switch.\n\nA mechanical device that switches an electrical load from a preferred source, usually a utility service, to an alternate source, usually an emergency generator. It also incorporates controls to start and stop the generator and timer functions to coordinate the transfer.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AutomaticTransferSwitchIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticControlPanelIndicator",
+					"Description": "A unit that starts the genset in case of mains failure, main circuit breaker, differential protection and all auxiliary controls and alarms.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AutomaticControlPanelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticVoltageRegulatorIndicator",
+					"Description": "An electronic device designed to increase accuracy on output voltage of alternators.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "AutomaticVoltageRegulatorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorFuelTypeId",
+					"Description": "The unique identifier of a generator fuel type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorFuelTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorPowerPhaseTypeId",
+					"Description": "The unique identifier of a generator power phase type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorPowerPhaseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorEnclosureTypeId",
+					"Description": "The unique identifier of a generator enclosure type.",
+					"BaseAttributeReference": {
+						"Entity": "Generator.cdm.json/Generator",
+						"Name": "GeneratorEnclosureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Generator",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Generator",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorId\"},\"ManufacturerName\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ManufacturerName\"},\"ModelNumber\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ModelNumber\"},\"SerialNumber\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"SerialNumber\"},\"CountryOfManufacture\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"CountryOfManufacture\"},\"NormalLifeSpanYears\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NormalLifeSpanYears\"},\"ScheduledGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ScheduledGeneratorIndicator\"},\"SemiScheduledGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"SemiScheduledGeneratorIndicator\"},\"BaseLoadGeneratingFacilityIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"BaseLoadGeneratingFacilityIndicator\"},\"IntermittentGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"IntermittentGeneratorIndicator\"},\"AlternatingGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AlternatingGeneratorIndicator\"},\"AsynchronousGeneratingUnitIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AsynchronousGeneratingUnitIndicator\"},\"PeakingGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"PeakingGeneratorIndicator\"},\"BackStartCapabilityIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"BackStartCapabilityIndicator\"},\"EmbeddedGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"EmbeddedGeneratorIndicator\"},\"ExemptedGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ExemptedGeneratorIndicator\"},\"NonScheduledGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NonScheduledGeneratorIndicator\"},\"MarketScheduledGeneratorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"MarketScheduledGeneratorIndicator\"},\"NonMarketScheduledGeneratorNmsIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NonMarketScheduledGeneratorNmsIndicator\"},\"TimeToFireupFromColdStateMinutes\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"TimeToFireupFromColdStateMinutes\"},\"CompanyOwnedIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"CompanyOwnedIndicator\"},\"GeneratorTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorTypeId\"},\"GeneratingStationId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratingStationId\"},\"GeneratorCoolingMethodTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorCoolingMethodTypeId\"},\"TurbineId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"TurbineId\"},\"DamId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"DamId\"},\"FuelTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"FuelTypeId\"},\"AsperationTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AsperationTypeId\"},\"GeneratorCoolingSystemTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorCoolingSystemTypeId\"},\"UninterruptablePowerSupplyIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"UninterruptablePowerSupplyIndicator\"},\"AutomaticTransferSwitchIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticTransferSwitchIndicator\"},\"AutomaticControlPanelIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticControlPanelIndicator\"},\"AutomaticVoltageRegulatorIndicator\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticVoltageRegulatorIndicator\"},\"GeneratorFuelTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorFuelTypeId\"},\"GeneratorPowerPhaseTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorPowerPhaseTypeId\"},\"GeneratorEnclosureTypeId\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorEnclosureTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Generator\",\"path\":\"Generator.cdm.json/Generator\"},\"description\":\"A device that converts a source of mechanical energy (for example, a diesel or natural gas engine) into electrical energy. \\n\\nAn electromagnetic device that converts mechanical (rotational) energy into electrical energy. Most large electrical generators are driven by steam or water turbine systems.\",\"primaryKey\":[\"GeneratorId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generator.\",\"isNullable\":false,\"name\":\"GeneratorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the party that manufactured the generator.\",\"isNullable\":true,\"name\":\"ManufacturerName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The generator model number.\",\"isNullable\":true,\"name\":\"ModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The generator serial number.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"CountryOfManufacture\"},\"dataType\":\"string\",\"dataTypeLength\":64,\"description\":\"The country of manufacturer of the generator.\",\"isNullable\":true,\"name\":\"CountryOfManufacture\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NormalLifeSpanYears\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The normal life span of the generator expressed in years.\",\"isNullable\":true,\"scale\":2,\"name\":\"NormalLifeSpanYears\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ScheduledGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generating unit which has a nameplate rating of 30 MW or greater or is part of a group of generating units connected at a common connection point with a combined nameplate rating of 30 MW or greater must be classified as a scheduled generating unit unless NEMMCO approves its classification as:\\n(1) a semi-scheduled generating unit under clause 2.2.7(b); or\\n(2) a non-scheduled generating unit in accordance with clause 2.2.3(b). Refer to the National Electricity Rules\",\"isNullable\":true,\"name\":\"ScheduledGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"SemiScheduledGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generating unit which has a nameplate rating of 30 MW or greater or is part of a group of generating units connected at a common connection point with a combined nameplate rated of 30 MW or greater, must be classified as a semi- scheduled generating unit where the output of the generating unit is intermittent unless NEMMCO approves its classification as :\\n(1) a scheduled generating unit under clause 2.2.2(b); or\\n(2) a non-scheduled generating unit under clause 2.2.3(b). Refer to the National Electricity Rules.\",\"isNullable\":true,\"name\":\"SemiScheduledGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"BaseLoadGeneratingFacilityIndicator\"},\"dataType\":\"boolean\",\"description\":\"Those generating facilities within a utility system that are operated to the greatest extent possible to maximize system mechanical and thermal efficiency and minimize system operating costs.\",\"isNullable\":true,\"name\":\"BaseLoadGeneratingFacilityIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"IntermittentGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A description of a generating unit whose output is not readily predictable, including, without limitation, solar generators, wave turbine generators, wind turbine generators and hydro-generators without any material storage capability\",\"isNullable\":true,\"name\":\"IntermittentGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AlternatingGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"An electric generator for producing alternating current.\",\"isNullable\":true,\"name\":\"AlternatingGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AsynchronousGeneratingUnitIndicator\"},\"dataType\":\"boolean\",\"description\":\"Generators that are not synchronized to the system frequency, typically wind turbines and Photovoltaic cells\",\"isNullable\":true,\"name\":\"AsynchronousGeneratingUnitIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"PeakingGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generating system designed to run almost constantly at near maximum capacity levels, usually at lower cost than intermediate or peaking generating systems.\",\"isNullable\":true,\"name\":\"PeakingGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"BackStartCapabilityIndicator\"},\"dataType\":\"boolean\",\"description\":\"In relation to a generating unit, the ability to start and synchronize without using supply from the power system. \\n\\nA capability that allows a generating unit, following its disconnection from the power system, to be able to deliver electricity to either: (a) its connection point; or (b) a suitable point in the network from which supply can be made available to other generating units, without taking supply from any part of the power system following disconnection.\",\"isNullable\":true,\"name\":\"BackStartCapabilityIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"EmbeddedGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generator connected to the distribution network, or connected to a distribution network customer.  (Not a transmission connected generator).\\n\\nNational Electricity Rules Definition :\\nA generator connected within a distribution network and not having direct access to the transmission network.\",\"isNullable\":true,\"name\":\"EmbeddedGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"ExemptedGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generator exempted from the registration process, typically below 5MW and non-market.\",\"isNullable\":true,\"name\":\"ExemptedGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NonScheduledGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generator that: \\n\\nsells energy into the energy spot market, and \\nis not scheduled by AERO as part of central dispatch, and \\nhas been classified as an MNS generating unit in accordance with Chapter 2 of the NER.\",\"isNullable\":true,\"name\":\"NonScheduledGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"MarketScheduledGeneratorIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generator that: \\n\\nsells energy into the energy spot market\\nis scheduled by AERO as part of central dispatch, and \\nhas been classified as an MS generating unit in accordance with Chapter 2 of the NER.\",\"isNullable\":true,\"name\":\"MarketScheduledGeneratorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"NonMarketScheduledGeneratorNmsIndicator\"},\"dataType\":\"boolean\",\"description\":\"A generator that: \\n\\nsells its entire output directly to a local retailer or customer at the same connection point under a power purchase agreement (not through the spot market), and \\nis scheduled by AERO as part of central dispatch, and \\nhas been classified as an NMS generating unit in accordance with Chapter 2 of the NER.\",\"isNullable\":true,\"name\":\"NonMarketScheduledGeneratorNmsIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"TimeToFireupFromColdStateMinutes\"},\"dataType\":\"integer\",\"description\":\"Gas and Coal-fired Boilers   8-48 hours\\nGas Turbine   20 minutes\\nWater (Hydro)   1 minute\\nRenewable (Wind/Solar)   dependent on prevailing weather\",\"isNullable\":true,\"name\":\"TimeToFireupFromColdStateMinutes\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"CompanyOwnedIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the generator is owned by the company or an external party.\",\"isNullable\":true,\"name\":\"CompanyOwnedIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Generator Type.\",\"isNullable\":true,\"name\":\"GeneratorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratingStationId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generating Station.\",\"isNullable\":true,\"name\":\"GeneratingStationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorCoolingMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Generator Cooling Method.\",\"isNullable\":true,\"name\":\"GeneratorCoolingMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"TurbineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Turbine.\",\"isNullable\":true,\"name\":\"TurbineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"DamId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Dam.\",\"isNullable\":true,\"name\":\"DamId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"FuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fuel type.\",\"isNullable\":true,\"name\":\"FuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AsperationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an asperation type.\",\"isNullable\":true,\"name\":\"AsperationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorCoolingSystemTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Generator Cooling System Type.\",\"isNullable\":true,\"name\":\"GeneratorCoolingSystemTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"UninterruptablePowerSupplyIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the generator has an uninterruptable power supply.\\n\\nA system designed to provide power without delay or transients during any period that the normal power supply is incapable of performing acceptably. To avoid a brief (10-20 second) interruption of power, a UPS can be used on critical equipment to provide continuous power during the seconds between a utility outage and the restoration of back-up power provided by a standby generator.\",\"isNullable\":true,\"name\":\"UninterruptablePowerSupplyIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticTransferSwitchIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the generator has an automatic transfer switch.\\n\\nA mechanical device that switches an electrical load from a preferred source, usually a utility service, to an alternate source, usually an emergency generator. It also incorporates controls to start and stop the generator and timer functions to coordinate the transfer.\",\"isNullable\":true,\"name\":\"AutomaticTransferSwitchIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticControlPanelIndicator\"},\"dataType\":\"boolean\",\"description\":\"A unit that starts the genset in case of mains failure, main circuit breaker, differential protection and all auxiliary controls and alarms.\",\"isNullable\":true,\"name\":\"AutomaticControlPanelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"AutomaticVoltageRegulatorIndicator\"},\"dataType\":\"boolean\",\"description\":\"An electronic device designed to increase accuracy on output voltage of alternators.\",\"isNullable\":true,\"name\":\"AutomaticVoltageRegulatorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorFuelTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator fuel type.\",\"isNullable\":true,\"name\":\"GeneratorFuelTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorPowerPhaseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator power phase type.\",\"isNullable\":true,\"name\":\"GeneratorPowerPhaseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Generator.cdm.json/Generator\",\"name\":\"GeneratorEnclosureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator enclosure type.\",\"isNullable\":true,\"name\":\"GeneratorEnclosureTypeId\"}]}}}",
+			"Description": "A device that converts a source of mechanical energy (for example, a diesel or natural gas engine) into electrical energy. \n\nAn electromagnetic device that converts mechanical (rotational) energy into electrical energy. Most large electrical generators are driven by steam or water turbine systems.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

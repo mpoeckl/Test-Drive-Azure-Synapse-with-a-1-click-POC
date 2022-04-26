@@ -1,0 +1,106 @@
+{
+	"name": "BufferFluidType",
+	"properties": {
+		"Name": "BufferFluidType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The low pressure fluid that is circulated between dual mechanical seals.\n\nEx:\n-  Water and glycol solutions\n-  Petroleum-based hydraulic and lubricating oils\n-  Alcohols\n-  Synthetic hydraulic oils\n-  Kerosene and diesel fuels\n-  Heat transfer fluids",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BufferFluidTypeId",
+					"Description": "The unique identifier of a pump buffer fluid type.",
+					"BaseAttributeReference": {
+						"Entity": "BufferFluidType.cdm.json/BufferFluidType",
+						"Name": "BufferFluidTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BufferFluidTypeName",
+					"Description": "The name of a pump buffer fluid type.",
+					"BaseAttributeReference": {
+						"Entity": "BufferFluidType.cdm.json/BufferFluidType",
+						"Name": "BufferFluidTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BufferFluidTypeDescription",
+					"Description": "The description of a pump buffer fluid type.",
+					"BaseAttributeReference": {
+						"Entity": "BufferFluidType.cdm.json/BufferFluidType",
+						"Name": "BufferFluidTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BufferFluidType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BufferFluidType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BufferFluidTypeId\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeId\"},\"BufferFluidTypeName\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeName\"},\"BufferFluidTypeDescription\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BufferFluidType\",\"path\":\"BufferFluidType.cdm.json/BufferFluidType\"},\"description\":\"The low pressure fluid that is circulated between dual mechanical seals.\\n\\nEx:\\n-  Water and glycol solutions\\n-  Petroleum-based hydraulic and lubricating oils\\n-  Alcohols\\n-  Synthetic hydraulic oils\\n-  Kerosene and diesel fuels\\n-  Heat transfer fluids\",\"primaryKey\":[\"BufferFluidTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump buffer fluid type.\",\"isNullable\":false,\"name\":\"BufferFluidTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump buffer fluid type.\",\"isNullable\":true,\"name\":\"BufferFluidTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"name\":\"BufferFluidTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump buffer fluid type.\",\"isNullable\":true,\"name\":\"BufferFluidTypeDescription\"}]}}}",
+			"Description": "The low pressure fluid that is circulated between dual mechanical seals.\n\nEx:\n-  Water and glycol solutions\n-  Petroleum-based hydraulic and lubricating oils\n-  Alcohols\n-  Synthetic hydraulic oils\n-  Kerosene and diesel fuels\n-  Heat transfer fluids",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "BufferFluidTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

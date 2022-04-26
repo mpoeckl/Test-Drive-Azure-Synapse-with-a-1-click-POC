@@ -1,0 +1,122 @@
+{
+	"name": "FieldDevice",
+	"properties": {
+		"Name": "FieldDevice",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Field devices are instrumentation, data gathering units and communication systems. \n\nThe information measured by these field devices is  gathered in local remote terminal units for transmission in real time using communication systems, such as satellite channels, microwave links, or digital phone connections.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FieldDeviceId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDevice.cdm.json/FieldDevice",
+						"Name": "FieldDeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceName",
+					"Description": "The name of a field device.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDevice.cdm.json/FieldDevice",
+						"Name": "FieldDeviceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceDescription",
+					"Description": "The description of a field device.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDevice.cdm.json/FieldDevice",
+						"Name": "FieldDeviceDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceTypeId",
+					"Description": "The unique identifier of a Field Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDevice.cdm.json/FieldDevice",
+						"Name": "FieldDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FieldDevice",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FieldDevice",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FieldDeviceId\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceId\"},\"FieldDeviceName\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceName\"},\"FieldDeviceDescription\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceDescription\"},\"FieldDeviceTypeId\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FieldDevice\",\"path\":\"FieldDevice.cdm.json/FieldDevice\"},\"description\":\"Field devices are instrumentation, data gathering units and communication systems. \\n\\nThe information measured by these field devices is  gathered in local remote terminal units for transmission in real time using communication systems, such as satellite channels, microwave links, or digital phone connections.\",\"primaryKey\":[\"FieldDeviceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FieldDeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a field device.\",\"isNullable\":true,\"name\":\"FieldDeviceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a field device.\",\"isNullable\":true,\"name\":\"FieldDeviceDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Field Device Type.\",\"isNullable\":true,\"name\":\"FieldDeviceTypeId\"}]}}}",
+			"Description": "Field devices are instrumentation, data gathering units and communication systems. \n\nThe information measured by these field devices is  gathered in local remote terminal units for transmission in real time using communication systems, such as satellite channels, microwave links, or digital phone connections.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "FieldDeviceId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

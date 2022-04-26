@@ -1,0 +1,379 @@
+{
+	"name": "Refinery",
+	"properties": {
+		"Name": "Refinery",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An oil refinery or petroleum refinery is an industrial process plant where crude oil is processed and refined into more useful products such as petroleum naphtha, gasoline, diesel fuel, asphalt base, heating oil, kerosene, and liquefied petroleum gas.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryName",
+					"Description": "The name of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryDescription",
+					"Description": "A description of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTypeId",
+					"Description": "The unique identifier of a Refinery Type.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLatitude",
+					"Description": "The latitude location of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLongitude",
+					"Description": "The longitude location of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryFirstOperationalDate",
+					"Description": "The first date of operation of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryFirstOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLastOperationalDate",
+					"Description": "The last operation date of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryLastOperationalDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryFirstFeasibilityStudyStarted",
+					"Description": "The date that the refinery feasibility study was started.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryFirstFeasibilityStudyStarted"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryFeasibilityStudyAcceptedDate",
+					"Description": "The date that the refinery feasibility study was accepted.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryFeasibilityStudyAcceptedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryPermitsAppliedDate",
+					"Description": "The date that permits were applied for.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryPermitsAppliedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryPermitsReceivedDate",
+					"Description": "The date that permits were applied received for operation.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryPermitsReceivedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryConstructionStartDate",
+					"Description": "The date that Refinery Construction started.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryConstructionStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryConstructionCompletedDate",
+					"Description": "The date that Refinery Construction was completed.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryConstructionCompletedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryConstructionCostAmount",
+					"Description": "The refinery construction cost amount.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryConstructionCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryFirstProductionDate",
+					"Description": "The date of first production by the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryFirstProductionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLastProductionDate",
+					"Description": "The date of last production by the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryLastProductionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryClosureDate",
+					"Description": "The date that the refinery was closed.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "RefineryClosureDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DailyCapacityBarrelsPerDay",
+					"Description": "The daily capacity in barrels per day of the refinery.",
+					"BaseAttributeReference": {
+						"Entity": "Refinery.cdm.json/Refinery",
+						"Name": "DailyCapacityBarrelsPerDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Refinery",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Refinery",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryId\"},\"RefineryName\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryName\"},\"RefineryDescription\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryDescription\"},\"RefineryTypeId\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryTypeId\"},\"RefineryLatitude\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLatitude\"},\"RefineryLongitude\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLongitude\"},\"RefineryFirstOperationalDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstOperationalDate\"},\"RefineryLastOperationalDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastOperationalDate\"},\"RefineryFirstFeasibilityStudyStarted\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstFeasibilityStudyStarted\"},\"RefineryFeasibilityStudyAcceptedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFeasibilityStudyAcceptedDate\"},\"RefineryPermitsAppliedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsAppliedDate\"},\"RefineryPermitsReceivedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsReceivedDate\"},\"RefineryConstructionStartDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionStartDate\"},\"RefineryConstructionCompletedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCompletedDate\"},\"RefineryConstructionCostAmount\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCostAmount\"},\"RefineryFirstProductionDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstProductionDate\"},\"RefineryLastProductionDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastProductionDate\"},\"RefineryClosureDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryClosureDate\"},\"DailyCapacityBarrelsPerDay\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"DailyCapacityBarrelsPerDay\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Refinery\",\"path\":\"Refinery.cdm.json/Refinery\"},\"description\":\"An oil refinery or petroleum refinery is an industrial process plant where crude oil is processed and refined into more useful products such as petroleum naphtha, gasoline, diesel fuel, asphalt base, heating oil, kerosene, and liquefied petroleum gas.\",\"primaryKey\":[\"RefineryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the refinery.\",\"isNullable\":true,\"name\":\"RefineryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"A description of the refinery.\",\"isNullable\":true,\"name\":\"RefineryDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Type.\",\"isNullable\":true,\"name\":\"RefineryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The latitude location of the refinery.\",\"isNullable\":true,\"scale\":4,\"name\":\"RefineryLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The longitude location of the refinery.\",\"isNullable\":true,\"scale\":4,\"name\":\"RefineryLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first date of operation of the refinery.\",\"isNullable\":true,\"name\":\"RefineryFirstOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastOperationalDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The last operation date of the refinery.\",\"isNullable\":true,\"name\":\"RefineryLastOperationalDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstFeasibilityStudyStarted\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the refinery feasibility study was started.\",\"isNullable\":true,\"name\":\"RefineryFirstFeasibilityStudyStarted\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFeasibilityStudyAcceptedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the refinery feasibility study was accepted.\",\"isNullable\":true,\"name\":\"RefineryFeasibilityStudyAcceptedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsAppliedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that permits were applied for.\",\"isNullable\":true,\"name\":\"RefineryPermitsAppliedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsReceivedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that permits were applied received for operation.\",\"isNullable\":true,\"name\":\"RefineryPermitsReceivedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that Refinery Construction started.\",\"isNullable\":true,\"name\":\"RefineryConstructionStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCompletedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that Refinery Construction was completed.\",\"isNullable\":true,\"name\":\"RefineryConstructionCompletedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The refinery construction cost amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryConstructionCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstProductionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of first production by the refinery.\",\"isNullable\":true,\"name\":\"RefineryFirstProductionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastProductionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date of last production by the refinery.\",\"isNullable\":true,\"name\":\"RefineryLastProductionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryClosureDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the refinery was closed.\",\"isNullable\":true,\"name\":\"RefineryClosureDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"DailyCapacityBarrelsPerDay\"},\"dataType\":\"integer\",\"description\":\"The daily capacity in barrels per day of the refinery.\",\"isNullable\":true,\"name\":\"DailyCapacityBarrelsPerDay\"}]}}}",
+			"Description": "An oil refinery or petroleum refinery is an industrial process plant where crude oil is processed and refined into more useful products such as petroleum naphtha, gasoline, diesel fuel, asphalt base, heating oil, kerosene, and liquefied petroleum gas.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

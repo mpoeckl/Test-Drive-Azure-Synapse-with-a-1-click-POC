@@ -1,0 +1,138 @@
+{
+	"name": "AssetCondition",
+	"properties": {
+		"Name": "AssetCondition",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The state of readiness or operability of the asset.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetCondition.cdm.json/AssetCondition",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionDate",
+					"Description": "The date for which the asset condition is assessed.",
+					"BaseAttributeReference": {
+						"Entity": "AssetCondition.cdm.json/AssetCondition",
+						"Name": "AssetConditionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionRatingId",
+					"Description": "The unique identifier of an Asset Condition Rating.",
+					"BaseAttributeReference": {
+						"Entity": "AssetCondition.cdm.json/AssetCondition",
+						"Name": "AssetConditionRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionId",
+					"Description": "The unique identifier of an Asset Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "AssetCondition.cdm.json/AssetCondition",
+						"Name": "AssetInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetConditionNote",
+					"Description": "A note, comment or additional information regarding the asset condition.",
+					"BaseAttributeReference": {
+						"Entity": "AssetCondition.cdm.json/AssetCondition",
+						"Name": "AssetConditionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetCondition",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetCondition",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetId\"},\"AssetConditionDate\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionDate\"},\"AssetConditionRatingId\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionRatingId\"},\"AssetInspectionId\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetInspectionId\"},\"AssetConditionNote\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetCondition\",\"path\":\"AssetCondition.cdm.json/AssetCondition\"},\"description\":\"The state of readiness or operability of the asset.\",\"primaryKey\":[\"AssetId\",\"AssetConditionDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date for which the asset condition is assessed.\",\"isNullable\":false,\"name\":\"AssetConditionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Condition Rating.\",\"isNullable\":false,\"name\":\"AssetConditionRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetInspectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection.\",\"isNullable\":true,\"name\":\"AssetInspectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetCondition.cdm.json/AssetCondition\",\"name\":\"AssetConditionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the asset condition.\",\"isNullable\":true,\"name\":\"AssetConditionNote\"}]}}}",
+			"Description": "The state of readiness or operability of the asset.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetId,AssetConditionDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pjssydbkxx",
+	"properties": {
+		"Name": "relationship-pjssydbkxx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeneratorType",
+		"ToTableName": "Generator",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorTypeId",
+				"ToColumnName": "GeneratorTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeneratorType.cdm.json/GeneratorType\",\"toEntity\":\"Generator.cdm.json/Generator\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorTypeId\",\"toAttribute\":\"GeneratorTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

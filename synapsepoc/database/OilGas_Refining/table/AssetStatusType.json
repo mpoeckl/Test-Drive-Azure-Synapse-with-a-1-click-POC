@@ -1,0 +1,106 @@
+{
+	"name": "AssetStatusType",
+	"properties": {
+		"Name": "AssetStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A status type that may be applied to an asset for a period of time.\n\nEx:\n- Operational\n- In Maintenance\n- In Repair\n- Out Of Operation\n- In Consignment\n- In Storage\n- Retired\n- In Salvage\n- Abandoned\n- Unknown\n\nwhere:\n\nOPERATIONAL\nThe asset is in operation.\n\nIN MAINTENANCE\nThe asset is in maintenance.\n\nIN REPAIR\nThe asset is in repair.\n\nIN CONSIGNMENT\nThe asset is under consignment.\n\nIN STORAGE\nThe asset is in-storage\n\nRETIRED\nThe asset has been retired from service.\n\nIN SALVAGE\nTaking components from a piece of (usually outdated or non-functional) property for use in one or more other pieces of property",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetStatusTypeId",
+					"Description": "The unique identifier of an Asset Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetStatusType.cdm.json/AssetStatusType",
+						"Name": "AssetStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetStatusTypeName",
+					"Description": "The name of an Asset Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetStatusType.cdm.json/AssetStatusType",
+						"Name": "AssetStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetStatusTypeDescription",
+					"Description": "The description of an Asset Status Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetStatusType.cdm.json/AssetStatusType",
+						"Name": "AssetStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetStatusTypeId\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeId\"},\"AssetStatusTypeName\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeName\"},\"AssetStatusTypeDescription\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetStatusType\",\"path\":\"AssetStatusType.cdm.json/AssetStatusType\"},\"description\":\"A status type that may be applied to an asset for a period of time.\\n\\nEx:\\n- Operational\\n- In Maintenance\\n- In Repair\\n- Out Of Operation\\n- In Consignment\\n- In Storage\\n- Retired\\n- In Salvage\\n- Abandoned\\n- Unknown\\n\\nwhere:\\n\\nOPERATIONAL\\nThe asset is in operation.\\n\\nIN MAINTENANCE\\nThe asset is in maintenance.\\n\\nIN REPAIR\\nThe asset is in repair.\\n\\nIN CONSIGNMENT\\nThe asset is under consignment.\\n\\nIN STORAGE\\nThe asset is in-storage\\n\\nRETIRED\\nThe asset has been retired from service.\\n\\nIN SALVAGE\\nTaking components from a piece of (usually outdated or non-functional) property for use in one or more other pieces of property\",\"primaryKey\":[\"AssetStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Status Type.\",\"isNullable\":false,\"name\":\"AssetStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Asset Status Type.\",\"isNullable\":true,\"name\":\"AssetStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Asset Status Type.\",\"isNullable\":true,\"name\":\"AssetStatusTypeDescription\"}]}}}",
+			"Description": "A status type that may be applied to an asset for a period of time.\n\nEx:\n- Operational\n- In Maintenance\n- In Repair\n- Out Of Operation\n- In Consignment\n- In Storage\n- Retired\n- In Salvage\n- Abandoned\n- Unknown\n\nwhere:\n\nOPERATIONAL\nThe asset is in operation.\n\nIN MAINTENANCE\nThe asset is in maintenance.\n\nIN REPAIR\nThe asset is in repair.\n\nIN CONSIGNMENT\nThe asset is under consignment.\n\nIN STORAGE\nThe asset is in-storage\n\nRETIRED\nThe asset has been retired from service.\n\nIN SALVAGE\nTaking components from a piece of (usually outdated or non-functional) property for use in one or more other pieces of property",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

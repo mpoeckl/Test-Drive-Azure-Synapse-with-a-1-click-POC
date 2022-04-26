@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gazfjcrmei",
+	"properties": {
+		"Name": "relationship-gazfjcrmei",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchanger",
+		"ToTableName": "LogMeanTemperatureDifference",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerId",
+				"ToColumnName": "HeatExchangerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"toEntity\":\"LogMeanTemperatureDifference.cdm.json/LogMeanTemperatureDifference\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerId\",\"toAttribute\":\"HeatExchangerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

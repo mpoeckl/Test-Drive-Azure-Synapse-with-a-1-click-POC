@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kynpytrmxl",
+	"properties": {
+		"Name": "relationship-kynpytrmxl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OdorConcentrationType",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OdorConcentrationTypeId",
+				"ToColumnName": "OdorConcentrationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OdorConcentrationType.cdm.json/OdorConcentrationType\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"OdorConcentrationTypeId\",\"toAttribute\":\"OdorConcentrationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

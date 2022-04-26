@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wxanippetl",
+	"properties": {
+		"Name": "relationship-wxanippetl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchangerTubeLayoutType",
+		"ToTableName": "HeatExchanger",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerTubeLayoutTypeId",
+				"ToColumnName": "HeatExchangerTubeLayoutTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"toEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerTubeLayoutTypeId\",\"toAttribute\":\"HeatExchangerTubeLayoutTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,171 @@
+{
+	"name": "RefineryProcessProductProduced",
+	"properties": {
+		"Name": "RefineryProcessProductProduced",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of product output from the refinery process during the indicated period, which is either shipped directly (SHIPMENT) or stored in a storage tank and shipped later.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the product produced.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the product produced.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProductUnits",
+					"Description": "The product units/quantity produced.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "ProductUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessProductionProductNote",
+					"Description": "A note, comment or additional information regarding the refinery process production product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced",
+						"Name": "RefineryProcessProductionProductNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductProduced",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductProduced",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessId\"},\"ProductId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodEndTimestamp\"},\"ProductUnits\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessProductionProductNote\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessProductionProductNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessProductProduced\",\"path\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\"},\"description\":\"The quantity of product output from the refinery process during the indicated period, which is either shipped directly (SHIPMENT) or stored in a storage tank and shipped later.\",\"primaryKey\":[\"RefineryProcessId\",\"ProductId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the product produced.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the product produced.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductUnits\"},\"dataType\":\"integer\",\"description\":\"The product units/quantity produced.\",\"isNullable\":true,\"name\":\"ProductUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessProductionProductNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process production product.\",\"isNullable\":true,\"name\":\"RefineryProcessProductionProductNote\"}]}}}",
+			"Description": "The quantity of product output from the refinery process during the indicated period, which is either shipped directly (SHIPMENT) or stored in a storage tank and shipped later.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ProductId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

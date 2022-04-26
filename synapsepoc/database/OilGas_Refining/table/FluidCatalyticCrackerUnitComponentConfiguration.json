@@ -1,0 +1,139 @@
+{
+	"name": "FluidCatalyticCrackerUnitComponentConfiguration",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitComponentConfiguration",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Fluid Catalytic Cracker Unit Component(s) installed and operating during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration",
+						"Name": "FluidCatalyticCrackerUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the configuration.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the configuration.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitComponentConfigurationNote",
+					"Description": "A note, comment or additional information regarding the fluid catalytic cracker unit component configuration note.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration",
+						"Name": "FluidCatalyticCrackerUnitComponentConfigurationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponentConfiguration",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponentConfiguration",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitComponentId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"FluidCatalyticCrackerUnitComponentConfigurationNote\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitComponentConfigurationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitComponentConfiguration\",\"path\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\"},\"description\":\"The Fluid Catalytic Cracker Unit Component(s) installed and operating during the associated period.\",\"primaryKey\":[\"FluidCatalyticCrackerUnitComponentId\",\"FluidCatalyticCrackerUnitId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the configuration.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the configuration.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitComponentConfiguration.cdm.json/FluidCatalyticCrackerUnitComponentConfiguration\",\"name\":\"FluidCatalyticCrackerUnitComponentConfigurationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the fluid catalytic cracker unit component configuration note.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitComponentConfigurationNote\"}]}}}",
+			"Description": "The Fluid Catalytic Cracker Unit Component(s) installed and operating during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitComponentId,FluidCatalyticCrackerUnitId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

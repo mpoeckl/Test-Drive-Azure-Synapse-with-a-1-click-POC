@@ -1,0 +1,235 @@
+{
+	"name": "StorageContainerContent",
+	"properties": {
+		"Name": "StorageContainerContent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The contents of the storage container for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageContainerId",
+					"Description": "The unique identifier of a Storage Container.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "StorageContainerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "StorageUnits",
+					"Description": "The quantity of storage units.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "StorageUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockTypeId",
+					"Description": "The unique identifier of a feedstock type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "FeedstockTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AdditiveTypeId",
+					"Description": "The unique identifier of an additive type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "AdditiveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTypeId",
+					"Description": "The unique identifier of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "CatalystTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WasteMaterialTypeId",
+					"Description": "The unique identifier of a waste material type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "WasteMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankProductStorageNote",
+					"Description": "A note, comment or additional information regarding the storage tank product storage.",
+					"BaseAttributeReference": {
+						"Entity": "StorageContainerContent.cdm.json/StorageContainerContent",
+						"Name": "StorageTankProductStorageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerContent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerContent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageContainerId\"},\"ProductId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodEndTimestamp\"},\"StorageUnits\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageUnits\"},\"UnitOfMeasureId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"UnitOfMeasureId\"},\"FeedstockTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"FeedstockTypeId\"},\"AdditiveTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"AdditiveTypeId\"},\"CatalystTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"CatalystTypeId\"},\"WasteMaterialTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"WasteMaterialTypeId\"},\"StorageTankProductStorageNote\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageTankProductStorageNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageContainerContent\",\"path\":\"StorageContainerContent.cdm.json/StorageContainerContent\"},\"description\":\"The contents of the storage container for the associated period.\",\"primaryKey\":[\"StorageContainerId\",\"ProductId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageContainerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Container.\",\"isNullable\":false,\"name\":\"StorageContainerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity of storage units.\",\"isNullable\":true,\"name\":\"StorageUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"FeedstockTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feedstock type.\",\"isNullable\":true,\"name\":\"FeedstockTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"AdditiveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an additive type.\",\"isNullable\":true,\"name\":\"AdditiveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"CatalystTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a catalyst type.\",\"isNullable\":true,\"name\":\"CatalystTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"WasteMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a waste material type.\",\"isNullable\":true,\"name\":\"WasteMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageTankProductStorageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the storage tank product storage.\",\"isNullable\":true,\"name\":\"StorageTankProductStorageNote\"}]}}}",
+			"Description": "The contents of the storage container for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageContainerId,ProductId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

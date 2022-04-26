@@ -1,0 +1,106 @@
+{
+	"name": "EnvironmentalEmissionsType",
+	"properties": {
+		"Name": "EnvironmentalEmissionsType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of environmental emission.\n\nEx:\n- Water vapor (H2O)\n- Carbon dioxide (CO2)\n- Methane (CH4)\n- Nitrous oxide (N2O)\n- Ozone (O3)\n- Chlorofluorocarbons (CFCs)\n- Nitrogen (N)2)\n- Oxygen (O2)\n- Argon (AR)\n- Tetrafluoromethane (CF4)\n- Hexafluoroethane (C2F6)\n- Sulfur hexafluoride (SF6)\n- Nitrogen trifluoride (NF3)\n- Air Quality\n- Mercury\n- Nitrogen trifluoride \n- Sulfur dioxide",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "EnvironmentalEmissionsTypeId",
+					"Description": "The unique identifier of an environmental emissions type.",
+					"BaseAttributeReference": {
+						"Entity": "EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType",
+						"Name": "EnvironmentalEmissionsTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EnvironmentalEmissionsTypeName",
+					"Description": "The name of an environmental emissions type.",
+					"BaseAttributeReference": {
+						"Entity": "EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType",
+						"Name": "EnvironmentalEmissionsTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "EnvironmentalEmissionsTypeDescription",
+					"Description": "The description of an environmental emissions type.",
+					"BaseAttributeReference": {
+						"Entity": "EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType",
+						"Name": "EnvironmentalEmissionsTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/EnvironmentalEmissionsType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/EnvironmentalEmissionsType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EnvironmentalEmissionsTypeId\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeId\"},\"EnvironmentalEmissionsTypeName\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeName\"},\"EnvironmentalEmissionsTypeDescription\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"EnvironmentalEmissionsType\",\"path\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\"},\"description\":\"A type of environmental emission.\\n\\nEx:\\n- Water vapor (H2O)\\n- Carbon dioxide (CO2)\\n- Methane (CH4)\\n- Nitrous oxide (N2O)\\n- Ozone (O3)\\n- Chlorofluorocarbons (CFCs)\\n- Nitrogen (N)2)\\n- Oxygen (O2)\\n- Argon (AR)\\n- Tetrafluoromethane (CF4)\\n- Hexafluoroethane (C2F6)\\n- Sulfur hexafluoride (SF6)\\n- Nitrogen trifluoride (NF3)\\n- Air Quality\\n- Mercury\\n- Nitrogen trifluoride \\n- Sulfur dioxide\",\"primaryKey\":[\"EnvironmentalEmissionsTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an environmental emissions type.\",\"isNullable\":false,\"name\":\"EnvironmentalEmissionsTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an environmental emissions type.\",\"isNullable\":true,\"name\":\"EnvironmentalEmissionsTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an environmental emissions type.\",\"isNullable\":true,\"name\":\"EnvironmentalEmissionsTypeDescription\"}]}}}",
+			"Description": "A type of environmental emission.\n\nEx:\n- Water vapor (H2O)\n- Carbon dioxide (CO2)\n- Methane (CH4)\n- Nitrous oxide (N2O)\n- Ozone (O3)\n- Chlorofluorocarbons (CFCs)\n- Nitrogen (N)2)\n- Oxygen (O2)\n- Argon (AR)\n- Tetrafluoromethane (CF4)\n- Hexafluoroethane (C2F6)\n- Sulfur hexafluoride (SF6)\n- Nitrogen trifluoride (NF3)\n- Air Quality\n- Mercury\n- Nitrogen trifluoride \n- Sulfur dioxide",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "EnvironmentalEmissionsTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

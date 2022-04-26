@@ -1,0 +1,106 @@
+{
+	"name": "BarCodeStandard",
+	"properties": {
+		"Name": "BarCodeStandard",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The standard used for \"bar coding\".\n\nBar coding is the most widely used means of automatic identification technologies.\n\nThe equipment is reliable and inexpensive.\n\nA bar code is a series of light and dark printed bars pre-established to represent alphabetic and numeric characters in any number of standard schemes.  When a wand or a laser beam is run across the bars at a constant velocity, light is reflected from the bars and spaces in a series of pulses that can be electronically detected and converted into the appropriate characters.\n\nBar codes are printed and therefore cannot easily be updated.\n\nBar codes are therefore most appropriate when the information does not change rapidly.\n\nThe manner in which bars and spaces are organized is called a 'symbology'.\n\nThere are several bar coding symbologies in various levels of use:\n\nEx:\n-  UPC\n-  EAN (European Article Numbering)\n-  EAN 13\n-  EAN 8\n-  JAN (Japanese Article Numbering)\n-  Codabar\n-  Code 2 of 5\n-  Code 3 of 9\n-  Code 11\n-  Code 29\n-  Code 49\n-  Code 93\n-  Code 128\n-  Code 128 Auto\n-  Code 128A\n-  Code 128B\n-  Code 128C\n-  Extended 3 of 9\n-  Interleaved 2 of 5\n-  Logmars (Dept. of Defense)\n-  POSTNET\n-  Plessey\n-  Telepen\n-  UCC-128\n-  UPCE 11-Digit\n-  UPCE0 6-Digit\n-  UPCE1 6-Digit\n\nA bar code is series of narrow and wide black bars, narrow and wide white spaces that represent letters and numbers.\n\nWhy do so many codes exist?\n\nEach code was developed at a different point in time and represents a different state of the art and a various considerations regarding the equipment and technologies supported.\n\nExample:\n\n-  Bar Code 39 (industry standard), consists of 43 characters: 0-9, A-Z, 6 symbols and a space and has been adopted by the Department of Defense.\n\nAdherence to bar code standards is important for three primary reasons:\n\n(1)  When bar codes are received from vendors, they can be used to eliminate data entry\n\n(2)  If bar codes meet industry standards they can be used on shipments\n\n(3)  Using standard bar codes makes it easier to use with standard hardware and software\n\nwhere:\n\nCodabar\nCodabar is a variable length barcode that can encode 16 data characters including 0-9, plus the symbols - $ ; / . +. Codabar is used primarily for numeric data.\n\nCode 128 Auto\nCode 128 is a variable length barcode capable of encoding the entire 128 character \n\nCode 128A\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. \n\nCode 128B\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (B) allows all standard upper case alpha-numeric keyboard characters and lower case alpha characters.\n\nCode 128C\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (C) includes a set of 100 digit pairs from 00 to 99 inclusive. This allows double density numeric digits, two digits per barcoded character.\n\nCode 3 of 9\nThis barcode is an alphanumeric barcode allowing upper case letters and numbers. Each character consists of nine elements. 3 of the nine elements are wide, hence the name \"3 of 9\".\n\nCode 93\nCode 93 is an alpha-numeric barcode allowing upper case letters and numbers. BarCode/VBX will convert lower case letters to upper case before encoding them.\n\nEAN 13\nEAN barcodes are used when the country origin needs to be known. There are 13 digits in EAN 13, where the first two characters are used to define the country of origin, the next 10 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\n\nEAN 8\nEAN barcodes are used when the country origin needs to be known. There are 8 digits in EAN 8, where the first two characters are used to define the country of origin, the next 5 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\n\nExtended 3 of 9\nSimilar to Code 3 of 9 except that it allows the full 128 ASCII character set to be encoded by printing two barcode characters for each text character.\nExtended Code 93 - Similar to Code 93 except that it allows the full 128 character ASCII character set to be encoded.\n\nInterleaved 2 of 5\nThis is strictly a numeric barcode. Each encoded character is made up of five elements, two are wide and three are narrow. The number of characters to be printed must be an even number. If the number of characters to be printed is odd, a zero will be appended to the beginning of the code",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BarCodeStandardId",
+					"Description": "The unique identifier of a Bar Code Standard.",
+					"BaseAttributeReference": {
+						"Entity": "BarCodeStandard.cdm.json/BarCodeStandard",
+						"Name": "BarCodeStandardId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BarCodeStandardName",
+					"Description": "The name of the Bar Code Standard.",
+					"BaseAttributeReference": {
+						"Entity": "BarCodeStandard.cdm.json/BarCodeStandard",
+						"Name": "BarCodeStandardName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BarCodeStandardDescription",
+					"Description": "The description of the Bar Code Standard.",
+					"BaseAttributeReference": {
+						"Entity": "BarCodeStandard.cdm.json/BarCodeStandard",
+						"Name": "BarCodeStandardDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BarCodeStandard",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BarCodeStandard",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BarCodeStandardId\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardId\"},\"BarCodeStandardName\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardName\"},\"BarCodeStandardDescription\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BarCodeStandard\",\"path\":\"BarCodeStandard.cdm.json/BarCodeStandard\"},\"description\":\"The standard used for \\\"bar coding\\\".\\n\\nBar coding is the most widely used means of automatic identification technologies.\\n\\nThe equipment is reliable and inexpensive.\\n\\nA bar code is a series of light and dark printed bars pre-established to represent alphabetic and numeric characters in any number of standard schemes.  When a wand or a laser beam is run across the bars at a constant velocity, light is reflected from the bars and spaces in a series of pulses that can be electronically detected and converted into the appropriate characters.\\n\\nBar codes are printed and therefore cannot easily be updated.\\n\\nBar codes are therefore most appropriate when the information does not change rapidly.\\n\\nThe manner in which bars and spaces are organized is called a 'symbology'.\\n\\nThere are several bar coding symbologies in various levels of use:\\n\\nEx:\\n-  UPC\\n-  EAN (European Article Numbering)\\n-  EAN 13\\n-  EAN 8\\n-  JAN (Japanese Article Numbering)\\n-  Codabar\\n-  Code 2 of 5\\n-  Code 3 of 9\\n-  Code 11\\n-  Code 29\\n-  Code 49\\n-  Code 93\\n-  Code 128\\n-  Code 128 Auto\\n-  Code 128A\\n-  Code 128B\\n-  Code 128C\\n-  Extended 3 of 9\\n-  Interleaved 2 of 5\\n-  Logmars (Dept. of Defense)\\n-  POSTNET\\n-  Plessey\\n-  Telepen\\n-  UCC-128\\n-  UPCE 11-Digit\\n-  UPCE0 6-Digit\\n-  UPCE1 6-Digit\\n\\nA bar code is series of narrow and wide black bars, narrow and wide white spaces that represent letters and numbers.\\n\\nWhy do so many codes exist?\\n\\nEach code was developed at a different point in time and represents a different state of the art and a various considerations regarding the equipment and technologies supported.\\n\\nExample:\\n\\n-  Bar Code 39 (industry standard), consists of 43 characters: 0-9, A-Z, 6 symbols and a space and has been adopted by the Department of Defense.\\n\\nAdherence to bar code standards is important for three primary reasons:\\n\\n(1)  When bar codes are received from vendors, they can be used to eliminate data entry\\n\\n(2)  If bar codes meet industry standards they can be used on shipments\\n\\n(3)  Using standard bar codes makes it easier to use with standard hardware and software\\n\\nwhere:\\n\\nCodabar\\nCodabar is a variable length barcode that can encode 16 data characters including 0-9, plus the symbols - $ ; / . +. Codabar is used primarily for numeric data.\\n\\nCode 128 Auto\\nCode 128 is a variable length barcode capable of encoding the entire 128 character \\n\\nCode 128A\\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. \\n\\nCode 128B\\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (B) allows all standard upper case alpha-numeric keyboard characters and lower case alpha characters.\\n\\nCode 128C\\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (C) includes a set of 100 digit pairs from 00 to 99 inclusive. This allows double density numeric digits, two digits per barcoded character.\\n\\nCode 3 of 9\\nThis barcode is an alphanumeric barcode allowing upper case letters and numbers. Each character consists of nine elements. 3 of the nine elements are wide, hence the name \\\"3 of 9\\\".\\n\\nCode 93\\nCode 93 is an alpha-numeric barcode allowing upper case letters and numbers. BarCode/VBX will convert lower case letters to upper case before encoding them.\\n\\nEAN 13\\nEAN barcodes are used when the country origin needs to be known. There are 13 digits in EAN 13, where the first two characters are used to define the country of origin, the next 10 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\\n\\nEAN 8\\nEAN barcodes are used when the country origin needs to be known. There are 8 digits in EAN 8, where the first two characters are used to define the country of origin, the next 5 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\\n\\nExtended 3 of 9\\nSimilar to Code 3 of 9 except that it allows the full 128 ASCII character set to be encoded by printing two barcode characters for each text character.\\nExtended Code 93 - Similar to Code 93 except that it allows the full 128 character ASCII character set to be encoded.\\n\\nInterleaved 2 of 5\\nThis is strictly a numeric barcode. Each encoded character is made up of five elements, two are wide and three are narrow. The number of characters to be printed must be an even number. If the number of characters to be printed is odd, a zero will be appended to the beginning of the code\",\"primaryKey\":[\"BarCodeStandardId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Bar Code Standard.\",\"isNullable\":false,\"name\":\"BarCodeStandardId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Bar Code Standard.\",\"isNullable\":true,\"name\":\"BarCodeStandardName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BarCodeStandard.cdm.json/BarCodeStandard\",\"name\":\"BarCodeStandardDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Bar Code Standard.\",\"isNullable\":true,\"name\":\"BarCodeStandardDescription\"}]}}}",
+			"Description": "The standard used for \"bar coding\".\n\nBar coding is the most widely used means of automatic identification technologies.\n\nThe equipment is reliable and inexpensive.\n\nA bar code is a series of light and dark printed bars pre-established to represent alphabetic and numeric characters in any number of standard schemes.  When a wand or a laser beam is run across the bars at a constant velocity, light is reflected from the bars and spaces in a series of pulses that can be electronically detected and converted into the appropriate characters.\n\nBar codes are printed and therefore cannot easily be updated.\n\nBar codes are therefore most appropriate when the information does not change rapidly.\n\nThe manner in which bars and spaces are organized is called a 'symbology'.\n\nThere are several bar coding symbologies in various levels of use:\n\nEx:\n-  UPC\n-  EAN (European Article Numbering)\n-  EAN 13\n-  EAN 8\n-  JAN (Japanese Article Numbering)\n-  Codabar\n-  Code 2 of 5\n-  Code 3 of 9\n-  Code 11\n-  Code 29\n-  Code 49\n-  Code 93\n-  Code 128\n-  Code 128 Auto\n-  Code 128A\n-  Code 128B\n-  Code 128C\n-  Extended 3 of 9\n-  Interleaved 2 of 5\n-  Logmars (Dept. of Defense)\n-  POSTNET\n-  Plessey\n-  Telepen\n-  UCC-128\n-  UPCE 11-Digit\n-  UPCE0 6-Digit\n-  UPCE1 6-Digit\n\nA bar code is series of narrow and wide black bars, narrow and wide white spaces that represent letters and numbers.\n\nWhy do so many codes exist?\n\nEach code was developed at a different point in time and represents a different state of the art and a various considerations regarding the equipment and technologies supported.\n\nExample:\n\n-  Bar Code 39 (industry standard), consists of 43 characters: 0-9, A-Z, 6 symbols and a space and has been adopted by the Department of Defense.\n\nAdherence to bar code standards is important for three primary reasons:\n\n(1)  When bar codes are received from vendors, they can be used to eliminate data entry\n\n(2)  If bar codes meet industry standards they can be used on shipments\n\n(3)  Using standard bar codes makes it easier to use with standard hardware and software\n\nwhere:\n\nCodabar\nCodabar is a variable length barcode that can encode 16 data characters including 0-9, plus the symbols - $ ; / . +. Codabar is used primarily for numeric data.\n\nCode 128 Auto\nCode 128 is a variable length barcode capable of encoding the entire 128 character \n\nCode 128A\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. \n\nCode 128B\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (B) allows all standard upper case alpha-numeric keyboard characters and lower case alpha characters.\n\nCode 128C\nCode 128 is a variable length barcode capable of encoding the entire 128 character ASCII character set. Code 128 allows three subsets, A, B and C. This subset (C) includes a set of 100 digit pairs from 00 to 99 inclusive. This allows double density numeric digits, two digits per barcoded character.\n\nCode 3 of 9\nThis barcode is an alphanumeric barcode allowing upper case letters and numbers. Each character consists of nine elements. 3 of the nine elements are wide, hence the name \"3 of 9\".\n\nCode 93\nCode 93 is an alpha-numeric barcode allowing upper case letters and numbers. BarCode/VBX will convert lower case letters to upper case before encoding them.\n\nEAN 13\nEAN barcodes are used when the country origin needs to be known. There are 13 digits in EAN 13, where the first two characters are used to define the country of origin, the next 10 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\n\nEAN 8\nEAN barcodes are used when the country origin needs to be known. There are 8 digits in EAN 8, where the first two characters are used to define the country of origin, the next 5 are data, followed by the checksum. Both 2 and 5 digit supplementals are also supported.\n\nExtended 3 of 9\nSimilar to Code 3 of 9 except that it allows the full 128 ASCII character set to be encoded by printing two barcode characters for each text character.\nExtended Code 93 - Similar to Code 93 except that it allows the full 128 character ASCII character set to be encoded.\n\nInterleaved 2 of 5\nThis is strictly a numeric barcode. Each encoded character is made up of five elements, two are wide and three are narrow. The number of characters to be printed must be an even number. If the number of characters to be printed is odd, a zero will be appended to the beginning of the code",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "BarCodeStandardId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

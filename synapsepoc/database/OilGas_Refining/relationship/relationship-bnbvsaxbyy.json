@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bnbvsaxbyy",
+	"properties": {
+		"Name": "relationship-bnbvsaxbyy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "AssetType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "AssetTypeEmissionFactorUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"AssetType.cdm.json/AssetType\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"AssetTypeEmissionFactorUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "HydrocrackerUnitComponentType",
+	"properties": {
+		"Name": "HydrocrackerUnitComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type  of hydrocracker unit component that may be integrated with or supporting the operation of the hydrocracker unit.\n\nEx:\n- Reactor\n- Debutanizer column\n- Fractionator column\n- Gas oil stripper\n- Kerosene stripper\n- Heavy naphtha splitter\n- Heat Exchanger\n- Water-cooled Condenser\n- Sour water Stripper\n- Amine gas treating unit\n- Feed charge pump\n- Recycle furnace\n- High pressure separators",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitComponentTypeId",
+					"Description": "The unique identifier of a hydrocracker unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType",
+						"Name": "HydrocrackerUnitComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentTypeName",
+					"Description": "The name of a hydrocracker unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType",
+						"Name": "HydrocrackerUnitComponentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentTypeDescription",
+					"Description": "The description of a hydrocracker unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType",
+						"Name": "HydrocrackerUnitComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitComponentTypeId\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeId\"},\"HydrocrackerUnitComponentTypeName\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeName\"},\"HydrocrackerUnitComponentTypeDescription\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitComponentType\",\"path\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\"},\"description\":\"A type  of hydrocracker unit component that may be integrated with or supporting the operation of the hydrocracker unit.\\n\\nEx:\\n- Reactor\\n- Debutanizer column\\n- Fractionator column\\n- Gas oil stripper\\n- Kerosene stripper\\n- Heavy naphtha splitter\\n- Heat Exchanger\\n- Water-cooled Condenser\\n- Sour water Stripper\\n- Amine gas treating unit\\n- Feed charge pump\\n- Recycle furnace\\n- High pressure separators\",\"primaryKey\":[\"HydrocrackerUnitComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrocracker unit component type.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a hydrocracker unit component type.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitComponentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a hydrocracker unit component type.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitComponentTypeDescription\"}]}}}",
+			"Description": "A type  of hydrocracker unit component that may be integrated with or supporting the operation of the hydrocracker unit.\n\nEx:\n- Reactor\n- Debutanizer column\n- Fractionator column\n- Gas oil stripper\n- Kerosene stripper\n- Heavy naphtha splitter\n- Heat Exchanger\n- Water-cooled Condenser\n- Sour water Stripper\n- Amine gas treating unit\n- Feed charge pump\n- Recycle furnace\n- High pressure separators",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

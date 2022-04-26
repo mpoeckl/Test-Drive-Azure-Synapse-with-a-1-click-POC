@@ -1,0 +1,273 @@
+{
+	"name": "ComponentExtraordinaryRepair",
+	"properties": {
+		"Name": "ComponentExtraordinaryRepair",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Extraordinary repairs is work performed upon a network component that extends the life of the fixed asset for more than one year.  \n\nExtraordinary repairs are handled differently from an accounting perspective in that they are capitalized and not expensed.   \n\nExtraordinary repairs are charged to the accumulated depreciation account and therefore increase the book value of the network component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentExtraordinaryRepairId",
+					"Description": "The unique identifier of a Component Extraordinary Repair.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "ComponentExtraordinaryRepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairTypeId",
+					"Description": "The unique identifier of an Extraordinary Repairs Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "ExtraordinaryRepairTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RepairDescription",
+					"Description": "The description of a Repair.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RepairPlannedTimestamp",
+					"Description": "The timestamp that the Repair was planned to start.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairPlannedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RepairStartedTimestamp",
+					"Description": "The timestamp that Repair actually was started.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairStartedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RepairCompletedTimestamp",
+					"Description": "The timestamp that the Repair was completed.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairCompletedTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RepairEstimatedCost",
+					"Description": "The estimated cost of the Repair.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairEstimatedCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairActualCost",
+					"Description": "The actual cost of the Repair.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairActualCost"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RepairNote",
+					"Description": "Notes, comments or additional information regarding Extraordinary Repairs.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "RepairNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "VendorId",
+					"Description": "The unique identifier of a Vendor.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "VendorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ContractId",
+					"Description": "The unique identifier of a Contract.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "ContractId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "WorkOrderId",
+					"Description": "The unique identifier of a Work Order.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair",
+						"Name": "WorkOrderId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentExtraordinaryRepair",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentExtraordinaryRepair",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentExtraordinaryRepairId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentExtraordinaryRepairId\"},\"ComponentId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentId\"},\"ExtraordinaryRepairTypeId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ExtraordinaryRepairTypeId\"},\"RepairDescription\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairDescription\"},\"RepairPlannedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairPlannedTimestamp\"},\"RepairStartedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairStartedTimestamp\"},\"RepairCompletedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairCompletedTimestamp\"},\"RepairEstimatedCost\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairEstimatedCost\"},\"RepairActualCost\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairActualCost\"},\"RepairNote\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairNote\"},\"VendorId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"VendorId\"},\"ContractId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ContractId\"},\"WorkOrderId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"WorkOrderId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentExtraordinaryRepair\",\"path\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\"},\"description\":\"Extraordinary repairs is work performed upon a network component that extends the life of the fixed asset for more than one year.  \\n\\nExtraordinary repairs are handled differently from an accounting perspective in that they are capitalized and not expensed.   \\n\\nExtraordinary repairs are charged to the accumulated depreciation account and therefore increase the book value of the network component.\",\"primaryKey\":[\"ComponentExtraordinaryRepairId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentExtraordinaryRepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Extraordinary Repair.\",\"isNullable\":false,\"name\":\"ComponentExtraordinaryRepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ExtraordinaryRepairTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Extraordinary Repairs Type.\",\"isNullable\":false,\"name\":\"ExtraordinaryRepairTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Repair.\",\"isNullable\":true,\"name\":\"RepairDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairPlannedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Repair was planned to start.\",\"isNullable\":true,\"name\":\"RepairPlannedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairStartedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that Repair actually was started.\",\"isNullable\":true,\"name\":\"RepairStartedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairCompletedTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the Repair was completed.\",\"isNullable\":true,\"name\":\"RepairCompletedTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairEstimatedCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The estimated cost of the Repair.\",\"isNullable\":true,\"scale\":2,\"name\":\"RepairEstimatedCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairActualCost\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The actual cost of the Repair.\",\"isNullable\":true,\"scale\":2,\"name\":\"RepairActualCost\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding Extraordinary Repairs.\",\"isNullable\":true,\"name\":\"RepairNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"VendorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Vendor.\",\"isNullable\":true,\"name\":\"VendorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ContractId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Contract.\",\"isNullable\":true,\"name\":\"ContractId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"WorkOrderId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Work Order.\",\"isNullable\":true,\"name\":\"WorkOrderId\"}]}}}",
+			"Description": "Extraordinary repairs is work performed upon a network component that extends the life of the fixed asset for more than one year.  \n\nExtraordinary repairs are handled differently from an accounting perspective in that they are capitalized and not expensed.   \n\nExtraordinary repairs are charged to the accumulated depreciation account and therefore increase the book value of the network component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentExtraordinaryRepairId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

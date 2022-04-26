@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessRelationshipType",
+	"properties": {
+		"Name": "RefineryProcessRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between Refinery Process(es)\n\nEx:\n-  Prerequisite Process\n-  Subsequent Process\n-  Alternate Process\n-  Rescheduled\n-  Restarted",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessRelationshipTypeId",
+					"Description": "The unique identifier of a refinery process relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType",
+						"Name": "RefineryProcessRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessRelationshipTypeName",
+					"Description": "The name of a refinery process relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType",
+						"Name": "RefineryProcessRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessRelationshipTypeDescription",
+					"Description": "The description of a refinery process relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType",
+						"Name": "RefineryProcessRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessRelationshipTypeId\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeId\"},\"RefineryProcessRelationshipTypeName\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeName\"},\"RefineryProcessRelationshipTypeDescription\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessRelationshipType\",\"path\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\"},\"description\":\"The nature of the relationship between Refinery Process(es)\\n\\nEx:\\n-  Prerequisite Process\\n-  Subsequent Process\\n-  Alternate Process\\n-  Rescheduled\\n-  Restarted\",\"primaryKey\":[\"RefineryProcessRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process relationship type.\",\"isNullable\":false,\"name\":\"RefineryProcessRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery process relationship type.\",\"isNullable\":true,\"name\":\"RefineryProcessRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessRelationshipType.cdm.json/RefineryProcessRelationshipType\",\"name\":\"RefineryProcessRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery process relationship type.\",\"isNullable\":true,\"name\":\"RefineryProcessRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between Refinery Process(es)\n\nEx:\n-  Prerequisite Process\n-  Subsequent Process\n-  Alternate Process\n-  Rescheduled\n-  Restarted",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

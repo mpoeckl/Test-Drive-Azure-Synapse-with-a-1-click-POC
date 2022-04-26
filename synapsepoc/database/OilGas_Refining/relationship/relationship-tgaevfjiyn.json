@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tgaevfjiyn",
+	"properties": {
+		"Name": "relationship-tgaevfjiyn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "GeographicArea",
+		"ToTableName": "LocationGeographicArea",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeographicAreaId",
+				"ToColumnName": "GeographicAreaId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"GeographicArea.cdm.json/GeographicArea\",\"toEntity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"joinPairs\":[{\"fromAttribute\":\"GeographicAreaId\",\"toAttribute\":\"GeographicAreaId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

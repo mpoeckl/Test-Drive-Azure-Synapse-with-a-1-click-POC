@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uqmikiboio",
+	"properties": {
+		"Name": "relationship-uqmikiboio",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FieldDevice",
+		"ToTableName": "PipeFieldDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FieldDeviceId",
+				"ToColumnName": "FieldDeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FieldDevice.cdm.json/FieldDevice\",\"toEntity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"joinPairs\":[{\"fromAttribute\":\"FieldDeviceId\",\"toAttribute\":\"FieldDeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

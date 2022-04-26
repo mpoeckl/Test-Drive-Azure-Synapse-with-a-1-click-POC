@@ -1,0 +1,203 @@
+{
+	"name": "IncidentRefineryOutage",
+	"properties": {
+		"Name": "IncidentRefineryOutage",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Metrics related to the Refinery Incident outage.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated Incident Outage information is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated Incident Outage information is calculated.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryIncidentOutageProductionHours",
+					"Description": "The number of refinery production hours that were lost as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "TotalRefineryIncidentOutageProductionHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryIncidentOutageWorkHoursMissed",
+					"Description": "The number of refinery work hours that were lost as a result of the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "TotalRefineryIncidentOutageWorkHoursMissed"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryIncidentOutageDirectLostProductionHours",
+					"Description": "The total number of direct refinery production hours lost due to the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "TotalRefineryIncidentOutageDirectLostProductionHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TotalRefineryIncidentOutageIndirectLostProductionHours",
+					"Description": "The total number of indirect refinery production hours lost due to the incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "TotalRefineryIncidentOutageIndirectLostProductionHours"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentRefineryOutageNote",
+					"Description": "A note, comment or additional information regarding the refinery incident outage relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentRefineryOutage.cdm.json/IncidentRefineryOutage",
+						"Name": "IncidentRefineryOutageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRefineryOutage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRefineryOutage",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"RefineryId\"},\"IncidentId\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"IncidentId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"PeriodEndTimestamp\"},\"TotalRefineryIncidentOutageProductionHours\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageProductionHours\"},\"TotalRefineryIncidentOutageWorkHoursMissed\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageWorkHoursMissed\"},\"TotalRefineryIncidentOutageDirectLostProductionHours\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageDirectLostProductionHours\"},\"TotalRefineryIncidentOutageIndirectLostProductionHours\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageIndirectLostProductionHours\"},\"IncidentRefineryOutageNote\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"IncidentRefineryOutageNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentRefineryOutage\",\"path\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\"},\"description\":\"Metrics related to the Refinery Incident outage.\",\"primaryKey\":[\"RefineryId\",\"IncidentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated Incident Outage information is calculated.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated Incident Outage information is calculated.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageProductionHours\"},\"dataType\":\"integer\",\"description\":\"The number of refinery production hours that were lost as a result of the incident.\",\"isNullable\":true,\"name\":\"TotalRefineryIncidentOutageProductionHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageWorkHoursMissed\"},\"dataType\":\"integer\",\"description\":\"The number of refinery work hours that were lost as a result of the incident.\",\"isNullable\":true,\"name\":\"TotalRefineryIncidentOutageWorkHoursMissed\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageDirectLostProductionHours\"},\"dataType\":\"integer\",\"description\":\"The total number of direct refinery production hours lost due to the incident.\",\"isNullable\":true,\"name\":\"TotalRefineryIncidentOutageDirectLostProductionHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"TotalRefineryIncidentOutageIndirectLostProductionHours\"},\"dataType\":\"integer\",\"description\":\"The total number of indirect refinery production hours lost due to the incident.\",\"isNullable\":true,\"name\":\"TotalRefineryIncidentOutageIndirectLostProductionHours\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentRefineryOutage.cdm.json/IncidentRefineryOutage\",\"name\":\"IncidentRefineryOutageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery incident outage relationship.\",\"isNullable\":true,\"name\":\"IncidentRefineryOutageNote\"}]}}}",
+			"Description": "Metrics related to the Refinery Incident outage.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,IncidentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

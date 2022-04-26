@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kbhcbrwydh",
+	"properties": {
+		"Name": "relationship-kbhcbrwydh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageContainer",
+		"ToTableName": "StorageContainerStorageCapacity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageContainerId",
+				"ToColumnName": "StorageContainerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageContainer.cdm.json/StorageContainer\",\"toEntity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"joinPairs\":[{\"fromAttribute\":\"StorageContainerId\",\"toAttribute\":\"StorageContainerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

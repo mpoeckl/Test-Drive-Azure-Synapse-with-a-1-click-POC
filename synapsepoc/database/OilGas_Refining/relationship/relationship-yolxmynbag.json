@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yolxmynbag",
+	"properties": {
+		"Name": "relationship-yolxmynbag",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentTreatmentType",
+		"ToTableName": "IncidentInjuryRelatedTreatment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentTreatmentTypeId",
+				"ToColumnName": "IncidentTreatmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"toEntity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"joinPairs\":[{\"fromAttribute\":\"IncidentTreatmentTypeId\",\"toAttribute\":\"IncidentTreatmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

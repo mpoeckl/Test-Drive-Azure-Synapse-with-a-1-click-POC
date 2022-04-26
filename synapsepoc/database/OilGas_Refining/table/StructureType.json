@@ -1,0 +1,106 @@
+{
+	"name": "StructureType",
+	"properties": {
+		"Name": "StructureType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of structure.\n\nEx:\n- Apartment (Multi-Story)\n- Apartment (Single Story)\n- Arena\n- Assembly Area\n- Barn\n- Barracks\n- Building\n- Cemetery\n- Church\n- Commercial (Multi-Story)\n- Commercial (Single Story)\n- Control Room\n- Dam\n- Derrick\n- Facility\n- Fire Station\n- Fuel Storage Facility\n- Garage\n- Generator\n- Golf Course\n- Hospital\n- Hotel/Motel (Multi-Story)\n- Hotel/Motel (Single-Story)\n- House (Detached, Multi-Story)\n- House (Detached, Single-Story)\n- House (Duplex, Multi-Story)\n- House (Duplex, Single-Story)\n- Industrial\n- Manufacturing\n- Mobile Trailer\n- Nursing Home\n- Outbuilding\n- Park\n- Parking Lot\n- Powerhouse\n- Prison\n- Residence (Condominium)\n- Residence (Duplex)\n- Residence (Multi-Unit Townhouse)\n- Residence (Single Family)\n- Residence (Trailer)\n- School\n- Service Department\n- Shed\n- Tower\n- Turbine\n- Theme Park\n- Unknown\n- Warehouse\n- Water Source\n- Well Rig",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureTypeId",
+					"Description": "The unique identifier of a structure type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureType.cdm.json/StructureType",
+						"Name": "StructureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StructureTypeName",
+					"Description": "The name of a structure type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureType.cdm.json/StructureType",
+						"Name": "StructureTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StructureTypeDescription",
+					"Description": "The description of a structure type.",
+					"BaseAttributeReference": {
+						"Entity": "StructureType.cdm.json/StructureType",
+						"Name": "StructureTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureTypeId\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeId\"},\"StructureTypeName\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeName\"},\"StructureTypeDescription\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureType\",\"path\":\"StructureType.cdm.json/StructureType\"},\"description\":\"The type of structure.\\n\\nEx:\\n- Apartment (Multi-Story)\\n- Apartment (Single Story)\\n- Arena\\n- Assembly Area\\n- Barn\\n- Barracks\\n- Building\\n- Cemetery\\n- Church\\n- Commercial (Multi-Story)\\n- Commercial (Single Story)\\n- Control Room\\n- Dam\\n- Derrick\\n- Facility\\n- Fire Station\\n- Fuel Storage Facility\\n- Garage\\n- Generator\\n- Golf Course\\n- Hospital\\n- Hotel/Motel (Multi-Story)\\n- Hotel/Motel (Single-Story)\\n- House (Detached, Multi-Story)\\n- House (Detached, Single-Story)\\n- House (Duplex, Multi-Story)\\n- House (Duplex, Single-Story)\\n- Industrial\\n- Manufacturing\\n- Mobile Trailer\\n- Nursing Home\\n- Outbuilding\\n- Park\\n- Parking Lot\\n- Powerhouse\\n- Prison\\n- Residence (Condominium)\\n- Residence (Duplex)\\n- Residence (Multi-Unit Townhouse)\\n- Residence (Single Family)\\n- Residence (Trailer)\\n- School\\n- Service Department\\n- Shed\\n- Tower\\n- Turbine\\n- Theme Park\\n- Unknown\\n- Warehouse\\n- Water Source\\n- Well Rig\",\"primaryKey\":[\"StructureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure type.\",\"isNullable\":false,\"name\":\"StructureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a structure type.\",\"isNullable\":true,\"name\":\"StructureTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureType.cdm.json/StructureType\",\"name\":\"StructureTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a structure type.\",\"isNullable\":true,\"name\":\"StructureTypeDescription\"}]}}}",
+			"Description": "The type of structure.\n\nEx:\n- Apartment (Multi-Story)\n- Apartment (Single Story)\n- Arena\n- Assembly Area\n- Barn\n- Barracks\n- Building\n- Cemetery\n- Church\n- Commercial (Multi-Story)\n- Commercial (Single Story)\n- Control Room\n- Dam\n- Derrick\n- Facility\n- Fire Station\n- Fuel Storage Facility\n- Garage\n- Generator\n- Golf Course\n- Hospital\n- Hotel/Motel (Multi-Story)\n- Hotel/Motel (Single-Story)\n- House (Detached, Multi-Story)\n- House (Detached, Single-Story)\n- House (Duplex, Multi-Story)\n- House (Duplex, Single-Story)\n- Industrial\n- Manufacturing\n- Mobile Trailer\n- Nursing Home\n- Outbuilding\n- Park\n- Parking Lot\n- Powerhouse\n- Prison\n- Residence (Condominium)\n- Residence (Duplex)\n- Residence (Multi-Unit Townhouse)\n- Residence (Single Family)\n- Residence (Trailer)\n- School\n- Service Department\n- Shed\n- Tower\n- Turbine\n- Theme Park\n- Unknown\n- Warehouse\n- Water Source\n- Well Rig",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "StructureTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

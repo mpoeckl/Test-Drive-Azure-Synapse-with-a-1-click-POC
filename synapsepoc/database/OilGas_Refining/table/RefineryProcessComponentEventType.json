@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessComponentEventType",
+	"properties": {
+		"Name": "RefineryProcessComponentEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of event related to the refinery process component.\n\nEx:\n- Component Installation\n- Component Repair\n- Component Operation\n- Component Failure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessComponentEventTypeId",
+					"Description": "The unique identifier of a Refinery Process Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType",
+						"Name": "RefineryProcessComponentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessComponentEventTypeName",
+					"Description": "The name of a Refinery Process Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType",
+						"Name": "RefineryProcessComponentEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessComponentEventTypeDescription",
+					"Description": "The description of a Refinery Process Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType",
+						"Name": "RefineryProcessComponentEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentEventType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentEventType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessComponentEventTypeId\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeId\"},\"RefineryProcessComponentEventTypeName\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeName\"},\"RefineryProcessComponentEventTypeDescription\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessComponentEventType\",\"path\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\"},\"description\":\"A type of event related to the refinery process component.\\n\\nEx:\\n- Component Installation\\n- Component Repair\\n- Component Operation\\n- Component Failure\",\"primaryKey\":[\"RefineryProcessComponentEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Process Component Event Type.\",\"isNullable\":false,\"name\":\"RefineryProcessComponentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Process Component Event Type.\",\"isNullable\":true,\"name\":\"RefineryProcessComponentEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessComponentEventType.cdm.json/RefineryProcessComponentEventType\",\"name\":\"RefineryProcessComponentEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Process Component Event Type.\",\"isNullable\":true,\"name\":\"RefineryProcessComponentEventTypeDescription\"}]}}}",
+			"Description": "A type of event related to the refinery process component.\n\nEx:\n- Component Installation\n- Component Repair\n- Component Operation\n- Component Failure",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessComponentEventTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

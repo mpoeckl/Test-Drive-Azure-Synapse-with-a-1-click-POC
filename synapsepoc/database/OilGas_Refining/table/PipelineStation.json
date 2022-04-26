@@ -1,0 +1,189 @@
+{
+	"name": "PipelineStation",
+	"properties": {
+		"Name": "PipelineStation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A station located upon a length of pipe that performs a specific function.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineStationId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationName",
+					"Description": "The name of a pipeline station.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationDescription",
+					"Description": "The description of a pipeline station.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationTypeId",
+					"Description": "The unique identifier of a Pipeline Station Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationInitialConstructionStartDate",
+					"Description": "The start date of the initial construction of the pipeline station.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationInitialConstructionStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationInitialConstructionEndDate",
+					"Description": "The end date of the initial construction of the pipeline station.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationInitialConstructionEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationFirstOperationDate",
+					"Description": "The first operation date of the pipeline station.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineStationFirstOperationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStation.cdm.json/PipelineStation",
+						"Name": "PipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineStationId\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationId\"},\"PipelineStationName\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationName\"},\"PipelineStationDescription\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationDescription\"},\"PipelineStationTypeId\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationTypeId\"},\"PipelineStationInitialConstructionStartDate\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationInitialConstructionStartDate\"},\"PipelineStationInitialConstructionEndDate\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationInitialConstructionEndDate\"},\"PipelineStationFirstOperationDate\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationFirstOperationDate\"},\"PipelineId\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineStation\",\"path\":\"PipelineStation.cdm.json/PipelineStation\"},\"description\":\"A station located upon a length of pipe that performs a specific function.\",\"primaryKey\":[\"PipelineStationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipelineStationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pipeline station.\",\"isNullable\":true,\"name\":\"PipelineStationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pipeline station.\",\"isNullable\":true,\"name\":\"PipelineStationDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Station Type.\",\"isNullable\":true,\"name\":\"PipelineStationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationInitialConstructionStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The start date of the initial construction of the pipeline station.\",\"isNullable\":true,\"name\":\"PipelineStationInitialConstructionStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationInitialConstructionEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The end date of the initial construction of the pipeline station.\",\"isNullable\":true,\"name\":\"PipelineStationInitialConstructionEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineStationFirstOperationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operation date of the pipeline station.\",\"isNullable\":true,\"name\":\"PipelineStationFirstOperationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStation.cdm.json/PipelineStation\",\"name\":\"PipelineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline.\",\"isNullable\":true,\"name\":\"PipelineId\"}]}}}",
+			"Description": "A station located upon a length of pipe that performs a specific function.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineStationId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

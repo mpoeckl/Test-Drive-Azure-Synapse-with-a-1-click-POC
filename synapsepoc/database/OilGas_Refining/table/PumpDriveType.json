@@ -1,0 +1,106 @@
+{
+	"name": "PumpDriveType",
+	"properties": {
+		"Name": "PumpDriveType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A drive that regulates speed to the needed accuracy. \n\nEx:\n-  Open loop\n-  Slip compensation\n-  Encoder feedback",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpDriveTypeId",
+					"Description": "The unique identifier of a pump drive type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpDriveType.cdm.json/PumpDriveType",
+						"Name": "PumpDriveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpDriveTypeName",
+					"Description": "The name of a pump drive type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpDriveType.cdm.json/PumpDriveType",
+						"Name": "PumpDriveTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpDriveTypeDescription",
+					"Description": "The description of a pump drive type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpDriveType.cdm.json/PumpDriveType",
+						"Name": "PumpDriveTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpDriveType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpDriveType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpDriveTypeId\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeId\"},\"PumpDriveTypeName\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeName\"},\"PumpDriveTypeDescription\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpDriveType\",\"path\":\"PumpDriveType.cdm.json/PumpDriveType\"},\"description\":\"A drive that regulates speed to the needed accuracy. \\n\\nEx:\\n-  Open loop\\n-  Slip compensation\\n-  Encoder feedback\",\"primaryKey\":[\"PumpDriveTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump drive type.\",\"isNullable\":false,\"name\":\"PumpDriveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump drive type.\",\"isNullable\":true,\"name\":\"PumpDriveTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump drive type.\",\"isNullable\":true,\"name\":\"PumpDriveTypeDescription\"}]}}}",
+			"Description": "A drive that regulates speed to the needed accuracy. \n\nEx:\n-  Open loop\n-  Slip compensation\n-  Encoder feedback",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpDriveTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

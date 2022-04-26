@@ -1,0 +1,26 @@
+{
+	"name": "relationship-psozouejuz",
+	"properties": {
+		"Name": "relationship-psozouejuz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReading",
+		"ToTableName": "ComponentReadingAlarm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingStartTimestamp",
+				"ToColumnName": "ReadingStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"toEntity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"joinPairs\":[{\"fromAttribute\":\"ReadingStartTimestamp\",\"toAttribute\":\"ReadingStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

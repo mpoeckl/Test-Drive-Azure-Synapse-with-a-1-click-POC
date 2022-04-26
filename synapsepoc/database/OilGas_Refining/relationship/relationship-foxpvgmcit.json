@@ -1,0 +1,26 @@
+{
+	"name": "relationship-foxpvgmcit",
+	"properties": {
+		"Name": "relationship-foxpvgmcit",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessProductProduced",
+		"ToTableName": "RefineryProcessProductStorage",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"toEntity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

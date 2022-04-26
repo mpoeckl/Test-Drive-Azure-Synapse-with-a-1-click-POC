@@ -1,0 +1,26 @@
+{
+	"name": "relationship-msnkmsvtro",
+	"properties": {
+		"Name": "relationship-msnkmsvtro",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReading",
+		"ToTableName": "ComponentReadingError",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"toEntity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

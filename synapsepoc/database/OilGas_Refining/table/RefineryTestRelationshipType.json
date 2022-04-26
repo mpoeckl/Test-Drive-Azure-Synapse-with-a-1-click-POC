@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestRelationshipType",
+	"properties": {
+		"Name": "RefineryTestRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between refinery tests.\n\nEx:\n- Prerequisite\n- Re-do\n- Follow-up",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType",
+						"Name": "RefineryTestRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestRelationshipTypeName",
+					"Description": "The name of a refinery test relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType",
+						"Name": "RefineryTestRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestRelationshipTypeDescription",
+					"Description": "The description of a refinery test relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType",
+						"Name": "RefineryTestRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestRelationshipTypeId\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeId\"},\"RefineryTestRelationshipTypeName\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeName\"},\"RefineryTestRelationshipTypeDescription\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestRelationshipType\",\"path\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\"},\"description\":\"The nature of the relationship between refinery tests.\\n\\nEx:\\n- Prerequisite\\n- Re-do\\n- Follow-up\",\"primaryKey\":[\"RefineryTestRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"name\":\"RefineryTestRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between refinery tests.\n\nEx:\n- Prerequisite\n- Re-do\n- Follow-up",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

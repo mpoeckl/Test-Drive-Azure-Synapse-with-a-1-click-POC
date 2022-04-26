@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zhqkcorpst",
+	"properties": {
+		"Name": "relationship-zhqkcorpst",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingType",
+		"ToTableName": "ComponentReading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingTypeId",
+				"ToColumnName": "ReadingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingType.cdm.json/ReadingType\",\"toEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"joinPairs\":[{\"fromAttribute\":\"ReadingTypeId\",\"toAttribute\":\"ReadingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

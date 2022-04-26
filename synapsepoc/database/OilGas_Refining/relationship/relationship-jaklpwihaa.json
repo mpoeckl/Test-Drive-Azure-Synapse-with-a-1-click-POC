@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jaklpwihaa",
+	"properties": {
+		"Name": "relationship-jaklpwihaa",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestRelationshipType",
+		"ToTableName": "RelatedRefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestRelationshipTypeId",
+				"ToColumnName": "RefineryTestRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestRelationshipType.cdm.json/RefineryTestRelationshipType\",\"toEntity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestRelationshipTypeId\",\"toAttribute\":\"RefineryTestRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

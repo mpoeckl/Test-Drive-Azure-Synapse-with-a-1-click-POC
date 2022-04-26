@@ -1,0 +1,155 @@
+{
+	"name": "ComponentExtraordinaryRepairRelatedParty",
+	"properties": {
+		"Name": "ComponentExtraordinaryRepairRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party related to the component extraordinary repair.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentExtraordinaryRepairId",
+					"Description": "The unique identifier of a Component Extraordinary Repair.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "ComponentExtraordinaryRepairId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ExtraordinaryRepairPartyRelationshipTypeId",
+					"Description": "The unique identifier of a extraordinary repair party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "ExtraordinaryRepairPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StartTimestamp",
+					"Description": "The start timestamp for which an associated Component Extraordinary Repair - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "StartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "EndTimestamp",
+					"Description": "The end timestamp for which an associated Component Extraordinary Repair - Party relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "EndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentExtraordinaryRepairRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding a Component Extraordinary Repair Related Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty",
+						"Name": "ComponentExtraordinaryRepairRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentExtraordinaryRepairRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentExtraordinaryRepairRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentExtraordinaryRepairId\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ComponentExtraordinaryRepairId\"},\"PartyId\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"PartyId\"},\"ExtraordinaryRepairPartyRelationshipTypeId\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},\"StartTimestamp\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"StartTimestamp\"},\"EndTimestamp\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"EndTimestamp\"},\"ComponentExtraordinaryRepairRelatedPartyNote\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ComponentExtraordinaryRepairRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentExtraordinaryRepairRelatedParty\",\"path\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\"},\"description\":\"A party related to the component extraordinary repair.\",\"primaryKey\":[\"ComponentExtraordinaryRepairId\",\"PartyId\",\"ExtraordinaryRepairPartyRelationshipTypeId\",\"StartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ComponentExtraordinaryRepairId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Extraordinary Repair.\",\"isNullable\":false,\"name\":\"ComponentExtraordinaryRepairId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a extraordinary repair party relationship type.\",\"isNullable\":false,\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"StartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp for which an associated Component Extraordinary Repair - Party relationship is effective.\",\"isNullable\":false,\"name\":\"StartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"EndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp for which an associated Component Extraordinary Repair - Party relationship is effective.\",\"isNullable\":true,\"name\":\"EndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"name\":\"ComponentExtraordinaryRepairRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Extraordinary Repair Related Party.\",\"isNullable\":true,\"name\":\"ComponentExtraordinaryRepairRelatedPartyNote\"}]}}}",
+			"Description": "A party related to the component extraordinary repair.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentExtraordinaryRepairId,PartyId,ExtraordinaryRepairPartyRelationshipTypeId,StartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

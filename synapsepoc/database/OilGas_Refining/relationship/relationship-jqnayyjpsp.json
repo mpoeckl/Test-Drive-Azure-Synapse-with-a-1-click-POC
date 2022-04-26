@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jqnayyjpsp",
+	"properties": {
+		"Name": "relationship-jqnayyjpsp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OdorIntensityType",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OdorIntensityTypeId",
+				"ToColumnName": "OdorIntensityTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OdorIntensityType.cdm.json/OdorIntensityType\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"OdorIntensityTypeId\",\"toAttribute\":\"OdorIntensityTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

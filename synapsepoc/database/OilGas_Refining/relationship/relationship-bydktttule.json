@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bydktttule",
+	"properties": {
+		"Name": "relationship-bydktttule",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryCatalystType",
+		"ToTableName": "StorageContainerContent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CatalystTypeId",
+				"ToColumnName": "CatalystTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"toEntity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"joinPairs\":[{\"fromAttribute\":\"CatalystTypeId\",\"toAttribute\":\"CatalystTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zxbuomkldt",
+	"properties": {
+		"Name": "relationship-zxbuomkldt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FluidCatalyticCrackerUnitConfigurationType",
+		"ToTableName": "FluidCatalyticCrackerUnit",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FluidCatalyticCrackerUnitConfigurationTypeId",
+				"ToColumnName": "FluidCatalyticCrackerUnitConfigurationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"toEntity\":\"FluidCatalyticCrackerUnit.cdm.json/FluidCatalyticCrackerUnit\",\"joinPairs\":[{\"fromAttribute\":\"FluidCatalyticCrackerUnitConfigurationTypeId\",\"toAttribute\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

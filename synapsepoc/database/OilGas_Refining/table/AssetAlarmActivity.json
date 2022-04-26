@@ -1,0 +1,106 @@
+{
+	"name": "AssetAlarmActivity",
+	"properties": {
+		"Name": "AssetAlarmActivity",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An activity that is performed at a facility specifically as the result an alarm generated.\n\nEx:\n- Service shut-down\n- Public warning\n- Additional testing\n- Mandatory reporting",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetAlarmActivityId",
+					"Description": "The unique identifier of an Asset Alarm Activity.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAlarmActivity.cdm.json/AssetAlarmActivity",
+						"Name": "AssetAlarmActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetAlarmActivityName",
+					"Description": "The name of an Asset Alarm Activity.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAlarmActivity.cdm.json/AssetAlarmActivity",
+						"Name": "AssetAlarmActivityName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetAlarmActivityDescription",
+					"Description": "The description of an Asset Alarm Activity.",
+					"BaseAttributeReference": {
+						"Entity": "AssetAlarmActivity.cdm.json/AssetAlarmActivity",
+						"Name": "AssetAlarmActivityDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetAlarmActivity",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetAlarmActivity",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetAlarmActivityId\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityId\"},\"AssetAlarmActivityName\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityName\"},\"AssetAlarmActivityDescription\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetAlarmActivity\",\"path\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\"},\"description\":\"An activity that is performed at a facility specifically as the result an alarm generated.\\n\\nEx:\\n- Service shut-down\\n- Public warning\\n- Additional testing\\n- Mandatory reporting\",\"primaryKey\":[\"AssetAlarmActivityId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Alarm Activity.\",\"isNullable\":false,\"name\":\"AssetAlarmActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Asset Alarm Activity.\",\"isNullable\":true,\"name\":\"AssetAlarmActivityName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Asset Alarm Activity.\",\"isNullable\":true,\"name\":\"AssetAlarmActivityDescription\"}]}}}",
+			"Description": "An activity that is performed at a facility specifically as the result an alarm generated.\n\nEx:\n- Service shut-down\n- Public warning\n- Additional testing\n- Mandatory reporting",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetAlarmActivityId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

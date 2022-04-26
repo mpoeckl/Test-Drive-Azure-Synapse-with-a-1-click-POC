@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerTubeMaterialType",
+	"properties": {
+		"Name": "HeatExchangerTubeMaterialType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of material comprising the heat exchanger tubes.\n\nEx:\n- Aluminum\n- Copper Alloy\n- Stainless Steel\n- Carbon Steel\n- Non-Ferrous Copper Alloy\n- Inconel, Nickel\n- Hastelloy \n- Titanium\n- Perfluoroalkoxy Alkane (Pfa)  \n- Fluorinated Ethylene Propylene (Fep)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerTubeMaterialTypeId",
+					"Description": "The unique identifier of a heat exchanger tube material type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType",
+						"Name": "HeatExchangerTubeMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTubeMaterialTypeName",
+					"Description": "The name of a heat exchanger tube material type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType",
+						"Name": "HeatExchangerTubeMaterialTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTubeMaterialTypeDescription",
+					"Description": "The description of a heat exchanger tube material type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType",
+						"Name": "HeatExchangerTubeMaterialTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerTubeMaterialType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerTubeMaterialType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerTubeMaterialTypeId\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeId\"},\"HeatExchangerTubeMaterialTypeName\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeName\"},\"HeatExchangerTubeMaterialTypeDescription\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerTubeMaterialType\",\"path\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\"},\"description\":\"The type of material comprising the heat exchanger tubes.\\n\\nEx:\\n- Aluminum\\n- Copper Alloy\\n- Stainless Steel\\n- Carbon Steel\\n- Non-Ferrous Copper Alloy\\n- Inconel, Nickel\\n- Hastelloy \\n- Titanium\\n- Perfluoroalkoxy Alkane (Pfa)  \\n- Fluorinated Ethylene Propylene (Fep)\",\"primaryKey\":[\"HeatExchangerTubeMaterialTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger tube material type.\",\"isNullable\":false,\"name\":\"HeatExchangerTubeMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger tube material type.\",\"isNullable\":true,\"name\":\"HeatExchangerTubeMaterialTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"name\":\"HeatExchangerTubeMaterialTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger tube material type.\",\"isNullable\":true,\"name\":\"HeatExchangerTubeMaterialTypeDescription\"}]}}}",
+			"Description": "The type of material comprising the heat exchanger tubes.\n\nEx:\n- Aluminum\n- Copper Alloy\n- Stainless Steel\n- Carbon Steel\n- Non-Ferrous Copper Alloy\n- Inconel, Nickel\n- Hastelloy \n- Titanium\n- Perfluoroalkoxy Alkane (Pfa)  \n- Fluorinated Ethylene Propylene (Fep)",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerTubeMaterialTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

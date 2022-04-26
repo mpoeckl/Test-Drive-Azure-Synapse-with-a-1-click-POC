@@ -1,0 +1,106 @@
+{
+	"name": "RefiningFacilityType",
+	"properties": {
+		"Name": "RefiningFacilityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of refining facility.\n\nEx:\n- Refinery\n- Wellhead\n- Shipment Site/Port\n- Petrochemical plant",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FacilityTypeId",
+					"Description": "The unique identifier of a facility type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningFacilityType.cdm.json/RefiningFacilityType",
+						"Name": "FacilityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FacilityTypeName",
+					"Description": "The name of a facility type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningFacilityType.cdm.json/RefiningFacilityType",
+						"Name": "FacilityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FacilityTypeDescription",
+					"Description": "The description of a facility type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningFacilityType.cdm.json/RefiningFacilityType",
+						"Name": "FacilityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningFacilityType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningFacilityType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FacilityTypeId\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeId\"},\"FacilityTypeName\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeName\"},\"FacilityTypeDescription\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefiningFacilityType\",\"path\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\"},\"description\":\"The type of refining facility.\\n\\nEx:\\n- Refinery\\n- Wellhead\\n- Shipment Site/Port\\n- Petrochemical plant\",\"primaryKey\":[\"FacilityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a facility type.\",\"isNullable\":false,\"name\":\"FacilityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a facility type.\",\"isNullable\":true,\"name\":\"FacilityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningFacilityType.cdm.json/RefiningFacilityType\",\"name\":\"FacilityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a facility type.\",\"isNullable\":true,\"name\":\"FacilityTypeDescription\"}]}}}",
+			"Description": "The type of refining facility.\n\nEx:\n- Refinery\n- Wellhead\n- Shipment Site/Port\n- Petrochemical plant",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "FacilityTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

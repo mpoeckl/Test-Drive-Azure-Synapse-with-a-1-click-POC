@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nmxuwloibb",
+	"properties": {
+		"Name": "relationship-nmxuwloibb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingResultType",
+		"ToTableName": "ComponentGuideline",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingResultTypeId",
+				"ToColumnName": "ReadingResultTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"toEntity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"joinPairs\":[{\"fromAttribute\":\"ReadingResultTypeId\",\"toAttribute\":\"ReadingResultTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

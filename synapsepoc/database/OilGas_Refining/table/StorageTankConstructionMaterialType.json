@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankConstructionMaterialType",
+	"properties": {
+		"Name": "StorageTankConstructionMaterialType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The material from which the storage tank is constructed.\n\nEx:\n- Steel\n- Concrete\n- Glass-reinforced plastic\n- Thermoplastic\n- Polyethylene",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankConstructionMaterialTypeId",
+					"Description": "The unique identifier of a storage tank construction material type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType",
+						"Name": "StorageTankConstructionMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankConstructionMaterialTypeName",
+					"Description": "The name of a storage tank construction material type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType",
+						"Name": "StorageTankConstructionMaterialTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankConstructionMaterialTypeDescription",
+					"Description": "The description of a storage tank construction material type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType",
+						"Name": "StorageTankConstructionMaterialTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankConstructionMaterialType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankConstructionMaterialType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankConstructionMaterialTypeId\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeId\"},\"StorageTankConstructionMaterialTypeName\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeName\"},\"StorageTankConstructionMaterialTypeDescription\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankConstructionMaterialType\",\"path\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\"},\"description\":\"The material from which the storage tank is constructed.\\n\\nEx:\\n- Steel\\n- Concrete\\n- Glass-reinforced plastic\\n- Thermoplastic\\n- Polyethylene\",\"primaryKey\":[\"StorageTankConstructionMaterialTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank construction material type.\",\"isNullable\":false,\"name\":\"StorageTankConstructionMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank construction material type.\",\"isNullable\":true,\"name\":\"StorageTankConstructionMaterialTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank construction material type.\",\"isNullable\":true,\"name\":\"StorageTankConstructionMaterialTypeDescription\"}]}}}",
+			"Description": "The material from which the storage tank is constructed.\n\nEx:\n- Steel\n- Concrete\n- Glass-reinforced plastic\n- Thermoplastic\n- Polyethylene",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankConstructionMaterialTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

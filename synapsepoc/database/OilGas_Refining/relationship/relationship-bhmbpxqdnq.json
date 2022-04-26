@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bhmbpxqdnq",
+	"properties": {
+		"Name": "relationship-bhmbpxqdnq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankPipeConstructionType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankPipeConstructionTypeId",
+				"ToColumnName": "StorageTankPipeConstructionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankPipeConstructionTypeId\",\"toAttribute\":\"StorageTankPipeConstructionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

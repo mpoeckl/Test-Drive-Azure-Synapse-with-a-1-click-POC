@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fosvrskzel",
+	"properties": {
+		"Name": "relationship-fosvrskzel",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DeviceSpecificationType",
+		"ToTableName": "DeviceSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceSpecificationTypeId",
+				"ToColumnName": "DeviceSpecificationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"toEntity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"joinPairs\":[{\"fromAttribute\":\"DeviceSpecificationTypeId\",\"toAttribute\":\"DeviceSpecificationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

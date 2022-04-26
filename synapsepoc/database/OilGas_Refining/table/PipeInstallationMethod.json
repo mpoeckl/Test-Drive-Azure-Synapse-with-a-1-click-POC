@@ -1,0 +1,106 @@
+{
+	"name": "PipeInstallationMethod",
+	"properties": {
+		"Name": "PipeInstallationMethod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pipe installation.\n\nEx:  \n- Backhoe\n- Bore\n- Hand Dug\n- Insert\n- Joint Trench\n- Machine\n- Overlay\n- Plow\n- Trench\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeInstallationMethodId",
+					"Description": "The unique identifier of a pipe installation method.",
+					"BaseAttributeReference": {
+						"Entity": "PipeInstallationMethod.cdm.json/PipeInstallationMethod",
+						"Name": "PipeInstallationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeInstallationMethodName",
+					"Description": "The name of a pipe installation method.",
+					"BaseAttributeReference": {
+						"Entity": "PipeInstallationMethod.cdm.json/PipeInstallationMethod",
+						"Name": "PipeInstallationMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeInstallationMethodDescription",
+					"Description": "The description of a pipe installation method.",
+					"BaseAttributeReference": {
+						"Entity": "PipeInstallationMethod.cdm.json/PipeInstallationMethod",
+						"Name": "PipeInstallationMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeInstallationMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeInstallationMethod",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeInstallationMethodId\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodId\"},\"PipeInstallationMethodName\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodName\"},\"PipeInstallationMethodDescription\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeInstallationMethod\",\"path\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\"},\"description\":\"The type of pipe installation.\\n\\nEx:  \\n- Backhoe\\n- Bore\\n- Hand Dug\\n- Insert\\n- Joint Trench\\n- Machine\\n- Overlay\\n- Plow\\n- Trench\\n- Unknown\",\"primaryKey\":[\"PipeInstallationMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe installation method.\",\"isNullable\":false,\"name\":\"PipeInstallationMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pipe installation method.\",\"isNullable\":true,\"name\":\"PipeInstallationMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"name\":\"PipeInstallationMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pipe installation method.\",\"isNullable\":true,\"name\":\"PipeInstallationMethodDescription\"}]}}}",
+			"Description": "The type of pipe installation.\n\nEx:  \n- Backhoe\n- Bore\n- Hand Dug\n- Insert\n- Joint Trench\n- Machine\n- Overlay\n- Plow\n- Trench\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeInstallationMethodId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

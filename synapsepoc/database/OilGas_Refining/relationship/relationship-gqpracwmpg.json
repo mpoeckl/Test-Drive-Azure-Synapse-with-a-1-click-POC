@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gqpracwmpg",
+	"properties": {
+		"Name": "relationship-gqpracwmpg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentLocationRelationshipType",
+		"ToTableName": "ComponentLocation",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentLocationRelationshipTypeId",
+				"ToColumnName": "ComponentLocationRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"toEntity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"joinPairs\":[{\"fromAttribute\":\"ComponentLocationRelationshipTypeId\",\"toAttribute\":\"ComponentLocationRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

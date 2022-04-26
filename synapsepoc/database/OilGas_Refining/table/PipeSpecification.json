@@ -1,0 +1,173 @@
+{
+	"name": "PipeSpecification",
+	"properties": {
+		"Name": "PipeSpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A pipe specification.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationTypeId",
+					"Description": "The unique identifier of a pipe specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PipeSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationValue",
+					"Description": "The value of the pipe specification.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PipeSpecificationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PipeSpecificationUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationNote",
+					"Description": "A note, comment or additional information regarding the pipe specification.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecification.cdm.json/PipeSpecification",
+						"Name": "PipeSpecificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeId\"},\"PipeSpecificationTypeId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodEndTimestamp\"},\"PipeSpecificationValue\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationValue\"},\"PipeSpecificationUomId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationUomId\"},\"PipeSpecificationNote\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeSpecification\",\"path\":\"PipeSpecification.cdm.json/PipeSpecification\"},\"description\":\"A pipe specification.\",\"primaryKey\":[\"PipeId\",\"PipeSpecificationTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe specification type.\",\"isNullable\":false,\"name\":\"PipeSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of the pipe specification.\",\"isNullable\":true,\"scale\":8,\"name\":\"PipeSpecificationValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"PipeSpecificationUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pipe specification.\",\"isNullable\":true,\"name\":\"PipeSpecificationNote\"}]}}}",
+			"Description": "A pipe specification.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeId,PipeSpecificationTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

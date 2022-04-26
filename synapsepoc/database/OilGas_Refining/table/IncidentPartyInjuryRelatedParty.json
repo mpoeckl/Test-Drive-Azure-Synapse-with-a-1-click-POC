@@ -1,0 +1,187 @@
+{
+	"name": "IncidentPartyInjuryRelatedParty",
+	"properties": {
+		"Name": "IncidentPartyInjuryRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party that has a relationship with the Incident Event over the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeId",
+					"Description": "The unique identifier of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "InjuryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyInjuryPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident party injury party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "IncidentPartyInjuryPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which the associated incident party injury related party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which the associated incident party injury related party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentPartyInjuryRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the incident event - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty",
+						"Name": "IncidentPartyInjuryRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjuryRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjuryRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentId\"},\"InjuryTypeId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuryTypeId\"},\"PartyId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PartyId\"},\"InjuredPartyId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuredPartyId\"},\"IncidentPartyInjuryPartyRelationshipTypeId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"IncidentPartyInjuryRelatedPartyNote\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentPartyInjuryRelatedParty\",\"path\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\"},\"description\":\"A party that has a relationship with the Incident Event over the indicated period.\",\"primaryKey\":[\"IncidentId\",\"InjuryTypeId\",\"PartyId\",\"InjuredPartyId\",\"IncidentPartyInjuryPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury type.\",\"isNullable\":false,\"name\":\"InjuryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident party injury party relationship type.\",\"isNullable\":false,\"name\":\"IncidentPartyInjuryPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated incident party injury related party relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which the associated incident party injury related party relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the incident event - party relationship.\",\"isNullable\":true,\"name\":\"IncidentPartyInjuryRelatedPartyNote\"}]}}}",
+			"Description": "A party that has a relationship with the Incident Event over the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,InjuryTypeId,PartyId,InjuredPartyId,IncidentPartyInjuryPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

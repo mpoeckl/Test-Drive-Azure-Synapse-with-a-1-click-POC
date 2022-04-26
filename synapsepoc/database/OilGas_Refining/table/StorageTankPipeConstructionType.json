@@ -1,0 +1,106 @@
+{
+	"name": "StorageTankPipeConstructionType",
+	"properties": {
+		"Name": "StorageTankPipeConstructionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of storage tank pipe construction.\n\nEx:\n- Steel DW ( Bare Steel Double wall piping)\n- Steel SW  ( Bare Steel Single wall piping)\n- FG/FLEXDW  flexible piping made of a variety of materials)\n- FG/FLEXSW (similar to the above, but with only a single wall)",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankPipeConstructionTypeId",
+					"Description": "The unique identifier of a storage tank pipe construction type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType",
+						"Name": "StorageTankPipeConstructionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankPipeConstructionTypeName",
+					"Description": "The name of a storage tank pipe construction type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType",
+						"Name": "StorageTankPipeConstructionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankPipeConstructionTypeDescription",
+					"Description": "The description of a storage tank pipe construction type.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType",
+						"Name": "StorageTankPipeConstructionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankPipeConstructionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankPipeConstructionType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankPipeConstructionTypeId\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeId\"},\"StorageTankPipeConstructionTypeName\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeName\"},\"StorageTankPipeConstructionTypeDescription\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankPipeConstructionType\",\"path\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\"},\"description\":\"The type of storage tank pipe construction.\\n\\nEx:\\n- Steel DW ( Bare Steel Double wall piping)\\n- Steel SW  ( Bare Steel Single wall piping)\\n- FG/FLEXDW  flexible piping made of a variety of materials)\\n- FG/FLEXSW (similar to the above, but with only a single wall)\",\"primaryKey\":[\"StorageTankPipeConstructionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a storage tank pipe construction type.\",\"isNullable\":false,\"name\":\"StorageTankPipeConstructionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank pipe construction type.\",\"isNullable\":true,\"name\":\"StorageTankPipeConstructionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank pipe construction type.\",\"isNullable\":true,\"name\":\"StorageTankPipeConstructionTypeDescription\"}]}}}",
+			"Description": "The type of storage tank pipe construction.\n\nEx:\n- Steel DW ( Bare Steel Double wall piping)\n- Steel SW  ( Bare Steel Single wall piping)\n- FG/FLEXDW  flexible piping made of a variety of materials)\n- FG/FLEXSW (similar to the above, but with only a single wall)",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankPipeConstructionTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

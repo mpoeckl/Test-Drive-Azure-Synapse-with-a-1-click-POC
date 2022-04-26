@@ -1,0 +1,106 @@
+{
+	"name": "MaintenanceOperationType",
+	"properties": {
+		"Name": "MaintenanceOperationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of maintenance operations based on common characteristics or utilization.\n\nEx:\n- Upgrade\n- Retrofit\n- Regularly scheduled maintenance\n- Repair",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenanceOperationTypeId",
+					"Description": "The unique identifier of a Maintenance Operation Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationType.cdm.json/MaintenanceOperationType",
+						"Name": "MaintenanceOperationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationTypeName",
+					"Description": "The name of a Maintenance Operation Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationType.cdm.json/MaintenanceOperationType",
+						"Name": "MaintenanceOperationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenanceOperationTypeDescription",
+					"Description": "The description of a Maintenance Operation Type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenanceOperationType.cdm.json/MaintenanceOperationType",
+						"Name": "MaintenanceOperationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceOperationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceOperationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceOperationTypeId\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeId\"},\"MaintenanceOperationTypeName\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeName\"},\"MaintenanceOperationTypeDescription\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenanceOperationType\",\"path\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\"},\"description\":\"A type of maintenance operations based on common characteristics or utilization.\\n\\nEx:\\n- Upgrade\\n- Retrofit\\n- Regularly scheduled maintenance\\n- Repair\",\"primaryKey\":[\"MaintenanceOperationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Maintenance Operation Type.\",\"isNullable\":false,\"name\":\"MaintenanceOperationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Maintenance Operation Type.\",\"isNullable\":true,\"name\":\"MaintenanceOperationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenanceOperationType.cdm.json/MaintenanceOperationType\",\"name\":\"MaintenanceOperationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Maintenance Operation Type.\",\"isNullable\":true,\"name\":\"MaintenanceOperationTypeDescription\"}]}}}",
+			"Description": "A type of maintenance operations based on common characteristics or utilization.\n\nEx:\n- Upgrade\n- Retrofit\n- Regularly scheduled maintenance\n- Repair",
+			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#692B0C\"}",
+			"PrimaryKeys": "MaintenanceOperationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

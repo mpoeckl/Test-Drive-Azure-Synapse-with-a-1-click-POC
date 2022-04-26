@@ -1,0 +1,491 @@
+{
+	"name": "Device",
+	"properties": {
+		"Name": "Device",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DeviceName",
+					"Description": "The name of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceDescription",
+					"Description": "The description of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SerialNumber",
+					"Description": "The serial number of the device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "SerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SinglePointMonitorDeviceIndicator",
+					"Description": "Indicates that the device is a single-point monitor.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "SinglePointMonitorDeviceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MultiPointDeviceMonitorIndicator",
+					"Description": "Indicates that the device is a multi-point monitor.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "MultiPointDeviceMonitorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysCurrentEnergyConsumptionKwIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentEnergyConsumptionKwIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysCurrentEnergyCostPerHourIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentEnergyCostPerHourIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysEnergyConsumedToDailyKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysEnergyConsumedToDailyKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplayEnergyConsumedThisBillingCycleKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayEnergyConsumedThisBillingCycleKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysEnergyCostThisBillingCycleAmountIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysEnergyCostThisBillingCycleAmountIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysCurrentTimestampIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysCurrentTimestampIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HasTimerIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasTimerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HasAlarmsIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasAlarmsIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "HasHistoricalDataIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "HasHistoricalDataIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplayTariffIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayTariffIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplayCurrentVoltageIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplayCurrentVoltageIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysMinimumVoltageThisBillingCycleIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysMinimumVoltageThisBillingCycleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DisplaysMaximumVoltageThisBillingCycleIndicator",
+					"Description": "Indicates that the device has the associated capability.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DisplaysMaximumVoltageThisBillingCycleIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DeviceTypeId",
+					"Description": "The unique identifier of a Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PropertyId",
+					"Description": "The unique identifier of a Property.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "PropertyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PowerPhaseTypeId",
+					"Description": "The unique identifier of a power phase type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "PowerPhaseTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "EnergyCostDisplayIndicator",
+					"Description": "Indicates that the energy cost is displayed upon the device.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "EnergyCostDisplayIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToComputerTypeId",
+					"Description": "The unique identifier of a Device Communication To Computer Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceCommunicationToComputerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceDataLoggingTypeId",
+					"Description": "The unique identifier of a device data logging type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceDataLoggingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToDisplayTypeId",
+					"Description": "The unique identifier of a Device Communication To Display Type.",
+					"BaseAttributeReference": {
+						"Entity": "Device.cdm.json/Device",
+						"Name": "DeviceCommunicationToDisplayTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Device",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Device",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceId\"},\"DeviceName\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceName\"},\"DeviceDescription\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDescription\"},\"SerialNumber\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SerialNumber\"},\"SinglePointMonitorDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SinglePointMonitorDeviceIndicator\"},\"MultiPointDeviceMonitorIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"MultiPointDeviceMonitorIndicator\"},\"DisplaysCurrentEnergyConsumptionKwIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},\"DisplaysCurrentEnergyCostPerHourIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},\"DisplaysEnergyConsumedToDailyKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},\"DisplaysEnergyCostThisBillingCycleAmountIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},\"DisplaysCurrentTimestampIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentTimestampIndicator\"},\"HasTimerIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasTimerIndicator\"},\"HasAlarmsIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasAlarmsIndicator\"},\"HasHistoricalDataIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasHistoricalDataIndicator\"},\"DisplayTariffIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayTariffIndicator\"},\"DisplayCurrentVoltageIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayCurrentVoltageIndicator\"},\"DisplaysMinimumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},\"DisplaysMaximumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"},\"DeviceTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceTypeId\"},\"PropertyId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PropertyId\"},\"PowerPhaseTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerPhaseTypeId\"},\"EnergyCostDisplayIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EnergyCostDisplayIndicator\"},\"DeviceCommunicationToComputerTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"DeviceDataLoggingTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDataLoggingTypeId\"},\"DeviceCommunicationToDisplayTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToDisplayTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Device\",\"path\":\"Device.cdm.json/Device\"},\"description\":\"An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.\",\"primaryKey\":[\"DeviceId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Device.\",\"isNullable\":false,\"name\":\"DeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Device.\",\"isNullable\":true,\"name\":\"DeviceName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Device.\",\"isNullable\":true,\"name\":\"DeviceDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the device.\",\"isNullable\":true,\"name\":\"SerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SinglePointMonitorDeviceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device is a single-point monitor.\",\"isNullable\":true,\"name\":\"SinglePointMonitorDeviceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"MultiPointDeviceMonitorIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device is a multi-point monitor.\",\"isNullable\":true,\"name\":\"MultiPointDeviceMonitorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentTimestampIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysCurrentTimestampIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasTimerIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasTimerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasAlarmsIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasAlarmsIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasHistoricalDataIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"HasHistoricalDataIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayTariffIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayTariffIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayCurrentVoltageIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplayCurrentVoltageIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the device has the associated capability.\",\"isNullable\":true,\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Type.\",\"isNullable\":true,\"name\":\"DeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PropertyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Property.\",\"isNullable\":true,\"name\":\"PropertyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerPhaseTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a power phase type.\",\"isNullable\":true,\"name\":\"PowerPhaseTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EnergyCostDisplayIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the energy cost is displayed upon the device.\",\"isNullable\":true,\"name\":\"EnergyCostDisplayIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Computer Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToComputerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDataLoggingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a device data logging type.\",\"isNullable\":true,\"name\":\"DeviceDataLoggingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Display Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToDisplayTypeId\"}]}}}",
+			"Description": "An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

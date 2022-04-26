@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lampdkftql",
+	"properties": {
+		"Name": "relationship-lampdkftql",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentGuideline",
+		"ToTableName": "ComponentGuidelineAlarm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"toEntity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

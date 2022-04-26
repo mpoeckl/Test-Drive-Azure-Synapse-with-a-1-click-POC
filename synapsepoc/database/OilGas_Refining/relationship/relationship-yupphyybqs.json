@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yupphyybqs",
+	"properties": {
+		"Name": "relationship-yupphyybqs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "StorageContainer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "StorageContainerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"StorageContainer.cdm.json/StorageContainer\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"StorageContainerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

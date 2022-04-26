@@ -1,0 +1,187 @@
+{
+	"name": "HydrocrackerUnitComponentMeasurement",
+	"properties": {
+		"Name": "HydrocrackerUnitComponentMeasurement",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The hydrocracker component measurement(s) for the associated period.\n\nEx:\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "HydrocrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "HydrocrackerUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementTypeId",
+					"Description": "The unique identifier of a Measurement Type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "MeasurementTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementUnits",
+					"Description": "The measurement units recorded.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "MeasurementUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentMeasurementNote",
+					"Description": "A note, comment or additional information regarding the hydrocracker unit component measurement.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement",
+						"Name": "HydrocrackerUnitComponentMeasurementNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentMeasurement",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentMeasurement",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitId\"},\"HydrocrackerUnitComponentId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentId\"},\"MeasurementTypeId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitComponentMeasurementNote\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentMeasurementNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitComponentMeasurement\",\"path\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\"},\"description\":\"The hydrocracker component measurement(s) for the associated period.\\n\\nEx:\\n- Furnace outlet temperature : 291 C\\n- Reactor feed temperature : 371 C\\n- Reactor Vapor temperature : 549 C\",\"primaryKey\":[\"HydrocrackerUnitId\",\"HydrocrackerUnitComponentId\",\"MeasurementTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Measurement Type.\",\"isNullable\":false,\"name\":\"MeasurementTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The measurement units recorded.\",\"isNullable\":true,\"name\":\"MeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentMeasurementNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the hydrocracker unit component measurement.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitComponentMeasurementNote\"}]}}}",
+			"Description": "The hydrocracker component measurement(s) for the associated period.\n\nEx:\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitId,HydrocrackerUnitComponentId,MeasurementTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

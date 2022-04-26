@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aehznhggiw",
+	"properties": {
+		"Name": "relationship-aehznhggiw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AccessType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AccessTypeId",
+				"ToColumnName": "AccessTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AccessType.cdm.json/AccessType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"AccessTypeId\",\"toAttribute\":\"AccessTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

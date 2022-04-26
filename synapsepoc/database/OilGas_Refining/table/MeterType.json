@@ -1,0 +1,106 @@
+{
+	"name": "MeterType",
+	"properties": {
+		"Name": "MeterType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of meter.\n\nEx:\n- Gas\n- Electric\n- Water Heater\n- HVAC\n- Refrigerator\n- Auto Charging\n- Calorimetric\n- Compound\n- Coriolis Mass \n- Electromagnetic \n- Flumes & Weirs \n- Large Pipe\n- Multiphase \n- Open Channel\n- Orifice plate\n- Positive Displacement\n- Paddle Meter\n- Rotameter\n- Turbine Thermal Mass\n- Ultrasonic \n- Variable Area\n- Venturi\n- Vortex shedding\n- Doppler\n- Induction\n- Demand\n- Multiple Tariff/Variable Rate\n\nElectrical:\n\nInduction = The electromechanical induction meter operates by counting the revolutions of a metallic disc which is made to rotate at a speed \n\nproportional to the power. The number of revolutions is thus proportional to the energy usage. The metallic disc is acted upon by three magnetic \n\nfields, one proportional to the voltage, another to the current and a third supplied by a permanent magnet and constant. One of the varying fields \n\ninduces currents into the metallic disc which are then acted upon by the other varying field to produce a torque. This results in the torque being \n\nproportional to the product of the current and voltage, that is power. As the metallic disc rotates through the permanent magnetic field, eddy currents \n\nare again produced which dissipate energy (since the disc has some resistance) and act to slow the rotation. This drag is proportional to the rotation \n\nspeed. The equilibrium between the applied torque and the drag results in a speed proportional to the power.   The amount of energy represented by \n\none revolution of the disc is denoted by the symbol Kh which is given in units of watt-hours per revolution. The value 7.2 is commonly seen. Using the \n\nvalue of Kh, one can determine their power consumption at any given time by timing the disc with a stopwatch. If the time in seconds taken by the \n\ndisc to complete one revolution is t, then the power in watts is P = 3600xKh/t. For example, if Kh = 7.2, as above, and one revolution took place in \n\n14.4 seconds, the power is 1800 watts. This method can be used to determine the power consumption of household devices by switching them on \n\none by one.\n\nDemand = In its simplest form, a demand meter has a gauge whose pointer moves a marker. When the gauge falls back, friction keeps the marker \n\nin place. When a demand meter is read, its marker is reset, usually with a magnet from outside the sealed meter enclosure. Computerized demand \n\nmeters usually find the fifteen-minute interval in the month with maximum demand. Often they also record a month worth of fifteen-minute averages. \n\nSome demand meters measure the temperature of a conductor, or simulate the heating of the conductor, in order to track \"running\" demand. \n\nRunning demand meters usually log the times when a maximum demand is exceeded, or they log the times when the meter enters a different tariff \n\nrate (see below).\n\nMultiple Tariff/Variable Rate = Electricity retailers may wish to charge customers different tariffs at different times of the day. This is because there is \n\ngenerally a surplus of electrical generation capacity at times of low demand, such as during the night (see supply and demand).\n\nMultiple tariffs are made easier by time of use (TOU) meters which incorporate or are connected to a time switch and which have multiple registers. \n\nIn the UK such tariffs are branded Economy 7 or White Meter and are commonly used in conjunction with electrical storage heaters. The popularity of \n\nsuch tariffs has declined in recent years, at least in the domestic market, due to the (perceived or real) deficiencies of storage heaters and the low \n\ncost of natural gas.\n\nDomestic variable-rate meters normally only permit two tariffs (\"peak\" and \"off-peak\") and in such installations a simple electromechanical time \n\nswitch may be used. Large commercial and industrial premises may use electronic meters which record power usage in blocks of half an hour or \n\nless. This is because most electricity grids have demand surges throughout the day, and the power company may wish to give incentives to large \n\ncustomers to reduce demand at these times. These demand surges often corresponding to meal times or, famously, to advertisements in popular \n\ntelevision programs.\n\nSome multiple tariff meters use different tariffs for different amounts of demand. These are usually industrial meters.\n\nThe multiple tariff rates may also be dependent of frequency, also known as availability based tariff (ABT), deployed in Grid substations and \n\ninter-utility transfer points for bulk transfer of energy. This is based on the premise that the system frequency is inversely proportional to the current \n\nload. This also causes self-regulation because the rates are higher when the system frequency is low, eventually bringing down the demand.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterTypeId",
+					"Description": "The unique identifier of a Meter Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterType.cdm.json/MeterType",
+						"Name": "MeterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterTypeName",
+					"Description": "The name of a Meter Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterType.cdm.json/MeterType",
+						"Name": "MeterTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterTypeDescription",
+					"Description": "The description of a Meter Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterType.cdm.json/MeterType",
+						"Name": "MeterTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterTypeId\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeId\"},\"MeterTypeName\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeName\"},\"MeterTypeDescription\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterType\",\"path\":\"MeterType.cdm.json/MeterType\"},\"description\":\"The type of meter.\\n\\nEx:\\n- Gas\\n- Electric\\n- Water Heater\\n- HVAC\\n- Refrigerator\\n- Auto Charging\\n- Calorimetric\\n- Compound\\n- Coriolis Mass \\n- Electromagnetic \\n- Flumes & Weirs \\n- Large Pipe\\n- Multiphase \\n- Open Channel\\n- Orifice plate\\n- Positive Displacement\\n- Paddle Meter\\n- Rotameter\\n- Turbine Thermal Mass\\n- Ultrasonic \\n- Variable Area\\n- Venturi\\n- Vortex shedding\\n- Doppler\\n- Induction\\n- Demand\\n- Multiple Tariff/Variable Rate\\n\\nElectrical:\\n\\nInduction = The electromechanical induction meter operates by counting the revolutions of a metallic disc which is made to rotate at a speed \\n\\nproportional to the power. The number of revolutions is thus proportional to the energy usage. The metallic disc is acted upon by three magnetic \\n\\nfields, one proportional to the voltage, another to the current and a third supplied by a permanent magnet and constant. One of the varying fields \\n\\ninduces currents into the metallic disc which are then acted upon by the other varying field to produce a torque. This results in the torque being \\n\\nproportional to the product of the current and voltage, that is power. As the metallic disc rotates through the permanent magnetic field, eddy currents \\n\\nare again produced which dissipate energy (since the disc has some resistance) and act to slow the rotation. This drag is proportional to the rotation \\n\\nspeed. The equilibrium between the applied torque and the drag results in a speed proportional to the power.   The amount of energy represented by \\n\\none revolution of the disc is denoted by the symbol Kh which is given in units of watt-hours per revolution. The value 7.2 is commonly seen. Using the \\n\\nvalue of Kh, one can determine their power consumption at any given time by timing the disc with a stopwatch. If the time in seconds taken by the \\n\\ndisc to complete one revolution is t, then the power in watts is P = 3600xKh/t. For example, if Kh = 7.2, as above, and one revolution took place in \\n\\n14.4 seconds, the power is 1800 watts. This method can be used to determine the power consumption of household devices by switching them on \\n\\none by one.\\n\\nDemand = In its simplest form, a demand meter has a gauge whose pointer moves a marker. When the gauge falls back, friction keeps the marker \\n\\nin place. When a demand meter is read, its marker is reset, usually with a magnet from outside the sealed meter enclosure. Computerized demand \\n\\nmeters usually find the fifteen-minute interval in the month with maximum demand. Often they also record a month worth of fifteen-minute averages. \\n\\nSome demand meters measure the temperature of a conductor, or simulate the heating of the conductor, in order to track \\\"running\\\" demand. \\n\\nRunning demand meters usually log the times when a maximum demand is exceeded, or they log the times when the meter enters a different tariff \\n\\nrate (see below).\\n\\nMultiple Tariff/Variable Rate = Electricity retailers may wish to charge customers different tariffs at different times of the day. This is because there is \\n\\ngenerally a surplus of electrical generation capacity at times of low demand, such as during the night (see supply and demand).\\n\\nMultiple tariffs are made easier by time of use (TOU) meters which incorporate or are connected to a time switch and which have multiple registers. \\n\\nIn the UK such tariffs are branded Economy 7 or White Meter and are commonly used in conjunction with electrical storage heaters. The popularity of \\n\\nsuch tariffs has declined in recent years, at least in the domestic market, due to the (perceived or real) deficiencies of storage heaters and the low \\n\\ncost of natural gas.\\n\\nDomestic variable-rate meters normally only permit two tariffs (\\\"peak\\\" and \\\"off-peak\\\") and in such installations a simple electromechanical time \\n\\nswitch may be used. Large commercial and industrial premises may use electronic meters which record power usage in blocks of half an hour or \\n\\nless. This is because most electricity grids have demand surges throughout the day, and the power company may wish to give incentives to large \\n\\ncustomers to reduce demand at these times. These demand surges often corresponding to meal times or, famously, to advertisements in popular \\n\\ntelevision programs.\\n\\nSome multiple tariff meters use different tariffs for different amounts of demand. These are usually industrial meters.\\n\\nThe multiple tariff rates may also be dependent of frequency, also known as availability based tariff (ABT), deployed in Grid substations and \\n\\ninter-utility transfer points for bulk transfer of energy. This is based on the premise that the system frequency is inversely proportional to the current \\n\\nload. This also causes self-regulation because the rates are higher when the system frequency is low, eventually bringing down the demand.\",\"primaryKey\":[\"MeterTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Type.\",\"isNullable\":false,\"name\":\"MeterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Meter Type.\",\"isNullable\":true,\"name\":\"MeterTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterType.cdm.json/MeterType\",\"name\":\"MeterTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Meter Type.\",\"isNullable\":true,\"name\":\"MeterTypeDescription\"}]}}}",
+			"Description": "The type of meter.\n\nEx:\n- Gas\n- Electric\n- Water Heater\n- HVAC\n- Refrigerator\n- Auto Charging\n- Calorimetric\n- Compound\n- Coriolis Mass \n- Electromagnetic \n- Flumes & Weirs \n- Large Pipe\n- Multiphase \n- Open Channel\n- Orifice plate\n- Positive Displacement\n- Paddle Meter\n- Rotameter\n- Turbine Thermal Mass\n- Ultrasonic \n- Variable Area\n- Venturi\n- Vortex shedding\n- Doppler\n- Induction\n- Demand\n- Multiple Tariff/Variable Rate\n\nElectrical:\n\nInduction = The electromechanical induction meter operates by counting the revolutions of a metallic disc which is made to rotate at a speed \n\nproportional to the power. The number of revolutions is thus proportional to the energy usage. The metallic disc is acted upon by three magnetic \n\nfields, one proportional to the voltage, another to the current and a third supplied by a permanent magnet and constant. One of the varying fields \n\ninduces currents into the metallic disc which are then acted upon by the other varying field to produce a torque. This results in the torque being \n\nproportional to the product of the current and voltage, that is power. As the metallic disc rotates through the permanent magnetic field, eddy currents \n\nare again produced which dissipate energy (since the disc has some resistance) and act to slow the rotation. This drag is proportional to the rotation \n\nspeed. The equilibrium between the applied torque and the drag results in a speed proportional to the power.   The amount of energy represented by \n\none revolution of the disc is denoted by the symbol Kh which is given in units of watt-hours per revolution. The value 7.2 is commonly seen. Using the \n\nvalue of Kh, one can determine their power consumption at any given time by timing the disc with a stopwatch. If the time in seconds taken by the \n\ndisc to complete one revolution is t, then the power in watts is P = 3600xKh/t. For example, if Kh = 7.2, as above, and one revolution took place in \n\n14.4 seconds, the power is 1800 watts. This method can be used to determine the power consumption of household devices by switching them on \n\none by one.\n\nDemand = In its simplest form, a demand meter has a gauge whose pointer moves a marker. When the gauge falls back, friction keeps the marker \n\nin place. When a demand meter is read, its marker is reset, usually with a magnet from outside the sealed meter enclosure. Computerized demand \n\nmeters usually find the fifteen-minute interval in the month with maximum demand. Often they also record a month worth of fifteen-minute averages. \n\nSome demand meters measure the temperature of a conductor, or simulate the heating of the conductor, in order to track \"running\" demand. \n\nRunning demand meters usually log the times when a maximum demand is exceeded, or they log the times when the meter enters a different tariff \n\nrate (see below).\n\nMultiple Tariff/Variable Rate = Electricity retailers may wish to charge customers different tariffs at different times of the day. This is because there is \n\ngenerally a surplus of electrical generation capacity at times of low demand, such as during the night (see supply and demand).\n\nMultiple tariffs are made easier by time of use (TOU) meters which incorporate or are connected to a time switch and which have multiple registers. \n\nIn the UK such tariffs are branded Economy 7 or White Meter and are commonly used in conjunction with electrical storage heaters. The popularity of \n\nsuch tariffs has declined in recent years, at least in the domestic market, due to the (perceived or real) deficiencies of storage heaters and the low \n\ncost of natural gas.\n\nDomestic variable-rate meters normally only permit two tariffs (\"peak\" and \"off-peak\") and in such installations a simple electromechanical time \n\nswitch may be used. Large commercial and industrial premises may use electronic meters which record power usage in blocks of half an hour or \n\nless. This is because most electricity grids have demand surges throughout the day, and the power company may wish to give incentives to large \n\ncustomers to reduce demand at these times. These demand surges often corresponding to meal times or, famously, to advertisements in popular \n\ntelevision programs.\n\nSome multiple tariff meters use different tariffs for different amounts of demand. These are usually industrial meters.\n\nThe multiple tariff rates may also be dependent of frequency, also known as availability based tariff (ABT), deployed in Grid substations and \n\ninter-utility transfer points for bulk transfer of energy. This is based on the premise that the system frequency is inversely proportional to the current \n\nload. This also causes self-regulation because the rates are higher when the system frequency is low, eventually bringing down the demand.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dvefgvqefw",
+	"properties": {
+		"Name": "relationship-dvefgvqefw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentGuideline",
+		"ToTableName": "ComponentGuidelineAlarm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaximumReadingValue",
+				"ToColumnName": "MaximumReadingValue"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"toEntity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"joinPairs\":[{\"fromAttribute\":\"MaximumReadingValue\",\"toAttribute\":\"MaximumReadingValue\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

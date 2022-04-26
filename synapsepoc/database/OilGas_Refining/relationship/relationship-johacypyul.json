@@ -1,0 +1,26 @@
+{
+	"name": "relationship-johacypyul",
+	"properties": {
+		"Name": "relationship-johacypyul",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "Generator",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "GeneratorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"Generator.cdm.json/Generator\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"GeneratorId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,348 @@
+{
+	"name": "RelatedPipe",
+	"properties": {
+		"Name": "RelatedPipe",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship between two pipes.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RelatedPipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "RelatedPipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipeRelationshipTypeId",
+					"Description": "The unique identifier of a pipe relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start time + time of the pipe relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end time + time of the pipe relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FromPipeIdBendAngleDegrees",
+					"Description": "The angle of the bend from the from pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "FromPipeIdBendAngleDegrees"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromPipeIdBendFromHorizontalAngleDegree",
+					"Description": "The angle of the bend horizontally from the from pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "FromPipeIdBendFromHorizontalAngleDegree"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToPipeIdBendAngleDegrees",
+					"Description": "The angle of the bend to the to pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "ToPipeIdBendAngleDegrees"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToPipeIdBendFromHorizontalAngleDegree",
+					"Description": "The angle of the bend horizontally to the to pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "ToPipeIdBendFromHorizontalAngleDegree"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FromPipeIdDepthElevationUnits",
+					"Description": "The depth / elevation of the from pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "FromPipeIdDepthElevationUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ToPipeIdDepthElevationUnits",
+					"Description": "The depth / elevation of the to pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "ToPipeIdDepthElevationUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LongitudinalSeamOrientationClockPosition",
+					"Description": "The clock position of the weld along a pipe length of the installed pipe if the pipe is not a seamless pipe. A clock position of 12:00 indicates the weld seam is on top of the pipe, and a clock position of 6:00 indicates the weld seam is at the bottom of the pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "LongitudinalSeamOrientationClockPosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeightDepthUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "HeightDepthUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeWeldingProcessTypeId",
+					"Description": "The unique identifier of a pipe welding process type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeWeldingProcessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeJunctionMaterialTypeId",
+					"Description": "The unique identifier of a pipe junction material type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeJunctionMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeSeamTypeId",
+					"Description": "The unique identifier of a pipe seam type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeSeamTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeEndTypeId",
+					"Description": "The unique identifier of a pipe end type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "PipeEndTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedPipeNote",
+					"Description": "A note, comment or additional information regarding the related pipe.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedPipe.cdm.json/RelatedPipe",
+						"Name": "RelatedPipeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedPipe",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedPipe",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeId\"},\"RelatedPipeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeId\"},\"PipeRelationshipTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodEndTimestamp\"},\"FromPipeIdBendAngleDegrees\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendAngleDegrees\"},\"FromPipeIdBendFromHorizontalAngleDegree\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendFromHorizontalAngleDegree\"},\"ToPipeIdBendAngleDegrees\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendAngleDegrees\"},\"ToPipeIdBendFromHorizontalAngleDegree\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendFromHorizontalAngleDegree\"},\"FromPipeIdDepthElevationUnits\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdDepthElevationUnits\"},\"ToPipeIdDepthElevationUnits\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdDepthElevationUnits\"},\"LongitudinalSeamOrientationClockPosition\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"LongitudinalSeamOrientationClockPosition\"},\"HeightDepthUomId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"HeightDepthUomId\"},\"PipeWeldingProcessTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeWeldingProcessTypeId\"},\"PipeJunctionMaterialTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeJunctionMaterialTypeId\"},\"PipeSeamTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeSeamTypeId\"},\"PipeEndTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeEndTypeId\"},\"RelatedPipeNote\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedPipe\",\"path\":\"RelatedPipe.cdm.json/RelatedPipe\"},\"description\":\"The relationship between two pipes.\",\"primaryKey\":[\"PipeId\",\"RelatedPipeId\",\"PipeRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"RelatedPipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe relationship type.\",\"isNullable\":false,\"name\":\"PipeRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start time + time of the pipe relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end time + time of the pipe relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendAngleDegrees\"},\"dataType\":\"integer\",\"description\":\"The angle of the bend from the from pipe.\",\"isNullable\":true,\"name\":\"FromPipeIdBendAngleDegrees\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendFromHorizontalAngleDegree\"},\"dataType\":\"integer\",\"description\":\"The angle of the bend horizontally from the from pipe.\",\"isNullable\":true,\"name\":\"FromPipeIdBendFromHorizontalAngleDegree\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendAngleDegrees\"},\"dataType\":\"integer\",\"description\":\"The angle of the bend to the to pipe.\",\"isNullable\":true,\"name\":\"ToPipeIdBendAngleDegrees\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendFromHorizontalAngleDegree\"},\"dataType\":\"integer\",\"description\":\"The angle of the bend horizontally to the to pipe.\",\"isNullable\":true,\"name\":\"ToPipeIdBendFromHorizontalAngleDegree\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdDepthElevationUnits\"},\"dataType\":\"integer\",\"description\":\"The depth / elevation of the from pipe.\",\"isNullable\":true,\"name\":\"FromPipeIdDepthElevationUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdDepthElevationUnits\"},\"dataType\":\"integer\",\"description\":\"The depth / elevation of the to pipe.\",\"isNullable\":true,\"name\":\"ToPipeIdDepthElevationUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"LongitudinalSeamOrientationClockPosition\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The clock position of the weld along a pipe length of the installed pipe if the pipe is not a seamless pipe. A clock position of 12:00 indicates the weld seam is on top of the pipe, and a clock position of 6:00 indicates the weld seam is at the bottom of the pipe.\",\"isNullable\":true,\"name\":\"LongitudinalSeamOrientationClockPosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"HeightDepthUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"HeightDepthUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeWeldingProcessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe welding process type.\",\"isNullable\":true,\"name\":\"PipeWeldingProcessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeJunctionMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe junction material type.\",\"isNullable\":true,\"name\":\"PipeJunctionMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeSeamTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe seam type.\",\"isNullable\":true,\"name\":\"PipeSeamTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeEndTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe end type.\",\"isNullable\":true,\"name\":\"PipeEndTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the related pipe.\",\"isNullable\":true,\"name\":\"RelatedPipeNote\"}]}}}",
+			"Description": "The relationship between two pipes.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeId,RelatedPipeId,PipeRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

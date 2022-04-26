@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uickgcqgzz",
+	"properties": {
+		"Name": "relationship-uickgcqgzz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "EnvironmentalEmissionsType",
+		"ToTableName": "RefineryEnvironmentalEmission",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "EnvironmentalEmissionsTypeId",
+				"ToColumnName": "EnvironmentalEmissionsTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"toEntity\":\"RefineryEnvironmentalEmission.cdm.json/RefineryEnvironmentalEmission\",\"joinPairs\":[{\"fromAttribute\":\"EnvironmentalEmissionsTypeId\",\"toAttribute\":\"EnvironmentalEmissionsTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

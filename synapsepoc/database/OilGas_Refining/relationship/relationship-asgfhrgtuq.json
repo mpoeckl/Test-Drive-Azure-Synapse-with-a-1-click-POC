@@ -1,0 +1,26 @@
+{
+	"name": "relationship-asgfhrgtuq",
+	"properties": {
+		"Name": "relationship-asgfhrgtuq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PipeConstructionMaterialType",
+		"ToTableName": "Pipe",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PipeConstructionMaterialTypeId",
+				"ToColumnName": "PipeConstructionMaterialTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PipeConstructionMaterialType.cdm.json/PipeConstructionMaterialType\",\"toEntity\":\"Pipe.cdm.json/Pipe\",\"joinPairs\":[{\"fromAttribute\":\"PipeConstructionMaterialTypeId\",\"toAttribute\":\"PipeConstructionMaterialTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

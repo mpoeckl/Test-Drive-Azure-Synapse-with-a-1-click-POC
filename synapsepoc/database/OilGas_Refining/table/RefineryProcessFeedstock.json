@@ -1,0 +1,220 @@
+{
+	"name": "RefineryProcessFeedstock",
+	"properties": {
+		"Name": "RefineryProcessFeedstock",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of feedstock input into the refinery process component from the indicated storage tank during the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockTypeId",
+					"Description": "The unique identifier of a feedstock type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "FeedstockTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated refinery process - feedstock relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated refinery process - feedstock relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockUnits",
+					"Description": "The feedstock units/quantity.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "FeedstockUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockTradeName",
+					"Description": "The trade name of the feedstock used.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "FeedstockTradeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockSupplierId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "FeedstockSupplierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessFeedstockNote",
+					"Description": "A note, comment or additional information regarding the refinery process feedstock",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock",
+						"Name": "RefineryProcessFeedstockNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessFeedstock",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessFeedstock",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"ComponentId\"},\"FeedstockTypeId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"FeedstockUnits\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"UnitOfMeasureId\"},\"FeedstockTradeName\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTradeName\"},\"FeedstockSupplierId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockSupplierId\"},\"RefineryProcessFeedstockNote\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessFeedstockNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessFeedstock\",\"path\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\"},\"description\":\"The quantity of feedstock input into the refinery process component from the indicated storage tank during the indicated period.\",\"primaryKey\":[\"RefineryProcessId\",\"ComponentId\",\"FeedstockTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feedstock type.\",\"isNullable\":false,\"name\":\"FeedstockTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated refinery process - feedstock relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated refinery process - feedstock relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockUnits\"},\"dataType\":\"integer\",\"description\":\"The feedstock units/quantity.\",\"isNullable\":true,\"name\":\"FeedstockUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The trade name of the feedstock used.\",\"isNullable\":true,\"name\":\"FeedstockTradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockSupplierId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"FeedstockSupplierId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessFeedstockNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process feedstock\",\"isNullable\":true,\"name\":\"RefineryProcessFeedstockNote\"}]}}}",
+			"Description": "The quantity of feedstock input into the refinery process component from the indicated storage tank during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ComponentId,FeedstockTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

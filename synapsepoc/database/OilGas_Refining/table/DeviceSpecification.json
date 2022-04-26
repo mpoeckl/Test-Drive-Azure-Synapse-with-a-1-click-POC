@@ -1,0 +1,173 @@
+{
+	"name": "DeviceSpecification",
+	"properties": {
+		"Name": "DeviceSpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A specification associated with a device.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceId",
+					"Description": "The unique identifier of a Device.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "DeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationTypeId",
+					"Description": "The unique identifier of a device specification type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "DeviceSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationValue",
+					"Description": "The device specification value.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "DeviceSpecificationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "DeviceSpecificationUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationNote",
+					"Description": "A note, comment or additional information regarding the device specification.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecification.cdm.json/DeviceSpecification",
+						"Name": "DeviceSpecificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceSpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceSpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceId\"},\"DeviceSpecificationTypeId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodEndTimestamp\"},\"DeviceSpecificationValue\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationValue\"},\"DeviceSpecificationUomId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationUomId\"},\"DeviceSpecificationNote\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceSpecification\",\"path\":\"DeviceSpecification.cdm.json/DeviceSpecification\"},\"description\":\"A specification associated with a device.\",\"primaryKey\":[\"DeviceId\",\"DeviceSpecificationTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Device.\",\"isNullable\":false,\"name\":\"DeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a device specification type.\",\"isNullable\":false,\"name\":\"DeviceSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The device specification value.\",\"isNullable\":true,\"scale\":8,\"name\":\"DeviceSpecificationValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"DeviceSpecificationUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the device specification.\",\"isNullable\":true,\"name\":\"DeviceSpecificationNote\"}]}}}",
+			"Description": "A specification associated with a device.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceId,DeviceSpecificationTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,157 @@
+{
+	"name": "ComponentGuidelineAlarm",
+	"properties": {
+		"Name": "ComponentGuidelineAlarm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The alarm(s) invoked in conjunction with the associated Component Guideline.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MinimumReadingValue",
+					"Description": "The minimum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "MinimumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MaximumReadingValue",
+					"Description": "The maximum value for which this range is applicable.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "MaximumReadingValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "AlarmTypeId",
+					"Description": "The unique identifier of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "AlarmTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentGuidelineAlarmNote",
+					"Description": "A note, comment or additional information regarding the Component Guideline Alarm.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm",
+						"Name": "ComponentGuidelineAlarmNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuidelineAlarm",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuidelineAlarm",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ReadingTypeId\"},\"MinimumReadingValue\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"MinimumReadingValue\"},\"MaximumReadingValue\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"MaximumReadingValue\"},\"AlarmTypeId\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"AlarmTypeId\"},\"ComponentGuidelineAlarmNote\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ComponentGuidelineAlarmNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentGuidelineAlarm\",\"path\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\"},\"description\":\"The alarm(s) invoked in conjunction with the associated Component Guideline.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"MinimumReadingValue\",\"MaximumReadingValue\",\"AlarmTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"MinimumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The minimum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MinimumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"MaximumReadingValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The maximum value for which this range is applicable.\",\"isNullable\":false,\"scale\":8,\"name\":\"MaximumReadingValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"AlarmTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm Type.\",\"isNullable\":false,\"name\":\"AlarmTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentGuidelineAlarm.cdm.json/ComponentGuidelineAlarm\",\"name\":\"ComponentGuidelineAlarmNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Component Guideline Alarm.\",\"isNullable\":true,\"name\":\"ComponentGuidelineAlarmNote\"}]}}}",
+			"Description": "The alarm(s) invoked in conjunction with the associated Component Guideline.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,MinimumReadingValue,MaximumReadingValue,AlarmTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

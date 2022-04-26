@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qwwlmxuref",
+	"properties": {
+		"Name": "relationship-qwwlmxuref",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Timezone",
+		"ToTableName": "Location",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "TimezoneId",
+				"ToColumnName": "TimezoneId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Timezone.cdm.json/Timezone\",\"toEntity\":\"Location.cdm.json/Location\",\"joinPairs\":[{\"fromAttribute\":\"TimezoneId\",\"toAttribute\":\"TimezoneId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

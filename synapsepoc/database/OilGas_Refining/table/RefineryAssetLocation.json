@@ -1,0 +1,191 @@
+{
+	"name": "RefineryAssetLocation",
+	"properties": {
+		"Name": "RefineryAssetLocation",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The location of the asset for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the refinery asset location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the refinery asset location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LocationLatitude",
+					"Description": "The latitude of the location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "LocationLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "LocationLongitude",
+					"Description": "The longitude of the location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "LocationLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryAssetLocationNote",
+					"Description": "A note, comment or additional information regarding the refinery asset location.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryAssetLocation.cdm.json/RefineryAssetLocation",
+						"Name": "RefineryAssetLocationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetLocation",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetLocation",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryId\"},\"AssetId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"AssetId\"},\"LocationId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationLatitude\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLongitude\"},\"RefineryAssetLocationNote\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryAssetLocationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryAssetLocation\",\"path\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\"},\"description\":\"The location of the asset for the associated period.\",\"primaryKey\":[\"RefineryId\",\"AssetId\",\"LocationId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":false,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the refinery asset location.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the refinery asset location.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The latitude of the location.\",\"isNullable\":true,\"scale\":4,\"name\":\"LocationLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The longitude of the location.\",\"isNullable\":true,\"scale\":4,\"name\":\"LocationLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryAssetLocationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery asset location.\",\"isNullable\":true,\"name\":\"RefineryAssetLocationNote\"}]}}}",
+			"Description": "The location of the asset for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,AssetId,LocationId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

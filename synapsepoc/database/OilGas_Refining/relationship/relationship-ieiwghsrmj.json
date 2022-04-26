@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ieiwghsrmj",
+	"properties": {
+		"Name": "relationship-ieiwghsrmj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Certification",
+		"ToTableName": "ComponentCertification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificationId",
+				"ToColumnName": "CertificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Certification.cdm.json/Certification\",\"toEntity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"joinPairs\":[{\"fromAttribute\":\"CertificationId\",\"toAttribute\":\"CertificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

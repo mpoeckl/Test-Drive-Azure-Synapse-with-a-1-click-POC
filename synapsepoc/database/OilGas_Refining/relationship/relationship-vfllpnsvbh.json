@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vfllpnsvbh",
+	"properties": {
+		"Name": "relationship-vfllpnsvbh",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MaintenanceType",
+		"ToTableName": "ComponentMaintenance",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaintenanceTypeId",
+				"ToColumnName": "MaintenanceTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"toEntity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"joinPairs\":[{\"fromAttribute\":\"MaintenanceTypeId\",\"toAttribute\":\"MaintenanceTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

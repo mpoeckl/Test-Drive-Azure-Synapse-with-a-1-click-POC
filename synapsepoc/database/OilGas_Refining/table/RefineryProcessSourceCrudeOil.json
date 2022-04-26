@@ -1,0 +1,371 @@
+{
+	"name": "RefineryProcessSourceCrudeOil",
+	"properties": {
+		"Name": "RefineryProcessSourceCrudeOil",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Crude Oil that is input into the refinery process during the associated period from the indicated storage tank.\n\nNote:\nThe primary raw material for most of the petroleum processes is crude oil.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilTypeId",
+					"Description": "The unique identifier of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankId",
+					"Description": "The unique identifier of a Storage Tank.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "StorageTankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the source crude oil - process relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the source crude oil - process relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCrudeOilSourceUnits",
+					"Description": "The quantity/units of process crude input into the process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "RefineryProcessCrudeOilSourceUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPretreatmentTypeId",
+					"Description": "The unique identifier of a crude oil pretreatment type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilPretreatmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilGravityApi",
+					"Description": "The density of petroleum oil is expressed in the United States as API gravity,",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilGravityApi"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilDegreeApi",
+					"Description": "The specific gravity or API gravity is relative to the density of water at 60 degrees F 15.9 degrees C).  \n\nThe expression for API is non-linear, and specific gravities must be used when calculating the gravity for blends.  \n\nThe API gravity is an inverse relationship when compared to the specific gravity, and a higher value indicates a less dense material.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilDegreeApi"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilSulfurContentWeightPercent",
+					"Description": "Both sulfur content and API gravity have the greatest influence on the value of crude oil8. \n\nThe related sulfur content of crude oil varies from a trace to greater than five weight percent. \n\nA high sulfur content crude oils are known as \"sour\" crude oils and require more extensive processing than low sulfur or \"sweet\" crude oils.\n\nThe lower the API gravity for a crude oil the higher the sulfur content.  However, there are exceptions to this rule, with low API sweet crude oils and high API sour crude oils.  The additional processing for sour crude oils involves hydrogen treating processes to convert the sulfur to H2S that can be removed.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilSulfurContentWeightPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilCarbonResidueWeightPercent",
+					"Description": "This property is determined by destructively distilling a sample to elemental carbon (coke) in the absence of air. \n\n This is a measure of the asphalt content in the crude oil and the quantity of the lubricating oil portion that may be recovered as product.  It is also used to determine the yields from coking processes and as a measure of the coke deposited on the catalyst for catalytic cracking processes.  In general, the higher the carbon residue for a crude oil, the lower its value as a refinery feed stock.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilCarbonResidueWeightPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilSaltContentLbs1000Barrels",
+					"Description": "All crude oil contains some inorganic salts in the form of chlorides.  When the salt content exceeds 10 pounds /1000 barrels of crude oil it is necessary to remove the salts prior to distillation of the crude oil to reduce corrosion",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilSaltContentLbs1000Barrels"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilMetalsPpm",
+					"Description": "The quantity of metal in the crude oil expressed in parts per million.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilMetalsPpm"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilNitrogenContentWeightPercent",
+					"Description": "Nitrogen compounds in crude oil reduce the activity of cracking catalysts. \n\nThe majority of the nitrogen in crude oil is contained in the highest boiling fractions.  High nitrogen content crude oil may require special processing to remove the nitrogen.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilNitrogenContentWeightPercent"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilPourPointC",
+					"Description": "Pour point is a measure of the paraffinicity or waxiness of a crude oil.  \n\nNormally a waxy crude oil has a high pour point; that is, it congeals at a temperature higher than room temperature.  Conversely, a low pour point indicates an absence of paraffins and/or a presence of aromatic compounds which tend to lower the pour point.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "CrudeOilPourPointC"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SweetSourCrudeOilIndicator",
+					"Description": "Crude oil is generally described as sweet or sour according to its sulfur content, and heavy or light according to its API Gravity. \n\nA heavy crude is less than 30°API, while a light crude is greater than 30°API.\n\nIf crude contains a sizable amount of sulfur or sulfur compounds, it is called sour crude; if it has little to no sulfur, it is sweet crude. Sour crude may contain 1%-5% sulfur content, while sweet crudes will have less than 1% sulfur content.\n\nThe API Gravity index is a relative measure of weight-the lower the number, the heavier the material; the higher the number, the lighter the material. While there are no exacting definitions for these types of crudes, a general rule of thumb is:",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "SweetSourCrudeOilIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SweetGasIndicator",
+					"Description": "Sweet gas: A gas stream from which the sulfur compounds have been removed.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "SweetGasIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessSourceCrudeOilNote",
+					"Description": "A note, comment or additional information regarding the refinery process source crude.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil",
+						"Name": "RefineryProcessSourceCrudeOilNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceCrudeOil",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceCrudeOil",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessId\"},\"CrudeOilTypeId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilTypeId\"},\"StorageTankId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"StorageTankId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessCrudeOilSourceUnits\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessCrudeOilSourceUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"UnitOfMeasureId\"},\"CrudeOilPretreatmentTypeId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"CrudeOilGravityApi\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilGravityApi\"},\"CrudeOilDegreeApi\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilDegreeApi\"},\"CrudeOilSulfurContentWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSulfurContentWeightPercent\"},\"CrudeOilCarbonResidueWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilCarbonResidueWeightPercent\"},\"CrudeOilSaltContentLbs1000Barrels\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSaltContentLbs1000Barrels\"},\"CrudeOilMetalsPpm\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilMetalsPpm\"},\"CrudeOilNitrogenContentWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilNitrogenContentWeightPercent\"},\"CrudeOilPourPointC\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPourPointC\"},\"SweetSourCrudeOilIndicator\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetSourCrudeOilIndicator\"},\"SweetGasIndicator\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetGasIndicator\"},\"RefineryProcessSourceCrudeOilNote\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessSourceCrudeOilNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessSourceCrudeOil\",\"path\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\"},\"description\":\"Crude Oil that is input into the refinery process during the associated period from the indicated storage tank.\\n\\nNote:\\nThe primary raw material for most of the petroleum processes is crude oil.\",\"primaryKey\":[\"RefineryProcessId\",\"CrudeOilTypeId\",\"StorageTankId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil type.\",\"isNullable\":false,\"name\":\"CrudeOilTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"StorageTankId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Tank.\",\"isNullable\":false,\"name\":\"StorageTankId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the source crude oil - process relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the source crude oil - process relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessCrudeOilSourceUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity/units of process crude input into the process.\",\"isNullable\":true,\"name\":\"RefineryProcessCrudeOilSourceUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil pretreatment type.\",\"isNullable\":true,\"name\":\"CrudeOilPretreatmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilGravityApi\"},\"dataType\":\"integer\",\"description\":\"The density of petroleum oil is expressed in the United States as API gravity,\",\"isNullable\":true,\"name\":\"CrudeOilGravityApi\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilDegreeApi\"},\"dataType\":\"integer\",\"description\":\"The specific gravity or API gravity is relative to the density of water at 60 degrees F 15.9 degrees C).  \\n\\nThe expression for API is non-linear, and specific gravities must be used when calculating the gravity for blends.  \\n\\nThe API gravity is an inverse relationship when compared to the specific gravity, and a higher value indicates a less dense material.\",\"isNullable\":true,\"name\":\"CrudeOilDegreeApi\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSulfurContentWeightPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Both sulfur content and API gravity have the greatest influence on the value of crude oil8. \\n\\nThe related sulfur content of crude oil varies from a trace to greater than five weight percent. \\n\\nA high sulfur content crude oils are known as \\\"sour\\\" crude oils and require more extensive processing than low sulfur or \\\"sweet\\\" crude oils.\\n\\nThe lower the API gravity for a crude oil the higher the sulfur content.  However, there are exceptions to this rule, with low API sweet crude oils and high API sour crude oils.  The additional processing for sour crude oils involves hydrogen treating processes to convert the sulfur to H2S that can be removed.\",\"isNullable\":true,\"scale\":8,\"name\":\"CrudeOilSulfurContentWeightPercent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilCarbonResidueWeightPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"This property is determined by destructively distilling a sample to elemental carbon (coke) in the absence of air. \\n\\n This is a measure of the asphalt content in the crude oil and the quantity of the lubricating oil portion that may be recovered as product.  It is also used to determine the yields from coking processes and as a measure of the coke deposited on the catalyst for catalytic cracking processes.  In general, the higher the carbon residue for a crude oil, the lower its value as a refinery feed stock.\",\"isNullable\":true,\"scale\":8,\"name\":\"CrudeOilCarbonResidueWeightPercent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSaltContentLbs1000Barrels\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"All crude oil contains some inorganic salts in the form of chlorides.  When the salt content exceeds 10 pounds /1000 barrels of crude oil it is necessary to remove the salts prior to distillation of the crude oil to reduce corrosion\",\"isNullable\":true,\"scale\":8,\"name\":\"CrudeOilSaltContentLbs1000Barrels\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilMetalsPpm\"},\"dataType\":\"integer\",\"description\":\"The quantity of metal in the crude oil expressed in parts per million.\",\"isNullable\":true,\"name\":\"CrudeOilMetalsPpm\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilNitrogenContentWeightPercent\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Nitrogen compounds in crude oil reduce the activity of cracking catalysts. \\n\\nThe majority of the nitrogen in crude oil is contained in the highest boiling fractions.  High nitrogen content crude oil may require special processing to remove the nitrogen.\",\"isNullable\":true,\"scale\":8,\"name\":\"CrudeOilNitrogenContentWeightPercent\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPourPointC\"},\"dataType\":\"integer\",\"description\":\"Pour point is a measure of the paraffinicity or waxiness of a crude oil.  \\n\\nNormally a waxy crude oil has a high pour point; that is, it congeals at a temperature higher than room temperature.  Conversely, a low pour point indicates an absence of paraffins and/or a presence of aromatic compounds which tend to lower the pour point.\",\"isNullable\":true,\"name\":\"CrudeOilPourPointC\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetSourCrudeOilIndicator\"},\"dataType\":\"boolean\",\"description\":\"Crude oil is generally described as sweet or sour according to its sulfur content, and heavy or light according to its API Gravity. \\n\\nA heavy crude is less than 30°API, while a light crude is greater than 30°API.\\n\\nIf crude contains a sizable amount of sulfur or sulfur compounds, it is called sour crude; if it has little to no sulfur, it is sweet crude. Sour crude may contain 1%-5% sulfur content, while sweet crudes will have less than 1% sulfur content.\\n\\nThe API Gravity index is a relative measure of weight-the lower the number, the heavier the material; the higher the number, the lighter the material. While there are no exacting definitions for these types of crudes, a general rule of thumb is:\",\"isNullable\":true,\"name\":\"SweetSourCrudeOilIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetGasIndicator\"},\"dataType\":\"boolean\",\"description\":\"Sweet gas: A gas stream from which the sulfur compounds have been removed.\",\"isNullable\":true,\"name\":\"SweetGasIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessSourceCrudeOilNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process source crude.\",\"isNullable\":true,\"name\":\"RefineryProcessSourceCrudeOilNote\"}]}}}",
+			"Description": "Crude Oil that is input into the refinery process during the associated period from the indicated storage tank.\n\nNote:\nThe primary raw material for most of the petroleum processes is crude oil.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,CrudeOilTypeId,StorageTankId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

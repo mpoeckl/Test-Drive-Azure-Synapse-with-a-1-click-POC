@@ -1,0 +1,106 @@
+{
+	"name": "PipelineType",
+	"properties": {
+		"Name": "PipelineType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pipeline.\n\nEx:\n- House line\n- Service line\n- Gathering pipeline\n- Transportation pipeline\n- Distribution pipeline\n \nwhere:\n\nHOUSE LINE\nThe natural gas piping from the meter to your natural gas equipment and appliances. You pay for and own house lines, just as you do your customer service line\n\nSERVICE LINE\nThe gas piping from our main to the meter in your home. This consists of a company service line and a customer service line\n\nGATHERING PIPELINE\nGroup of smaller interconnected pipelines forming complex networks with the purpose of bringing crude oil or natural gas from several nearby wells to a treatment plant or processing facility. In this group, pipelines are usually short- a couple of hundred meters- and with small diameters. Also sub-sea pipelines for collecting product from deep water production platforms are considered gathering systems.\n\nTRANSPORTATION PIPELINE\nMainly long pipes with large diameters, moving products (oil, gas, refined products) between cities, countries and even continents. These transportation networks include several compressor stations in gas lines or pump stations for crude and multiproduct pipelines.\n\nDISTRIBUTION PIPELINE\nComposed of several interconnected pipelines with small diameters, used to take the products to the final consumer. Feeder lines to distribute gas to homes and businesses downstream. Pipelines at terminals for distributing products to tanks and storage facilities are included in this group.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineTypeId",
+					"Description": "The unique identifier of a Pipeline Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineType.cdm.json/PipelineType",
+						"Name": "PipelineTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineTypeName",
+					"Description": "The name of a Pipeline Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineType.cdm.json/PipelineType",
+						"Name": "PipelineTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineTypeDescription",
+					"Description": "The description of a Pipeline Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineType.cdm.json/PipelineType",
+						"Name": "PipelineTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineTypeId\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeId\"},\"PipelineTypeName\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeName\"},\"PipelineTypeDescription\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineType\",\"path\":\"PipelineType.cdm.json/PipelineType\"},\"description\":\"The type of pipeline.\\n\\nEx:\\n- House line\\n- Service line\\n- Gathering pipeline\\n- Transportation pipeline\\n- Distribution pipeline\\n \\nwhere:\\n\\nHOUSE LINE\\nThe natural gas piping from the meter to your natural gas equipment and appliances. You pay for and own house lines, just as you do your customer service line\\n\\nSERVICE LINE\\nThe gas piping from our main to the meter in your home. This consists of a company service line and a customer service line\\n\\nGATHERING PIPELINE\\nGroup of smaller interconnected pipelines forming complex networks with the purpose of bringing crude oil or natural gas from several nearby wells to a treatment plant or processing facility. In this group, pipelines are usually short- a couple of hundred meters- and with small diameters. Also sub-sea pipelines for collecting product from deep water production platforms are considered gathering systems.\\n\\nTRANSPORTATION PIPELINE\\nMainly long pipes with large diameters, moving products (oil, gas, refined products) between cities, countries and even continents. These transportation networks include several compressor stations in gas lines or pump stations for crude and multiproduct pipelines.\\n\\nDISTRIBUTION PIPELINE\\nComposed of several interconnected pipelines with small diameters, used to take the products to the final consumer. Feeder lines to distribute gas to homes and businesses downstream. Pipelines at terminals for distributing products to tanks and storage facilities are included in this group.\",\"primaryKey\":[\"PipelineTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Type.\",\"isNullable\":false,\"name\":\"PipelineTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pipeline Type.\",\"isNullable\":true,\"name\":\"PipelineTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineType.cdm.json/PipelineType\",\"name\":\"PipelineTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pipeline Type.\",\"isNullable\":true,\"name\":\"PipelineTypeDescription\"}]}}}",
+			"Description": "The type of pipeline.\n\nEx:\n- House line\n- Service line\n- Gathering pipeline\n- Transportation pipeline\n- Distribution pipeline\n \nwhere:\n\nHOUSE LINE\nThe natural gas piping from the meter to your natural gas equipment and appliances. You pay for and own house lines, just as you do your customer service line\n\nSERVICE LINE\nThe gas piping from our main to the meter in your home. This consists of a company service line and a customer service line\n\nGATHERING PIPELINE\nGroup of smaller interconnected pipelines forming complex networks with the purpose of bringing crude oil or natural gas from several nearby wells to a treatment plant or processing facility. In this group, pipelines are usually short- a couple of hundred meters- and with small diameters. Also sub-sea pipelines for collecting product from deep water production platforms are considered gathering systems.\n\nTRANSPORTATION PIPELINE\nMainly long pipes with large diameters, moving products (oil, gas, refined products) between cities, countries and even continents. These transportation networks include several compressor stations in gas lines or pump stations for crude and multiproduct pipelines.\n\nDISTRIBUTION PIPELINE\nComposed of several interconnected pipelines with small diameters, used to take the products to the final consumer. Feeder lines to distribute gas to homes and businesses downstream. Pipelines at terminals for distributing products to tanks and storage facilities are included in this group.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

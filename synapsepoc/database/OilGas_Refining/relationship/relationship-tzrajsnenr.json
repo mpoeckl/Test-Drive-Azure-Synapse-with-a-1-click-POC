@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tzrajsnenr",
+	"properties": {
+		"Name": "relationship-tzrajsnenr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OilAndGasProduct",
+		"ToTableName": "ProductGroupProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"toEntity\":\"ProductGroupProduct.cdm.json/ProductGroupProduct\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

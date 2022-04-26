@@ -1,0 +1,106 @@
+{
+	"name": "PumpRotationDirection",
+	"properties": {
+		"Name": "PumpRotationDirection",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The direction in which the pump gear, screw, vane etc. rotates.\n\nEx:\n-  Clockwise\n-  Counter-clockwise",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpRotationDirectionId",
+					"Description": "The unique identifier of a pump rotation direction type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpRotationDirection.cdm.json/PumpRotationDirection",
+						"Name": "PumpRotationDirectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpRotationDirectionName",
+					"Description": "The name of a pump rotation direction type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpRotationDirection.cdm.json/PumpRotationDirection",
+						"Name": "PumpRotationDirectionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpRotationDirectionDescription",
+					"Description": "The description of a pump rotation direction type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpRotationDirection.cdm.json/PumpRotationDirection",
+						"Name": "PumpRotationDirectionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpRotationDirection",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpRotationDirection",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpRotationDirectionId\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionId\"},\"PumpRotationDirectionName\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionName\"},\"PumpRotationDirectionDescription\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpRotationDirection\",\"path\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\"},\"description\":\"The direction in which the pump gear, screw, vane etc. rotates.\\n\\nEx:\\n-  Clockwise\\n-  Counter-clockwise\",\"primaryKey\":[\"PumpRotationDirectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump rotation direction type.\",\"isNullable\":false,\"name\":\"PumpRotationDirectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump rotation direction type.\",\"isNullable\":true,\"name\":\"PumpRotationDirectionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpRotationDirection.cdm.json/PumpRotationDirection\",\"name\":\"PumpRotationDirectionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump rotation direction type.\",\"isNullable\":true,\"name\":\"PumpRotationDirectionDescription\"}]}}}",
+			"Description": "The direction in which the pump gear, screw, vane etc. rotates.\n\nEx:\n-  Clockwise\n-  Counter-clockwise",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpRotationDirectionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vlalblfcuj",
+	"properties": {
+		"Name": "relationship-vlalblfcuj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentComponentRelationshipType",
+		"ToTableName": "IncidentRelatedComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentComponentRelationshipTypeId",
+				"ToColumnName": "IncidentComponentRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"toEntity\":\"IncidentRelatedComponent.cdm.json/IncidentRelatedComponent\",\"joinPairs\":[{\"fromAttribute\":\"IncidentComponentRelationshipTypeId\",\"toAttribute\":\"IncidentComponentRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

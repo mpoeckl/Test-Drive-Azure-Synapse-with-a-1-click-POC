@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cvosgjacdn",
+	"properties": {
+		"Name": "relationship-cvosgjacdn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingType",
+		"ToTableName": "PlantInformationPoint",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingTypeId",
+				"ToColumnName": "ReadingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingType.cdm.json/ReadingType\",\"toEntity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"joinPairs\":[{\"fromAttribute\":\"ReadingTypeId\",\"toAttribute\":\"ReadingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sfflzpwibw",
+	"properties": {
+		"Name": "relationship-sfflzpwibw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CrudeOilPretreatmentType",
+		"ToTableName": "RefineryProcessSourceCrudeOil",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CrudeOilPretreatmentTypeId",
+				"ToColumnName": "CrudeOilPretreatmentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"toEntity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"joinPairs\":[{\"fromAttribute\":\"CrudeOilPretreatmentTypeId\",\"toAttribute\":\"CrudeOilPretreatmentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

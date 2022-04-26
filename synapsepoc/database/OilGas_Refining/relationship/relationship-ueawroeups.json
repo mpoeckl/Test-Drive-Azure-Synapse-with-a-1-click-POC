@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ueawroeups",
+	"properties": {
+		"Name": "relationship-ueawroeups",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CorrosiveQuality",
+		"ToTableName": "Material",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CorrosiveQualityId",
+				"ToColumnName": "CorrosiveQualityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"toEntity\":\"Material.cdm.json/Material\",\"joinPairs\":[{\"fromAttribute\":\"CorrosiveQualityId\",\"toAttribute\":\"CorrosiveQualityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

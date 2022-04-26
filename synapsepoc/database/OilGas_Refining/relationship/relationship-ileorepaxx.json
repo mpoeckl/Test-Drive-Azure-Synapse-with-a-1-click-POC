@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ileorepaxx",
+	"properties": {
+		"Name": "relationship-ileorepaxx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "StorageContainerStorageCapacity",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "StorageCapacityUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"StorageCapacityUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

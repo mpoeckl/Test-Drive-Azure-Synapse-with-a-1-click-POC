@@ -1,0 +1,106 @@
+{
+	"name": "AssetLocationPartyRelationshipType",
+	"properties": {
+		"Name": "AssetLocationPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A relationship that exists between the party and the asset at a location.\n\nEx:\n- Operator\n- Manager\n- Auditing Party\n- Budget Responsible Party\n- Maintained-by Party\n- Installed-by Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetLocationPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Asset Location Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType",
+						"Name": "AssetLocationPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetLocationPartyRelationshipTypeName",
+					"Description": "The name of an Asset Location Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType",
+						"Name": "AssetLocationPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AssetLocationPartyRelationshipTypeDescription",
+					"Description": "The description of an Asset Location Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType",
+						"Name": "AssetLocationPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetLocationPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetLocationPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetLocationPartyRelationshipTypeId\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeId\"},\"AssetLocationPartyRelationshipTypeName\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeName\"},\"AssetLocationPartyRelationshipTypeDescription\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetLocationPartyRelationshipType\",\"path\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\"},\"description\":\"A relationship that exists between the party and the asset at a location.\\n\\nEx:\\n- Operator\\n- Manager\\n- Auditing Party\\n- Budget Responsible Party\\n- Maintained-by Party\\n- Installed-by Party\",\"primaryKey\":[\"AssetLocationPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Location Party Relationship Type.\",\"isNullable\":false,\"name\":\"AssetLocationPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Asset Location Party Relationship Type.\",\"isNullable\":true,\"name\":\"AssetLocationPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetLocationPartyRelationshipType.cdm.json/AssetLocationPartyRelationshipType\",\"name\":\"AssetLocationPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Asset Location Party Relationship Type.\",\"isNullable\":true,\"name\":\"AssetLocationPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "A relationship that exists between the party and the asset at a location.\n\nEx:\n- Operator\n- Manager\n- Auditing Party\n- Budget Responsible Party\n- Maintained-by Party\n- Installed-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetLocationPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

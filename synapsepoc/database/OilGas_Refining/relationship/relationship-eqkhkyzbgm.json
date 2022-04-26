@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eqkhkyzbgm",
+	"properties": {
+		"Name": "relationship-eqkhkyzbgm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CasingClosureType",
+		"ToTableName": "ComponentCasingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CasingClosureTypeId",
+				"ToColumnName": "CasingClosureTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"toEntity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"joinPairs\":[{\"fromAttribute\":\"CasingClosureTypeId\",\"toAttribute\":\"CasingClosureTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

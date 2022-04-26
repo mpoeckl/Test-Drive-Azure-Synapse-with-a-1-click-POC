@@ -1,0 +1,139 @@
+{
+	"name": "MeterModelSpecification",
+	"properties": {
+		"Name": "MeterModelSpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A specification associated with a meter model.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterModelId",
+					"Description": "The unique identifier of a Meter Model.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecification.cdm.json/MeterModelSpecification",
+						"Name": "MeterModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationTypeId",
+					"Description": "The unique identifier of a meter model specification type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecification.cdm.json/MeterModelSpecification",
+						"Name": "MeterModelSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationValue",
+					"Description": "The value of the meter model specification.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecification.cdm.json/MeterModelSpecification",
+						"Name": "MeterModelSpecificationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecification.cdm.json/MeterModelSpecification",
+						"Name": "MeterModelSpecificationUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelSpecificationNote",
+					"Description": "A note, comment or additional information regarding the meter model.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModelSpecification.cdm.json/MeterModelSpecification",
+						"Name": "MeterModelSpecificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModelSpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModelSpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterModelId\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelId\"},\"MeterModelSpecificationTypeId\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationTypeId\"},\"MeterModelSpecificationValue\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationValue\"},\"MeterModelSpecificationUomId\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationUomId\"},\"MeterModelSpecificationNote\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterModelSpecification\",\"path\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\"},\"description\":\"A specification associated with a meter model.\",\"primaryKey\":[\"MeterModelId\",\"MeterModelSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Model.\",\"isNullable\":false,\"name\":\"MeterModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter model specification type.\",\"isNullable\":false,\"name\":\"MeterModelSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of the meter model specification.\",\"isNullable\":true,\"scale\":8,\"name\":\"MeterModelSpecificationValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MeterModelSpecificationUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"name\":\"MeterModelSpecificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the meter model.\",\"isNullable\":true,\"name\":\"MeterModelSpecificationNote\"}]}}}",
+			"Description": "A specification associated with a meter model.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterModelId,MeterModelSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

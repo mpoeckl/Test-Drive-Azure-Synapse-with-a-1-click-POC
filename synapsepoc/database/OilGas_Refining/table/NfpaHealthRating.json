@@ -1,0 +1,106 @@
+{
+	"name": "NfpaHealthRating",
+	"properties": {
+		"Name": "NfpaHealthRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\". \n\n \nGeneral Rating Summary Health \n4   May be fatal on short exposure. Specialized protective equipment required\n3   Corrosive or toxic. Avoid skin contact or inhalation\n2   May be harmful if inhaled or absorbed\n1   May be irritating\n0   No unusual hazard",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NfpaHealthRatingId",
+					"Description": "The unique identifier of a NFPA Health Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaHealthRating.cdm.json/NfpaHealthRating",
+						"Name": "NfpaHealthRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NfpaHealthRatingName",
+					"Description": "The short name of a NFPA Health Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaHealthRating.cdm.json/NfpaHealthRating",
+						"Name": "NfpaHealthRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NfpaHealthRatingDescription",
+					"Description": "The description of a NFPA Health Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaHealthRating.cdm.json/NfpaHealthRating",
+						"Name": "NfpaHealthRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaHealthRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaHealthRating",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NfpaHealthRatingId\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingId\"},\"NfpaHealthRatingName\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingName\"},\"NfpaHealthRatingDescription\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NfpaHealthRating\",\"path\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\"},\"description\":\"NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \\n\\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \\\"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\\\". \\n\\n \\nGeneral Rating Summary Health \\n4   May be fatal on short exposure. Specialized protective equipment required\\n3   Corrosive or toxic. Avoid skin contact or inhalation\\n2   May be harmful if inhaled or absorbed\\n1   May be irritating\\n0   No unusual hazard\",\"primaryKey\":[\"NfpaHealthRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a NFPA Health Rating.\",\"isNullable\":false,\"name\":\"NfpaHealthRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The short name of a NFPA Health Rating.\",\"isNullable\":true,\"name\":\"NfpaHealthRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a NFPA Health Rating.\",\"isNullable\":true,\"name\":\"NfpaHealthRatingDescription\"}]}}}",
+			"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\". \n\n \nGeneral Rating Summary Health \n4   May be fatal on short exposure. Specialized protective equipment required\n3   Corrosive or toxic. Avoid skin contact or inhalation\n2   May be harmful if inhaled or absorbed\n1   May be irritating\n0   No unusual hazard",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "NfpaHealthRatingId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

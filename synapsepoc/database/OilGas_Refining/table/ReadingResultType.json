@@ -1,0 +1,106 @@
+{
+	"name": "ReadingResultType",
+	"properties": {
+		"Name": "ReadingResultType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The result of the reading.\n\nEx:\n- Within specifications\n- Exceeds specifications\n- Resample required",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReadingResultTypeId",
+					"Description": "The unique identifier of a Reading Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingResultType.cdm.json/ReadingResultType",
+						"Name": "ReadingResultTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingResultTypeName",
+					"Description": "The name of a Reading Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingResultType.cdm.json/ReadingResultType",
+						"Name": "ReadingResultTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReadingResultTypeDescription",
+					"Description": "The description of a Reading Result Type.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingResultType.cdm.json/ReadingResultType",
+						"Name": "ReadingResultTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingResultType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingResultType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReadingResultTypeId\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeId\"},\"ReadingResultTypeName\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeName\"},\"ReadingResultTypeDescription\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReadingResultType\",\"path\":\"ReadingResultType.cdm.json/ReadingResultType\"},\"description\":\"The result of the reading.\\n\\nEx:\\n- Within specifications\\n- Exceeds specifications\\n- Resample required\",\"primaryKey\":[\"ReadingResultTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Result Type.\",\"isNullable\":false,\"name\":\"ReadingResultTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Reading Result Type.\",\"isNullable\":true,\"name\":\"ReadingResultTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"name\":\"ReadingResultTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Reading Result Type.\",\"isNullable\":true,\"name\":\"ReadingResultTypeDescription\"}]}}}",
+			"Description": "The result of the reading.\n\nEx:\n- Within specifications\n- Exceeds specifications\n- Resample required",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ReadingResultTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

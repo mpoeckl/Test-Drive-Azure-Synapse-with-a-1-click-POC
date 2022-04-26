@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nutvgrvoha",
+	"properties": {
+		"Name": "relationship-nutvgrvoha",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankConstructionMaterialType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankConstructionMaterialTypeId",
+				"ToColumnName": "StorageTankConstructionMaterialTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankConstructionMaterialTypeId\",\"toAttribute\":\"StorageTankConstructionMaterialTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

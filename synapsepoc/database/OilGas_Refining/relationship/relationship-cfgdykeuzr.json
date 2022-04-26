@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cfgdykeuzr",
+	"properties": {
+		"Name": "relationship-cfgdykeuzr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Protocol",
+		"ToTableName": "ComponentProtocol",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProtocolId",
+				"ToColumnName": "ProtocolId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Protocol.cdm.json/Protocol\",\"toEntity\":\"ComponentProtocol.cdm.json/ComponentProtocol\",\"joinPairs\":[{\"fromAttribute\":\"ProtocolId\",\"toAttribute\":\"ProtocolId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

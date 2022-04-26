@@ -1,0 +1,106 @@
+{
+	"name": "OdorHedonicToneType",
+	"properties": {
+		"Name": "OdorHedonicToneType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Hedonic assessment is the process of scaling odors on a scale ranging from extremely unpleasant via neutral up to extremely pleasant.\n\nEx:\n- Extremely unpleasant\n- Moderately unpleasant\n- Unpleasant\n- Neutral\n- Moderately pleasant\n- Extremely pleasant",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OdorHedonicToneTypeId",
+					"Description": "The unique identifier of an odor hedonic tone type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorHedonicToneType.cdm.json/OdorHedonicToneType",
+						"Name": "OdorHedonicToneTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OdorHedonicToneTypeName",
+					"Description": "The name of an odor hedonic tone type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorHedonicToneType.cdm.json/OdorHedonicToneType",
+						"Name": "OdorHedonicToneTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OdorHedonicToneTypeDescription",
+					"Description": "The description of an odor hedonic tone type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorHedonicToneType.cdm.json/OdorHedonicToneType",
+						"Name": "OdorHedonicToneTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorHedonicToneType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorHedonicToneType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OdorHedonicToneTypeId\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeId\"},\"OdorHedonicToneTypeName\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeName\"},\"OdorHedonicToneTypeDescription\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OdorHedonicToneType\",\"path\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\"},\"description\":\"Hedonic assessment is the process of scaling odors on a scale ranging from extremely unpleasant via neutral up to extremely pleasant.\\n\\nEx:\\n- Extremely unpleasant\\n- Moderately unpleasant\\n- Unpleasant\\n- Neutral\\n- Moderately pleasant\\n- Extremely pleasant\",\"primaryKey\":[\"OdorHedonicToneTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an odor hedonic tone type.\",\"isNullable\":false,\"name\":\"OdorHedonicToneTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an odor hedonic tone type.\",\"isNullable\":true,\"name\":\"OdorHedonicToneTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"name\":\"OdorHedonicToneTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an odor hedonic tone type.\",\"isNullable\":true,\"name\":\"OdorHedonicToneTypeDescription\"}]}}}",
+			"Description": "Hedonic assessment is the process of scaling odors on a scale ranging from extremely unpleasant via neutral up to extremely pleasant.\n\nEx:\n- Extremely unpleasant\n- Moderately unpleasant\n- Unpleasant\n- Neutral\n- Moderately pleasant\n- Extremely pleasant",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "OdorHedonicToneTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

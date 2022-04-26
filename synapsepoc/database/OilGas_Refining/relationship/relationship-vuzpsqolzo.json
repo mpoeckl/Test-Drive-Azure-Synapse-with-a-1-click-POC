@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vuzpsqolzo",
+	"properties": {
+		"Name": "relationship-vuzpsqolzo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReadingStatus",
+		"ToTableName": "ComponentReading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentReadingStatusId",
+				"ToColumnName": "ComponentReadingStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"toEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"joinPairs\":[{\"fromAttribute\":\"ComponentReadingStatusId\",\"toAttribute\":\"ComponentReadingStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mlppgnpnwf",
+	"properties": {
+		"Name": "relationship-mlppgnpnwf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "Device",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"Device.cdm.json/Device\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

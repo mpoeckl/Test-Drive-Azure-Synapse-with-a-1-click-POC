@@ -1,0 +1,106 @@
+{
+	"name": "PumpType",
+	"properties": {
+		"Name": "PumpType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pump.\n\nEx:\n-  Axially split\n-  Ring section\n-  Single stage\n-  Vertical\n-  Submerged \n-  Centrifugal\n-  Positive displacement\n-  Diaphragm\n-  Dewatering\n-  Intake \n-  API Process\n-  ANSI Process\n-  Drum \n-  Horizontal slit case\n-  Jet\n-  Magnetic Drive\n\nwhere:\n\nA centrifugal water pump uses a rotating impeller to move water into the  pump and pressurize the  discharge flow. Standard, trash and submersible models are three different alternatives to centrifugal water pumps. All liquids can be pumped using centrifugal water pumps, even liquid with low viscosity. These pumps work great with thin liquids and high flow rates.\n\nPositive displacement designs are the  ones which deliver a fixed amount of flow through the  mechanical contraction and expansion of a flexible diaphragm. These pumps are ideal in many industries that manage high viscosity liquids, or where sensitive solids are also present. Recommended water pumps to be used for low flow and high pressure combination or other applications.\n\nDewatering pump- Designed for clear water applications (agricultural, industrial, and residential). As a general rule, dewatering pumps are limited to a 10% solids concentration and a solids size of one-fourth the  diameter of the  suction inlet. For applications requiring greater solids handling capability, trash pumps should be used.\n\nDiaphragm pump - Uses a positive displacement design rather than centrifugal force to move water through the  casing, delivering a specific amount of flow per stroke, revolution, or cycle. Due to their great air handling capabilities, diaphragm pumps are ideal for applications involving slow seepage at the  point of suction.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpTypeId",
+					"Description": "The unique identifier of a Pump Type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpType.cdm.json/PumpType",
+						"Name": "PumpTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpTypeName",
+					"Description": "The name of a Pump Type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpType.cdm.json/PumpType",
+						"Name": "PumpTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpTypeDescription",
+					"Description": "The description of a Pump Type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpType.cdm.json/PumpType",
+						"Name": "PumpTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpTypeId\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeId\"},\"PumpTypeName\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeName\"},\"PumpTypeDescription\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpType\",\"path\":\"PumpType.cdm.json/PumpType\"},\"description\":\"The type of pump.\\n\\nEx:\\n-  Axially split\\n-  Ring section\\n-  Single stage\\n-  Vertical\\n-  Submerged \\n-  Centrifugal\\n-  Positive displacement\\n-  Diaphragm\\n-  Dewatering\\n-  Intake \\n-  API Process\\n-  ANSI Process\\n-  Drum \\n-  Horizontal slit case\\n-  Jet\\n-  Magnetic Drive\\n\\nwhere:\\n\\nA centrifugal water pump uses a rotating impeller to move water into the  pump and pressurize the  discharge flow. Standard, trash and submersible models are three different alternatives to centrifugal water pumps. All liquids can be pumped using centrifugal water pumps, even liquid with low viscosity. These pumps work great with thin liquids and high flow rates.\\n\\nPositive displacement designs are the  ones which deliver a fixed amount of flow through the  mechanical contraction and expansion of a flexible diaphragm. These pumps are ideal in many industries that manage high viscosity liquids, or where sensitive solids are also present. Recommended water pumps to be used for low flow and high pressure combination or other applications.\\n\\nDewatering pump- Designed for clear water applications (agricultural, industrial, and residential). As a general rule, dewatering pumps are limited to a 10% solids concentration and a solids size of one-fourth the  diameter of the  suction inlet. For applications requiring greater solids handling capability, trash pumps should be used.\\n\\nDiaphragm pump - Uses a positive displacement design rather than centrifugal force to move water through the  casing, delivering a specific amount of flow per stroke, revolution, or cycle. Due to their great air handling capabilities, diaphragm pumps are ideal for applications involving slow seepage at the  point of suction.\",\"primaryKey\":[\"PumpTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pump Type.\",\"isNullable\":false,\"name\":\"PumpTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pump Type.\",\"isNullable\":true,\"name\":\"PumpTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpType.cdm.json/PumpType\",\"name\":\"PumpTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pump Type.\",\"isNullable\":true,\"name\":\"PumpTypeDescription\"}]}}}",
+			"Description": "The type of pump.\n\nEx:\n-  Axially split\n-  Ring section\n-  Single stage\n-  Vertical\n-  Submerged \n-  Centrifugal\n-  Positive displacement\n-  Diaphragm\n-  Dewatering\n-  Intake \n-  API Process\n-  ANSI Process\n-  Drum \n-  Horizontal slit case\n-  Jet\n-  Magnetic Drive\n\nwhere:\n\nA centrifugal water pump uses a rotating impeller to move water into the  pump and pressurize the  discharge flow. Standard, trash and submersible models are three different alternatives to centrifugal water pumps. All liquids can be pumped using centrifugal water pumps, even liquid with low viscosity. These pumps work great with thin liquids and high flow rates.\n\nPositive displacement designs are the  ones which deliver a fixed amount of flow through the  mechanical contraction and expansion of a flexible diaphragm. These pumps are ideal in many industries that manage high viscosity liquids, or where sensitive solids are also present. Recommended water pumps to be used for low flow and high pressure combination or other applications.\n\nDewatering pump- Designed for clear water applications (agricultural, industrial, and residential). As a general rule, dewatering pumps are limited to a 10% solids concentration and a solids size of one-fourth the  diameter of the  suction inlet. For applications requiring greater solids handling capability, trash pumps should be used.\n\nDiaphragm pump - Uses a positive displacement design rather than centrifugal force to move water through the  casing, delivering a specific amount of flow per stroke, revolution, or cycle. Due to their great air handling capabilities, diaphragm pumps are ideal for applications involving slow seepage at the  point of suction.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

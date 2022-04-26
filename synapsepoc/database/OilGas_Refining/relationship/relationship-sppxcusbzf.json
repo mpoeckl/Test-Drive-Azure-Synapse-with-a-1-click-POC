@@ -1,0 +1,26 @@
+{
+	"name": "relationship-sppxcusbzf",
+	"properties": {
+		"Name": "relationship-sppxcusbzf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestResultType",
+		"ToTableName": "RefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestResultTypeId",
+				"ToColumnName": "RefineryTestResultTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"toEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestResultTypeId\",\"toAttribute\":\"RefineryTestResultTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

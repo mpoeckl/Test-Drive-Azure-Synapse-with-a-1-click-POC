@@ -1,0 +1,26 @@
+{
+	"name": "relationship-upewrnbvsj",
+	"properties": {
+		"Name": "relationship-upewrnbvsj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestCost",
+		"ToTableName": "RefineryTestCostRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CostTypeId",
+				"ToColumnName": "CostTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestCost.cdm.json/RefineryTestCost\",\"toEntity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"CostTypeId\",\"toAttribute\":\"CostTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

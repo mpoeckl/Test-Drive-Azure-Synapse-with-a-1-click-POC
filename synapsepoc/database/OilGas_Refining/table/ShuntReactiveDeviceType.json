@@ -1,0 +1,106 @@
+{
+	"name": "ShuntReactiveDeviceType",
+	"properties": {
+		"Name": "ShuntReactiveDeviceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of shunt reactive device.\n\nEx:\n- Capacitor\n- Synchronous Condenser\n- Static VAR Compensator\n\nwhere:\n\nCAPACITOR\nA device that stores electrostatic energy in a manner similar to the way an inductor stores electromagnetic energy. Often used for filtering or DC blocking.\n\nA capacitor or condenser is a passive electronic component consisting of a pair of conductors separated by a dielectric. \n\nWhen a voltage potential difference exists between the conductors, an electric field is present in the dielectric. \n\nThis field stores energy and produces a mechanical force between the plates. The effect is greatest between wide, flat, parallel, narrowly separated conductors.\n\nSYNCHRONOUS CONDENSER\nA synchronous condenser (sometimes synchronous compensator) is a synchronous motor that is not attached to any driven equipment. \n\nIts field is controlled by a voltage regulator to either generate or absorb reactive power as needed to support a system's voltage or to maintain the system power factor at a specified level. \n\nThe condenser's installation and operation are identical to large electric motors.\n\nSTATUS VAR COMPENSATOR\nA Static VAR Compensator (or SVC) is an electrical device for providing fast-acting reactive power compensation on high-voltage electricity transmission networks.\n\nSVCs are part of the Flexible AC transmission system device family, regulating voltage and stabilizing the system. \n\nThe term \"static\" refers to the fact that the SVC has no moving parts other than circuit breakers and disconnects. Prior to the invention of the SVC, power factor compensation was the preserve of large rotating machines such as synchronous condensers.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShuntReactiveDeviceTypeId",
+					"Description": "The unique identifier of a shunt reactive device type.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType",
+						"Name": "ShuntReactiveDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShuntReactiveDeviceTypeName",
+					"Description": "The name of a shunt reactive device type.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType",
+						"Name": "ShuntReactiveDeviceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShuntReactiveDeviceTypeDescription",
+					"Description": "The description of a shunt reactive device type.",
+					"BaseAttributeReference": {
+						"Entity": "ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType",
+						"Name": "ShuntReactiveDeviceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShuntReactiveDeviceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShuntReactiveDeviceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShuntReactiveDeviceTypeId\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeId\"},\"ShuntReactiveDeviceTypeName\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeName\"},\"ShuntReactiveDeviceTypeDescription\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShuntReactiveDeviceType\",\"path\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\"},\"description\":\"The type of shunt reactive device.\\n\\nEx:\\n- Capacitor\\n- Synchronous Condenser\\n- Static VAR Compensator\\n\\nwhere:\\n\\nCAPACITOR\\nA device that stores electrostatic energy in a manner similar to the way an inductor stores electromagnetic energy. Often used for filtering or DC blocking.\\n\\nA capacitor or condenser is a passive electronic component consisting of a pair of conductors separated by a dielectric. \\n\\nWhen a voltage potential difference exists between the conductors, an electric field is present in the dielectric. \\n\\nThis field stores energy and produces a mechanical force between the plates. The effect is greatest between wide, flat, parallel, narrowly separated conductors.\\n\\nSYNCHRONOUS CONDENSER\\nA synchronous condenser (sometimes synchronous compensator) is a synchronous motor that is not attached to any driven equipment. \\n\\nIts field is controlled by a voltage regulator to either generate or absorb reactive power as needed to support a system's voltage or to maintain the system power factor at a specified level. \\n\\nThe condenser's installation and operation are identical to large electric motors.\\n\\nSTATUS VAR COMPENSATOR\\nA Static VAR Compensator (or SVC) is an electrical device for providing fast-acting reactive power compensation on high-voltage electricity transmission networks.\\n\\nSVCs are part of the Flexible AC transmission system device family, regulating voltage and stabilizing the system. \\n\\nThe term \\\"static\\\" refers to the fact that the SVC has no moving parts other than circuit breakers and disconnects. Prior to the invention of the SVC, power factor compensation was the preserve of large rotating machines such as synchronous condensers.\",\"primaryKey\":[\"ShuntReactiveDeviceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a shunt reactive device type.\",\"isNullable\":false,\"name\":\"ShuntReactiveDeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a shunt reactive device type.\",\"isNullable\":true,\"name\":\"ShuntReactiveDeviceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShuntReactiveDeviceType.cdm.json/ShuntReactiveDeviceType\",\"name\":\"ShuntReactiveDeviceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a shunt reactive device type.\",\"isNullable\":true,\"name\":\"ShuntReactiveDeviceTypeDescription\"}]}}}",
+			"Description": "The type of shunt reactive device.\n\nEx:\n- Capacitor\n- Synchronous Condenser\n- Static VAR Compensator\n\nwhere:\n\nCAPACITOR\nA device that stores electrostatic energy in a manner similar to the way an inductor stores electromagnetic energy. Often used for filtering or DC blocking.\n\nA capacitor or condenser is a passive electronic component consisting of a pair of conductors separated by a dielectric. \n\nWhen a voltage potential difference exists between the conductors, an electric field is present in the dielectric. \n\nThis field stores energy and produces a mechanical force between the plates. The effect is greatest between wide, flat, parallel, narrowly separated conductors.\n\nSYNCHRONOUS CONDENSER\nA synchronous condenser (sometimes synchronous compensator) is a synchronous motor that is not attached to any driven equipment. \n\nIts field is controlled by a voltage regulator to either generate or absorb reactive power as needed to support a system's voltage or to maintain the system power factor at a specified level. \n\nThe condenser's installation and operation are identical to large electric motors.\n\nSTATUS VAR COMPENSATOR\nA Static VAR Compensator (or SVC) is an electrical device for providing fast-acting reactive power compensation on high-voltage electricity transmission networks.\n\nSVCs are part of the Flexible AC transmission system device family, regulating voltage and stabilizing the system. \n\nThe term \"static\" refers to the fact that the SVC has no moving parts other than circuit breakers and disconnects. Prior to the invention of the SVC, power factor compensation was the preserve of large rotating machines such as synchronous condensers.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ShuntReactiveDeviceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

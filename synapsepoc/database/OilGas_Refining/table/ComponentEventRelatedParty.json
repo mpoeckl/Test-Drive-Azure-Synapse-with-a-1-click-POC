@@ -1,0 +1,155 @@
+{
+	"name": "ComponentEventRelatedParty",
+	"properties": {
+		"Name": "ComponentEventRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship of a component event and the associated party(s) during the period indicated.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentEventId",
+					"Description": "The unique identifier of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "ComponentEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "ComponentEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventStartTimestamp",
+					"Description": "The start timestamp of the component - event related party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "ComponentEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventEndTimestamp",
+					"Description": "The end timestamp of a component - event related party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "ComponentEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding a Component Event Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty",
+						"Name": "ComponentEventPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventId\"},\"PartyId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"PartyId\"},\"ComponentEventPartyRelationshipTypeId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipTypeId\"},\"ComponentEventStartTimestamp\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventStartTimestamp\"},\"ComponentEventEndTimestamp\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventEndTimestamp\"},\"ComponentEventPartyRelationshipNote\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentEventRelatedParty\",\"path\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\"},\"description\":\"The relationship of a component event and the associated party(s) during the period indicated.\",\"primaryKey\":[\"ComponentEventId\",\"PartyId\",\"ComponentEventPartyRelationshipTypeId\",\"ComponentEventStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event.\",\"isNullable\":false,\"name\":\"ComponentEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the component - event related party relationship.\",\"isNullable\":false,\"name\":\"ComponentEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of a component - event related party relationship.\",\"isNullable\":true,\"name\":\"ComponentEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Event Party Relationship.\",\"isNullable\":true,\"name\":\"ComponentEventPartyRelationshipNote\"}]}}}",
+			"Description": "The relationship of a component event and the associated party(s) during the period indicated.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentEventId,PartyId,ComponentEventPartyRelationshipTypeId,ComponentEventStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

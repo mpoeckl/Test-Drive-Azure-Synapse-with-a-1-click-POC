@@ -1,0 +1,106 @@
+{
+	"name": "PumpBearingType",
+	"properties": {
+		"Name": "PumpBearingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The pump bears supports the rotating shaft and allows it to turn with a minimum amount of friction. \n\nEx:\n-  Sleeve \n-  Anti-friction type\n-  Pivot-shoe thrust",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpBearingTypeId",
+					"Description": "The unique identifier of a type of pump bearing.",
+					"BaseAttributeReference": {
+						"Entity": "PumpBearingType.cdm.json/PumpBearingType",
+						"Name": "PumpBearingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpBearingTypeName",
+					"Description": "The name of a type of pump bearing.",
+					"BaseAttributeReference": {
+						"Entity": "PumpBearingType.cdm.json/PumpBearingType",
+						"Name": "PumpBearingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpBearingTypeDescription",
+					"Description": "The description of a type of pump bearing.",
+					"BaseAttributeReference": {
+						"Entity": "PumpBearingType.cdm.json/PumpBearingType",
+						"Name": "PumpBearingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpBearingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpBearingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpBearingTypeId\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeId\"},\"PumpBearingTypeName\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeName\"},\"PumpBearingTypeDescription\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpBearingType\",\"path\":\"PumpBearingType.cdm.json/PumpBearingType\"},\"description\":\"The pump bears supports the rotating shaft and allows it to turn with a minimum amount of friction. \\n\\nEx:\\n-  Sleeve \\n-  Anti-friction type\\n-  Pivot-shoe thrust\",\"primaryKey\":[\"PumpBearingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a type of pump bearing.\",\"isNullable\":false,\"name\":\"PumpBearingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a type of pump bearing.\",\"isNullable\":true,\"name\":\"PumpBearingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a type of pump bearing.\",\"isNullable\":true,\"name\":\"PumpBearingTypeDescription\"}]}}}",
+			"Description": "The pump bears supports the rotating shaft and allows it to turn with a minimum amount of friction. \n\nEx:\n-  Sleeve \n-  Anti-friction type\n-  Pivot-shoe thrust",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpBearingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

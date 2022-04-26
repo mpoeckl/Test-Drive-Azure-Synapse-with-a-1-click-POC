@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dqkksieutf",
+	"properties": {
+		"Name": "relationship-dqkksieutf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "StorageTankShapeType",
+		"ToTableName": "StorageTank",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StorageTankShapeTypeId",
+				"ToColumnName": "StorageTankShapeTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"StorageTankShapeType.cdm.json/StorageTankShapeType\",\"toEntity\":\"StorageTank.cdm.json/StorageTank\",\"joinPairs\":[{\"fromAttribute\":\"StorageTankShapeTypeId\",\"toAttribute\":\"StorageTankShapeTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

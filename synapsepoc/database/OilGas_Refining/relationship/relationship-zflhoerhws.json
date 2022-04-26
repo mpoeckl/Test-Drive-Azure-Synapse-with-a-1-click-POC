@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zflhoerhws",
+	"properties": {
+		"Name": "relationship-zflhoerhws",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentPartyRelationshipType",
+		"ToTableName": "ShipmentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentPartyRelationshipTypeId",
+				"ToColumnName": "ShipmentPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"toEntity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentPartyRelationshipTypeId\",\"toAttribute\":\"ShipmentPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

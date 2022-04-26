@@ -1,0 +1,106 @@
+{
+	"name": "RefineryStatusType",
+	"properties": {
+		"Name": "RefineryStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status type that may be associated with a refinery\n\nEx:\n- Operational\n- In Maintenance\n- Outage\n- Incident shut down\n- Closed",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryStatusTypeId",
+					"Description": "The unique identifier of a refinery status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryStatusType.cdm.json/RefineryStatusType",
+						"Name": "RefineryStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryStatusTypeName",
+					"Description": "The name of a refinery status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryStatusType.cdm.json/RefineryStatusType",
+						"Name": "RefineryStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryStatusTypeDescription",
+					"Description": "The description of a refinery status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryStatusType.cdm.json/RefineryStatusType",
+						"Name": "RefineryStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryStatusTypeId\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeId\"},\"RefineryStatusTypeName\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeName\"},\"RefineryStatusTypeDescription\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryStatusType\",\"path\":\"RefineryStatusType.cdm.json/RefineryStatusType\"},\"description\":\"The status type that may be associated with a refinery\\n\\nEx:\\n- Operational\\n- In Maintenance\\n- Outage\\n- Incident shut down\\n- Closed\",\"primaryKey\":[\"RefineryStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery status type.\",\"isNullable\":false,\"name\":\"RefineryStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery status type.\",\"isNullable\":true,\"name\":\"RefineryStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryStatusType.cdm.json/RefineryStatusType\",\"name\":\"RefineryStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery status type.\",\"isNullable\":true,\"name\":\"RefineryStatusTypeDescription\"}]}}}",
+			"Description": "The status type that may be associated with a refinery\n\nEx:\n- Operational\n- In Maintenance\n- Outage\n- Incident shut down\n- Closed",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

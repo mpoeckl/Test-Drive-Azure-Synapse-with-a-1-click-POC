@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wfvjprhpjf",
+	"properties": {
+		"Name": "relationship-wfvjprhpjf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReading",
+		"ToTableName": "ComponentReadingError",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingStartTimestamp",
+				"ToColumnName": "ReadingStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"toEntity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"joinPairs\":[{\"fromAttribute\":\"ReadingStartTimestamp\",\"toAttribute\":\"ReadingStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

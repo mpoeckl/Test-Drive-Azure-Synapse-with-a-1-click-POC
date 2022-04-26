@@ -1,0 +1,26 @@
+{
+	"name": "relationship-valpreoonf",
+	"properties": {
+		"Name": "relationship-valpreoonf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ValveAccessStatus",
+		"ToTableName": "Valve",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ValveAccessStatusId",
+				"ToColumnName": "ValveAccessStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"toEntity\":\"Valve.cdm.json/Valve\",\"joinPairs\":[{\"fromAttribute\":\"ValveAccessStatusId\",\"toAttribute\":\"ValveAccessStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

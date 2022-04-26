@@ -1,0 +1,106 @@
+{
+	"name": "ComponentInspectionPartyRelationshipType",
+	"properties": {
+		"Name": "ComponentInspectionPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the party component inspection relationship.\n\nEx:\n- Inspected-by Party\n- Reported-by Party\n- Reported-to Party\n- Authorized-by Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentInspectionPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType",
+						"Name": "ComponentInspectionPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionPartyRelationshipTypeName",
+					"Description": "The name of a Component Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType",
+						"Name": "ComponentInspectionPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionPartyRelationshipTypeDescription",
+					"Description": "The description of a Component Inspection Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType",
+						"Name": "ComponentInspectionPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspectionPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspectionPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentInspectionPartyRelationshipTypeId\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},\"ComponentInspectionPartyRelationshipTypeName\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeName\"},\"ComponentInspectionPartyRelationshipTypeDescription\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentInspectionPartyRelationshipType\",\"path\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\"},\"description\":\"The nature of the party component inspection relationship.\\n\\nEx:\\n- Inspected-by Party\\n- Reported-by Party\\n- Reported-to Party\\n- Authorized-by Party\",\"primaryKey\":[\"ComponentInspectionPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Inspection Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Inspection Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentInspectionPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspectionPartyRelationshipType.cdm.json/ComponentInspectionPartyRelationshipType\",\"name\":\"ComponentInspectionPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Inspection Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentInspectionPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the party component inspection relationship.\n\nEx:\n- Inspected-by Party\n- Reported-by Party\n- Reported-to Party\n- Authorized-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentInspectionPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

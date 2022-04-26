@@ -1,0 +1,106 @@
+{
+	"name": "PipelineStatusType",
+	"properties": {
+		"Name": "PipelineStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status type of a pipeline.\n\nEx:\n- Retired\n- Active\n- Designed\n- Proposed Retired\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineStatusTypeId",
+					"Description": "The unique identifier of a pipeline status type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatusType.cdm.json/PipelineStatusType",
+						"Name": "PipelineStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStatusTypeName",
+					"Description": "The name of a pipeline status type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatusType.cdm.json/PipelineStatusType",
+						"Name": "PipelineStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStatusTypeDescription",
+					"Description": "The description of a pipeline status type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatusType.cdm.json/PipelineStatusType",
+						"Name": "PipelineStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineStatusTypeId\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeId\"},\"PipelineStatusTypeName\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeName\"},\"PipelineStatusTypeDescription\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineStatusType\",\"path\":\"PipelineStatusType.cdm.json/PipelineStatusType\"},\"description\":\"The status type of a pipeline.\\n\\nEx:\\n- Retired\\n- Active\\n- Designed\\n- Proposed Retired\\n- Unknown\",\"primaryKey\":[\"PipelineStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipeline status type.\",\"isNullable\":false,\"name\":\"PipelineStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pipeline status type.\",\"isNullable\":true,\"name\":\"PipelineStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pipeline status type.\",\"isNullable\":true,\"name\":\"PipelineStatusTypeDescription\"}]}}}",
+			"Description": "The status type of a pipeline.\n\nEx:\n- Retired\n- Active\n- Designed\n- Proposed Retired\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wmhgipofnm",
+	"properties": {
+		"Name": "relationship-wmhgipofnm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnHazardCode",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnHazardCode",
+				"ToColumnName": "UnHazardCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"UnHazardCode\",\"toAttribute\":\"UnHazardCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

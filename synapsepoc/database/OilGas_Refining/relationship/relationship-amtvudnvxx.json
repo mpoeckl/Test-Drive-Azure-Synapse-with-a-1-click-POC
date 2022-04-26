@@ -1,0 +1,26 @@
+{
+	"name": "relationship-amtvudnvxx",
+	"properties": {
+		"Name": "relationship-amtvudnvxx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryAdditiveType",
+		"ToTableName": "RefineryProcessAdditive",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdditiveTypeId",
+				"ToColumnName": "AdditiveTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"toEntity\":\"RefineryProcessAdditive.cdm.json/RefineryProcessAdditive\",\"joinPairs\":[{\"fromAttribute\":\"AdditiveTypeId\",\"toAttribute\":\"AdditiveTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kftsgfnvws",
+	"properties": {
+		"Name": "relationship-kftsgfnvws",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PipelineType",
+		"ToTableName": "Pipeline",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PipelineTypeId",
+				"ToColumnName": "PipelineTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PipelineType.cdm.json/PipelineType\",\"toEntity\":\"Pipeline.cdm.json/Pipeline\",\"joinPairs\":[{\"fromAttribute\":\"PipelineTypeId\",\"toAttribute\":\"PipelineTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

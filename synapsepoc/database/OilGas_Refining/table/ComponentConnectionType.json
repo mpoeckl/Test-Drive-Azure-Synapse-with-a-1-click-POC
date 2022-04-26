@@ -1,0 +1,106 @@
+{
+	"name": "ComponentConnectionType",
+	"properties": {
+		"Name": "ComponentConnectionType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of connection of the components.   \n\nEx:\n- logical connection\n- Ethernet connection\n- mechanical\n- physical connection\n- physical connection/Butt Fusion\n- physical connection/Composite Fabrication\n- physical connection/Compression\n- physical connection/Coupling\n- physical connection/Cylinder Coupling\n- physical connection/Electro Fusion\n- physical connection/Flanged\n- physical connection/Induction Fusion\n- physical connection/Plain End\n- physical connection/Ring Type Joint End\n- physical connection/Saddle Fusion\n- physical connection/Screwed End\n- physical connection/Socket Fusion\n- physical connection/Socket Weld\n- physical connection/Threaded\n- physical connection/Welded\n- not applicable\n- unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentConnectionTypeId",
+					"Description": "The unique identifier of a component connection type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConnectionType.cdm.json/ComponentConnectionType",
+						"Name": "ComponentConnectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConnectionTypeName",
+					"Description": "The name of a component connection type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConnectionType.cdm.json/ComponentConnectionType",
+						"Name": "ComponentConnectionTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConnectionTypeDescription",
+					"Description": "The description of a component connection type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentConnectionType.cdm.json/ComponentConnectionType",
+						"Name": "ComponentConnectionTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConnectionType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConnectionType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentConnectionTypeId\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeId\"},\"ComponentConnectionTypeName\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeName\"},\"ComponentConnectionTypeDescription\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentConnectionType\",\"path\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\"},\"description\":\"A type of connection of the components.   \\n\\nEx:\\n- logical connection\\n- Ethernet connection\\n- mechanical\\n- physical connection\\n- physical connection/Butt Fusion\\n- physical connection/Composite Fabrication\\n- physical connection/Compression\\n- physical connection/Coupling\\n- physical connection/Cylinder Coupling\\n- physical connection/Electro Fusion\\n- physical connection/Flanged\\n- physical connection/Induction Fusion\\n- physical connection/Plain End\\n- physical connection/Ring Type Joint End\\n- physical connection/Saddle Fusion\\n- physical connection/Screwed End\\n- physical connection/Socket Fusion\\n- physical connection/Socket Weld\\n- physical connection/Threaded\\n- physical connection/Welded\\n- not applicable\\n- unknown\",\"primaryKey\":[\"ComponentConnectionTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a component connection type.\",\"isNullable\":false,\"name\":\"ComponentConnectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a component connection type.\",\"isNullable\":true,\"name\":\"ComponentConnectionTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a component connection type.\",\"isNullable\":true,\"name\":\"ComponentConnectionTypeDescription\"}]}}}",
+			"Description": "A type of connection of the components.   \n\nEx:\n- logical connection\n- Ethernet connection\n- mechanical\n- physical connection\n- physical connection/Butt Fusion\n- physical connection/Composite Fabrication\n- physical connection/Compression\n- physical connection/Coupling\n- physical connection/Cylinder Coupling\n- physical connection/Electro Fusion\n- physical connection/Flanged\n- physical connection/Induction Fusion\n- physical connection/Plain End\n- physical connection/Ring Type Joint End\n- physical connection/Saddle Fusion\n- physical connection/Screwed End\n- physical connection/Socket Fusion\n- physical connection/Socket Weld\n- physical connection/Threaded\n- physical connection/Welded\n- not applicable\n- unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentConnectionTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

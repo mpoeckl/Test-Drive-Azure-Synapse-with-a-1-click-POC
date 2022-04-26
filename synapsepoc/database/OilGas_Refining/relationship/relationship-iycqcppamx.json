@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iycqcppamx",
+	"properties": {
+		"Name": "relationship-iycqcppamx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentChargeCategory",
+		"ToTableName": "ShipmentChargeType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentChargeCategoryId",
+				"ToColumnName": "ShipmentChargeCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"toEntity\":\"ShipmentChargeType.cdm.json/ShipmentChargeType\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentChargeCategoryId\",\"toAttribute\":\"ShipmentChargeCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "GeneratorType",
+	"properties": {
+		"Name": "GeneratorType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of generator.\n\nEx:\n- Standby\n- Portable\n- Fixed\n- Coal\n- Hydroelectric\n- Nuclear\n- Natural Gas\n- Wind\n- Solar\n- Geothermal\n- Induction\n- Magnetohydrodynamic\n- Asynchronous\n- Doubly Fed\n- Homopolar\n- Excitation\n- Hydro Turbine\n- Dynamo\n- Alternator\n- MHD\n- Rotating\n- Brown Coal\n- Black Coal\n- Oil\n- Photovoltaic Cell",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorTypeId",
+					"Description": "The unique identifier of a Generator Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorType.cdm.json/GeneratorType",
+						"Name": "GeneratorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorTypeName",
+					"Description": "The name of a Generator Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorType.cdm.json/GeneratorType",
+						"Name": "GeneratorTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorTypeDescription",
+					"Description": "The description of a Generator Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorType.cdm.json/GeneratorType",
+						"Name": "GeneratorTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorTypeId\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeId\"},\"GeneratorTypeName\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeName\"},\"GeneratorTypeDescription\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorType\",\"path\":\"GeneratorType.cdm.json/GeneratorType\"},\"description\":\"The type of generator.\\n\\nEx:\\n- Standby\\n- Portable\\n- Fixed\\n- Coal\\n- Hydroelectric\\n- Nuclear\\n- Natural Gas\\n- Wind\\n- Solar\\n- Geothermal\\n- Induction\\n- Magnetohydrodynamic\\n- Asynchronous\\n- Doubly Fed\\n- Homopolar\\n- Excitation\\n- Hydro Turbine\\n- Dynamo\\n- Alternator\\n- MHD\\n- Rotating\\n- Brown Coal\\n- Black Coal\\n- Oil\\n- Photovoltaic Cell\",\"primaryKey\":[\"GeneratorTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Generator Type.\",\"isNullable\":false,\"name\":\"GeneratorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Generator Type.\",\"isNullable\":true,\"name\":\"GeneratorTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorType.cdm.json/GeneratorType\",\"name\":\"GeneratorTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Generator Type.\",\"isNullable\":true,\"name\":\"GeneratorTypeDescription\"}]}}}",
+			"Description": "The type of generator.\n\nEx:\n- Standby\n- Portable\n- Fixed\n- Coal\n- Hydroelectric\n- Nuclear\n- Natural Gas\n- Wind\n- Solar\n- Geothermal\n- Induction\n- Magnetohydrodynamic\n- Asynchronous\n- Doubly Fed\n- Homopolar\n- Excitation\n- Hydro Turbine\n- Dynamo\n- Alternator\n- MHD\n- Rotating\n- Brown Coal\n- Black Coal\n- Oil\n- Photovoltaic Cell",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

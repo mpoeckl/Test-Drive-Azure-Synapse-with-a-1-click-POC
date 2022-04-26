@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fobdfteqkx",
+	"properties": {
+		"Name": "relationship-fobdfteqkx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestStatusType",
+		"ToTableName": "RefineryTestStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryTestStatusTypeId",
+				"ToColumnName": "RefineryTestStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"toEntity\":\"RefineryTestStatus.cdm.json/RefineryTestStatus\",\"joinPairs\":[{\"fromAttribute\":\"RefineryTestStatusTypeId\",\"toAttribute\":\"RefineryTestStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

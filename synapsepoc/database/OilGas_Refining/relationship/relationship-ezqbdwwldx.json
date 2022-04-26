@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ezqbdwwldx",
+	"properties": {
+		"Name": "relationship-ezqbdwwldx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentStatusType",
+		"ToTableName": "ComponentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentStatusTypeId",
+				"ToColumnName": "ComponentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"toEntity\":\"ComponentStatus.cdm.json/ComponentStatus\",\"joinPairs\":[{\"fromAttribute\":\"ComponentStatusTypeId\",\"toAttribute\":\"ComponentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

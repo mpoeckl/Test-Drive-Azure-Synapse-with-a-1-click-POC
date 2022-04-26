@@ -1,0 +1,139 @@
+{
+	"name": "StructureComponent",
+	"properties": {
+		"Name": "StructureComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The component(s) associated with the structure for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StructureId",
+					"Description": "The unique identifier of a structure.",
+					"BaseAttributeReference": {
+						"Entity": "StructureComponent.cdm.json/StructureComponent",
+						"Name": "StructureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "StructureComponent.cdm.json/StructureComponent",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date of the associated Structure Component Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "StructureComponent.cdm.json/StructureComponent",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date of an associated Structure Component Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "StructureComponent.cdm.json/StructureComponent",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "StructureComponentNote",
+					"Description": "A note, comment or additional information regarding a Structure Component.",
+					"BaseAttributeReference": {
+						"Entity": "StructureComponent.cdm.json/StructureComponent",
+						"Name": "StructureComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureId\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"StructureId\"},\"ComponentId\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"ComponentId\"},\"PeriodStartDate\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"PeriodEndDate\"},\"StructureComponentNote\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"StructureComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StructureComponent\",\"path\":\"StructureComponent.cdm.json/StructureComponent\"},\"description\":\"The component(s) associated with the structure for the associated period.\",\"primaryKey\":[\"StructureId\",\"ComponentId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"StructureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a structure.\",\"isNullable\":false,\"name\":\"StructureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date of the associated Structure Component Relationship.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date of an associated Structure Component Relationship.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StructureComponent.cdm.json/StructureComponent\",\"name\":\"StructureComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Structure Component.\",\"isNullable\":true,\"name\":\"StructureComponentNote\"}]}}}",
+			"Description": "The component(s) associated with the structure for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StructureId,ComponentId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

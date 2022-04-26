@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qabyhqgtap",
+	"properties": {
+		"Name": "relationship-qabyhqgtap",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeterChannelType",
+		"ToTableName": "MeterChannel",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeterChannelTypeId",
+				"ToColumnName": "MeterChannelTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeterChannelType.cdm.json/MeterChannelType\",\"toEntity\":\"MeterChannel.cdm.json/MeterChannel\",\"joinPairs\":[{\"fromAttribute\":\"MeterChannelTypeId\",\"toAttribute\":\"MeterChannelTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

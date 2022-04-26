@@ -1,0 +1,106 @@
+{
+	"name": "RefineryEventAssetPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryEventAssetPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of a relationship between a party and a refinery event asset.\n\nEx:\n- Operated-by party\n- Maintained-by party\n- Inspected-by party\n- Repaired-by party\n- Returned-to party\n- Purchased-from part",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventAssetPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Event Asset Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType",
+						"Name": "RefineryEventAssetPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventAssetPartyRelationshipTypeName",
+					"Description": "The name of a Refinery Event Asset Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType",
+						"Name": "RefineryEventAssetPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventAssetPartyRelationshipTypeDescription",
+					"Description": "The description of a Refinery Event Asset Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType",
+						"Name": "RefineryEventAssetPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAssetPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAssetPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventAssetPartyRelationshipTypeId\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeId\"},\"RefineryEventAssetPartyRelationshipTypeName\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeName\"},\"RefineryEventAssetPartyRelationshipTypeDescription\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventAssetPartyRelationshipType\",\"path\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\"},\"description\":\"The nature of a relationship between a party and a refinery event asset.\\n\\nEx:\\n- Operated-by party\\n- Maintained-by party\\n- Inspected-by party\\n- Repaired-by party\\n- Returned-to party\\n- Purchased-from part\",\"primaryKey\":[\"RefineryEventAssetPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Asset Party Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryEventAssetPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Event Asset Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventAssetPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventAssetPartyRelationshipType.cdm.json/RefineryEventAssetPartyRelationshipType\",\"name\":\"RefineryEventAssetPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Event Asset Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventAssetPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of a relationship between a party and a refinery event asset.\n\nEx:\n- Operated-by party\n- Maintained-by party\n- Inspected-by party\n- Repaired-by party\n- Returned-to party\n- Purchased-from part",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventAssetPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

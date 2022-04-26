@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lncvbszghx",
+	"properties": {
+		"Name": "relationship-lncvbszghx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchanger",
+		"ToTableName": "HeatExchangerFeature",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerId",
+				"ToColumnName": "HeatExchangerId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"toEntity\":\"HeatExchangerFeature.cdm.json/HeatExchangerFeature\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerId\",\"toAttribute\":\"HeatExchangerId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

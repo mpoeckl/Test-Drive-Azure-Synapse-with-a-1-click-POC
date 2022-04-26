@@ -1,0 +1,106 @@
+{
+	"name": "PumpSpecificationType",
+	"properties": {
+		"Name": "PumpSpecificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of pump specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Standard Bore\n- Pump Flow Rate\n- Discharge Rate\n- Pump Horsepower\n- Minimum Liquid Temperature\n- Maximum Liquid Temperature\n- Minimum Atmospheric Temperature\n- Maximum Atmospheric Temperature\n- Brake Power\n- Pump Total Differential Pressure\n- Net Positive Suction Head Available NPSHA\n- Net Positive Suction Head Required NPSHR\n- Pump Capacity\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Power Supply Power\n- Starting current\n- Maximum Current",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpSpecificationTypeId",
+					"Description": "The unique identifier of a pump specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecificationType.cdm.json/PumpSpecificationType",
+						"Name": "PumpSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpSpecificationTypeName",
+					"Description": "The name of a pump specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecificationType.cdm.json/PumpSpecificationType",
+						"Name": "PumpSpecificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpSpecificationTypeDescription",
+					"Description": "The description of a pump specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpSpecificationType.cdm.json/PumpSpecificationType",
+						"Name": "PumpSpecificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpSpecificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpSpecificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpSpecificationTypeId\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeId\"},\"PumpSpecificationTypeName\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeName\"},\"PumpSpecificationTypeDescription\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpSpecificationType\",\"path\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\"},\"description\":\"A type of pump specification.\\n\\nEx:\\n- Weight\\n- Length\\n- Width\\n- Height\\n- Standard Bore\\n- Pump Flow Rate\\n- Discharge Rate\\n- Pump Horsepower\\n- Minimum Liquid Temperature\\n- Maximum Liquid Temperature\\n- Minimum Atmospheric Temperature\\n- Maximum Atmospheric Temperature\\n- Brake Power\\n- Pump Total Differential Pressure\\n- Net Positive Suction Head Available NPSHA\\n- Net Positive Suction Head Required NPSHR\\n- Pump Capacity\\n- Minimum Operating Temperature\\n- Maximum Operating Temperature\\n- Minimum Operating Humidity Range\\n- Maximum Operating Humidity Range\\n- Nominal Current\\n- Nominal Voltage\\n- Power Supply Power\\n- Starting current\\n- Maximum Current\",\"primaryKey\":[\"PumpSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump specification type.\",\"isNullable\":false,\"name\":\"PumpSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump specification type.\",\"isNullable\":true,\"name\":\"PumpSpecificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump specification type.\",\"isNullable\":true,\"name\":\"PumpSpecificationTypeDescription\"}]}}}",
+			"Description": "A type of pump specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Standard Bore\n- Pump Flow Rate\n- Discharge Rate\n- Pump Horsepower\n- Minimum Liquid Temperature\n- Maximum Liquid Temperature\n- Minimum Atmospheric Temperature\n- Maximum Atmospheric Temperature\n- Brake Power\n- Pump Total Differential Pressure\n- Net Positive Suction Head Available NPSHA\n- Net Positive Suction Head Required NPSHR\n- Pump Capacity\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Power Supply Power\n- Starting current\n- Maximum Current",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

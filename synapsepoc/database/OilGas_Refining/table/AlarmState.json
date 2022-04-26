@@ -1,0 +1,106 @@
+{
+	"name": "AlarmState",
+	"properties": {
+		"Name": "AlarmState",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An alarm status associated with an asset reading.\n\nEx:\n- Raised\n- Accepted\n- Cleared\n- Timed Out",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AlarmStateId",
+					"Description": "The unique identifier of an Alarm State.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmState.cdm.json/AlarmState",
+						"Name": "AlarmStateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlarmStateName",
+					"Description": "The name of an Alarm State.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmState.cdm.json/AlarmState",
+						"Name": "AlarmStateName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AlarmStateDescription",
+					"Description": "The description of an Alarm State.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmState.cdm.json/AlarmState",
+						"Name": "AlarmStateDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AlarmState",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AlarmState",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AlarmStateId\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateId\"},\"AlarmStateName\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateName\"},\"AlarmStateDescription\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AlarmState\",\"path\":\"AlarmState.cdm.json/AlarmState\"},\"description\":\"An alarm status associated with an asset reading.\\n\\nEx:\\n- Raised\\n- Accepted\\n- Cleared\\n- Timed Out\",\"primaryKey\":[\"AlarmStateId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm State.\",\"isNullable\":false,\"name\":\"AlarmStateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Alarm State.\",\"isNullable\":true,\"name\":\"AlarmStateName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmState.cdm.json/AlarmState\",\"name\":\"AlarmStateDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Alarm State.\",\"isNullable\":true,\"name\":\"AlarmStateDescription\"}]}}}",
+			"Description": "An alarm status associated with an asset reading.\n\nEx:\n- Raised\n- Accepted\n- Cleared\n- Timed Out",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AlarmStateId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

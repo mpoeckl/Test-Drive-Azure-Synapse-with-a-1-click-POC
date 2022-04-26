@@ -1,0 +1,106 @@
+{
+	"name": "PipeSpecificationType",
+	"properties": {
+		"Name": "PipeSpecificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of pipe specification.\n\nEx:\n- Pipe Diameter\n- Pipe Thickness\n- Pipe Length\n- Pipe Wall Thickness\n- Pipe Outside Diameter\n- Pipe Inside Diameter\n- Pipe Depth/Height\n- Pipe Wall Thickness\n- Pipe Cover Thickness\n- Pipe Cleaning Frequency\n- Pipe Minimum Yield Strength (SMYS)\n- Pipe Maximum Allowable Operating Pressure\n- Pipe Water Table Depth\n- Pipe Bedrock Depth\n- Pipe Maximum Heat Resistance\n- Pipe Coat Thickness\n- Pipe Exposed Length\n- Pipe Depth Of Cover\n- Pipe Operating Pressure\n- Pipe Minimum Designed Pressure\n- Pipe Maximum Designed Pressure\n- Pipe Temperature\n- Pipe Minimum Operating Temperature\n- Pipe Maximum Operating Temperature\n- Pipe Minimum Designed Flow Rate\n- Pipe Maximum Designed Flow Rate\n- Pipe Interior Volume\n- Pipe Original Cover Depth\n- Pipe Surface Area\n- Pipe Depth Of Cover",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeSpecificationTypeId",
+					"Description": "The unique identifier of a pipe specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecificationType.cdm.json/PipeSpecificationType",
+						"Name": "PipeSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationTypeName",
+					"Description": "The name of a pipe specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecificationType.cdm.json/PipeSpecificationType",
+						"Name": "PipeSpecificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeSpecificationTypeDescription",
+					"Description": "The description of a pipe specification type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeSpecificationType.cdm.json/PipeSpecificationType",
+						"Name": "PipeSpecificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeSpecificationTypeId\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeId\"},\"PipeSpecificationTypeName\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeName\"},\"PipeSpecificationTypeDescription\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeSpecificationType\",\"path\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\"},\"description\":\"A type of pipe specification.\\n\\nEx:\\n- Pipe Diameter\\n- Pipe Thickness\\n- Pipe Length\\n- Pipe Wall Thickness\\n- Pipe Outside Diameter\\n- Pipe Inside Diameter\\n- Pipe Depth/Height\\n- Pipe Wall Thickness\\n- Pipe Cover Thickness\\n- Pipe Cleaning Frequency\\n- Pipe Minimum Yield Strength (SMYS)\\n- Pipe Maximum Allowable Operating Pressure\\n- Pipe Water Table Depth\\n- Pipe Bedrock Depth\\n- Pipe Maximum Heat Resistance\\n- Pipe Coat Thickness\\n- Pipe Exposed Length\\n- Pipe Depth Of Cover\\n- Pipe Operating Pressure\\n- Pipe Minimum Designed Pressure\\n- Pipe Maximum Designed Pressure\\n- Pipe Temperature\\n- Pipe Minimum Operating Temperature\\n- Pipe Maximum Operating Temperature\\n- Pipe Minimum Designed Flow Rate\\n- Pipe Maximum Designed Flow Rate\\n- Pipe Interior Volume\\n- Pipe Original Cover Depth\\n- Pipe Surface Area\\n- Pipe Depth Of Cover\",\"primaryKey\":[\"PipeSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe specification type.\",\"isNullable\":false,\"name\":\"PipeSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pipe specification type.\",\"isNullable\":true,\"name\":\"PipeSpecificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pipe specification type.\",\"isNullable\":true,\"name\":\"PipeSpecificationTypeDescription\"}]}}}",
+			"Description": "A type of pipe specification.\n\nEx:\n- Pipe Diameter\n- Pipe Thickness\n- Pipe Length\n- Pipe Wall Thickness\n- Pipe Outside Diameter\n- Pipe Inside Diameter\n- Pipe Depth/Height\n- Pipe Wall Thickness\n- Pipe Cover Thickness\n- Pipe Cleaning Frequency\n- Pipe Minimum Yield Strength (SMYS)\n- Pipe Maximum Allowable Operating Pressure\n- Pipe Water Table Depth\n- Pipe Bedrock Depth\n- Pipe Maximum Heat Resistance\n- Pipe Coat Thickness\n- Pipe Exposed Length\n- Pipe Depth Of Cover\n- Pipe Operating Pressure\n- Pipe Minimum Designed Pressure\n- Pipe Maximum Designed Pressure\n- Pipe Temperature\n- Pipe Minimum Operating Temperature\n- Pipe Maximum Operating Temperature\n- Pipe Minimum Designed Flow Rate\n- Pipe Maximum Designed Flow Rate\n- Pipe Interior Volume\n- Pipe Original Cover Depth\n- Pipe Surface Area\n- Pipe Depth Of Cover",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

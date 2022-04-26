@@ -1,0 +1,171 @@
+{
+	"name": "NaphthaHydrotreaterAcidGas",
+	"properties": {
+		"Name": "NaphthaHydrotreaterAcidGas",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of acid gas produced by the naphtha hydrotreater unit.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AcidGasTypeId",
+					"Description": "The unique identifier of an acid gas type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "AcidGasTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreatingUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "NaphthaHydrotreatingUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProducedUnits",
+					"Description": "The units of acid gas produced.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "ProducedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterAcidGasNote",
+					"Description": "A note, comment or additional information regarding the naphtha hydrotreater acid gas.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas",
+						"Name": "NaphthaHydrotreaterAcidGasNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreaterAcidGas",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreaterAcidGas",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AcidGasTypeId\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"AcidGasTypeId\"},\"NaphthaHydrotreatingUnitId\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"PeriodStartTimestamp\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"UnitOfMeasureId\"},\"NaphthaHydrotreaterAcidGasNote\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"NaphthaHydrotreaterAcidGasNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreaterAcidGas\",\"path\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\"},\"description\":\"The quantity of acid gas produced by the naphtha hydrotreater unit.\",\"primaryKey\":[\"AcidGasTypeId\",\"NaphthaHydrotreatingUnitId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"AcidGasTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an acid gas type.\",\"isNullable\":false,\"name\":\"AcidGasTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreatingUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"ProducedUnits\"},\"dataType\":\"integer\",\"description\":\"The units of acid gas produced.\",\"isNullable\":true,\"name\":\"ProducedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"name\":\"NaphthaHydrotreaterAcidGasNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the naphtha hydrotreater acid gas.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterAcidGasNote\"}]}}}",
+			"Description": "The quantity of acid gas produced by the naphtha hydrotreater unit.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "AcidGasTypeId,NaphthaHydrotreatingUnitId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

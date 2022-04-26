@@ -1,0 +1,121 @@
+{
+	"name": "MeterSize",
+	"properties": {
+		"Name": "MeterSize",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A specific meter size that is used by customer accounts at Service Locations and used to calculate Rate Plan pricing.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterSizeId",
+					"Description": "The unique identifier of a Meter Size.",
+					"BaseAttributeReference": {
+						"Entity": "MeterSize.cdm.json/MeterSize",
+						"Name": "MeterSizeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterSizeDescription",
+					"Description": "The description of a Meter Size.",
+					"BaseAttributeReference": {
+						"Entity": "MeterSize.cdm.json/MeterSize",
+						"Name": "MeterSizeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterSizeUnits",
+					"Description": "The size of the meter expressed is associated units of measure.\n\nEx:\n4 inch",
+					"BaseAttributeReference": {
+						"Entity": "MeterSize.cdm.json/MeterSize",
+						"Name": "MeterSizeUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterSizeUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MeterSize.cdm.json/MeterSize",
+						"Name": "MeterSizeUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterSize",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterSize",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterSizeId\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeId\"},\"MeterSizeDescription\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeDescription\"},\"MeterSizeUnits\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeUnits\"},\"MeterSizeUomId\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeUomId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterSize\",\"path\":\"MeterSize.cdm.json/MeterSize\"},\"description\":\"A specific meter size that is used by customer accounts at Service Locations and used to calculate Rate Plan pricing.\",\"primaryKey\":[\"MeterSizeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Size.\",\"isNullable\":false,\"name\":\"MeterSizeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Meter Size.\",\"isNullable\":true,\"name\":\"MeterSizeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeUnits\"},\"dataType\":\"integer\",\"description\":\"The size of the meter expressed is associated units of measure.\\n\\nEx:\\n4 inch\",\"isNullable\":true,\"name\":\"MeterSizeUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterSize.cdm.json/MeterSize\",\"name\":\"MeterSizeUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MeterSizeUomId\"}]}}}",
+			"Description": "A specific meter size that is used by customer accounts at Service Locations and used to calculate Rate Plan pricing.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterSizeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,155 @@
+{
+	"name": "StorageTankLeakage",
+	"properties": {
+		"Name": "StorageTankLeakage",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Leakage recorded from the storage tank during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "StorageTankId",
+					"Description": "The unique identifier of a Storage Tank.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "StorageTankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "LeakageUnits",
+					"Description": "The units leaked from the storage tank during the period.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "LeakageUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LeakageUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "LeakageUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankLeakageNote",
+					"Description": "A note, comment or additional information regarding the storage tank leakage.",
+					"BaseAttributeReference": {
+						"Entity": "StorageTankLeakage.cdm.json/StorageTankLeakage",
+						"Name": "StorageTankLeakageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankLeakage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankLeakage",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankId\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"StorageTankId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"PeriodEndTimestamp\"},\"LeakageUnits\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"LeakageUnits\"},\"LeakageUomId\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"LeakageUomId\"},\"StorageTankLeakageNote\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"StorageTankLeakageNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"StorageTankLeakage\",\"path\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\"},\"description\":\"Leakage recorded from the storage tank during the associated period.\",\"primaryKey\":[\"StorageTankId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"StorageTankId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Tank.\",\"isNullable\":false,\"name\":\"StorageTankId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"LeakageUnits\"},\"dataType\":\"integer\",\"description\":\"The units leaked from the storage tank during the period.\",\"isNullable\":true,\"name\":\"LeakageUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"LeakageUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"LeakageUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"StorageTankLeakage.cdm.json/StorageTankLeakage\",\"name\":\"StorageTankLeakageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the storage tank leakage.\",\"isNullable\":true,\"name\":\"StorageTankLeakageNote\"}]}}}",
+			"Description": "Leakage recorded from the storage tank during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "StorageTankId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rtckrsdmue",
+	"properties": {
+		"Name": "relationship-rtckrsdmue",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShippingFacility",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShippingFacilityId",
+				"ToColumnName": "ShipmentToLocationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"ShippingFacilityId\",\"toAttribute\":\"ShipmentToLocationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

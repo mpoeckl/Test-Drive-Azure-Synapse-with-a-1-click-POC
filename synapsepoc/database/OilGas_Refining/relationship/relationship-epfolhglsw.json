@@ -1,0 +1,26 @@
+{
+	"name": "relationship-epfolhglsw",
+	"properties": {
+		"Name": "relationship-epfolhglsw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchangerTubeMaterialType",
+		"ToTableName": "HeatExchanger",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerTubeMaterialTypeId",
+				"ToColumnName": "TubeOutMaterialTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchangerTubeMaterialType.cdm.json/HeatExchangerTubeMaterialType\",\"toEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerTubeMaterialTypeId\",\"toAttribute\":\"TubeOutMaterialTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

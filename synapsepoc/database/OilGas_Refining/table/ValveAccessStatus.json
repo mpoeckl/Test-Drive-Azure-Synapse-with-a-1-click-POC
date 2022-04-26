@@ -1,0 +1,106 @@
+{
+	"name": "ValveAccessStatus",
+	"properties": {
+		"Name": "ValveAccessStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The valve access status.\n\nEx:\n- Above Ground\n- Buried\n- Pit \n- Stacked\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveAccessStatusId",
+					"Description": "The unique identifier of a value access status.",
+					"BaseAttributeReference": {
+						"Entity": "ValveAccessStatus.cdm.json/ValveAccessStatus",
+						"Name": "ValveAccessStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveAccessStatusName",
+					"Description": "The name of a value access status.",
+					"BaseAttributeReference": {
+						"Entity": "ValveAccessStatus.cdm.json/ValveAccessStatus",
+						"Name": "ValveAccessStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveAccessStatusDescription",
+					"Description": "The description of a value access status.",
+					"BaseAttributeReference": {
+						"Entity": "ValveAccessStatus.cdm.json/ValveAccessStatus",
+						"Name": "ValveAccessStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveAccessStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveAccessStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveAccessStatusId\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusId\"},\"ValveAccessStatusName\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusName\"},\"ValveAccessStatusDescription\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveAccessStatus\",\"path\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\"},\"description\":\"The valve access status.\\n\\nEx:\\n- Above Ground\\n- Buried\\n- Pit \\n- Stacked\\n- Unknown\",\"primaryKey\":[\"ValveAccessStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a value access status.\",\"isNullable\":false,\"name\":\"ValveAccessStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a value access status.\",\"isNullable\":true,\"name\":\"ValveAccessStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveAccessStatus.cdm.json/ValveAccessStatus\",\"name\":\"ValveAccessStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a value access status.\",\"isNullable\":true,\"name\":\"ValveAccessStatusDescription\"}]}}}",
+			"Description": "The valve access status.\n\nEx:\n- Above Ground\n- Buried\n- Pit \n- Stacked\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveAccessStatusId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

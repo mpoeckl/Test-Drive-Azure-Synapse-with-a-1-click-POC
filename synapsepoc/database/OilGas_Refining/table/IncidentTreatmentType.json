@@ -1,0 +1,106 @@
+{
+	"name": "IncidentTreatmentType",
+	"properties": {
+		"Name": "IncidentTreatmentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of incident treatment.\n\nEx:\n- On-site medical care\n- Hospitalization\n- Referred to doctor\n- Emergency Air Evacuation\n- None\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentTreatmentTypeId",
+					"Description": "The unique identifier of an incident treatment type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentTreatmentType.cdm.json/IncidentTreatmentType",
+						"Name": "IncidentTreatmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTreatmentTypeName",
+					"Description": "The name of an incident treatment type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentTreatmentType.cdm.json/IncidentTreatmentType",
+						"Name": "IncidentTreatmentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTreatmentTypeDescription",
+					"Description": "The description of an incident treatment type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentTreatmentType.cdm.json/IncidentTreatmentType",
+						"Name": "IncidentTreatmentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentTreatmentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentTreatmentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentTreatmentTypeId\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeId\"},\"IncidentTreatmentTypeName\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeName\"},\"IncidentTreatmentTypeDescription\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentTreatmentType\",\"path\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\"},\"description\":\"A type of incident treatment.\\n\\nEx:\\n- On-site medical care\\n- Hospitalization\\n- Referred to doctor\\n- Emergency Air Evacuation\\n- None\\n- N/A\",\"primaryKey\":[\"IncidentTreatmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident treatment type.\",\"isNullable\":false,\"name\":\"IncidentTreatmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an incident treatment type.\",\"isNullable\":true,\"name\":\"IncidentTreatmentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an incident treatment type.\",\"isNullable\":true,\"name\":\"IncidentTreatmentTypeDescription\"}]}}}",
+			"Description": "A type of incident treatment.\n\nEx:\n- On-site medical care\n- Hospitalization\n- Referred to doctor\n- Emergency Air Evacuation\n- None\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentTreatmentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

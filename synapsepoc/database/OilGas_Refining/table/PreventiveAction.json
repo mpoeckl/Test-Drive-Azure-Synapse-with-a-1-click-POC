@@ -1,0 +1,122 @@
+{
+	"name": "PreventiveAction",
+	"properties": {
+		"Name": "PreventiveAction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Preventive Action that is applied as a result of a reading or alarm.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PreventiveActionId",
+					"Description": "The unique identifier of a Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveAction.cdm.json/PreventiveAction",
+						"Name": "PreventiveActionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionName",
+					"Description": "The name of a Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveAction.cdm.json/PreventiveAction",
+						"Name": "PreventiveActionName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionDescription",
+					"Description": "The description of a Preventive Action.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveAction.cdm.json/PreventiveAction",
+						"Name": "PreventiveActionDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PreventiveActionTypeId",
+					"Description": "The unique identifier of a Preventive Action Type.",
+					"BaseAttributeReference": {
+						"Entity": "PreventiveAction.cdm.json/PreventiveAction",
+						"Name": "PreventiveActionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PreventiveAction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PreventiveAction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PreventiveActionId\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionId\"},\"PreventiveActionName\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionName\"},\"PreventiveActionDescription\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionDescription\"},\"PreventiveActionTypeId\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PreventiveAction\",\"path\":\"PreventiveAction.cdm.json/PreventiveAction\"},\"description\":\"A Preventive Action that is applied as a result of a reading or alarm.\",\"primaryKey\":[\"PreventiveActionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preventive Action.\",\"isNullable\":false,\"name\":\"PreventiveActionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Preventive Action.\",\"isNullable\":true,\"name\":\"PreventiveActionName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Preventive Action.\",\"isNullable\":true,\"name\":\"PreventiveActionDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"name\":\"PreventiveActionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Preventive Action Type.\",\"isNullable\":true,\"name\":\"PreventiveActionTypeId\"}]}}}",
+			"Description": "A Preventive Action that is applied as a result of a reading or alarm.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "PreventiveActionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

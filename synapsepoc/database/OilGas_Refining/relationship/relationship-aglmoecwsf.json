@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aglmoecwsf",
+	"properties": {
+		"Name": "relationship-aglmoecwsf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "FieldDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "FieldDeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"FieldDevice.cdm.json/FieldDevice\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"FieldDeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

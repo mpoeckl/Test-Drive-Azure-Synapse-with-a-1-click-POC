@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cxbabmqeax",
+	"properties": {
+		"Name": "relationship-cxbabmqeax",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DeviceCommunicationToDisplayType",
+		"ToTableName": "Device",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceCommunicationToDisplayTypeId",
+				"ToColumnName": "DeviceCommunicationToDisplayTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"toEntity\":\"Device.cdm.json/Device\",\"joinPairs\":[{\"fromAttribute\":\"DeviceCommunicationToDisplayTypeId\",\"toAttribute\":\"DeviceCommunicationToDisplayTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

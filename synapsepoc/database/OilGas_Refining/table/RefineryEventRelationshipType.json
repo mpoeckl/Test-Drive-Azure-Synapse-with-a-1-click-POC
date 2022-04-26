@@ -1,0 +1,106 @@
+{
+	"name": "RefineryEventRelationshipType",
+	"properties": {
+		"Name": "RefineryEventRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of relationship between Refinery Events.\n\nEx:\n- Preceding\n- Subsequent\n- Responsible-for\n- Contributing-to\n- Issued in response to",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryEventRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType",
+						"Name": "RefineryEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventRelationshipTypeName",
+					"Description": "The name of a Refinery Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType",
+						"Name": "RefineryEventRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryEventRelationshipTypeDescription",
+					"Description": "The description of a Refinery Event Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType",
+						"Name": "RefineryEventRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventRelationshipTypeId\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeId\"},\"RefineryEventRelationshipTypeName\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeName\"},\"RefineryEventRelationshipTypeDescription\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryEventRelationshipType\",\"path\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\"},\"description\":\"The type of relationship between Refinery Events.\\n\\nEx:\\n- Preceding\\n- Subsequent\\n- Responsible-for\\n- Contributing-to\\n- Issued in response to\",\"primaryKey\":[\"RefineryEventRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Event Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Event Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryEventRelationshipType.cdm.json/RefineryEventRelationshipType\",\"name\":\"RefineryEventRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Event Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryEventRelationshipTypeDescription\"}]}}}",
+			"Description": "The type of relationship between Refinery Events.\n\nEx:\n- Preceding\n- Subsequent\n- Responsible-for\n- Contributing-to\n- Issued in response to",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryEventRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

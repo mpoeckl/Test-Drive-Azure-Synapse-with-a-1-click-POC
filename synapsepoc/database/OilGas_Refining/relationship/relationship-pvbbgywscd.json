@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pvbbgywscd",
+	"properties": {
+		"Name": "relationship-pvbbgywscd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NfpaReactivityRating",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NfpaReactivityRatingId",
+				"ToColumnName": "NfpaReactivityRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"NfpaReactivityRatingId\",\"toAttribute\":\"NfpaReactivityRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

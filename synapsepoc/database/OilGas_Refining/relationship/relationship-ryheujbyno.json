@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ryheujbyno",
+	"properties": {
+		"Name": "relationship-ryheujbyno",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ValveOpenCloseStatusType",
+		"ToTableName": "ValveOpenCloseStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ValveOpenCloseStatusTypeId",
+				"ToColumnName": "ValveOpenCloseStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ValveOpenCloseStatusType.cdm.json/ValveOpenCloseStatusType\",\"toEntity\":\"ValveOpenCloseStatus.cdm.json/ValveOpenCloseStatus\",\"joinPairs\":[{\"fromAttribute\":\"ValveOpenCloseStatusTypeId\",\"toAttribute\":\"ValveOpenCloseStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

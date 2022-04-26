@@ -1,0 +1,106 @@
+{
+	"name": "PipelineStationType",
+	"properties": {
+		"Name": "PipelineStationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pipeline station.\n\nPipeline networks are composed of several pieces of equipment that operate together to move products from location to location. \n\nEx:\n- Initial injection station\n- Compressor/pump stations\n- Partial delivery station\n- Block valve station\n- Regulator station\n- Final delivery station\n- Metering regulator station\n- City-gate station\n- Aggregate Receipt Point\n- Pipeline Interconnection\n- Headstation\n\nwhere:\n\nINITIAL INJECTION STATION\nKnown also as supply or inlet station, is the beginning of the system, where the product is injected into the line. Storage facilities, pumps or compressors are usually located at these locations.\n\nCOMPRESSOR/PUMP STATIONS\nPumps for liquid pipelines and Compressors for gas pipelines, are located along the line to move the product through the pipeline. The location of these stations is defined by the topography of the terrain, the type of product being transported, or operational conditions of the network.\n\nPARTIAL DELIVERY STATION\nKnown also as intermediate stations, these facilities allow the pipeline operator to deliver part of the product being transported.\n\nBLOCK VALVE STATION\nThese are the first line of protection for pipelines. With these valves the operator can isolate any segment of the line for maintenance work or isolate a rupture or leak. Block valve stations are usually located every 20 to 30 miles (48 km), depending on the type of pipeline. Even though it is not a design rule, it is a very usual practice in liquid pipelines. The location of these stations depends exclusively on the nature of the product being transported, the trajectory of the pipeline and/or the operational conditions of the line.\n\nREGULATOR STATION\nThis is a special type of valve station, where the operator can release some of the pressure from the line. Regulators are usually located at the downhill side of a peak.\n\nFINAL DELIVERY STATION\nKnown also as outlet stations or terminals, this is where the product will be distributed to the consumer. It could be a tank terminal for liquid pipelines or a connection to a distribution network for gas pipelines.\n\nMETER REGULATOR STATION\nA gas distribution facility for metering and reducing the pressure of natural gas that is being supplied to a local distribution network\n\nCITY-GATE STATION \nThe point or measuring station at which a gas-distribution utility physically receives gas from a pipeline or transmission company; the point at which the backbone transmission system connects to the distribution system. There is not necessarily a change of ownership at a city-gate station.\n\nAGGREGATE RECEIPT POINT\n1) a hub where different supply sources intersect on a gas pipeline; 2) multiple producer meters entering a pipeline. \n\nPIPELINE INTERCONNECTION\nA point at which facilities of two or more pipelines interconnect\n\nHEADSTATION\nMainline receipt point on a pipeline.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineStationTypeId",
+					"Description": "The unique identifier of a Pipeline Station Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStationType.cdm.json/PipelineStationType",
+						"Name": "PipelineStationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationTypeName",
+					"Description": "The name of a Pipeline Station Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStationType.cdm.json/PipelineStationType",
+						"Name": "PipelineStationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStationTypeDescription",
+					"Description": "The description of a Pipeline Station Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStationType.cdm.json/PipelineStationType",
+						"Name": "PipelineStationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineStationTypeId\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeId\"},\"PipelineStationTypeName\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeName\"},\"PipelineStationTypeDescription\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineStationType\",\"path\":\"PipelineStationType.cdm.json/PipelineStationType\"},\"description\":\"The type of pipeline station.\\n\\nPipeline networks are composed of several pieces of equipment that operate together to move products from location to location. \\n\\nEx:\\n- Initial injection station\\n- Compressor/pump stations\\n- Partial delivery station\\n- Block valve station\\n- Regulator station\\n- Final delivery station\\n- Metering regulator station\\n- City-gate station\\n- Aggregate Receipt Point\\n- Pipeline Interconnection\\n- Headstation\\n\\nwhere:\\n\\nINITIAL INJECTION STATION\\nKnown also as supply or inlet station, is the beginning of the system, where the product is injected into the line. Storage facilities, pumps or compressors are usually located at these locations.\\n\\nCOMPRESSOR/PUMP STATIONS\\nPumps for liquid pipelines and Compressors for gas pipelines, are located along the line to move the product through the pipeline. The location of these stations is defined by the topography of the terrain, the type of product being transported, or operational conditions of the network.\\n\\nPARTIAL DELIVERY STATION\\nKnown also as intermediate stations, these facilities allow the pipeline operator to deliver part of the product being transported.\\n\\nBLOCK VALVE STATION\\nThese are the first line of protection for pipelines. With these valves the operator can isolate any segment of the line for maintenance work or isolate a rupture or leak. Block valve stations are usually located every 20 to 30 miles (48 km), depending on the type of pipeline. Even though it is not a design rule, it is a very usual practice in liquid pipelines. The location of these stations depends exclusively on the nature of the product being transported, the trajectory of the pipeline and/or the operational conditions of the line.\\n\\nREGULATOR STATION\\nThis is a special type of valve station, where the operator can release some of the pressure from the line. Regulators are usually located at the downhill side of a peak.\\n\\nFINAL DELIVERY STATION\\nKnown also as outlet stations or terminals, this is where the product will be distributed to the consumer. It could be a tank terminal for liquid pipelines or a connection to a distribution network for gas pipelines.\\n\\nMETER REGULATOR STATION\\nA gas distribution facility for metering and reducing the pressure of natural gas that is being supplied to a local distribution network\\n\\nCITY-GATE STATION \\nThe point or measuring station at which a gas-distribution utility physically receives gas from a pipeline or transmission company; the point at which the backbone transmission system connects to the distribution system. There is not necessarily a change of ownership at a city-gate station.\\n\\nAGGREGATE RECEIPT POINT\\n1) a hub where different supply sources intersect on a gas pipeline; 2) multiple producer meters entering a pipeline. \\n\\nPIPELINE INTERCONNECTION\\nA point at which facilities of two or more pipelines interconnect\\n\\nHEADSTATION\\nMainline receipt point on a pipeline.\",\"primaryKey\":[\"PipelineStationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipeline Station Type.\",\"isNullable\":false,\"name\":\"PipelineStationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pipeline Station Type.\",\"isNullable\":true,\"name\":\"PipelineStationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStationType.cdm.json/PipelineStationType\",\"name\":\"PipelineStationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pipeline Station Type.\",\"isNullable\":true,\"name\":\"PipelineStationTypeDescription\"}]}}}",
+			"Description": "The type of pipeline station.\n\nPipeline networks are composed of several pieces of equipment that operate together to move products from location to location. \n\nEx:\n- Initial injection station\n- Compressor/pump stations\n- Partial delivery station\n- Block valve station\n- Regulator station\n- Final delivery station\n- Metering regulator station\n- City-gate station\n- Aggregate Receipt Point\n- Pipeline Interconnection\n- Headstation\n\nwhere:\n\nINITIAL INJECTION STATION\nKnown also as supply or inlet station, is the beginning of the system, where the product is injected into the line. Storage facilities, pumps or compressors are usually located at these locations.\n\nCOMPRESSOR/PUMP STATIONS\nPumps for liquid pipelines and Compressors for gas pipelines, are located along the line to move the product through the pipeline. The location of these stations is defined by the topography of the terrain, the type of product being transported, or operational conditions of the network.\n\nPARTIAL DELIVERY STATION\nKnown also as intermediate stations, these facilities allow the pipeline operator to deliver part of the product being transported.\n\nBLOCK VALVE STATION\nThese are the first line of protection for pipelines. With these valves the operator can isolate any segment of the line for maintenance work or isolate a rupture or leak. Block valve stations are usually located every 20 to 30 miles (48 km), depending on the type of pipeline. Even though it is not a design rule, it is a very usual practice in liquid pipelines. The location of these stations depends exclusively on the nature of the product being transported, the trajectory of the pipeline and/or the operational conditions of the line.\n\nREGULATOR STATION\nThis is a special type of valve station, where the operator can release some of the pressure from the line. Regulators are usually located at the downhill side of a peak.\n\nFINAL DELIVERY STATION\nKnown also as outlet stations or terminals, this is where the product will be distributed to the consumer. It could be a tank terminal for liquid pipelines or a connection to a distribution network for gas pipelines.\n\nMETER REGULATOR STATION\nA gas distribution facility for metering and reducing the pressure of natural gas that is being supplied to a local distribution network\n\nCITY-GATE STATION \nThe point or measuring station at which a gas-distribution utility physically receives gas from a pipeline or transmission company; the point at which the backbone transmission system connects to the distribution system. There is not necessarily a change of ownership at a city-gate station.\n\nAGGREGATE RECEIPT POINT\n1) a hub where different supply sources intersect on a gas pipeline; 2) multiple producer meters entering a pipeline. \n\nPIPELINE INTERCONNECTION\nA point at which facilities of two or more pipelines interconnect\n\nHEADSTATION\nMainline receipt point on a pipeline.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineStationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

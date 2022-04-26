@@ -1,0 +1,26 @@
+{
+	"name": "relationship-alcljhkteg",
+	"properties": {
+		"Name": "relationship-alcljhkteg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "InsulationType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InsulationTypeId",
+				"ToColumnName": "InsulationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"InsulationType.cdm.json/InsulationType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"InsulationTypeId\",\"toAttribute\":\"InsulationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

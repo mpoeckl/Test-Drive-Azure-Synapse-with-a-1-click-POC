@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tlpaiuptft",
+	"properties": {
+		"Name": "relationship-tlpaiuptft",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FitType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FitTypeId",
+				"ToColumnName": "FitTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FitType.cdm.json/FitType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"FitTypeId\",\"toAttribute\":\"FitTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jiutcycsik",
+	"properties": {
+		"Name": "relationship-jiutcycsik",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentOwnershipType",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentOwnershipTypeId",
+				"ToColumnName": "ComponentOwnershipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentOwnershipTypeId\",\"toAttribute\":\"ComponentOwnershipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

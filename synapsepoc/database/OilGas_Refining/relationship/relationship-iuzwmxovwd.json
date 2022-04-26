@@ -1,0 +1,26 @@
+{
+	"name": "relationship-iuzwmxovwd",
+	"properties": {
+		"Name": "relationship-iuzwmxovwd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentStatusType",
+		"ToTableName": "IncidentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentStatusTypeId",
+				"ToColumnName": "IncidentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"toEntity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"joinPairs\":[{\"fromAttribute\":\"IncidentStatusTypeId\",\"toAttribute\":\"IncidentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

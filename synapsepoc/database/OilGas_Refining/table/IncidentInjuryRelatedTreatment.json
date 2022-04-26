@@ -1,0 +1,137 @@
+{
+	"name": "IncidentInjuryRelatedTreatment",
+	"properties": {
+		"Name": "IncidentInjuryRelatedTreatment",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Treatments related to the incident injury.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuryTypeId",
+					"Description": "The unique identifier of an injury type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment",
+						"Name": "InjuryTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InjuredPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment",
+						"Name": "InjuredPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "IncidentTreatmentTypeId",
+					"Description": "The unique identifier of an incident treatment type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment",
+						"Name": "IncidentTreatmentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentInjuryRelatedTreatmentNote",
+					"Description": "A note, comment or additional information regarding the incident injury related treatment.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment",
+						"Name": "IncidentInjuryRelatedTreatmentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentInjuryRelatedTreatment",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentInjuryRelatedTreatment",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentId\"},\"InjuryTypeId\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"InjuryTypeId\"},\"InjuredPartyId\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"InjuredPartyId\"},\"IncidentTreatmentTypeId\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentTreatmentTypeId\"},\"IncidentInjuryRelatedTreatmentNote\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentInjuryRelatedTreatmentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentInjuryRelatedTreatment\",\"path\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\"},\"description\":\"Treatments related to the incident injury.\",\"primaryKey\":[\"IncidentId\",\"InjuryTypeId\",\"InjuredPartyId\",\"IncidentTreatmentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"InjuryTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an injury type.\",\"isNullable\":false,\"name\":\"InjuryTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"InjuredPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"InjuredPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentTreatmentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident treatment type.\",\"isNullable\":false,\"name\":\"IncidentTreatmentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentInjuryRelatedTreatment.cdm.json/IncidentInjuryRelatedTreatment\",\"name\":\"IncidentInjuryRelatedTreatmentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the incident injury related treatment.\",\"isNullable\":true,\"name\":\"IncidentInjuryRelatedTreatmentNote\"}]}}}",
+			"Description": "Treatments related to the incident injury.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,InjuryTypeId,InjuredPartyId,IncidentTreatmentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

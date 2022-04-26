@@ -1,0 +1,139 @@
+{
+	"name": "IncidentEvent",
+	"properties": {
+		"Name": "IncidentEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Event(s) that occur in conjunction with the Incident.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentId",
+					"Description": "The unique identifier of an Incident.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEvent.cdm.json/IncidentEvent",
+						"Name": "IncidentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventTypeId",
+					"Description": "The unique identifier of an Incident Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEvent.cdm.json/IncidentEvent",
+						"Name": "IncidentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventStartTimestamp",
+					"Description": "The start timestamp of the incident event.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEvent.cdm.json/IncidentEvent",
+						"Name": "IncidentEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventEndTimestamp",
+					"Description": "The end timestamp of the incident event.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEvent.cdm.json/IncidentEvent",
+						"Name": "IncidentEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventNote",
+					"Description": "A note, comment or additional information regarding the incident event.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEvent.cdm.json/IncidentEvent",
+						"Name": "IncidentEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentId\"},\"IncidentEventTypeId\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventTypeId\"},\"IncidentEventStartTimestamp\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventStartTimestamp\"},\"IncidentEventEndTimestamp\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventEndTimestamp\"},\"IncidentEventNote\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentEvent\",\"path\":\"IncidentEvent.cdm.json/IncidentEvent\"},\"description\":\"The Event(s) that occur in conjunction with the Incident.\",\"primaryKey\":[\"IncidentId\",\"IncidentEventTypeId\",\"IncidentEventStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident.\",\"isNullable\":false,\"name\":\"IncidentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Event Type.\",\"isNullable\":false,\"name\":\"IncidentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the incident event.\",\"isNullable\":false,\"name\":\"IncidentEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of the incident event.\",\"isNullable\":true,\"name\":\"IncidentEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the incident event.\",\"isNullable\":true,\"name\":\"IncidentEventNote\"}]}}}",
+			"Description": "The Event(s) that occur in conjunction with the Incident.",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentId,IncidentEventTypeId,IncidentEventStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

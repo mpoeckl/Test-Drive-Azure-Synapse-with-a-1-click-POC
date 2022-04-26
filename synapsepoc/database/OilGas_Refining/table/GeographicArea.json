@@ -1,0 +1,170 @@
+{
+	"name": "GeographicArea",
+	"properties": {
+		"Name": "GeographicArea",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A geographic area is a geographic formation, area or body that is bounded by location points and has an area.\n\nThe geographic area is defined by a series of ordered vertices that form the corners of the polygon.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaName",
+					"Description": "The name of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaDescription",
+					"Description": "The description of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaTypeId",
+					"Description": "The unique identifier of a Geographic Area Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaUnits",
+					"Description": "The size of the geographic area expressed in UOM.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaGeojsonRepresentation",
+					"Description": "A pointer to a GeoJSON representation of a geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicArea.cdm.json/GeographicArea",
+						"Name": "GeographicAreaGeojsonRepresentation"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeographicArea",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeographicArea",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeographicAreaId\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaId\"},\"GeographicAreaName\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaName\"},\"GeographicAreaDescription\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaDescription\"},\"GeographicAreaTypeId\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaTypeId\"},\"GeographicAreaUnits\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaUnits\"},\"GeographicAreaUomId\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaUomId\"},\"GeographicAreaGeojsonRepresentation\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaGeojsonRepresentation\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeographicArea\",\"path\":\"GeographicArea.cdm.json/GeographicArea\"},\"description\":\"A geographic area is a geographic formation, area or body that is bounded by location points and has an area.\\n\\nThe geographic area is defined by a series of ordered vertices that form the corners of the polygon.\",\"primaryKey\":[\"GeographicAreaId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":false,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Geographic Area.\",\"isNullable\":true,\"name\":\"GeographicAreaDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area Type.\",\"isNullable\":true,\"name\":\"GeographicAreaTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaUnits\"},\"dataType\":\"integer\",\"description\":\"The size of the geographic area expressed in UOM.\",\"isNullable\":true,\"name\":\"GeographicAreaUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"GeographicAreaUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicArea.cdm.json/GeographicArea\",\"name\":\"GeographicAreaGeojsonRepresentation\"},\"dataType\":\"integer\",\"description\":\"A pointer to a GeoJSON representation of a geographic area.\",\"isNullable\":true,\"name\":\"GeographicAreaGeojsonRepresentation\"}]}}}",
+			"Description": "A geographic area is a geographic formation, area or body that is bounded by location points and has an area.\n\nThe geographic area is defined by a series of ordered vertices that form the corners of the polygon.",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "GeographicAreaId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

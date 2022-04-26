@@ -1,0 +1,106 @@
+{
+	"name": "IncidentEventPartyRelationshipType",
+	"properties": {
+		"Name": "IncidentEventPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the party and the incident event over the indicated period.\n\nEx:\n- Supervising Party\n- Participating Party\n- Reporting Party\n- Responding Medical Party\n- Responding Police Party\n- Reported-to Party\n- Insurance Party\n- Government-oversight Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentEventPartyRelationshipTypeId",
+					"Description": "The unique identifier of an Incident Event Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType",
+						"Name": "IncidentEventPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventPartyRelationshipTypeName",
+					"Description": "The name of an Incident Event Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType",
+						"Name": "IncidentEventPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentEventPartyRelationshipTypeDescription",
+					"Description": "The description of an Incident Event Party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType",
+						"Name": "IncidentEventPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentEventPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentEventPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentEventPartyRelationshipTypeId\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeId\"},\"IncidentEventPartyRelationshipTypeName\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeName\"},\"IncidentEventPartyRelationshipTypeDescription\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentEventPartyRelationshipType\",\"path\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the incident event over the indicated period.\\n\\nEx:\\n- Supervising Party\\n- Participating Party\\n- Reporting Party\\n- Responding Medical Party\\n- Responding Police Party\\n- Reported-to Party\\n- Insurance Party\\n- Government-oversight Party\",\"primaryKey\":[\"IncidentEventPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Incident Event Party relationship type.\",\"isNullable\":false,\"name\":\"IncidentEventPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Incident Event Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentEventPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentEventPartyRelationshipType.cdm.json/IncidentEventPartyRelationshipType\",\"name\":\"IncidentEventPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Incident Event Party relationship type.\",\"isNullable\":true,\"name\":\"IncidentEventPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the incident event over the indicated period.\n\nEx:\n- Supervising Party\n- Participating Party\n- Reporting Party\n- Responding Medical Party\n- Responding Police Party\n- Reported-to Party\n- Insurance Party\n- Government-oversight Party",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentEventPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

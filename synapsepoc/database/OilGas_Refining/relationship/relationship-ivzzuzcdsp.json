@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ivzzuzcdsp",
+	"properties": {
+		"Name": "relationship-ivzzuzcdsp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentConditionType",
+		"ToTableName": "ComponentCondition",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentConditionTypeId",
+				"ToColumnName": "ComponentConditionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"toEntity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"joinPairs\":[{\"fromAttribute\":\"ComponentConditionTypeId\",\"toAttribute\":\"ComponentConditionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

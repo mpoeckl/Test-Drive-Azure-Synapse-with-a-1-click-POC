@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kozzxpxgkk",
+	"properties": {
+		"Name": "relationship-kozzxpxgkk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "IncidentPartyInjury",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "InjuredPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"IncidentPartyInjury.cdm.json/IncidentPartyInjury\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"InjuredPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

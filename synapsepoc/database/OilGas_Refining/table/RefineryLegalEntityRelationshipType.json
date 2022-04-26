@@ -1,0 +1,106 @@
+{
+	"name": "RefineryLegalEntityRelationshipType",
+	"properties": {
+		"Name": "RefineryLegalEntityRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the legal entity and refinery.\n\nEx:\n- Owned-by Party\n- Operated-by Party\n- Leased-to Party\n- Leased-by Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryLegalEntityRelationshipTypeId",
+					"Description": "The unique identifier of a refinery legal entity relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType",
+						"Name": "RefineryLegalEntityRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLegalEntityRelationshipTypeName",
+					"Description": "The name of a refinery legal entity relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType",
+						"Name": "RefineryLegalEntityRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryLegalEntityRelationshipTypeDescription",
+					"Description": "The description of a refinery legal entity relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType",
+						"Name": "RefineryLegalEntityRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryLegalEntityRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryLegalEntityRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryLegalEntityRelationshipTypeId\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeId\"},\"RefineryLegalEntityRelationshipTypeName\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeName\"},\"RefineryLegalEntityRelationshipTypeDescription\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryLegalEntityRelationshipType\",\"path\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\"},\"description\":\"The nature of the relationship between the legal entity and refinery.\\n\\nEx:\\n- Owned-by Party\\n- Operated-by Party\\n- Leased-to Party\\n- Leased-by Party\",\"primaryKey\":[\"RefineryLegalEntityRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery legal entity relationship type.\",\"isNullable\":false,\"name\":\"RefineryLegalEntityRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery legal entity relationship type.\",\"isNullable\":true,\"name\":\"RefineryLegalEntityRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryLegalEntityRelationshipType.cdm.json/RefineryLegalEntityRelationshipType\",\"name\":\"RefineryLegalEntityRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery legal entity relationship type.\",\"isNullable\":true,\"name\":\"RefineryLegalEntityRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the legal entity and refinery.\n\nEx:\n- Owned-by Party\n- Operated-by Party\n- Leased-to Party\n- Leased-by Party",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryLegalEntityRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

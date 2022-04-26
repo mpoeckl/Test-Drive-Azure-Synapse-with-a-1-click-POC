@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mngsxoidzt",
+	"properties": {
+		"Name": "relationship-mngsxoidzt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Incoterm",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncotermId",
+				"ToColumnName": "IncotermId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Incoterm.cdm.json/Incoterm\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"IncotermId\",\"toAttribute\":\"IncotermId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mfgsvqvgww",
+	"properties": {
+		"Name": "relationship-mfgsvqvgww",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryAdditiveType",
+		"ToTableName": "RefineryTest",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AdditiveTypeId",
+				"ToColumnName": "AdditiveTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"toEntity\":\"RefineryTest.cdm.json/RefineryTest\",\"joinPairs\":[{\"fromAttribute\":\"AdditiveTypeId\",\"toAttribute\":\"AdditiveTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

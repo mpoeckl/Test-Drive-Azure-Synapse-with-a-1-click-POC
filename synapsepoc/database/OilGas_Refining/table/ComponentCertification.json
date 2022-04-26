@@ -1,0 +1,155 @@
+{
+	"name": "ComponentCertification",
+	"properties": {
+		"Name": "ComponentCertification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The certification(s) held by the component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CertificationId",
+					"Description": "The unique identifier of a Certification.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "CertificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCertificationStartDate",
+					"Description": "The date the component certification was awarded.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "ComponentCertificationStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCertificationExpiryDate",
+					"Description": "The expiry date of the component certification that was awarded.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "ComponentCertificationExpiryDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCertificationNote",
+					"Description": "A note, comment or additional information regarding the component certification.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "ComponentCertificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CertifiedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCertification.cdm.json/ComponentCertification",
+						"Name": "CertifiedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCertification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCertification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentId\"},\"CertificationId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertificationId\"},\"ComponentCertificationStartDate\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationStartDate\"},\"ComponentCertificationExpiryDate\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationExpiryDate\"},\"ComponentCertificationNote\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationNote\"},\"CertifiedByPartyId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertifiedByPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentCertification\",\"path\":\"ComponentCertification.cdm.json/ComponentCertification\"},\"description\":\"The certification(s) held by the component.\",\"primaryKey\":[\"ComponentId\",\"CertificationId\",\"ComponentCertificationStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Certification.\",\"isNullable\":false,\"name\":\"CertificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date the component certification was awarded.\",\"isNullable\":false,\"name\":\"ComponentCertificationStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationExpiryDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The expiry date of the component certification that was awarded.\",\"isNullable\":true,\"name\":\"ComponentCertificationExpiryDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the component certification.\",\"isNullable\":true,\"name\":\"ComponentCertificationNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertifiedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"CertifiedByPartyId\"}]}}}",
+			"Description": "The certification(s) held by the component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,CertificationId,ComponentCertificationStartDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

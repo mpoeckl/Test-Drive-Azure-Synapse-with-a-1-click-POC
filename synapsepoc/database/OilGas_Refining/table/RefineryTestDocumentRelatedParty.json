@@ -1,0 +1,171 @@
+{
+	"name": "RefineryTestDocumentRelatedParty",
+	"properties": {
+		"Name": "RefineryTestDocumentRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The party(s) related to the refinery test document.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a refinery test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DocumentId",
+					"Description": "The unique identifier of a Document.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "DocumentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDocumentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test document party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "RefineryTestDocumentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the refinery test document = party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the refinery test document = party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDocumentRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the refinery test document related party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty",
+						"Name": "RefineryTestDocumentRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocumentRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocumentRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestId\"},\"DocumentId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"DocumentId\"},\"RefineryTestDocumentPartyRelationshipTypeId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},\"PartyId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PartyId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"RefineryTestDocumentRelatedPartyNote\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestDocumentRelatedParty\",\"path\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\"},\"description\":\"The party(s) related to the refinery test document.\",\"primaryKey\":[\"RefineryTestId\",\"DocumentId\",\"RefineryTestDocumentPartyRelationshipTypeId\",\"PartyId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"DocumentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Document.\",\"isNullable\":false,\"name\":\"DocumentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test document party relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the refinery test document = party relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the refinery test document = party relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery test document related party.\",\"isNullable\":true,\"name\":\"RefineryTestDocumentRelatedPartyNote\"}]}}}",
+			"Description": "The party(s) related to the refinery test document.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,DocumentId,RefineryTestDocumentPartyRelationshipTypeId,PartyId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

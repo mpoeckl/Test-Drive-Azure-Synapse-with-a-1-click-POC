@@ -1,0 +1,106 @@
+{
+	"name": "ShipmentTermType",
+	"properties": {
+		"Name": "ShipmentTermType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The shipping term(s) that may be applied to a shipment.\n\nEx:\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- Free On Board (FOB) Destination (Vendor pays freight to retailer's destination)\n- Free Along Side (FAS)\n- Free Domicile\n- Hold For Pickup\n- COD\n\nwhere \nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\n\nEx:\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\n\nEx:\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\n\nEx:\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\n\nEx:\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.\n\nThe FOB Term may be applied:\n\n- to the Customer Account to be used as the standard or default for it's Customers\n\n- to a specific Customer to override any Customer Account standard FOB Term\n\n- directly to a specific Order to indicate it's FOB Term\n\nExamples:\n\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- FOB Destination (Vendor pays freight to retailer's destination)\n\nFree-on-Board (FOB) codes are used by the freight industry to define terms and conditions under which merchandise is to be shipped.   \n\nFOB codes address the following four issues:\n\n1.  Who will pay freight charges when the goods leave the original location: buyer, seller or neither?\n\n2.  Who will assume the freight charges, when the goods are delivered at the destination location?  Will the buyer reimburse the seller for the freight charges or pay the shipper directly?\n\n3.  Who has ownership of the merchandise while it is en route to the destination: buyer or seller?\n\n4.  Who has responsibility for filing any over/short/damaged claims that may be necessary: buyer or seller?",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentTermTypeId",
+					"Description": "The unique identifier of a Shipment Term Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTermType.cdm.json/ShipmentTermType",
+						"Name": "ShipmentTermTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermTypeName",
+					"Description": "The name of a Shipment Term Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTermType.cdm.json/ShipmentTermType",
+						"Name": "ShipmentTermTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermTypeDescription",
+					"Description": "The description of a Shipment Term Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentTermType.cdm.json/ShipmentTermType",
+						"Name": "ShipmentTermTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentTermType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentTermType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentTermTypeId\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeId\"},\"ShipmentTermTypeName\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeName\"},\"ShipmentTermTypeDescription\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentTermType\",\"path\":\"ShipmentTermType.cdm.json/ShipmentTermType\"},\"description\":\"The shipping term(s) that may be applied to a shipment.\\n\\nEx:\\n- Destination/Freight Collect\\n- Destination/Freight Prepaid\\n- Origin/Freight Collect\\n- Origin/Freight Prepaid\\n- Free On Board (FOB) Destination (Vendor pays freight to retailer's destination)\\n- Free Along Side (FAS)\\n- Free Domicile\\n- Hold For Pickup\\n- COD\\n\\nwhere \\nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\\n\\nEx:\\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\\n\\nEx:\\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\\n\\nEx:\\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\\n\\nEx:\\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.\\n\\nThe FOB Term may be applied:\\n\\n- to the Customer Account to be used as the standard or default for it's Customers\\n\\n- to a specific Customer to override any Customer Account standard FOB Term\\n\\n- directly to a specific Order to indicate it's FOB Term\\n\\nExamples:\\n\\n- Destination/Freight Collect\\n- Destination/Freight Prepaid\\n- Origin/Freight Collect\\n- Origin/Freight Prepaid\\n- FOB Destination (Vendor pays freight to retailer's destination)\\n\\nFree-on-Board (FOB) codes are used by the freight industry to define terms and conditions under which merchandise is to be shipped.   \\n\\nFOB codes address the following four issues:\\n\\n1.  Who will pay freight charges when the goods leave the original location: buyer, seller or neither?\\n\\n2.  Who will assume the freight charges, when the goods are delivered at the destination location?  Will the buyer reimburse the seller for the freight charges or pay the shipper directly?\\n\\n3.  Who has ownership of the merchandise while it is en route to the destination: buyer or seller?\\n\\n4.  Who has responsibility for filing any over/short/damaged claims that may be necessary: buyer or seller?\",\"primaryKey\":[\"ShipmentTermTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Term Type.\",\"isNullable\":false,\"name\":\"ShipmentTermTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Shipment Term Type.\",\"isNullable\":true,\"name\":\"ShipmentTermTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Shipment Term Type.\",\"isNullable\":true,\"name\":\"ShipmentTermTypeDescription\"}]}}}",
+			"Description": "The shipping term(s) that may be applied to a shipment.\n\nEx:\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- Free On Board (FOB) Destination (Vendor pays freight to retailer's destination)\n- Free Along Side (FAS)\n- Free Domicile\n- Hold For Pickup\n- COD\n\nwhere \nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\n\nEx:\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\n\nEx:\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\n\nEx:\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\n\nEx:\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.\n\nThe FOB Term may be applied:\n\n- to the Customer Account to be used as the standard or default for it's Customers\n\n- to a specific Customer to override any Customer Account standard FOB Term\n\n- directly to a specific Order to indicate it's FOB Term\n\nExamples:\n\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- FOB Destination (Vendor pays freight to retailer's destination)\n\nFree-on-Board (FOB) codes are used by the freight industry to define terms and conditions under which merchandise is to be shipped.   \n\nFOB codes address the following four issues:\n\n1.  Who will pay freight charges when the goods leave the original location: buyer, seller or neither?\n\n2.  Who will assume the freight charges, when the goods are delivered at the destination location?  Will the buyer reimburse the seller for the freight charges or pay the shipper directly?\n\n3.  Who has ownership of the merchandise while it is en route to the destination: buyer or seller?\n\n4.  Who has responsibility for filing any over/short/damaged claims that may be necessary: buyer or seller?",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentTermTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

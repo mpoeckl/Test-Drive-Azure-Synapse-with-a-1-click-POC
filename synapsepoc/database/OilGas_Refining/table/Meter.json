@@ -1,0 +1,480 @@
+{
+	"name": "Meter",
+	"properties": {
+		"Name": "Meter",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A meter for recording gas, electricity, or water usage.\n\nDue to the  deregulation of supply markets in many countries, the  company responsible for a meter may not be obvious. Depending on the  arrangements in place, the  meter may be the  property of the  distributor, the  retailer or for some large users the  meter may belong to the  customer.\n\nThe  company responsible for reading the  meter may not always be the  company which owns it. Meter reading is now sometimes subcontracted and in some areas the  same person may read gas, electricity and water meters at the  same time.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterId",
+					"Description": "The unique identifier of a Meter.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterSerialNumber",
+					"Description": "The serial number of the Meter.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterSerialNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 30,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterBadge",
+					"Description": "A permanent plate, affixed in a conspicuous place on a meter, containing basic meter information.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterBadge"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "binary",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "binary"
+						}
+					}
+				},
+				{
+					"Name": "ApeMeterLabel",
+					"Description": "The California Direct Access Standards setting process in 1997 identified the need to standardize the electric meter label identifier so as to create a unique identifier for every electric meter in the United States.\n\nAPE meter label format follows ANSI C12.10 requirements for format of the electric meter labels.\n\nThe format for the barcode label is:\n\nAABYYYYYYYYYZZZZZ\n\nwhere:\n\nAA  is the meter test code\nB  is an identifier for the meter manufacturer\nYYYYYYYYY  is the manufacturer's serial number or utility number\nZZZZZ  is user specified\nUsage\n\nThe meter test code is used by calibration equipment manufacturers to automatically set up their equipment to calibrate a given meter. The user scans in the APE barcode on the meter, and the calibrator will use the correct voltage and test amps. The last five characters are user specified, and many electric utilities use these characters for an inventory code or date of manufacture.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "ApeMeterLabel"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MeterServiceVoltage",
+					"Description": "The service voltage of the meter.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterServiceVoltage"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CurrentMeterGpsLatitudePosition",
+					"Description": "The current GPS Latitude of the Meter.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "CurrentMeterGpsLatitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "CurrentMeterGpsLongitudePosition",
+					"Description": "The current GPS Longitude of the Meter.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "CurrentMeterGpsLongitudePosition"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MeterMultiplier",
+					"Description": "Because of the way electric meters are designed, they might read only a fraction of each kilowatt-hour (kWh) of electricity actually used by large consumers. Therefore, CWLP assigns a \"meter multiplier\" of 1.00 or greater to each electric meter. This is multiplied by the difference between the current and the previous electric Meter Reads to determine the actual number of kWh used during the billing period.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterMultiplier"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MeterRolloverCount",
+					"Description": "The number of times the meter has rolled over. i.e. went from 999...999 to 0",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterRolloverCount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterOwnedByGasElectricityDistributorIndicator",
+					"Description": "Indicates that the meter is owned by the gas and electricity distributor.\n\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\n\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterOwnedByGasElectricityDistributorIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MeterOwnedByRetailerIndicator",
+					"Description": "Indicates that the meter is owned by the retailer.\n\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\n\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterOwnedByRetailerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MeterOwnedByCustomerIndicator",
+					"Description": "Indicates that the meter is owned by the customer.\n\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\n\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterOwnedByCustomerIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticMeterReaderIndicator",
+					"Description": "Indicates that the meter has AMR capabilities.\n\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "AutomaticMeterReaderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RemoteMeterReaderIndicator",
+					"Description": "Indicates that the meter has RMR capabilities.\n\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "RemoteMeterReaderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TimeOfUseMeterIndicator",
+					"Description": "A measuring device that records the times during which a customer uses various amounts of electricity. This type of meter is used for customers who pay time-of-use rates.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "TimeOfUseMeterIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CustomerOwnedMeterIndicator",
+					"Description": "Indicates that the meter is owned by the customer.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "CustomerOwnedMeterIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PrepaidMeterIndicator",
+					"Description": "Indicates that the meter is a prepaid meter.\n\nThe standard business model of electricity retailing involves the electricity company billing the customer for the amount of energy used in the previous month or quarter. \n\nIn some countries, if the retailer believes that the customer may for whatever reason not pay the bill, a prepayment meter may be installed. \n\nThis requires the customer to make advance payment before electricity can be used. If the available credit is exhausted then the supply of electricity is cut off by a relay.\n\nIn the UK, mechanical prepayment meters used to be common in rented accommodation. \n\nDisadvantages of these included the need for regular visits to remove cash, risk of theft of the cash in the meter and the lack of a means of applying a standing charge is there.\n\nModern solid-state electricity meters, in conjunction with smart card technology, have removed these disadvantages and such meters are commonly used for customers considered to be a poor credit risk. In the UK, one system is the PayPoint network, where rechargeable tokens (Quantum cards for natural gas, or plastic \"keys\" for electricity) can be loaded with whatever money the customer has available.\n\nPrepayment keyA similar system, with 2 way communication smart cards, has been used for more than 1 million meters by Elektromed in Turkey.\n\nThere are various groups, such as the Standard Transfer Specification (STS) association, which promote common standards for prepayment metering systems across manufacturers.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "PrepaidMeterIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterTypeId",
+					"Description": "The unique identifier of a Meter Type.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ElectricalLineSegmentId",
+					"Description": "The segment ID of the transmission line.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "ElectricalLineSegmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ElectricalLineId",
+					"Description": "The unique identifier of an Electric Line.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "ElectricalLineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterModelId",
+					"Description": "The unique identifier of a Meter Model.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BillingUnitId",
+					"Description": "The unique identifier of a Billing Unit.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "BillingUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterSizeId",
+					"Description": "The unique identifier of a Meter Size.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterSizeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterClassId",
+					"Description": "The unique identifier of a meter class.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "MeterClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PropertyId",
+					"Description": "The unique identifier of a Property.",
+					"BaseAttributeReference": {
+						"Entity": "Meter.cdm.json/Meter",
+						"Name": "PropertyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Meter",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Meter",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterId\"},\"MeterSerialNumber\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSerialNumber\"},\"MeterBadge\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterBadge\"},\"ApeMeterLabel\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ApeMeterLabel\"},\"MeterServiceVoltage\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterServiceVoltage\"},\"CurrentMeterGpsLatitudePosition\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLatitudePosition\"},\"CurrentMeterGpsLongitudePosition\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLongitudePosition\"},\"MeterMultiplier\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterMultiplier\"},\"MeterRolloverCount\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterRolloverCount\"},\"MeterOwnedByGasElectricityDistributorIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByGasElectricityDistributorIndicator\"},\"MeterOwnedByRetailerIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByRetailerIndicator\"},\"MeterOwnedByCustomerIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByCustomerIndicator\"},\"AutomaticMeterReaderIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AutomaticMeterReaderIndicator\"},\"RemoteMeterReaderIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"RemoteMeterReaderIndicator\"},\"TimeOfUseMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"TimeOfUseMeterIndicator\"},\"CustomerOwnedMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CustomerOwnedMeterIndicator\"},\"PrepaidMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PrepaidMeterIndicator\"},\"AssetId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AssetId\"},\"MeterTypeId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterTypeId\"},\"ElectricalLineSegmentId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineSegmentId\"},\"ElectricalLineId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineId\"},\"MeterModelId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterModelId\"},\"BillingUnitId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"BillingUnitId\"},\"MeterSizeId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSizeId\"},\"MeterClassId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterClassId\"},\"PropertyId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PropertyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Meter\",\"path\":\"Meter.cdm.json/Meter\"},\"description\":\"A meter for recording gas, electricity, or water usage.\\n\\nDue to the  deregulation of supply markets in many countries, the  company responsible for a meter may not be obvious. Depending on the  arrangements in place, the  meter may be the  property of the  distributor, the  retailer or for some large users the  meter may belong to the  customer.\\n\\nThe  company responsible for reading the  meter may not always be the  company which owns it. Meter reading is now sometimes subcontracted and in some areas the  same person may read gas, electricity and water meters at the  same time.\",\"primaryKey\":[\"MeterId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Meter.\",\"isNullable\":false,\"name\":\"MeterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSerialNumber\"},\"dataType\":\"string\",\"dataTypeLength\":30,\"description\":\"The serial number of the Meter.\",\"isNullable\":true,\"name\":\"MeterSerialNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterBadge\"},\"dataType\":\"binary\",\"description\":\"A permanent plate, affixed in a conspicuous place on a meter, containing basic meter information.\",\"isNullable\":true,\"name\":\"MeterBadge\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ApeMeterLabel\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The California Direct Access Standards setting process in 1997 identified the need to standardize the electric meter label identifier so as to create a unique identifier for every electric meter in the United States.\\n\\nAPE meter label format follows ANSI C12.10 requirements for format of the electric meter labels.\\n\\nThe format for the barcode label is:\\n\\nAABYYYYYYYYYZZZZZ\\n\\nwhere:\\n\\nAA  is the meter test code\\nB  is an identifier for the meter manufacturer\\nYYYYYYYYY  is the manufacturer's serial number or utility number\\nZZZZZ  is user specified\\nUsage\\n\\nThe meter test code is used by calibration equipment manufacturers to automatically set up their equipment to calibrate a given meter. The user scans in the APE barcode on the meter, and the calibrator will use the correct voltage and test amps. The last five characters are user specified, and many electric utilities use these characters for an inventory code or date of manufacture.\",\"isNullable\":true,\"name\":\"ApeMeterLabel\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterServiceVoltage\"},\"dataType\":\"integer\",\"description\":\"The service voltage of the meter.\",\"isNullable\":true,\"name\":\"MeterServiceVoltage\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLatitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The current GPS Latitude of the Meter.\",\"isNullable\":false,\"scale\":4,\"name\":\"CurrentMeterGpsLatitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLongitudePosition\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The current GPS Longitude of the Meter.\",\"isNullable\":false,\"scale\":4,\"name\":\"CurrentMeterGpsLongitudePosition\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterMultiplier\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"Because of the way electric meters are designed, they might read only a fraction of each kilowatt-hour (kWh) of electricity actually used by large consumers. Therefore, CWLP assigns a \\\"meter multiplier\\\" of 1.00 or greater to each electric meter. This is multiplied by the difference between the current and the previous electric Meter Reads to determine the actual number of kWh used during the billing period.\",\"isNullable\":true,\"scale\":2,\"name\":\"MeterMultiplier\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterRolloverCount\"},\"dataType\":\"integer\",\"description\":\"The number of times the meter has rolled over. i.e. went from 999...999 to 0\",\"isNullable\":true,\"name\":\"MeterRolloverCount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByGasElectricityDistributorIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter is owned by the gas and electricity distributor.\\n\\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\\n\\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.\",\"isNullable\":true,\"name\":\"MeterOwnedByGasElectricityDistributorIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByRetailerIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter is owned by the retailer.\\n\\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\\n\\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.\",\"isNullable\":true,\"name\":\"MeterOwnedByRetailerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByCustomerIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter is owned by the customer.\\n\\nDue to the deregulation of electricity supply markets in many countries, the company responsible for an electricity meter may not be obvious. Depending on the arrangements in place, the meter may be the property of the electricity distributor, the retailer or for some large users of electricity the meter may belong to the customer.\\n\\nThe company responsible for reading the meter may not always be the company which owns it. Meter reading is now sometimes subcontracted and in some areas the same person may read gas, water and electricity meters at the same time.\",\"isNullable\":true,\"name\":\"MeterOwnedByCustomerIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AutomaticMeterReaderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter has AMR capabilities.\\n\\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.\",\"isNullable\":true,\"name\":\"AutomaticMeterReaderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"RemoteMeterReaderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter has RMR capabilities.\\n\\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.\",\"isNullable\":true,\"name\":\"RemoteMeterReaderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"TimeOfUseMeterIndicator\"},\"dataType\":\"boolean\",\"description\":\"A measuring device that records the times during which a customer uses various amounts of electricity. This type of meter is used for customers who pay time-of-use rates.\",\"isNullable\":true,\"name\":\"TimeOfUseMeterIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CustomerOwnedMeterIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter is owned by the customer.\",\"isNullable\":true,\"name\":\"CustomerOwnedMeterIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PrepaidMeterIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter is a prepaid meter.\\n\\nThe standard business model of electricity retailing involves the electricity company billing the customer for the amount of energy used in the previous month or quarter. \\n\\nIn some countries, if the retailer believes that the customer may for whatever reason not pay the bill, a prepayment meter may be installed. \\n\\nThis requires the customer to make advance payment before electricity can be used. If the available credit is exhausted then the supply of electricity is cut off by a relay.\\n\\nIn the UK, mechanical prepayment meters used to be common in rented accommodation. \\n\\nDisadvantages of these included the need for regular visits to remove cash, risk of theft of the cash in the meter and the lack of a means of applying a standing charge is there.\\n\\nModern solid-state electricity meters, in conjunction with smart card technology, have removed these disadvantages and such meters are commonly used for customers considered to be a poor credit risk. In the UK, one system is the PayPoint network, where rechargeable tokens (Quantum cards for natural gas, or plastic \\\"keys\\\" for electricity) can be loaded with whatever money the customer has available.\\n\\nPrepayment keyA similar system, with 2 way communication smart cards, has been used for more than 1 million meters by Elektromed in Turkey.\\n\\nThere are various groups, such as the Standard Transfer Specification (STS) association, which promote common standards for prepayment metering systems across manufacturers.\",\"isNullable\":true,\"name\":\"PrepaidMeterIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":true,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Type.\",\"isNullable\":true,\"name\":\"MeterTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineSegmentId\"},\"dataType\":\"integer\",\"description\":\"The segment ID of the transmission line.\",\"isNullable\":true,\"name\":\"ElectricalLineSegmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Electric Line.\",\"isNullable\":true,\"name\":\"ElectricalLineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Model.\",\"isNullable\":true,\"name\":\"MeterModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"BillingUnitId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Billing Unit.\",\"isNullable\":true,\"name\":\"BillingUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSizeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Size.\",\"isNullable\":true,\"name\":\"MeterSizeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a meter class.\",\"isNullable\":true,\"name\":\"MeterClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PropertyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Property.\",\"isNullable\":true,\"name\":\"PropertyId\"}]}}}",
+			"Description": "A meter for recording gas, electricity, or water usage.\n\nDue to the  deregulation of supply markets in many countries, the  company responsible for a meter may not be obvious. Depending on the  arrangements in place, the  meter may be the  property of the  distributor, the  retailer or for some large users the  meter may belong to the  customer.\n\nThe  company responsible for reading the  meter may not always be the  company which owns it. Meter reading is now sometimes subcontracted and in some areas the  same person may read gas, electricity and water meters at the  same time.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

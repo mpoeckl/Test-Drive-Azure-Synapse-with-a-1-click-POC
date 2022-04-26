@@ -1,0 +1,187 @@
+{
+	"name": "PipelineTransferredSubstance",
+	"properties": {
+		"Name": "PipelineTransferredSubstance",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of substance transferred by the pipeline for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "PipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "SubstanceTypeId",
+					"Description": "The unique identifier of a substance type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "SubstanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "TransferredUnits",
+					"Description": "The units transferred of substance or product.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "TransferredUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TransferredUnitsUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "TransferredUnitsUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineTransferredSubstanceNote",
+					"Description": "A note, comment or additional information regarding the pipeline transferred substance.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance",
+						"Name": "PipelineTransferredSubstanceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineTransferredSubstance",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineTransferredSubstance",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineId\"},\"SubstanceTypeId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"SubstanceTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodEndTimestamp\"},\"ProductId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"ProductId\"},\"TransferredUnits\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnits\"},\"TransferredUnitsUomId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnitsUomId\"},\"PipelineTransferredSubstanceNote\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineTransferredSubstanceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineTransferredSubstance\",\"path\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\"},\"description\":\"The quantity of substance transferred by the pipeline for the associated period.\",\"primaryKey\":[\"PipelineId\",\"SubstanceTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline.\",\"isNullable\":false,\"name\":\"PipelineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"SubstanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a substance type.\",\"isNullable\":false,\"name\":\"SubstanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnits\"},\"dataType\":\"integer\",\"description\":\"The units transferred of substance or product.\",\"isNullable\":true,\"name\":\"TransferredUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnitsUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"TransferredUnitsUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineTransferredSubstanceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pipeline transferred substance.\",\"isNullable\":true,\"name\":\"PipelineTransferredSubstanceNote\"}]}}}",
+			"Description": "The quantity of substance transferred by the pipeline for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineId,SubstanceTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

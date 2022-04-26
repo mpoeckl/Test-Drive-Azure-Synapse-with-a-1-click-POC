@@ -1,0 +1,139 @@
+{
+	"name": "PipelineStatus",
+	"properties": {
+		"Name": "PipelineStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the pipeline for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatus.cdm.json/PipelineStatus",
+						"Name": "PipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the pipeline status.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatus.cdm.json/PipelineStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the pipeline status.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatus.cdm.json/PipelineStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStatusTypeId",
+					"Description": "The unique identifier of a pipeline status type.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatus.cdm.json/PipelineStatus",
+						"Name": "PipelineStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineStatusNote",
+					"Description": "A note, comment or additional information regarding the pipeline status.",
+					"BaseAttributeReference": {
+						"Entity": "PipelineStatus.cdm.json/PipelineStatus",
+						"Name": "PipelineStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineId\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PeriodEndTimestamp\"},\"PipelineStatusTypeId\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineStatusTypeId\"},\"PipelineStatusNote\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipelineStatus\",\"path\":\"PipelineStatus.cdm.json/PipelineStatus\"},\"description\":\"The status of the pipeline for the associated period.\",\"primaryKey\":[\"PipelineId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline.\",\"isNullable\":false,\"name\":\"PipelineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the pipeline status.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the pipeline status.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipeline status type.\",\"isNullable\":false,\"name\":\"PipelineStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"name\":\"PipelineStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pipeline status.\",\"isNullable\":true,\"name\":\"PipelineStatusNote\"}]}}}",
+			"Description": "The status of the pipeline for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipelineId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

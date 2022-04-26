@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rqgkiefchi",
+	"properties": {
+		"Name": "relationship-rqgkiefchi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Generator",
+		"ToTableName": "GeneratorSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorId",
+				"ToColumnName": "GeneratorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Generator.cdm.json/Generator\",\"toEntity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorId\",\"toAttribute\":\"GeneratorId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

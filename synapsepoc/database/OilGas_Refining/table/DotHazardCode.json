@@ -1,0 +1,107 @@
+{
+	"name": "DotHazardCode",
+	"properties": {
+		"Name": "DotHazardCode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The DOT hazard codes.\n\n1    Explosives\n2.1  Flammable gas\n2.2  non-flammable gas\n2.3  Poisonous gas\n3    Flammable liquid\n4.1  Flammable solid\n4.2  Spontaneously combustible\n4.3  Dangerous when wet\n5.1  Oxidizer\n5.2  Organic peroxide\n6.1  Poison- keep away from food\n6.2  Infectious material\n7    Radioactive\n8    Corrosive\n9    Miscellaneous",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DotHazardCode",
+					"Description": "The unique identifier of a DOT Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "DotHazardCode.cdm.json/DotHazardCode",
+						"Name": "DotHazardCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DotHazardName",
+					"Description": "The name of a DOT Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "DotHazardCode.cdm.json/DotHazardCode",
+						"Name": "DotHazardName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DotHazardDescription",
+					"Description": "The description of a DOT Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "DotHazardCode.cdm.json/DotHazardCode",
+						"Name": "DotHazardDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DotHazardCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DotHazardCode",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DotHazardCode\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardCode\"},\"DotHazardName\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardName\"},\"DotHazardDescription\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DotHazardCode\",\"path\":\"DotHazardCode.cdm.json/DotHazardCode\"},\"description\":\"The DOT hazard codes.\\n\\n1    Explosives\\n2.1  Flammable gas\\n2.2  non-flammable gas\\n2.3  Poisonous gas\\n3    Flammable liquid\\n4.1  Flammable solid\\n4.2  Spontaneously combustible\\n4.3  Dangerous when wet\\n5.1  Oxidizer\\n5.2  Organic peroxide\\n6.1  Poison- keep away from food\\n6.2  Infectious material\\n7    Radioactive\\n8    Corrosive\\n9    Miscellaneous\",\"primaryKey\":[\"DotHazardCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardCode\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of a DOT Hazard Code.\",\"isNullable\":false,\"name\":\"DotHazardCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a DOT Hazard Code.\",\"isNullable\":true,\"name\":\"DotHazardName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"name\":\"DotHazardDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a DOT Hazard Code.\",\"isNullable\":true,\"name\":\"DotHazardDescription\"}]}}}",
+			"Description": "The DOT hazard codes.\n\n1    Explosives\n2.1  Flammable gas\n2.2  non-flammable gas\n2.3  Poisonous gas\n3    Flammable liquid\n4.1  Flammable solid\n4.2  Spontaneously combustible\n4.3  Dangerous when wet\n5.1  Oxidizer\n5.2  Organic peroxide\n6.1  Poison- keep away from food\n6.2  Infectious material\n7    Radioactive\n8    Corrosive\n9    Miscellaneous",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "DotHazardCode",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

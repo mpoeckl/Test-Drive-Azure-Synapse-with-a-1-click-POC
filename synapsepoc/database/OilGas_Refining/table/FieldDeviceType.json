@@ -1,0 +1,106 @@
+{
+	"name": "FieldDeviceType",
+	"properties": {
+		"Name": "FieldDeviceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of field device associated with the pipe field device.\n\nEx:\n- Flow \n- Pressure \n- Temperature\n- Pipeline Inspection Gauge (\"pig\")",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FieldDeviceTypeId",
+					"Description": "The unique identifier of a Field Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDeviceType.cdm.json/FieldDeviceType",
+						"Name": "FieldDeviceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceTypeName",
+					"Description": "The name of a Field Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDeviceType.cdm.json/FieldDeviceType",
+						"Name": "FieldDeviceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceTypeDescription",
+					"Description": "The description of a Field Device Type.",
+					"BaseAttributeReference": {
+						"Entity": "FieldDeviceType.cdm.json/FieldDeviceType",
+						"Name": "FieldDeviceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FieldDeviceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FieldDeviceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FieldDeviceTypeId\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeId\"},\"FieldDeviceTypeName\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeName\"},\"FieldDeviceTypeDescription\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FieldDeviceType\",\"path\":\"FieldDeviceType.cdm.json/FieldDeviceType\"},\"description\":\"The type of field device associated with the pipe field device.\\n\\nEx:\\n- Flow \\n- Pressure \\n- Temperature\\n- Pipeline Inspection Gauge (\\\"pig\\\")\",\"primaryKey\":[\"FieldDeviceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Field Device Type.\",\"isNullable\":false,\"name\":\"FieldDeviceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Field Device Type.\",\"isNullable\":true,\"name\":\"FieldDeviceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FieldDeviceType.cdm.json/FieldDeviceType\",\"name\":\"FieldDeviceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Field Device Type.\",\"isNullable\":true,\"name\":\"FieldDeviceTypeDescription\"}]}}}",
+			"Description": "The type of field device associated with the pipe field device.\n\nEx:\n- Flow \n- Pressure \n- Temperature\n- Pipeline Inspection Gauge (\"pig\")",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "FieldDeviceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

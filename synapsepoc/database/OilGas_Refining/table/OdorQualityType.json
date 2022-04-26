@@ -1,0 +1,106 @@
+{
+	"name": "OdorQualityType",
+	"properties": {
+		"Name": "OdorQualityType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The character of an odor is a critical element in assessing an odor. This property is the ability to distinguish different odors and is only descriptive.   This method is most commonly used to define the character of an odor which can then be compared to other odors\n\nEx:\n- Chemical Smell\n- Petroleum Smell\n- Acidic Smell",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "OdorQualityTypeId",
+					"Description": "The unique identifier of an odor quality type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorQualityType.cdm.json/OdorQualityType",
+						"Name": "OdorQualityTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "OdorQualityTypeName",
+					"Description": "The name of an odor quality type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorQualityType.cdm.json/OdorQualityType",
+						"Name": "OdorQualityTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "OdorQualityTypeDescription",
+					"Description": "The description of an odor quality type.",
+					"BaseAttributeReference": {
+						"Entity": "OdorQualityType.cdm.json/OdorQualityType",
+						"Name": "OdorQualityTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorQualityType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorQualityType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OdorQualityTypeId\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeId\"},\"OdorQualityTypeName\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeName\"},\"OdorQualityTypeDescription\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"OdorQualityType\",\"path\":\"OdorQualityType.cdm.json/OdorQualityType\"},\"description\":\"The character of an odor is a critical element in assessing an odor. This property is the ability to distinguish different odors and is only descriptive.   This method is most commonly used to define the character of an odor which can then be compared to other odors\\n\\nEx:\\n- Chemical Smell\\n- Petroleum Smell\\n- Acidic Smell\",\"primaryKey\":[\"OdorQualityTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an odor quality type.\",\"isNullable\":false,\"name\":\"OdorQualityTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an odor quality type.\",\"isNullable\":true,\"name\":\"OdorQualityTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an odor quality type.\",\"isNullable\":true,\"name\":\"OdorQualityTypeDescription\"}]}}}",
+			"Description": "The character of an odor is a critical element in assessing an odor. This property is the ability to distinguish different odors and is only descriptive.   This method is most commonly used to define the character of an odor which can then be compared to other odors\n\nEx:\n- Chemical Smell\n- Petroleum Smell\n- Acidic Smell",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "OdorQualityTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

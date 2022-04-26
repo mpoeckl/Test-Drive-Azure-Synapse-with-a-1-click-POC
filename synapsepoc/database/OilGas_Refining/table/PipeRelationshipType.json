@@ -1,0 +1,106 @@
+{
+	"name": "PipeRelationshipType",
+	"properties": {
+		"Name": "PipeRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between pipes.\n\nEx:\n- Upstream pipe\n- Downstream pipe\n- Attached pipe\n- Co-located\n- Adjacent\n- Replacement",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeRelationshipTypeId",
+					"Description": "The unique identifier of a pipe relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeRelationshipType.cdm.json/PipeRelationshipType",
+						"Name": "PipeRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeRelationshipTypeName",
+					"Description": "The name of a pipe relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeRelationshipType.cdm.json/PipeRelationshipType",
+						"Name": "PipeRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeRelationshipTypeDescription",
+					"Description": "The description of a pipe relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeRelationshipType.cdm.json/PipeRelationshipType",
+						"Name": "PipeRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeRelationshipTypeId\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeId\"},\"PipeRelationshipTypeName\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeName\"},\"PipeRelationshipTypeDescription\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeRelationshipType\",\"path\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\"},\"description\":\"The nature of the relationship between pipes.\\n\\nEx:\\n- Upstream pipe\\n- Downstream pipe\\n- Attached pipe\\n- Co-located\\n- Adjacent\\n- Replacement\",\"primaryKey\":[\"PipeRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe relationship type.\",\"isNullable\":false,\"name\":\"PipeRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pipe relationship type.\",\"isNullable\":true,\"name\":\"PipeRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeRelationshipType.cdm.json/PipeRelationshipType\",\"name\":\"PipeRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pipe relationship type.\",\"isNullable\":true,\"name\":\"PipeRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between pipes.\n\nEx:\n- Upstream pipe\n- Downstream pipe\n- Attached pipe\n- Co-located\n- Adjacent\n- Replacement",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "AlarmType",
+	"properties": {
+		"Name": "AlarmType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of alarm.\n\nEx:\n- Exceeds safety standards\n- Approaches safety standards\n- No result returned\n- Unidentified result",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AlarmTypeId",
+					"Description": "The unique identifier of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmType.cdm.json/AlarmType",
+						"Name": "AlarmTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlarmTypeName",
+					"Description": "The name of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmType.cdm.json/AlarmType",
+						"Name": "AlarmTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AlarmTypeDescription",
+					"Description": "The description of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "AlarmType.cdm.json/AlarmType",
+						"Name": "AlarmTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AlarmType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AlarmType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AlarmTypeId\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeId\"},\"AlarmTypeName\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeName\"},\"AlarmTypeDescription\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AlarmType\",\"path\":\"AlarmType.cdm.json/AlarmType\"},\"description\":\"A type of alarm.\\n\\nEx:\\n- Exceeds safety standards\\n- Approaches safety standards\\n- No result returned\\n- Unidentified result\",\"primaryKey\":[\"AlarmTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm Type.\",\"isNullable\":false,\"name\":\"AlarmTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Alarm Type.\",\"isNullable\":true,\"name\":\"AlarmTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AlarmType.cdm.json/AlarmType\",\"name\":\"AlarmTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Alarm Type.\",\"isNullable\":true,\"name\":\"AlarmTypeDescription\"}]}}}",
+			"Description": "A type of alarm.\n\nEx:\n- Exceeds safety standards\n- Approaches safety standards\n- No result returned\n- Unidentified result",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AlarmTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

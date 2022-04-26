@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yptvilzyvu",
+	"properties": {
+		"Name": "relationship-yptvilzyvu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessProductProduced",
+		"ToTableName": "RefineryProcessProductShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ProductId",
+				"ToColumnName": "ProductId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"toEntity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"joinPairs\":[{\"fromAttribute\":\"ProductId\",\"toAttribute\":\"ProductId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

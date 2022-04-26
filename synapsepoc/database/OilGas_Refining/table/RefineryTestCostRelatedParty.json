@@ -1,0 +1,171 @@
+{
+	"name": "RefineryTestCostRelatedParty",
+	"properties": {
+		"Name": "RefineryTestCostRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A party related to the refinery test cost.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCostPartyRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test cost party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "RefineryTestCostPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the refinery test cost - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the refinery test cost - party relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestCostRelatedPartyNote",
+					"Description": "A note, comment or additional information regarding the refinery test cost related party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty",
+						"Name": "RefineryTestCostRelatedPartyNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCostRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestCostRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestId\"},\"CostTypeId\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"CostTypeId\"},\"PartyId\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PartyId\"},\"RefineryTestCostPartyRelationshipTypeId\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestCostPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"RefineryTestCostRelatedPartyNote\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestCostRelatedPartyNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestCostRelatedParty\",\"path\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\"},\"description\":\"A party related to the refinery test cost.\",\"primaryKey\":[\"RefineryTestId\",\"CostTypeId\",\"PartyId\",\"RefineryTestCostPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestCostPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test cost party relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestCostPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the refinery test cost - party relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the refinery test cost - party relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestCostRelatedParty.cdm.json/RefineryTestCostRelatedParty\",\"name\":\"RefineryTestCostRelatedPartyNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery test cost related party.\",\"isNullable\":true,\"name\":\"RefineryTestCostRelatedPartyNote\"}]}}}",
+			"Description": "A party related to the refinery test cost.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,CostTypeId,PartyId,RefineryTestCostPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

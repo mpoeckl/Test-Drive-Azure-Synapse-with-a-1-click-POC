@@ -1,0 +1,106 @@
+{
+	"name": "MaintenancePartyRelationshipType",
+	"properties": {
+		"Name": "MaintenancePartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a party and the associated component maintenance.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MaintenancePartyRelationshipTypeId",
+					"Description": "The unique identifier of a maintenance party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType",
+						"Name": "MaintenancePartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePartyRelationshipTypeName",
+					"Description": "The name of a maintenance party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType",
+						"Name": "MaintenancePartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "MaintenancePartyRelationshipTypeDescription",
+					"Description": "The description of a maintenance party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType",
+						"Name": "MaintenancePartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenancePartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenancePartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenancePartyRelationshipTypeId\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeId\"},\"MaintenancePartyRelationshipTypeName\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeName\"},\"MaintenancePartyRelationshipTypeDescription\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MaintenancePartyRelationshipType\",\"path\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\"},\"description\":\"The nature of the relationship between a party and the associated component maintenance.\\n\\nEx:\\n- Requested-by Party\\n- Authorized-by Party\\n- Performed-by Party\\n- Billed-by Party\\n- Billed-to Party\",\"primaryKey\":[\"MaintenancePartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a maintenance party relationship type.\",\"isNullable\":false,\"name\":\"MaintenancePartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a maintenance party relationship type.\",\"isNullable\":true,\"name\":\"MaintenancePartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a maintenance party relationship type.\",\"isNullable\":true,\"name\":\"MaintenancePartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a party and the associated component maintenance.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "MaintenancePartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

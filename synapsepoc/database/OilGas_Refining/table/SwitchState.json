@@ -1,0 +1,106 @@
+{
+	"name": "SwitchState",
+	"properties": {
+		"Name": "SwitchState",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The state of the switch.\n\nEx:\n-  Open\n-  Closed\n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SwitchStateId",
+					"Description": "The unique identifier of a switch state.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchState.cdm.json/SwitchState",
+						"Name": "SwitchStateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SwitchStateName",
+					"Description": "The name of a switch state.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchState.cdm.json/SwitchState",
+						"Name": "SwitchStateName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SwitchStateDescription",
+					"Description": "The description of a switch state.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchState.cdm.json/SwitchState",
+						"Name": "SwitchStateDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SwitchState",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SwitchState",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchStateId\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateId\"},\"SwitchStateName\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateName\"},\"SwitchStateDescription\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SwitchState\",\"path\":\"SwitchState.cdm.json/SwitchState\"},\"description\":\"The state of the switch.\\n\\nEx:\\n-  Open\\n-  Closed\\n\\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.\",\"primaryKey\":[\"SwitchStateId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a switch state.\",\"isNullable\":false,\"name\":\"SwitchStateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a switch state.\",\"isNullable\":true,\"name\":\"SwitchStateName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a switch state.\",\"isNullable\":true,\"name\":\"SwitchStateDescription\"}]}}}",
+			"Description": "The state of the switch.\n\nEx:\n-  Open\n-  Closed\n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SwitchStateId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-obszqtuxok",
+	"properties": {
+		"Name": "relationship-obszqtuxok",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentEvent",
+		"ToTableName": "ComponentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentEventId",
+				"ToColumnName": "ComponentEventId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"toEntity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentEventId\",\"toAttribute\":\"ComponentEventId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "PipeType",
+	"properties": {
+		"Name": "PipeType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of Pipe.\n\nEx:\n- Header (Trunk)\n- Interconnect\n- Kicker\n- Lateral\n- Launcher\n- Mainline\n- Receipt\n- Receiver\n- Riser\n- Station\n- Storage Line\n- Tap Line\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeTypeId",
+					"Description": "The unique identifier of a Pipe Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeType.cdm.json/PipeType",
+						"Name": "PipeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeTypeName",
+					"Description": "The name of a Pipe Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeType.cdm.json/PipeType",
+						"Name": "PipeTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeTypeDescription",
+					"Description": "The description of a Pipe Type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeType.cdm.json/PipeType",
+						"Name": "PipeTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeTypeId\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeId\"},\"PipeTypeName\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeName\"},\"PipeTypeDescription\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeType\",\"path\":\"PipeType.cdm.json/PipeType\"},\"description\":\"The type of Pipe.\\n\\nEx:\\n- Header (Trunk)\\n- Interconnect\\n- Kicker\\n- Lateral\\n- Launcher\\n- Mainline\\n- Receipt\\n- Receiver\\n- Riser\\n- Station\\n- Storage Line\\n- Tap Line\\n- Unknown\",\"primaryKey\":[\"PipeTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipe Type.\",\"isNullable\":false,\"name\":\"PipeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Pipe Type.\",\"isNullable\":true,\"name\":\"PipeTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeType.cdm.json/PipeType\",\"name\":\"PipeTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Pipe Type.\",\"isNullable\":true,\"name\":\"PipeTypeDescription\"}]}}}",
+			"Description": "The type of Pipe.\n\nEx:\n- Header (Trunk)\n- Interconnect\n- Kicker\n- Lateral\n- Launcher\n- Mainline\n- Receipt\n- Receiver\n- Riser\n- Station\n- Storage Line\n- Tap Line\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

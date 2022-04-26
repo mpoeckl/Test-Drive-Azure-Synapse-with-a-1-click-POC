@@ -1,0 +1,284 @@
+{
+	"name": "MeterModel",
+	"properties": {
+		"Name": "MeterModel",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The model of a meter.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterModelId",
+					"Description": "The unique identifier of a Meter Model.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "MeterModelId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ManufacturedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "ManufacturedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FirstManufacturedDate",
+					"Description": "The date that the Meter Model was first manufactured.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "FirstManufacturedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FirstAvailableDate",
+					"Description": "The date that the meter model is first available for purchase.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "FirstAvailableDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "FirstMarketedDate",
+					"Description": "The date that the Meter Model was first marketed.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "FirstMarketedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DiscontinuedDate",
+					"Description": "The date that the meter model was discontinued or abandoned.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "DiscontinuedDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "AutomaticMeterModelReaderIndicator",
+					"Description": "Indicates that the meter has AMR capabilities.\n\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "AutomaticMeterModelReaderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "RemoteMeterModelReaderIndicator",
+					"Description": "Indicates that the meter has RMR capabilities.\n\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "RemoteMeterModelReaderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "TimeOfUseMeterModelIndicator",
+					"Description": "A measuring device that records the times during which a customer uses various amounts of electricity. This type of meter is used for customers who pay time-of-use rates.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "TimeOfUseMeterModelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MultipleTariffMeterModelIndicator",
+					"Description": "Some multiple tariff meters use different tariffs for different amounts of demand. \n\nThese are usually industrial meters.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "MultipleTariffMeterModelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ApplianceEnergyMeterModelIndicator",
+					"Description": "Plug in electricity meters (or \"Plug load\" meters) measure energy used by individual appliances.\n\nThe meter is plugged into an outlet and measures appliance energy usage.\n\nThese meters identify major energy users or devices that consume excessive standby power.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "ApplianceEnergyMeterModelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SmartMeterModelIndicator",
+					"Description": "Smart meters offer additional functionality including a real-time or near real-time reads, power outage notification, and power quality monitoring.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "SmartMeterModelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PowerExportMeterModelIndicator",
+					"Description": "A meter model that allows customers to own their own generating equipment and feed it back into the grid.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "PowerExportMeterModelIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "MeterTypeId",
+					"Description": "The unique identifier of a Meter Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterModel.cdm.json/MeterModel",
+						"Name": "MeterTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModel",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModel",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterModelId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterModelId\"},\"ManufacturedByPartyId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ManufacturedByPartyId\"},\"FirstManufacturedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstManufacturedDate\"},\"FirstAvailableDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstAvailableDate\"},\"FirstMarketedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstMarketedDate\"},\"DiscontinuedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"DiscontinuedDate\"},\"AutomaticMeterModelReaderIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"AutomaticMeterModelReaderIndicator\"},\"RemoteMeterModelReaderIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"RemoteMeterModelReaderIndicator\"},\"TimeOfUseMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"TimeOfUseMeterModelIndicator\"},\"MultipleTariffMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MultipleTariffMeterModelIndicator\"},\"ApplianceEnergyMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ApplianceEnergyMeterModelIndicator\"},\"SmartMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"SmartMeterModelIndicator\"},\"PowerExportMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"PowerExportMeterModelIndicator\"},\"MeterTypeId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterModel\",\"path\":\"MeterModel.cdm.json/MeterModel\"},\"description\":\"The model of a meter.\",\"primaryKey\":[\"MeterModelId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterModelId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Model.\",\"isNullable\":false,\"name\":\"MeterModelId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ManufacturedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"ManufacturedByPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstManufacturedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the Meter Model was first manufactured.\",\"isNullable\":true,\"name\":\"FirstManufacturedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstAvailableDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the meter model is first available for purchase.\",\"isNullable\":true,\"name\":\"FirstAvailableDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstMarketedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the Meter Model was first marketed.\",\"isNullable\":true,\"name\":\"FirstMarketedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"DiscontinuedDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the meter model was discontinued or abandoned.\",\"isNullable\":true,\"name\":\"DiscontinuedDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"AutomaticMeterModelReaderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter has AMR capabilities.\\n\\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.\",\"isNullable\":true,\"name\":\"AutomaticMeterModelReaderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"RemoteMeterModelReaderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the meter has RMR capabilities.\\n\\nAMR (Automatic Meter Reading) and RMR (Remote Meter Reading) describe various systems that allow meters to be checked by without the need to send a meter reader out. This can be effectively achieved using off-site metering, that is an electronic meter is placed at the junction point where all the connections originate, inaccessible to the end-user, and it relays the readings via the AMR technology to the utility.\",\"isNullable\":true,\"name\":\"RemoteMeterModelReaderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"TimeOfUseMeterModelIndicator\"},\"dataType\":\"boolean\",\"description\":\"A measuring device that records the times during which a customer uses various amounts of electricity. This type of meter is used for customers who pay time-of-use rates.\",\"isNullable\":true,\"name\":\"TimeOfUseMeterModelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MultipleTariffMeterModelIndicator\"},\"dataType\":\"boolean\",\"description\":\"Some multiple tariff meters use different tariffs for different amounts of demand. \\n\\nThese are usually industrial meters.\",\"isNullable\":true,\"name\":\"MultipleTariffMeterModelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ApplianceEnergyMeterModelIndicator\"},\"dataType\":\"boolean\",\"description\":\"Plug in electricity meters (or \\\"Plug load\\\" meters) measure energy used by individual appliances.\\n\\nThe meter is plugged into an outlet and measures appliance energy usage.\\n\\nThese meters identify major energy users or devices that consume excessive standby power.\",\"isNullable\":true,\"name\":\"ApplianceEnergyMeterModelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"SmartMeterModelIndicator\"},\"dataType\":\"boolean\",\"description\":\"Smart meters offer additional functionality including a real-time or near real-time reads, power outage notification, and power quality monitoring.\",\"isNullable\":true,\"name\":\"SmartMeterModelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"PowerExportMeterModelIndicator\"},\"dataType\":\"boolean\",\"description\":\"A meter model that allows customers to own their own generating equipment and feed it back into the grid.\",\"isNullable\":true,\"name\":\"PowerExportMeterModelIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Type.\",\"isNullable\":true,\"name\":\"MeterTypeId\"}]}}}",
+			"Description": "The model of a meter.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterModelId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

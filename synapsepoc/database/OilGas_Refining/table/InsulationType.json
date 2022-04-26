@@ -1,0 +1,106 @@
+{
+	"name": "InsulationType",
+	"properties": {
+		"Name": "InsulationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of insulation associated with the component.\n\nEx:\n- Concrete\n- None\n- Code3\n- Plastic\n- Rock Shield\n- Wood\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "InsulationTypeId",
+					"Description": "The unique identifier of an insulation type.",
+					"BaseAttributeReference": {
+						"Entity": "InsulationType.cdm.json/InsulationType",
+						"Name": "InsulationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InsulationTypeName",
+					"Description": "The name of an insulation type.",
+					"BaseAttributeReference": {
+						"Entity": "InsulationType.cdm.json/InsulationType",
+						"Name": "InsulationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InsulationTypeDescription",
+					"Description": "The description of an insulation type.",
+					"BaseAttributeReference": {
+						"Entity": "InsulationType.cdm.json/InsulationType",
+						"Name": "InsulationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/InsulationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/InsulationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InsulationTypeId\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeId\"},\"InsulationTypeName\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeName\"},\"InsulationTypeDescription\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"InsulationType\",\"path\":\"InsulationType.cdm.json/InsulationType\"},\"description\":\"The type of insulation associated with the component.\\n\\nEx:\\n- Concrete\\n- None\\n- Code3\\n- Plastic\\n- Rock Shield\\n- Wood\\n- Unknown\",\"primaryKey\":[\"InsulationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an insulation type.\",\"isNullable\":false,\"name\":\"InsulationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an insulation type.\",\"isNullable\":true,\"name\":\"InsulationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"InsulationType.cdm.json/InsulationType\",\"name\":\"InsulationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an insulation type.\",\"isNullable\":true,\"name\":\"InsulationTypeDescription\"}]}}}",
+			"Description": "The type of insulation associated with the component.\n\nEx:\n- Concrete\n- None\n- Code3\n- Plastic\n- Rock Shield\n- Wood\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "InsulationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

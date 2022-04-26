@@ -1,0 +1,26 @@
+{
+	"name": "relationship-mqfrxtoify",
+	"properties": {
+		"Name": "relationship-mqfrxtoify",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Device",
+		"ToTableName": "ShuntReactiveDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "ShuntReactiveDeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Device.cdm.json/Device\",\"toEntity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"ShuntReactiveDeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "PumpMotorType",
+	"properties": {
+		"Name": "PumpMotorType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of pump motor.\n\nEx:\n-  Induction motor\n-  Synchronous motor",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PumpMotorTypeId",
+					"Description": "The unique identifier of a pump motor type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpMotorType.cdm.json/PumpMotorType",
+						"Name": "PumpMotorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PumpMotorTypeName",
+					"Description": "The name of a pump motor type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpMotorType.cdm.json/PumpMotorType",
+						"Name": "PumpMotorTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PumpMotorTypeDescription",
+					"Description": "The description of a pump motor type.",
+					"BaseAttributeReference": {
+						"Entity": "PumpMotorType.cdm.json/PumpMotorType",
+						"Name": "PumpMotorTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpMotorType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpMotorType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpMotorTypeId\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeId\"},\"PumpMotorTypeName\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeName\"},\"PumpMotorTypeDescription\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PumpMotorType\",\"path\":\"PumpMotorType.cdm.json/PumpMotorType\"},\"description\":\"The type of pump motor.\\n\\nEx:\\n-  Induction motor\\n-  Synchronous motor\",\"primaryKey\":[\"PumpMotorTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pump motor type.\",\"isNullable\":false,\"name\":\"PumpMotorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a pump motor type.\",\"isNullable\":true,\"name\":\"PumpMotorTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PumpMotorType.cdm.json/PumpMotorType\",\"name\":\"PumpMotorTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a pump motor type.\",\"isNullable\":true,\"name\":\"PumpMotorTypeDescription\"}]}}}",
+			"Description": "The type of pump motor.\n\nEx:\n-  Induction motor\n-  Synchronous motor",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PumpMotorTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

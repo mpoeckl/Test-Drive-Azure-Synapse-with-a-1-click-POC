@@ -1,0 +1,106 @@
+{
+	"name": "ComponentPartyRelationshipType",
+	"properties": {
+		"Name": "ComponentPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a component and a party(s).\n\nEx:\n- Supplied-by Party\n- Serviced-by Party\n- Sold-to Party\n- Inspected-by Party\n- Operated-by Party\n- Cooperative Transmission Network Service Provider (TNSP)\n- Independent Power Providers\n- Transmission Companies (TRANSCOs)\n- Retailers\n\nwhere:\n\nCooperative (Cooperatively-Owned Electric Utility) - A group of persons organized in a joint venture for the purpose of supplying electricity to a specified area. Such ventures are generally exempt from federal income tax laws. The Rural Electric Service (RES, formerly the Rural Electrification Administration or REA) financed most cooperatives.\n\nIndependent Power Facility - A facility, or portion thereof, that is not in a utility's rate base. In the past, such a facility could sell only to electric utilities for resale to ultimate customers as a wholesale transaction. Today, laws are changing to allow these plants to sell directly to ultimate customers as retail transactions or retail wheeling.\n\nIndependent Power Producer (IPP) - Any person who owns or operates, in whole or in part, one or more new independent power production facilities.\n\nInvestor-Owned Utilities (IOUs) - Those utilities organized as tax-paying businesses usually financed by the sale of securities in the free market, and whose properties are managed by representatives regularly elected by their shareholders. IOUs, which may be owned by an individual proprietor or a small group of people, are usually corporations owned by the general public. IOUs' stock normally is sold on an exchange such as the New York Stock Exchange or NASDAQ.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType",
+						"Name": "ComponentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartyRelationshipTypeName",
+					"Description": "The name of a Component Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType",
+						"Name": "ComponentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentPartyRelationshipTypeDescription",
+					"Description": "The description of a Component Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType",
+						"Name": "ComponentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentPartyRelationshipTypeId\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeId\"},\"ComponentPartyRelationshipTypeName\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeName\"},\"ComponentPartyRelationshipTypeDescription\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentPartyRelationshipType\",\"path\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\"},\"description\":\"The nature of the relationship between a component and a party(s).\\n\\nEx:\\n- Supplied-by Party\\n- Serviced-by Party\\n- Sold-to Party\\n- Inspected-by Party\\n- Operated-by Party\\n- Cooperative Transmission Network Service Provider (TNSP)\\n- Independent Power Providers\\n- Transmission Companies (TRANSCOs)\\n- Retailers\\n\\nwhere:\\n\\nCooperative (Cooperatively-Owned Electric Utility) - A group of persons organized in a joint venture for the purpose of supplying electricity to a specified area. Such ventures are generally exempt from federal income tax laws. The Rural Electric Service (RES, formerly the Rural Electrification Administration or REA) financed most cooperatives.\\n\\nIndependent Power Facility - A facility, or portion thereof, that is not in a utility's rate base. In the past, such a facility could sell only to electric utilities for resale to ultimate customers as a wholesale transaction. Today, laws are changing to allow these plants to sell directly to ultimate customers as retail transactions or retail wheeling.\\n\\nIndependent Power Producer (IPP) - Any person who owns or operates, in whole or in part, one or more new independent power production facilities.\\n\\nInvestor-Owned Utilities (IOUs) - Those utilities organized as tax-paying businesses usually financed by the sale of securities in the free market, and whose properties are managed by representatives regularly elected by their shareholders. IOUs, which may be owned by an individual proprietor or a small group of people, are usually corporations owned by the general public. IOUs' stock normally is sold on an exchange such as the New York Stock Exchange or NASDAQ.\",\"primaryKey\":[\"ComponentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentPartyRelationshipType.cdm.json/ComponentPartyRelationshipType\",\"name\":\"ComponentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Party Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a component and a party(s).\n\nEx:\n- Supplied-by Party\n- Serviced-by Party\n- Sold-to Party\n- Inspected-by Party\n- Operated-by Party\n- Cooperative Transmission Network Service Provider (TNSP)\n- Independent Power Providers\n- Transmission Companies (TRANSCOs)\n- Retailers\n\nwhere:\n\nCooperative (Cooperatively-Owned Electric Utility) - A group of persons organized in a joint venture for the purpose of supplying electricity to a specified area. Such ventures are generally exempt from federal income tax laws. The Rural Electric Service (RES, formerly the Rural Electrification Administration or REA) financed most cooperatives.\n\nIndependent Power Facility - A facility, or portion thereof, that is not in a utility's rate base. In the past, such a facility could sell only to electric utilities for resale to ultimate customers as a wholesale transaction. Today, laws are changing to allow these plants to sell directly to ultimate customers as retail transactions or retail wheeling.\n\nIndependent Power Producer (IPP) - Any person who owns or operates, in whole or in part, one or more new independent power production facilities.\n\nInvestor-Owned Utilities (IOUs) - Those utilities organized as tax-paying businesses usually financed by the sale of securities in the free market, and whose properties are managed by representatives regularly elected by their shareholders. IOUs, which may be owned by an individual proprietor or a small group of people, are usually corporations owned by the general public. IOUs' stock normally is sold on an exchange such as the New York Stock Exchange or NASDAQ.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

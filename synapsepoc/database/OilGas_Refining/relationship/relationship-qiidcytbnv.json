@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qiidcytbnv",
+	"properties": {
+		"Name": "relationship-qiidcytbnv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Shipment",
+		"ToTableName": "RelatedShipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentId",
+				"ToColumnName": "RelatedShipmentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Shipment.cdm.json/Shipment\",\"toEntity\":\"RelatedShipment.cdm.json/RelatedShipment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentId\",\"toAttribute\":\"RelatedShipmentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

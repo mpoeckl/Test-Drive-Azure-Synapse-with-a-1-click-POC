@@ -1,0 +1,26 @@
+{
+	"name": "relationship-yrzngugxhk",
+	"properties": {
+		"Name": "relationship-yrzngugxhk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpSpecificationType",
+		"ToTableName": "PumpSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpSpecificationTypeId",
+				"ToColumnName": "PumpSpecificationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"toEntity\":\"PumpSpecification.cdm.json/PumpSpecification\",\"joinPairs\":[{\"fromAttribute\":\"PumpSpecificationTypeId\",\"toAttribute\":\"PumpSpecificationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

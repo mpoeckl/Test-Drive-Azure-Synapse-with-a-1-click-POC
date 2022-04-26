@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lthiexhqwb",
+	"properties": {
+		"Name": "relationship-lthiexhqwb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentRelationshipType",
+		"ToTableName": "RelatedIncident",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentRelationshipTypeId",
+				"ToColumnName": "IncidentRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentRelationshipType.cdm.json/IncidentRelationshipType\",\"toEntity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"joinPairs\":[{\"fromAttribute\":\"IncidentRelationshipTypeId\",\"toAttribute\":\"IncidentRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

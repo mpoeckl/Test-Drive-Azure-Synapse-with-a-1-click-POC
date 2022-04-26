@@ -1,0 +1,154 @@
+{
+	"name": "CrudeOilType",
+	"properties": {
+		"Name": "CrudeOilType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of crude oil source input to the refining process.\n\nEx:\n- Nigerian - Light\n- Saudi - Light\n- Saudi - Heavy\n- Venezuela - Heavy\n- Venezuela - Light\n- USA - Midcont. Sweet\n- USA - W. Texas Sour\n- North Sea - Brent\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "CrudeOilTypeId",
+					"Description": "The unique identifier of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CrudeOilTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilTypeName",
+					"Description": "The name of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CrudeOilTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilTypeDescription",
+					"Description": "The description of a crude oil type.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CrudeOilTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilClassificationId",
+					"Description": "The unique identifier of a crude oil classification.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CrudeOilClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CrudeOilClassId",
+					"Description": "The unique identifier of a crude oil class.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CrudeOilClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CorrosiveQualityId",
+					"Description": "The unique identifier of a corrosive quality.",
+					"BaseAttributeReference": {
+						"Entity": "CrudeOilType.cdm.json/CrudeOilType",
+						"Name": "CorrosiveQualityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilTypeId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeId\"},\"CrudeOilTypeName\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeName\"},\"CrudeOilTypeDescription\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeDescription\"},\"CrudeOilClassificationId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassificationId\"},\"CrudeOilClassId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassId\"},\"CorrosiveQualityId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CorrosiveQualityId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"CrudeOilType\",\"path\":\"CrudeOilType.cdm.json/CrudeOilType\"},\"description\":\"The type of crude oil source input to the refining process.\\n\\nEx:\\n- Nigerian - Light\\n- Saudi - Light\\n- Saudi - Heavy\\n- Venezuela - Heavy\\n- Venezuela - Light\\n- USA - Midcont. Sweet\\n- USA - W. Texas Sour\\n- North Sea - Brent\\n\\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.\",\"primaryKey\":[\"CrudeOilTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil type.\",\"isNullable\":false,\"name\":\"CrudeOilTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a crude oil type.\",\"isNullable\":true,\"name\":\"CrudeOilTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a crude oil type.\",\"isNullable\":true,\"name\":\"CrudeOilTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil classification.\",\"isNullable\":true,\"name\":\"CrudeOilClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a crude oil class.\",\"isNullable\":true,\"name\":\"CrudeOilClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CorrosiveQualityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a corrosive quality.\",\"isNullable\":true,\"name\":\"CorrosiveQualityId\"}]}}}",
+			"Description": "The type of crude oil source input to the refining process.\n\nEx:\n- Nigerian - Light\n- Saudi - Light\n- Saudi - Heavy\n- Venezuela - Heavy\n- Venezuela - Light\n- USA - Midcont. Sweet\n- USA - W. Texas Sour\n- North Sea - Brent\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "CrudeOilTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

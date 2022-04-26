@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ioeqlapkqi",
+	"properties": {
+		"Name": "relationship-ioeqlapkqi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NetworkComponent",
+		"ToTableName": "GeneratorComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "GeneratorComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"toEntity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"GeneratorComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

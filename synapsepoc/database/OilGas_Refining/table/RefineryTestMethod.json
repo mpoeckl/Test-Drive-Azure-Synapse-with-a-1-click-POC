@@ -1,0 +1,122 @@
+{
+	"name": "RefineryTestMethod",
+	"properties": {
+		"Name": "RefineryTestMethod",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of refinery test method.\n\nEx:\n\nTest                  Test for\n----------------------------------------\nASTM D1298, ASTM D4052, IP 365     Density\nASTM D6417     Volatility\nASTM D1401     Water Separability:\nASTM D611     Aniline Point\nASTM D664     Acid Number\nASTM D974     Acid and Base Number\nASTM D130      Copper Strip Corrosion\nASTM D482     Ash Content\nASTM D1218      Refractive Index\nASTM D97, ASTM D5950,ASTM  D5985,ASTM  D5949     Pour Point\nASTM D445, IP 71      Kinematic Viscosity\nASTM D2270, IP 226      Viscosity Index\nASTM D2622, D4294      Sulfur\nASTM D92, D93     Flash Point          \nASTM D1500, D6045     Color\nASTM D2887     Boiling Point Distribution\nASTM D5762     Nitrogen\nASTM D5293     Viscosity by Cold Crank Simulator\n\nASTM = ASTM International",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestMethodId",
+					"Description": "The unique identifier of a  refinery test method.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestMethod.cdm.json/RefineryTestMethod",
+						"Name": "RefineryTestMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestMethodName",
+					"Description": "The name of a refinery test method.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestMethod.cdm.json/RefineryTestMethod",
+						"Name": "RefineryTestMethodName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestMethodDescription",
+					"Description": "The description of a refinery test method.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestMethod.cdm.json/RefineryTestMethod",
+						"Name": "RefineryTestMethodDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestStandardsPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestMethod.cdm.json/RefineryTestMethod",
+						"Name": "RefineryTestStandardsPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestMethod",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestMethod",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestMethodId\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodId\"},\"RefineryTestMethodName\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodName\"},\"RefineryTestMethodDescription\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodDescription\"},\"RefineryTestStandardsPartyId\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestStandardsPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestMethod\",\"path\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\"},\"description\":\"A type of refinery test method.\\n\\nEx:\\n\\nTest                  Test for\\n----------------------------------------\\nASTM D1298, ASTM D4052, IP 365     Density\\nASTM D6417     Volatility\\nASTM D1401     Water Separability:\\nASTM D611     Aniline Point\\nASTM D664     Acid Number\\nASTM D974     Acid and Base Number\\nASTM D130      Copper Strip Corrosion\\nASTM D482     Ash Content\\nASTM D1218      Refractive Index\\nASTM D97, ASTM D5950,ASTM  D5985,ASTM  D5949     Pour Point\\nASTM D445, IP 71      Kinematic Viscosity\\nASTM D2270, IP 226      Viscosity Index\\nASTM D2622, D4294      Sulfur\\nASTM D92, D93     Flash Point          \\nASTM D1500, D6045     Color\\nASTM D2887     Boiling Point Distribution\\nASTM D5762     Nitrogen\\nASTM D5293     Viscosity by Cold Crank Simulator\\n\\nASTM = ASTM International\",\"primaryKey\":[\"RefineryTestMethodId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a  refinery test method.\",\"isNullable\":false,\"name\":\"RefineryTestMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test method.\",\"isNullable\":true,\"name\":\"RefineryTestMethodName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test method.\",\"isNullable\":true,\"name\":\"RefineryTestMethodDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestStandardsPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"RefineryTestStandardsPartyId\"}]}}}",
+			"Description": "A type of refinery test method.\n\nEx:\n\nTest                  Test for\n----------------------------------------\nASTM D1298, ASTM D4052, IP 365     Density\nASTM D6417     Volatility\nASTM D1401     Water Separability:\nASTM D611     Aniline Point\nASTM D664     Acid Number\nASTM D974     Acid and Base Number\nASTM D130      Copper Strip Corrosion\nASTM D482     Ash Content\nASTM D1218      Refractive Index\nASTM D97, ASTM D5950,ASTM  D5985,ASTM  D5949     Pour Point\nASTM D445, IP 71      Kinematic Viscosity\nASTM D2270, IP 226      Viscosity Index\nASTM D2622, D4294      Sulfur\nASTM D92, D93     Flash Point          \nASTM D1500, D6045     Color\nASTM D2887     Boiling Point Distribution\nASTM D5762     Nitrogen\nASTM D5293     Viscosity by Cold Crank Simulator\n\nASTM = ASTM International",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestMethodId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

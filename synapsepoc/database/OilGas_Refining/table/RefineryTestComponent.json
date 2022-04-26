@@ -1,0 +1,153 @@
+{
+	"name": "RefineryTestComponent",
+	"properties": {
+		"Name": "RefineryTestComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The component(s) tested by the associated refinery test.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestId",
+					"Description": "The unique identifier of a test.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "RefineryTestId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestComponentTypeId",
+					"Description": "The unique identifier of a refinery test component type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "RefineryTestComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentRefineryTestTypeId",
+					"Description": "The unique identifier of a Component Refinery Test Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "ComponentRefineryTestTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeasurementUnits",
+					"Description": "The test measurement units recorded.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "MeasurementUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestComponentNote",
+					"Description": "A note, comment or additional information regarding the refinery test component note.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestComponent.cdm.json/RefineryTestComponent",
+						"Name": "RefineryTestComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestId\"},\"RefineryTestComponentTypeId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentTypeId\"},\"ComponentRefineryTestTypeId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"ComponentRefineryTestTypeId\"},\"MeasurementUnits\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"UnitOfMeasureId\"},\"RefineryTestComponentNote\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestComponent\",\"path\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\"},\"description\":\"The component(s) tested by the associated refinery test.\",\"primaryKey\":[\"RefineryTestId\",\"RefineryTestComponentTypeId\",\"ComponentRefineryTestTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a test.\",\"isNullable\":false,\"name\":\"RefineryTestId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test component type.\",\"isNullable\":false,\"name\":\"RefineryTestComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"ComponentRefineryTestTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Refinery Test Type.\",\"isNullable\":false,\"name\":\"ComponentRefineryTestTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"MeasurementUnits\"},\"dataType\":\"integer\",\"description\":\"The test measurement units recorded.\",\"isNullable\":true,\"name\":\"MeasurementUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":false,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery test component note.\",\"isNullable\":true,\"name\":\"RefineryTestComponentNote\"}]}}}",
+			"Description": "The component(s) tested by the associated refinery test.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestId,RefineryTestComponentTypeId,ComponentRefineryTestTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

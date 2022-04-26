@@ -1,0 +1,106 @@
+{
+	"name": "DeviceDataLoggingType",
+	"properties": {
+		"Name": "DeviceDataLoggingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of data logging associated with the device.\n\nEx:\n- None\n- daily\n- weekly\n- monthly\n- quarter\n- year",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceDataLoggingTypeId",
+					"Description": "The unique identifier of a device data logging type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceDataLoggingType.cdm.json/DeviceDataLoggingType",
+						"Name": "DeviceDataLoggingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceDataLoggingTypeName",
+					"Description": "The name of a device data logging type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceDataLoggingType.cdm.json/DeviceDataLoggingType",
+						"Name": "DeviceDataLoggingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceDataLoggingTypeDescription",
+					"Description": "The description of a device data logging type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceDataLoggingType.cdm.json/DeviceDataLoggingType",
+						"Name": "DeviceDataLoggingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceDataLoggingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceDataLoggingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceDataLoggingTypeId\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeId\"},\"DeviceDataLoggingTypeName\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeName\"},\"DeviceDataLoggingTypeDescription\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceDataLoggingType\",\"path\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\"},\"description\":\"The type of data logging associated with the device.\\n\\nEx:\\n- None\\n- daily\\n- weekly\\n- monthly\\n- quarter\\n- year\",\"primaryKey\":[\"DeviceDataLoggingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a device data logging type.\",\"isNullable\":false,\"name\":\"DeviceDataLoggingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a device data logging type.\",\"isNullable\":true,\"name\":\"DeviceDataLoggingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceDataLoggingType.cdm.json/DeviceDataLoggingType\",\"name\":\"DeviceDataLoggingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a device data logging type.\",\"isNullable\":true,\"name\":\"DeviceDataLoggingTypeDescription\"}]}}}",
+			"Description": "The type of data logging associated with the device.\n\nEx:\n- None\n- daily\n- weekly\n- monthly\n- quarter\n- year",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceDataLoggingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

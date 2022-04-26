@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tvkwzsrfec",
+	"properties": {
+		"Name": "relationship-tvkwzsrfec",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetInspectionStatus",
+		"ToTableName": "AssetInspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetInspectionStatusId",
+				"ToColumnName": "AssetInspectionStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"toEntity\":\"AssetInspection.cdm.json/AssetInspection\",\"joinPairs\":[{\"fromAttribute\":\"AssetInspectionStatusId\",\"toAttribute\":\"AssetInspectionStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

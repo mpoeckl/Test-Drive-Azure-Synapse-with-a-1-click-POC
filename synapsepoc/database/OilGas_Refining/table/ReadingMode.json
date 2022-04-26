@@ -1,0 +1,106 @@
+{
+	"name": "ReadingMode",
+	"properties": {
+		"Name": "ReadingMode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The mode or means by which the reading is administered.\n\nEx:\n- Manual\n- Monitored\n- Telemetry",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ReadingModeId",
+					"Description": "The unique identifier of a Reading Mode.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingMode.cdm.json/ReadingMode",
+						"Name": "ReadingModeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingModeName",
+					"Description": "The name of a Reading Mode.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingMode.cdm.json/ReadingMode",
+						"Name": "ReadingModeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ReadingModeDescription",
+					"Description": "The description of a Reading Mode.",
+					"BaseAttributeReference": {
+						"Entity": "ReadingMode.cdm.json/ReadingMode",
+						"Name": "ReadingModeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingMode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ReadingMode",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ReadingModeId\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeId\"},\"ReadingModeName\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeName\"},\"ReadingModeDescription\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ReadingMode\",\"path\":\"ReadingMode.cdm.json/ReadingMode\"},\"description\":\"The mode or means by which the reading is administered.\\n\\nEx:\\n- Manual\\n- Monitored\\n- Telemetry\",\"primaryKey\":[\"ReadingModeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Mode.\",\"isNullable\":false,\"name\":\"ReadingModeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Reading Mode.\",\"isNullable\":true,\"name\":\"ReadingModeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ReadingMode.cdm.json/ReadingMode\",\"name\":\"ReadingModeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Reading Mode.\",\"isNullable\":true,\"name\":\"ReadingModeDescription\"}]}}}",
+			"Description": "The mode or means by which the reading is administered.\n\nEx:\n- Manual\n- Monitored\n- Telemetry",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ReadingModeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

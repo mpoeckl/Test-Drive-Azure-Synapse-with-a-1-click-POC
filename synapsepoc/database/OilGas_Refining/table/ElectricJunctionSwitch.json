@@ -1,0 +1,105 @@
+{
+	"name": "ElectricJunctionSwitch",
+	"properties": {
+		"Name": "ElectricJunctionSwitch",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The switch(s) connected at the associated junction.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SwitchId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch",
+						"Name": "SwitchId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ElectricalJunctionId",
+					"Description": "The unique identifier of an Electrical Junction.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch",
+						"Name": "ElectricalJunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ElectricJunctionSwitchNote",
+					"Description": "A note, comment or additional information regarding the electric junction switch.",
+					"BaseAttributeReference": {
+						"Entity": "ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch",
+						"Name": "ElectricJunctionSwitchNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ElectricJunctionSwitch",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ElectricJunctionSwitch",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchId\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"SwitchId\"},\"ElectricalJunctionId\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"ElectricalJunctionId\"},\"ElectricJunctionSwitchNote\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"ElectricJunctionSwitchNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ElectricJunctionSwitch\",\"path\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\"},\"description\":\"The switch(s) connected at the associated junction.\",\"primaryKey\":[\"SwitchId\",\"ElectricalJunctionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"SwitchId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"SwitchId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"ElectricalJunctionId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Electrical Junction.\",\"isNullable\":false,\"name\":\"ElectricalJunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"name\":\"ElectricJunctionSwitchNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the electric junction switch.\",\"isNullable\":true,\"name\":\"ElectricJunctionSwitchNote\"}]}}}",
+			"Description": "The switch(s) connected at the associated junction.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SwitchId,ElectricalJunctionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

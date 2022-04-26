@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ndvfikcbsp",
+	"properties": {
+		"Name": "relationship-ndvfikcbsp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CorrosiveQuality",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CorrosiveQualityId",
+				"ToColumnName": "CorrosiveQualityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CorrosiveQuality.cdm.json/CorrosiveQuality\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"CorrosiveQualityId\",\"toAttribute\":\"CorrosiveQualityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

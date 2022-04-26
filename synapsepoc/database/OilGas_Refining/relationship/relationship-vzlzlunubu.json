@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vzlzlunubu",
+	"properties": {
+		"Name": "relationship-vzlzlunubu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentConnectionType",
+		"ToTableName": "RelatedNetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentConnectionTypeId",
+				"ToColumnName": "ComponentConnectionTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"toEntity\":\"RelatedNetworkComponent.cdm.json/RelatedNetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentConnectionTypeId\",\"toAttribute\":\"ComponentConnectionTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

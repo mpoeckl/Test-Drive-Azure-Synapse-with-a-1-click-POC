@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessItemRelationshipType",
+	"properties": {
+		"Name": "RefineryProcessItemRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the Refinery Process and Item.\n\nEx:\n- Consumed-by Process\n- Produced-by Process\n- Wasted-by Process\n- Required-by Process",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessItemRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Process Item Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType",
+						"Name": "RefineryProcessItemRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessItemRelationshipTypeName",
+					"Description": "The name of a Refinery Process Item Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType",
+						"Name": "RefineryProcessItemRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessItemRelationshipTypeDescription",
+					"Description": "The description of a Refinery Process Item Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType",
+						"Name": "RefineryProcessItemRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessItemRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessItemRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessItemRelationshipTypeId\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeId\"},\"RefineryProcessItemRelationshipTypeName\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeName\"},\"RefineryProcessItemRelationshipTypeDescription\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessItemRelationshipType\",\"path\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\"},\"description\":\"The nature of the relationship between the Refinery Process and Item.\\n\\nEx:\\n- Consumed-by Process\\n- Produced-by Process\\n- Wasted-by Process\\n- Required-by Process\",\"primaryKey\":[\"RefineryProcessItemRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Process Item Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryProcessItemRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Process Item Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryProcessItemRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Process Item Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryProcessItemRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the Refinery Process and Item.\n\nEx:\n- Consumed-by Process\n- Produced-by Process\n- Wasted-by Process\n- Required-by Process",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessItemRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-nkounwpoed",
+	"properties": {
+		"Name": "relationship-nkounwpoed",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryAssetRelationshipType",
+		"ToTableName": "RefineryAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryAssetRelationshipTypeId",
+				"ToColumnName": "RefineryAssetRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"toEntity\":\"RefineryAsset.cdm.json/RefineryAsset\",\"joinPairs\":[{\"fromAttribute\":\"RefineryAssetRelationshipTypeId\",\"toAttribute\":\"RefineryAssetRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

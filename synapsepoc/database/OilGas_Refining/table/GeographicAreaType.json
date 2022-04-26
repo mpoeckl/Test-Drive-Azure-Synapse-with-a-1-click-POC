@@ -1,0 +1,106 @@
+{
+	"name": "GeographicAreaType",
+	"properties": {
+		"Name": "GeographicAreaType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of geographic area.\n\nEx.:\n- Service Area\n- Maintenance Zone\n- Marketing Area\n- Weather Forecast Region\n- Environmental Zone\n- Watershed\n- National Park\n- Taxation Area\n- Protected Area\n- Mountain\n- Lake\n- District\n- Basin\n- Field\n- Controlled Area\n- Exclusion Area\n- Food Desert (affordable and nutritious food are hard to obtain)\n- Low Population Zone\n- High Radiation Area\n- Survey Area\n- Shipping area\n- Storage area\n- Main Plant area",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeographicAreaTypeId",
+					"Description": "The unique identifier of a Geographic Area Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaType.cdm.json/GeographicAreaType",
+						"Name": "GeographicAreaTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaTypeName",
+					"Description": "The name of a Geographic Area Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaType.cdm.json/GeographicAreaType",
+						"Name": "GeographicAreaTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaTypeDescription",
+					"Description": "The description of a Geographic Area Type.",
+					"BaseAttributeReference": {
+						"Entity": "GeographicAreaType.cdm.json/GeographicAreaType",
+						"Name": "GeographicAreaTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeographicAreaType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeographicAreaType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeographicAreaTypeId\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeId\"},\"GeographicAreaTypeName\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeName\"},\"GeographicAreaTypeDescription\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeographicAreaType\",\"path\":\"GeographicAreaType.cdm.json/GeographicAreaType\"},\"description\":\"The type of geographic area.\\n\\nEx.:\\n- Service Area\\n- Maintenance Zone\\n- Marketing Area\\n- Weather Forecast Region\\n- Environmental Zone\\n- Watershed\\n- National Park\\n- Taxation Area\\n- Protected Area\\n- Mountain\\n- Lake\\n- District\\n- Basin\\n- Field\\n- Controlled Area\\n- Exclusion Area\\n- Food Desert (affordable and nutritious food are hard to obtain)\\n- Low Population Zone\\n- High Radiation Area\\n- Survey Area\\n- Shipping area\\n- Storage area\\n- Main Plant area\",\"primaryKey\":[\"GeographicAreaTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area Type.\",\"isNullable\":false,\"name\":\"GeographicAreaTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Geographic Area Type.\",\"isNullable\":true,\"name\":\"GeographicAreaTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeographicAreaType.cdm.json/GeographicAreaType\",\"name\":\"GeographicAreaTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Geographic Area Type.\",\"isNullable\":true,\"name\":\"GeographicAreaTypeDescription\"}]}}}",
+			"Description": "The type of geographic area.\n\nEx.:\n- Service Area\n- Maintenance Zone\n- Marketing Area\n- Weather Forecast Region\n- Environmental Zone\n- Watershed\n- National Park\n- Taxation Area\n- Protected Area\n- Mountain\n- Lake\n- District\n- Basin\n- Field\n- Controlled Area\n- Exclusion Area\n- Food Desert (affordable and nutritious food are hard to obtain)\n- Low Population Zone\n- High Radiation Area\n- Survey Area\n- Shipping area\n- Storage area\n- Main Plant area",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "GeographicAreaTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,171 @@
+{
+	"name": "HydrocrackerUnitFeedstock",
+	"properties": {
+		"Name": "HydrocrackerUnitFeedstock",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The feedstock input into the hydrocracker unit during the associated period of time.\n\nA unit may input multiple feedstocks.     Ex: The unit is designed for normal operation with 80 wt% Vacuum Gas Oil (VGO) from VDU and 20 wt% Heavy Coker Gas Oil (HCGO) from DCU. However the unit is alternately run on feed consisting of 72 wt% VGO (LVGO + HVGO) from VDU, 20 wt% HCGO and 8 wt% HGO from CDU.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "HydrocrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockTypeId",
+					"Description": "The unique identifier of a feedstock type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "FeedstockTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "FeedstockUnitsInput",
+					"Description": "The quantity of feedstock units input into the hydrocracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "FeedstockUnitsInput"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitFeedstockNote",
+					"Description": "A note, comment or additional information regarding the hydrocracker unit feedstock.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock",
+						"Name": "HydrocrackerUnitFeedstockNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitFeedstock",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitFeedstock",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitId\"},\"FeedstockTypeId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"FeedstockUnitsInput\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockUnitsInput\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitFeedstockNote\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitFeedstockNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitFeedstock\",\"path\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\"},\"description\":\"The feedstock input into the hydrocracker unit during the associated period of time.\\n\\nA unit may input multiple feedstocks.     Ex: The unit is designed for normal operation with 80 wt% Vacuum Gas Oil (VGO) from VDU and 20 wt% Heavy Coker Gas Oil (HCGO) from DCU. However the unit is alternately run on feed consisting of 72 wt% VGO (LVGO + HVGO) from VDU, 20 wt% HCGO and 8 wt% HGO from CDU.\",\"primaryKey\":[\"HydrocrackerUnitId\",\"FeedstockTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a feedstock type.\",\"isNullable\":false,\"name\":\"FeedstockTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockUnitsInput\"},\"dataType\":\"integer\",\"description\":\"The quantity of feedstock units input into the hydrocracker unit.\",\"isNullable\":true,\"name\":\"FeedstockUnitsInput\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":false,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitFeedstockNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the hydrocracker unit feedstock.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitFeedstockNote\"}]}}}",
+			"Description": "The feedstock input into the hydrocracker unit during the associated period of time.\n\nA unit may input multiple feedstocks.     Ex: The unit is designed for normal operation with 80 wt% Vacuum Gas Oil (VGO) from VDU and 20 wt% Heavy Coker Gas Oil (HCGO) from DCU. However the unit is alternately run on feed consisting of 72 wt% VGO (LVGO + HVGO) from VDU, 20 wt% HCGO and 8 wt% HGO from CDU.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitId,FeedstockTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ktajictcry",
+	"properties": {
+		"Name": "relationship-ktajictcry",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WasteMaterialType",
+		"ToTableName": "StorageContainerContent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WasteMaterialTypeId",
+				"ToColumnName": "WasteMaterialTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"toEntity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"joinPairs\":[{\"fromAttribute\":\"WasteMaterialTypeId\",\"toAttribute\":\"WasteMaterialTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

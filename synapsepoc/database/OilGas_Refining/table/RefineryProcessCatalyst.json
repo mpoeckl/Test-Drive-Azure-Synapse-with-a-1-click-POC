@@ -1,0 +1,220 @@
+{
+	"name": "RefineryProcessCatalyst",
+	"properties": {
+		"Name": "RefineryProcessCatalyst",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of catalyst input into the refinery process component during the indicated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTypeId",
+					"Description": "The unique identifier of a catalyst type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "CatalystTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated refinery process - catalyst relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated refinery process - catalyst relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "CatalystUnits",
+					"Description": "The catalyst units/quantity.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "CatalystUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CatalystTradeName",
+					"Description": "The trade name of the catalyst.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "CatalystTradeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CatalystSupplierId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "CatalystSupplierId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCatalystNote",
+					"Description": "A note, comment or additional information regarding the refinery process catalyst.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst",
+						"Name": "RefineryProcessCatalystNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCatalyst",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCatalyst",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"ComponentId\"},\"CatalystTypeId\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"PeriodEndTimestamp\"},\"CatalystUnits\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"UnitOfMeasureId\"},\"CatalystTradeName\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystTradeName\"},\"CatalystSupplierId\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystSupplierId\"},\"RefineryProcessCatalystNote\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"RefineryProcessCatalystNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessCatalyst\",\"path\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\"},\"description\":\"The quantity of catalyst input into the refinery process component during the indicated period.\",\"primaryKey\":[\"RefineryProcessId\",\"ComponentId\",\"CatalystTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a catalyst type.\",\"isNullable\":false,\"name\":\"CatalystTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated refinery process - catalyst relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated refinery process - catalyst relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystUnits\"},\"dataType\":\"integer\",\"description\":\"The catalyst units/quantity.\",\"isNullable\":true,\"name\":\"CatalystUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystTradeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The trade name of the catalyst.\",\"isNullable\":true,\"name\":\"CatalystTradeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"CatalystSupplierId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"CatalystSupplierId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCatalyst.cdm.json/RefineryProcessCatalyst\",\"name\":\"RefineryProcessCatalystNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process catalyst.\",\"isNullable\":true,\"name\":\"RefineryProcessCatalystNote\"}]}}}",
+			"Description": "The quantity of catalyst input into the refinery process component during the indicated period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ComponentId,CatalystTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

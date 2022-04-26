@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zyttrbixnm",
+	"properties": {
+		"Name": "relationship-zyttrbixnm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentImprovement",
+		"ToTableName": "ComponentImprovementRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentImprovementId",
+				"ToColumnName": "ComponentImprovementId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"toEntity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentImprovementId\",\"toAttribute\":\"ComponentImprovementId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

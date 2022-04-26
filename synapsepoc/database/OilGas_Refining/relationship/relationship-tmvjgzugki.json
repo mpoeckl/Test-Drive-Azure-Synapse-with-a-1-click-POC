@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tmvjgzugki",
+	"properties": {
+		"Name": "relationship-tmvjgzugki",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryEventAsset",
+		"ToTableName": "RefineryEventAssetStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryEventAsset.cdm.json/RefineryEventAsset\",\"toEntity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

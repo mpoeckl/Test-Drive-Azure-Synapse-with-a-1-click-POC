@@ -1,0 +1,106 @@
+{
+	"name": "ValveOperatorType",
+	"properties": {
+		"Name": "ValveOperatorType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The valve operator type associated with the valve.\n\nEx:\n- Electric\n- Gas \n- Gear\n- Hydraulic\n- Manual\n- Pneumatic\n- Pressure\n- Spring\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveOperatorTypeId",
+					"Description": "The unique identifier of a valve operator type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOperatorType.cdm.json/ValveOperatorType",
+						"Name": "ValveOperatorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveOperatorTypeName",
+					"Description": "The name of a valve operator type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOperatorType.cdm.json/ValveOperatorType",
+						"Name": "ValveOperatorTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveOperatorTypeDescription",
+					"Description": "The description of a valve operator type.",
+					"BaseAttributeReference": {
+						"Entity": "ValveOperatorType.cdm.json/ValveOperatorType",
+						"Name": "ValveOperatorTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveOperatorType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveOperatorType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveOperatorTypeId\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeId\"},\"ValveOperatorTypeName\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeName\"},\"ValveOperatorTypeDescription\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveOperatorType\",\"path\":\"ValveOperatorType.cdm.json/ValveOperatorType\"},\"description\":\"The valve operator type associated with the valve.\\n\\nEx:\\n- Electric\\n- Gas \\n- Gear\\n- Hydraulic\\n- Manual\\n- Pneumatic\\n- Pressure\\n- Spring\\n- Unknown\",\"primaryKey\":[\"ValveOperatorTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve operator type.\",\"isNullable\":false,\"name\":\"ValveOperatorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a valve operator type.\",\"isNullable\":true,\"name\":\"ValveOperatorTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveOperatorType.cdm.json/ValveOperatorType\",\"name\":\"ValveOperatorTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a valve operator type.\",\"isNullable\":true,\"name\":\"ValveOperatorTypeDescription\"}]}}}",
+			"Description": "The valve operator type associated with the valve.\n\nEx:\n- Electric\n- Gas \n- Gear\n- Hydraulic\n- Manual\n- Pneumatic\n- Pressure\n- Spring\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveOperatorTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

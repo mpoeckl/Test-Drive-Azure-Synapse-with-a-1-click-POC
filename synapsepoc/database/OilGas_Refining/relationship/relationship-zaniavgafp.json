@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zaniavgafp",
+	"properties": {
+		"Name": "relationship-zaniavgafp",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingScanRate",
+		"ToTableName": "ComponentReadingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingScanRateId",
+				"ToColumnName": "ReadingScanRateId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingScanRate.cdm.json/ReadingScanRate\",\"toEntity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"joinPairs\":[{\"fromAttribute\":\"ReadingScanRateId\",\"toAttribute\":\"ReadingScanRateId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

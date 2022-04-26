@@ -1,0 +1,26 @@
+{
+	"name": "relationship-swrcwzhypi",
+	"properties": {
+		"Name": "relationship-swrcwzhypi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessComponent",
+		"ToTableName": "RefineryProcessComponentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PeriodStartTimestamp",
+				"ToColumnName": "PeriodStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessComponent.cdm.json/RefineryProcessComponent\",\"toEntity\":\"RefineryProcessComponentEvent.cdm.json/RefineryProcessComponentEvent\",\"joinPairs\":[{\"fromAttribute\":\"PeriodStartTimestamp\",\"toAttribute\":\"PeriodStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

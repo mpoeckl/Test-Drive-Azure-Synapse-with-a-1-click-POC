@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pjcsfqbvtc",
+	"properties": {
+		"Name": "relationship-pjcsfqbvtc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Material",
+		"ToTableName": "ComponentCasingType",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MaterialId",
+				"ToColumnName": "MaterialId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Material.cdm.json/Material\",\"toEntity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"joinPairs\":[{\"fromAttribute\":\"MaterialId\",\"toAttribute\":\"MaterialId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

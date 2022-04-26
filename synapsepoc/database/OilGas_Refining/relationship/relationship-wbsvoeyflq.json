@@ -1,0 +1,26 @@
+{
+	"name": "relationship-wbsvoeyflq",
+	"properties": {
+		"Name": "relationship-wbsvoeyflq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentEventRelationshipType",
+		"ToTableName": "RelatedComponentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentEventRelationshipTypeId",
+				"ToColumnName": "ComponentEventRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"toEntity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentEventRelationshipTypeId\",\"toAttribute\":\"ComponentEventRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

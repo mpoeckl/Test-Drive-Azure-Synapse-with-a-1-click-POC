@@ -1,0 +1,106 @@
+{
+	"name": "RefineryPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the party and the Refinery.\n\nEx:\n- Joint-venture Partner\n- Owned-by Party\n- Operated-by Party\n- Operator\n- Supervisor\n- Funded-By\n- Maintenance\n- Regulated-By\n- Planning\n- Emergency services",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Refinery Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType",
+						"Name": "RefineryPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryPartyRelationshipTypeName",
+					"Description": "The name of a Refinery Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType",
+						"Name": "RefineryPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryPartyRelationshipTypeDescription",
+					"Description": "The description of a Refinery Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType",
+						"Name": "RefineryPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryPartyRelationshipTypeId\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeId\"},\"RefineryPartyRelationshipTypeName\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeName\"},\"RefineryPartyRelationshipTypeDescription\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryPartyRelationshipType\",\"path\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\"},\"description\":\"The nature of the relationship between the party and the Refinery.\\n\\nEx:\\n- Joint-venture Partner\\n- Owned-by Party\\n- Operated-by Party\\n- Operator\\n- Supervisor\\n- Funded-By\\n- Maintenance\\n- Regulated-By\\n- Planning\\n- Emergency services\",\"primaryKey\":[\"RefineryPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery Party Relationship Type.\",\"isNullable\":false,\"name\":\"RefineryPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Refinery Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Refinery Party Relationship Type.\",\"isNullable\":true,\"name\":\"RefineryPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the party and the Refinery.\n\nEx:\n- Joint-venture Partner\n- Owned-by Party\n- Operated-by Party\n- Operator\n- Supervisor\n- Funded-By\n- Maintenance\n- Regulated-By\n- Planning\n- Emergency services",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fwnsbkdwlv",
+	"properties": {
+		"Name": "relationship-fwnsbkdwlv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentEventPartyRelationshipType",
+		"ToTableName": "ComponentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentEventPartyRelationshipTypeId",
+				"ToColumnName": "ComponentEventPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentEventPartyRelationshipType.cdm.json/ComponentEventPartyRelationshipType\",\"toEntity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentEventPartyRelationshipTypeId\",\"toAttribute\":\"ComponentEventPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

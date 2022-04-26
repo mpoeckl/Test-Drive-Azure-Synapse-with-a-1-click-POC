@@ -1,0 +1,173 @@
+{
+	"name": "GeneratorSpecification",
+	"properties": {
+		"Name": "GeneratorSpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A generator specification.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorSpecificationTypeId",
+					"Description": "The unique identifier of a generator specification type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "GeneratorSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorId",
+					"Description": "The unique identifier of a Generator.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "GeneratorId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorSpecificationValue",
+					"Description": "The value of the generator specification.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "GeneratorSpecificationValue"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorSpecificationUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "GeneratorSpecificationUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorSpecificationNote",
+					"Description": "A note, comment or additional information regarding the generator specification.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorSpecification.cdm.json/GeneratorSpecification",
+						"Name": "GeneratorSpecificationNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorSpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorSpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorSpecificationTypeId\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationTypeId\"},\"GeneratorId\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorId\"},\"PeriodStartTimestamp\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"PeriodEndTimestamp\"},\"GeneratorSpecificationValue\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationValue\"},\"GeneratorSpecificationUomId\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationUomId\"},\"GeneratorSpecificationNote\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorSpecification\",\"path\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\"},\"description\":\"A generator specification.\",\"primaryKey\":[\"GeneratorSpecificationTypeId\",\"GeneratorId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator specification type.\",\"isNullable\":false,\"name\":\"GeneratorSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generator.\",\"isNullable\":false,\"name\":\"GeneratorId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationValue\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The value of the generator specification.\",\"isNullable\":true,\"scale\":8,\"name\":\"GeneratorSpecificationValue\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"GeneratorSpecificationUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorSpecification.cdm.json/GeneratorSpecification\",\"name\":\"GeneratorSpecificationNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the generator specification.\",\"isNullable\":true,\"name\":\"GeneratorSpecificationNote\"}]}}}",
+			"Description": "A generator specification.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorSpecificationTypeId,GeneratorId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

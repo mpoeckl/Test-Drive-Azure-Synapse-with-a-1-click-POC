@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dzbvuuajao",
+	"properties": {
+		"Name": "relationship-dzbvuuajao",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PipelineStatusType",
+		"ToTableName": "PipelineStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PipelineStatusTypeId",
+				"ToColumnName": "PipelineStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"toEntity\":\"PipelineStatus.cdm.json/PipelineStatus\",\"joinPairs\":[{\"fromAttribute\":\"PipelineStatusTypeId\",\"toAttribute\":\"PipelineStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

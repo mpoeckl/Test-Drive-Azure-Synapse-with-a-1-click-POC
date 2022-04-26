@@ -1,0 +1,26 @@
+{
+	"name": "relationship-txpfsnpcck",
+	"properties": {
+		"Name": "relationship-txpfsnpcck",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "NfpaFlammabilityRating",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "NfpaFlammabilityRatingId",
+				"ToColumnName": "NfpaFlammabilityRatingId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"NfpaFlammabilityRatingId\",\"toAttribute\":\"NfpaFlammabilityRatingId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

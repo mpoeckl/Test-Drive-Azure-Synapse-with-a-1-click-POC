@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bekjxrjeli",
+	"properties": {
+		"Name": "relationship-bekjxrjeli",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FlowDirection",
+		"ToTableName": "Pipe",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "FlowDirectionId",
+				"ToColumnName": "FlowDirectionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"FlowDirection.cdm.json/FlowDirection\",\"toEntity\":\"Pipe.cdm.json/Pipe\",\"joinPairs\":[{\"fromAttribute\":\"FlowDirectionId\",\"toAttribute\":\"FlowDirectionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

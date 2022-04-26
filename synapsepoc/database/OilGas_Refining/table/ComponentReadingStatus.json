@@ -1,0 +1,106 @@
+{
+	"name": "ComponentReadingStatus",
+	"properties": {
+		"Name": "ComponentReadingStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The status of the component reading for a period.\n\nEx:\n- Read as scheduled\n- Not read due to mechanical problems\n- Reading re-scheduled\n- Reading postponed\n- Exceeds operating specifications\n- Within operating specifications\n- Standard operational specification",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentReadingStatusId",
+					"Description": "The unique identifier of a Component Reading Status.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingStatus.cdm.json/ComponentReadingStatus",
+						"Name": "ComponentReadingStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingStatusName",
+					"Description": "The name of a Component Reading Status.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingStatus.cdm.json/ComponentReadingStatus",
+						"Name": "ComponentReadingStatusName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingStatusDescription",
+					"Description": "The description of a Component Reading Status.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingStatus.cdm.json/ComponentReadingStatus",
+						"Name": "ComponentReadingStatusDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentReadingStatusId\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusId\"},\"ComponentReadingStatusName\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusName\"},\"ComponentReadingStatusDescription\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingStatus\",\"path\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\"},\"description\":\"The status of the component reading for a period.\\n\\nEx:\\n- Read as scheduled\\n- Not read due to mechanical problems\\n- Reading re-scheduled\\n- Reading postponed\\n- Exceeds operating specifications\\n- Within operating specifications\\n- Standard operational specification\",\"primaryKey\":[\"ComponentReadingStatusId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Reading Status.\",\"isNullable\":false,\"name\":\"ComponentReadingStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Reading Status.\",\"isNullable\":true,\"name\":\"ComponentReadingStatusName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Reading Status.\",\"isNullable\":true,\"name\":\"ComponentReadingStatusDescription\"}]}}}",
+			"Description": "The status of the component reading for a period.\n\nEx:\n- Read as scheduled\n- Not read due to mechanical problems\n- Reading re-scheduled\n- Reading postponed\n- Exceeds operating specifications\n- Within operating specifications\n- Standard operational specification",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentReadingStatusId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

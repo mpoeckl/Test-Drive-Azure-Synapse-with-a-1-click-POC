@@ -1,0 +1,106 @@
+{
+	"name": "DeviceCommunicationToComputerType",
+	"properties": {
+		"Name": "DeviceCommunicationToComputerType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of means by which the device communicates with the computer.\n\nEx:\n- USB\n- None\n- USB for export only",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceCommunicationToComputerTypeId",
+					"Description": "The unique identifier of a Device Communication To Computer Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType",
+						"Name": "DeviceCommunicationToComputerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToComputerTypeName",
+					"Description": "The name of a Device Communication To Computer Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType",
+						"Name": "DeviceCommunicationToComputerTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceCommunicationToComputerTypeDescription",
+					"Description": "The description of a Device Communication To Computer Type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType",
+						"Name": "DeviceCommunicationToComputerTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceCommunicationToComputerType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceCommunicationToComputerType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceCommunicationToComputerTypeId\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"DeviceCommunicationToComputerTypeName\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeName\"},\"DeviceCommunicationToComputerTypeDescription\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceCommunicationToComputerType\",\"path\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\"},\"description\":\"The type of means by which the device communicates with the computer.\\n\\nEx:\\n- USB\\n- None\\n- USB for export only\",\"primaryKey\":[\"DeviceCommunicationToComputerTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Device Communication To Computer Type.\",\"isNullable\":false,\"name\":\"DeviceCommunicationToComputerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Device Communication To Computer Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToComputerTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceCommunicationToComputerType.cdm.json/DeviceCommunicationToComputerType\",\"name\":\"DeviceCommunicationToComputerTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Device Communication To Computer Type.\",\"isNullable\":true,\"name\":\"DeviceCommunicationToComputerTypeDescription\"}]}}}",
+			"Description": "The type of means by which the device communicates with the computer.\n\nEx:\n- USB\n- None\n- USB for export only",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceCommunicationToComputerTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

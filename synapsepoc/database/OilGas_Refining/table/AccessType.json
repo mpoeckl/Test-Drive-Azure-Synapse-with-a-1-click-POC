@@ -1,0 +1,106 @@
+{
+	"name": "AccessType",
+	"properties": {
+		"Name": "AccessType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of access to the associated component.\n\nEx:\n-  Above Ground  \n-  Buried \n-  Pit  \n-  Stacked  \n-  Unknown\n-  Office environment \n-  Private residence \n-  Underground \n-  Locked cabinet \n-  Computer Facility\n-  Gated Property",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AccessTypeId",
+					"Description": "The unique identifier of an access type.",
+					"BaseAttributeReference": {
+						"Entity": "AccessType.cdm.json/AccessType",
+						"Name": "AccessTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AccessTypeName",
+					"Description": "The name of an access type.",
+					"BaseAttributeReference": {
+						"Entity": "AccessType.cdm.json/AccessType",
+						"Name": "AccessTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AccessTypeDescription",
+					"Description": "The description of an access type.",
+					"BaseAttributeReference": {
+						"Entity": "AccessType.cdm.json/AccessType",
+						"Name": "AccessTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AccessType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AccessType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccessTypeId\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeId\"},\"AccessTypeName\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeName\"},\"AccessTypeDescription\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AccessType\",\"path\":\"AccessType.cdm.json/AccessType\"},\"description\":\"The type of access to the associated component.\\n\\nEx:\\n-  Above Ground  \\n-  Buried \\n-  Pit  \\n-  Stacked  \\n-  Unknown\\n-  Office environment \\n-  Private residence \\n-  Underground \\n-  Locked cabinet \\n-  Computer Facility\\n-  Gated Property\",\"primaryKey\":[\"AccessTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an access type.\",\"isNullable\":false,\"name\":\"AccessTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an access type.\",\"isNullable\":true,\"name\":\"AccessTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an access type.\",\"isNullable\":true,\"name\":\"AccessTypeDescription\"}]}}}",
+			"Description": "The type of access to the associated component.\n\nEx:\n-  Above Ground  \n-  Buried \n-  Pit  \n-  Stacked  \n-  Unknown\n-  Office environment \n-  Private residence \n-  Underground \n-  Locked cabinet \n-  Computer Facility\n-  Gated Property",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "AccessTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

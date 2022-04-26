@@ -1,0 +1,157 @@
+{
+	"name": "RefineryProcessCost",
+	"properties": {
+		"Name": "RefineryProcessCost",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A cost associated with a refinery process for the period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CostTypeId",
+					"Description": "The unique identifier of a Cost Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "CostTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The start timestamp associated with the refinery process cost.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The end timestamp associated with the refinery process cost.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCostAmount",
+					"Description": "The refinery process cost amount.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "RefineryProcessCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessCostNote",
+					"Description": "A note, comment or additional information regarding the refinery process cost.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessCost.cdm.json/RefineryProcessCost",
+						"Name": "RefineryProcessCostNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCost",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessCost",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessId\"},\"CostTypeId\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"CostTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessCostAmount\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessCostAmount\"},\"RefineryProcessCostNote\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessCostNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessCost\",\"path\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\"},\"description\":\"A cost associated with a refinery process for the period.\",\"primaryKey\":[\"RefineryProcessId\",\"CostTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"CostTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Cost Type.\",\"isNullable\":false,\"name\":\"CostTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp associated with the refinery process cost.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp associated with the refinery process cost.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The refinery process cost amount.\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryProcessCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessCost.cdm.json/RefineryProcessCost\",\"name\":\"RefineryProcessCostNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process cost.\",\"isNullable\":true,\"name\":\"RefineryProcessCostNote\"}]}}}",
+			"Description": "A cost associated with a refinery process for the period.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,CostTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

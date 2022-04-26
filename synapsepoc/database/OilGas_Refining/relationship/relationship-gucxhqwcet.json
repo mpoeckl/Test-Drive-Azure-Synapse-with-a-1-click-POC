@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gucxhqwcet",
+	"properties": {
+		"Name": "relationship-gucxhqwcet",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Generator",
+		"ToTableName": "GeneratorComponentConfiguration",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "GeneratorId",
+				"ToColumnName": "GeneratorId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Generator.cdm.json/Generator\",\"toEntity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"joinPairs\":[{\"fromAttribute\":\"GeneratorId\",\"toAttribute\":\"GeneratorId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

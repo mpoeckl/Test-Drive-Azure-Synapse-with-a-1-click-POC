@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestStatusType",
+	"properties": {
+		"Name": "RefineryTestStatusType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A status that may be applied to a refinery test.\n\nEx:\n- Planned\n- Scheduled\n- Reschedule\n- Completed\n- In-process\n- Cancelled\n- Unknown\n- Withdrawn\n- Performed / Pending results\n- Results Returned\n- Inconclusive / Re-Test Required\n- N/A",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestStatusTypeId",
+					"Description": "The unique identifier of a refinery test status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestStatusType.cdm.json/RefineryTestStatusType",
+						"Name": "RefineryTestStatusTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestStatusTypeName",
+					"Description": "The name of a refinery test status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestStatusType.cdm.json/RefineryTestStatusType",
+						"Name": "RefineryTestStatusTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestStatusTypeDescription",
+					"Description": "The description of a refinery test status type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestStatusType.cdm.json/RefineryTestStatusType",
+						"Name": "RefineryTestStatusTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestStatusType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestStatusType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestStatusTypeId\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeId\"},\"RefineryTestStatusTypeName\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeName\"},\"RefineryTestStatusTypeDescription\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestStatusType\",\"path\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\"},\"description\":\"A status that may be applied to a refinery test.\\n\\nEx:\\n- Planned\\n- Scheduled\\n- Reschedule\\n- Completed\\n- In-process\\n- Cancelled\\n- Unknown\\n- Withdrawn\\n- Performed / Pending results\\n- Results Returned\\n- Inconclusive / Re-Test Required\\n- N/A\",\"primaryKey\":[\"RefineryTestStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test status type.\",\"isNullable\":false,\"name\":\"RefineryTestStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test status type.\",\"isNullable\":true,\"name\":\"RefineryTestStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestStatusType.cdm.json/RefineryTestStatusType\",\"name\":\"RefineryTestStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test status type.\",\"isNullable\":true,\"name\":\"RefineryTestStatusTypeDescription\"}]}}}",
+			"Description": "A status that may be applied to a refinery test.\n\nEx:\n- Planned\n- Scheduled\n- Reschedule\n- Completed\n- In-process\n- Cancelled\n- Unknown\n- Withdrawn\n- Performed / Pending results\n- Results Returned\n- Inconclusive / Re-Test Required\n- N/A",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestStatusTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-galhvpuqdb",
+	"properties": {
+		"Name": "relationship-galhvpuqdb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AcidGasType",
+		"ToTableName": "NaphthaHydrotreaterAcidGas",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AcidGasTypeId",
+				"ToColumnName": "AcidGasTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AcidGasType.cdm.json/AcidGasType\",\"toEntity\":\"NaphthaHydrotreaterAcidGas.cdm.json/NaphthaHydrotreaterAcidGas\",\"joinPairs\":[{\"fromAttribute\":\"AcidGasTypeId\",\"toAttribute\":\"AcidGasTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

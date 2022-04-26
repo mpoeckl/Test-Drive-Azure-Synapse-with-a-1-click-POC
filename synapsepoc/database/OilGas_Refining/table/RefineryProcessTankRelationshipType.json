@@ -1,0 +1,106 @@
+{
+	"name": "RefineryProcessTankRelationshipType",
+	"properties": {
+		"Name": "RefineryProcessTankRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the refinery process and tank.\n\nEx:\n- Source Crude Input Tank\n- Crude Output Tank\n- Feedstock Input Tank\n- Additive Input Tank\n- Catalyst Input Tank\n- Waste Output Tank",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessTankRelationshipTypeId",
+					"Description": "The unique identifier of a refinery process tank relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType",
+						"Name": "RefineryProcessTankRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessTankRelationshipTypeName",
+					"Description": "The name of a refinery process tank relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType",
+						"Name": "RefineryProcessTankRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessTankRelationshipTypeDescription",
+					"Description": "The description of a refinery process tank relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType",
+						"Name": "RefineryProcessTankRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessTankRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessTankRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessTankRelationshipTypeId\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeId\"},\"RefineryProcessTankRelationshipTypeName\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeName\"},\"RefineryProcessTankRelationshipTypeDescription\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessTankRelationshipType\",\"path\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\"},\"description\":\"The nature of the relationship between the refinery process and tank.\\n\\nEx:\\n- Source Crude Input Tank\\n- Crude Output Tank\\n- Feedstock Input Tank\\n- Additive Input Tank\\n- Catalyst Input Tank\\n- Waste Output Tank\",\"primaryKey\":[\"RefineryProcessTankRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery process tank relationship type.\",\"isNullable\":false,\"name\":\"RefineryProcessTankRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery process tank relationship type.\",\"isNullable\":true,\"name\":\"RefineryProcessTankRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery process tank relationship type.\",\"isNullable\":true,\"name\":\"RefineryProcessTankRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the refinery process and tank.\n\nEx:\n- Source Crude Input Tank\n- Crude Output Tank\n- Feedstock Input Tank\n- Additive Input Tank\n- Catalyst Input Tank\n- Waste Output Tank",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessTankRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

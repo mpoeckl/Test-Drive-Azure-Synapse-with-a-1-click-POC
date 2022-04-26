@@ -1,0 +1,138 @@
+{
+	"name": "ComponentReadingError",
+	"properties": {
+		"Name": "ComponentReadingError",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The reading error(s) associated with the Component Reading.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingError.cdm.json/ComponentReadingError",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingError.cdm.json/ComponentReadingError",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingErrorTypeId",
+					"Description": "The unique identifier of a Reading Error Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingError.cdm.json/ComponentReadingError",
+						"Name": "ReadingErrorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingStartTimestamp",
+					"Description": "The period start timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingError.cdm.json/ComponentReadingError",
+						"Name": "ReadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingErrorNote",
+					"Description": "A note, comment or additional information regarding a Component Reading Error.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingError.cdm.json/ComponentReadingError",
+						"Name": "ComponentReadingErrorNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingError",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingError",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingTypeId\"},\"ReadingErrorTypeId\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingErrorTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingStartTimestamp\"},\"ComponentReadingErrorNote\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ComponentReadingErrorNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingError\",\"path\":\"ComponentReadingError.cdm.json/ComponentReadingError\"},\"description\":\"The reading error(s) associated with the Component Reading.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"ReadingErrorTypeId\",\"ReadingStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingErrorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Error Type.\",\"isNullable\":false,\"name\":\"ReadingErrorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ReadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated reading is reported.\",\"isNullable\":false,\"name\":\"ReadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingError.cdm.json/ComponentReadingError\",\"name\":\"ComponentReadingErrorNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading Error.\",\"isNullable\":true,\"name\":\"ComponentReadingErrorNote\"}]}}}",
+			"Description": "The reading error(s) associated with the Component Reading.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,ReadingErrorTypeId,ReadingStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

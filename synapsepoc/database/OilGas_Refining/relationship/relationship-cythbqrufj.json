@@ -1,0 +1,26 @@
+{
+	"name": "relationship-cythbqrufj",
+	"properties": {
+		"Name": "relationship-cythbqrufj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentLocation",
+		"ToTableName": "ComponentLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "ComponentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"toEntity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"ComponentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-treqeslncg",
+	"properties": {
+		"Name": "relationship-treqeslncg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ImprovementType",
+		"ToTableName": "ComponentImprovement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ImprovementTypeId",
+				"ToColumnName": "ImprovementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ImprovementType.cdm.json/ImprovementType\",\"toEntity\":\"ComponentImprovement.cdm.json/ComponentImprovement\",\"joinPairs\":[{\"fromAttribute\":\"ImprovementTypeId\",\"toAttribute\":\"ImprovementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "RefineryTestDocumentPartyRelationshipType",
+	"properties": {
+		"Name": "RefineryTestDocumentPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the refinery test document and party.\n\nEx:\n- Required-by Party\n- Submitted-to Party\n- Regulatory Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryTestDocumentPartyRelationshipTypeId",
+					"Description": "The unique identifier of a refinery test document party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType",
+						"Name": "RefineryTestDocumentPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDocumentPartyRelationshipTypeName",
+					"Description": "The name of a refinery test document party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType",
+						"Name": "RefineryTestDocumentPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "RefineryTestDocumentPartyRelationshipTypeDescription",
+					"Description": "The description of a refinery test document party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType",
+						"Name": "RefineryTestDocumentPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocumentPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocumentPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestDocumentPartyRelationshipTypeId\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},\"RefineryTestDocumentPartyRelationshipTypeName\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeName\"},\"RefineryTestDocumentPartyRelationshipTypeDescription\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryTestDocumentPartyRelationshipType\",\"path\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\"},\"description\":\"The nature of the relationship between the refinery test document and party.\\n\\nEx:\\n- Required-by Party\\n- Submitted-to Party\\n- Regulatory Party\",\"primaryKey\":[\"RefineryTestDocumentPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a refinery test document party relationship type.\",\"isNullable\":false,\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a refinery test document party relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestDocumentPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryTestDocumentPartyRelationshipType.cdm.json/RefineryTestDocumentPartyRelationshipType\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a refinery test document party relationship type.\",\"isNullable\":true,\"name\":\"RefineryTestDocumentPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the refinery test document and party.\n\nEx:\n- Required-by Party\n- Submitted-to Party\n- Regulatory Party",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryTestDocumentPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

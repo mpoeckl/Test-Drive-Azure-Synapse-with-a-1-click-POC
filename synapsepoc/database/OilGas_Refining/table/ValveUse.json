@@ -1,0 +1,106 @@
+{
+	"name": "ValveUse",
+	"properties": {
+		"Name": "ValveUse",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The valve use associated with the valve.\n\nEx:\n- Blow Down\n- By-Pass\n- Construction\n- Inlet\n- Line\n- Outlet\n- R.V. Block\n- Separating\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveUseId",
+					"Description": "The unique identifier of a valve use.",
+					"BaseAttributeReference": {
+						"Entity": "ValveUse.cdm.json/ValveUse",
+						"Name": "ValveUseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveUseName",
+					"Description": "The name of a valve use.",
+					"BaseAttributeReference": {
+						"Entity": "ValveUse.cdm.json/ValveUse",
+						"Name": "ValveUseName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ValveUseDescription",
+					"Description": "The description of a valve use.",
+					"BaseAttributeReference": {
+						"Entity": "ValveUse.cdm.json/ValveUse",
+						"Name": "ValveUseDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveUse",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveUse",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveUseId\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseId\"},\"ValveUseName\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseName\"},\"ValveUseDescription\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ValveUse\",\"path\":\"ValveUse.cdm.json/ValveUse\"},\"description\":\"The valve use associated with the valve.\\n\\nEx:\\n- Blow Down\\n- By-Pass\\n- Construction\\n- Inlet\\n- Line\\n- Outlet\\n- R.V. Block\\n- Separating\\n- Unknown\",\"primaryKey\":[\"ValveUseId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve use.\",\"isNullable\":false,\"name\":\"ValveUseId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a valve use.\",\"isNullable\":true,\"name\":\"ValveUseName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ValveUse.cdm.json/ValveUse\",\"name\":\"ValveUseDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a valve use.\",\"isNullable\":true,\"name\":\"ValveUseDescription\"}]}}}",
+			"Description": "The valve use associated with the valve.\n\nEx:\n- Blow Down\n- By-Pass\n- Construction\n- Inlet\n- Line\n- Outlet\n- R.V. Block\n- Separating\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveUseId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

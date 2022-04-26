@@ -1,0 +1,122 @@
+{
+	"name": "ComponentEventType",
+	"properties": {
+		"Name": "ComponentEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of component event based on function, objectives or similar criteria.\n\nEx:\n- Demand Response Event Declared\n- Installation\n- Replacement\n- Failure\n- Burn-in \n- Maintenance\n- Preventive maintenance\n- Replacement\n- Testing\n- Trade-in\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Sale\n- Transfer",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentEventTypeId",
+					"Description": "The unique identifier of a Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventType.cdm.json/ComponentEventType",
+						"Name": "ComponentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventTypeName",
+					"Description": "The name of a Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventType.cdm.json/ComponentEventType",
+						"Name": "ComponentEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventTypeDescription",
+					"Description": "The description of a Component Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventType.cdm.json/ComponentEventType",
+						"Name": "ComponentEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventCategoryId",
+					"Description": "The unique identifier of a Component Event Category.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentEventType.cdm.json/ComponentEventType",
+						"Name": "ComponentEventCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventTypeId\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeId\"},\"ComponentEventTypeName\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeName\"},\"ComponentEventTypeDescription\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeDescription\"},\"ComponentEventCategoryId\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentEventType\",\"path\":\"ComponentEventType.cdm.json/ComponentEventType\"},\"description\":\"A type of component event based on function, objectives or similar criteria.\\n\\nEx:\\n- Demand Response Event Declared\\n- Installation\\n- Replacement\\n- Failure\\n- Burn-in \\n- Maintenance\\n- Preventive maintenance\\n- Replacement\\n- Testing\\n- Trade-in\\n- Loss\\n- Theft\\n- Casualty Loss\\n- Cannibalization\\n- Salvage\\n- Sale\\n- Transfer\",\"primaryKey\":[\"ComponentEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event Type.\",\"isNullable\":false,\"name\":\"ComponentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Event Type.\",\"isNullable\":true,\"name\":\"ComponentEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Event Type.\",\"isNullable\":true,\"name\":\"ComponentEventTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event Category.\",\"isNullable\":true,\"name\":\"ComponentEventCategoryId\"}]}}}",
+			"Description": "A type of component event based on function, objectives or similar criteria.\n\nEx:\n- Demand Response Event Declared\n- Installation\n- Replacement\n- Failure\n- Burn-in \n- Maintenance\n- Preventive maintenance\n- Replacement\n- Testing\n- Trade-in\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Sale\n- Transfer",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentEventTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

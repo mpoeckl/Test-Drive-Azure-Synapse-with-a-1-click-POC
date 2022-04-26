@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jyduvnrrpi",
+	"properties": {
+		"Name": "relationship-jyduvnrrpi",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentReadingAlarmPartyRelationshipType",
+		"ToTableName": "ComponentReadingAlarmRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentReadingAlarmPartyRelationshipTypeId",
+				"ToColumnName": "ComponentReadingAlarmPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentReadingAlarmPartyRelationshipType.cdm.json/ComponentReadingAlarmPartyRelationshipType\",\"toEntity\":\"ComponentReadingAlarmRelatedParty.cdm.json/ComponentReadingAlarmRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentReadingAlarmPartyRelationshipTypeId\",\"toAttribute\":\"ComponentReadingAlarmPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

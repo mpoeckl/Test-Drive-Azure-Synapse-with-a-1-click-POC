@@ -1,0 +1,26 @@
+{
+	"name": "relationship-gyurxdxjui",
+	"properties": {
+		"Name": "relationship-gyurxdxjui",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OpenCloseStatus",
+		"ToTableName": "PipeOpenCloseStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OpenCloseStatusId",
+				"ToColumnName": "OpenCloseStatusId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OpenCloseStatus.cdm.json/OpenCloseStatus\",\"toEntity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"joinPairs\":[{\"fromAttribute\":\"OpenCloseStatusId\",\"toAttribute\":\"OpenCloseStatusId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

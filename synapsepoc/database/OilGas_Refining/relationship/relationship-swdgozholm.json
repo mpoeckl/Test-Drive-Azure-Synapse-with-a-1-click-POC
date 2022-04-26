@@ -1,0 +1,26 @@
+{
+	"name": "relationship-swdgozholm",
+	"properties": {
+		"Name": "relationship-swdgozholm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentEvent",
+		"ToTableName": "ShipmentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentEventTypeId",
+				"ToColumnName": "ShipmentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"toEntity\":\"ShipmentEventRelatedParty.cdm.json/ShipmentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentEventTypeId\",\"toAttribute\":\"ShipmentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

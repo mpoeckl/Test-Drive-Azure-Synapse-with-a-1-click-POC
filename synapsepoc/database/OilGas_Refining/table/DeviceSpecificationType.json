@@ -1,0 +1,106 @@
+{
+	"name": "DeviceSpecificationType",
+	"properties": {
+		"Name": "DeviceSpecificationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of device specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Accuracy\n- Operating Temperature\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Humidity\n- Minimum Humidity Range\n- Maximum Humidity Range\n- Resolution Units\n- Input Current\n- Output Current\n- Input Voltage\n- Output Voltage\n- Minimum Operating Power\n- Maximum Operating Power\n- Flow Capacity\n- Pressure",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DeviceSpecificationTypeId",
+					"Description": "The unique identifier of a device specification type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecificationType.cdm.json/DeviceSpecificationType",
+						"Name": "DeviceSpecificationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationTypeName",
+					"Description": "The name of a device specification type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecificationType.cdm.json/DeviceSpecificationType",
+						"Name": "DeviceSpecificationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DeviceSpecificationTypeDescription",
+					"Description": "The description of a device specification type.",
+					"BaseAttributeReference": {
+						"Entity": "DeviceSpecificationType.cdm.json/DeviceSpecificationType",
+						"Name": "DeviceSpecificationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceSpecificationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceSpecificationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceSpecificationTypeId\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeId\"},\"DeviceSpecificationTypeName\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeName\"},\"DeviceSpecificationTypeDescription\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DeviceSpecificationType\",\"path\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\"},\"description\":\"A type of device specification.\\n\\nEx:\\n- Weight\\n- Length\\n- Width\\n- Height\\n- Accuracy\\n- Operating Temperature\\n- Minimum Operating Temperature\\n- Maximum Operating Temperature\\n- Humidity\\n- Minimum Humidity Range\\n- Maximum Humidity Range\\n- Resolution Units\\n- Input Current\\n- Output Current\\n- Input Voltage\\n- Output Voltage\\n- Minimum Operating Power\\n- Maximum Operating Power\\n- Flow Capacity\\n- Pressure\",\"primaryKey\":[\"DeviceSpecificationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a device specification type.\",\"isNullable\":false,\"name\":\"DeviceSpecificationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a device specification type.\",\"isNullable\":true,\"name\":\"DeviceSpecificationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DeviceSpecificationType.cdm.json/DeviceSpecificationType\",\"name\":\"DeviceSpecificationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a device specification type.\",\"isNullable\":true,\"name\":\"DeviceSpecificationTypeDescription\"}]}}}",
+			"Description": "A type of device specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Accuracy\n- Operating Temperature\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Humidity\n- Minimum Humidity Range\n- Maximum Humidity Range\n- Resolution Units\n- Input Current\n- Output Current\n- Input Voltage\n- Output Voltage\n- Minimum Operating Power\n- Maximum Operating Power\n- Flow Capacity\n- Pressure",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "DeviceSpecificationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

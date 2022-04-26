@@ -1,0 +1,26 @@
+{
+	"name": "relationship-zflnlqdxcq",
+	"properties": {
+		"Name": "relationship-zflnlqdxcq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpTypeId",
+				"ToColumnName": "PumpTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpType.cdm.json/PumpType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PumpTypeId\",\"toAttribute\":\"PumpTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

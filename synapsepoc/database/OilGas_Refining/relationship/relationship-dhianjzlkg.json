@@ -1,0 +1,26 @@
+{
+	"name": "relationship-dhianjzlkg",
+	"properties": {
+		"Name": "relationship-dhianjzlkg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "NaphthaHydrotreatingUnit",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "NaphthaHydrotreatingUnitId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"NaphthaHydrotreatingUnit.cdm.json/NaphthaHydrotreatingUnit\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"NaphthaHydrotreatingUnitId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ivqqqaripj",
+	"properties": {
+		"Name": "relationship-ivqqqaripj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalJunction",
+		"ToTableName": "ShuntReactiveDevice",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ElectricalJunctionId",
+				"ToColumnName": "ElectricalJunctionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"toEntity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"joinPairs\":[{\"fromAttribute\":\"ElectricalJunctionId\",\"toAttribute\":\"ElectricalJunctionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

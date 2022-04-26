@@ -1,0 +1,107 @@
+{
+	"name": "UnHazardCode",
+	"properties": {
+		"Name": "UnHazardCode",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The UN Hazard Code.\n\nEx:\nClass 1   Explosive\nClass 2   Gases\nClass 3.1 Flammable liquids, flash point below -18 degrees C\nClass 3.2 Flammable liquids, flash point between -18 degrees C and 23 degrees C\nClass 3.3 Flammable liquids, flash point between 23 degrees C and 61 degrees C\nClass 4.1 Flammable solids\nClass 5.1 Oxidizing agents\nClass 5.2 Organic peroxides\nClass 6.1 Poisonous substances\nClass 7   Radioactive substances\nClass 8   Corrosive substances\nClass 9   Miscellaneous dangerous substances\nNR        Non-regulated",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "UnHazardCode",
+					"Description": "The unique identifier of a UN Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "UnHazardCode.cdm.json/UnHazardCode",
+						"Name": "UnHazardCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UnHazardName",
+					"Description": "The name of a UN Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "UnHazardCode.cdm.json/UnHazardCode",
+						"Name": "UnHazardName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UnHazardDescription",
+					"Description": "The description of a UN Hazard Code.",
+					"BaseAttributeReference": {
+						"Entity": "UnHazardCode.cdm.json/UnHazardCode",
+						"Name": "UnHazardDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/UnHazardCode",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/UnHazardCode",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"UnHazardCode\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardCode\"},\"UnHazardName\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardName\"},\"UnHazardDescription\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"UnHazardCode\",\"path\":\"UnHazardCode.cdm.json/UnHazardCode\"},\"description\":\"The UN Hazard Code.\\n\\nEx:\\nClass 1   Explosive\\nClass 2   Gases\\nClass 3.1 Flammable liquids, flash point below -18 degrees C\\nClass 3.2 Flammable liquids, flash point between -18 degrees C and 23 degrees C\\nClass 3.3 Flammable liquids, flash point between 23 degrees C and 61 degrees C\\nClass 4.1 Flammable solids\\nClass 5.1 Oxidizing agents\\nClass 5.2 Organic peroxides\\nClass 6.1 Poisonous substances\\nClass 7   Radioactive substances\\nClass 8   Corrosive substances\\nClass 9   Miscellaneous dangerous substances\\nNR        Non-regulated\",\"primaryKey\":[\"UnHazardCode\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardCode\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The unique identifier of a UN Hazard Code.\",\"isNullable\":false,\"name\":\"UnHazardCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a UN Hazard Code.\",\"isNullable\":true,\"name\":\"UnHazardName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a UN Hazard Code.\",\"isNullable\":true,\"name\":\"UnHazardDescription\"}]}}}",
+			"Description": "The UN Hazard Code.\n\nEx:\nClass 1   Explosive\nClass 2   Gases\nClass 3.1 Flammable liquids, flash point below -18 degrees C\nClass 3.2 Flammable liquids, flash point between -18 degrees C and 23 degrees C\nClass 3.3 Flammable liquids, flash point between 23 degrees C and 61 degrees C\nClass 4.1 Flammable solids\nClass 5.1 Oxidizing agents\nClass 5.2 Organic peroxides\nClass 6.1 Poisonous substances\nClass 7   Radioactive substances\nClass 8   Corrosive substances\nClass 9   Miscellaneous dangerous substances\nNR        Non-regulated",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "UnHazardCode",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

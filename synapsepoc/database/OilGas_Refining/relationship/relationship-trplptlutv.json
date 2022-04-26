@@ -1,0 +1,26 @@
+{
+	"name": "relationship-trplptlutv",
+	"properties": {
+		"Name": "relationship-trplptlutv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ElectricalJunction",
+		"ToTableName": "ElectricJunctionSwitch",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ElectricalJunctionId",
+				"ToColumnName": "ElectricalJunctionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ElectricalJunction.cdm.json/ElectricalJunction\",\"toEntity\":\"ElectricJunctionSwitch.cdm.json/ElectricJunctionSwitch\",\"joinPairs\":[{\"fromAttribute\":\"ElectricalJunctionId\",\"toAttribute\":\"ElectricalJunctionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

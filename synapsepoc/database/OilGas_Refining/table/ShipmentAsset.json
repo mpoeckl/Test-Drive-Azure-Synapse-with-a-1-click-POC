@@ -1,0 +1,155 @@
+{
+	"name": "ShipmentAsset",
+	"properties": {
+		"Name": "ShipmentAsset",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The asset(s) associated with the Shipment.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the shipment - asset relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the shipment - asset relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ThirdPartyAssetIndicator",
+					"Description": "Indicates that the asset is a third-party asset.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "ThirdPartyAssetIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentAssetNote",
+					"Description": "A note, comment or additional information regarding the shipment asset.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAsset.cdm.json/ShipmentAsset",
+						"Name": "ShipmentAssetNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentAsset",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentAsset",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentId\"},\"AssetId\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodEndTimestamp\"},\"ThirdPartyAssetIndicator\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ThirdPartyAssetIndicator\"},\"ShipmentAssetNote\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentAssetNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentAsset\",\"path\":\"ShipmentAsset.cdm.json/ShipmentAsset\"},\"description\":\"The asset(s) associated with the Shipment.\",\"primaryKey\":[\"ShipmentId\",\"AssetId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the shipment - asset relationship.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the shipment - asset relationship.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ThirdPartyAssetIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that the asset is a third-party asset.\",\"isNullable\":true,\"name\":\"ThirdPartyAssetIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentAssetNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the shipment asset.\",\"isNullable\":true,\"name\":\"ShipmentAssetNote\"}]}}}",
+			"Description": "The asset(s) associated with the Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,AssetId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

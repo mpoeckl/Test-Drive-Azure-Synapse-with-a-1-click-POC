@@ -1,0 +1,106 @@
+{
+	"name": "GeneratorComponentType",
+	"properties": {
+		"Name": "GeneratorComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type generator component that may be integrated with or supporting the operation of the generator.\n\nEx:\n- Alternator\n- Cast Iron Sleeve\n- Mainframe  Assembly\n- Rectifier\n- Rotor\n- Stator\n- Vibration Isolator\n- Voltage Regulator\n\nWhere:\n\nALTERNATOR\nThis part of the generator converts the mechanical energy supplied by the engine into electrical energy to produce electricity.\n\nCAST IRON SLEEVE (CIS)\nA lining within the engine that contributes greatly to the generator's lifetime.\n\nMAINFRAME ASSEMBLY\nThe customized structural body and base support system of a generator.\n\nRECTIFIER\nThe part of the generator that converts alternating current voltage into direct current voltage to charge the generator's battery.\n\nROTOR\nThe rotating part of the alternator's electromagnetic system.\n\nSTATOR\nThe stationary part of the alternator's electromagnetic system.\n\nVIBRATION ISOLATOR\nThe rubber lining between the generator's engine and the main frame of the generator that reduces any vibration produced by the engine.\n\nVOLTAGE REGULATOR\nThe part of the generator that automatically maintains optimal voltage by controlling the course of direct current to the rotor.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorComponentTypeId",
+					"Description": "The unique identifier of a generator component type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentType.cdm.json/GeneratorComponentType",
+						"Name": "GeneratorComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorComponentTypeName",
+					"Description": "The name of a generator component type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentType.cdm.json/GeneratorComponentType",
+						"Name": "GeneratorComponentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorComponentTypeDescription",
+					"Description": "The description of a generator component type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponentType.cdm.json/GeneratorComponentType",
+						"Name": "GeneratorComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorComponentTypeId\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeId\"},\"GeneratorComponentTypeName\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeName\"},\"GeneratorComponentTypeDescription\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorComponentType\",\"path\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\"},\"description\":\"A type generator component that may be integrated with or supporting the operation of the generator.\\n\\nEx:\\n- Alternator\\n- Cast Iron Sleeve\\n- Mainframe  Assembly\\n- Rectifier\\n- Rotor\\n- Stator\\n- Vibration Isolator\\n- Voltage Regulator\\n\\nWhere:\\n\\nALTERNATOR\\nThis part of the generator converts the mechanical energy supplied by the engine into electrical energy to produce electricity.\\n\\nCAST IRON SLEEVE (CIS)\\nA lining within the engine that contributes greatly to the generator's lifetime.\\n\\nMAINFRAME ASSEMBLY\\nThe customized structural body and base support system of a generator.\\n\\nRECTIFIER\\nThe part of the generator that converts alternating current voltage into direct current voltage to charge the generator's battery.\\n\\nROTOR\\nThe rotating part of the alternator's electromagnetic system.\\n\\nSTATOR\\nThe stationary part of the alternator's electromagnetic system.\\n\\nVIBRATION ISOLATOR\\nThe rubber lining between the generator's engine and the main frame of the generator that reduces any vibration produced by the engine.\\n\\nVOLTAGE REGULATOR\\nThe part of the generator that automatically maintains optimal voltage by controlling the course of direct current to the rotor.\",\"primaryKey\":[\"GeneratorComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator component type.\",\"isNullable\":false,\"name\":\"GeneratorComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a generator component type.\",\"isNullable\":true,\"name\":\"GeneratorComponentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a generator component type.\",\"isNullable\":true,\"name\":\"GeneratorComponentTypeDescription\"}]}}}",
+			"Description": "A type generator component that may be integrated with or supporting the operation of the generator.\n\nEx:\n- Alternator\n- Cast Iron Sleeve\n- Mainframe  Assembly\n- Rectifier\n- Rotor\n- Stator\n- Vibration Isolator\n- Voltage Regulator\n\nWhere:\n\nALTERNATOR\nThis part of the generator converts the mechanical energy supplied by the engine into electrical energy to produce electricity.\n\nCAST IRON SLEEVE (CIS)\nA lining within the engine that contributes greatly to the generator's lifetime.\n\nMAINFRAME ASSEMBLY\nThe customized structural body and base support system of a generator.\n\nRECTIFIER\nThe part of the generator that converts alternating current voltage into direct current voltage to charge the generator's battery.\n\nROTOR\nThe rotating part of the alternator's electromagnetic system.\n\nSTATOR\nThe stationary part of the alternator's electromagnetic system.\n\nVIBRATION ISOLATOR\nThe rubber lining between the generator's engine and the main frame of the generator that reduces any vibration produced by the engine.\n\nVOLTAGE REGULATOR\nThe part of the generator that automatically maintains optimal voltage by controlling the course of direct current to the rotor.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

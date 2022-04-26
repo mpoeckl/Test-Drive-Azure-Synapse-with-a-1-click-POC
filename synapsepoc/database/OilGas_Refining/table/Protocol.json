@@ -1,0 +1,122 @@
+{
+	"name": "Protocol",
+	"properties": {
+		"Name": "Protocol",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A protocol that may be associated with a component.\n\nEx:\n- 1-Wire\n- ANSI C12.18\n- BACnet\n- BSAP\n- CANopen\n- C-Bus\n- CC-Link I \n- CC-Link Industrial Networks\n- CIP (Common Industrial Protocol)\n- Controller Area Network\n- ControlNet\n- DALI\n- DeviceNet\n- DF-1\n- DirectNet\n- DLMS/IEC 62056\n- DNP3\n- DSI\n- EtherCAT\n- Ethernet Global Data (EGD)\n- EtherNet/IP Ethernet Powerlink\n- Foundation Fieldbus H1\n- FOUNDATION fieldbus HSE (High Speed Ethernet)\n- GE SRTP\n- Honeywell SDS\n- HostLink Protocol\n- IEC 60870-5\n- IEC 61107\n- IEC 61850\n- IEC 62351\n- Interbus\n- Konnex (KNX)\n- LonTalk\n- M-Bus\n- Modbus PEMEX\n- Modbus Plus\n- Modbus RTU\n- oBIX\n- Optomux\n- Profibus\n- RAPIEnet\n- P-Net\n- S-Bus\n- SERCOS III\n- Sinec H1\n- SwiftNet (a protocol developed for Boeing, since withdrawn)\n- SynqNet\n- MTConnect\n- OPC\n- OPC UA\n- WorldFIP\n- xAP\n- ZigBee\n- ZigBee Smart Energy 2.0",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProtocolId",
+					"Description": "The unique identifier of a Meter Protocol.",
+					"BaseAttributeReference": {
+						"Entity": "Protocol.cdm.json/Protocol",
+						"Name": "ProtocolId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProtocolName",
+					"Description": "The name of a Meter Protocol.",
+					"BaseAttributeReference": {
+						"Entity": "Protocol.cdm.json/Protocol",
+						"Name": "ProtocolName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProtocolDescription",
+					"Description": "The description of a Meter Protocol.",
+					"BaseAttributeReference": {
+						"Entity": "Protocol.cdm.json/Protocol",
+						"Name": "ProtocolDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ProtocolTypeId",
+					"Description": "The unique identifier of a Protocol Type.",
+					"BaseAttributeReference": {
+						"Entity": "Protocol.cdm.json/Protocol",
+						"Name": "ProtocolTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Protocol",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Protocol",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProtocolId\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolId\"},\"ProtocolName\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolName\"},\"ProtocolDescription\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolDescription\"},\"ProtocolTypeId\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolTypeId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Protocol\",\"path\":\"Protocol.cdm.json/Protocol\"},\"description\":\"A protocol that may be associated with a component.\\n\\nEx:\\n- 1-Wire\\n- ANSI C12.18\\n- BACnet\\n- BSAP\\n- CANopen\\n- C-Bus\\n- CC-Link I \\n- CC-Link Industrial Networks\\n- CIP (Common Industrial Protocol)\\n- Controller Area Network\\n- ControlNet\\n- DALI\\n- DeviceNet\\n- DF-1\\n- DirectNet\\n- DLMS/IEC 62056\\n- DNP3\\n- DSI\\n- EtherCAT\\n- Ethernet Global Data (EGD)\\n- EtherNet/IP Ethernet Powerlink\\n- Foundation Fieldbus H1\\n- FOUNDATION fieldbus HSE (High Speed Ethernet)\\n- GE SRTP\\n- Honeywell SDS\\n- HostLink Protocol\\n- IEC 60870-5\\n- IEC 61107\\n- IEC 61850\\n- IEC 62351\\n- Interbus\\n- Konnex (KNX)\\n- LonTalk\\n- M-Bus\\n- Modbus PEMEX\\n- Modbus Plus\\n- Modbus RTU\\n- oBIX\\n- Optomux\\n- Profibus\\n- RAPIEnet\\n- P-Net\\n- S-Bus\\n- SERCOS III\\n- Sinec H1\\n- SwiftNet (a protocol developed for Boeing, since withdrawn)\\n- SynqNet\\n- MTConnect\\n- OPC\\n- OPC UA\\n- WorldFIP\\n- xAP\\n- ZigBee\\n- ZigBee Smart Energy 2.0\",\"primaryKey\":[\"ProtocolId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Meter Protocol.\",\"isNullable\":false,\"name\":\"ProtocolId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Meter Protocol.\",\"isNullable\":true,\"name\":\"ProtocolName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Meter Protocol.\",\"isNullable\":true,\"name\":\"ProtocolDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Protocol Type.\",\"isNullable\":true,\"name\":\"ProtocolTypeId\"}]}}}",
+			"Description": "A protocol that may be associated with a component.\n\nEx:\n- 1-Wire\n- ANSI C12.18\n- BACnet\n- BSAP\n- CANopen\n- C-Bus\n- CC-Link I \n- CC-Link Industrial Networks\n- CIP (Common Industrial Protocol)\n- Controller Area Network\n- ControlNet\n- DALI\n- DeviceNet\n- DF-1\n- DirectNet\n- DLMS/IEC 62056\n- DNP3\n- DSI\n- EtherCAT\n- Ethernet Global Data (EGD)\n- EtherNet/IP Ethernet Powerlink\n- Foundation Fieldbus H1\n- FOUNDATION fieldbus HSE (High Speed Ethernet)\n- GE SRTP\n- Honeywell SDS\n- HostLink Protocol\n- IEC 60870-5\n- IEC 61107\n- IEC 61850\n- IEC 62351\n- Interbus\n- Konnex (KNX)\n- LonTalk\n- M-Bus\n- Modbus PEMEX\n- Modbus Plus\n- Modbus RTU\n- oBIX\n- Optomux\n- Profibus\n- RAPIEnet\n- P-Net\n- S-Bus\n- SERCOS III\n- Sinec H1\n- SwiftNet (a protocol developed for Boeing, since withdrawn)\n- SynqNet\n- MTConnect\n- OPC\n- OPC UA\n- WorldFIP\n- xAP\n- ZigBee\n- ZigBee Smart Energy 2.0",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ProtocolId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xycbxyjbgr",
+	"properties": {
+		"Name": "relationship-xycbxyjbgr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ReadingResultType",
+		"ToTableName": "ComponentReading",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ReadingResultTypeId",
+				"ToColumnName": "ReadingResultTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ReadingResultType.cdm.json/ReadingResultType\",\"toEntity\":\"ComponentReading.cdm.json/ComponentReading\",\"joinPairs\":[{\"fromAttribute\":\"ReadingResultTypeId\",\"toAttribute\":\"ReadingResultTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

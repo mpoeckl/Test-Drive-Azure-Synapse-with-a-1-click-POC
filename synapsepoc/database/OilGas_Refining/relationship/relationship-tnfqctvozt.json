@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tnfqctvozt",
+	"properties": {
+		"Name": "relationship-tnfqctvozt",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DotHazardCode",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DotHazardCode",
+				"ToColumnName": "DotHazardCode"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DotHazardCode.cdm.json/DotHazardCode\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"DotHazardCode\",\"toAttribute\":\"DotHazardCode\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

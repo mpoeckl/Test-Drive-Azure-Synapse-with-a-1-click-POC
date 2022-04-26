@@ -1,0 +1,171 @@
+{
+	"name": "ShipmentEvent",
+	"properties": {
+		"Name": "ShipmentEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An event that is associated with a Shipment to track its progress or status as it is shipped, stored, in customs etc.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventTypeId",
+					"Description": "The unique identifier of a Shipment Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStartTimestamp",
+					"Description": "The start timestamp of the associated Shipment Event.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentEventStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventEndTimestamp",
+					"Description": "The end timestamp of the associated Shipment Event.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentEventEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventStatusId",
+					"Description": "The unique identifier of a Shipment Event Status.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentEventStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventNote",
+					"Description": "Notes, comments or additional information regarding the Shipment Event.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShipmentEventNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShippingLocationId",
+					"Description": "The unique identifier of a Shipping Location.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEvent.cdm.json/ShipmentEvent",
+						"Name": "ShippingLocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentId\"},\"ShipmentEventTypeId\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventTypeId\"},\"ShipmentEventStartTimestamp\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventStartTimestamp\"},\"ShipmentEventEndTimestamp\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventEndTimestamp\"},\"ShipmentEventStatusId\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventStatusId\"},\"ShipmentEventNote\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventNote\"},\"ShippingLocationId\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShippingLocationId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentEvent\",\"path\":\"ShipmentEvent.cdm.json/ShipmentEvent\"},\"description\":\"An event that is associated with a Shipment to track its progress or status as it is shipped, stored, in customs etc.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentEventTypeId\",\"ShipmentEventStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Type.\",\"isNullable\":false,\"name\":\"ShipmentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the associated Shipment Event.\",\"isNullable\":false,\"name\":\"ShipmentEventStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The end timestamp of the associated Shipment Event.\",\"isNullable\":false,\"name\":\"ShipmentEventEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Status.\",\"isNullable\":true,\"name\":\"ShipmentEventStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShipmentEventNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the Shipment Event.\",\"isNullable\":true,\"name\":\"ShipmentEventNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEvent.cdm.json/ShipmentEvent\",\"name\":\"ShippingLocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipping Location.\",\"isNullable\":true,\"name\":\"ShippingLocationId\"}]}}}",
+			"Description": "An event that is associated with a Shipment to track its progress or status as it is shipped, stored, in customs etc.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentEventTypeId,ShipmentEventStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

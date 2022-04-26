@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ptaivfjems",
+	"properties": {
+		"Name": "relationship-ptaivfjems",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryProcessStatusType",
+		"ToTableName": "RefineryProcessStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryProcessStatusTypeId",
+				"ToColumnName": "RefineryProcessStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryProcessStatusType.cdm.json/RefineryProcessStatusType\",\"toEntity\":\"RefineryProcessStatus.cdm.json/RefineryProcessStatus\",\"joinPairs\":[{\"fromAttribute\":\"RefineryProcessStatusTypeId\",\"toAttribute\":\"RefineryProcessStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-lpdsibmglk",
+	"properties": {
+		"Name": "relationship-lpdsibmglk",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentEventType",
+		"ToTableName": "ComponentEvent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentEventTypeId",
+				"ToColumnName": "ComponentEventTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"toEntity\":\"ComponentEvent.cdm.json/ComponentEvent\",\"joinPairs\":[{\"fromAttribute\":\"ComponentEventTypeId\",\"toAttribute\":\"ComponentEventTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

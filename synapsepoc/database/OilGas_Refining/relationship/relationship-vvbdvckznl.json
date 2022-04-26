@@ -1,0 +1,26 @@
+{
+	"name": "relationship-vvbdvckznl",
+	"properties": {
+		"Name": "relationship-vvbdvckznl",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryEventStatusType",
+		"ToTableName": "RefineryEventStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RefineryEventStatusTypeId",
+				"ToColumnName": "RefineryEventStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryEventStatusType.cdm.json/RefineryEventStatusType\",\"toEntity\":\"RefineryEventStatus.cdm.json/RefineryEventStatus\",\"joinPairs\":[{\"fromAttribute\":\"RefineryEventStatusTypeId\",\"toAttribute\":\"RefineryEventStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

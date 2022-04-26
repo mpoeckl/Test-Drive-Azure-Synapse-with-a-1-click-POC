@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oghhfiqfrg",
+	"properties": {
+		"Name": "relationship-oghhfiqfrg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemType",
+		"ToTableName": "Item",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemTypeId",
+				"ToColumnName": "ItemTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemType.cdm.json/ItemType\",\"toEntity\":\"Item.cdm.json/Item\",\"joinPairs\":[{\"fromAttribute\":\"ItemTypeId\",\"toAttribute\":\"ItemTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

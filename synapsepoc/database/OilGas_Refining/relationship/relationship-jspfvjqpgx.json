@@ -1,0 +1,26 @@
+{
+	"name": "relationship-jspfvjqpgx",
+	"properties": {
+		"Name": "relationship-jspfvjqpgx",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BituminousSandType",
+		"ToTableName": "RefineryProcessSourceBituminousSandComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BituminousSandTypeId",
+				"ToColumnName": "BituminousSandTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BituminousSandType.cdm.json/BituminousSandType\",\"toEntity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"joinPairs\":[{\"fromAttribute\":\"BituminousSandTypeId\",\"toAttribute\":\"BituminousSandTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

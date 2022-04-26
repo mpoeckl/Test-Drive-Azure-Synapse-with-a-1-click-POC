@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tqqljihofn",
+	"properties": {
+		"Name": "relationship-tqqljihofn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentEvent",
+		"ToTableName": "IncidentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentId",
+				"ToColumnName": "IncidentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"toEntity\":\"IncidentEventRelatedParty.cdm.json/IncidentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentId\",\"toAttribute\":\"IncidentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

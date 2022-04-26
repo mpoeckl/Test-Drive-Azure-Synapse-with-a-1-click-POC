@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ycyxhoveyg",
+	"properties": {
+		"Name": "relationship-ycyxhoveyg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefiningComponent",
+		"ToTableName": "Pipeline",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentId",
+				"ToColumnName": "PipelineId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefiningComponent.cdm.json/RefiningComponent\",\"toEntity\":\"Pipeline.cdm.json/Pipeline\",\"joinPairs\":[{\"fromAttribute\":\"ComponentId\",\"toAttribute\":\"PipelineId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

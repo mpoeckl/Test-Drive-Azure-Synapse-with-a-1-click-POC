@@ -1,0 +1,26 @@
+{
+	"name": "relationship-grgkvurtoz",
+	"properties": {
+		"Name": "relationship-grgkvurtoz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Asset",
+		"ToTableName": "RelatedAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetId",
+				"ToColumnName": "RelatedAssetId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Asset.cdm.json/Asset\",\"toEntity\":\"RelatedAsset.cdm.json/RelatedAsset\",\"joinPairs\":[{\"fromAttribute\":\"AssetId\",\"toAttribute\":\"RelatedAssetId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

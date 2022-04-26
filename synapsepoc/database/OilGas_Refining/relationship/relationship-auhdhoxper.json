@@ -1,0 +1,26 @@
+{
+	"name": "relationship-auhdhoxper",
+	"properties": {
+		"Name": "relationship-auhdhoxper",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchangerFlowArrangementType",
+		"ToTableName": "HeatExchanger",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerFlowArrangementTypeId",
+				"ToColumnName": "HeatExchangerFlowArrangementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"toEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerFlowArrangementTypeId\",\"toAttribute\":\"HeatExchangerFlowArrangementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

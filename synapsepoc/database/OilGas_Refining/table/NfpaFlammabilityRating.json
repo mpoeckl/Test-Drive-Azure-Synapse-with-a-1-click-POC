@@ -1,0 +1,106 @@
+{
+	"name": "NfpaFlammabilityRating",
+	"properties": {
+		"Name": "NfpaFlammabilityRating",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\". \n\nFlammability \n4  Flammable gas or extremely flammable liquid\n3  Flammable liquid flash point below 100° F\n2  Combustible liquid flash point of 100° to 200° F\n1  Combustible if heated\n0  Not combustible",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NfpaFlammabilityRatingId",
+					"Description": "The unique identifier of a NFPA Flammability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating",
+						"Name": "NfpaFlammabilityRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NfpaFlammabilityRatingName",
+					"Description": "The name or short identifying name of a NFPA Flammability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating",
+						"Name": "NfpaFlammabilityRatingName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NfpaFlammabilityRatingDescription",
+					"Description": "The description of a NFPA Flammability Rating.",
+					"BaseAttributeReference": {
+						"Entity": "NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating",
+						"Name": "NfpaFlammabilityRatingDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaFlammabilityRating",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaFlammabilityRating",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NfpaFlammabilityRatingId\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingId\"},\"NfpaFlammabilityRatingName\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingName\"},\"NfpaFlammabilityRatingDescription\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NfpaFlammabilityRating\",\"path\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\"},\"description\":\"NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \\n\\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \\\"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\\\". \\n\\nFlammability \\n4  Flammable gas or extremely flammable liquid\\n3  Flammable liquid flash point below 100° F\\n2  Combustible liquid flash point of 100° to 200° F\\n1  Combustible if heated\\n0  Not combustible\",\"primaryKey\":[\"NfpaFlammabilityRatingId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a NFPA Flammability Rating.\",\"isNullable\":false,\"name\":\"NfpaFlammabilityRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name or short identifying name of a NFPA Flammability Rating.\",\"isNullable\":true,\"name\":\"NfpaFlammabilityRatingName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NfpaFlammabilityRating.cdm.json/NfpaFlammabilityRating\",\"name\":\"NfpaFlammabilityRatingDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a NFPA Flammability Rating.\",\"isNullable\":true,\"name\":\"NfpaFlammabilityRatingDescription\"}]}}}",
+			"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\". \n\nFlammability \n4  Flammable gas or extremely flammable liquid\n3  Flammable liquid flash point below 100° F\n2  Combustible liquid flash point of 100° to 200° F\n1  Combustible if heated\n0  Not combustible",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "NfpaFlammabilityRatingId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

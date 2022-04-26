@@ -1,0 +1,171 @@
+{
+	"name": "ComponentLocationRelatedParty",
+	"properties": {
+		"Name": "ComponentLocationRelatedParty",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship of a component, location and the associated party(s) during the period indicated.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationTypeId",
+					"Description": "The unique identifier of a Component Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "ComponentLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "PartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationPartyRelationshipTypeId",
+					"Description": "The unique identifier of a Component Location Party Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "ComponentLocationPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp for which an associated Component - Location - Party Relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp for which an associated Component - Location - Party Relationship is effective.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationPartyRelationshipNote",
+					"Description": "A note, comment or additional information regarding a Component Location Party Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty",
+						"Name": "ComponentLocationPartyRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationRelatedParty",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationRelatedParty",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentId\"},\"ComponentLocationTypeId\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationTypeId\"},\"PartyId\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PartyId\"},\"ComponentLocationPartyRelationshipTypeId\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ComponentLocationPartyRelationshipNote\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationPartyRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentLocationRelatedParty\",\"path\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\"},\"description\":\"The relationship of a component, location and the associated party(s) during the period indicated.\",\"primaryKey\":[\"ComponentId\",\"ComponentLocationTypeId\",\"PartyId\",\"ComponentLocationPartyRelationshipTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Type.\",\"isNullable\":false,\"name\":\"ComponentLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":false,\"name\":\"PartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Party Relationship Type.\",\"isNullable\":false,\"name\":\"ComponentLocationPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which an associated Component - Location - Party Relationship is effective.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp for which an associated Component - Location - Party Relationship is effective.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"name\":\"ComponentLocationPartyRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Location Party Relationship.\",\"isNullable\":true,\"name\":\"ComponentLocationPartyRelationshipNote\"}]}}}",
+			"Description": "The relationship of a component, location and the associated party(s) during the period indicated.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ComponentLocationTypeId,PartyId,ComponentLocationPartyRelationshipTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

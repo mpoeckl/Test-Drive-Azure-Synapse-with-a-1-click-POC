@@ -1,0 +1,105 @@
+{
+	"name": "ShipmentAssignedTerm",
+	"properties": {
+		"Name": "ShipmentAssignedTerm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The one or more Shipment Term(s) assigned to or describing a Shipment.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentId",
+					"Description": "The unique identifier of a Shipment.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentTermTypeId",
+					"Description": "The unique identifier of a Shipment Term.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentTermTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentAssignedTermNote",
+					"Description": "Notes, comments or additional information regarding the shipment assigned term(s).",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm",
+						"Name": "ShipmentAssignedTermNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentAssignedTerm",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentAssignedTerm",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentId\"},\"ShipmentTermTypeId\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"ShipmentAssignedTermNote\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentAssignedTermNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentAssignedTerm\",\"path\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\"},\"description\":\"The one or more Shipment Term(s) assigned to or describing a Shipment.\",\"primaryKey\":[\"ShipmentId\",\"ShipmentTermTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment.\",\"isNullable\":false,\"name\":\"ShipmentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentTermTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Term.\",\"isNullable\":false,\"name\":\"ShipmentTermTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"name\":\"ShipmentAssignedTermNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the shipment assigned term(s).\",\"isNullable\":true,\"name\":\"ShipmentAssignedTermNote\"}]}}}",
+			"Description": "The one or more Shipment Term(s) assigned to or describing a Shipment.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentId,ShipmentTermTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

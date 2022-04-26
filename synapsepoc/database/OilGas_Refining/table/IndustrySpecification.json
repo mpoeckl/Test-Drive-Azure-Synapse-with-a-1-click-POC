@@ -1,0 +1,106 @@
+{
+	"name": "IndustrySpecification",
+	"properties": {
+		"Name": "IndustrySpecification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Regulatory & Industry Specifications that the device type is compatible with or meets the specifications of.\n\nEx:\n\n- FCC Part 15 Class B\n- ANSI C37.90.1 - 1989: (SWC)\n- ANSI C12.20 (Class 0.5) - 1998\n- PTCRB Certified\n- Carrier Certified\n- Measurement Canada Certified",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IndustrySpecificationId",
+					"Description": "The unique identifier of an Industry Specification.",
+					"BaseAttributeReference": {
+						"Entity": "IndustrySpecification.cdm.json/IndustrySpecification",
+						"Name": "IndustrySpecificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IndustrySpecificationName",
+					"Description": "The name of an Industry Specification.",
+					"BaseAttributeReference": {
+						"Entity": "IndustrySpecification.cdm.json/IndustrySpecification",
+						"Name": "IndustrySpecificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IndustrySpecificationDescription",
+					"Description": "The description of an Industry Specification.",
+					"BaseAttributeReference": {
+						"Entity": "IndustrySpecification.cdm.json/IndustrySpecification",
+						"Name": "IndustrySpecificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IndustrySpecification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IndustrySpecification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IndustrySpecificationId\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationId\"},\"IndustrySpecificationName\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationName\"},\"IndustrySpecificationDescription\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IndustrySpecification\",\"path\":\"IndustrySpecification.cdm.json/IndustrySpecification\"},\"description\":\"A Regulatory & Industry Specifications that the device type is compatible with or meets the specifications of.\\n\\nEx:\\n\\n- FCC Part 15 Class B\\n- ANSI C37.90.1 - 1989: (SWC)\\n- ANSI C12.20 (Class 0.5) - 1998\\n- PTCRB Certified\\n- Carrier Certified\\n- Measurement Canada Certified\",\"primaryKey\":[\"IndustrySpecificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Industry Specification.\",\"isNullable\":false,\"name\":\"IndustrySpecificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an Industry Specification.\",\"isNullable\":true,\"name\":\"IndustrySpecificationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an Industry Specification.\",\"isNullable\":true,\"name\":\"IndustrySpecificationDescription\"}]}}}",
+			"Description": "A Regulatory & Industry Specifications that the device type is compatible with or meets the specifications of.\n\nEx:\n\n- FCC Part 15 Class B\n- ANSI C37.90.1 - 1989: (SWC)\n- ANSI C12.20 (Class 0.5) - 1998\n- PTCRB Certified\n- Carrier Certified\n- Measurement Canada Certified",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "IndustrySpecificationId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

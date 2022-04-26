@@ -1,0 +1,106 @@
+{
+	"name": "NaphthaHydrotreaterOutputType",
+	"properties": {
+		"Name": "NaphthaHydrotreaterOutputType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of naphtha hydrotreater output.\n\nEx:\n- Liquefied petroleum gases (LPG)\n- Gasoline\n- Jet fuel\n- Kerosene\n- Diesel fuel\n- Petrochemical feedstocks\n- Lubricating oils and waxes\n- Home heating oil\n- Fuel oil \n- Asphalt",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "NaphthaHydrotreaterOutputTypeId",
+					"Description": "The unique identifier of a naphtha hydrotreater output type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType",
+						"Name": "NaphthaHydrotreaterOutputTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterOutputTypeName",
+					"Description": "The name of a naphtha hydrotreater output type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType",
+						"Name": "NaphthaHydrotreaterOutputTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "NaphthaHydrotreaterOutputTypeDescription",
+					"Description": "The description of a naphtha hydrotreater output type.",
+					"BaseAttributeReference": {
+						"Entity": "NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType",
+						"Name": "NaphthaHydrotreaterOutputTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreaterOutputType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreaterOutputType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreaterOutputTypeId\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeId\"},\"NaphthaHydrotreaterOutputTypeName\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeName\"},\"NaphthaHydrotreaterOutputTypeDescription\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"NaphthaHydrotreaterOutputType\",\"path\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\"},\"description\":\"The type of naphtha hydrotreater output.\\n\\nEx:\\n- Liquefied petroleum gases (LPG)\\n- Gasoline\\n- Jet fuel\\n- Kerosene\\n- Diesel fuel\\n- Petrochemical feedstocks\\n- Lubricating oils and waxes\\n- Home heating oil\\n- Fuel oil \\n- Asphalt\",\"primaryKey\":[\"NaphthaHydrotreaterOutputTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a naphtha hydrotreater output type.\",\"isNullable\":false,\"name\":\"NaphthaHydrotreaterOutputTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a naphtha hydrotreater output type.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterOutputTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"NaphthaHydrotreaterOutputType.cdm.json/NaphthaHydrotreaterOutputType\",\"name\":\"NaphthaHydrotreaterOutputTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a naphtha hydrotreater output type.\",\"isNullable\":true,\"name\":\"NaphthaHydrotreaterOutputTypeDescription\"}]}}}",
+			"Description": "The type of naphtha hydrotreater output.\n\nEx:\n- Liquefied petroleum gases (LPG)\n- Gasoline\n- Jet fuel\n- Kerosene\n- Diesel fuel\n- Petrochemical feedstocks\n- Lubricating oils and waxes\n- Home heating oil\n- Fuel oil \n- Asphalt",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "NaphthaHydrotreaterOutputTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

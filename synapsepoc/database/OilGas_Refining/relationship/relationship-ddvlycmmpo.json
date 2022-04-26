@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ddvlycmmpo",
+	"properties": {
+		"Name": "relationship-ddvlycmmpo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "WasteMaterialType",
+		"ToTableName": "RefineryProcessWaste",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "WasteMaterialTypeId",
+				"ToColumnName": "WasteMaterialTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"toEntity\":\"RefineryProcessWaste.cdm.json/RefineryProcessWaste\",\"joinPairs\":[{\"fromAttribute\":\"WasteMaterialTypeId\",\"toAttribute\":\"WasteMaterialTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

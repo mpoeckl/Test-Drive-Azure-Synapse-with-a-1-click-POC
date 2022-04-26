@@ -1,0 +1,26 @@
+{
+	"name": "relationship-xoqoedmynf",
+	"properties": {
+		"Name": "relationship-xoqoedmynf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "OdorHedonicToneType",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OdorHedonicToneTypeId",
+				"ToColumnName": "OdorHedonicToneTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"OdorHedonicToneType.cdm.json/OdorHedonicToneType\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"OdorHedonicToneTypeId\",\"toAttribute\":\"OdorHedonicToneTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

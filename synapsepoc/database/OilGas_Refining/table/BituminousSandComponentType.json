@@ -1,0 +1,106 @@
+{
+	"name": "BituminousSandComponentType",
+	"properties": {
+		"Name": "BituminousSandComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A measurable component of bituminous sand.\n\nEx:\n- Sulphur\n- Micron Carbon Residue\n- Sediment\n- Total Acid Number\n- Salt\n- Nickel\n- Vanadium\n- Carbon\n- Hydrogen\n- Nitrogen",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BituminousSandComponentTypeId",
+					"Description": "The unique identifier of a bituminous sand component type.",
+					"BaseAttributeReference": {
+						"Entity": "BituminousSandComponentType.cdm.json/BituminousSandComponentType",
+						"Name": "BituminousSandComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BituminousSandComponentTypeName",
+					"Description": "The name of a bituminous sand component type.",
+					"BaseAttributeReference": {
+						"Entity": "BituminousSandComponentType.cdm.json/BituminousSandComponentType",
+						"Name": "BituminousSandComponentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BituminousSandComponentTypeDescription",
+					"Description": "The description of a bituminous sand component type.",
+					"BaseAttributeReference": {
+						"Entity": "BituminousSandComponentType.cdm.json/BituminousSandComponentType",
+						"Name": "BituminousSandComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BituminousSandComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BituminousSandComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BituminousSandComponentTypeId\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeId\"},\"BituminousSandComponentTypeName\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeName\"},\"BituminousSandComponentTypeDescription\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BituminousSandComponentType\",\"path\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\"},\"description\":\"A measurable component of bituminous sand.\\n\\nEx:\\n- Sulphur\\n- Micron Carbon Residue\\n- Sediment\\n- Total Acid Number\\n- Salt\\n- Nickel\\n- Vanadium\\n- Carbon\\n- Hydrogen\\n- Nitrogen\",\"primaryKey\":[\"BituminousSandComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a bituminous sand component type.\",\"isNullable\":false,\"name\":\"BituminousSandComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a bituminous sand component type.\",\"isNullable\":true,\"name\":\"BituminousSandComponentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a bituminous sand component type.\",\"isNullable\":true,\"name\":\"BituminousSandComponentTypeDescription\"}]}}}",
+			"Description": "A measurable component of bituminous sand.\n\nEx:\n- Sulphur\n- Micron Carbon Residue\n- Sediment\n- Total Acid Number\n- Salt\n- Nickel\n- Vanadium\n- Carbon\n- Hydrogen\n- Nitrogen",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "BituminousSandComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

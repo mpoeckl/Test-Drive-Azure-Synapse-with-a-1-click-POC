@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerFeatureType",
+	"properties": {
+		"Name": "HeatExchangerFeatureType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of heat exchanger feature.\n\nEx:\n- Chemical Resistant\n- Clad\n- Corrosion Resistant\n- Double wall\n- Foam insulated\n- Jacketed\n- Lifting lugs\n- Multi-compartmental",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerFeatureTypeId",
+					"Description": "The unique identifier of a heat exchanger feature type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType",
+						"Name": "HeatExchangerFeatureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFeatureTypeName",
+					"Description": "The name of a storage tank adjustment type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType",
+						"Name": "HeatExchangerFeatureTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerFeatureTypeDescription",
+					"Description": "The description of a storage tank adjustment type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType",
+						"Name": "HeatExchangerFeatureTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFeatureType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFeatureType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerFeatureTypeId\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeId\"},\"HeatExchangerFeatureTypeName\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeName\"},\"HeatExchangerFeatureTypeDescription\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerFeatureType\",\"path\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\"},\"description\":\"A type of heat exchanger feature.\\n\\nEx:\\n- Chemical Resistant\\n- Clad\\n- Corrosion Resistant\\n- Double wall\\n- Foam insulated\\n- Jacketed\\n- Lifting lugs\\n- Multi-compartmental\",\"primaryKey\":[\"HeatExchangerFeatureTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger feature type.\",\"isNullable\":false,\"name\":\"HeatExchangerFeatureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a storage tank adjustment type.\",\"isNullable\":true,\"name\":\"HeatExchangerFeatureTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerFeatureType.cdm.json/HeatExchangerFeatureType\",\"name\":\"HeatExchangerFeatureTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a storage tank adjustment type.\",\"isNullable\":true,\"name\":\"HeatExchangerFeatureTypeDescription\"}]}}}",
+			"Description": "A type of heat exchanger feature.\n\nEx:\n- Chemical Resistant\n- Clad\n- Corrosion Resistant\n- Double wall\n- Foam insulated\n- Jacketed\n- Lifting lugs\n- Multi-compartmental",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerFeatureTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

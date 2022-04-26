@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hguxipyath",
+	"properties": {
+		"Name": "relationship-hguxipyath",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HydrotreaterCompoundType",
+		"ToTableName": "NaphthaHydrotreaterRemovedCompound",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HydrotreaterCompoundTypeId",
+				"ToColumnName": "HydrotreaterCompoundTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"toEntity\":\"NaphthaHydrotreaterRemovedCompound.cdm.json/NaphthaHydrotreaterRemovedCompound\",\"joinPairs\":[{\"fromAttribute\":\"HydrotreaterCompoundTypeId\",\"toAttribute\":\"HydrotreaterCompoundTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

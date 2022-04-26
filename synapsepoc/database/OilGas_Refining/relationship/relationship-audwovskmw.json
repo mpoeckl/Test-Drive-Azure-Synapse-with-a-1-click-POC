@@ -1,0 +1,26 @@
+{
+	"name": "relationship-audwovskmw",
+	"properties": {
+		"Name": "relationship-audwovskmw",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Structure",
+		"ToTableName": "StructureStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "StructureId",
+				"ToColumnName": "StructureId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Structure.cdm.json/Structure\",\"toEntity\":\"StructureStatus.cdm.json/StructureStatus\",\"joinPairs\":[{\"fromAttribute\":\"StructureId\",\"toAttribute\":\"StructureId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

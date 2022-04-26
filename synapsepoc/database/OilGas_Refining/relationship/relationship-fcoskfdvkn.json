@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fcoskfdvkn",
+	"properties": {
+		"Name": "relationship-fcoskfdvkn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentTermType",
+		"ToTableName": "ShipmentAssignedTerm",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentTermTypeId",
+				"ToColumnName": "ShipmentTermTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"toEntity\":\"ShipmentAssignedTerm.cdm.json/ShipmentAssignedTerm\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentTermTypeId\",\"toAttribute\":\"ShipmentTermTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

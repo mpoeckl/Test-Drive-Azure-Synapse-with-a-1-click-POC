@@ -1,0 +1,155 @@
+{
+	"name": "LocationGeographicArea",
+	"properties": {
+		"Name": "LocationGeographicArea",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship between a location and a geographic area.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "LocationId",
+					"Description": "The unique identifier of a Location.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeographicAreaId",
+					"Description": "The unique identifier of a Geographic Area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "GeographicAreaId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaRelationshipTypeId",
+					"Description": "The unique identifier of a Ledger Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationGeographicAreaRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date associated with the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date associated with the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "LocationGeographicAreaNote",
+					"Description": "A note, comment or additional information regarding the location geographic area.",
+					"BaseAttributeReference": {
+						"Entity": "LocationGeographicArea.cdm.json/LocationGeographicArea",
+						"Name": "LocationGeographicAreaNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/LocationGeographicArea",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/LocationGeographicArea",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LocationId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationId\"},\"GeographicAreaId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"GeographicAreaId\"},\"LocationGeographicAreaRelationshipTypeId\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodEndDate\"},\"LocationGeographicAreaNote\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"LocationGeographicArea\",\"path\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\"},\"description\":\"The relationship between a location and a geographic area.\",\"primaryKey\":[\"LocationId\",\"GeographicAreaId\",\"LocationGeographicAreaRelationshipTypeId\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Location.\",\"isNullable\":false,\"name\":\"LocationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"GeographicAreaId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Geographic Area.\",\"isNullable\":false,\"name\":\"GeographicAreaId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Ledger Relationship Type.\",\"isNullable\":false,\"name\":\"LocationGeographicAreaRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date associated with the location geographic area.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date associated with the location geographic area.\",\"isNullable\":true,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"LocationGeographicArea.cdm.json/LocationGeographicArea\",\"name\":\"LocationGeographicAreaNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the location geographic area.\",\"isNullable\":true,\"name\":\"LocationGeographicAreaNote\"}]}}}",
+			"Description": "The relationship between a location and a geographic area.",
+			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
+			"PrimaryKeys": "LocationId,GeographicAreaId,LocationGeographicAreaRelationshipTypeId,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

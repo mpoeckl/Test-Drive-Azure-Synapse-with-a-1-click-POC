@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerType",
+	"properties": {
+		"Name": "HeatExchangerType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of heat exchanger.\n\nEx:\n- Shell and tube heat exchanger\n- Plate heat exchangers\n- Plate and shell heat exchanger\n- Adiabatic wheel heat exchanger\n- Plate fin heat exchanger\n- Pillow plate heat exchanger\n- Fluid heat exchangers\n- Waste heat recovery units\n- Dynamic scraped surface heat exchanger\n- Phase-change heat exchangers\n- Direct contact heat exchangers",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerTypeId",
+					"Description": "The unique identifier of a heat exchanger type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerType.cdm.json/HeatExchangerType",
+						"Name": "HeatExchangerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTypeName",
+					"Description": "The name of a heat exchanger type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerType.cdm.json/HeatExchangerType",
+						"Name": "HeatExchangerTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerTypeDescription",
+					"Description": "The description of a heat exchanger type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerType.cdm.json/HeatExchangerType",
+						"Name": "HeatExchangerTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerTypeId\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeId\"},\"HeatExchangerTypeName\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeName\"},\"HeatExchangerTypeDescription\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerType\",\"path\":\"HeatExchangerType.cdm.json/HeatExchangerType\"},\"description\":\"The type of heat exchanger.\\n\\nEx:\\n- Shell and tube heat exchanger\\n- Plate heat exchangers\\n- Plate and shell heat exchanger\\n- Adiabatic wheel heat exchanger\\n- Plate fin heat exchanger\\n- Pillow plate heat exchanger\\n- Fluid heat exchangers\\n- Waste heat recovery units\\n- Dynamic scraped surface heat exchanger\\n- Phase-change heat exchangers\\n- Direct contact heat exchangers\",\"primaryKey\":[\"HeatExchangerTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger type.\",\"isNullable\":false,\"name\":\"HeatExchangerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger type.\",\"isNullable\":true,\"name\":\"HeatExchangerTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger type.\",\"isNullable\":true,\"name\":\"HeatExchangerTypeDescription\"}]}}}",
+			"Description": "The type of heat exchanger.\n\nEx:\n- Shell and tube heat exchanger\n- Plate heat exchangers\n- Plate and shell heat exchanger\n- Adiabatic wheel heat exchanger\n- Plate fin heat exchanger\n- Pillow plate heat exchanger\n- Fluid heat exchangers\n- Waste heat recovery units\n- Dynamic scraped surface heat exchanger\n- Phase-change heat exchangers\n- Direct contact heat exchangers",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

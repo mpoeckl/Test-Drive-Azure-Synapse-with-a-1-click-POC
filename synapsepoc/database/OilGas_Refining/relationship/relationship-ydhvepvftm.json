@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ydhvepvftm",
+	"properties": {
+		"Name": "relationship-ydhvepvftm",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RefineryTestDocument",
+		"ToTableName": "RefineryTestDocumentRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DocumentId",
+				"ToColumnName": "DocumentId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RefineryTestDocument.cdm.json/RefineryTestDocument\",\"toEntity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"DocumentId\",\"toAttribute\":\"DocumentId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

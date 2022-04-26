@@ -1,0 +1,26 @@
+{
+	"name": "relationship-qzjoewglwr",
+	"properties": {
+		"Name": "relationship-qzjoewglwr",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "HeatExchangerSurfaceTreatmentCoatingType",
+		"ToTableName": "HeatExchanger",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "HeatExchangerSurfaceTreatmentCoatingTypeId",
+				"ToColumnName": "HeatExchangerSurfaceTreatmentCoatingTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"HeatExchangerSurfaceTreatmentCoatingType.cdm.json/HeatExchangerSurfaceTreatmentCoatingType\",\"toEntity\":\"HeatExchanger.cdm.json/HeatExchanger\",\"joinPairs\":[{\"fromAttribute\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\",\"toAttribute\":\"HeatExchangerSurfaceTreatmentCoatingTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

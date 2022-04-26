@@ -1,0 +1,105 @@
+{
+	"name": "ComponentCasingMaterial",
+	"properties": {
+		"Name": "ComponentCasingMaterial",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The primary material used to construct the component casing.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingMaterial.cdm.json/ComponentCasingMaterial",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingMaterial.cdm.json/ComponentCasingMaterial",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCasingMaterialNote",
+					"Description": "A note, comment or additional information regarding the Component Casing Material.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingMaterial.cdm.json/ComponentCasingMaterial",
+						"Name": "ComponentCasingMaterialNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCasingMaterial",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCasingMaterial",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentId\"},\"MaterialId\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"MaterialId\"},\"ComponentCasingMaterialNote\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentCasingMaterialNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentCasingMaterial\",\"path\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\"},\"description\":\"The primary material used to construct the component casing.\",\"primaryKey\":[\"ComponentId\",\"MaterialId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":false,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentCasingMaterialNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Component Casing Material.\",\"isNullable\":true,\"name\":\"ComponentCasingMaterialNote\"}]}}}",
+			"Description": "The primary material used to construct the component casing.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,MaterialId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

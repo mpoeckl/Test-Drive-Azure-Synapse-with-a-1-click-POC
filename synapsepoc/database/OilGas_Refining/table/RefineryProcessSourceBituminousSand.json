@@ -1,0 +1,171 @@
+{
+	"name": "RefineryProcessSourceBituminousSand",
+	"properties": {
+		"Name": "RefineryProcessSourceBituminousSand",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Bituminous sand input into the refinery process.\n\nBituminous Sand or oil sands are a type of unconventional petroleum deposit. \n\nOil sands are either loose sands or partially consolidated sandstone containing a naturally occurring mixture of sand, clay, and water, saturated with a dense and extremely viscous form of petroleum technically referred to as bitumen.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BituminousSandTypeId",
+					"Description": "The unique identifier of a bituminous sand type.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "BituminousSandTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp that the associated bituminous sand type is input into the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp that the associated bituminous sand type is input into the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "BituminousSandSourceUnits",
+					"Description": "The units of bituminous sand input into the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "BituminousSandSourceUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessSourceBituminousSandNote",
+					"Description": "A note, comment or additional information regarding the refinery process source bituminous sand.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand",
+						"Name": "RefineryProcessSourceBituminousSandNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceBituminousSand",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceBituminousSand",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"RefineryProcessId\"},\"BituminousSandTypeId\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"BituminousSandTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"PeriodEndTimestamp\"},\"BituminousSandSourceUnits\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"BituminousSandSourceUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessSourceBituminousSandNote\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"RefineryProcessSourceBituminousSandNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessSourceBituminousSand\",\"path\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\"},\"description\":\"Bituminous sand input into the refinery process.\\n\\nBituminous Sand or oil sands are a type of unconventional petroleum deposit. \\n\\nOil sands are either loose sands or partially consolidated sandstone containing a naturally occurring mixture of sand, clay, and water, saturated with a dense and extremely viscous form of petroleum technically referred to as bitumen.\",\"primaryKey\":[\"RefineryProcessId\",\"BituminousSandTypeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"BituminousSandTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a bituminous sand type.\",\"isNullable\":false,\"name\":\"BituminousSandTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp that the associated bituminous sand type is input into the refinery process.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp that the associated bituminous sand type is input into the refinery process.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"BituminousSandSourceUnits\"},\"dataType\":\"integer\",\"description\":\"The units of bituminous sand input into the refinery process.\",\"isNullable\":true,\"name\":\"BituminousSandSourceUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessSourceBituminousSand.cdm.json/RefineryProcessSourceBituminousSand\",\"name\":\"RefineryProcessSourceBituminousSandNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process source bituminous sand.\",\"isNullable\":true,\"name\":\"RefineryProcessSourceBituminousSandNote\"}]}}}",
+			"Description": "Bituminous sand input into the refinery process.\n\nBituminous Sand or oil sands are a type of unconventional petroleum deposit. \n\nOil sands are either loose sands or partially consolidated sandstone containing a naturally occurring mixture of sand, clay, and water, saturated with a dense and extremely viscous form of petroleum technically referred to as bitumen.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,BituminousSandTypeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

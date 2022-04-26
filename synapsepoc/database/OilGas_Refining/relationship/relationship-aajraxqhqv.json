@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aajraxqhqv",
+	"properties": {
+		"Name": "relationship-aajraxqhqv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "RiskPhrase",
+		"ToTableName": "ProductRiskPhrase",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "RiskPhraseId",
+				"ToColumnName": "RiskPhraseId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"RiskPhrase.cdm.json/RiskPhrase\",\"toEntity\":\"ProductRiskPhrase.cdm.json/ProductRiskPhrase\",\"joinPairs\":[{\"fromAttribute\":\"RiskPhraseId\",\"toAttribute\":\"RiskPhraseId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

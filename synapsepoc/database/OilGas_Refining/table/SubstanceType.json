@@ -1,0 +1,122 @@
+{
+	"name": "SubstanceType",
+	"properties": {
+		"Name": "SubstanceType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of substance related to a well event.\n\nEx:\n- Acetic Acid\n- Barite\n- Blowout Fluid\n- Brine\n- Cement\n- Drilling Fluid\n- Drilling Mud\n- Frac Fluid\n- Gas\n- Gas-Cut Mud\n- Injection Gas\n- Kick Fluids\n- Oil\n- Oil-Emulsion Mud\n- Packer Fluid\n- Petroleum product\n- Propping Agent / Aluminum Pellets\n- Propping Agent / Sand Grains\n- Slurry\n- Spud Mud\n- Waste product\n- Water\n\nwhere:\n\nACETIC ACID\nAn organic acid compound sometimes used to acidize oil wells.\n \nBARITE\nBarium sulfate, BaSO4; a mineral frequently used to increase the  weight or density of drilling mud. Its relative density is 4.2 (meaning that it is 4.2 times denser than water). See barium sulfate, mud.\n\nCEMENT\nA powder consisting of alumina, silica, lime, and other substances that hardens when mixed with water. Extensively used in the  oil industry to bond casing to the  walls of the  wellbore. \n\nDRILLING MUD\nA specially compounded liquid circulated through the  wellbore during rotary drilling operations. See drilling fluid, mud.\n\nFRAC FLUID\nA fluid used in the  fracturing process (for example, a method of stimulating production by opening new flow channels in the  formation surrounding a production well). Under extremely high hydraulic pressure, frac fluids (such as distillate, diesel fuel, crude oil, dilute hydrochloric acid, water, or kerosene) are pumped downward through production tubing or drill pipe and forced out below a packer or between two packers. The  pressure causes cracks to open in the  formation, and the  fluid penetrates the  formation through the  cracks. Sand grains, aluminum pellets, walnut shells, or similar materials (propping agents) are carried in suspension by the  fluid into the  cracks. When the  pressure is released at the  surface, the  fracturing fluid returns to the  well but leaves behind the  propping agents to hold open the  formation cracks. \n\nGAS-CUT MUD \nA drilling mud that contains entrained formation gas, giving the  mud a characteristically fluffy texture. Gas cut mud may cause a lowering of mud weight. \n\nINJECTION GAS\nA high-pressure gas injected into a formation to maintain or restore reservoir pressure. 2. gas injected in gas-lift operations. \n\nKICK FLUIDS \nOil, gas, water, or any combination that enters the  borehole from a permeable formation.\n\nOIL-EMULSION MUD\nA water-base mud in which water is the  continuous phase and oil is the  dispersed phase.\n\nPACKER FLUID\nn: a liquid, usually salt water or oil, but sometimes mud, used in a well when a packer is between the  tubing and the  casing. Packer fluid must be heavy enough to shut off the  pressure of the  formation being produced, and should not stiffen or settle out of suspension over long periods of time, and must be non-corrosive. \n\nPROPPING AGENT\nA granular substance (sand grains, aluminum pellets, or other material) that is carried in suspension by the  fracturing fluid and that serves to keep the  cracks open when fracturing fluid is withdrawn after a fracture treatment. \n\nSLURRY \nIn drilling, a plastic mixture of cement and water that is pumped into a well to harden. There it supports the  casing and provides a seal in the  wellbore to prevent migration of underground fluids. 2. a mixture in which solids are suspended in a liquid. \n\nSPUD MUD \nThe  fluid used when drilling starts at the  surface, often a thick bentonite-lime slurry.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SubstanceTypeId",
+					"Description": "The unique identifier of a substance type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstanceType.cdm.json/SubstanceType",
+						"Name": "SubstanceTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SubstanceTypeName",
+					"Description": "The name of a substance type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstanceType.cdm.json/SubstanceType",
+						"Name": "SubstanceTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SubstanceTypeDescription",
+					"Description": "The description of a substance type.",
+					"BaseAttributeReference": {
+						"Entity": "SubstanceType.cdm.json/SubstanceType",
+						"Name": "SubstanceTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SubstanceCategoryId",
+					"Description": "The unique identifier of a substance category.",
+					"BaseAttributeReference": {
+						"Entity": "SubstanceType.cdm.json/SubstanceType",
+						"Name": "SubstanceCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SubstanceType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SubstanceType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SubstanceTypeId\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeId\"},\"SubstanceTypeName\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeName\"},\"SubstanceTypeDescription\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeDescription\"},\"SubstanceCategoryId\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceCategoryId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SubstanceType\",\"path\":\"SubstanceType.cdm.json/SubstanceType\"},\"description\":\"A type of substance related to a well event.\\n\\nEx:\\n- Acetic Acid\\n- Barite\\n- Blowout Fluid\\n- Brine\\n- Cement\\n- Drilling Fluid\\n- Drilling Mud\\n- Frac Fluid\\n- Gas\\n- Gas-Cut Mud\\n- Injection Gas\\n- Kick Fluids\\n- Oil\\n- Oil-Emulsion Mud\\n- Packer Fluid\\n- Petroleum product\\n- Propping Agent / Aluminum Pellets\\n- Propping Agent / Sand Grains\\n- Slurry\\n- Spud Mud\\n- Waste product\\n- Water\\n\\nwhere:\\n\\nACETIC ACID\\nAn organic acid compound sometimes used to acidize oil wells.\\n \\nBARITE\\nBarium sulfate, BaSO4; a mineral frequently used to increase the  weight or density of drilling mud. Its relative density is 4.2 (meaning that it is 4.2 times denser than water). See barium sulfate, mud.\\n\\nCEMENT\\nA powder consisting of alumina, silica, lime, and other substances that hardens when mixed with water. Extensively used in the  oil industry to bond casing to the  walls of the  wellbore. \\n\\nDRILLING MUD\\nA specially compounded liquid circulated through the  wellbore during rotary drilling operations. See drilling fluid, mud.\\n\\nFRAC FLUID\\nA fluid used in the  fracturing process (for example, a method of stimulating production by opening new flow channels in the  formation surrounding a production well). Under extremely high hydraulic pressure, frac fluids (such as distillate, diesel fuel, crude oil, dilute hydrochloric acid, water, or kerosene) are pumped downward through production tubing or drill pipe and forced out below a packer or between two packers. The  pressure causes cracks to open in the  formation, and the  fluid penetrates the  formation through the  cracks. Sand grains, aluminum pellets, walnut shells, or similar materials (propping agents) are carried in suspension by the  fluid into the  cracks. When the  pressure is released at the  surface, the  fracturing fluid returns to the  well but leaves behind the  propping agents to hold open the  formation cracks. \\n\\nGAS-CUT MUD \\nA drilling mud that contains entrained formation gas, giving the  mud a characteristically fluffy texture. Gas cut mud may cause a lowering of mud weight. \\n\\nINJECTION GAS\\nA high-pressure gas injected into a formation to maintain or restore reservoir pressure. 2. gas injected in gas-lift operations. \\n\\nKICK FLUIDS \\nOil, gas, water, or any combination that enters the  borehole from a permeable formation.\\n\\nOIL-EMULSION MUD\\nA water-base mud in which water is the  continuous phase and oil is the  dispersed phase.\\n\\nPACKER FLUID\\nn: a liquid, usually salt water or oil, but sometimes mud, used in a well when a packer is between the  tubing and the  casing. Packer fluid must be heavy enough to shut off the  pressure of the  formation being produced, and should not stiffen or settle out of suspension over long periods of time, and must be non-corrosive. \\n\\nPROPPING AGENT\\nA granular substance (sand grains, aluminum pellets, or other material) that is carried in suspension by the  fracturing fluid and that serves to keep the  cracks open when fracturing fluid is withdrawn after a fracture treatment. \\n\\nSLURRY \\nIn drilling, a plastic mixture of cement and water that is pumped into a well to harden. There it supports the  casing and provides a seal in the  wellbore to prevent migration of underground fluids. 2. a mixture in which solids are suspended in a liquid. \\n\\nSPUD MUD \\nThe  fluid used when drilling starts at the  surface, often a thick bentonite-lime slurry.\",\"primaryKey\":[\"SubstanceTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a substance type.\",\"isNullable\":false,\"name\":\"SubstanceTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a substance type.\",\"isNullable\":true,\"name\":\"SubstanceTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a substance type.\",\"isNullable\":true,\"name\":\"SubstanceTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SubstanceType.cdm.json/SubstanceType\",\"name\":\"SubstanceCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a substance category.\",\"isNullable\":true,\"name\":\"SubstanceCategoryId\"}]}}}",
+			"Description": "A type of substance related to a well event.\n\nEx:\n- Acetic Acid\n- Barite\n- Blowout Fluid\n- Brine\n- Cement\n- Drilling Fluid\n- Drilling Mud\n- Frac Fluid\n- Gas\n- Gas-Cut Mud\n- Injection Gas\n- Kick Fluids\n- Oil\n- Oil-Emulsion Mud\n- Packer Fluid\n- Petroleum product\n- Propping Agent / Aluminum Pellets\n- Propping Agent / Sand Grains\n- Slurry\n- Spud Mud\n- Waste product\n- Water\n\nwhere:\n\nACETIC ACID\nAn organic acid compound sometimes used to acidize oil wells.\n \nBARITE\nBarium sulfate, BaSO4; a mineral frequently used to increase the  weight or density of drilling mud. Its relative density is 4.2 (meaning that it is 4.2 times denser than water). See barium sulfate, mud.\n\nCEMENT\nA powder consisting of alumina, silica, lime, and other substances that hardens when mixed with water. Extensively used in the  oil industry to bond casing to the  walls of the  wellbore. \n\nDRILLING MUD\nA specially compounded liquid circulated through the  wellbore during rotary drilling operations. See drilling fluid, mud.\n\nFRAC FLUID\nA fluid used in the  fracturing process (for example, a method of stimulating production by opening new flow channels in the  formation surrounding a production well). Under extremely high hydraulic pressure, frac fluids (such as distillate, diesel fuel, crude oil, dilute hydrochloric acid, water, or kerosene) are pumped downward through production tubing or drill pipe and forced out below a packer or between two packers. The  pressure causes cracks to open in the  formation, and the  fluid penetrates the  formation through the  cracks. Sand grains, aluminum pellets, walnut shells, or similar materials (propping agents) are carried in suspension by the  fluid into the  cracks. When the  pressure is released at the  surface, the  fracturing fluid returns to the  well but leaves behind the  propping agents to hold open the  formation cracks. \n\nGAS-CUT MUD \nA drilling mud that contains entrained formation gas, giving the  mud a characteristically fluffy texture. Gas cut mud may cause a lowering of mud weight. \n\nINJECTION GAS\nA high-pressure gas injected into a formation to maintain or restore reservoir pressure. 2. gas injected in gas-lift operations. \n\nKICK FLUIDS \nOil, gas, water, or any combination that enters the  borehole from a permeable formation.\n\nOIL-EMULSION MUD\nA water-base mud in which water is the  continuous phase and oil is the  dispersed phase.\n\nPACKER FLUID\nn: a liquid, usually salt water or oil, but sometimes mud, used in a well when a packer is between the  tubing and the  casing. Packer fluid must be heavy enough to shut off the  pressure of the  formation being produced, and should not stiffen or settle out of suspension over long periods of time, and must be non-corrosive. \n\nPROPPING AGENT\nA granular substance (sand grains, aluminum pellets, or other material) that is carried in suspension by the  fracturing fluid and that serves to keep the  cracks open when fracturing fluid is withdrawn after a fracture treatment. \n\nSLURRY \nIn drilling, a plastic mixture of cement and water that is pumped into a well to harden. There it supports the  casing and provides a seal in the  wellbore to prevent migration of underground fluids. 2. a mixture in which solids are suspended in a liquid. \n\nSPUD MUD \nThe  fluid used when drilling starts at the  surface, often a thick bentonite-lime slurry.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SubstanceTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

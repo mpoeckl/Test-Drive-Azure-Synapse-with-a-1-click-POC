@@ -1,0 +1,170 @@
+{
+	"name": "ComponentCasingType",
+	"properties": {
+		"Name": "ComponentCasingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of casing associated with a component.\n\nEx:\n- Bare\n- Coated\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentCasingTypeId",
+					"Description": "The unique identifier of a Component Casing Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "ComponentCasingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCasingTypeName",
+					"Description": "The name of a Component Casing Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "ComponentCasingTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentCasingTypeDescription",
+					"Description": "The description of a Component Casing Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "ComponentCasingTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "CasingInsulatorTypeId",
+					"Description": "The unique identifier of a casing insulator type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "CasingInsulatorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CasingSealTypeId",
+					"Description": "The unique identifier of a casing seal type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "CasingSealTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CasingClosureTypeId",
+					"Description": "The unique identifier of a casing closure type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "CasingClosureTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCasingType.cdm.json/ComponentCasingType",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCasingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCasingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentCasingTypeId\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeId\"},\"ComponentCasingTypeName\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeName\"},\"ComponentCasingTypeDescription\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeDescription\"},\"CasingInsulatorTypeId\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingInsulatorTypeId\"},\"CasingSealTypeId\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingSealTypeId\"},\"CasingClosureTypeId\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingClosureTypeId\"},\"MaterialId\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"MaterialId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentCasingType\",\"path\":\"ComponentCasingType.cdm.json/ComponentCasingType\"},\"description\":\"The type of casing associated with a component.\\n\\nEx:\\n- Bare\\n- Coated\\n- Unknown\",\"primaryKey\":[\"ComponentCasingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Casing Type.\",\"isNullable\":false,\"name\":\"ComponentCasingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Casing Type.\",\"isNullable\":true,\"name\":\"ComponentCasingTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"ComponentCasingTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Casing Type.\",\"isNullable\":true,\"name\":\"ComponentCasingTypeDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingInsulatorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing insulator type.\",\"isNullable\":true,\"name\":\"CasingInsulatorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingSealTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing seal type.\",\"isNullable\":true,\"name\":\"CasingSealTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"CasingClosureTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a casing closure type.\",\"isNullable\":true,\"name\":\"CasingClosureTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCasingType.cdm.json/ComponentCasingType\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"}]}}}",
+			"Description": "The type of casing associated with a component.\n\nEx:\n- Bare\n- Coated\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentCasingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

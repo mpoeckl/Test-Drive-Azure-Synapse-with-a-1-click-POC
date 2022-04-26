@@ -1,0 +1,26 @@
+{
+	"name": "relationship-eydijveulz",
+	"properties": {
+		"Name": "relationship-eydijveulz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DistillationTowerComponentType",
+		"ToTableName": "DistillationTowerComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DistillationTowerComponentTypeId",
+				"ToColumnName": "DistillationTowerComponentTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DistillationTowerComponentType.cdm.json/DistillationTowerComponentType\",\"toEntity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"joinPairs\":[{\"fromAttribute\":\"DistillationTowerComponentTypeId\",\"toAttribute\":\"DistillationTowerComponentTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

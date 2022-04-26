@@ -1,0 +1,156 @@
+{
+	"name": "ComponentBillOfMaterial",
+	"properties": {
+		"Name": "ComponentBillOfMaterial",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Bill of Material (BOM) for the associated component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "BomLevelNumber",
+					"Description": "The Bill of Material level for the associated Item/BOM components.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "BomLevelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSku",
+					"Description": "The Stock Keeping Unit identifier, which is typically used for inventory-related activities.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "ItemSku"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 20,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BomQuantity",
+					"Description": "The quantity of Items associated with the BOM Level.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "BomQuantity"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "Note",
+					"Description": "A note, comment or additional detail regarding the BOM component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "Note"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentBillOfMaterial",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentBillOfMaterial",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ComponentId\"},\"BomLevelNumber\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ItemSku\"},\"BomQuantity\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomQuantity\"},\"Note\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"Note\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"UnitOfMeasureId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentBillOfMaterial\",\"path\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\"},\"description\":\"The Bill of Material (BOM) for the associated component.\",\"primaryKey\":[\"ComponentId\",\"BomLevelNumber\",\"ItemSku\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomLevelNumber\"},\"dataType\":\"integer\",\"description\":\"The Bill of Material level for the associated Item/BOM components.\",\"isNullable\":false,\"name\":\"BomLevelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ItemSku\"},\"dataType\":\"string\",\"dataTypeLength\":20,\"description\":\"The Stock Keeping Unit identifier, which is typically used for inventory-related activities.\",\"isNullable\":false,\"name\":\"ItemSku\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomQuantity\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The quantity of Items associated with the BOM Level.\",\"isNullable\":true,\"scale\":2,\"name\":\"BomQuantity\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"Note\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional detail regarding the BOM component.\",\"isNullable\":true,\"name\":\"Note\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"}]}}}",
+			"Description": "The Bill of Material (BOM) for the associated component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,BomLevelNumber,ItemSku",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

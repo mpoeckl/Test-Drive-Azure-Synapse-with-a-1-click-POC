@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rkxhisigug",
+	"properties": {
+		"Name": "relationship-rkxhisigug",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PipeInstallationMethod",
+		"ToTableName": "Pipe",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PipeInstallationMethodId",
+				"ToColumnName": "PipeInstallationMethodId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PipeInstallationMethod.cdm.json/PipeInstallationMethod\",\"toEntity\":\"Pipe.cdm.json/Pipe\",\"joinPairs\":[{\"fromAttribute\":\"PipeInstallationMethodId\",\"toAttribute\":\"PipeInstallationMethodId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

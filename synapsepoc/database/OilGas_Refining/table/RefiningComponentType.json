@@ -1,0 +1,106 @@
+{
+	"name": "RefiningComponentType",
+	"properties": {
+		"Name": "RefiningComponentType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of Refining Component.\n\nEx:\n- Alkylation Unit  \n- Amine Gas Treater (Claus) Unit \n- Api Separators Unit\n- Atmospheric Distillation Unit  \n- Bitumen Packing System\n- Burner\n- Catalytic Reformer Unit  \n- Coking Unit\n- Compensator\n- Compressor\n- Desalter Unit  \n- Device\n- Dimerization Unit  \n- Dissolved Air Flotation (Daf) Unit\n- Distillate Hydrotreater Unit \n- Energy Equipment\n- Explosion-Proof Electrical Heater\n- Filter Systems \n- Fire Protection Equipment\n- Fluid Catalytic Cracker (Fcc) Unit  \n- Heat Exchanger\n- Hydrocracker Unit\n- Hydrotreater Unit \n- Isomerization Unit  \n- Merox Unit  \n- Meter\n- Mixer\n- Naphtha Hydrotreater Unit  \n- Pipe\n- Power Generator\n- Pump\n- Radio Control Module Board (Rcm)\n- Solvent Dewaxing Unit\n- Solvent Refining Unit\n- Steam Reforming Unit  \n- Storage Tank\n- Sulfur Granulation Systems\n- Switch\n- Vacuum Distillation Unit  \n- Visbreaking Unit  \n- Wastewater Collection Unit",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentTypeId",
+					"Description": "The unique identifier of a Component Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningComponentType.cdm.json/RefiningComponentType",
+						"Name": "ComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentTypeName",
+					"Description": "The name of a Component Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningComponentType.cdm.json/RefiningComponentType",
+						"Name": "ComponentTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentTypeDescription",
+					"Description": "The description of a Component Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningComponentType.cdm.json/RefiningComponentType",
+						"Name": "ComponentTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningComponentType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningComponentType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentTypeId\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeId\"},\"ComponentTypeName\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeName\"},\"ComponentTypeDescription\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefiningComponentType\",\"path\":\"RefiningComponentType.cdm.json/RefiningComponentType\"},\"description\":\"The type of Refining Component.\\n\\nEx:\\n- Alkylation Unit  \\n- Amine Gas Treater (Claus) Unit \\n- Api Separators Unit\\n- Atmospheric Distillation Unit  \\n- Bitumen Packing System\\n- Burner\\n- Catalytic Reformer Unit  \\n- Coking Unit\\n- Compensator\\n- Compressor\\n- Desalter Unit  \\n- Device\\n- Dimerization Unit  \\n- Dissolved Air Flotation (Daf) Unit\\n- Distillate Hydrotreater Unit \\n- Energy Equipment\\n- Explosion-Proof Electrical Heater\\n- Filter Systems \\n- Fire Protection Equipment\\n- Fluid Catalytic Cracker (Fcc) Unit  \\n- Heat Exchanger\\n- Hydrocracker Unit\\n- Hydrotreater Unit \\n- Isomerization Unit  \\n- Merox Unit  \\n- Meter\\n- Mixer\\n- Naphtha Hydrotreater Unit  \\n- Pipe\\n- Power Generator\\n- Pump\\n- Radio Control Module Board (Rcm)\\n- Solvent Dewaxing Unit\\n- Solvent Refining Unit\\n- Steam Reforming Unit  \\n- Storage Tank\\n- Sulfur Granulation Systems\\n- Switch\\n- Vacuum Distillation Unit  \\n- Visbreaking Unit  \\n- Wastewater Collection Unit\",\"primaryKey\":[\"ComponentTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Type.\",\"isNullable\":false,\"name\":\"ComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Type.\",\"isNullable\":true,\"name\":\"ComponentTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Type.\",\"isNullable\":true,\"name\":\"ComponentTypeDescription\"}]}}}",
+			"Description": "The type of Refining Component.\n\nEx:\n- Alkylation Unit  \n- Amine Gas Treater (Claus) Unit \n- Api Separators Unit\n- Atmospheric Distillation Unit  \n- Bitumen Packing System\n- Burner\n- Catalytic Reformer Unit  \n- Coking Unit\n- Compensator\n- Compressor\n- Desalter Unit  \n- Device\n- Dimerization Unit  \n- Dissolved Air Flotation (Daf) Unit\n- Distillate Hydrotreater Unit \n- Energy Equipment\n- Explosion-Proof Electrical Heater\n- Filter Systems \n- Fire Protection Equipment\n- Fluid Catalytic Cracker (Fcc) Unit  \n- Heat Exchanger\n- Hydrocracker Unit\n- Hydrotreater Unit \n- Isomerization Unit  \n- Merox Unit  \n- Meter\n- Mixer\n- Naphtha Hydrotreater Unit  \n- Pipe\n- Power Generator\n- Pump\n- Radio Control Module Board (Rcm)\n- Solvent Dewaxing Unit\n- Solvent Refining Unit\n- Steam Reforming Unit  \n- Storage Tank\n- Sulfur Granulation Systems\n- Switch\n- Vacuum Distillation Unit  \n- Visbreaking Unit  \n- Wastewater Collection Unit",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

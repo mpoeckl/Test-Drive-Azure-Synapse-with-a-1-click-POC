@@ -1,0 +1,714 @@
+{
+	"name": "RefineryProduction",
+	"properties": {
+		"Name": "RefineryProduction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Refinery production metrics for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryId",
+					"Description": "The unique identifier of a Refinery.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "RefineryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the refinery production metrics.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the refinery production metrics.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PlannedVacuumDistillationProductionBarrelsPerStreamDay",
+					"Description": "The planned vacuum distillation product production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedVacuumDistillationProductionBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualVacuumDistillationProductionBarrelsPerStreamDay",
+					"Description": "The actual vacuum distillation product production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualVacuumDistillationProductionBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedThermalCrackingBarrelsPerStreamDay",
+					"Description": "The planned thermal crack process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedThermalCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualThermalCrackingBarrelsPerStreamDay",
+					"Description": "The actual thermal crack process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualThermalCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedTotalCokingBarrelsPerStreamDay",
+					"Description": "The planned coking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedTotalCokingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualTotalCokingBarrelsPerStreamDay",
+					"Description": "The actual coking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualTotalCokingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedVisibreakingBarrelsPerStreamDay",
+					"Description": "The planned visibreaking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedVisibreakingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualVisibreakingBarrelsPerStreamDay",
+					"Description": "The actual visibreaking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualVisibreakingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay",
+					"Description": "The planned catalytic cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay",
+					"Description": "The actual catalytic cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay",
+					"Description": "The planned catalytic cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay",
+					"Description": "The actual catalytic cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The planned distillate catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The actual distillate catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The planned gas oil catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The actual gas oil catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The planned residual catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay",
+					"Description": "The actual residual catalytic hydro cracking process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedLowPressureCatalyticReformingBarrelsPerStreamDay",
+					"Description": "The planned low pressure catalytic reforming process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedLowPressureCatalyticReformingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualLowPressureCatalyticReformingBarrelsPerStreamDay",
+					"Description": "The actual low pressure catalytic reforming process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualLowPressureCatalyticReformingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedHighPressureCatalyticReformingBarrelsPerStreamDay",
+					"Description": "The planned high pressure catalytic reforming process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedHighPressureCatalyticReformingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualHighPressureCatalyticReformingBarrelsPerStreamDay",
+					"Description": "The actual high pressure catalytic reforming process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualHighPressureCatalyticReformingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned naphtha reformer feed catalytic hydrotreating desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual naphtha reformer feed catalytic hydrotreating desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned gasoline catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual gasoline catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned heavy gas oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual heavy gas oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned distillate fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual distillate fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned kerosene/jet fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual kerosene/jet fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned diesel fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual diesel fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The planned residual fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay",
+					"Description": "The actual residual fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ActualFuelsSolventDeasphaltingBarrelsPerStreamDay",
+					"Description": "The planned fuels solvent deasphalting process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "ActualFuelsSolventDeasphaltingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay",
+					"Description": "The actual fuels solvent deasphalting process production for the period in barrels per stream day.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProduction.cdm.json/RefineryProduction",
+						"Name": "PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProduction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProduction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"RefineryId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PeriodEndTimestamp\"},\"PlannedVacuumDistillationProductionBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedVacuumDistillationProductionBarrelsPerStreamDay\"},\"ActualVacuumDistillationProductionBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualVacuumDistillationProductionBarrelsPerStreamDay\"},\"PlannedThermalCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedThermalCrackingBarrelsPerStreamDay\"},\"ActualThermalCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualThermalCrackingBarrelsPerStreamDay\"},\"PlannedTotalCokingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedTotalCokingBarrelsPerStreamDay\"},\"ActualTotalCokingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualTotalCokingBarrelsPerStreamDay\"},\"PlannedVisibreakingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedVisibreakingBarrelsPerStreamDay\"},\"ActualVisibreakingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualVisibreakingBarrelsPerStreamDay\"},\"PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},\"ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},\"PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},\"ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},\"PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},\"ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},\"PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},\"ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},\"PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},\"ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},\"PlannedLowPressureCatalyticReformingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedLowPressureCatalyticReformingBarrelsPerStreamDay\"},\"ActualLowPressureCatalyticReformingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualLowPressureCatalyticReformingBarrelsPerStreamDay\"},\"PlannedHighPressureCatalyticReformingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedHighPressureCatalyticReformingBarrelsPerStreamDay\"},\"ActualHighPressureCatalyticReformingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualHighPressureCatalyticReformingBarrelsPerStreamDay\"},\"PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"ActualFuelsSolventDeasphaltingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualFuelsSolventDeasphaltingBarrelsPerStreamDay\"},\"PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProduction\",\"path\":\"RefineryProduction.cdm.json/RefineryProduction\"},\"description\":\"Refinery production metrics for the associated period.\",\"primaryKey\":[\"RefineryId\",\"PeriodStartTimestamp\",\"PeriodEndTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"RefineryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Refinery.\",\"isNullable\":false,\"name\":\"RefineryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the refinery production metrics.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the refinery production metrics.\",\"isNullable\":false,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedVacuumDistillationProductionBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned vacuum distillation product production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedVacuumDistillationProductionBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualVacuumDistillationProductionBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual vacuum distillation product production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualVacuumDistillationProductionBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedThermalCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned thermal crack process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedThermalCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualThermalCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual thermal crack process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualThermalCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedTotalCokingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned coking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedTotalCokingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualTotalCokingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual coking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualTotalCokingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedVisibreakingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned visibreaking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedVisibreakingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualVisibreakingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual visibreaking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualVisibreakingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned catalytic cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual catalytic cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualCatalyticCrackingFreshFeedBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned catalytic cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual catalytic cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualCatalyticCrackingRecycleFeedBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned distillate catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual distillate catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualDistillateCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned gas oil catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual gas oil catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualGasOilCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned residual catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual residual catalytic hydro cracking process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualResidualCatalyticHydroCrackingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedLowPressureCatalyticReformingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned low pressure catalytic reforming process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedLowPressureCatalyticReformingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualLowPressureCatalyticReformingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual low pressure catalytic reforming process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualLowPressureCatalyticReformingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedHighPressureCatalyticReformingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned high pressure catalytic reforming process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedHighPressureCatalyticReformingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualHighPressureCatalyticReformingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual high pressure catalytic reforming process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualHighPressureCatalyticReformingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned naphtha reformer feed catalytic hydrotreating desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual naphtha reformer feed catalytic hydrotreating desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualNaphthaReformerFeedCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned gasoline catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual gasoline catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualGasolineCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned heavy gas oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual heavy gas oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualHeavyGasOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned distillate fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual distillate fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualDistillateFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned kerosene/jet fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual kerosene/jet fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualKeroseneJetFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned diesel fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual diesel fuel catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualDieselFuelCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned residual fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual residual fuel oil catalytic hydrotreating/desulfurization process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualResidualFuelOilCatalyticHydrotreatingDesulfurizationBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"ActualFuelsSolventDeasphaltingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The planned fuels solvent deasphalting process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"ActualFuelsSolventDeasphaltingBarrelsPerStreamDay\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProduction.cdm.json/RefineryProduction\",\"name\":\"PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay\"},\"dataType\":\"integer\",\"description\":\"The actual fuels solvent deasphalting process production for the period in barrels per stream day.\",\"isNullable\":true,\"name\":\"PlannedFuelsSolventDeasphaltingBarrelsPerStreamDay\"}]}}}",
+			"Description": "Refinery production metrics for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "RefineryId,PeriodStartTimestamp,PeriodEndTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

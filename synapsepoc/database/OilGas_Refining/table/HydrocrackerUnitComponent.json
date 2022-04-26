@@ -1,0 +1,122 @@
+{
+	"name": "HydrocrackerUnitComponent",
+	"properties": {
+		"Name": "HydrocrackerUnitComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A Hydrocracker Unit component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrocrackerUnitComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent",
+						"Name": "HydrocrackerUnitComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentTypeId",
+					"Description": "The unique identifier of a hydrocracker unit component type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent",
+						"Name": "HydrocrackerUnitComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentDescription",
+					"Description": "The description of a hydrocracker unit component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent",
+						"Name": "HydrocrackerUnitComponentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrocrackerUnitComponentNote",
+					"Description": "A note, comment or additional information regarding the hydrocracker unit component.",
+					"BaseAttributeReference": {
+						"Entity": "HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent",
+						"Name": "HydrocrackerUnitComponentNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitComponentId\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentId\"},\"HydrocrackerUnitComponentTypeId\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentTypeId\"},\"HydrocrackerUnitComponentDescription\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentDescription\"},\"HydrocrackerUnitComponentNote\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrocrackerUnitComponent\",\"path\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\"},\"description\":\"A Hydrocracker Unit component.\",\"primaryKey\":[\"HydrocrackerUnitComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrocracker unit component type.\",\"isNullable\":false,\"name\":\"HydrocrackerUnitComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a hydrocracker unit component.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitComponentDescription\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrocrackerUnitComponent.cdm.json/HydrocrackerUnitComponent\",\"name\":\"HydrocrackerUnitComponentNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the hydrocracker unit component.\",\"isNullable\":true,\"name\":\"HydrocrackerUnitComponentNote\"}]}}}",
+			"Description": "A Hydrocracker Unit component.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrocrackerUnitComponentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

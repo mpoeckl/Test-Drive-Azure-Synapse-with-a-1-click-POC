@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bdnjxhtita",
+	"properties": {
+		"Name": "relationship-bdnjxhtita",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeasurementType",
+		"ToTableName": "HydrocrackerUnitComponentMeasurement",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeasurementTypeId",
+				"ToColumnName": "MeasurementTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeasurementType.cdm.json/MeasurementType\",\"toEntity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"joinPairs\":[{\"fromAttribute\":\"MeasurementTypeId\",\"toAttribute\":\"MeasurementTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

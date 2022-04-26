@@ -1,0 +1,106 @@
+{
+	"name": "IncidentComponentRelationshipType",
+	"properties": {
+		"Name": "IncidentComponentRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the component and incident.\n\nEx:\n- Responsible component\n- Contributory component\n- Replaced component\n- Defective component",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentComponentRelationshipTypeId",
+					"Description": "The unique identifier of an incident component relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType",
+						"Name": "IncidentComponentRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentComponentRelationshipTypeName",
+					"Description": "The name of an incident component relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType",
+						"Name": "IncidentComponentRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentComponentRelationshipTypeDescription",
+					"Description": "The description of an incident component relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType",
+						"Name": "IncidentComponentRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentComponentRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentComponentRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentComponentRelationshipTypeId\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeId\"},\"IncidentComponentRelationshipTypeName\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeName\"},\"IncidentComponentRelationshipTypeDescription\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentComponentRelationshipType\",\"path\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\"},\"description\":\"The nature of the relationship between the component and incident.\\n\\nEx:\\n- Responsible component\\n- Contributory component\\n- Replaced component\\n- Defective component\",\"primaryKey\":[\"IncidentComponentRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident component relationship type.\",\"isNullable\":false,\"name\":\"IncidentComponentRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an incident component relationship type.\",\"isNullable\":true,\"name\":\"IncidentComponentRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentComponentRelationshipType.cdm.json/IncidentComponentRelationshipType\",\"name\":\"IncidentComponentRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an incident component relationship type.\",\"isNullable\":true,\"name\":\"IncidentComponentRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the component and incident.\n\nEx:\n- Responsible component\n- Contributory component\n- Replaced component\n- Defective component",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentComponentRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

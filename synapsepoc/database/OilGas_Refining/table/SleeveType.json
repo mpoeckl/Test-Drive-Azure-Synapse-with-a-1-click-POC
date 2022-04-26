@@ -1,0 +1,106 @@
+{
+	"name": "SleeveType",
+	"properties": {
+		"Name": "SleeveType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The sleeve type of the associated pipe.\n\nEx:\n- Composite Sleeve\n- Coupling Reinforcement Sleeve\n- Emergency Sleeve\n- Full Encirclement Welded Split Sleeve\n- Leak Clamp \n- Pipe Cutout\n- Saddle Reinforcement Sleeve\n- Shrink Sleeve\n- Wedding Ring Sleeve\n- Weld Reinforcement Sleeve\n- Unknown",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SleeveTypeId",
+					"Description": "The unique identifier of a Sleeve Type.",
+					"BaseAttributeReference": {
+						"Entity": "SleeveType.cdm.json/SleeveType",
+						"Name": "SleeveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SleeveTypeName",
+					"Description": "The name of a Sleeve Type.",
+					"BaseAttributeReference": {
+						"Entity": "SleeveType.cdm.json/SleeveType",
+						"Name": "SleeveTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SleeveTypeDescription",
+					"Description": "The description of a Sleeve Type.",
+					"BaseAttributeReference": {
+						"Entity": "SleeveType.cdm.json/SleeveType",
+						"Name": "SleeveTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SleeveType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SleeveType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SleeveTypeId\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeId\"},\"SleeveTypeName\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeName\"},\"SleeveTypeDescription\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SleeveType\",\"path\":\"SleeveType.cdm.json/SleeveType\"},\"description\":\"The sleeve type of the associated pipe.\\n\\nEx:\\n- Composite Sleeve\\n- Coupling Reinforcement Sleeve\\n- Emergency Sleeve\\n- Full Encirclement Welded Split Sleeve\\n- Leak Clamp \\n- Pipe Cutout\\n- Saddle Reinforcement Sleeve\\n- Shrink Sleeve\\n- Wedding Ring Sleeve\\n- Weld Reinforcement Sleeve\\n- Unknown\",\"primaryKey\":[\"SleeveTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sleeve Type.\",\"isNullable\":false,\"name\":\"SleeveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Sleeve Type.\",\"isNullable\":true,\"name\":\"SleeveTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SleeveType.cdm.json/SleeveType\",\"name\":\"SleeveTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Sleeve Type.\",\"isNullable\":true,\"name\":\"SleeveTypeDescription\"}]}}}",
+			"Description": "The sleeve type of the associated pipe.\n\nEx:\n- Composite Sleeve\n- Coupling Reinforcement Sleeve\n- Emergency Sleeve\n- Full Encirclement Welded Split Sleeve\n- Leak Clamp \n- Pipe Cutout\n- Saddle Reinforcement Sleeve\n- Shrink Sleeve\n- Wedding Ring Sleeve\n- Weld Reinforcement Sleeve\n- Unknown",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SleeveTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

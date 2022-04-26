@@ -1,0 +1,106 @@
+{
+	"name": "IncidentAssetRelationshipType",
+	"properties": {
+		"Name": "IncidentAssetRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between the incident and asset over the indicated period.\n\nEx:\n- Responsible Asset\n- Contributory Asset\n- Damaged Asset\n- Impacted Asset\n- Involved In Incident Asset\n- Responding-to-Incident Asset",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "IncidentAssetRelationshipTypeId",
+					"Description": "The unique identifier of an incident asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType",
+						"Name": "IncidentAssetRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IncidentAssetRelationshipTypeName",
+					"Description": "The name of an incident asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType",
+						"Name": "IncidentAssetRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "IncidentAssetRelationshipTypeDescription",
+					"Description": "The description of an incident asset relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType",
+						"Name": "IncidentAssetRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentAssetRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentAssetRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentAssetRelationshipTypeId\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeId\"},\"IncidentAssetRelationshipTypeName\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeName\"},\"IncidentAssetRelationshipTypeDescription\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"IncidentAssetRelationshipType\",\"path\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\"},\"description\":\"The nature of the relationship between the incident and asset over the indicated period.\\n\\nEx:\\n- Responsible Asset\\n- Contributory Asset\\n- Damaged Asset\\n- Impacted Asset\\n- Involved In Incident Asset\\n- Responding-to-Incident Asset\",\"primaryKey\":[\"IncidentAssetRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an incident asset relationship type.\",\"isNullable\":false,\"name\":\"IncidentAssetRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an incident asset relationship type.\",\"isNullable\":true,\"name\":\"IncidentAssetRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"IncidentAssetRelationshipType.cdm.json/IncidentAssetRelationshipType\",\"name\":\"IncidentAssetRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an incident asset relationship type.\",\"isNullable\":true,\"name\":\"IncidentAssetRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between the incident and asset over the indicated period.\n\nEx:\n- Responsible Asset\n- Contributory Asset\n- Damaged Asset\n- Impacted Asset\n- Involved In Incident Asset\n- Responding-to-Incident Asset",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
+			"PrimaryKeys": "IncidentAssetRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

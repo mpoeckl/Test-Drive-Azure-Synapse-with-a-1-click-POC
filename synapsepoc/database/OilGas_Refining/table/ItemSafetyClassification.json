@@ -1,0 +1,106 @@
+{
+	"name": "ItemSafetyClassification",
+	"properties": {
+		"Name": "ItemSafetyClassification",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A classification of Items based upon storage safety considerations.\n\nEx:\n-  Flammable\n-  Toxic\n-  Radioactive\n-  Hazardous substance",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ItemSafetyClassificationId",
+					"Description": "The unique identifier of an Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationName",
+					"Description": "The name of the Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ItemSafetyClassificationDescription",
+					"Description": "The description of the Item Safety Classification.",
+					"BaseAttributeReference": {
+						"Entity": "ItemSafetyClassification.cdm.json/ItemSafetyClassification",
+						"Name": "ItemSafetyClassificationDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ItemSafetyClassification",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ItemSafetyClassification",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ItemSafetyClassificationId\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationId\"},\"ItemSafetyClassificationName\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationName\"},\"ItemSafetyClassificationDescription\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ItemSafetyClassification\",\"path\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\"},\"description\":\"A classification of Items based upon storage safety considerations.\\n\\nEx:\\n-  Flammable\\n-  Toxic\\n-  Radioactive\\n-  Hazardous substance\",\"primaryKey\":[\"ItemSafetyClassificationId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Item Safety Classification.\",\"isNullable\":false,\"name\":\"ItemSafetyClassificationId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Item Safety Classification.\",\"isNullable\":true,\"name\":\"ItemSafetyClassificationName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"name\":\"ItemSafetyClassificationDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Item Safety Classification.\",\"isNullable\":true,\"name\":\"ItemSafetyClassificationDescription\"}]}}}",
+			"Description": "A classification of Items based upon storage safety considerations.\n\nEx:\n-  Flammable\n-  Toxic\n-  Radioactive\n-  Hazardous substance",
+			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
+			"PrimaryKeys": "ItemSafetyClassificationId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

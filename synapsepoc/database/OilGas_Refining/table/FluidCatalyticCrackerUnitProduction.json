@@ -1,0 +1,171 @@
+{
+	"name": "FluidCatalyticCrackerUnitProduction",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitProduction",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of product produced by the FCCU during the associated period.\n\nEx:\n-  Light gas -H2, C1, and C2s\n-  LPG C3s and C4s - includes light olefins\n-  Gasoline C5+ high octane \n-  Light cycle oil (LCO)  \n-  Heavy cycle oil (HCO)  \n-  Clarified oil (CLO) \n-  Coke",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "FluidCatalyticCrackerUnitId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ProducedUnits",
+					"Description": "The quantity/units produced by the fluid catalytic cracker unit.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "ProducedUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitProductionNote",
+					"Description": "A note, comment or additional information regarding the fluid catalytic cracker unit production.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction",
+						"Name": "FluidCatalyticCrackerUnitProductionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitProduction",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitProduction",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"ProductId\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"UnitOfMeasureId\"},\"FluidCatalyticCrackerUnitProductionNote\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"FluidCatalyticCrackerUnitProductionNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitProduction\",\"path\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\"},\"description\":\"The quantity of product produced by the FCCU during the associated period.\\n\\nEx:\\n-  Light gas -H2, C1, and C2s\\n-  LPG C3s and C4s - includes light olefins\\n-  Gasoline C5+ high octane \\n-  Light cycle oil (LCO)  \\n-  Heavy cycle oil (HCO)  \\n-  Clarified oil (CLO) \\n-  Coke\",\"primaryKey\":[\"FluidCatalyticCrackerUnitId\",\"ProductId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"ProducedUnits\"},\"dataType\":\"integer\",\"description\":\"The quantity/units produced by the fluid catalytic cracker unit.\",\"isNullable\":true,\"name\":\"ProducedUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitProduction.cdm.json/FluidCatalyticCrackerUnitProduction\",\"name\":\"FluidCatalyticCrackerUnitProductionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the fluid catalytic cracker unit production.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitProductionNote\"}]}}}",
+			"Description": "The quantity of product produced by the FCCU during the associated period.\n\nEx:\n-  Light gas -H2, C1, and C2s\n-  LPG C3s and C4s - includes light olefins\n-  Gasoline C5+ high octane \n-  Light cycle oil (LCO)  \n-  Heavy cycle oil (HCO)  \n-  Clarified oil (CLO) \n-  Coke",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitId,ProductId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ImprovementPartyRelationshipType",
+	"properties": {
+		"Name": "ImprovementPartyRelationshipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The nature of the relationship between a party and the associated component improvement.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ImprovementPartyRelationshipTypeId",
+					"Description": "The unique identifier of an improvement party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType",
+						"Name": "ImprovementPartyRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementPartyRelationshipTypeName",
+					"Description": "The name of an improvement party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType",
+						"Name": "ImprovementPartyRelationshipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ImprovementPartyRelationshipTypeDescription",
+					"Description": "The description of an improvement party relationship type.",
+					"BaseAttributeReference": {
+						"Entity": "ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType",
+						"Name": "ImprovementPartyRelationshipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImprovementPartyRelationshipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImprovementPartyRelationshipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ImprovementPartyRelationshipTypeId\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeId\"},\"ImprovementPartyRelationshipTypeName\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeName\"},\"ImprovementPartyRelationshipTypeDescription\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ImprovementPartyRelationshipType\",\"path\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\"},\"description\":\"The nature of the relationship between a party and the associated component improvement.\\n\\nEx:\\n- Requested-by Party\\n- Authorized-by Party\\n- Performed-by Party\\n- Billed-by Party\\n- Billed-to Party\",\"primaryKey\":[\"ImprovementPartyRelationshipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an improvement party relationship type.\",\"isNullable\":false,\"name\":\"ImprovementPartyRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an improvement party relationship type.\",\"isNullable\":true,\"name\":\"ImprovementPartyRelationshipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ImprovementPartyRelationshipType.cdm.json/ImprovementPartyRelationshipType\",\"name\":\"ImprovementPartyRelationshipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an improvement party relationship type.\",\"isNullable\":true,\"name\":\"ImprovementPartyRelationshipTypeDescription\"}]}}}",
+			"Description": "The nature of the relationship between a party and the associated component improvement.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "ImprovementPartyRelationshipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

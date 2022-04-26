@@ -1,0 +1,106 @@
+{
+	"name": "FluidCatalyticCrackerUnitConfigurationType",
+	"properties": {
+		"Name": "FluidCatalyticCrackerUnitConfigurationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of Fluid Catalytic Cracker Unit Configuration.\n\nEx:\n- Side-by-side\n- Stacked\n\nwhere:\n\nSide-by-side configuration:\n-  CB&I\n-  ExxonMobil Research and Engineering (EMRE)\n-  Shell Global Solutions\n-  Axens / Stone & Webster Process Technology \n\nStacked configuration:\n-  Kellogg Brown & Root (KBR)\n\nThere are several different proprietary designs that have been developed for modern FCC units. Each design is available under a license that must be purchased from the design developer by any petroleum refining company desiring to construct and operate an FCC of a given design.\n\nThere are two different configurations for an FCC unit: the \"stacked\" type where the reactor and the catalyst regenerator are contained in a single vessel with the reactor above the catalyst regenerator and the \"side-by-side\" type where the reactor and catalyst regenerator are in two separate vessels. These are the major FCC designers and licensors:",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "FluidCatalyticCrackerUnitConfigurationTypeId",
+					"Description": "The unique identifier of a fluid catalytic cracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType",
+						"Name": "FluidCatalyticCrackerUnitConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitConfigurationTypeName",
+					"Description": "The name of a fluid catalytic cracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType",
+						"Name": "FluidCatalyticCrackerUnitConfigurationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "FluidCatalyticCrackerUnitConfigurationTypeDescription",
+					"Description": "The description of a fluid catalytic cracker unit configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType",
+						"Name": "FluidCatalyticCrackerUnitConfigurationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitConfigurationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitConfigurationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitConfigurationTypeId\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},\"FluidCatalyticCrackerUnitConfigurationTypeName\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeName\"},\"FluidCatalyticCrackerUnitConfigurationTypeDescription\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"FluidCatalyticCrackerUnitConfigurationType\",\"path\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\"},\"description\":\"The type of Fluid Catalytic Cracker Unit Configuration.\\n\\nEx:\\n- Side-by-side\\n- Stacked\\n\\nwhere:\\n\\nSide-by-side configuration:\\n-  CB&I\\n-  ExxonMobil Research and Engineering (EMRE)\\n-  Shell Global Solutions\\n-  Axens / Stone & Webster Process Technology \\n\\nStacked configuration:\\n-  Kellogg Brown & Root (KBR)\\n\\nThere are several different proprietary designs that have been developed for modern FCC units. Each design is available under a license that must be purchased from the design developer by any petroleum refining company desiring to construct and operate an FCC of a given design.\\n\\nThere are two different configurations for an FCC unit: the \\\"stacked\\\" type where the reactor and the catalyst regenerator are contained in a single vessel with the reactor above the catalyst regenerator and the \\\"side-by-side\\\" type where the reactor and catalyst regenerator are in two separate vessels. These are the major FCC designers and licensors:\",\"primaryKey\":[\"FluidCatalyticCrackerUnitConfigurationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a fluid catalytic cracker unit configuration type.\",\"isNullable\":false,\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a fluid catalytic cracker unit configuration type.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"FluidCatalyticCrackerUnitConfigurationType.cdm.json/FluidCatalyticCrackerUnitConfigurationType\",\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a fluid catalytic cracker unit configuration type.\",\"isNullable\":true,\"name\":\"FluidCatalyticCrackerUnitConfigurationTypeDescription\"}]}}}",
+			"Description": "The type of Fluid Catalytic Cracker Unit Configuration.\n\nEx:\n- Side-by-side\n- Stacked\n\nwhere:\n\nSide-by-side configuration:\n-  CB&I\n-  ExxonMobil Research and Engineering (EMRE)\n-  Shell Global Solutions\n-  Axens / Stone & Webster Process Technology \n\nStacked configuration:\n-  Kellogg Brown & Root (KBR)\n\nThere are several different proprietary designs that have been developed for modern FCC units. Each design is available under a license that must be purchased from the design developer by any petroleum refining company desiring to construct and operate an FCC of a given design.\n\nThere are two different configurations for an FCC unit: the \"stacked\" type where the reactor and the catalyst regenerator are contained in a single vessel with the reactor above the catalyst regenerator and the \"side-by-side\" type where the reactor and catalyst regenerator are in two separate vessels. These are the major FCC designers and licensors:",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "FluidCatalyticCrackerUnitConfigurationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

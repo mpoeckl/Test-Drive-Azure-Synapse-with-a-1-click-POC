@@ -1,0 +1,106 @@
+{
+	"name": "DangerousGoodsPackingGroup",
+	"properties": {
+		"Name": "DangerousGoodsPackingGroup",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The properties of the chemical substance or product have an effect on the choice of the packing material. \n\nRecommendations on the material, as well as the sizes, of packages are based on testing and experience. \n\nDangerous goods of classes 3, 4, 5.1, 6.1, 8, and 9 have been divided for packing purposes into three groups according to the degree of danger they present: \n\ngreat danger - Packing Group I  \nmedium danger - Packing Group II  \nminor danger - Packing Group III",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DangerousGoodsPackingGroupId",
+					"Description": "The unique identifier of a Dangerous Goods Packing Group.",
+					"BaseAttributeReference": {
+						"Entity": "DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup",
+						"Name": "DangerousGoodsPackingGroupId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DangerousGoodsPackingGroupName",
+					"Description": "The name of a Dangerous Goods Packing Group.",
+					"BaseAttributeReference": {
+						"Entity": "DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup",
+						"Name": "DangerousGoodsPackingGroupName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DangerousGoodsPackingGroupDescription",
+					"Description": "The description of a Dangerous Goods Packing Group.",
+					"BaseAttributeReference": {
+						"Entity": "DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup",
+						"Name": "DangerousGoodsPackingGroupDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DangerousGoodsPackingGroup",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DangerousGoodsPackingGroup",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DangerousGoodsPackingGroupId\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupId\"},\"DangerousGoodsPackingGroupName\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupName\"},\"DangerousGoodsPackingGroupDescription\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DangerousGoodsPackingGroup\",\"path\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\"},\"description\":\"The properties of the chemical substance or product have an effect on the choice of the packing material. \\n\\nRecommendations on the material, as well as the sizes, of packages are based on testing and experience. \\n\\nDangerous goods of classes 3, 4, 5.1, 6.1, 8, and 9 have been divided for packing purposes into three groups according to the degree of danger they present: \\n\\ngreat danger - Packing Group I  \\nmedium danger - Packing Group II  \\nminor danger - Packing Group III\",\"primaryKey\":[\"DangerousGoodsPackingGroupId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Dangerous Goods Packing Group.\",\"isNullable\":false,\"name\":\"DangerousGoodsPackingGroupId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Dangerous Goods Packing Group.\",\"isNullable\":true,\"name\":\"DangerousGoodsPackingGroupName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Dangerous Goods Packing Group.\",\"isNullable\":true,\"name\":\"DangerousGoodsPackingGroupDescription\"}]}}}",
+			"Description": "The properties of the chemical substance or product have an effect on the choice of the packing material. \n\nRecommendations on the material, as well as the sizes, of packages are based on testing and experience. \n\nDangerous goods of classes 3, 4, 5.1, 6.1, 8, and 9 have been divided for packing purposes into three groups according to the degree of danger they present: \n\ngreat danger - Packing Group I  \nmedium danger - Packing Group II  \nminor danger - Packing Group III",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "DangerousGoodsPackingGroupId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

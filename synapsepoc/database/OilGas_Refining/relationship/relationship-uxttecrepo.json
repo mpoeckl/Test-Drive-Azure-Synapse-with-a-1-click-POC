@@ -1,0 +1,26 @@
+{
+	"name": "relationship-uxttecrepo",
+	"properties": {
+		"Name": "relationship-uxttecrepo",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CoatingCondition",
+		"ToTableName": "NetworkComponent",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CoatingConditionId",
+				"ToColumnName": "CoatingConditionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CoatingCondition.cdm.json/CoatingCondition\",\"toEntity\":\"NetworkComponent.cdm.json/NetworkComponent\",\"joinPairs\":[{\"fromAttribute\":\"CoatingConditionId\",\"toAttribute\":\"CoatingConditionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

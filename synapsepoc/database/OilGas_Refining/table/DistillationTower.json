@@ -1,0 +1,382 @@
+{
+	"name": "DistillationTower",
+	"properties": {
+		"Name": "DistillationTower",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A  long vertical column or tower used in fractional distillation, in which internal reflux enables separation of high and low boiling fractions to take place\n\nThe first step in the refining process is the separation of crude oil into various fractions or straight-run cuts by distillation in atmospheric and vacuum towers. \n\nThe main fractions or \"cuts\" obtained have specific boiling-point ranges and can be classified in order of decreasing volatility into gases, light distillates, middle distillates, gas oils, and residuum.\n\nProducts ranging from uncondensed fixed gases at the top to heavy fuel oils at the bottom can be taken continuously from a fractionating tower.\n\nCrude oil is heated until it evaporates.\n\nDifferent fractions condense at certain temperature ranges. The chemicals in a certain fraction are hydrocarbons with comparable numbers of carbon atoms. From hot to cold (largest hydrocarbons to smallest), the fractions may be residue (used to make bitumen), fuel oil, diesel, kerosene, naphtha, gasoline, and refinery gas.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "DistillationTowerId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerManufacturerName",
+					"Description": "The manufacturer of the distillation tower.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerManufacturerName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerModelNumber",
+					"Description": "The distillation tower model number.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerModelNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerConstructionStartDate",
+					"Description": "The date that the distillation tower construction was started.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerConstructionStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerConstructionCompletionDate",
+					"Description": "The date that the distillation tower construction was completed.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerConstructionCompletionDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerFirstOperationDate",
+					"Description": "The first operation date of the distillation tower.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerFirstOperationDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerHeightMeters",
+					"Description": "The height of the distillation tower in meters.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerHeightMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerExternalDiameterMeters",
+					"Description": "The external diameter of the distillation tower in meters.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerExternalDiameterMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerInternalDiameterMeters",
+					"Description": "The internal diameter of the distillation tower in meters.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerInternalDiameterMeters"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerNumberOfTrays",
+					"Description": "The number of trays in the distillation tower.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerNumberOfTrays"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr",
+					"Description": "The designed distillation tower column atmospheric residue in MMHG, which is a unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerDesignedFlashZoneOperatingPressureMmhg",
+					"Description": "The distillation tower designed flash zone operating pressure in millimeter mercury (0 C).",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerDesignedFlashZoneOperatingPressureMmhg"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa",
+					"Description": "The distillation tower designed feed minimal temperature to fired heater e in kilopascals.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa",
+					"Description": "The designed steam to fired heater column pressure in kilopascals.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerDesignedMaximumProductionGph",
+					"Description": "The distillation tower designed maximum production in gallons/hour.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerDesignedMaximumProductionGph"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerConfigurationTypeId",
+					"Description": "The unique identifier of a tower configuration type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerConfigurationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerControlTypeId",
+					"Description": "The unique identifier of a distillation tower control type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerControlTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerTypeId",
+					"Description": "The unique identifier of a distillation tower type.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MaterialId",
+					"Description": "The unique identifier of a material.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "MaterialId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "DistillationTowerNote",
+					"Description": "A note, comment or additional information regarding the distillation tower.",
+					"BaseAttributeReference": {
+						"Entity": "DistillationTower.cdm.json/DistillationTower",
+						"Name": "DistillationTowerNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTower",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTower",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerId\"},\"DistillationTowerManufacturerName\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerManufacturerName\"},\"DistillationTowerModelNumber\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerModelNumber\"},\"DistillationTowerConstructionStartDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionStartDate\"},\"DistillationTowerConstructionCompletionDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionCompletionDate\"},\"DistillationTowerFirstOperationDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerFirstOperationDate\"},\"DistillationTowerHeightMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerHeightMeters\"},\"DistillationTowerExternalDiameterMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerExternalDiameterMeters\"},\"DistillationTowerInternalDiameterMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerInternalDiameterMeters\"},\"DistillationTowerNumberOfTrays\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNumberOfTrays\"},\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\"},\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\"},\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\"},\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\"},\"DistillationTowerDesignedMaximumProductionGph\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedMaximumProductionGph\"},\"DistillationTowerConfigurationTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConfigurationTypeId\"},\"DistillationTowerControlTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerControlTypeId\"},\"DistillationTowerTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerTypeId\"},\"MaterialId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"MaterialId\"},\"DistillationTowerNote\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"DistillationTower\",\"path\":\"DistillationTower.cdm.json/DistillationTower\"},\"description\":\"A  long vertical column or tower used in fractional distillation, in which internal reflux enables separation of high and low boiling fractions to take place\\n\\nThe first step in the refining process is the separation of crude oil into various fractions or straight-run cuts by distillation in atmospheric and vacuum towers. \\n\\nThe main fractions or \\\"cuts\\\" obtained have specific boiling-point ranges and can be classified in order of decreasing volatility into gases, light distillates, middle distillates, gas oils, and residuum.\\n\\nProducts ranging from uncondensed fixed gases at the top to heavy fuel oils at the bottom can be taken continuously from a fractionating tower.\\n\\nCrude oil is heated until it evaporates.\\n\\nDifferent fractions condense at certain temperature ranges. The chemicals in a certain fraction are hydrocarbons with comparable numbers of carbon atoms. From hot to cold (largest hydrocarbons to smallest), the fractions may be residue (used to make bitumen), fuel oil, diesel, kerosene, naphtha, gasoline, and refinery gas.\",\"primaryKey\":[\"DistillationTowerId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"DistillationTowerId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerManufacturerName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The manufacturer of the distillation tower.\",\"isNullable\":true,\"name\":\"DistillationTowerManufacturerName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerModelNumber\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The distillation tower model number.\",\"isNullable\":true,\"name\":\"DistillationTowerModelNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the distillation tower construction was started.\",\"isNullable\":true,\"name\":\"DistillationTowerConstructionStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionCompletionDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The date that the distillation tower construction was completed.\",\"isNullable\":true,\"name\":\"DistillationTowerConstructionCompletionDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerFirstOperationDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The first operation date of the distillation tower.\",\"isNullable\":true,\"name\":\"DistillationTowerFirstOperationDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerHeightMeters\"},\"dataType\":\"integer\",\"description\":\"The height of the distillation tower in meters.\",\"isNullable\":true,\"name\":\"DistillationTowerHeightMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerExternalDiameterMeters\"},\"dataType\":\"integer\",\"description\":\"The external diameter of the distillation tower in meters.\",\"isNullable\":true,\"name\":\"DistillationTowerExternalDiameterMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerInternalDiameterMeters\"},\"dataType\":\"integer\",\"description\":\"The internal diameter of the distillation tower in meters.\",\"isNullable\":true,\"name\":\"DistillationTowerInternalDiameterMeters\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNumberOfTrays\"},\"dataType\":\"integer\",\"description\":\"The number of trays in the distillation tower.\",\"isNullable\":true,\"name\":\"DistillationTowerNumberOfTrays\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\"},\"dataType\":\"integer\",\"description\":\"The designed distillation tower column atmospheric residue in MMHG, which is a unit of pressure equal to the amount of fluid pressure one millimeter deep in mercury at zero degrees centigrade on Earth.\",\"isNullable\":true,\"name\":\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\"},\"dataType\":\"integer\",\"description\":\"The distillation tower designed flash zone operating pressure in millimeter mercury (0 C).\",\"isNullable\":true,\"name\":\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\"},\"dataType\":\"integer\",\"description\":\"The distillation tower designed feed minimal temperature to fired heater e in kilopascals.\",\"isNullable\":true,\"name\":\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\"},\"dataType\":\"integer\",\"description\":\"The designed steam to fired heater column pressure in kilopascals.\",\"isNullable\":true,\"name\":\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedMaximumProductionGph\"},\"dataType\":\"integer\",\"description\":\"The distillation tower designed maximum production in gallons/hour.\",\"isNullable\":true,\"name\":\"DistillationTowerDesignedMaximumProductionGph\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConfigurationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a tower configuration type.\",\"isNullable\":true,\"name\":\"DistillationTowerConfigurationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerControlTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a distillation tower control type.\",\"isNullable\":true,\"name\":\"DistillationTowerControlTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a distillation tower type.\",\"isNullable\":true,\"name\":\"DistillationTowerTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"MaterialId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a material.\",\"isNullable\":true,\"name\":\"MaterialId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the distillation tower.\",\"isNullable\":true,\"name\":\"DistillationTowerNote\"}]}}}",
+			"Description": "A  long vertical column or tower used in fractional distillation, in which internal reflux enables separation of high and low boiling fractions to take place\n\nThe first step in the refining process is the separation of crude oil into various fractions or straight-run cuts by distillation in atmospheric and vacuum towers. \n\nThe main fractions or \"cuts\" obtained have specific boiling-point ranges and can be classified in order of decreasing volatility into gases, light distillates, middle distillates, gas oils, and residuum.\n\nProducts ranging from uncondensed fixed gases at the top to heavy fuel oils at the bottom can be taken continuously from a fractionating tower.\n\nCrude oil is heated until it evaporates.\n\nDifferent fractions condense at certain temperature ranges. The chemicals in a certain fraction are hydrocarbons with comparable numbers of carbon atoms. From hot to cold (largest hydrocarbons to smallest), the fractions may be residue (used to make bitumen), fuel oil, diesel, kerosene, naphtha, gasoline, and refinery gas.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "DistillationTowerId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

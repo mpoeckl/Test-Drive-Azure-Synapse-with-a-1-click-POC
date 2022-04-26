@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ltfzynynix",
+	"properties": {
+		"Name": "relationship-ltfzynynix",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentExtraordinaryRepair",
+		"ToTableName": "ComponentExtraordinaryRepairRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentExtraordinaryRepairId",
+				"ToColumnName": "ComponentExtraordinaryRepairId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"toEntity\":\"ComponentExtraordinaryRepairRelatedParty.cdm.json/ComponentExtraordinaryRepairRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentExtraordinaryRepairId\",\"toAttribute\":\"ComponentExtraordinaryRepairId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

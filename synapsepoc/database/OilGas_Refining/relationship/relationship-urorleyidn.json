@@ -1,0 +1,26 @@
+{
+	"name": "relationship-urorleyidn",
+	"properties": {
+		"Name": "relationship-urorleyidn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ItemSafetyClassification",
+		"ToTableName": "Item",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ItemSafetyClassificationId",
+				"ToColumnName": "ItemSafetyClassificationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ItemSafetyClassification.cdm.json/ItemSafetyClassification\",\"toEntity\":\"Item.cdm.json/Item\",\"joinPairs\":[{\"fromAttribute\":\"ItemSafetyClassificationId\",\"toAttribute\":\"ItemSafetyClassificationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

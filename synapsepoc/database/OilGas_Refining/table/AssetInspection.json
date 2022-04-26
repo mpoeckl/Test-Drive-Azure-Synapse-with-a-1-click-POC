@@ -1,0 +1,187 @@
+{
+	"name": "AssetInspection",
+	"properties": {
+		"Name": "AssetInspection",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An inspection of an asset.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AssetInspectionId",
+					"Description": "The unique identifier of an Asset Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "AssetInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetId",
+					"Description": "The unique identifier of an Asset.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "AssetId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PlannedAssetInspectionTimestamp",
+					"Description": "The planned timestamp of the asset inspection.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "PlannedAssetInspectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualAssetInspectionTimestamp",
+					"Description": "The actual timestamp of the asset inspection.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "ActualAssetInspectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionStatusId",
+					"Description": "The unique identifier of an Asset Inspection Status.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "AssetInspectionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionTypeId",
+					"Description": "The unique identifier of an Asset Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "AssetInspectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetInspectionNote",
+					"Description": "Notes, comments or additional information regarding the asset inspection.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "AssetInspectionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InspectedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "AssetInspection.cdm.json/AssetInspection",
+						"Name": "InspectedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspection",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspection",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetInspectionId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionId\"},\"AssetId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetId\"},\"PlannedAssetInspectionTimestamp\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"PlannedAssetInspectionTimestamp\"},\"ActualAssetInspectionTimestamp\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"ActualAssetInspectionTimestamp\"},\"AssetInspectionStatusId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionStatusId\"},\"AssetInspectionTypeId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionTypeId\"},\"AssetInspectionNote\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionNote\"},\"InspectedByPartyId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"InspectedByPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AssetInspection\",\"path\":\"AssetInspection.cdm.json/AssetInspection\"},\"description\":\"An inspection of an asset.\",\"primaryKey\":[\"AssetInspectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection.\",\"isNullable\":false,\"name\":\"AssetInspectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of an Asset.\",\"isNullable\":false,\"name\":\"AssetId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"PlannedAssetInspectionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The planned timestamp of the asset inspection.\",\"isNullable\":true,\"name\":\"PlannedAssetInspectionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"ActualAssetInspectionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual timestamp of the asset inspection.\",\"isNullable\":true,\"name\":\"ActualAssetInspectionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection Status.\",\"isNullable\":true,\"name\":\"AssetInspectionStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Inspection Type.\",\"isNullable\":true,\"name\":\"AssetInspectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding the asset inspection.\",\"isNullable\":true,\"name\":\"AssetInspectionNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"InspectedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"InspectedByPartyId\"}]}}}",
+			"Description": "An inspection of an asset.",
+			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
+			"PrimaryKeys": "AssetInspectionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

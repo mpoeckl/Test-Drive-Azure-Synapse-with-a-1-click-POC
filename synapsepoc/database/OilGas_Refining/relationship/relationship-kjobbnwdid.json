@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kjobbnwdid",
+	"properties": {
+		"Name": "relationship-kjobbnwdid",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnitOfMeasure",
+		"ToTableName": "MeterModelSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnitOfMeasureId",
+				"ToColumnName": "MeterModelSpecificationUomId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnitOfMeasure.cdm.json/UnitOfMeasure\",\"toEntity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"joinPairs\":[{\"fromAttribute\":\"UnitOfMeasureId\",\"toAttribute\":\"MeterModelSpecificationUomId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-styfgdcyhg",
+	"properties": {
+		"Name": "relationship-styfgdcyhg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PreventiveAction",
+		"ToTableName": "ComponentGuidelinePreventiveAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PreventiveActionId",
+				"ToColumnName": "PreventiveActionId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PreventiveAction.cdm.json/PreventiveAction\",\"toEntity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"joinPairs\":[{\"fromAttribute\":\"PreventiveActionId\",\"toAttribute\":\"PreventiveActionId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,190 @@
+{
+	"name": "MeterUsageForecast",
+	"properties": {
+		"Name": "MeterUsageForecast",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A forecasted energy usage at a meter for a particular time interval as of a particular timestamp.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "MeterId",
+					"Description": "The unique identifier of a Meter.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecastTimestamp",
+					"Description": "The timestamp that the meter usage forecast was made.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecastTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecastPeriodStartTimestamp",
+					"Description": "The period start timestamp associated with the meter usage forecast.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecastPeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecastPeriodEndTimestamp",
+					"Description": "The period end timestamp associated with the meter usage forecast.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecastPeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecast",
+					"Description": "The forecast usage of energy at this meter during the associated period.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecast"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecastUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecastUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ForecastMethodTypeId",
+					"Description": "The unique identifier of a Forecast Method Type.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "ForecastMethodTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "MeterUsageForecastNote",
+					"Description": "A note, comment or additional information regarding the Meter Usage Forecast.",
+					"BaseAttributeReference": {
+						"Entity": "MeterUsageForecast.cdm.json/MeterUsageForecast",
+						"Name": "MeterUsageForecastNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterUsageForecast",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterUsageForecast",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterId\"},\"MeterUsageForecastTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastTimestamp\"},\"MeterUsageForecastPeriodStartTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodStartTimestamp\"},\"MeterUsageForecastPeriodEndTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodEndTimestamp\"},\"MeterUsageForecast\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecast\"},\"MeterUsageForecastUomId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastUomId\"},\"ForecastMethodTypeId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"ForecastMethodTypeId\"},\"MeterUsageForecastNote\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"MeterUsageForecast\",\"path\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\"},\"description\":\"A forecasted energy usage at a meter for a particular time interval as of a particular timestamp.\",\"primaryKey\":[\"MeterId\",\"MeterUsageForecastTimestamp\",\"MeterUsageForecastPeriodStartTimestamp\",\"MeterUsageForecastPeriodEndTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Meter.\",\"isNullable\":false,\"name\":\"MeterId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The timestamp that the meter usage forecast was made.\",\"isNullable\":false,\"name\":\"MeterUsageForecastTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp associated with the meter usage forecast.\",\"isNullable\":false,\"name\":\"MeterUsageForecastPeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp associated with the meter usage forecast.\",\"isNullable\":false,\"name\":\"MeterUsageForecastPeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecast\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The forecast usage of energy at this meter during the associated period.\",\"isNullable\":true,\"scale\":8,\"name\":\"MeterUsageForecast\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"MeterUsageForecastUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"ForecastMethodTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Forecast Method Type.\",\"isNullable\":true,\"name\":\"ForecastMethodTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the Meter Usage Forecast.\",\"isNullable\":true,\"name\":\"MeterUsageForecastNote\"}]}}}",
+			"Description": "A forecasted energy usage at a meter for a particular time interval as of a particular timestamp.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "MeterId,MeterUsageForecastTimestamp,MeterUsageForecastPeriodStartTimestamp,MeterUsageForecastPeriodEndTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

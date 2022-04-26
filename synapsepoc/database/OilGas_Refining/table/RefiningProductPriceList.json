@@ -1,0 +1,242 @@
+{
+	"name": "RefiningProductPriceList",
+	"properties": {
+		"Name": "RefiningProductPriceList",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The Price List for a Product as defined for a Country for a specific period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PriceListTypeId",
+					"Description": "The unique identifier of a Price List Type.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "PriceListTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "CountryId",
+					"Description": "The unique identifier of the Country.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "CountryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "IsoCurrencyCode",
+					"Description": "The ISO 4217 currency code.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "IsoCurrencyCode"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 3,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartDate",
+					"Description": "The period start date for which the Product Price List is defined.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "PeriodStartDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndDate",
+					"Description": "The period end date for which the Product Price List is defined.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "PeriodEndDate"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "date",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"DateFormat": "YYYY-MM-DD",
+							"HIVE_TYPE_STRING": "date"
+						}
+					}
+				},
+				{
+					"Name": "RefineryPriceAmount",
+					"Description": "The Standard, or default, price charged by retailers to the public for the Product.\n\nThe price of a Product published in a catalog, advertisement or printed list from which discounts, if any, may be subtracted. \n\nThis is the price that normally appears in catalogs, on purchase orders and invoices.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "RefineryPriceAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryCostAmount",
+					"Description": "The refinery cost amount for the associated product/units.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "RefineryCostAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryMarginAmount",
+					"Description": "refinery margin = refined product price - (crude price + cost)",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "RefineryMarginAmount"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 2,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProductPriceNote",
+					"Description": "A note, comment or additional information regarding the refinery product price.",
+					"BaseAttributeReference": {
+						"Entity": "RefiningProductPriceList.cdm.json/RefiningProductPriceList",
+						"Name": "RefineryProductPriceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningProductPriceList",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningProductPriceList",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductId\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"ProductId\"},\"PriceListTypeId\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PriceListTypeId\"},\"CountryId\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"CountryId\"},\"UnitOfMeasureId\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"UnitOfMeasureId\"},\"IsoCurrencyCode\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"IsoCurrencyCode\"},\"PeriodStartDate\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PeriodEndDate\"},\"RefineryPriceAmount\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryPriceAmount\"},\"RefineryCostAmount\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryCostAmount\"},\"RefineryMarginAmount\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryMarginAmount\"},\"RefineryProductPriceNote\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryProductPriceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefiningProductPriceList\",\"path\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\"},\"description\":\"The Price List for a Product as defined for a Country for a specific period.\",\"primaryKey\":[\"ProductId\",\"PriceListTypeId\",\"CountryId\",\"UnitOfMeasureId\",\"IsoCurrencyCode\",\"PeriodStartDate\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PriceListTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Price List Type.\",\"isNullable\":false,\"name\":\"PriceListTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"CountryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the Country.\",\"isNullable\":false,\"name\":\"CountryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":false,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"IsoCurrencyCode\"},\"dataType\":\"string\",\"dataTypeLength\":3,\"description\":\"The ISO 4217 currency code.\",\"isNullable\":false,\"name\":\"IsoCurrencyCode\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PeriodStartDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period start date for which the Product Price List is defined.\",\"isNullable\":false,\"name\":\"PeriodStartDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"PeriodEndDate\"},\"dataType\":\"date\",\"dateFormat\":\"YYYY-MM-DD\",\"description\":\"The period end date for which the Product Price List is defined.\",\"isNullable\":false,\"name\":\"PeriodEndDate\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryPriceAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The Standard, or default, price charged by retailers to the public for the Product.\\n\\nThe price of a Product published in a catalog, advertisement or printed list from which discounts, if any, may be subtracted. \\n\\nThis is the price that normally appears in catalogs, on purchase orders and invoices.\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryPriceAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryCostAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The refinery cost amount for the associated product/units.\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryCostAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryMarginAmount\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"refinery margin = refined product price - (crude price + cost)\",\"isNullable\":true,\"scale\":2,\"name\":\"RefineryMarginAmount\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefiningProductPriceList.cdm.json/RefiningProductPriceList\",\"name\":\"RefineryProductPriceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery product price.\",\"isNullable\":true,\"name\":\"RefineryProductPriceNote\"}]}}}",
+			"Description": "The Price List for a Product as defined for a Country for a specific period.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
+			"PrimaryKeys": "ProductId,PriceListTypeId,CountryId,UnitOfMeasureId,IsoCurrencyCode,PeriodStartDate",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

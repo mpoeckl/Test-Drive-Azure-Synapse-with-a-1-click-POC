@@ -1,0 +1,187 @@
+{
+	"name": "RefineryProcessProductStorage",
+	"properties": {
+		"Name": "RefineryProcessProductStorage",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The quantity of product produced by the refinery process during the associated period that is stored to the associated storage tank.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "RefineryProcessId",
+					"Description": "The unique identifier of the refinery process.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "RefineryProcessId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ProductId",
+					"Description": "The unique identifier of a Product.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "ProductId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "StorageTankId",
+					"Description": "The unique identifier of a Storage Tank.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "StorageTankId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp related to the refinery process product storage.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp related to the refinery process product storage.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessProductStoredUnits",
+					"Description": "The units stored in the tank.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "RefineryProcessProductStoredUnits"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "UnitOfMeasureId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "UnitOfMeasureId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RefineryProcessProductStorageNote",
+					"Description": "A note, comment or additional information regarding the refinery process product storage.",
+					"BaseAttributeReference": {
+						"Entity": "RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage",
+						"Name": "RefineryProcessProductStorageNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductStorage",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductStorage",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessId\"},\"ProductId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"ProductId\"},\"StorageTankId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"StorageTankId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessProductStoredUnits\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStoredUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessProductStorageNote\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStorageNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RefineryProcessProductStorage\",\"path\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\"},\"description\":\"The quantity of product produced by the refinery process during the associated period that is stored to the associated storage tank.\",\"primaryKey\":[\"RefineryProcessId\",\"ProductId\",\"StorageTankId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of the refinery process.\",\"isNullable\":false,\"name\":\"RefineryProcessId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"ProductId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Product.\",\"isNullable\":false,\"name\":\"ProductId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"StorageTankId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Storage Tank.\",\"isNullable\":false,\"name\":\"StorageTankId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp related to the refinery process product storage.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp related to the refinery process product storage.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStoredUnits\"},\"dataType\":\"integer\",\"description\":\"The units stored in the tank.\",\"isNullable\":true,\"name\":\"RefineryProcessProductStoredUnits\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"UnitOfMeasureId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"UnitOfMeasureId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStorageNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the refinery process product storage.\",\"isNullable\":true,\"name\":\"RefineryProcessProductStorageNote\"}]}}}",
+			"Description": "The quantity of product produced by the refinery process during the associated period that is stored to the associated storage tank.",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "RefineryProcessId,ProductId,StorageTankId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "SwitchType",
+	"properties": {
+		"Name": "SwitchType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of switch.\n\nEx:\n- Fuse\n- Disconnector\n- Circuit Breaker\n- Line Reactor\n- Relay Switch\n- Conductor\n- Transfer Switch\n- Breaker\n\nWhere:\n\nFUSE\nA protective device located on an electrical circuit to interrupt the flow of abnormally large currents. A circuit breaker is the most common means of providing overload and fault protection for customers and utilities.\n\nDISCONNECTOR\nDisconnect switches are used to isolate a component of an electrical system from the power source. \n\nElectrical power distribution systems require switching for many reasons, including fault isolation, transfer loads from one source to another, isolation of line segments for purpose of maintenance or new construction, and in some instances for shedding loads. \n\nDisconnect switches are frequently used to switch transformer magnetizing current, low level line or cable charging current, and parallel load currents.\n\nCIRCUIT BREAKER\nA component that can interrupt all the power in a circuit.\n\nLINE REACTOR\nAn inductor, or coiled conductor, that opposes any changes in the current flow.\n\nRELAY SWITCH\nA relay is an electrically operated switch. Many relays use an electromagnet to mechanically operate a switch, but other operating principles are also used, such as solid-state relays. Relays are used where it is necessary to control a circuit by a low-power signal (with complete electrical isolation between control and controlled circuits), or where several circuits must be controlled by one signal. The first relays were used in long distance telegraph circuits as amplifiers: they repeated the signal coming in from one circuit and re-transmitted it on another circuit. Relays were used extensively in telephone exchanges and early computers to perform logical operations.\n\nCONDUCTOR\nA substance or body that allows an electrical current to pass continuously along it. Electrical equipment receives power through electrical conductors.\n\nTRANSFER SWITCH\nA device for transferring one or more loads from one power source to another.\n\nBREAKER\nA mechanical switching device capable of making, carrying and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking current under specified abnormal circuit conditions.\n\nSince a breaker's most basic functionality is the ability to be open or closed it can be described as a specialized type of switch.\n\nBreaker, a specific sub type of Protected Switch, with additional attributes to\ndefine the current rating and transit time.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "SwitchTypeId",
+					"Description": "The unique identifier of a Switch Type.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchType.cdm.json/SwitchType",
+						"Name": "SwitchTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SwitchTypeName",
+					"Description": "The name of a Switch Type.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchType.cdm.json/SwitchType",
+						"Name": "SwitchTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "SwitchTypeDescription",
+					"Description": "The description of a Switch Type.",
+					"BaseAttributeReference": {
+						"Entity": "SwitchType.cdm.json/SwitchType",
+						"Name": "SwitchTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SwitchType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SwitchType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchTypeId\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeId\"},\"SwitchTypeName\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeName\"},\"SwitchTypeDescription\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"SwitchType\",\"path\":\"SwitchType.cdm.json/SwitchType\"},\"description\":\"The type of switch.\\n\\nEx:\\n- Fuse\\n- Disconnector\\n- Circuit Breaker\\n- Line Reactor\\n- Relay Switch\\n- Conductor\\n- Transfer Switch\\n- Breaker\\n\\nWhere:\\n\\nFUSE\\nA protective device located on an electrical circuit to interrupt the flow of abnormally large currents. A circuit breaker is the most common means of providing overload and fault protection for customers and utilities.\\n\\nDISCONNECTOR\\nDisconnect switches are used to isolate a component of an electrical system from the power source. \\n\\nElectrical power distribution systems require switching for many reasons, including fault isolation, transfer loads from one source to another, isolation of line segments for purpose of maintenance or new construction, and in some instances for shedding loads. \\n\\nDisconnect switches are frequently used to switch transformer magnetizing current, low level line or cable charging current, and parallel load currents.\\n\\nCIRCUIT BREAKER\\nA component that can interrupt all the power in a circuit.\\n\\nLINE REACTOR\\nAn inductor, or coiled conductor, that opposes any changes in the current flow.\\n\\nRELAY SWITCH\\nA relay is an electrically operated switch. Many relays use an electromagnet to mechanically operate a switch, but other operating principles are also used, such as solid-state relays. Relays are used where it is necessary to control a circuit by a low-power signal (with complete electrical isolation between control and controlled circuits), or where several circuits must be controlled by one signal. The first relays were used in long distance telegraph circuits as amplifiers: they repeated the signal coming in from one circuit and re-transmitted it on another circuit. Relays were used extensively in telephone exchanges and early computers to perform logical operations.\\n\\nCONDUCTOR\\nA substance or body that allows an electrical current to pass continuously along it. Electrical equipment receives power through electrical conductors.\\n\\nTRANSFER SWITCH\\nA device for transferring one or more loads from one power source to another.\\n\\nBREAKER\\nA mechanical switching device capable of making, carrying and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking current under specified abnormal circuit conditions.\\n\\nSince a breaker's most basic functionality is the ability to be open or closed it can be described as a specialized type of switch.\\n\\nBreaker, a specific sub type of Protected Switch, with additional attributes to\\ndefine the current rating and transit time.\",\"primaryKey\":[\"SwitchTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Switch Type.\",\"isNullable\":false,\"name\":\"SwitchTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Switch Type.\",\"isNullable\":true,\"name\":\"SwitchTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"SwitchType.cdm.json/SwitchType\",\"name\":\"SwitchTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Switch Type.\",\"isNullable\":true,\"name\":\"SwitchTypeDescription\"}]}}}",
+			"Description": "The type of switch.\n\nEx:\n- Fuse\n- Disconnector\n- Circuit Breaker\n- Line Reactor\n- Relay Switch\n- Conductor\n- Transfer Switch\n- Breaker\n\nWhere:\n\nFUSE\nA protective device located on an electrical circuit to interrupt the flow of abnormally large currents. A circuit breaker is the most common means of providing overload and fault protection for customers and utilities.\n\nDISCONNECTOR\nDisconnect switches are used to isolate a component of an electrical system from the power source. \n\nElectrical power distribution systems require switching for many reasons, including fault isolation, transfer loads from one source to another, isolation of line segments for purpose of maintenance or new construction, and in some instances for shedding loads. \n\nDisconnect switches are frequently used to switch transformer magnetizing current, low level line or cable charging current, and parallel load currents.\n\nCIRCUIT BREAKER\nA component that can interrupt all the power in a circuit.\n\nLINE REACTOR\nAn inductor, or coiled conductor, that opposes any changes in the current flow.\n\nRELAY SWITCH\nA relay is an electrically operated switch. Many relays use an electromagnet to mechanically operate a switch, but other operating principles are also used, such as solid-state relays. Relays are used where it is necessary to control a circuit by a low-power signal (with complete electrical isolation between control and controlled circuits), or where several circuits must be controlled by one signal. The first relays were used in long distance telegraph circuits as amplifiers: they repeated the signal coming in from one circuit and re-transmitted it on another circuit. Relays were used extensively in telephone exchanges and early computers to perform logical operations.\n\nCONDUCTOR\nA substance or body that allows an electrical current to pass continuously along it. Electrical equipment receives power through electrical conductors.\n\nTRANSFER SWITCH\nA device for transferring one or more loads from one power source to another.\n\nBREAKER\nA mechanical switching device capable of making, carrying and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking current under specified abnormal circuit conditions.\n\nSince a breaker's most basic functionality is the ability to be open or closed it can be described as a specialized type of switch.\n\nBreaker, a specific sub type of Protected Switch, with additional attributes to\ndefine the current rating and transit time.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "SwitchTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

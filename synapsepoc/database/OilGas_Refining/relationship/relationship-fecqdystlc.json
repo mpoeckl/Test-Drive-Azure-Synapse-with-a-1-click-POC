@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fecqdystlc",
+	"properties": {
+		"Name": "relationship-fecqdystlc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "AssetRelationshipType",
+		"ToTableName": "RelatedAsset",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "AssetRelationshipTypeId",
+				"ToColumnName": "AssetRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"AssetRelationshipType.cdm.json/AssetRelationshipType\",\"toEntity\":\"RelatedAsset.cdm.json/RelatedAsset\",\"joinPairs\":[{\"fromAttribute\":\"AssetRelationshipTypeId\",\"toAttribute\":\"AssetRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ComponentOwnershipType",
+	"properties": {
+		"Name": "ComponentOwnershipType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of ownership associated with the component.\n\nEx:\n- Customer Owned\n- Subscriber Owned\n- Network Owned\n- Utility Owned\n- Other Utility Owned\n- Third Party Owned\n- Government Owned\n- Processing Plant Owned",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentOwnershipTypeId",
+					"Description": "The unique identifier of a Component Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentOwnershipType.cdm.json/ComponentOwnershipType",
+						"Name": "ComponentOwnershipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentOwnershipTypeName",
+					"Description": "The name of a Component Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentOwnershipType.cdm.json/ComponentOwnershipType",
+						"Name": "ComponentOwnershipTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentOwnershipTypeDescription",
+					"Description": "The description of a Component Ownership Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentOwnershipType.cdm.json/ComponentOwnershipType",
+						"Name": "ComponentOwnershipTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentOwnershipType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentOwnershipType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentOwnershipTypeId\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeId\"},\"ComponentOwnershipTypeName\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeName\"},\"ComponentOwnershipTypeDescription\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentOwnershipType\",\"path\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\"},\"description\":\"The type of ownership associated with the component.\\n\\nEx:\\n- Customer Owned\\n- Subscriber Owned\\n- Network Owned\\n- Utility Owned\\n- Other Utility Owned\\n- Third Party Owned\\n- Government Owned\\n- Processing Plant Owned\",\"primaryKey\":[\"ComponentOwnershipTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Ownership Type.\",\"isNullable\":false,\"name\":\"ComponentOwnershipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Ownership Type.\",\"isNullable\":true,\"name\":\"ComponentOwnershipTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Ownership Type.\",\"isNullable\":true,\"name\":\"ComponentOwnershipTypeDescription\"}]}}}",
+			"Description": "The type of ownership associated with the component.\n\nEx:\n- Customer Owned\n- Subscriber Owned\n- Network Owned\n- Utility Owned\n- Other Utility Owned\n- Third Party Owned\n- Government Owned\n- Processing Plant Owned",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentOwnershipTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ctdgfohvzj",
+	"properties": {
+		"Name": "relationship-ctdgfohvzj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PumpApplicationType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PumpApplicationTypeId",
+				"ToColumnName": "PumpApplicationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PumpApplicationType.cdm.json/PumpApplicationType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PumpApplicationTypeId\",\"toAttribute\":\"PumpApplicationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

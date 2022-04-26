@@ -1,0 +1,106 @@
+{
+	"name": "ShipmentEventType",
+	"properties": {
+		"Name": "ShipmentEventType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of event that may be associated with a Shipment for a period of time or a point in time.\n\nEx:\n- Abandonment\n- Area check\n- Break Bulk\n- Customs Entry\n- Customs Exit\n- Detention\n- Devanning\n- Embargo\n- In Bond\n- In Customs\n- In-Bond\n- In-Quarantine\n- In-Transit Cleaning\n- In-Transit Entry\n- Lay Order\n- No Show\n- Offload\n- On-Hand\n- Shipment Aboard\n- Shipment Alongside\n- Shipment Consolidation\n- Terminated/Pickup\n- Vanning\n\nwhere:\n\nABANDONMENT\nA proceeding wherein a shipper/consignee seeks authority to abandon all or parts of their cargo.\n\nAREACHECK\nA request to physically look for cargo in the cargo terminal warehouse. This term is used when tracing cargo. It may also be referred to as a floorcheck.\n\nBREAK BULK\nDisassembling or unpacking a consolidated shipment for delivery or for reconsignment.\n\nTo 'breakbulk' is to unload packaged cargo from a 'breakbulk ship' or from a container and to distribute it.\n\nCUSTOMS ENTRY\nThe shipment has enter customs processing.\n\nCUSTOMS EXIT\nThe shipment has exited or completed customs.\n\nDETENTION\nA penalty charge against shippers or consignees for delaying carrier's equipment beyond allowed time. Demurrage applies to cargo; detention applies to equipment. See Per Diem.\n\nDEVANNING\nThe removal of cargo from a container. Also known as unstuffing, unloading or stripping.\n\nEMBARGO\nTemporary refusal to accept cargo for transportation at certain points or in certain routes due to the type or class of cargo, limitations of facilities, emergencies, or other abnormal circumstances.\n\nIN BOND\nAs applied to air freight coming into the United States, the term \"in Bond\" refers to a procedure under U.S. Customs rules where the clearance of cargo is postponed until the cargo reaches an inland Customs point rather than subjecting the cargo to clearance procedures at the first arriving U.S. gateway airport where process might be more time consuming. The procedure is so named because the cargo moves under the carrier's bond (financial liability assured by the carrier) from the gateway airport and remains \"In Bond\" until Customs releases the cargo at the inland Customs point (airport).\n\nIN CUSTOMS\nThe shipment is in customs, which is the government service which is responsible for the administration of Customs law and the collection of duties and taxes relating thereto, and which has responsibility for the application of other laws and regulations relative to the importation , transit, and exportation of goods.\n\nINBOND\nA term applied to air cargo coming into the USA. This designates a procedure under which U.S. Customs' clearance of cargo is postponed until the cargo reaches an inland customs point rather than at congested gateway cities. Cargo moves under the carrier's bond (posted with U.S. Customs) from the gateway to the inland customs port.\n\nIN-QUARANTINE\nA restraint placed on an operation to protect the public against a health hazard. A ship may be quarantined so that it cannot leave a protected point. During the quarantine period, the Q flag is hoisted.\n\nIN-TRANSIT CLEANING\nThe stopping of articles, such as peanuts, etc., for cleaning at a point between the point of origin and destination.\n\nIN-TRANSIT ENTRY\nAllows foreign merchandise arriving at one port to be transported in bond to another port, where a superseding entry is filed.\n\nLAY ORDER\nThe period during which imported merchandise may remain at the place of unloading without some action being taken for its disposition.\n\nNO SHOW\nShipper who fails to show up to ship an already booked shipment. Also, a shipment which fails to show up at destination off a flight.\n\nOFFLOAD\nRemoving the cargo from the aircraft.\n\nON-HAND\nCargo is confirmed at a particular airport and available for the customer to pick-up.\n\nSHIPMENT ABOARD\nReferring to cargo being put, or laden, onto a means of conveyance.\n\nSHIPMENT ALONGSIDE\nA phrase referring to the side of a ship. Goods delivered \"alongside\" are to be placed on the dock or barge within reach of the transport ship's tackle so that they can be loaded.\n\nSHIPMENT CONSOLIDATION\nThe combining of smaller shipments into a single shipment that is sent to a destination point.\nThe reorganization of corporations to combine two or more into a successor corporation. \nIn order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively and In order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively.\n\nTERMINATED/PICKUP\nThe consignee has retrieved cargo from the airport.\n\nVANNING\nA term sometimes used for stowing cargo in a container.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ShipmentEventTypeId",
+					"Description": "The unique identifier of a Shipment Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventType.cdm.json/ShipmentEventType",
+						"Name": "ShipmentEventTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventTypeName",
+					"Description": "The name of a Shipment Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventType.cdm.json/ShipmentEventType",
+						"Name": "ShipmentEventTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ShipmentEventTypeDescription",
+					"Description": "The description of a Shipment Event Type.",
+					"BaseAttributeReference": {
+						"Entity": "ShipmentEventType.cdm.json/ShipmentEventType",
+						"Name": "ShipmentEventTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentEventType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentEventTypeId\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeId\"},\"ShipmentEventTypeName\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeName\"},\"ShipmentEventTypeDescription\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ShipmentEventType\",\"path\":\"ShipmentEventType.cdm.json/ShipmentEventType\"},\"description\":\"A type of event that may be associated with a Shipment for a period of time or a point in time.\\n\\nEx:\\n- Abandonment\\n- Area check\\n- Break Bulk\\n- Customs Entry\\n- Customs Exit\\n- Detention\\n- Devanning\\n- Embargo\\n- In Bond\\n- In Customs\\n- In-Bond\\n- In-Quarantine\\n- In-Transit Cleaning\\n- In-Transit Entry\\n- Lay Order\\n- No Show\\n- Offload\\n- On-Hand\\n- Shipment Aboard\\n- Shipment Alongside\\n- Shipment Consolidation\\n- Terminated/Pickup\\n- Vanning\\n\\nwhere:\\n\\nABANDONMENT\\nA proceeding wherein a shipper/consignee seeks authority to abandon all or parts of their cargo.\\n\\nAREACHECK\\nA request to physically look for cargo in the cargo terminal warehouse. This term is used when tracing cargo. It may also be referred to as a floorcheck.\\n\\nBREAK BULK\\nDisassembling or unpacking a consolidated shipment for delivery or for reconsignment.\\n\\nTo 'breakbulk' is to unload packaged cargo from a 'breakbulk ship' or from a container and to distribute it.\\n\\nCUSTOMS ENTRY\\nThe shipment has enter customs processing.\\n\\nCUSTOMS EXIT\\nThe shipment has exited or completed customs.\\n\\nDETENTION\\nA penalty charge against shippers or consignees for delaying carrier's equipment beyond allowed time. Demurrage applies to cargo; detention applies to equipment. See Per Diem.\\n\\nDEVANNING\\nThe removal of cargo from a container. Also known as unstuffing, unloading or stripping.\\n\\nEMBARGO\\nTemporary refusal to accept cargo for transportation at certain points or in certain routes due to the type or class of cargo, limitations of facilities, emergencies, or other abnormal circumstances.\\n\\nIN BOND\\nAs applied to air freight coming into the United States, the term \\\"in Bond\\\" refers to a procedure under U.S. Customs rules where the clearance of cargo is postponed until the cargo reaches an inland Customs point rather than subjecting the cargo to clearance procedures at the first arriving U.S. gateway airport where process might be more time consuming. The procedure is so named because the cargo moves under the carrier's bond (financial liability assured by the carrier) from the gateway airport and remains \\\"In Bond\\\" until Customs releases the cargo at the inland Customs point (airport).\\n\\nIN CUSTOMS\\nThe shipment is in customs, which is the government service which is responsible for the administration of Customs law and the collection of duties and taxes relating thereto, and which has responsibility for the application of other laws and regulations relative to the importation , transit, and exportation of goods.\\n\\nINBOND\\nA term applied to air cargo coming into the USA. This designates a procedure under which U.S. Customs' clearance of cargo is postponed until the cargo reaches an inland customs point rather than at congested gateway cities. Cargo moves under the carrier's bond (posted with U.S. Customs) from the gateway to the inland customs port.\\n\\nIN-QUARANTINE\\nA restraint placed on an operation to protect the public against a health hazard. A ship may be quarantined so that it cannot leave a protected point. During the quarantine period, the Q flag is hoisted.\\n\\nIN-TRANSIT CLEANING\\nThe stopping of articles, such as peanuts, etc., for cleaning at a point between the point of origin and destination.\\n\\nIN-TRANSIT ENTRY\\nAllows foreign merchandise arriving at one port to be transported in bond to another port, where a superseding entry is filed.\\n\\nLAY ORDER\\nThe period during which imported merchandise may remain at the place of unloading without some action being taken for its disposition.\\n\\nNO SHOW\\nShipper who fails to show up to ship an already booked shipment. Also, a shipment which fails to show up at destination off a flight.\\n\\nOFFLOAD\\nRemoving the cargo from the aircraft.\\n\\nON-HAND\\nCargo is confirmed at a particular airport and available for the customer to pick-up.\\n\\nSHIPMENT ABOARD\\nReferring to cargo being put, or laden, onto a means of conveyance.\\n\\nSHIPMENT ALONGSIDE\\nA phrase referring to the side of a ship. Goods delivered \\\"alongside\\\" are to be placed on the dock or barge within reach of the transport ship's tackle so that they can be loaded.\\n\\nSHIPMENT CONSOLIDATION\\nThe combining of smaller shipments into a single shipment that is sent to a destination point.\\nThe reorganization of corporations to combine two or more into a successor corporation. \\nIn order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively and In order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively.\\n\\nTERMINATED/PICKUP\\nThe consignee has retrieved cargo from the airport.\\n\\nVANNING\\nA term sometimes used for stowing cargo in a container.\",\"primaryKey\":[\"ShipmentEventTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Shipment Event Type.\",\"isNullable\":false,\"name\":\"ShipmentEventTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Shipment Event Type.\",\"isNullable\":true,\"name\":\"ShipmentEventTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ShipmentEventType.cdm.json/ShipmentEventType\",\"name\":\"ShipmentEventTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Shipment Event Type.\",\"isNullable\":true,\"name\":\"ShipmentEventTypeDescription\"}]}}}",
+			"Description": "A type of event that may be associated with a Shipment for a period of time or a point in time.\n\nEx:\n- Abandonment\n- Area check\n- Break Bulk\n- Customs Entry\n- Customs Exit\n- Detention\n- Devanning\n- Embargo\n- In Bond\n- In Customs\n- In-Bond\n- In-Quarantine\n- In-Transit Cleaning\n- In-Transit Entry\n- Lay Order\n- No Show\n- Offload\n- On-Hand\n- Shipment Aboard\n- Shipment Alongside\n- Shipment Consolidation\n- Terminated/Pickup\n- Vanning\n\nwhere:\n\nABANDONMENT\nA proceeding wherein a shipper/consignee seeks authority to abandon all or parts of their cargo.\n\nAREACHECK\nA request to physically look for cargo in the cargo terminal warehouse. This term is used when tracing cargo. It may also be referred to as a floorcheck.\n\nBREAK BULK\nDisassembling or unpacking a consolidated shipment for delivery or for reconsignment.\n\nTo 'breakbulk' is to unload packaged cargo from a 'breakbulk ship' or from a container and to distribute it.\n\nCUSTOMS ENTRY\nThe shipment has enter customs processing.\n\nCUSTOMS EXIT\nThe shipment has exited or completed customs.\n\nDETENTION\nA penalty charge against shippers or consignees for delaying carrier's equipment beyond allowed time. Demurrage applies to cargo; detention applies to equipment. See Per Diem.\n\nDEVANNING\nThe removal of cargo from a container. Also known as unstuffing, unloading or stripping.\n\nEMBARGO\nTemporary refusal to accept cargo for transportation at certain points or in certain routes due to the type or class of cargo, limitations of facilities, emergencies, or other abnormal circumstances.\n\nIN BOND\nAs applied to air freight coming into the United States, the term \"in Bond\" refers to a procedure under U.S. Customs rules where the clearance of cargo is postponed until the cargo reaches an inland Customs point rather than subjecting the cargo to clearance procedures at the first arriving U.S. gateway airport where process might be more time consuming. The procedure is so named because the cargo moves under the carrier's bond (financial liability assured by the carrier) from the gateway airport and remains \"In Bond\" until Customs releases the cargo at the inland Customs point (airport).\n\nIN CUSTOMS\nThe shipment is in customs, which is the government service which is responsible for the administration of Customs law and the collection of duties and taxes relating thereto, and which has responsibility for the application of other laws and regulations relative to the importation , transit, and exportation of goods.\n\nINBOND\nA term applied to air cargo coming into the USA. This designates a procedure under which U.S. Customs' clearance of cargo is postponed until the cargo reaches an inland customs point rather than at congested gateway cities. Cargo moves under the carrier's bond (posted with U.S. Customs) from the gateway to the inland customs port.\n\nIN-QUARANTINE\nA restraint placed on an operation to protect the public against a health hazard. A ship may be quarantined so that it cannot leave a protected point. During the quarantine period, the Q flag is hoisted.\n\nIN-TRANSIT CLEANING\nThe stopping of articles, such as peanuts, etc., for cleaning at a point between the point of origin and destination.\n\nIN-TRANSIT ENTRY\nAllows foreign merchandise arriving at one port to be transported in bond to another port, where a superseding entry is filed.\n\nLAY ORDER\nThe period during which imported merchandise may remain at the place of unloading without some action being taken for its disposition.\n\nNO SHOW\nShipper who fails to show up to ship an already booked shipment. Also, a shipment which fails to show up at destination off a flight.\n\nOFFLOAD\nRemoving the cargo from the aircraft.\n\nON-HAND\nCargo is confirmed at a particular airport and available for the customer to pick-up.\n\nSHIPMENT ABOARD\nReferring to cargo being put, or laden, onto a means of conveyance.\n\nSHIPMENT ALONGSIDE\nA phrase referring to the side of a ship. Goods delivered \"alongside\" are to be placed on the dock or barge within reach of the transport ship's tackle so that they can be loaded.\n\nSHIPMENT CONSOLIDATION\nThe combining of smaller shipments into a single shipment that is sent to a destination point.\nThe reorganization of corporations to combine two or more into a successor corporation. \nIn order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively and In order to handle small lot of consignment efficiently and competitively, freight forwarder usually put many consignments into one lot then tender to carrier for forwarding. In this case, each consignment will be shipped with one HAWB respectively.\n\nTERMINATED/PICKUP\nThe consignee has retrieved cargo from the airport.\n\nVANNING\nA term sometimes used for stowing cargo in a container.",
+			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
+			"PrimaryKeys": "ShipmentEventTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

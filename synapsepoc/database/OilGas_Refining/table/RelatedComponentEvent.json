@@ -1,0 +1,121 @@
+{
+	"name": "RelatedComponentEvent",
+	"properties": {
+		"Name": "RelatedComponentEvent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The relationship among Component Events.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentEventId",
+					"Description": "The unique identifier of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedComponentEvent.cdm.json/RelatedComponentEvent",
+						"Name": "ComponentEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "RelatedComponentEventId",
+					"Description": "The unique identifier of a Component Event.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedComponentEvent.cdm.json/RelatedComponentEvent",
+						"Name": "RelatedComponentEventId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventRelationshipTypeId",
+					"Description": "The unique identifier of a Transaction Relationship Type.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedComponentEvent.cdm.json/RelatedComponentEvent",
+						"Name": "ComponentEventRelationshipTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentEventRelationshipNote",
+					"Description": "A note, comment or additional information regarding a Component Event Relationship.",
+					"BaseAttributeReference": {
+						"Entity": "RelatedComponentEvent.cdm.json/RelatedComponentEvent",
+						"Name": "ComponentEventRelationshipNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedComponentEvent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedComponentEvent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventId\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventId\"},\"RelatedComponentEventId\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"RelatedComponentEventId\"},\"ComponentEventRelationshipTypeId\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventRelationshipTypeId\"},\"ComponentEventRelationshipNote\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventRelationshipNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"RelatedComponentEvent\",\"path\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\"},\"description\":\"The relationship among Component Events.\",\"primaryKey\":[\"ComponentEventId\",\"RelatedComponentEventId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event.\",\"isNullable\":false,\"name\":\"ComponentEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"RelatedComponentEventId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Event.\",\"isNullable\":false,\"name\":\"RelatedComponentEventId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventRelationshipTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Transaction Relationship Type.\",\"isNullable\":true,\"name\":\"ComponentEventRelationshipTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"RelatedComponentEvent.cdm.json/RelatedComponentEvent\",\"name\":\"ComponentEventRelationshipNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Event Relationship.\",\"isNullable\":true,\"name\":\"ComponentEventRelationshipNote\"}]}}}",
+			"Description": "The relationship among Component Events.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentEventId,RelatedComponentEventId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

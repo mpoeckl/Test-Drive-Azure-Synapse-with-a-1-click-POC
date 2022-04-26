@@ -1,0 +1,139 @@
+{
+	"name": "PipeFieldDevice",
+	"properties": {
+		"Name": "PipeFieldDevice",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A field device associated with the pipe (pipe segment).",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PipeFieldDevice.cdm.json/PipeFieldDevice",
+						"Name": "PipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "FieldDeviceId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PipeFieldDevice.cdm.json/PipeFieldDevice",
+						"Name": "FieldDeviceId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the association between the pipe and the field device.",
+					"BaseAttributeReference": {
+						"Entity": "PipeFieldDevice.cdm.json/PipeFieldDevice",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the association between the pipe and the field device.",
+					"BaseAttributeReference": {
+						"Entity": "PipeFieldDevice.cdm.json/PipeFieldDevice",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PipeFieldDeviceNote",
+					"Description": "A note, comment or additional information regarding the pipe field device.",
+					"BaseAttributeReference": {
+						"Entity": "PipeFieldDevice.cdm.json/PipeFieldDevice",
+						"Name": "PipeFieldDeviceNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeFieldDevice",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeFieldDevice",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PipeId\"},\"FieldDeviceId\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"FieldDeviceId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PeriodEndTimestamp\"},\"PipeFieldDeviceNote\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PipeFieldDeviceNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeFieldDevice\",\"path\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\"},\"description\":\"A field device associated with the pipe (pipe segment).\",\"primaryKey\":[\"PipeId\",\"FieldDeviceId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"FieldDeviceId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"FieldDeviceId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the association between the pipe and the field device.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the association between the pipe and the field device.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeFieldDevice.cdm.json/PipeFieldDevice\",\"name\":\"PipeFieldDeviceNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pipe field device.\",\"isNullable\":true,\"name\":\"PipeFieldDeviceNote\"}]}}}",
+			"Description": "A field device associated with the pipe (pipe segment).",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeId,FieldDeviceId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

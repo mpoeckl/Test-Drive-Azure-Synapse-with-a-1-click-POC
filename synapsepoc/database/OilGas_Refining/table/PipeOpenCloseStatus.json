@@ -1,0 +1,139 @@
+{
+	"name": "PipeOpenCloseStatus",
+	"properties": {
+		"Name": "PipeOpenCloseStatus",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The open/close status of the pipe for the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus",
+						"Name": "PipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the associated status.",
+					"BaseAttributeReference": {
+						"Entity": "PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the associated status.",
+					"BaseAttributeReference": {
+						"Entity": "PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "OpenCloseStatusId",
+					"Description": "The unique identifier of an open/close status type.",
+					"BaseAttributeReference": {
+						"Entity": "PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus",
+						"Name": "OpenCloseStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeOpenCloseStatusNote",
+					"Description": "A note, comment or additional information regarding the pipe open/close status.",
+					"BaseAttributeReference": {
+						"Entity": "PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus",
+						"Name": "PipeOpenCloseStatusNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeOpenCloseStatus",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeOpenCloseStatus",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodEndTimestamp\"},\"OpenCloseStatusId\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"OpenCloseStatusId\"},\"PipeOpenCloseStatusNote\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeOpenCloseStatusNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PipeOpenCloseStatus\",\"path\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\"},\"description\":\"The open/close status of the pipe for the associated period.\",\"primaryKey\":[\"PipeId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the associated status.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the associated status.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"OpenCloseStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an open/close status type.\",\"isNullable\":true,\"name\":\"OpenCloseStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeOpenCloseStatusNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding the pipe open/close status.\",\"isNullable\":true,\"name\":\"PipeOpenCloseStatusNote\"}]}}}",
+			"Description": "The open/close status of the pipe for the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

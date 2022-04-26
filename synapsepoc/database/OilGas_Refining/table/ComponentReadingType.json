@@ -1,0 +1,137 @@
+{
+	"name": "ComponentReadingType",
+	"properties": {
+		"Name": "ComponentReadingType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The scan rate for the reading of the associated reading type.\n\nEx:\nFor Testing Equipment 2342 the temperature is scanned every hour.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingType.cdm.json/ComponentReadingType",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingType.cdm.json/ComponentReadingType",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingScanRateId",
+					"Description": "The unique identifier of a Reading Scan Rate.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingType.cdm.json/ComponentReadingType",
+						"Name": "ReadingScanRateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingModeId",
+					"Description": "The unique identifier of a Reading Mode.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingType.cdm.json/ComponentReadingType",
+						"Name": "ReadingModeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingTypeNote",
+					"Description": "A note, comment or additional information regarding a Component Reading Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingType.cdm.json/ComponentReadingType",
+						"Name": "ComponentReadingTypeNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingTypeId\"},\"ReadingScanRateId\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingScanRateId\"},\"ReadingModeId\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingModeId\"},\"ComponentReadingTypeNote\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ComponentReadingTypeNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingType\",\"path\":\"ComponentReadingType.cdm.json/ComponentReadingType\"},\"description\":\"The scan rate for the reading of the associated reading type.\\n\\nEx:\\nFor Testing Equipment 2342 the temperature is scanned every hour.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingScanRateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Scan Rate.\",\"isNullable\":false,\"name\":\"ReadingScanRateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ReadingModeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Mode.\",\"isNullable\":true,\"name\":\"ReadingModeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingType.cdm.json/ComponentReadingType\",\"name\":\"ComponentReadingTypeNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading Type.\",\"isNullable\":true,\"name\":\"ComponentReadingTypeNote\"}]}}}",
+			"Description": "The scan rate for the reading of the associated reading type.\n\nEx:\nFor Testing Equipment 2342 the temperature is scanned every hour.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

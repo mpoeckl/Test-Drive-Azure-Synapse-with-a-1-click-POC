@@ -1,0 +1,155 @@
+{
+	"name": "ComponentCondition",
+	"properties": {
+		"Name": "ComponentCondition",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The state of readiness or operability of the component during the associated period.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PeriodStartTimestamp",
+					"Description": "The period start timestamp of the Component's condition.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "PeriodStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "PeriodEndTimestamp",
+					"Description": "The period end timestamp of the Component's condition.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "PeriodEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConditionTypeId",
+					"Description": "The unique identifier of a Component Condition Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "ComponentConditionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentConditionStatement",
+					"Description": "A statement regarding the condition of the Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "ComponentConditionStatement"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionId",
+					"Description": "The unique identifier of a Component Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentCondition.cdm.json/ComponentCondition",
+						"Name": "ComponentInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCondition",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCondition",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"PeriodEndTimestamp\"},\"ComponentConditionTypeId\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentConditionTypeId\"},\"ComponentConditionStatement\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentConditionStatement\"},\"ComponentInspectionId\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentInspectionId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentCondition\",\"path\":\"ComponentCondition.cdm.json/ComponentCondition\"},\"description\":\"The state of readiness or operability of the component during the associated period.\",\"primaryKey\":[\"ComponentId\",\"PeriodStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"PeriodStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp of the Component's condition.\",\"isNullable\":false,\"name\":\"PeriodStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"PeriodEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period end timestamp of the Component's condition.\",\"isNullable\":true,\"name\":\"PeriodEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentConditionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Condition Type.\",\"isNullable\":false,\"name\":\"ComponentConditionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentConditionStatement\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"A statement regarding the condition of the Component.\",\"isNullable\":true,\"name\":\"ComponentConditionStatement\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentCondition.cdm.json/ComponentCondition\",\"name\":\"ComponentInspectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Inspection.\",\"isNullable\":true,\"name\":\"ComponentInspectionId\"}]}}}",
+			"Description": "The state of readiness or operability of the component during the associated period.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,PeriodStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

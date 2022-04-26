@@ -1,0 +1,26 @@
+{
+	"name": "relationship-akwmhxnrlv",
+	"properties": {
+		"Name": "relationship-akwmhxnrlv",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Device",
+		"ToTableName": "DeviceSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeviceId",
+				"ToColumnName": "DeviceId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Device.cdm.json/Device\",\"toEntity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"joinPairs\":[{\"fromAttribute\":\"DeviceId\",\"toAttribute\":\"DeviceId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

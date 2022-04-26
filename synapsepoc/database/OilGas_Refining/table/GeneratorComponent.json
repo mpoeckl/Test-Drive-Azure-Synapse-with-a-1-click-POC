@@ -1,0 +1,105 @@
+{
+	"name": "GeneratorComponent",
+	"properties": {
+		"Name": "GeneratorComponent",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A generator component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "GeneratorComponentId",
+					"Description": "The unique identifier of a Generator Component.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponent.cdm.json/GeneratorComponent",
+						"Name": "GeneratorComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorComponentTypeId",
+					"Description": "The unique identifier of a generator component type.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponent.cdm.json/GeneratorComponent",
+						"Name": "GeneratorComponentTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "GeneratorComponentDescription",
+					"Description": "The description of a Generator Component.",
+					"BaseAttributeReference": {
+						"Entity": "GeneratorComponent.cdm.json/GeneratorComponent",
+						"Name": "GeneratorComponentDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponent",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponent",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorComponentId\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentId\"},\"GeneratorComponentTypeId\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentTypeId\"},\"GeneratorComponentDescription\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"GeneratorComponent\",\"path\":\"GeneratorComponent.cdm.json/GeneratorComponent\"},\"description\":\"A generator component.\",\"primaryKey\":[\"GeneratorComponentId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Generator Component.\",\"isNullable\":false,\"name\":\"GeneratorComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a generator component type.\",\"isNullable\":false,\"name\":\"GeneratorComponentTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"GeneratorComponent.cdm.json/GeneratorComponent\",\"name\":\"GeneratorComponentDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Generator Component.\",\"isNullable\":true,\"name\":\"GeneratorComponentDescription\"}]}}}",
+			"Description": "A generator component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "GeneratorComponentId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

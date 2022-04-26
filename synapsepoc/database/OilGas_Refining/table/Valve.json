@@ -1,0 +1,234 @@
+{
+	"name": "Valve",
+	"properties": {
+		"Name": "Valve",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A valve is a device that regulates the flow of a fluid  by opening, closing, or partially obstructing various passageways. \n\nIn an open valve, fluid flows in a direction from higher pressure to lower pressure.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ValveId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ValveSize",
+					"Description": "The size of the valve.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveSize"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 18,
+						"Scale": 8,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "ValveSizeUomId",
+					"Description": "The unique identifier of a Unit Of Measure.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveSizeUomId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveConnectionTypeId",
+					"Description": "The unique identifier of a valve connection type.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveConnectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveRatingId",
+					"Description": "The unique identifier of a valve rating.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveOperatorTypeId",
+					"Description": "The unique identifier of a valve operator type.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveOperatorTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveFunctionId",
+					"Description": "The unique identifier of a valve function.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveFunctionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveAccessStatusId",
+					"Description": "The unique identifier of a value access status.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveAccessStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveTypeId",
+					"Description": "The unique identifier of a valve type.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveCouplingTypeId",
+					"Description": "The unique identifier of a valve couple type.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveCouplingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ValveUseId",
+					"Description": "The unique identifier of a valve use.",
+					"BaseAttributeReference": {
+						"Entity": "Valve.cdm.json/Valve",
+						"Name": "ValveUseId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Valve",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Valve",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveId\"},\"ValveSize\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveSize\"},\"ValveSizeUomId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveSizeUomId\"},\"ValveConnectionTypeId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveConnectionTypeId\"},\"ValveRatingId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveRatingId\"},\"ValveOperatorTypeId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveOperatorTypeId\"},\"ValveFunctionId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveFunctionId\"},\"ValveAccessStatusId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveAccessStatusId\"},\"ValveTypeId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveTypeId\"},\"ValveCouplingTypeId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveCouplingTypeId\"},\"ValveUseId\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveUseId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Valve\",\"path\":\"Valve.cdm.json/Valve\"},\"description\":\"A valve is a device that regulates the flow of a fluid  by opening, closing, or partially obstructing various passageways. \\n\\nIn an open valve, fluid flows in a direction from higher pressure to lower pressure.\",\"primaryKey\":[\"ValveId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ValveId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveSize\"},\"dataType\":\"decimal\",\"dataTypeLength\":18,\"description\":\"The size of the valve.\",\"isNullable\":true,\"scale\":8,\"name\":\"ValveSize\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveSizeUomId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Unit Of Measure.\",\"isNullable\":true,\"name\":\"ValveSizeUomId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveConnectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve connection type.\",\"isNullable\":true,\"name\":\"ValveConnectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve rating.\",\"isNullable\":true,\"name\":\"ValveRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveOperatorTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve operator type.\",\"isNullable\":true,\"name\":\"ValveOperatorTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveFunctionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve function.\",\"isNullable\":true,\"name\":\"ValveFunctionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveAccessStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a value access status.\",\"isNullable\":true,\"name\":\"ValveAccessStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve type.\",\"isNullable\":true,\"name\":\"ValveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveCouplingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve couple type.\",\"isNullable\":true,\"name\":\"ValveCouplingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Valve.cdm.json/Valve\",\"name\":\"ValveUseId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a valve use.\",\"isNullable\":true,\"name\":\"ValveUseId\"}]}}}",
+			"Description": "A valve is a device that regulates the flow of a fluid  by opening, closing, or partially obstructing various passageways. \n\nIn an open valve, fluid flows in a direction from higher pressure to lower pressure.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ValveId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

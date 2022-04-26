@@ -1,0 +1,26 @@
+{
+	"name": "relationship-butmjcnesy",
+	"properties": {
+		"Name": "relationship-butmjcnesy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "UnDangerousGoodsClass",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "UnDangerousGoodsClassId",
+				"ToColumnName": "UnDangerousGoodsClassId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"UnDangerousGoodsClass.cdm.json/UnDangerousGoodsClass\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"UnDangerousGoodsClassId\",\"toAttribute\":\"UnDangerousGoodsClassId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

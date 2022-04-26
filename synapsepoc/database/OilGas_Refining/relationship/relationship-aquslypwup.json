@@ -1,0 +1,26 @@
+{
+	"name": "relationship-aquslypwup",
+	"properties": {
+		"Name": "relationship-aquslypwup",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentPriority",
+		"ToTableName": "Shipment",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentPriorityId",
+				"ToColumnName": "ShipmentPriorityId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"toEntity\":\"Shipment.cdm.json/Shipment\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentPriorityId\",\"toAttribute\":\"ShipmentPriorityId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-hvvyyaxscc",
+	"properties": {
+		"Name": "relationship-hvvyyaxscc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentLocationPartyRelationshipType",
+		"ToTableName": "ComponentLocationRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ComponentLocationPartyRelationshipTypeId",
+				"ToColumnName": "ComponentLocationPartyRelationshipTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentLocationPartyRelationshipType.cdm.json/ComponentLocationPartyRelationshipType\",\"toEntity\":\"ComponentLocationRelatedParty.cdm.json/ComponentLocationRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"ComponentLocationPartyRelationshipTypeId\",\"toAttribute\":\"ComponentLocationPartyRelationshipTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-psxnovpvam",
+	"properties": {
+		"Name": "relationship-psxnovpvam",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "PipelineStation",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PipelineStationId",
+				"ToColumnName": "PipelineStationId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"PipelineStation.cdm.json/PipelineStation\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"PipelineStationId\",\"toAttribute\":\"PipelineStationId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

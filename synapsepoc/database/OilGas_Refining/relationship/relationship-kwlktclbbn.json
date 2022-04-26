@@ -1,0 +1,26 @@
+{
+	"name": "relationship-kwlktclbbn",
+	"properties": {
+		"Name": "relationship-kwlktclbbn",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ShipmentStatusType",
+		"ToTableName": "ShipmentStatus",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "ShipmentStatusTypeId",
+				"ToColumnName": "ShipmentStatusTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"toEntity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"joinPairs\":[{\"fromAttribute\":\"ShipmentStatusTypeId\",\"toAttribute\":\"ShipmentStatusTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

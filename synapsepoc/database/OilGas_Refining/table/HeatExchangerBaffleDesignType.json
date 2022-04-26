@@ -1,0 +1,106 @@
+{
+	"name": "HeatExchangerBaffleDesignType",
+	"properties": {
+		"Name": "HeatExchangerBaffleDesignType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The type of heat exchanger baffle design.\n\nEx:\n- Segmental baffle\n- Semicircular segmental\n- Disc/donut baffle\n\nBaffle Design: baffles are used in shell and tube heat exchangers to direct fluid across the tube bundle. They run perpendicularly to the shell and hold the bundle, preventing the tubes from sagging over a long length. They can also prevent the tubes from vibrating. The most common type of baffle is the segmental baffle. The semicircular segmental baffles are oriented at 180 degrees to the adjacent baffles forcing the fluid to flow upward and downwards between the tube bundle. Baffle spacing is of large thermodynamic concern when designing shell and tube heat exchangers. Baffles must be spaced with consideration for the conversion of pressure drop and heat transfer. For thermo economic optimization it is suggested that the baffles be spaced no closer than 20% of the shell's inner diameter. Having baffles spaced too closely causes a greater pressure drop because of flow redirection. Consequently, having the baffles spaced too far apart means that there may be cooler spots in the corners between baffles. It is also important to ensure the baffles are spaced close enough that the tubes do not sag. The other main type of baffle is the disc and doughnut baffle, which consists of two concentric baffles. An outer, wider baffle looks like a doughnut, whilst the inner baffle is shaped like a disk. This type of baffle forces the fluid to pass around each side of the disk then through the doughnut baffle generating a different type of fluid flow.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HeatExchangerBaffleDesignTypeId",
+					"Description": "The unique identifier of a heat exchanger baffle design type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType",
+						"Name": "HeatExchangerBaffleDesignTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerBaffleDesignTypeName",
+					"Description": "The name of a heat exchanger baffle design type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType",
+						"Name": "HeatExchangerBaffleDesignTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HeatExchangerBaffleDesignTypeDescription",
+					"Description": "The description of a heat exchanger baffle design type.",
+					"BaseAttributeReference": {
+						"Entity": "HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType",
+						"Name": "HeatExchangerBaffleDesignTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerBaffleDesignType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerBaffleDesignType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerBaffleDesignTypeId\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeId\"},\"HeatExchangerBaffleDesignTypeName\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeName\"},\"HeatExchangerBaffleDesignTypeDescription\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HeatExchangerBaffleDesignType\",\"path\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\"},\"description\":\"The type of heat exchanger baffle design.\\n\\nEx:\\n- Segmental baffle\\n- Semicircular segmental\\n- Disc/donut baffle\\n\\nBaffle Design: baffles are used in shell and tube heat exchangers to direct fluid across the tube bundle. They run perpendicularly to the shell and hold the bundle, preventing the tubes from sagging over a long length. They can also prevent the tubes from vibrating. The most common type of baffle is the segmental baffle. The semicircular segmental baffles are oriented at 180 degrees to the adjacent baffles forcing the fluid to flow upward and downwards between the tube bundle. Baffle spacing is of large thermodynamic concern when designing shell and tube heat exchangers. Baffles must be spaced with consideration for the conversion of pressure drop and heat transfer. For thermo economic optimization it is suggested that the baffles be spaced no closer than 20% of the shell's inner diameter. Having baffles spaced too closely causes a greater pressure drop because of flow redirection. Consequently, having the baffles spaced too far apart means that there may be cooler spots in the corners between baffles. It is also important to ensure the baffles are spaced close enough that the tubes do not sag. The other main type of baffle is the disc and doughnut baffle, which consists of two concentric baffles. An outer, wider baffle looks like a doughnut, whilst the inner baffle is shaped like a disk. This type of baffle forces the fluid to pass around each side of the disk then through the doughnut baffle generating a different type of fluid flow.\",\"primaryKey\":[\"HeatExchangerBaffleDesignTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a heat exchanger baffle design type.\",\"isNullable\":false,\"name\":\"HeatExchangerBaffleDesignTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a heat exchanger baffle design type.\",\"isNullable\":true,\"name\":\"HeatExchangerBaffleDesignTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HeatExchangerBaffleDesignType.cdm.json/HeatExchangerBaffleDesignType\",\"name\":\"HeatExchangerBaffleDesignTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a heat exchanger baffle design type.\",\"isNullable\":true,\"name\":\"HeatExchangerBaffleDesignTypeDescription\"}]}}}",
+			"Description": "The type of heat exchanger baffle design.\n\nEx:\n- Segmental baffle\n- Semicircular segmental\n- Disc/donut baffle\n\nBaffle Design: baffles are used in shell and tube heat exchangers to direct fluid across the tube bundle. They run perpendicularly to the shell and hold the bundle, preventing the tubes from sagging over a long length. They can also prevent the tubes from vibrating. The most common type of baffle is the segmental baffle. The semicircular segmental baffles are oriented at 180 degrees to the adjacent baffles forcing the fluid to flow upward and downwards between the tube bundle. Baffle spacing is of large thermodynamic concern when designing shell and tube heat exchangers. Baffles must be spaced with consideration for the conversion of pressure drop and heat transfer. For thermo economic optimization it is suggested that the baffles be spaced no closer than 20% of the shell's inner diameter. Having baffles spaced too closely causes a greater pressure drop because of flow redirection. Consequently, having the baffles spaced too far apart means that there may be cooler spots in the corners between baffles. It is also important to ensure the baffles are spaced close enough that the tubes do not sag. The other main type of baffle is the disc and doughnut baffle, which consists of two concentric baffles. An outer, wider baffle looks like a doughnut, whilst the inner baffle is shaped like a disk. This type of baffle forces the fluid to pass around each side of the disk then through the doughnut baffle generating a different type of fluid flow.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "HeatExchangerBaffleDesignTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

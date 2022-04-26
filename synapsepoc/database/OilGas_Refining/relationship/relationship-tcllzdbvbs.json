@@ -1,0 +1,26 @@
+{
+	"name": "relationship-tcllzdbvbs",
+	"properties": {
+		"Name": "relationship-tcllzdbvbs",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BufferFluidType",
+		"ToTableName": "Pump",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BufferFluidTypeId",
+				"ToColumnName": "BufferFluidTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BufferFluidType.cdm.json/BufferFluidType\",\"toEntity\":\"Pump.cdm.json/Pump\",\"joinPairs\":[{\"fromAttribute\":\"BufferFluidTypeId\",\"toAttribute\":\"BufferFluidTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

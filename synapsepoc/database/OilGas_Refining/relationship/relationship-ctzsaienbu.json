@@ -1,0 +1,26 @@
+{
+	"name": "relationship-ctzsaienbu",
+	"properties": {
+		"Name": "relationship-ctzsaienbu",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "AssetInspection",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "InspectedByPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"AssetInspection.cdm.json/AssetInspection\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"InspectedByPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

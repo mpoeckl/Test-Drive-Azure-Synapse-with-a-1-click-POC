@@ -1,0 +1,722 @@
+{
+	"name": "Pipe",
+	"properties": {
+		"Name": "Pipe",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.\n\nA tube used to convey water, gas, oil, or other fluid substances.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PipeId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipeFromGpsLatitude",
+					"Description": "The GPS latitude from which the pipeline originates.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeFromGpsLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipeFromGpsLongitude",
+					"Description": "The GPS longitude from which the pipeline originates.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeFromGpsLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipeToGpsLatitude",
+					"Description": "The GPS latitude from which the pipeline terminates.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeToGpsLatitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "PipeToGpsLongitude",
+					"Description": "The GPS longitude from which the pipeline terminates.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeToGpsLongitude"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "decimal",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Precision": 7,
+						"Scale": 4,
+						"Properties": {
+							"HIVE_TYPE_STRING": "decimal"
+						}
+					}
+				},
+				{
+					"Name": "FsbProcessPipeIndicator",
+					"Description": "FBE Process\nFBE is typically applied at a pipe mill. The coating process involves cleaning the steel pipe surface with abrasive grit in a centrifugal blasting cabinet to a cleanliness level of SSPC-SP 10/NACE No. 2. Induction or oven heating is used to heat the cleaned pipe to the 356-to-482 F range before it is sent through a  uidized bed of suspended epoxy particles. The particles melt and fuse on contact with the heated pipe. Curing (cross-linking) of the epoxy occurs within several minutes and is followed by a water quench. The FBE coating thickness is controlled by the speed of the pipe's movement through the  uidized powder-coating bed.\nFBE can be mill-applied as a one- or two-layer pipeline coating. Single-layer FBE is applied in the range of 12-to-16 mils. A dual-layer process can be used where two consecutive FBE layers are applied to the heated pipe. The inner layer, at 12-to-16 mils dry  lm thickness (DFT) provides corrosion protection to the steel pipe. While it is still soft, a second or outer layer at 30-to-36 mils DFT is applied as an additional barrier coat and provides abrasion resistance (Table 4).",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "FsbProcessPipeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CompositePipelineCoatingIndicator",
+					"Description": "Over the past 20 years, technological advances in material fabrication have resulted in a new class of pipeline coatings with enhanced physical endurance, thermal resistance, and resistance to water penetration and cathodic disbondment. The systems are called composites. They represent combinations of existing polymer materials, formerly used in a single-layer configuration, that have been combined to produce improved multi-layer pipeline coating systems.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "CompositePipelineCoatingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AbrasionResistanceIndicator",
+					"Description": "Indicates whether the pipe has abrasion resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "AbrasionResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AbrasionResistanceCoatingSystemIndicator",
+					"Description": "Abrasion-Resistant Coating Systems\nAbrasion-resistant pipeline coating systems are manufactured to provide superior resistance to damage caused by rock-filled back fill and directional boring operations. Following are descriptions of the more common systems.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "AbrasionResistanceCoatingSystemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "AbrasionResistanceOvercoatingIndicator",
+					"Description": "Abrasion-Resistant Overcoating\nAbrasion Resistant Overcoating (ARO) provides physical protection to FBE pipeline coatings. ARO is also an FBE product, but is an extremely hard and mechanically strong overcoating designed to protect the FBE basecoat from damage during pipeline directional drilling and boring. ARO also offers strong abrasion protection to coated pipe and pipe pilings installed in river crossings and rough terrain.\nARO is compatible with all FBE coatings and chemically forms a high-adhesive bond at the layered interface. The tough outer coating also retains a high degree of  flexibility that exceeds specification limits of steel for  weld bending. One typical ARO system consists of an initial primer layer of 8-to-16 mils of epoxy covered with 20-to-35 mils of a higher-density epoxy. Liquid, 100-percent-solids epoxy ARO coatings can be spray-applied in the mill or in the  weld at a thickness of up to 60 mils.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "AbrasionResistanceOvercoatingIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PolymerConcreteAggregateBinderIndicator",
+					"Description": "Polymer Concrete\nPolymer concrete is a mixture of concrete aggregate and an epoxy binder. In a popular configuration it is used to protect the FBE on steel pipe when it is subjected to severe handling conditions during installation. Polymer concrete is a highly abrasion- and impact- resistant coating that provides a smooth surface to allow the pipeline to be pulled under the crossing in a slick-bore operation with much less drag resistance than conventional concrete. It can also be used as a rock shield. Polymer concrete can be sprayed onto the FBE-coated pipe in a thickness range of 20-to-125 mils.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PolymerConcreteAggregateBinderIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ElectricalResistanceIndicator",
+					"Description": "Indicates whether the pipe has electrical resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "ElectricalResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "WaterPenetrationResistanceIndicator",
+					"Description": "Indicates whether the pipe has water penetration resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "WaterPenetrationResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "SolventResistanceIndicator",
+					"Description": "Indicates whether the pipe has solvent resistance",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "SolventResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ImpactResistanceIndicator",
+					"Description": "Indicates whether the pipe has impact resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "ImpactResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "BendabilityResistanceIndicator",
+					"Description": "Indicates whether the pipe has bendability resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "BendabilityResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "CathodicDisbondmentResistanceIndicator",
+					"Description": "Indicates whether the pipe has cathodic disbondment resistance.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "CathodicDisbondmentResistanceIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PipeSideExtrusionIndicator",
+					"Description": "Side Extrusion\nSide extrusion is for coating pipe in the range of 4-to-145 inches in diameter. In this process, cleaned and adhesive-primed pipe travels spirally through the extruder where several layers of molten polymer are applied in  at sheet form and squeezed against the pipe by a silicone rubber roller. The roller improves interlayer adhesion and eliminates air entrapment between the layers. As the spiral seams are fused together, side extrusion provides a uniform coating with virtually no distinction or separation between layers.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeSideExtrusionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PipeCrossheadExtrusionIndicator",
+					"Description": "Indicates whether the pipe has a crosshead extrusion.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeCrossheadExtrusionIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PsigGasPipingSystemIndicator",
+					"Description": "A gas piping system that utilizes 2-psig pressure downstream of the point of delivery. This type of gas piping system allows greater versatility in the design of branch systems and in a multi-family building that could reduce the cost of installing the piping system when compared to the traditional 1/4 psig system.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PsigGasPipingSystemIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "ExternalPipeCoatingTypeId",
+					"Description": "The unique identifier of a pipe coating type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "ExternalPipeCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "InternalPipeCoatingTypeId",
+					"Description": "The unique identifier of a pipe coating type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "InternalPipeCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeTypeId",
+					"Description": "The unique identifier of a Pipe Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PressureRatingId",
+					"Description": "The unique identifier of a Pressure Rating.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PressureRatingId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SleeveTypeId",
+					"Description": "The unique identifier of a Sleeve Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "SleeveTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "FlowDirectionId",
+					"Description": "The unique identifier of a Flow Direction.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "FlowDirectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeInstallationMethodId",
+					"Description": "The unique identifier of a pipe installation method.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeInstallationMethodId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipelineId",
+					"Description": "The unique identifier of a Pipeline.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipelineId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipeConstructionMaterialTypeId",
+					"Description": "The unique identifier of a Pipe Construction Material Type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeConstructionMaterialTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeManufacturerPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeManufacturerPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PipeManufacturerLotNumber",
+					"Description": "The manufacturer's lot number of the pipe.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeManufacturerLotNumber"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 6,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PrimaryCoatingTypeId",
+					"Description": "The unique identifier of a pipe coating type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PrimaryCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "SecondaryCoatingTypeId",
+					"Description": "The unique identifier of a pipe coating type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "SecondaryCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "TertiaryCoatingTypeId",
+					"Description": "The unique identifier of a pipe coating type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "TertiaryCoatingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeCathodicProtectionTypeId",
+					"Description": "The unique identifier of a pipe cathodic protection type.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeCathodicProtectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PinchablePipeIndicator",
+					"Description": "Indicates  whether the pipe segment is made of a material that can be pinched during emergency operations.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PinchablePipeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PipeGradeId",
+					"Description": "The unique identifier of a Pipe Grade.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeGradeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeLocationClassId",
+					"Description": "The unique identifier of a pipe location class.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeLocationClassId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PipeWarningTapeIndicator",
+					"Description": "Indicates that warning tape was installed on the pipe.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeWarningTapeIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				},
+				{
+					"Name": "PipeWarningTapeText",
+					"Description": "The text message on the warning tape.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeWarningTapeText"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PipeTracerWireIndicator",
+					"Description": "Indicates whether a tracer wire was installed with the pipe.",
+					"BaseAttributeReference": {
+						"Entity": "Pipe.cdm.json/Pipe",
+						"Name": "PipeTracerWireIndicator"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "boolean",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "boolean"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pipe",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pipe",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeId\"},\"PipeFromGpsLatitude\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeFromGpsLatitude\"},\"PipeFromGpsLongitude\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeFromGpsLongitude\"},\"PipeToGpsLatitude\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeToGpsLatitude\"},\"PipeToGpsLongitude\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeToGpsLongitude\"},\"FsbProcessPipeIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"FsbProcessPipeIndicator\"},\"CompositePipelineCoatingIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"CompositePipelineCoatingIndicator\"},\"AbrasionResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceIndicator\"},\"AbrasionResistanceCoatingSystemIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceCoatingSystemIndicator\"},\"AbrasionResistanceOvercoatingIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceOvercoatingIndicator\"},\"PolymerConcreteAggregateBinderIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PolymerConcreteAggregateBinderIndicator\"},\"ElectricalResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ElectricalResistanceIndicator\"},\"WaterPenetrationResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"WaterPenetrationResistanceIndicator\"},\"SolventResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SolventResistanceIndicator\"},\"ImpactResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ImpactResistanceIndicator\"},\"BendabilityResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"BendabilityResistanceIndicator\"},\"CathodicDisbondmentResistanceIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"CathodicDisbondmentResistanceIndicator\"},\"PipeSideExtrusionIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeSideExtrusionIndicator\"},\"PipeCrossheadExtrusionIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeCrossheadExtrusionIndicator\"},\"PsigGasPipingSystemIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PsigGasPipingSystemIndicator\"},\"ExternalPipeCoatingTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ExternalPipeCoatingTypeId\"},\"InternalPipeCoatingTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"InternalPipeCoatingTypeId\"},\"PipeTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeTypeId\"},\"PressureRatingId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PressureRatingId\"},\"SleeveTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SleeveTypeId\"},\"FlowDirectionId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"FlowDirectionId\"},\"PipeInstallationMethodId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeInstallationMethodId\"},\"PipelineId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipelineId\"},\"PipeConstructionMaterialTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeConstructionMaterialTypeId\"},\"PipeManufacturerPartyId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeManufacturerPartyId\"},\"PipeManufacturerLotNumber\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeManufacturerLotNumber\"},\"PrimaryCoatingTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PrimaryCoatingTypeId\"},\"SecondaryCoatingTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SecondaryCoatingTypeId\"},\"TertiaryCoatingTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"TertiaryCoatingTypeId\"},\"PipeCathodicProtectionTypeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeCathodicProtectionTypeId\"},\"PinchablePipeIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PinchablePipeIndicator\"},\"PipeGradeId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeGradeId\"},\"PipeLocationClassId\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeLocationClassId\"},\"PipeWarningTapeIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeWarningTapeIndicator\"},\"PipeWarningTapeText\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeWarningTapeText\"},\"PipeTracerWireIndicator\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeTracerWireIndicator\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"Pipe\",\"path\":\"Pipe.cdm.json/Pipe\"},\"description\":\"A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.\\n\\nA tube used to convey water, gas, oil, or other fluid substances.\",\"primaryKey\":[\"PipeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"PipeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeFromGpsLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS latitude from which the pipeline originates.\",\"isNullable\":true,\"scale\":4,\"name\":\"PipeFromGpsLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeFromGpsLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS longitude from which the pipeline originates.\",\"isNullable\":true,\"scale\":4,\"name\":\"PipeFromGpsLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeToGpsLatitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS latitude from which the pipeline terminates.\",\"isNullable\":true,\"scale\":4,\"name\":\"PipeToGpsLatitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeToGpsLongitude\"},\"dataType\":\"decimal\",\"dataTypeLength\":7,\"description\":\"The GPS longitude from which the pipeline terminates.\",\"isNullable\":true,\"scale\":4,\"name\":\"PipeToGpsLongitude\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"FsbProcessPipeIndicator\"},\"dataType\":\"boolean\",\"description\":\"FBE Process\\nFBE is typically applied at a pipe mill. The coating process involves cleaning the steel pipe surface with abrasive grit in a centrifugal blasting cabinet to a cleanliness level of SSPC-SP 10/NACE No. 2. Induction or oven heating is used to heat the cleaned pipe to the 356-to-482 F range before it is sent through a  uidized bed of suspended epoxy particles. The particles melt and fuse on contact with the heated pipe. Curing (cross-linking) of the epoxy occurs within several minutes and is followed by a water quench. The FBE coating thickness is controlled by the speed of the pipe's movement through the  uidized powder-coating bed.\\nFBE can be mill-applied as a one- or two-layer pipeline coating. Single-layer FBE is applied in the range of 12-to-16 mils. A dual-layer process can be used where two consecutive FBE layers are applied to the heated pipe. The inner layer, at 12-to-16 mils dry  lm thickness (DFT) provides corrosion protection to the steel pipe. While it is still soft, a second or outer layer at 30-to-36 mils DFT is applied as an additional barrier coat and provides abrasion resistance (Table 4).\",\"isNullable\":true,\"name\":\"FsbProcessPipeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"CompositePipelineCoatingIndicator\"},\"dataType\":\"boolean\",\"description\":\"Over the past 20 years, technological advances in material fabrication have resulted in a new class of pipeline coatings with enhanced physical endurance, thermal resistance, and resistance to water penetration and cathodic disbondment. The systems are called composites. They represent combinations of existing polymer materials, formerly used in a single-layer configuration, that have been combined to produce improved multi-layer pipeline coating systems.\",\"isNullable\":true,\"name\":\"CompositePipelineCoatingIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has abrasion resistance.\",\"isNullable\":true,\"name\":\"AbrasionResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceCoatingSystemIndicator\"},\"dataType\":\"boolean\",\"description\":\"Abrasion-Resistant Coating Systems\\nAbrasion-resistant pipeline coating systems are manufactured to provide superior resistance to damage caused by rock-filled back fill and directional boring operations. Following are descriptions of the more common systems.\",\"isNullable\":true,\"name\":\"AbrasionResistanceCoatingSystemIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"AbrasionResistanceOvercoatingIndicator\"},\"dataType\":\"boolean\",\"description\":\"Abrasion-Resistant Overcoating\\nAbrasion Resistant Overcoating (ARO) provides physical protection to FBE pipeline coatings. ARO is also an FBE product, but is an extremely hard and mechanically strong overcoating designed to protect the FBE basecoat from damage during pipeline directional drilling and boring. ARO also offers strong abrasion protection to coated pipe and pipe pilings installed in river crossings and rough terrain.\\nARO is compatible with all FBE coatings and chemically forms a high-adhesive bond at the layered interface. The tough outer coating also retains a high degree of  flexibility that exceeds specification limits of steel for  weld bending. One typical ARO system consists of an initial primer layer of 8-to-16 mils of epoxy covered with 20-to-35 mils of a higher-density epoxy. Liquid, 100-percent-solids epoxy ARO coatings can be spray-applied in the mill or in the  weld at a thickness of up to 60 mils.\",\"isNullable\":true,\"name\":\"AbrasionResistanceOvercoatingIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PolymerConcreteAggregateBinderIndicator\"},\"dataType\":\"boolean\",\"description\":\"Polymer Concrete\\nPolymer concrete is a mixture of concrete aggregate and an epoxy binder. In a popular configuration it is used to protect the FBE on steel pipe when it is subjected to severe handling conditions during installation. Polymer concrete is a highly abrasion- and impact- resistant coating that provides a smooth surface to allow the pipeline to be pulled under the crossing in a slick-bore operation with much less drag resistance than conventional concrete. It can also be used as a rock shield. Polymer concrete can be sprayed onto the FBE-coated pipe in a thickness range of 20-to-125 mils.\",\"isNullable\":true,\"name\":\"PolymerConcreteAggregateBinderIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ElectricalResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has electrical resistance.\",\"isNullable\":true,\"name\":\"ElectricalResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"WaterPenetrationResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has water penetration resistance.\",\"isNullable\":true,\"name\":\"WaterPenetrationResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SolventResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has solvent resistance\",\"isNullable\":true,\"name\":\"SolventResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ImpactResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has impact resistance.\",\"isNullable\":true,\"name\":\"ImpactResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"BendabilityResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has bendability resistance.\",\"isNullable\":true,\"name\":\"BendabilityResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"CathodicDisbondmentResistanceIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has cathodic disbondment resistance.\",\"isNullable\":true,\"name\":\"CathodicDisbondmentResistanceIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeSideExtrusionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Side Extrusion\\nSide extrusion is for coating pipe in the range of 4-to-145 inches in diameter. In this process, cleaned and adhesive-primed pipe travels spirally through the extruder where several layers of molten polymer are applied in  at sheet form and squeezed against the pipe by a silicone rubber roller. The roller improves interlayer adhesion and eliminates air entrapment between the layers. As the spiral seams are fused together, side extrusion provides a uniform coating with virtually no distinction or separation between layers.\",\"isNullable\":true,\"name\":\"PipeSideExtrusionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeCrossheadExtrusionIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether the pipe has a crosshead extrusion.\",\"isNullable\":true,\"name\":\"PipeCrossheadExtrusionIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PsigGasPipingSystemIndicator\"},\"dataType\":\"boolean\",\"description\":\"A gas piping system that utilizes 2-psig pressure downstream of the point of delivery. This type of gas piping system allows greater versatility in the design of branch systems and in a multi-family building that could reduce the cost of installing the piping system when compared to the traditional 1/4 psig system.\",\"isNullable\":true,\"name\":\"PsigGasPipingSystemIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"ExternalPipeCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe coating type.\",\"isNullable\":true,\"name\":\"ExternalPipeCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"InternalPipeCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe coating type.\",\"isNullable\":true,\"name\":\"InternalPipeCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipe Type.\",\"isNullable\":true,\"name\":\"PipeTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PressureRatingId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pressure Rating.\",\"isNullable\":true,\"name\":\"PressureRatingId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SleeveTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Sleeve Type.\",\"isNullable\":true,\"name\":\"SleeveTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"FlowDirectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Flow Direction.\",\"isNullable\":true,\"name\":\"FlowDirectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeInstallationMethodId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe installation method.\",\"isNullable\":true,\"name\":\"PipeInstallationMethodId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipelineId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Pipeline.\",\"isNullable\":true,\"name\":\"PipelineId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeConstructionMaterialTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipe Construction Material Type.\",\"isNullable\":true,\"name\":\"PipeConstructionMaterialTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeManufacturerPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"PipeManufacturerPartyId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeManufacturerLotNumber\"},\"dataType\":\"string\",\"dataTypeLength\":6,\"description\":\"The manufacturer's lot number of the pipe.\",\"isNullable\":true,\"name\":\"PipeManufacturerLotNumber\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PrimaryCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe coating type.\",\"isNullable\":true,\"name\":\"PrimaryCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"SecondaryCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe coating type.\",\"isNullable\":true,\"name\":\"SecondaryCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"TertiaryCoatingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe coating type.\",\"isNullable\":true,\"name\":\"TertiaryCoatingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeCathodicProtectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe cathodic protection type.\",\"isNullable\":true,\"name\":\"PipeCathodicProtectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PinchablePipeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates  whether the pipe segment is made of a material that can be pinched during emergency operations.\",\"isNullable\":true,\"name\":\"PinchablePipeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeGradeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Pipe Grade.\",\"isNullable\":true,\"name\":\"PipeGradeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeLocationClassId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a pipe location class.\",\"isNullable\":true,\"name\":\"PipeLocationClassId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeWarningTapeIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates that warning tape was installed on the pipe.\",\"isNullable\":true,\"name\":\"PipeWarningTapeIndicator\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeWarningTapeText\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"The text message on the warning tape.\",\"isNullable\":true,\"name\":\"PipeWarningTapeText\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"Pipe.cdm.json/Pipe\",\"name\":\"PipeTracerWireIndicator\"},\"dataType\":\"boolean\",\"description\":\"Indicates whether a tracer wire was installed with the pipe.\",\"isNullable\":true,\"name\":\"PipeTracerWireIndicator\"}]}}}",
+			"Description": "A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.\n\nA tube used to convey water, gas, oil, or other fluid substances.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "PipeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

@@ -1,0 +1,106 @@
+{
+	"name": "ComponentLocationType",
+	"properties": {
+		"Name": "ComponentLocationType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A type of network component location.\n\nEx:\n- Fixed Location\n- From Location\n- To Location\n- Point In Time Location",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentLocationTypeId",
+					"Description": "The unique identifier of a Component Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationType.cdm.json/ComponentLocationType",
+						"Name": "ComponentLocationTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationTypeName",
+					"Description": "The name of a Component Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationType.cdm.json/ComponentLocationType",
+						"Name": "ComponentLocationTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "ComponentLocationTypeDescription",
+					"Description": "The description of a Component Location Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentLocationType.cdm.json/ComponentLocationType",
+						"Name": "ComponentLocationTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentLocationTypeId\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeId\"},\"ComponentLocationTypeName\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeName\"},\"ComponentLocationTypeDescription\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentLocationType\",\"path\":\"ComponentLocationType.cdm.json/ComponentLocationType\"},\"description\":\"A type of network component location.\\n\\nEx:\\n- Fixed Location\\n- From Location\\n- To Location\\n- Point In Time Location\",\"primaryKey\":[\"ComponentLocationTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Location Type.\",\"isNullable\":false,\"name\":\"ComponentLocationTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a Component Location Type.\",\"isNullable\":true,\"name\":\"ComponentLocationTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentLocationType.cdm.json/ComponentLocationType\",\"name\":\"ComponentLocationTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a Component Location Type.\",\"isNullable\":true,\"name\":\"ComponentLocationTypeDescription\"}]}}}",
+			"Description": "A type of network component location.\n\nEx:\n- Fixed Location\n- From Location\n- To Location\n- Point In Time Location",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentLocationTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

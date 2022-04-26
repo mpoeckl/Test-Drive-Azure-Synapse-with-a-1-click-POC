@@ -1,0 +1,26 @@
+{
+	"name": "relationship-pnfwzlcsuj",
+	"properties": {
+		"Name": "relationship-pnfwzlcsuj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "IncidentEvent",
+		"ToTableName": "IncidentEventRelatedParty",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "IncidentEventStartTimestamp",
+				"ToColumnName": "IncidentEventStartTimestamp"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"toEntity\":\"IncidentEventRelatedParty.cdm.json/IncidentEventRelatedParty\",\"joinPairs\":[{\"fromAttribute\":\"IncidentEventStartTimestamp\",\"toAttribute\":\"IncidentEventStartTimestamp\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

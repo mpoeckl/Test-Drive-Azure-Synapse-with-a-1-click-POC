@@ -1,0 +1,187 @@
+{
+	"name": "ComponentInspection",
+	"properties": {
+		"Name": "ComponentInspection",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "An inspection of a component.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentInspectionId",
+					"Description": "The unique identifier of a Component Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ComponentInspectionId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "PlannedComponentInspectionTimestamp",
+					"Description": "The planned timestamp of a Component Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "PlannedComponentInspectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ActualComponentInspectionTimestamp",
+					"Description": "The actual timestamp of a Component Inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ActualComponentInspectionTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionStatusId",
+					"Description": "The unique identifier of an Inspection Status.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ComponentInspectionStatusId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionTypeId",
+					"Description": "The unique identifier of an Inspection Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ComponentInspectionTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentInspectionNote",
+					"Description": "Notes, comments or additional information regarding a component inspection.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "ComponentInspectionNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "InspectedByPartyId",
+					"Description": "The unique identifier of a Party.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentInspection.cdm.json/ComponentInspection",
+						"Name": "InspectedByPartyId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspection",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspection",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentInspectionId\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionId\"},\"ComponentId\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentId\"},\"PlannedComponentInspectionTimestamp\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"PlannedComponentInspectionTimestamp\"},\"ActualComponentInspectionTimestamp\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ActualComponentInspectionTimestamp\"},\"ComponentInspectionStatusId\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionStatusId\"},\"ComponentInspectionTypeId\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionTypeId\"},\"ComponentInspectionNote\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionNote\"},\"InspectedByPartyId\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"InspectedByPartyId\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentInspection\",\"path\":\"ComponentInspection.cdm.json/ComponentInspection\"},\"description\":\"An inspection of a component.\",\"primaryKey\":[\"ComponentInspectionId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Component Inspection.\",\"isNullable\":false,\"name\":\"ComponentInspectionId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":true,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"PlannedComponentInspectionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The planned timestamp of a Component Inspection.\",\"isNullable\":false,\"name\":\"PlannedComponentInspectionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ActualComponentInspectionTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The actual timestamp of a Component Inspection.\",\"isNullable\":false,\"name\":\"ActualComponentInspectionTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionStatusId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Inspection Status.\",\"isNullable\":true,\"name\":\"ComponentInspectionStatusId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Inspection Type.\",\"isNullable\":true,\"name\":\"ComponentInspectionTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"ComponentInspectionNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"Notes, comments or additional information regarding a component inspection.\",\"isNullable\":true,\"name\":\"ComponentInspectionNote\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentInspection.cdm.json/ComponentInspection\",\"name\":\"InspectedByPartyId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Party.\",\"isNullable\":true,\"name\":\"InspectedByPartyId\"}]}}}",
+			"Description": "An inspection of a component.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentInspectionId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

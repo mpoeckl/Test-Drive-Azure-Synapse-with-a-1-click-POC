@@ -1,0 +1,204 @@
+{
+	"name": "ComponentReadingAlarm",
+	"properties": {
+		"Name": "ComponentReadingAlarm",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "The alarm(s) that result or are invoked as a result of a Component Reading.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "ComponentId",
+					"Description": "The unique identifier of a Component.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "ComponentId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "long",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "long"
+						}
+					}
+				},
+				{
+					"Name": "ReadingTypeId",
+					"Description": "The unique identifier of a Reading Type",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "ReadingTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AlarmTypeId",
+					"Description": "The unique identifier of an Alarm Type.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "AlarmTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ReadingStartTimestamp",
+					"Description": "The period start timestamp for which the associated reading is reported.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "ReadingStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AlarmStartTimestamp",
+					"Description": "The start timestamp of the alarm.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "AlarmStartTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AlarmEndTimestamp",
+					"Description": "The start timestamp of the alarm.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "AlarmEndTimestamp"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "timestamp",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"TimestampFormat": "YYYY-MM-DD HH:MM:SS.fffffffff",
+							"HIVE_TYPE_STRING": "timestamp"
+						}
+					}
+				},
+				{
+					"Name": "AlarmStateId",
+					"Description": "The unique identifier of an Alarm State.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "AlarmStateId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AssetAlarmActivityId",
+					"Description": "The unique identifier of an Asset Alarm Activity.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "AssetAlarmActivityId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "ComponentReadingAlarmNote",
+					"Description": "A note, comment or additional information regarding a Component Reading Alarm.",
+					"BaseAttributeReference": {
+						"Entity": "ComponentReadingAlarm.cdm.json/ComponentReadingAlarm",
+						"Name": "ComponentReadingAlarmNote"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 1024,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarm",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarm",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingTypeId\"},\"AlarmTypeId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingStartTimestamp\"},\"AlarmStartTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStartTimestamp\"},\"AlarmEndTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmEndTimestamp\"},\"AlarmStateId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStateId\"},\"AssetAlarmActivityId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AssetAlarmActivityId\"},\"ComponentReadingAlarmNote\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentReadingAlarmNote\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"ComponentReadingAlarm\",\"path\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\"},\"description\":\"The alarm(s) that result or are invoked as a result of a Component Reading.\",\"primaryKey\":[\"ComponentId\",\"ReadingTypeId\",\"AlarmTypeId\",\"ReadingStartTimestamp\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentId\"},\"dataType\":\"long\",\"description\":\"The unique identifier of a Component.\",\"isNullable\":false,\"name\":\"ComponentId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Reading Type\",\"isNullable\":false,\"name\":\"ReadingTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm Type.\",\"isNullable\":false,\"name\":\"AlarmTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The period start timestamp for which the associated reading is reported.\",\"isNullable\":false,\"name\":\"ReadingStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStartTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the alarm.\",\"isNullable\":true,\"name\":\"AlarmStartTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmEndTimestamp\"},\"dataType\":\"timestamp\",\"description\":\"The start timestamp of the alarm.\",\"isNullable\":true,\"name\":\"AlarmEndTimestamp\",\"timestampFormat\":\"YYYY-MM-DD HH:MM:SS.fffffffff\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStateId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Alarm State.\",\"isNullable\":true,\"name\":\"AlarmStateId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AssetAlarmActivityId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Asset Alarm Activity.\",\"isNullable\":true,\"name\":\"AssetAlarmActivityId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentReadingAlarmNote\"},\"dataType\":\"string\",\"dataTypeLength\":1024,\"description\":\"A note, comment or additional information regarding a Component Reading Alarm.\",\"isNullable\":true,\"name\":\"ComponentReadingAlarmNote\"}]}}}",
+			"Description": "The alarm(s) that result or are invoked as a result of a Component Reading.",
+			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
+			"PrimaryKeys": "ComponentId,ReadingTypeId,AlarmTypeId,ReadingStartTimestamp",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

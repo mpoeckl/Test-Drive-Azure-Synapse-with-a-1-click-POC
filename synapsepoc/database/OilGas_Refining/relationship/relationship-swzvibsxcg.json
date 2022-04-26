@@ -1,0 +1,26 @@
+{
+	"name": "relationship-swzvibsxcg",
+	"properties": {
+		"Name": "relationship-swzvibsxcg",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "ComponentGuideline",
+		"ToTableName": "ComponentGuidelinePreventiveAction",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MinimumReadingValue",
+				"ToColumnName": "MinimumReadingValue"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"toEntity\":\"ComponentGuidelinePreventiveAction.cdm.json/ComponentGuidelinePreventiveAction\",\"joinPairs\":[{\"fromAttribute\":\"MinimumReadingValue\",\"toAttribute\":\"MinimumReadingValue\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

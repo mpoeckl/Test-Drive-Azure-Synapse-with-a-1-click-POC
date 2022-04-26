@@ -1,0 +1,26 @@
+{
+	"name": "relationship-fiodozvvxy",
+	"properties": {
+		"Name": "relationship-fiodozvvxy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Party",
+		"ToTableName": "RefineryTestMethod",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PartyId",
+				"ToColumnName": "RefineryTestStandardsPartyId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Party.cdm.json/Party\",\"toEntity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"joinPairs\":[{\"fromAttribute\":\"PartyId\",\"toAttribute\":\"RefineryTestStandardsPartyId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

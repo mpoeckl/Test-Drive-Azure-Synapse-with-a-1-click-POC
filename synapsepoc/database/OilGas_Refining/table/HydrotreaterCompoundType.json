@@ -1,0 +1,106 @@
+{
+	"name": "HydrotreaterCompoundType",
+	"properties": {
+		"Name": "HydrotreaterCompoundType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A compound/material that is removed by the naphtha hydrotreater unit during the associated period.\n\nEx:\n- Sulfur\n- Unsaturated hydrocarbons\n- Nitrogen",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "HydrotreaterCompoundTypeId",
+					"Description": "The unique identifier of a hydrotreater compound type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType",
+						"Name": "HydrotreaterCompoundTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreaterCompoundTypeName",
+					"Description": "The name of a hydrotreater compound type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType",
+						"Name": "HydrotreaterCompoundTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "HydrotreaterCompoundTypeDescription",
+					"Description": "The description of a hydrotreater compound type.",
+					"BaseAttributeReference": {
+						"Entity": "HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType",
+						"Name": "HydrotreaterCompoundTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrotreaterCompoundType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrotreaterCompoundType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrotreaterCompoundTypeId\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeId\"},\"HydrotreaterCompoundTypeName\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeName\"},\"HydrotreaterCompoundTypeDescription\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"HydrotreaterCompoundType\",\"path\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\"},\"description\":\"A compound/material that is removed by the naphtha hydrotreater unit during the associated period.\\n\\nEx:\\n- Sulfur\\n- Unsaturated hydrocarbons\\n- Nitrogen\",\"primaryKey\":[\"HydrotreaterCompoundTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a hydrotreater compound type.\",\"isNullable\":false,\"name\":\"HydrotreaterCompoundTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of a hydrotreater compound type.\",\"isNullable\":true,\"name\":\"HydrotreaterCompoundTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of a hydrotreater compound type.\",\"isNullable\":true,\"name\":\"HydrotreaterCompoundTypeDescription\"}]}}}",
+			"Description": "A compound/material that is removed by the naphtha hydrotreater unit during the associated period.\n\nEx:\n- Sulfur\n- Unsaturated hydrocarbons\n- Nitrogen",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "HydrotreaterCompoundTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

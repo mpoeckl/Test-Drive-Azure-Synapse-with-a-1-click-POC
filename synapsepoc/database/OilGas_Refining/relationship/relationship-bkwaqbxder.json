@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bkwaqbxder",
+	"properties": {
+		"Name": "relationship-bkwaqbxder",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "CertificationType",
+		"ToTableName": "Certification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CertificationTypeId",
+				"ToColumnName": "CertificationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"CertificationType.cdm.json/CertificationType\",\"toEntity\":\"Certification.cdm.json/Certification\",\"joinPairs\":[{\"fromAttribute\":\"CertificationTypeId\",\"toAttribute\":\"CertificationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

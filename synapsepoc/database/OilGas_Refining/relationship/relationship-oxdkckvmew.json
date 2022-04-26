@@ -1,0 +1,26 @@
+{
+	"name": "relationship-oxdkckvmew",
+	"properties": {
+		"Name": "relationship-oxdkckvmew",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "DangerousGoodsPackingGroup",
+		"ToTableName": "OilAndGasProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DangerousGoodsPackingGroupId",
+				"ToColumnName": "DangerousGoodsPackingGroupId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"toEntity\":\"OilAndGasProduct.cdm.json/OilAndGasProduct\",\"joinPairs\":[{\"fromAttribute\":\"DangerousGoodsPackingGroupId\",\"toAttribute\":\"DangerousGoodsPackingGroupId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,26 @@
+{
+	"name": "relationship-rsghqaqjnj",
+	"properties": {
+		"Name": "relationship-rsghqaqjnj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "MeterModelSpecificationType",
+		"ToTableName": "MeterModelSpecification",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "MeterModelSpecificationTypeId",
+				"ToColumnName": "MeterModelSpecificationTypeId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"toEntity\":\"MeterModelSpecification.cdm.json/MeterModelSpecification\",\"joinPairs\":[{\"fromAttribute\":\"MeterModelSpecificationTypeId\",\"toAttribute\":\"MeterModelSpecificationTypeId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

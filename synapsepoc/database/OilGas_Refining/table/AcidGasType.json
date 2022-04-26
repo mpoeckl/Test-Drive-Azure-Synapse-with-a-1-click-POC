@@ -1,0 +1,106 @@
+{
+	"name": "AcidGasType",
+	"properties": {
+		"Name": "AcidGasType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "Acid Gases are impurities in a gas stream typically consisting of:\n\nEx:\n- CO2\n- H2S\n- COS\n- RSH,\n- SO2",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "AcidGasTypeId",
+					"Description": "The unique identifier of an acid gas type.",
+					"BaseAttributeReference": {
+						"Entity": "AcidGasType.cdm.json/AcidGasType",
+						"Name": "AcidGasTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "AcidGasTypeName",
+					"Description": "The name of an acid gas type.",
+					"BaseAttributeReference": {
+						"Entity": "AcidGasType.cdm.json/AcidGasType",
+						"Name": "AcidGasTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "AcidGasTypeDescription",
+					"Description": "The description of an acid gas type.",
+					"BaseAttributeReference": {
+						"Entity": "AcidGasType.cdm.json/AcidGasType",
+						"Name": "AcidGasTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AcidGasType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AcidGasType",
+				"Properties": {
+					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AcidGasTypeId\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeId\"},\"AcidGasTypeName\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeName\"},\"AcidGasTypeDescription\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AcidGasType\",\"path\":\"AcidGasType.cdm.json/AcidGasType\"},\"description\":\"Acid Gases are impurities in a gas stream typically consisting of:\\n\\nEx:\\n- CO2\\n- H2S\\n- COS\\n- RSH,\\n- SO2\",\"primaryKey\":[\"AcidGasTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an acid gas type.\",\"isNullable\":false,\"name\":\"AcidGasTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of an acid gas type.\",\"isNullable\":true,\"name\":\"AcidGasTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AcidGasType.cdm.json/AcidGasType\",\"name\":\"AcidGasTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of an acid gas type.\",\"isNullable\":true,\"name\":\"AcidGasTypeDescription\"}]}}}",
+			"Description": "Acid Gases are impurities in a gas stream typically consisting of:\n\nEx:\n- CO2\n- H2S\n- COS\n- RSH,\n- SO2",
+			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
+			"PrimaryKeys": "AcidGasTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
