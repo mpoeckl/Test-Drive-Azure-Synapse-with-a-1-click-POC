@@ -1,0 +1,14 @@
+{
+	"name": "TripFaresDataLakeStorageLinkedService_NoParams",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://mpajn6axh2pc3wispoc.dfs.core.windows.net"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
