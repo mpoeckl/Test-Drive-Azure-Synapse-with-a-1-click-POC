@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentCostType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentCostTypeId\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeId\"},\"IncidentCostTypeName\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeName\"},\"IncidentCostTypeDescription\":{\"entity\":\"IncidentCostType.cdm.json/IncidentCostType\",\"name\":\"IncidentCostTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of cost that may be applied to an Incident.\n\nEx:\n- Police Services\n- Fire Services\n- Safety Services\n- Lost Production\n- Injury-related\n- Fatality-related\n- Environmental Fine\n- Legal",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentCostTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

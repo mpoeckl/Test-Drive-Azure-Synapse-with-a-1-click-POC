@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/SwitchState",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchStateId\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateId\"},\"SwitchStateName\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateName\"},\"SwitchStateDescription\":{\"entity\":\"SwitchState.cdm.json/SwitchState\",\"name\":\"SwitchStateDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The state of the switch.\n\nEx:\n-  Open\n-  Closed\n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "SwitchStateId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

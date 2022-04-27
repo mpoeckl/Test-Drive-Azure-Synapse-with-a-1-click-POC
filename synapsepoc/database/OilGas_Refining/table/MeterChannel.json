@@ -93,13 +93,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannel",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelId\"},\"MeterChannelTypeId\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelTypeId\"},\"MeterChannelNote\":{\"entity\":\"MeterChannel.cdm.json/MeterChannel\",\"name\":\"MeterChannelNote\"}}}"
 			},
 			"Compressed": false,
@@ -110,8 +110,7 @@
 			"Description": "The one or more meter channel(s) associated with the meter.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterId,MeterChannelId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

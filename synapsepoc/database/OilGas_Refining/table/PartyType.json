@@ -1,0 +1,106 @@
+{
+	"name": "PartyType",
+	"properties": {
+		"Name": "PartyType",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "OilGas_Refining"
+		},
+		"Description": "A categorization of parties based upon common characteristics or similar criteria.\n\nEx:\n- Individual\n- Legal Entity\n- Organization\n- Organizational Unit\n- Government Organization\n- Social Organization",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "PartyTypeId",
+					"Description": "The unique identifier of a Party Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyType.cdm.json/PartyType",
+						"Name": "PartyTypeId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "PartyTypeName",
+					"Description": "The name of the Party Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyType.cdm.json/PartyType",
+						"Name": "PartyTypeName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "PartyTypeDescription",
+					"Description": "The description of the Party Type.",
+					"BaseAttributeReference": {
+						"Entity": "PartyType.cdm.json/PartyType",
+						"Name": "PartyTypeDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PartyType",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PartyType",
+				"Properties": {
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PartyTypeId\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeId\"},\"PartyTypeName\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeName\"},\"PartyTypeDescription\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"PartyType\",\"path\":\"PartyType.cdm.json/PartyType\"},\"description\":\"A categorization of parties based upon common characteristics or similar criteria.\\n\\nEx:\\n- Individual\\n- Legal Entity\\n- Organization\\n- Organizational Unit\\n- Government Organization\\n- Social Organization\",\"primaryKey\":[\"PartyTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Party Type.\",\"isNullable\":false,\"name\":\"PartyTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Party Type.\",\"isNullable\":true,\"name\":\"PartyTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"PartyType.cdm.json/PartyType\",\"name\":\"PartyTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Party Type.\",\"isNullable\":true,\"name\":\"PartyTypeDescription\"}]}}}",
+			"Description": "A categorization of parties based upon common characteristics or similar criteria.\n\nEx:\n- Individual\n- Legal Entity\n- Organization\n- Organizational Unit\n- Government Organization\n- Social Organization",
+			"DisplayFolderInfo": "{\"name\":\"Party\",\"colorCode\":\"#823A16\"}",
+			"PrimaryKeys": "PartyTypeId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}

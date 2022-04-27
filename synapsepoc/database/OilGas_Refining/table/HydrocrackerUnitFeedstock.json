@@ -143,13 +143,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitFeedstock",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitId\"},\"FeedstockTypeId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"FeedstockUnitsInput\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"FeedstockUnitsInput\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitFeedstockNote\":{\"entity\":\"HydrocrackerUnitFeedstock.cdm.json/HydrocrackerUnitFeedstock\",\"name\":\"HydrocrackerUnitFeedstockNote\"}}}"
 			},
 			"Compressed": false,
@@ -160,8 +160,7 @@
 			"Description": "The feedstock input into the hydrocracker unit during the associated period of time.\n\nA unit may input multiple feedstocks.     Ex: The unit is designed for normal operation with 80 wt% Vacuum Gas Oil (VGO) from VDU and 20 wt% Heavy Coker Gas Oil (HCGO) from DCU. However the unit is alternately run on feed consisting of 72 wt% VGO (LVGO + HVGO) from VDU, 20 wt% HCGO and 8 wt% HGO from CDU.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "HydrocrackerUnitId,FeedstockTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetCategory",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetCategoryId\":{\"entity\":\"AssetCategory.cdm.json/AssetCategory\",\"name\":\"AssetCategoryId\"},\"AssetCategoryName\":{\"entity\":\"AssetCategory.cdm.json/AssetCategory\",\"name\":\"AssetCategoryName\"},\"AssetCategoryDescription\":{\"entity\":\"AssetCategory.cdm.json/AssetCategory\",\"name\":\"AssetCategoryDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "Assets are normally divided into 4 categories:\n\n1 - CURRENT ASSETS\nCash and other assets that can be converted to cash, used up or sold within one year or less.\n\n2 - INVESTMENTS\nLong-term investments that are not used for normal operations of the organization and are not expected to be converted to cash within one year.\n\n3 - PROPERTY, PLANT AND EQUIPMENT\nLong term or long-life assets that are used for the continuing operations of the organization and are expected to be used for more than one year.\n\n4 - INTANGIBLE ASSETS\nUsually long-term assets that have no physical substance but are of value to the owners of the organization such as patents, copyrights, goodwill, franchises and trademarks,",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetCategoryId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

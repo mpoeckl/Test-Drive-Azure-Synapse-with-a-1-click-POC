@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRefineryTestType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentRefineryTestTypeId\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeId\"},\"ComponentRefineryTestTypeName\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeName\"},\"ComponentRefineryTestTypeDescription\":{\"entity\":\"ComponentRefineryTestType.cdm.json/ComponentRefineryTestType\",\"name\":\"ComponentRefineryTestTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of component refinery test.\n\nEx:\n- Pour Point C\n- Water % wt.\n- Aromatics % st\n- Specific gravity\n- Viscosity index\n- Ash Content\n- Flash point\n- Sulfur content",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "ComponentRefineryTestTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

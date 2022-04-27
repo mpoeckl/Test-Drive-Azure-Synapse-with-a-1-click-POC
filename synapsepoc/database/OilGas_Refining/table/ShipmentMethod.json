@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentMethod",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentMethodId\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodId\"},\"ShipmentMethodName\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodName\"},\"ShipmentMethodDescription\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ShipmentMethodDescription\"},\"ExpressShipmentMethodIndicator\":{\"entity\":\"ShipmentMethod.cdm.json/ShipmentMethod\",\"name\":\"ExpressShipmentMethodIndicator\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "The method by which the shipment is to be shipped.\n\nEx:\n- Air - general air cargo\n- Air - next day air\n- Air - overnight air\n- Barge\n- Fast Freight\n- Piggyback Service\n- Pipeline\n- Rail\n- Ship\n- Tanker\n- Truck\n- Transloading Privilege\n- Vessel",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentMethodId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

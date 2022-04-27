@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessId\"},\"PartyId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PartyId\"},\"RefineryProcessPartyRelationshipTypeId\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessRelatedPartyNote\":{\"entity\":\"RefineryProcessRelatedParty.cdm.json/RefineryProcessRelatedParty\",\"name\":\"RefineryProcessRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The party(s) associated with the Refinery Process.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,PartyId,RefineryProcessPartyRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

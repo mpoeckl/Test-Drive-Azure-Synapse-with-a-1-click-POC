@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IndustrySpecification",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IndustrySpecificationId\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationId\"},\"IndustrySpecificationName\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationName\"},\"IndustrySpecificationDescription\":{\"entity\":\"IndustrySpecification.cdm.json/IndustrySpecification\",\"name\":\"IndustrySpecificationDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A Regulatory & Industry Specifications that the device type is compatible with or meets the specifications of.\n\nEx:\n\n- FCC Part 15 Class B\n- ANSI C37.90.1 - 1989: (SWC)\n- ANSI C12.20 (Class 0.5) - 1998\n- PTCRB Certified\n- Carrier Certified\n- Measurement Canada Certified",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "IndustrySpecificationId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

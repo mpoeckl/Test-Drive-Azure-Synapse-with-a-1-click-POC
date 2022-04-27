@@ -351,13 +351,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Refinery",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryId\"},\"RefineryName\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryName\"},\"RefineryDescription\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryDescription\"},\"RefineryTypeId\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryTypeId\"},\"RefineryLatitude\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLatitude\"},\"RefineryLongitude\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLongitude\"},\"RefineryFirstOperationalDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstOperationalDate\"},\"RefineryLastOperationalDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastOperationalDate\"},\"RefineryFirstFeasibilityStudyStarted\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstFeasibilityStudyStarted\"},\"RefineryFeasibilityStudyAcceptedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFeasibilityStudyAcceptedDate\"},\"RefineryPermitsAppliedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsAppliedDate\"},\"RefineryPermitsReceivedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryPermitsReceivedDate\"},\"RefineryConstructionStartDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionStartDate\"},\"RefineryConstructionCompletedDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCompletedDate\"},\"RefineryConstructionCostAmount\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryConstructionCostAmount\"},\"RefineryFirstProductionDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryFirstProductionDate\"},\"RefineryLastProductionDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryLastProductionDate\"},\"RefineryClosureDate\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"RefineryClosureDate\"},\"DailyCapacityBarrelsPerDay\":{\"entity\":\"Refinery.cdm.json/Refinery\",\"name\":\"DailyCapacityBarrelsPerDay\"}}}"
 			},
 			"Compressed": false,
@@ -368,8 +368,7 @@
 			"Description": "An oil refinery or petroleum refinery is an industrial process plant where crude oil is processed and refined into more useful products such as petroleum naphtha, gasoline, diesel fuel, asphalt base, heating oil, kerosene, and liquefied petroleum gas.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

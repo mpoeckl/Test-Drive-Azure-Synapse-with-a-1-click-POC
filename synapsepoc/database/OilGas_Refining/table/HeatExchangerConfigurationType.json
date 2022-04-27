@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerConfigurationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerConfigurationTypeId\":{\"entity\":\"HeatExchangerConfigurationType.cdm.json/HeatExchangerConfigurationType\",\"name\":\"HeatExchangerConfigurationTypeId\"},\"HeatExchangerConfigurationTypeName\":{\"entity\":\"HeatExchangerConfigurationType.cdm.json/HeatExchangerConfigurationType\",\"name\":\"HeatExchangerConfigurationTypeName\"},\"HeatExchangerConfigurationTypeDescription\":{\"entity\":\"HeatExchangerConfigurationType.cdm.json/HeatExchangerConfigurationType\",\"name\":\"HeatExchangerConfigurationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of heat exchanger configuration or design.\n\nEx:\n - U-tube \n- Straight-tube/One Pass\n- Straight-tube/Two Pass\n\nThere can be many variations on the shell and tube design. Typically, the ends of each tube are connected to plenums (sometimes called water boxes) through holes in tubesheets. The tubes may be straight or bent in the shape of a U, called U-tubes.\n\nU-tube heat exchanger.PNG\nIn nuclear power plants called pressurized water reactors, large heat exchangers called steam generators are two-phase, shell-and-tube heat exchangers which typically have U-tubes. They are used to boil water recycled from a surface condenser into steam to drive a turbine to produce power. Most shell-and-tube heat exchangers are either 1, 2, or 4 pass designs on the tube side. This refers to the number of times the fluid in the tubes passes through the fluid in the shell. In a single pass heat exchanger, the fluid goes in one end of each tube and out the other.\n\nStraight-tube heat exchanger 1-pass.PNG\nSurface condensers in power plants are often 1-pass straight-tube heat exchangers (see Surface condenser for diagram). Two and four pass designs are common because the fluid can enter and exit on the same side. This makes construction much simpler.\n\nStraight-tube heat exchanger 2-pass.PNG\nThere are often baffles directing flow through the shell side so the fluid does not take a short cut through the shell side leaving ineffective low flow volumes. These are generally attached to the tube bundle rather than the shell in order that the bundle is still removable for maintenance.\n\nCounter current heat exchangers are most efficient because they allow the highest log mean temperature difference between the hot and cold streams. Many companies however do not use two pass heat exchangers with a u-tube because they can break easily in addition to being more expensive to build. Often multiple heat exchangers can be used to simulate the counter current flow of a single large exchanger.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "HeatExchangerConfigurationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

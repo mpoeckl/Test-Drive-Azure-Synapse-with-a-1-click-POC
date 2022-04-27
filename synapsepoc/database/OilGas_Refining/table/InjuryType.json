@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/InjuryType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"InjuryTypeId\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeId\"},\"InjuryTypeName\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeName\"},\"InjuryTypeDescription\":{\"entity\":\"InjuryType.cdm.json/InjuryType\",\"name\":\"InjuryTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "Types of injuries that may be incurred by parties involved in an accident.\n\nEx:\n- Abrasion\n- Brain Injuries\n- Broken arm\n- Bruising\n- Burns\n- Burn, Severe\n- Concussions\n- Construction Injuries\n- Dislocation\n- Fatality\n- Foreign Body\n- Fracture\n- Head Injury\n- Herniated Disc\n- Hypothermia\n- Lacerations\n- Pinched Nerve\n- Fracture\n- Sciatica\n- Spinal Cord Injury\n- Sprain\n- Trauma, Abdominal\n- Trauma, Chest\n- Trauma, Facial\n- Traumatic Brain Injury\n- Whiplash\n- Wound\n- Wound Infection",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "InjuryTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

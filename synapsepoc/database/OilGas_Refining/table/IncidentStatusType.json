@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentStatusTypeId\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeId\"},\"IncidentStatusTypeName\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeName\"},\"IncidentStatusTypeDescription\":{\"entity\":\"IncidentStatusType.cdm.json/IncidentStatusType\",\"name\":\"IncidentStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of incident status type.\n\nEx:\n- In-process \n- Under investigation\n- Closed\n- Unknown\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

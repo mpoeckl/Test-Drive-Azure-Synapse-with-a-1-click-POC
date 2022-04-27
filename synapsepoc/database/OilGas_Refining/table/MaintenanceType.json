@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceTypeId\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeId\"},\"MaintenanceTypeName\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeName\"},\"MaintenanceTypeDescription\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceTypeDescription\"},\"MaintenanceCategoryId\":{\"entity\":\"MaintenanceType.cdm.json/MaintenanceType\",\"name\":\"MaintenanceCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A classification or categorization of types of Maintenance based upon common characteristics or functions performed.\n\nEx:\nPREVENTATIVE MAINTENANCE\n- Calibration\n- Sterilization\n- Lubrication\n- Inspection\n- Software Update\n\nSCHEDULED REPAIR\n- Repair Known Problem\n\nUPGRADE\n- extend the life with enhanced parts\n\nORDINARY REPAIR\n- Replace Part\n- Paint\n\nMAJOR REPAIR\n- Engine Overhaul",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "MaintenanceTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

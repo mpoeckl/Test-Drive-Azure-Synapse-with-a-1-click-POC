@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Protocol",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProtocolId\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolId\"},\"ProtocolName\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolName\"},\"ProtocolDescription\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolDescription\"},\"ProtocolTypeId\":{\"entity\":\"Protocol.cdm.json/Protocol\",\"name\":\"ProtocolTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A protocol that may be associated with a component.\n\nEx:\n- 1-Wire\n- ANSI C12.18\n- BACnet\n- BSAP\n- CANopen\n- C-Bus\n- CC-Link I \n- CC-Link Industrial Networks\n- CIP (Common Industrial Protocol)\n- Controller Area Network\n- ControlNet\n- DALI\n- DeviceNet\n- DF-1\n- DirectNet\n- DLMS/IEC 62056\n- DNP3\n- DSI\n- EtherCAT\n- Ethernet Global Data (EGD)\n- EtherNet/IP Ethernet Powerlink\n- Foundation Fieldbus H1\n- FOUNDATION fieldbus HSE (High Speed Ethernet)\n- GE SRTP\n- Honeywell SDS\n- HostLink Protocol\n- IEC 60870-5\n- IEC 61107\n- IEC 61850\n- IEC 62351\n- Interbus\n- Konnex (KNX)\n- LonTalk\n- M-Bus\n- Modbus PEMEX\n- Modbus Plus\n- Modbus RTU\n- oBIX\n- Optomux\n- Profibus\n- RAPIEnet\n- P-Net\n- S-Bus\n- SERCOS III\n- Sinec H1\n- SwiftNet (a protocol developed for Boeing, since withdrawn)\n- SynqNet\n- MTConnect\n- OPC\n- OPC UA\n- WorldFIP\n- xAP\n- ZigBee\n- ZigBee Smart Energy 2.0",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ProtocolId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

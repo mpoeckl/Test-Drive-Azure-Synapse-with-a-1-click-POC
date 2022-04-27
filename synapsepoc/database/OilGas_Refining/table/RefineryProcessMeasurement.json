@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessMeasurement",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"ComponentId\"},\"MeasurementTypeId\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessMeasurementNote\":{\"entity\":\"RefineryProcessMeasurement.cdm.json/RefineryProcessMeasurement\",\"name\":\"RefineryProcessMeasurementNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "Process measurements recorded at the associated component during the period indicated.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ComponentId,MeasurementTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

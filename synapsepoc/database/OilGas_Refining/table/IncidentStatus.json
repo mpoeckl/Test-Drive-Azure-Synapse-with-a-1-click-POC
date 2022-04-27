@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"name\":\"IncidentId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"name\":\"PeriodEndTimestamp\"},\"IncidentStatusTypeId\":{\"entity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"name\":\"IncidentStatusTypeId\"},\"IncidentStatusNote\":{\"entity\":\"IncidentStatus.cdm.json/IncidentStatus\",\"name\":\"IncidentStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The status of the incident as of the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

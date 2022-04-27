@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjuryRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentId\"},\"InjuryTypeId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuryTypeId\"},\"PartyId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PartyId\"},\"InjuredPartyId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"InjuredPartyId\"},\"IncidentPartyInjuryPartyRelationshipTypeId\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"IncidentPartyInjuryRelatedPartyNote\":{\"entity\":\"IncidentPartyInjuryRelatedParty.cdm.json/IncidentPartyInjuryRelatedParty\",\"name\":\"IncidentPartyInjuryRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "A party that has a relationship with the Incident Event over the indicated period.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,InjuryTypeId,PartyId,InjuredPartyId,IncidentPartyInjuryPartyRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

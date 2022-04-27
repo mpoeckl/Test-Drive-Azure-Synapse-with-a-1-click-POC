@@ -452,13 +452,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Meter",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterId\"},\"MeterSerialNumber\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSerialNumber\"},\"MeterBadge\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterBadge\"},\"ApeMeterLabel\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ApeMeterLabel\"},\"MeterServiceVoltage\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterServiceVoltage\"},\"CurrentMeterGpsLatitudePosition\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLatitudePosition\"},\"CurrentMeterGpsLongitudePosition\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CurrentMeterGpsLongitudePosition\"},\"MeterMultiplier\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterMultiplier\"},\"MeterRolloverCount\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterRolloverCount\"},\"MeterOwnedByGasElectricityDistributorIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByGasElectricityDistributorIndicator\"},\"MeterOwnedByRetailerIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByRetailerIndicator\"},\"MeterOwnedByCustomerIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterOwnedByCustomerIndicator\"},\"AutomaticMeterReaderIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AutomaticMeterReaderIndicator\"},\"RemoteMeterReaderIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"RemoteMeterReaderIndicator\"},\"TimeOfUseMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"TimeOfUseMeterIndicator\"},\"CustomerOwnedMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"CustomerOwnedMeterIndicator\"},\"PrepaidMeterIndicator\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PrepaidMeterIndicator\"},\"AssetId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"AssetId\"},\"MeterTypeId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterTypeId\"},\"ElectricalLineSegmentId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineSegmentId\"},\"ElectricalLineId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"ElectricalLineId\"},\"MeterModelId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterModelId\"},\"BillingUnitId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"BillingUnitId\"},\"MeterSizeId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterSizeId\"},\"MeterClassId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"MeterClassId\"},\"PropertyId\":{\"entity\":\"Meter.cdm.json/Meter\",\"name\":\"PropertyId\"}}}"
 			},
 			"Compressed": false,
@@ -469,8 +469,7 @@
 			"Description": "A meter for recording gas, electricity, or water usage.\n\nDue to the  deregulation of supply markets in many countries, the  company responsible for a meter may not be obvious. Depending on the  arrangements in place, the  meter may be the  property of the  distributor, the  retailer or for some large users the  meter may belong to the  customer.\n\nThe  company responsible for reading the  meter may not always be the  company which owns it. Meter reading is now sometimes subcontracted and in some areas the  same person may read gas, electricity and water meters at the  same time.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

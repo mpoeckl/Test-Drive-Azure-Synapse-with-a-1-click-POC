@@ -110,13 +110,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingPreventiveAction",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingTypeId\"},\"PreventiveActionId\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"PreventiveActionId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ReadingStartTimestamp\"},\"ComponentReadingPreventiveActionNote\":{\"entity\":\"ComponentReadingPreventiveAction.cdm.json/ComponentReadingPreventiveAction\",\"name\":\"ComponentReadingPreventiveActionNote\"}}}"
 			},
 			"Compressed": false,
@@ -127,8 +127,7 @@
 			"Description": "A Preventive Action for a Network Component Reading that is associated with a Component Guideline.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,ReadingTypeId,PreventiveActionId,ReadingStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

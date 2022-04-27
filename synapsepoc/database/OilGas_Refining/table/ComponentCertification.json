@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCertification",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentId\"},\"CertificationId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertificationId\"},\"ComponentCertificationStartDate\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationStartDate\"},\"ComponentCertificationExpiryDate\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationExpiryDate\"},\"ComponentCertificationNote\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"ComponentCertificationNote\"},\"CertifiedByPartyId\":{\"entity\":\"ComponentCertification.cdm.json/ComponentCertification\",\"name\":\"CertifiedByPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The certification(s) held by the component.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,CertificationId,ComponentCertificationStartDate",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

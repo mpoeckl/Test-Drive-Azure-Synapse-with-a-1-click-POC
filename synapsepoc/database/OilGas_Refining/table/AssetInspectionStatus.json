@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspectionStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetInspectionStatusId\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusId\"},\"AssetInspectionStatusName\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusName\"},\"AssetInspectionStatusDescription\":{\"entity\":\"AssetInspectionStatus.cdm.json/AssetInspectionStatus\",\"name\":\"AssetInspectionStatusDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The status of the associated asset inspection.\n\nEx:\n- planned\n- in process\n- passed\n- failed\n- results pending\n- results disputed",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetInspectionStatusId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -163,13 +163,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetLocation",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryId\"},\"AssetId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"AssetId\"},\"LocationId\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationLatitude\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLatitude\"},\"LocationLongitude\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"LocationLongitude\"},\"RefineryAssetLocationNote\":{\"entity\":\"RefineryAssetLocation.cdm.json/RefineryAssetLocation\",\"name\":\"RefineryAssetLocationNote\"}}}"
 			},
 			"Compressed": false,
@@ -180,8 +180,7 @@
 			"Description": "The location of the asset for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryId,AssetId,LocationId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FieldDevice",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FieldDeviceId\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceId\"},\"FieldDeviceName\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceName\"},\"FieldDeviceDescription\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceDescription\"},\"FieldDeviceTypeId\":{\"entity\":\"FieldDevice.cdm.json/FieldDevice\",\"name\":\"FieldDeviceTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "Field devices are instrumentation, data gathering units and communication systems. \n\nThe information measured by these field devices is  gathered in local remote terminal units for transmission in real time using communication systems, such as satellite channels, microwave links, or digital phone connections.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "FieldDeviceId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

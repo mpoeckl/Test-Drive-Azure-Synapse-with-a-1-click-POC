@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankClassificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankClassificationTypeId\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeId\"},\"StorageTankClassificationTypeName\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeName\"},\"StorageTankClassificationTypeDescription\":{\"entity\":\"StorageTankClassificationType.cdm.json/StorageTankClassificationType\",\"name\":\"StorageTankClassificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The storage tank classification:\n\nCOT- crude oil tankages\nPIT- product and intermediate storage tankages\nDISPATCH- dispatch area tankages\nUTILITIES- tanks made in the power plant area, for storage water etc.\nOSBL tanks- the first 3 types come under out side battery limit tankages\nISBL tanks- these are usually mini tanks which are found in the production units of a refinery",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageTankClassificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -389,13 +389,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTest",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestId\"},\"RefineryTestDescription\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestDescription\"},\"RefineryTestMethodId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestMethodId\"},\"RefineryTestPlannedTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPlannedTimestamp\"},\"RefineryTestScheduledTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestScheduledTimestamp\"},\"RefineryTestPerformedTimestamp\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestPerformedTimestamp\"},\"RefineryTestSafetyStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSafetyStatement\"},\"RefineryTestSamplePreparationStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSamplePreparationStatement\"},\"RefineryTestSampleHandlingStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleHandlingStatement\"},\"RefineryTestSampleDisposalStatement\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestSampleDisposalStatement\"},\"ProductId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"ProductId\"},\"CrudeOilTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CrudeOilTypeId\"},\"WasteMaterialTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"WasteMaterialTypeId\"},\"CatalystTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"CatalystTypeId\"},\"AdditiveTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"AdditiveTypeId\"},\"FeedstockTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"FeedstockTypeId\"},\"RefineryTestLocationId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestLocationId\"},\"RefineryTestResultTypeId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestResultTypeId\"},\"RefineryProcessId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryProcessId\"},\"RefineryTestCategoryId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestCategoryId\"},\"RefineryTestNote\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"RefineryTestNote\"},\"StorageTankId\":{\"entity\":\"RefineryTest.cdm.json/RefineryTest\",\"name\":\"StorageTankId\"}}}"
 			},
 			"Compressed": false,
@@ -406,8 +406,7 @@
 			"Description": "A refinery test.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

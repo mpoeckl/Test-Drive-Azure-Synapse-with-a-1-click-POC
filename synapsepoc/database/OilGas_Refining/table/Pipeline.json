@@ -242,13 +242,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Pipeline",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineId\"},\"PipelineName\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineName\"},\"PipelineDescription\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineDescription\"},\"FullRegulationPipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"FullRegulationPipelineIndicator\"},\"PiggablePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PiggablePipelineIndicator\"},\"IntrastatePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"IntrastatePipelineIndicator\"},\"InterstatePipelineIndicator\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"InterstatePipelineIndicator\"},\"PipelineTypeId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineTypeId\"},\"PipelinePurposeId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelinePurposeId\"},\"PipelineMaximumCapacityL\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumCapacityL\"},\"PipelineMaximumAllowableOperatingPressurePsig\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineMaximumAllowableOperatingPressurePsig\"},\"PipelineNetworkId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"PipelineNetworkId\"},\"MarketParticipantId\":{\"entity\":\"Pipeline.cdm.json/Pipeline\",\"name\":\"MarketParticipantId\"}}}"
 			},
 			"Compressed": false,
@@ -259,8 +259,7 @@
 			"Description": "A segment of a pipeline network fulfilling a specific function such as house line, service line, gathering pipeline, transportation pipeline or distribution pipeline.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipelineId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

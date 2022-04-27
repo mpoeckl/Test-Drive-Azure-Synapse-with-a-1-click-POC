@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessMethodType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessMethodTypeId\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeId\"},\"RefineryProcessMethodTypeName\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeName\"},\"RefineryProcessMethodTypeDescription\":{\"entity\":\"RefineryProcessMethodType.cdm.json/RefineryProcessMethodType\",\"name\":\"RefineryProcessMethodTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The method associated with the refinery process.\n\nEx:\n- Thermal\n- Catalytic\n- Thermal/Catalytic\n- Adsorption\n- Adsorption/Thermal\n- Cool/Filter\n- Absorption/Precipitate",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessMethodTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

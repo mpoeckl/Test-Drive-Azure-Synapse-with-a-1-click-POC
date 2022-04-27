@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PriceListType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PriceListTypeId\":{\"entity\":\"PriceListType.cdm.json/PriceListType\",\"name\":\"PriceListTypeId\"},\"PriceListTypeName\":{\"entity\":\"PriceListType.cdm.json/PriceListType\",\"name\":\"PriceListTypeName\"},\"PriceListTypeDescription\":{\"entity\":\"PriceListType.cdm.json/PriceListType\",\"name\":\"PriceListTypeDescription\"},\"PriceListForPartyId\":{\"entity\":\"PriceListType.cdm.json/PriceListType\",\"name\":\"PriceListForPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A classification of Price Schedules based upon common characteristics, attributes, functions or marketing objectives.\n\nEx:\n-  Consumer Price Schedule\n-  Government Price Schedule\n-  Corporate Price Schedule\n-  Introductory Price Schedule\n-  Standard Price Schedule\n-  Channel Price Schedule\n-  Wholesale Price Schedule\n-  Employee Price Schedule\n-  Promotional Price Schedule\n-  Seasonal Price Schedule\n-  Geographic Price Schedule\n-  Domestic Price Schedule\n-  International Price Schedule",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "PriceListTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

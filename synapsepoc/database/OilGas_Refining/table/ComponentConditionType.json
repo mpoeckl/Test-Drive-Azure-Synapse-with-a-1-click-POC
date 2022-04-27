@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConditionType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentConditionTypeId\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeId\"},\"ComponentConditionTypeName\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeName\"},\"ComponentConditionTypeDescription\":{\"entity\":\"ComponentConditionType.cdm.json/ComponentConditionType\",\"name\":\"ComponentConditionTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A rating or ranking of the condition of a Component Condition Type.\n\nEx:\n- Optimum operating condition\n- Inoperable/repairable\n- Inoperable/salvage value only",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentConditionTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

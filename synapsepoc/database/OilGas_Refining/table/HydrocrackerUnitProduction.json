@@ -143,13 +143,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitProduction",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitId\"},\"ProductId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitProductionNote\":{\"entity\":\"HydrocrackerUnitProduction.cdm.json/HydrocrackerUnitProduction\",\"name\":\"HydrocrackerUnitProductionNote\"}}}"
 			},
 			"Compressed": false,
@@ -160,8 +160,7 @@
 			"Description": "The quantity of product produced by the Hydrocracker Unit during the associated period.\n\nEx:\n- Jet fuel\n- Diesel\n- Kerosene",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "HydrocrackerUnitId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

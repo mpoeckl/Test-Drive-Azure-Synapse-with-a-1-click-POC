@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentReadingStatusId\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusId\"},\"ComponentReadingStatusName\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusName\"},\"ComponentReadingStatusDescription\":{\"entity\":\"ComponentReadingStatus.cdm.json/ComponentReadingStatus\",\"name\":\"ComponentReadingStatusDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The status of the component reading for a period.\n\nEx:\n- Read as scheduled\n- Not read due to mechanical problems\n- Reading re-scheduled\n- Reading postponed\n- Exceeds operating specifications\n- Within operating specifications\n- Standard operational specification",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentReadingStatusId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

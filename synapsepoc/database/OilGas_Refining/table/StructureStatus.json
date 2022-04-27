@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructureStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructureId\":{\"entity\":\"StructureStatus.cdm.json/StructureStatus\",\"name\":\"StructureId\"},\"PeriodStartTimestamp\":{\"entity\":\"StructureStatus.cdm.json/StructureStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StructureStatus.cdm.json/StructureStatus\",\"name\":\"PeriodEndTimestamp\"},\"StructureStatusTypeId\":{\"entity\":\"StructureStatus.cdm.json/StructureStatus\",\"name\":\"StructureStatusTypeId\"},\"StructureStatusNote\":{\"entity\":\"StructureStatus.cdm.json/StructureStatus\",\"name\":\"StructureStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The status of the structure for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
 			"PrimaryKeys": "StructureId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

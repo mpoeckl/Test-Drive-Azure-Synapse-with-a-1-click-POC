@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankConstructionMaterialType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankConstructionMaterialTypeId\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeId\"},\"StorageTankConstructionMaterialTypeName\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeName\"},\"StorageTankConstructionMaterialTypeDescription\":{\"entity\":\"StorageTankConstructionMaterialType.cdm.json/StorageTankConstructionMaterialType\",\"name\":\"StorageTankConstructionMaterialTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The material from which the storage tank is constructed.\n\nEx:\n- Steel\n- Concrete\n- Glass-reinforced plastic\n- Thermoplastic\n- Polyethylene",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageTankConstructionMaterialTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

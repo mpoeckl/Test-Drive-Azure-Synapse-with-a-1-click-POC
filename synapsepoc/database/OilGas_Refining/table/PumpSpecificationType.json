@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpSpecificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpSpecificationTypeId\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeId\"},\"PumpSpecificationTypeName\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeName\"},\"PumpSpecificationTypeDescription\":{\"entity\":\"PumpSpecificationType.cdm.json/PumpSpecificationType\",\"name\":\"PumpSpecificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of pump specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Standard Bore\n- Pump Flow Rate\n- Discharge Rate\n- Pump Horsepower\n- Minimum Liquid Temperature\n- Maximum Liquid Temperature\n- Minimum Atmospheric Temperature\n- Maximum Atmospheric Temperature\n- Brake Power\n- Pump Total Differential Pressure\n- Net Positive Suction Head Available NPSHA\n- Net Positive Suction Head Required NPSHR\n- Pump Capacity\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Power Supply Power\n- Starting current\n- Maximum Current",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PumpSpecificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

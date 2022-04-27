@@ -145,13 +145,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerStorageCapacity",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerId\"},\"ProductId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"PeriodEndTimestamp\"},\"StorageCapacityUnits\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUnits\"},\"StorageCapacityUomId\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageCapacityUomId\"},\"StorageContainerStorageCapacityNote\":{\"entity\":\"StorageContainerStorageCapacity.cdm.json/StorageContainerStorageCapacity\",\"name\":\"StorageContainerStorageCapacityNote\"}}}"
 			},
 			"Compressed": false,
@@ -162,8 +162,7 @@
 			"Description": "The storage container capacity as of the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageContainerId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

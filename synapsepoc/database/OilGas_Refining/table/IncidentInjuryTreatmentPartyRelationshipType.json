@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentInjuryTreatmentPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentInjuryTreatmentPartyRelationshipTypeId\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeId\"},\"IncidentInjuryTreatmentPartyRelationshipTypeName\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeName\"},\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\":{\"entity\":\"IncidentInjuryTreatmentPartyRelationshipType.cdm.json/IncidentInjuryTreatmentPartyRelationshipType\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the party and the incident injury treatment party over the indicated period.\n\nEx:\n- Treatment Party\n- Performed-by Medical Party\n- Insurance Party\n- Report-to Party\n- Treatment Paid-by Party\n- Treatment Paid-to Party",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentInjuryTreatmentPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

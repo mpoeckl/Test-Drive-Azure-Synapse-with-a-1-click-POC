@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BituminousSandComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BituminousSandComponentTypeId\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeId\"},\"BituminousSandComponentTypeName\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeName\"},\"BituminousSandComponentTypeDescription\":{\"entity\":\"BituminousSandComponentType.cdm.json/BituminousSandComponentType\",\"name\":\"BituminousSandComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A measurable component of bituminous sand.\n\nEx:\n- Sulphur\n- Micron Carbon Residue\n- Sediment\n- Total Acid Number\n- Salt\n- Nickel\n- Vanadium\n- Carbon\n- Hydrogen\n- Nitrogen",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "BituminousSandComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

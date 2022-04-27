@@ -145,13 +145,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecification",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeId\"},\"PipeSpecificationTypeId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PeriodEndTimestamp\"},\"PipeSpecificationValue\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationValue\"},\"PipeSpecificationUomId\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationUomId\"},\"PipeSpecificationNote\":{\"entity\":\"PipeSpecification.cdm.json/PipeSpecification\",\"name\":\"PipeSpecificationNote\"}}}"
 			},
 			"Compressed": false,
@@ -162,8 +162,7 @@
 			"Description": "A pipe specification.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipeId,PipeSpecificationTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

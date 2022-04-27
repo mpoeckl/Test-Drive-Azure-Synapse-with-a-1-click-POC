@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentConfiguration",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"NaphthaHydrotreatingUnitComponentId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"NaphthaHydrotreatingUnitComponentConfigurationNote\":{\"entity\":\"NaphthaHydrotreatingUnitComponentConfiguration.cdm.json/NaphthaHydrotreatingUnitComponentConfiguration\",\"name\":\"NaphthaHydrotreatingUnitComponentConfigurationNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The Naphtha Hydrotreating Unit Component(s) installed and operating during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "NaphthaHydrotreatingUnitId,NaphthaHydrotreatingUnitComponentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

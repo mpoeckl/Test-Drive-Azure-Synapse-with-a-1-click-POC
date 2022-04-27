@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentRelationshipTypeId\":{\"entity\":\"IncidentRelationshipType.cdm.json/IncidentRelationshipType\",\"name\":\"IncidentRelationshipTypeId\"},\"IncidentRelationshipTypeName\":{\"entity\":\"IncidentRelationshipType.cdm.json/IncidentRelationshipType\",\"name\":\"IncidentRelationshipTypeName\"},\"IncidentRelationshipTypeDescription\":{\"entity\":\"IncidentRelationshipType.cdm.json/IncidentRelationshipType\",\"name\":\"IncidentRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between two or more incidents.\n\nEx:\n- Caused\n- Is a result of\n- Similar\n- Co-located",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

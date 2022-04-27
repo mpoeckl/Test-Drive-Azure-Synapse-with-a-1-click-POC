@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveRating",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveRatingId\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingId\"},\"ValveRatingName\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingName\"},\"ValveRatingDescription\":{\"entity\":\"ValveRating.cdm.json/ValveRating\",\"name\":\"ValveRatingDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The valve rating associated with the valve.\n\nEx:\n- 7 w.c.\n- 8-10 psig\n- 20-25 psig\n- 50-55 psig\n- 70-76 psig\n- 70-95 psig\n- 125 psig or less\n- 175 psig or less\n- 215 psig or less\n- 250 or less\n- 400 psig or less\n- 450 psig\n- 500 psig\n- 550 psig\n- 600 psig\n- 650 psig \n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ValveRatingId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

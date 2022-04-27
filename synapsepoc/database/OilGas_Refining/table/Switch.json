@@ -254,13 +254,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Switch",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"SwitchId\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchId\"},\"NormalPosition\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalPosition\"},\"NormalStatus\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"NormalStatus\"},\"ProtectedSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ProtectedSwitchIndicator\"},\"BreakerIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BreakerIndicator\"},\"LoadBreakSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"LoadBreakSwitchIndicator\"},\"AirGapSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"AirGapSwitchIndicator\"},\"BiasedSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"BiasedSwitchIndicator\"},\"InertialSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"InertialSwitchIndicator\"},\"DipSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"DipSwitchIndicator\"},\"CentrifugalSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"CentrifugalSwitchIndicator\"},\"ToggleSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"ToggleSwitchIndicator\"},\"TimeSwitchIndicator\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"TimeSwitchIndicator\"},\"SwitchTypeId\":{\"entity\":\"Switch.cdm.json/Switch\",\"name\":\"SwitchTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -271,8 +271,7 @@
 			"Description": "A switch is an electrical component that can break an electrical circuit, interrupting the current or diverting it from one conductor to another.\n\nThe most familiar form of switch is a manually operated electromechanical device with one or more sets of electrical contacts. \n\nEach set of contacts can be in one of two states: either 'closed' meaning the contacts are touching and electricity can flow between them, or 'open', meaning the contacts are separated and nonconducting.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "SwitchId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

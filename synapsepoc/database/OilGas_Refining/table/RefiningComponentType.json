@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentTypeId\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeId\"},\"ComponentTypeName\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeName\"},\"ComponentTypeDescription\":{\"entity\":\"RefiningComponentType.cdm.json/RefiningComponentType\",\"name\":\"ComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of Refining Component.\n\nEx:\n- Alkylation Unit  \n- Amine Gas Treater (Claus) Unit \n- Api Separators Unit\n- Atmospheric Distillation Unit  \n- Bitumen Packing System\n- Burner\n- Catalytic Reformer Unit  \n- Coking Unit\n- Compensator\n- Compressor\n- Desalter Unit  \n- Device\n- Dimerization Unit  \n- Dissolved Air Flotation (Daf) Unit\n- Distillate Hydrotreater Unit \n- Energy Equipment\n- Explosion-Proof Electrical Heater\n- Filter Systems \n- Fire Protection Equipment\n- Fluid Catalytic Cracker (Fcc) Unit  \n- Heat Exchanger\n- Hydrocracker Unit\n- Hydrotreater Unit \n- Isomerization Unit  \n- Merox Unit  \n- Meter\n- Mixer\n- Naphtha Hydrotreater Unit  \n- Pipe\n- Power Generator\n- Pump\n- Radio Control Module Board (Rcm)\n- Solvent Dewaxing Unit\n- Solvent Refining Unit\n- Steam Reforming Unit  \n- Storage Tank\n- Sulfur Granulation Systems\n- Switch\n- Vacuum Distillation Unit  \n- Visbreaking Unit  \n- Wastewater Collection Unit",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentPartyRelationshipTypeId\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeId\"},\"IncidentPartyRelationshipTypeName\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeName\"},\"IncidentPartyRelationshipTypeDescription\":{\"entity\":\"IncidentPartyRelationshipType.cdm.json/IncidentPartyRelationshipType\",\"name\":\"IncidentPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the party and the incident over the indicated period.\n\nEx:\n- Witnessed\n- Provided First Aid\n- Secured Location\n- Reported\n- Injured\n- Caused",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentId\"},\"PartyId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PartyId\"},\"ShipmentPartyRelationshipTypeId\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"PeriodEndDate\"},\"ShipmentPartyRelationshipNote\":{\"entity\":\"ShipmentRelatedParty.cdm.json/ShipmentRelatedParty\",\"name\":\"ShipmentPartyRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "A party having a relationship with a shipment during the associated period.\n\nFor example, this enables you to track various shippers and parties in involved in the shipment over time.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentId,PartyId,ShipmentPartyRelationshipTypeId,PeriodStartDate",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventPartyRelationshipTypeId\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeId\"},\"RefineryEventPartyRelationshipTypeName\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeName\"},\"RefineryEventPartyRelationshipTypeDescription\":{\"entity\":\"RefineryEventPartyRelationshipType.cdm.json/RefineryEventPartyRelationshipType\",\"name\":\"RefineryEventPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The role or relationship played by the party in relationship to the Refinery Event.\n\nEx:\n- Managed-by Party\n- Planned-by Party\n- Reported-by Party\n- Reported-to Party\n- Paid-by Party\n- Allocated Costs-To Party",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryEventPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

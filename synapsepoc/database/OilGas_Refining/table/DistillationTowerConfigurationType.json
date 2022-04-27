@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerConfigurationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerConfigurationTypeId\":{\"entity\":\"DistillationTowerConfigurationType.cdm.json/DistillationTowerConfigurationType\",\"name\":\"DistillationTowerConfigurationTypeId\"},\"DistillationTowerConfigurationTypeName\":{\"entity\":\"DistillationTowerConfigurationType.cdm.json/DistillationTowerConfigurationType\",\"name\":\"DistillationTowerConfigurationTypeName\"},\"DistillationTowerConfigurationTypeDescription\":{\"entity\":\"DistillationTowerConfigurationType.cdm.json/DistillationTowerConfigurationType\",\"name\":\"DistillationTowerConfigurationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The configuration of distillation tower.\n\nEx:\n- Packed Tower\n- Tray Tower\n\nwhere:\n\nPACKED TOWER\nThe packed tower is a vertical, steel column which contains 'Beds' of packing material which are used to bring the rising vapors into intimate contact with falling liquid within the tower. The heat added to the mixture before entering the tower partially vaporizes the mixture and the vapors rise up the tower and begin to cool.\n\nThe liquid falls towards the bottom of the tower. At the tower bottom, in general, more heat is added to the liquid by a 'Reboiler' which may be steam heated or a fuel fired furnace type. \n\nThe addition of heat here causes more vapors to rise up the column. As the two phases of the mixture - falling liquid and rising vapor - come together, light components are stripped out of the liquid and enter the gas phase while heavy components in the vapor are condensed into the liquid phase. \n\nIn this way, as the vapor rises and gradually cools, it becomes lighter and, as the liquid falls, it becomes hotter and heavier. \n\nWith this type of distillation column there is generally only a top and bottom product. The quality of the products depends upon the height of the tower, the number of contacting devices, the tower temperature and pressure and their control, and the velocity of the rising vapors. \n\nThe type of packing materials used, also plays a part in the separation process. \n\nTRAY TOWER\n\nTypes of trays are:\n- Sieve Tray\n- Valve Tray\n- Bubble-cap Tray\n\nwhere:\n\n1.  THE SIEVE TRAY is simply a metal plate containing drilled holes through which the rising vapor can pass into the liquid flowing across the tray.\n\n2.  THE VALVE TRAY is similar to the sieve type but, each hole is fitted with a flapper valve which opens as vapor passes through the hole. This type is used where vapor velocity is not constant and the valves prevent liquid from dumping through the holes at times of low gas velocity. Figure: 12\n\n3.  THE BUBBLE-CAP TRAY is the most efficient separation device but, is also the most costly. It consists of a number of 'Chimneys' or 'Risers' (small, short pipes set into the tray), through which the vapor can pass. Fitted over the riser is a 'Cap' which causes the rising vapor to turn through 180 °. This forces the gas to 'Bubble' through the liquid flowing across the tray. The liquid level on the tray is maintained below the top of the riser to prevent dumping of liquid down the tower. \n\nEach of the above trays also has a 'WEIR' that maintains the liquid level on the tray. As the liquid flows over the weir, it enters a 'DOWNCOMER' - (a short pipe), that carries the liquid down to the tray below. \n\nThe liquid is prevented from dumping through the perforations by the velocity of the up-flowing gas passing through them. The 'WEIR' maintains the liquid level on the tray and the gas is forced to bubble through the liquid. This gives intimate contact between the gas and liquid. \n\nWith the 'VALVE' tray, a non-return valve is fitted over each hole. This will close due to the weight of liquid at times of low gas velocity.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerConfigurationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

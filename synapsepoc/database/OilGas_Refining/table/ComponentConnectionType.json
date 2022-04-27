@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentConnectionType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentConnectionTypeId\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeId\"},\"ComponentConnectionTypeName\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeName\"},\"ComponentConnectionTypeDescription\":{\"entity\":\"ComponentConnectionType.cdm.json/ComponentConnectionType\",\"name\":\"ComponentConnectionTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of connection of the components.   \n\nEx:\n- logical connection\n- Ethernet connection\n- mechanical\n- physical connection\n- physical connection/Butt Fusion\n- physical connection/Composite Fabrication\n- physical connection/Compression\n- physical connection/Coupling\n- physical connection/Cylinder Coupling\n- physical connection/Electro Fusion\n- physical connection/Flanged\n- physical connection/Induction Fusion\n- physical connection/Plain End\n- physical connection/Ring Type Joint End\n- physical connection/Saddle Fusion\n- physical connection/Screwed End\n- physical connection/Socket Fusion\n- physical connection/Socket Weld\n- physical connection/Threaded\n- physical connection/Welded\n- not applicable\n- unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentConnectionTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

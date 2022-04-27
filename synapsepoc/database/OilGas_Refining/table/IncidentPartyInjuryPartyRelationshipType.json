@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentPartyInjuryPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentPartyInjuryPartyRelationshipTypeId\":{\"entity\":\"IncidentPartyInjuryPartyRelationshipType.cdm.json/IncidentPartyInjuryPartyRelationshipType\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeId\"},\"IncidentPartyInjuryPartyRelationshipTypeName\":{\"entity\":\"IncidentPartyInjuryPartyRelationshipType.cdm.json/IncidentPartyInjuryPartyRelationshipType\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeName\"},\"IncidentPartyInjuryPartyRelationshipTypeDescription\":{\"entity\":\"IncidentPartyInjuryPartyRelationshipType.cdm.json/IncidentPartyInjuryPartyRelationshipType\",\"name\":\"IncidentPartyInjuryPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the incident party injury and related party.\n\nEx:\n- Injured Party \n- Responding Medical Party\n- Responding Police Party\n- Insured-by Party\n- Government-oversight Party\n- Investigating Party\n- Reported-by Party\n- Reported-to Party",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentPartyInjuryPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

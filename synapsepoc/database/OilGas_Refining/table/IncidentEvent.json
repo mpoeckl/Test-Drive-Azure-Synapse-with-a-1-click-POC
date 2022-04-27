@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentEvent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentId\"},\"IncidentEventTypeId\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventTypeId\"},\"IncidentEventStartTimestamp\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventStartTimestamp\"},\"IncidentEventEndTimestamp\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventEndTimestamp\"},\"IncidentEventNote\":{\"entity\":\"IncidentEvent.cdm.json/IncidentEvent\",\"name\":\"IncidentEventNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The Event(s) that occur in conjunction with the Incident.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,IncidentEventTypeId,IncidentEventStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

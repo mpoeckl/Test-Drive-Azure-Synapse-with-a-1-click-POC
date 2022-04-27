@@ -145,13 +145,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentGuideline",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingTypeId\"},\"MinimumReadingValue\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MinimumReadingValue\"},\"MaximumReadingValue\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"MaximumReadingValue\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"UnitOfMeasureId\"},\"ReadingResultTypeId\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ReadingResultTypeId\"},\"ComponentGuidelineNote\":{\"entity\":\"ComponentGuideline.cdm.json/ComponentGuideline\",\"name\":\"ComponentGuidelineNote\"}}}"
 			},
 			"Compressed": false,
@@ -162,8 +162,7 @@
 			"Description": "Ranges of values associated with a reading on a component and how the results within those ranges should be interpreted and acted upon.\n\nThe intent is for this guideline table to contain non-overlapping values from 0 - infinity so that a single value delivered in a reading will have a single test guideline to provide additional data on how to interpret the result.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,ReadingTypeId,MinimumReadingValue,MaximumReadingValue",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

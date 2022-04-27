@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentPartyRelationshipTypeId\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeId\"},\"ShipmentPartyRelationshipTypeName\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeName\"},\"ShipmentPartyRelationshipTypeDescription\":{\"entity\":\"ShipmentPartyRelationshipType.cdm.json/ShipmentPartyRelationshipType\",\"name\":\"ShipmentPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the shipment and the party.\n\nEx:\n-  Air Freight Forwarder\n-  Agent\n-  Authorized By\n-  Beneficial Cargo Owner\n-  Broker\n-  Cargo Agent\n-  Cartage Agent\n-  Co-loader\n-  Consignee (see Shipment because of importance)\n-  Consignor (see Shipment because of importance)\n-  Consolidator\n-  Courier\n - Customs\n-  Customs Clearance Service\n-  Customs House Broker\n-  Dealer\n-  Deliver To \n-  Export Broker\n-  Export Jobber\n-  Freight Cashier\n-  Freight Forwarder\n-  Master Loader\n-  Responsible Shipping Agent\n-  Paid By\n-  Purchasing Agent\n-  Shipped By\n-  Stevedore",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

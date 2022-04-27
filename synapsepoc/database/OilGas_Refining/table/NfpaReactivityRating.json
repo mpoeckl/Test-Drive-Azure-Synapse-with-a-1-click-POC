@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaReactivityRating",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NfpaReactivityRatingId\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingId\"},\"NfpaReactivityRatingName\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingName\"},\"NfpaReactivityRatingDescription\":{\"entity\":\"NfpaReactivityRating.cdm.json/NfpaReactivityRating\",\"name\":\"NfpaReactivityRatingDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \n\nThis standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire \n\n4  Explosive material at room temperature\n3  May be explosive if shocked, heated under confinement or mixed with water\n2  Unstable or may react violently if mixed with water\n1  May react if heated or mixed with water but not violently\n0  Not reactive when mixed with water",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "NfpaReactivityRatingId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

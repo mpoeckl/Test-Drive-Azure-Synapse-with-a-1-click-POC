@@ -258,13 +258,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Incident",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentId\"},\"IncidentPeriodStartTimestamp\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodStartTimestamp\"},\"IncidentPeriodEndTimestamp\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPeriodEndTimestamp\"},\"IncidentDescription\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentDescription\"},\"IncidentTypeId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentTypeId\"},\"LocationId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"LocationId\"},\"IssueId\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IssueId\"},\"NumberOfInjuries\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfInjuries\"},\"NumberOfFatalities\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"NumberOfFatalities\"},\"TotalWorkerHoursLost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalWorkerHoursLost\"},\"TotalIncidentCost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalIncidentCost\"},\"TotalOutageHoursLost\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"TotalOutageHoursLost\"},\"IncidentPreventableIndicator\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentPreventableIndicator\"},\"IncidentNote\":{\"entity\":\"Incident.cdm.json/Incident\",\"name\":\"IncidentNote\"}}}"
 			},
 			"Compressed": false,
@@ -275,8 +275,7 @@
 			"Description": "A distinct event that might have serious consequences, require attention or have reporting requirements associated with it.\n\nThis may include major weather events such as Hurricane Katrina or more minor events like a blown transformer.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

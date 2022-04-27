@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankRoofType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankRoofTypeId\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeId\"},\"StorageTankRoofTypeName\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeName\"},\"StorageTankRoofTypeDescription\":{\"entity\":\"StorageTankRoofType.cdm.json/StorageTankRoofType\",\"name\":\"StorageTankRoofTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of storage tank roof.\n\nEx:\n- Fixed Roof\n- Cone Roof\n- Dome Roof\n- Umbrella Roof\n- External Floating Roof\n- Internal Floating Roof\n\nwhere:\n\nFixed roof tanks are meant for liquids with very high flash points, (e.g. fuel oil, water, bitumen etc.) Cone roofs, dome roofs and umbrella roofs are usual. These are insulated to prevent the clogging of certain materials, wherein the heat is provided by steam coils within the tanks. Dome roof tanks are meant for tanks having slightly higher storage pressure than that of atmosphere (e.g. slop oil).\n\nFloating roof tanks are broadly divided into external floating roof tanks (usually called floating roof tanks: FR Tanks) and internal floating roof types (IFR Tanks).\n\nIFR tanks are used for liquids with low flash-points (e.g., ATF, MS. gasoline, ethanol). These tanks are nothing but cone roof tanks with a floating roof inside which travels up and down along with the liquid level. This floating roof traps the vapor from low flash-point fuels. Floating roofs are supported with legs or cables on which they rest. FR tanks do not have a fixed roof (it is open in the top) and has a floating roof only. Medium flash point liquids such as naphtha, kerosene, diesel, and crude oil are stored in these tanks.\n\nThe general types of atmospheric storage tanks (AST) in use may be open top tanks (OTT), fixed-roof tanks (FRT), external floating-roof tanks (EFRT), or internal floating-roof tanks (IFRT). Depending on the product, a closed floating-roof tank (CFRT) may even be selected.\n\nOpen top tanks\n\nThe OTT was one of the first tanks used to store petroleum products. While it provides liquid containment, direct exposure of the liquid surface to the atmosphere assures high evaporative losses, product odors, and increased potential for fires. The OTT has only limited use, primarily for collection of contaminated run-off or wash water and wastewater processes.\n\nFixed roof tanks\n\nThe FRT provides improved containment of product vapors and reduces the potential for fires. The FRT still exposes the liquid surface to the tank vapor space, producing significant product evaporative losses. This increases the possibility of forming a combustible gas mixture in the vapor space for certain more volatile petroleum products. For this reason fixed roof tanks in refineries are generally used for products with vapor pressures less than 1.5 psia.\n\nFloating roof tanks\n\nAlthough not normally used in production operations, floating roof tanks are often used in pump stations or terminals where the crude oil has been stabilized to a vapor pressure of less than 11.1 psia.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageTankRoofTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

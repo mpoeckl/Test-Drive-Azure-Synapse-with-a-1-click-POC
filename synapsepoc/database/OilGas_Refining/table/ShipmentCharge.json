@@ -161,13 +161,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentCharge",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentId\"},\"ShipmentChargeTypeId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTypeId\"},\"ShipmentChargeTimestamp\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeTimestamp\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentLegNumber\"},\"ShipmentChargeAmount\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeAmount\"},\"ShipmentChargePaidTimestamp\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargePaidTimestamp\"},\"ShipmentChargeNote\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ShipmentChargeNote\"},\"ChargeByPartyId\":{\"entity\":\"ShipmentCharge.cdm.json/ShipmentCharge\",\"name\":\"ChargeByPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -178,8 +178,7 @@
 			"Description": "A charge or fee incurred by the shipment by the indicated party.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentId,ShipmentChargeTypeId,ShipmentChargeTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

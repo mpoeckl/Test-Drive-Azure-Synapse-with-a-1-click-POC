@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentId\"},\"ShipmentStatusTypeId\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"PeriodEndTimestamp\"},\"ShipmentStatusNote\":{\"entity\":\"ShipmentStatus.cdm.json/ShipmentStatus\",\"name\":\"ShipmentStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The status of the associated shipment.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentId,ShipmentStatusTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

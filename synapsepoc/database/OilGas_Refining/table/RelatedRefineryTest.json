@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryTest",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestId\"},\"RelatedRefineryTestId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestId\"},\"RefineryTestRelationshipTypeId\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RefineryTestRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"PeriodEndTimestamp\"},\"RelatedRefineryTestNote\":{\"entity\":\"RelatedRefineryTest.cdm.json/RelatedRefineryTest\",\"name\":\"RelatedRefineryTestNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The relationship between refinery tests.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestId,RelatedRefineryTestId,RefineryTestRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

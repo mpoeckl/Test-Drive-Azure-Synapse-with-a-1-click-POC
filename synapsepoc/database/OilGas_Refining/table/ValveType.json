@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ValveType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ValveTypeId\":{\"entity\":\"ValveType.cdm.json/ValveType\",\"name\":\"ValveTypeId\"},\"ValveTypeName\":{\"entity\":\"ValveType.cdm.json/ValveType\",\"name\":\"ValveTypeName\"},\"ValveTypeDescription\":{\"entity\":\"ValveType.cdm.json/ValveType\",\"name\":\"ValveTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of valve.\n\nEx:\n- Ball\n- Bonded\n- Bonded Insulated\n- Check\n- Controllable\n- Curb Stop\n- Curb Tee\n- Excess Flow\n- Gate\n- Insulated\n- Other/Not Indicated\n- Plug\n- Poly\n- Reducing Port\n- Relief\n- Regular\n- Stop Cock\n- V-Ball\n- Wafer\n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ValveTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HazardSeverityCategory",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HazardSeverityCategoryId\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryId\"},\"HazardSeverityCategoryName\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryName\"},\"HazardSeverityCategoryDescription\":{\"entity\":\"HazardSeverityCategory.cdm.json/HazardSeverityCategory\",\"name\":\"HazardSeverityCategoryDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The Hazard Severity Category potentially associated with an inventory Item.\n\na. Category I, Catastrophic--Hazard may cause death or total loss of a bodily system. \n\nb. Category II, Critical--Hazard may cause severe bodily injury, severe occupational illness, or major damage to a bodily system. \n\nc. Category III, Marginal--Hazard may cause minor bodily injury, minor occupational illness, or minor damage to a bodily system. \n\nd. Category IV, Negligible--Hazard would cause less than minor bodily injury, minor occupational illness, or minor bodily system damage.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
 			"PrimaryKeys": "HazardSeverityCategoryId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

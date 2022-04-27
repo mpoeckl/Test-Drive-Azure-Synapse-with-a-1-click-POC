@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AccessType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AccessTypeId\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeId\"},\"AccessTypeName\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeName\"},\"AccessTypeDescription\":{\"entity\":\"AccessType.cdm.json/AccessType\",\"name\":\"AccessTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of access to the associated component.\n\nEx:\n-  Above Ground  \n-  Buried \n-  Pit  \n-  Stacked  \n-  Unknown\n-  Office environment \n-  Private residence \n-  Underground \n-  Locked cabinet \n-  Computer Facility\n-  Gated Property",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "AccessTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorComponentTypeId\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeId\"},\"GeneratorComponentTypeName\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeName\"},\"GeneratorComponentTypeDescription\":{\"entity\":\"GeneratorComponentType.cdm.json/GeneratorComponentType\",\"name\":\"GeneratorComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type generator component that may be integrated with or supporting the operation of the generator.\n\nEx:\n- Alternator\n- Cast Iron Sleeve\n- Mainframe  Assembly\n- Rectifier\n- Rotor\n- Stator\n- Vibration Isolator\n- Voltage Regulator\n\nWhere:\n\nALTERNATOR\nThis part of the generator converts the mechanical energy supplied by the engine into electrical energy to produce electricity.\n\nCAST IRON SLEEVE (CIS)\nA lining within the engine that contributes greatly to the generator's lifetime.\n\nMAINFRAME ASSEMBLY\nThe customized structural body and base support system of a generator.\n\nRECTIFIER\nThe part of the generator that converts alternating current voltage into direct current voltage to charge the generator's battery.\n\nROTOR\nThe rotating part of the alternator's electromagnetic system.\n\nSTATOR\nThe stationary part of the alternator's electromagnetic system.\n\nVIBRATION ISOLATOR\nThe rubber lining between the generator's engine and the main frame of the generator that reduces any vibration produced by the engine.\n\nVOLTAGE REGULATOR\nThe part of the generator that automatically maintains optimal voltage by controlling the course of direct current to the rotor.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "GeneratorComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

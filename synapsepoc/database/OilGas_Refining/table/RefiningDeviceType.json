@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefiningDeviceType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceTypeId\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeId\"},\"DeviceTypeName\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeName\"},\"DeviceTypeDescription\":{\"entity\":\"RefiningDeviceType.cdm.json/RefiningDeviceType\",\"name\":\"DeviceTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of device based on its function, common characteristics.\n\nEx:\n- Solenoid \n- Clamp meter (current transducer)\n- Wheatstone bridge (measures resistance)\n- Capacitance meter (measures capacitance)\n- LCR meter (measures inductance, capacitance, resistance)\n- EMF Meter (measures Electric and Magnetic Fields)\n- Electrometer (measures voltages)\n- RF probe\n- Signal tracer\n- Logic analyzer (tests digital circuits)\n- Spectrum analyzer (measures spectral energy of signals)\n- Protocol analyzer \n- Vector signal analyzer (\n- Time-domain reflectometer (Tests integrity of long cables)\n- Semiconductor curve tracer\n- Frequency synthesizer\n- Function generator\n- Digital pattern generator\n- Pulse generator\n- Signal injector",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DeviceTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

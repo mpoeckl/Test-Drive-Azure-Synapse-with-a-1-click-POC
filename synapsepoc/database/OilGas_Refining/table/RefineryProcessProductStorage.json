@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductStorage",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessId\"},\"ProductId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"ProductId\"},\"StorageTankId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"StorageTankId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessProductStoredUnits\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStoredUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessProductStorageNote\":{\"entity\":\"RefineryProcessProductStorage.cdm.json/RefineryProcessProductStorage\",\"name\":\"RefineryProcessProductStorageNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The quantity of product produced by the refinery process during the associated period that is stored to the associated storage tank.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ProductId,StorageTankId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

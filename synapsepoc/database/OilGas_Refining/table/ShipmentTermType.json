@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentTermType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentTermTypeId\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeId\"},\"ShipmentTermTypeName\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeName\"},\"ShipmentTermTypeDescription\":{\"entity\":\"ShipmentTermType.cdm.json/ShipmentTermType\",\"name\":\"ShipmentTermTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The shipping term(s) that may be applied to a shipment.\n\nEx:\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- Free On Board (FOB) Destination (Vendor pays freight to retailer's destination)\n- Free Along Side (FAS)\n- Free Domicile\n- Hold For Pickup\n- COD\n\nwhere \nCOD = Collect (cash) on Delivery; Carried on Docket (pricing); Change of Destination.\n\nEx:\nFree Along Side (FAS) - A basis of pricing meaning the price of goods alongside a transport vessel at a specified location. The buyer is responsible for loading the goods onto the transport vessel and pays all the cost of shipping beyond that location.\n\nEx:\nFree Domicile - A term used in international transportation where the shipper pays all transportation charges and any applicable duties and/or taxes.\n\nEx:\nFree On Board (FOB) - A pricing term indication that the quoted price includes the cost of loading the goods into transport vessels at the specified place.\n\nEx:\nHold For Pickup - Pickup - Freight to be held at the carrier's destination location for pickup by the recipient.\n\nThe FOB Term may be applied:\n\n- to the Customer Account to be used as the standard or default for it's Customers\n\n- to a specific Customer to override any Customer Account standard FOB Term\n\n- directly to a specific Order to indicate it's FOB Term\n\nExamples:\n\n- Destination/Freight Collect\n- Destination/Freight Prepaid\n- Origin/Freight Collect\n- Origin/Freight Prepaid\n- FOB Destination (Vendor pays freight to retailer's destination)\n\nFree-on-Board (FOB) codes are used by the freight industry to define terms and conditions under which merchandise is to be shipped.   \n\nFOB codes address the following four issues:\n\n1.  Who will pay freight charges when the goods leave the original location: buyer, seller or neither?\n\n2.  Who will assume the freight charges, when the goods are delivered at the destination location?  Will the buyer reimburse the seller for the freight charges or pay the shipper directly?\n\n3.  Who has ownership of the merchandise while it is en route to the destination: buyer or seller?\n\n4.  Who has responsibility for filing any over/short/damaged claims that may be necessary: buyer or seller?",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentTermTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

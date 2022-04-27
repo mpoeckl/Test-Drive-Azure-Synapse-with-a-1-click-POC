@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestMethod",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestMethodId\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodId\"},\"RefineryTestMethodName\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodName\"},\"RefineryTestMethodDescription\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestMethodDescription\"},\"RefineryTestStandardsPartyId\":{\"entity\":\"RefineryTestMethod.cdm.json/RefineryTestMethod\",\"name\":\"RefineryTestStandardsPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A type of refinery test method.\n\nEx:\n\nTest                  Test for\n----------------------------------------\nASTM D1298, ASTM D4052, IP 365     Density\nASTM D6417     Volatility\nASTM D1401     Water Separability:\nASTM D611     Aniline Point\nASTM D664     Acid Number\nASTM D974     Acid and Base Number\nASTM D130      Copper Strip Corrosion\nASTM D482     Ash Content\nASTM D1218      Refractive Index\nASTM D97, ASTM D5950,ASTM  D5985,ASTM  D5949     Pour Point\nASTM D445, IP 71      Kinematic Viscosity\nASTM D2270, IP 226      Viscosity Index\nASTM D2622, D4294      Sulfur\nASTM D92, D93     Flash Point          \nASTM D1500, D6045     Color\nASTM D2887     Boiling Point Distribution\nASTM D5762     Nitrogen\nASTM D5293     Viscosity by Cold Crank Simulator\n\nASTM = ASTM International",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestMethodId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

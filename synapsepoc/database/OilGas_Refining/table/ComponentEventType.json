@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventTypeId\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeId\"},\"ComponentEventTypeName\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeName\"},\"ComponentEventTypeDescription\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventTypeDescription\"},\"ComponentEventCategoryId\":{\"entity\":\"ComponentEventType.cdm.json/ComponentEventType\",\"name\":\"ComponentEventCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A type of component event based on function, objectives or similar criteria.\n\nEx:\n- Demand Response Event Declared\n- Installation\n- Replacement\n- Failure\n- Burn-in \n- Maintenance\n- Preventive maintenance\n- Replacement\n- Testing\n- Trade-in\n- Loss\n- Theft\n- Casualty Loss\n- Cannibalization\n- Salvage\n- Sale\n- Transfer",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentEventTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

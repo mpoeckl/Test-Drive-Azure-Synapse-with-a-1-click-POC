@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedProductGroup",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductGroupId\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"ProductGroupId\"},\"RelatedProductGroupId\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"RelatedProductGroupId\"},\"ProductGroupRelationshipTypeId\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"ProductGroupRelationshipTypeId\"},\"PeriodStartDate\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"PeriodStartDate\"},\"PeriodEndDate\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"PeriodEndDate\"},\"ProductGroupRelationshipNote\":{\"entity\":\"RelatedProductGroup.cdm.json/RelatedProductGroup\",\"name\":\"ProductGroupRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The relationship of two or more Product Groups.",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "ProductGroupId,RelatedProductGroupId,ProductGroupRelationshipTypeId,PeriodStartDate",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

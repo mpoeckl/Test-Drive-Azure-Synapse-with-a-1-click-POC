@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/WasteMaterialType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"WasteMaterialTypeId\":{\"entity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"name\":\"WasteMaterialTypeId\"},\"WasteMaterialTypeName\":{\"entity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"name\":\"WasteMaterialTypeName\"},\"WasteMaterialTypeDescription\":{\"entity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"name\":\"WasteMaterialTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"WasteMaterialType.cdm.json/WasteMaterialType\",\"name\":\"CorrosiveQualityId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "The type of waste.\n\nEx:\n- Water \n- Demulsifier\n- Caustic\n- Acid\n- Chloride\n- Sulfide\n- Bicarbonate\n- hydrocarbons\n- Phenol\n- Suspended solids\n- Mercaptan",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "WasteMaterialTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpBearingType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpBearingTypeId\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeId\"},\"PumpBearingTypeName\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeName\"},\"PumpBearingTypeDescription\":{\"entity\":\"PumpBearingType.cdm.json/PumpBearingType\",\"name\":\"PumpBearingTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The pump bears supports the rotating shaft and allows it to turn with a minimum amount of friction. \n\nEx:\n-  Sleeve \n-  Anti-friction type\n-  Pivot-shoe thrust",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PumpBearingTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

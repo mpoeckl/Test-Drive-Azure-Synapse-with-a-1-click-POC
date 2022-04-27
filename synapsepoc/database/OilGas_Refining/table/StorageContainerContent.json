@@ -207,13 +207,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerContent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageContainerId\"},\"ProductId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"PeriodEndTimestamp\"},\"StorageUnits\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageUnits\"},\"UnitOfMeasureId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"UnitOfMeasureId\"},\"FeedstockTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"FeedstockTypeId\"},\"AdditiveTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"AdditiveTypeId\"},\"CatalystTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"CatalystTypeId\"},\"WasteMaterialTypeId\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"WasteMaterialTypeId\"},\"StorageTankProductStorageNote\":{\"entity\":\"StorageContainerContent.cdm.json/StorageContainerContent\",\"name\":\"StorageTankProductStorageNote\"}}}"
 			},
 			"Compressed": false,
@@ -224,8 +224,7 @@
 			"Description": "The contents of the storage container for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageContainerId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

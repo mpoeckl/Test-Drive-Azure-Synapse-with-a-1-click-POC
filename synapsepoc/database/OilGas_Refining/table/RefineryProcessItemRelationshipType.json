@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessItemRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessItemRelationshipTypeId\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeId\"},\"RefineryProcessItemRelationshipTypeName\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeName\"},\"RefineryProcessItemRelationshipTypeDescription\":{\"entity\":\"RefineryProcessItemRelationshipType.cdm.json/RefineryProcessItemRelationshipType\",\"name\":\"RefineryProcessItemRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the Refinery Process and Item.\n\nEx:\n- Consumed-by Process\n- Produced-by Process\n- Wasted-by Process\n- Required-by Process",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessItemRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

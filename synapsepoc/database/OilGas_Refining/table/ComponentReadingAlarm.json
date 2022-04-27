@@ -176,13 +176,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReadingAlarm",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingTypeId\"},\"AlarmTypeId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ReadingStartTimestamp\"},\"AlarmStartTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStartTimestamp\"},\"AlarmEndTimestamp\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmEndTimestamp\"},\"AlarmStateId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AlarmStateId\"},\"AssetAlarmActivityId\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"AssetAlarmActivityId\"},\"ComponentReadingAlarmNote\":{\"entity\":\"ComponentReadingAlarm.cdm.json/ComponentReadingAlarm\",\"name\":\"ComponentReadingAlarmNote\"}}}"
 			},
 			"Compressed": false,
@@ -193,8 +193,7 @@
 			"Description": "The alarm(s) that result or are invoked as a result of a Component Reading.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,ReadingTypeId,AlarmTypeId,ReadingStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

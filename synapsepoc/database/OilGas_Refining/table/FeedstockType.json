@@ -126,13 +126,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FeedstockType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FeedstockTypeId\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"FeedstockTypeId\"},\"FeedstockTypeName\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"FeedstockTypeName\"},\"FeedstockTypeDescription\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"FeedstockTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"CorrosiveQualityId\"},\"FeedstockEmissionFactorUnits\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"FeedstockEmissionFactorUnits\"},\"FeedstockEmissionFactorUomId\":{\"entity\":\"FeedstockType.cdm.json/FeedstockType\",\"name\":\"FeedstockEmissionFactorUomId\"}}}"
 			},
 			"Compressed": false,
@@ -143,8 +143,7 @@
 			"Description": "The type of feedstock.\n\nEx:\nFRACTIONATION PROCESS:\nAtmospheric distillation <- Desalted crude oil\nVacuum distillation <- Gas oil, lube stock, residual\n\nCONVERSION PROCESSES - DECOMPOSITION:\nCatalytic cracking <- Gas oil, coke distillate\nCoking <- Gas oil, coke distillate\nHydro-cracking <- Gas oil, cracked oil, residual\nHydrogen steam reforming <- Desulfurized gas, O2, steam\nSteam cracking  <- Heavy fuel/distillate\nVisbreaking  (Reduce viscosity) -> Distillate, tar\n\nCONVERSION PROCESSES - UNIFICATION:\nAlkylation  (Unite olefins & isoparaffins) -> Iso-octane (alkylate)\nGrease compounding <- Lube oil, fatty acid, alky metal\nPolymerizing <- Cracker olefins\n\nCONVERSION PROCESSES - ALTERATION OR REARRANGEMENT:\nCatalytic reforming <- Coker/hydro-cracker naphtha\nIsomerization <- Butane, pentane, hexane\n\nTREATMENT PROCESSES:\nAmine treating <- Sour gas, HCs w/CO2 & H2S\nDesalting <- Crude oil\nDrying & sweetening <- Liq Hcs, LPG, alky feedstock\nFurfural extraction <- Cycle oils & lube feed- stocks\nHydrodesulfurization <- High-sulfur residual/gas oil\nHydrotreating <- Residuals, cracked HC's\nPhenol extraction <- Lube oil base stocks\nSolvent deasphalting <- Vacuum tower residual, propane\nSolvent dewaxing <- Vacuum tower lube oils\nSolvent extraction <- Gas oil, reformate, distillate\nSweetening <- Untreated distillate/gasoline\n\nCHEMICAL PROCESSES:\nEx\nPropene\nNatural Gas\nWater\nEthylene\n1-butene\n1-hexene\nVinylic Comonomers\nHexene\nNitrogen\n\nHydrogen\nNatural Gas Liquids\nCoal\nBy-Product Streams \nCarbon Dioxide (Co2) From Flue Gases\nSyngas\nCarbon Monoxide\nNitrogen\nCarbon Dioxide\nEthane\nBenzene\nBiomass/ Fuelwood\nBiomass/ Pellets\nBiomass/ Charcoal\nBiomass/ Forest Residues\nBiomass/ Black Liquor\nBiomass/ Bioethanol from crops\nBiomass/ Biodiesel from crops\nBiomass/ Biogas from crops/animals\nBiomass/ Municipal waste\n\nNote:\nPropylene may be copolymerized with a range of other olefins, such as ethylene and oc-olefins (1-butene, 1-hexene, etc.). \nThe other olefins are termed comonomers and are incorporated into the growing polymer chain.\n\nOTHER\n\nEx:\nNatural Gas (methanol, ammonia, hydrogen)  \nNaphtha (methanol, ammonia, hydrogen)\nSour Gas\nRich Gas\nRaw Natural Gas\nWet Gas\n\nNote:\nThe type of feedstock depends on the process.\nNatural Gas is a feedstock to product ammonia.\nNatural Gas is the product produced in other processes.\n\nSour Gas \nGas containing a high level of Carbon Dioxide or Hydrogen Sulfide, which are corrosive in the presence of water. They may therefore require drying or removal to preserve the pipeline. \n\nRich Gas \nRich gas is gas with relatively large quantities of heavier fractions in its composition (typically up to about 15%) and thus of high Calorific Value. Also known as Wet Gas.\n\nRaw Natural Gas \nNatural gas still containing impurities and unwanted substances, such as water, nitrogen, carbon dioxide, hydrogen sulfide gas and helium. \n\nWet Gas \nNatural gas containing condensable Hydrocarbons",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "FeedstockTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

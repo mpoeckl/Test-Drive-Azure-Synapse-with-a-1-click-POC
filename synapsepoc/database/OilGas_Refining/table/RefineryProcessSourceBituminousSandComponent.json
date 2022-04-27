@@ -109,13 +109,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceBituminousSandComponent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BituminousSandComponentTypeId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandComponentTypeId\"},\"BituminousSandTypeId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"BituminousSandTypeId\"},\"ComponentUnits\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"ComponentUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessSourceBituminousSandComponentNote\":{\"entity\":\"RefineryProcessSourceBituminousSandComponent.cdm.json/RefineryProcessSourceBituminousSandComponent\",\"name\":\"RefineryProcessSourceBituminousSandComponentNote\"}}}"
 			},
 			"Compressed": false,
@@ -126,8 +126,7 @@
 			"Description": "The component(s) of the associated process source bituminous sand.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "BituminousSandComponentTypeId,BituminousSandTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

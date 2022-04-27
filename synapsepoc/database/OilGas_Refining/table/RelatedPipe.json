@@ -320,13 +320,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedPipe",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeId\"},\"RelatedPipeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeId\"},\"PipeRelationshipTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PeriodEndTimestamp\"},\"FromPipeIdBendAngleDegrees\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendAngleDegrees\"},\"FromPipeIdBendFromHorizontalAngleDegree\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdBendFromHorizontalAngleDegree\"},\"ToPipeIdBendAngleDegrees\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendAngleDegrees\"},\"ToPipeIdBendFromHorizontalAngleDegree\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdBendFromHorizontalAngleDegree\"},\"FromPipeIdDepthElevationUnits\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"FromPipeIdDepthElevationUnits\"},\"ToPipeIdDepthElevationUnits\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"ToPipeIdDepthElevationUnits\"},\"LongitudinalSeamOrientationClockPosition\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"LongitudinalSeamOrientationClockPosition\"},\"HeightDepthUomId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"HeightDepthUomId\"},\"PipeWeldingProcessTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeWeldingProcessTypeId\"},\"PipeJunctionMaterialTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeJunctionMaterialTypeId\"},\"PipeSeamTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeSeamTypeId\"},\"PipeEndTypeId\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"PipeEndTypeId\"},\"RelatedPipeNote\":{\"entity\":\"RelatedPipe.cdm.json/RelatedPipe\",\"name\":\"RelatedPipeNote\"}}}"
 			},
 			"Compressed": false,
@@ -337,8 +337,7 @@
 			"Description": "The relationship between two pipes.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipeId,RelatedPipeId,PipeRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FittingStyle",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FittingStyleId\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleId\"},\"FittingStyleName\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleName\"},\"FittingStyleDescription\":{\"entity\":\"FittingStyle.cdm.json/FittingStyle\",\"name\":\"FittingStyleDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A fitting style associated with a component.\n\nEx:\n- Amp Fit\n- Back to Back Transition\n- Bonded Dresser Coupling\n- Bonded Hot Line Sleeve\n- Bonded Insulated Dresser Coupling\n- Branch Saddle\n- Chicago Sealastic\n- Compression\n- Cross\n- Dresser Coupling Fab\n- Drip\n- duPont Aladyl-A\n- Electrostop\n- Flange\n- Hi Vol Punch Tee\n- High Volume Tee\n- Hot Line Sleeve\n- Inline Tee\n- Insulated Dresser Coupling\n- Insulated Flange\n- Insulated Service\n- Locking Compression Coupling\n- Metal Cross\n- Metal Elbow\n- Metal Fab Cross\n- Metal Fab Reducer\n- Metal Fab Tee\n- Metal Miter\n- Metal Miter 22 Deg\n- Metal Miter 45 Deg\n- Metal Miter 90 Deg\n- Metal Pipe Coupling\n- Metal Reducer\n- Metal Tee\n- Multi Saddle\n- Normac\n- Plastic Elbow\n- Plastic Pipe Coupling\n- Plastic Reducer\n- Plastic Tee\n- Polyethylene\n- Posi-Hold\n- Punch Tee\n- PVC-Poly Vinyl Chloride\n- Reducer\n- Saddle\n- Shorted Insulated Dresser Coupling\n- Spiral\n- Tapping Sleeve\n- TR-418\n- Transition Fitting\n- Unknown\n- Weld",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "FittingStyleId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

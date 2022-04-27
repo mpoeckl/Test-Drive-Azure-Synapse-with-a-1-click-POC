@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrotreaterCompoundType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrotreaterCompoundTypeId\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeId\"},\"HydrotreaterCompoundTypeName\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeName\"},\"HydrotreaterCompoundTypeDescription\":{\"entity\":\"HydrotreaterCompoundType.cdm.json/HydrotreaterCompoundType\",\"name\":\"HydrotreaterCompoundTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A compound/material that is removed by the naphtha hydrotreater unit during the associated period.\n\nEx:\n- Sulfur\n- Unsaturated hydrocarbons\n- Nitrogen",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "HydrotreaterCompoundTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

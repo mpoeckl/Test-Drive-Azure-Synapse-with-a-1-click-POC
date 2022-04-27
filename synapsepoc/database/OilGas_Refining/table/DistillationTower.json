@@ -354,13 +354,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTower",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerId\"},\"DistillationTowerManufacturerName\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerManufacturerName\"},\"DistillationTowerModelNumber\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerModelNumber\"},\"DistillationTowerConstructionStartDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionStartDate\"},\"DistillationTowerConstructionCompletionDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConstructionCompletionDate\"},\"DistillationTowerFirstOperationDate\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerFirstOperationDate\"},\"DistillationTowerHeightMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerHeightMeters\"},\"DistillationTowerExternalDiameterMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerExternalDiameterMeters\"},\"DistillationTowerInternalDiameterMeters\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerInternalDiameterMeters\"},\"DistillationTowerNumberOfTrays\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNumberOfTrays\"},\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedVacuumColumnAtmosphericResidueTHr\"},\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFlashZoneOperatingPressureMmhg\"},\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedFeedMinimalTemperatureToFiredHeaterKpa\"},\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedSteamToFiredHeaterCoilPressureKpa\"},\"DistillationTowerDesignedMaximumProductionGph\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerDesignedMaximumProductionGph\"},\"DistillationTowerConfigurationTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerConfigurationTypeId\"},\"DistillationTowerControlTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerControlTypeId\"},\"DistillationTowerTypeId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerTypeId\"},\"MaterialId\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"MaterialId\"},\"DistillationTowerNote\":{\"entity\":\"DistillationTower.cdm.json/DistillationTower\",\"name\":\"DistillationTowerNote\"}}}"
 			},
 			"Compressed": false,
@@ -371,8 +371,7 @@
 			"Description": "A  long vertical column or tower used in fractional distillation, in which internal reflux enables separation of high and low boiling fractions to take place\n\nThe first step in the refining process is the separation of crude oil into various fractions or straight-run cuts by distillation in atmospheric and vacuum towers. \n\nThe main fractions or \"cuts\" obtained have specific boiling-point ranges and can be classified in order of decreasing volatility into gases, light distillates, middle distillates, gas oils, and residuum.\n\nProducts ranging from uncondensed fixed gases at the top to heavy fuel oils at the bottom can be taken continuously from a fractionating tower.\n\nCrude oil is heated until it evaporates.\n\nDifferent fractions condense at certain temperature ranges. The chemicals in a certain fraction are hydrocarbons with comparable numbers of carbon atoms. From hot to cold (largest hydrocarbons to smallest), the fractions may be residue (used to make bitumen), fuel oil, diesel, kerosene, naphtha, gasoline, and refinery gas.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

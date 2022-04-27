@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocationRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentLocationRelationshipTypeId\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"ComponentLocationRelationshipTypeName\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeName\"},\"ComponentLocationRelationshipTypeDescription\":{\"entity\":\"ComponentLocationRelationshipType.cdm.json/ComponentLocationRelationshipType\",\"name\":\"ComponentLocationRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between a component and a location.\n\nEx:\n- In-Operation-at location\n- In-transit location\n- Storage location",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentLocationRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

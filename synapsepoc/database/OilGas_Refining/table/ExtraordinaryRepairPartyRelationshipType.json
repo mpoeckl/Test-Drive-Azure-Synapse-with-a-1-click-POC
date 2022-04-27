@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ExtraordinaryRepairPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ExtraordinaryRepairPartyRelationshipTypeId\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeId\"},\"ExtraordinaryRepairPartyRelationshipTypeName\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeName\"},\"ExtraordinaryRepairPartyRelationshipTypeDescription\":{\"entity\":\"ExtraordinaryRepairPartyRelationshipType.cdm.json/ExtraordinaryRepairPartyRelationshipType\",\"name\":\"ExtraordinaryRepairPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between a party and the associated component extraordinary repair.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "ExtraordinaryRepairPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

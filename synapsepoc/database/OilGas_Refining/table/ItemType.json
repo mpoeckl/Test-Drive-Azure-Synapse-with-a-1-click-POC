@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ItemType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ItemTypeId\":{\"entity\":\"ItemType.cdm.json/ItemType\",\"name\":\"ItemTypeId\"},\"ItemTypeName\":{\"entity\":\"ItemType.cdm.json/ItemType\",\"name\":\"ItemTypeName\"},\"ItemTypeDescription\":{\"entity\":\"ItemType.cdm.json/ItemType\",\"name\":\"ItemTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of Item based on common characteristics, function or similar criteria.\n\nEx:\nTOOL\nAn inventory Item that is checked out to an employee and is to be returned.\n\nKIT\nA consolidation or grouping of Item(s) that are packaged together by a later assembly.  A number of separate Stock Keeping Units that are supplied or used as one item under its own Part Number  Kitting is really an assembly operation.\n\nFINISHED GOOD (\"Product\")\nInventory to which the final increments of value have been added through manufacturing, which equates to a 'product'.\n\nREPLACEMENT PART\nReplacement parts are generally used as components in Products and are not considered 'Finished Goods'.    However, Replacement Parts that are sold are often considered Products and handled as such.\n\nRAW MATERIAL\nItems purchased from a Vendor for assembly into a company's products.  Raw materials usually require some manufacturing operation to be performed upon them before they can be assembled.\n\nUNIT\nOne inventoried piece such as a nut, bolt or washer.   Units are usually identified by an item number. By definition, all units are completely interchangeable.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
 			"PrimaryKeys": "ItemTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

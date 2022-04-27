@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingClosureType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CasingClosureTypeId\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeId\"},\"CasingClosureTypeName\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeName\"},\"CasingClosureTypeDescription\":{\"entity\":\"CasingClosureType.cdm.json/CasingClosureType\",\"name\":\"CasingClosureTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The casing closure type associated with the component casing.\n\nEx:\n- Blind Flange\n- Hinged Closure\n- Mechanical Plug\n- Weld Cap \n- Welded Flange\n- Yale Cap\n- Stopper\n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "CasingClosureTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

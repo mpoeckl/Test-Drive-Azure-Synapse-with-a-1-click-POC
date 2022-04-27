@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessComponentStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"ComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"PeriodEndTimestamp\"},\"ComponentStatusTypeId\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"ComponentStatusTypeId\"},\"RefineryProcessComponentStatusNote\":{\"entity\":\"RefineryProcessComponentStatus.cdm.json/RefineryProcessComponentStatus\",\"name\":\"RefineryProcessComponentStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The status of a component associated with refinery process for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ComponentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

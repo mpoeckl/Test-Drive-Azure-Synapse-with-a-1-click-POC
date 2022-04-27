@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterClass",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterClassId\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassId\"},\"MeterClassName\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassName\"},\"MeterClassDescription\":{\"entity\":\"MeterClass.cdm.json/MeterClass\",\"name\":\"MeterClassDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The North American meter class:\n\nEx: \n- 10 A\n- 20 A\n- 100 A\n- 200 A\n- 320 A\n\nMeter Class CL = Test amperes TA * (% Overload Rating/100)\nUS meters must have a minimum CL < 60.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterClassId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

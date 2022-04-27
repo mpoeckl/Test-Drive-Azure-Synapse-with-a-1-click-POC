@@ -260,13 +260,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentLocation",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PeriodEndTimestamp\"},\"VendorId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"VendorId\"},\"RfidTagId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"RfidTagId\"},\"ShipmentLocationGpsLongitudePosition\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLongitudePosition\"},\"ShipmentLocationGpsLatitudePosition\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLocationGpsLatitudePosition\"},\"ShippingLocationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShippingLocationId\"},\"LocationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"LocationId\"},\"PlannedShipmentLocationTurnaroundTime\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"PlannedShipmentLocationTurnaroundTime\"},\"ActualShipmentLocationTurnaroundTime\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ActualShipmentLocationTurnaroundTime\"},\"InformationAcquisitionMethodId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"InformationAcquisitionMethodId\"},\"ShipmentLegNumber\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ShipmentLegNumber\"},\"ApplicationCommunicationId\":{\"entity\":\"ShipmentLocation.cdm.json/ShipmentLocation\",\"name\":\"ApplicationCommunicationId\"}}}"
 			},
 			"Compressed": false,
@@ -277,8 +277,7 @@
 			"Description": "A location of a shipment.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

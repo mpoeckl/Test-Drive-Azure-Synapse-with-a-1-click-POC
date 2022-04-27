@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/OdorQualityType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"OdorQualityTypeId\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeId\"},\"OdorQualityTypeName\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeName\"},\"OdorQualityTypeDescription\":{\"entity\":\"OdorQualityType.cdm.json/OdorQualityType\",\"name\":\"OdorQualityTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The character of an odor is a critical element in assessing an odor. This property is the ability to distinguish different odors and is only descriptive.   This method is most commonly used to define the character of an odor which can then be compared to other odors\n\nEx:\n- Chemical Smell\n- Petroleum Smell\n- Acidic Smell",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "OdorQualityTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

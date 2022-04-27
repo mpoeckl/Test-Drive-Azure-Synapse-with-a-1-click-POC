@@ -228,13 +228,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentLocation",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentId\"},\"ComponentLocationTypeId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationId\"},\"GpsLatitude\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLatitude\"},\"GpsLongitude\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"GpsLongitude\"},\"ComponentLocationRelationshipTypeId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationRelationshipTypeId\"},\"ComponentLocationInstallationTimestamp\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationInstallationTimestamp\"},\"LocationElevation\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevation\"},\"LocationElevationUnitOfMeasureId\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"LocationElevationUnitOfMeasureId\"},\"ComponentLocationNote\":{\"entity\":\"ComponentLocation.cdm.json/ComponentLocation\",\"name\":\"ComponentLocationNote\"}}}"
 			},
 			"Compressed": false,
@@ -245,8 +245,7 @@
 			"Description": "The location of a component.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,ComponentLocationTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

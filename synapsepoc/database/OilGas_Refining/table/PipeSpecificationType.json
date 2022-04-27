@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeSpecificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeSpecificationTypeId\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeId\"},\"PipeSpecificationTypeName\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeName\"},\"PipeSpecificationTypeDescription\":{\"entity\":\"PipeSpecificationType.cdm.json/PipeSpecificationType\",\"name\":\"PipeSpecificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of pipe specification.\n\nEx:\n- Pipe Diameter\n- Pipe Thickness\n- Pipe Length\n- Pipe Wall Thickness\n- Pipe Outside Diameter\n- Pipe Inside Diameter\n- Pipe Depth/Height\n- Pipe Wall Thickness\n- Pipe Cover Thickness\n- Pipe Cleaning Frequency\n- Pipe Minimum Yield Strength (SMYS)\n- Pipe Maximum Allowable Operating Pressure\n- Pipe Water Table Depth\n- Pipe Bedrock Depth\n- Pipe Maximum Heat Resistance\n- Pipe Coat Thickness\n- Pipe Exposed Length\n- Pipe Depth Of Cover\n- Pipe Operating Pressure\n- Pipe Minimum Designed Pressure\n- Pipe Maximum Designed Pressure\n- Pipe Temperature\n- Pipe Minimum Operating Temperature\n- Pipe Maximum Operating Temperature\n- Pipe Minimum Designed Flow Rate\n- Pipe Maximum Designed Flow Rate\n- Pipe Interior Volume\n- Pipe Original Cover Depth\n- Pipe Surface Area\n- Pipe Depth Of Cover",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipeSpecificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

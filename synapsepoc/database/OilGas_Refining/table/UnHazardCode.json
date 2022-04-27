@@ -79,13 +79,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/UnHazardCode",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"UnHazardCode\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardCode\"},\"UnHazardName\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardName\"},\"UnHazardDescription\":{\"entity\":\"UnHazardCode.cdm.json/UnHazardCode\",\"name\":\"UnHazardDescription\"}}}"
 			},
 			"Compressed": false,
@@ -96,8 +96,7 @@
 			"Description": "The UN Hazard Code.\n\nEx:\nClass 1   Explosive\nClass 2   Gases\nClass 3.1 Flammable liquids, flash point below -18 degrees C\nClass 3.2 Flammable liquids, flash point between -18 degrees C and 23 degrees C\nClass 3.3 Flammable liquids, flash point between 23 degrees C and 61 degrees C\nClass 4.1 Flammable solids\nClass 5.1 Oxidizing agents\nClass 5.2 Organic peroxides\nClass 6.1 Poisonous substances\nClass 7   Radioactive substances\nClass 8   Corrosive substances\nClass 9   Miscellaneous dangerous substances\nNR        Non-regulated",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "UnHazardCode",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

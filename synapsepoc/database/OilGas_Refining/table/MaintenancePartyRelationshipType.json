@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenancePartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenancePartyRelationshipTypeId\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeId\"},\"MaintenancePartyRelationshipTypeName\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeName\"},\"MaintenancePartyRelationshipTypeDescription\":{\"entity\":\"MaintenancePartyRelationshipType.cdm.json/MaintenancePartyRelationshipType\",\"name\":\"MaintenancePartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between a party and the associated component maintenance.\n\nEx:\n- Requested-by Party\n- Authorized-by Party\n- Performed-by Party\n- Billed-by Party\n- Billed-to Party",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "MaintenancePartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

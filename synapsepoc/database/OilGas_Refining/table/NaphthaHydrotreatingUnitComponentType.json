@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreatingUnitComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitComponentTypeId\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeId\"},\"NaphthaHydrotreatingUnitComponentTypeDescription\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeDescription\"},\"NaphthaHydrotreatingUnitComponentTypeNote\":{\"entity\":\"NaphthaHydrotreatingUnitComponentType.cdm.json/NaphthaHydrotreatingUnitComponentType\",\"name\":\"NaphthaHydrotreatingUnitComponentTypeNote\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of naphtha hydrotreater component.\n\nEx:\n- Mixed Gas Oil Feed Pump \n- Mixed Gas Oil Feed / Stripper Bottoms Heat Exchanger  \n- Light Gas Oil Feed Surge Drum \n- Light Gas Oil Feed / Stripper Bottoms Heat Exchanger \n- Reactor Feed / Effluent Heat Exchanger \n- Reactor Charge Heater  \n- Reactor Effluent / Recycle Gas Heat Exchanger \n- Low Temperature Separator  \n- Gas Stream Exit High Temperature Separator \n- Recycle Gas System  \n- Product Stripper  \n- Recycle H2 compressor\n- Feed Heater\n- Reactor\n- Feed\n- Stripper\n- Fin-Fan Cooler\n- LP Separator",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "NaphthaHydrotreatingUnitComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

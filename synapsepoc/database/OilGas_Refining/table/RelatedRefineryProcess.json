@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedRefineryProcess",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"RefineryProcessId\"},\"RelatedRefineryProcessId\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"RelatedRefineryProcessId\"},\"RefineryProcessRelationshipTypeId\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"RefineryProcessRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"PeriodEndTimestamp\"},\"RelatedRefineryProcessNote\":{\"entity\":\"RelatedRefineryProcess.cdm.json/RelatedRefineryProcess\",\"name\":\"RelatedRefineryProcessNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The relationship of among refinery processes.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,RelatedRefineryProcessId,RefineryProcessRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

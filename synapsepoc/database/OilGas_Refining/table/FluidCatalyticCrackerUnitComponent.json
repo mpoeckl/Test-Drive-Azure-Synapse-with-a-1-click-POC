@@ -109,13 +109,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitComponentId\":{\"entity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"FluidCatalyticCrackerUnitComponentTypeId\":{\"entity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"name\":\"FluidCatalyticCrackerUnitComponentTypeId\"},\"MaterialId\":{\"entity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"name\":\"MaterialId\"},\"FluidCatalyticCrackerUnitSectionId\":{\"entity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"name\":\"FluidCatalyticCrackerUnitSectionId\"},\"FluidCatalyticCrackerUnitComponentNote\":{\"entity\":\"FluidCatalyticCrackerUnitComponent.cdm.json/FluidCatalyticCrackerUnitComponent\",\"name\":\"FluidCatalyticCrackerUnitComponentNote\"}}}"
 			},
 			"Compressed": false,
@@ -126,8 +126,7 @@
 			"Description": "A Fluid Catalytic Cracker Unit component.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "FluidCatalyticCrackerUnitComponentId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

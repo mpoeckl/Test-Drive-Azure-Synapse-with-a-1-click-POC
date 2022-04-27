@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventAssetStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventId\"},\"AssetId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"PeriodEndTimestamp\"},\"AssetStatusTypeId\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"AssetStatusTypeId\"},\"RefineryEventAssetStatusNote\":{\"entity\":\"RefineryEventAssetStatus.cdm.json/RefineryEventAssetStatus\",\"name\":\"RefineryEventAssetStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The status of the refinery event asset for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryEventId,AssetId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentRelationshipTypeId\":{\"entity\":\"ShipmentRelationshipType.cdm.json/ShipmentRelationshipType\",\"name\":\"ShipmentRelationshipTypeId\"},\"ShipmentRelationshipTypeName\":{\"entity\":\"ShipmentRelationshipType.cdm.json/ShipmentRelationshipType\",\"name\":\"ShipmentRelationshipTypeName\"},\"ShipmentRelationshipTypeDescription\":{\"entity\":\"ShipmentRelationshipType.cdm.json/ShipmentRelationshipType\",\"name\":\"ShipmentRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between two or more shipments.\n\nEx:\n- Consolidated\n- Aggregate Shipment\n- Shipment Load\n- Multiple Shipment\n- Break-down Shipment\n- Partial Shipment\n- Deconsolidated\n\nwhere:\n\nAggregate Shipment\nAn aggregate, or collective, shipment may have multiple departure locations and numerous delivery locations. This type of shipment makes at least one delivery by one carrier.\n\nMultiple Shipment\nA multiple shipment comprises many shippers or delivery services designated to one consignee, in which the shipper consolidates the numerous shipments as one delivery.\n\nPartial Shipment\nWith a partial shipment, an order is delivered in two or more consignments, or batches, if allowed by the customer or under the terms of a letter of credit. The words \"partial shipment permitted\" appear on the bill of lading to enable this type of shipment.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

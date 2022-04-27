@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CasingSealType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CasingSealTypeId\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeId\"},\"CasingSealTypeName\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeName\"},\"CasingSealTypeDescription\":{\"entity\":\"CasingSealType.cdm.json/CasingSealType\",\"name\":\"CasingSealTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The casing seal type associated with the component casing.\n\nEx:\n- Bolt On\n- Concrete\n- Epoxy\n- Link Seal\n- Rubber Boot\n- Case Seal\n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "CasingSealTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -209,13 +209,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilComponent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilTypeId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilTypeId\"},\"CrudeOilPetroleumComponentTypeId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPetroleumComponentTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"PeriodEndTimestamp\"},\"CrudeOilComponentPercentage\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilComponentPercentage\"},\"ApiGravityNumber\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"ApiGravityNumber\"},\"OctaneNumber\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"OctaneNumber\"},\"SourCrudeIndicator\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SourCrudeIndicator\"},\"SweetCrudeIndicator\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"SweetCrudeIndicator\"},\"RefineryTestId\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"RefineryTestId\"},\"CrudeOilPropertyNote\":{\"entity\":\"CrudeOilComponent.cdm.json/CrudeOilComponent\",\"name\":\"CrudeOilPropertyNote\"}}}"
 			},
 			"Compressed": false,
@@ -226,8 +226,7 @@
 			"Description": "The type of crude and properties of the crude oil type during the associated period and input into the process.\n\nRefinery crude base stocks usually consist of mixtures of two or more different crude oils.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "CrudeOilTypeId,CrudeOilPetroleumComponentTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

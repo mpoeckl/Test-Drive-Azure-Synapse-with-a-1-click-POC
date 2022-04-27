@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerHeightProduct",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerId\"},\"ProductId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProductId\"},\"TowerHeightMeters\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"TowerHeightMeters\"},\"PeriodStartTimestamp\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"UnitOfMeasureId\"},\"DistillationTowerHeightProductNote\":{\"entity\":\"DistillationTowerHeightProduct.cdm.json/DistillationTowerHeightProduct\",\"name\":\"DistillationTowerHeightProductNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The product(s) produced by the distillation tower at the associated height and period of time.\n\nAt successively higher points on the tower, the various major products including lubricating oil, heating oil, kerosene, gasoline, and uncondensed gases (which condense at lower temperatures) are drawn off.\n\nEx:\n- Gas oils\n- Lubricating-oil base stock\n- Heavy residual for propane deasphalting",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerId,ProductId,TowerHeightMeters,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

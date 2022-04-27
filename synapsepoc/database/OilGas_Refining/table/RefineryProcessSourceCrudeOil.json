@@ -343,13 +343,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessSourceCrudeOil",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessId\"},\"CrudeOilTypeId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilTypeId\"},\"StorageTankId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"StorageTankId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessCrudeOilSourceUnits\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessCrudeOilSourceUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"UnitOfMeasureId\"},\"CrudeOilPretreatmentTypeId\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"CrudeOilGravityApi\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilGravityApi\"},\"CrudeOilDegreeApi\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilDegreeApi\"},\"CrudeOilSulfurContentWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSulfurContentWeightPercent\"},\"CrudeOilCarbonResidueWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilCarbonResidueWeightPercent\"},\"CrudeOilSaltContentLbs1000Barrels\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilSaltContentLbs1000Barrels\"},\"CrudeOilMetalsPpm\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilMetalsPpm\"},\"CrudeOilNitrogenContentWeightPercent\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilNitrogenContentWeightPercent\"},\"CrudeOilPourPointC\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"CrudeOilPourPointC\"},\"SweetSourCrudeOilIndicator\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetSourCrudeOilIndicator\"},\"SweetGasIndicator\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"SweetGasIndicator\"},\"RefineryProcessSourceCrudeOilNote\":{\"entity\":\"RefineryProcessSourceCrudeOil.cdm.json/RefineryProcessSourceCrudeOil\",\"name\":\"RefineryProcessSourceCrudeOilNote\"}}}"
 			},
 			"Compressed": false,
@@ -360,8 +360,7 @@
 			"Description": "Crude Oil that is input into the refinery process during the associated period from the indicated storage tank.\n\nNote:\nThe primary raw material for most of the petroleum processes is crude oil.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,CrudeOilTypeId,StorageTankId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

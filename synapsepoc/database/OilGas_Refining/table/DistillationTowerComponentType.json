@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerComponentTypeId\":{\"entity\":\"DistillationTowerComponentType.cdm.json/DistillationTowerComponentType\",\"name\":\"DistillationTowerComponentTypeId\"},\"DistillationTowerComponentTypeDescription\":{\"entity\":\"DistillationTowerComponentType.cdm.json/DistillationTowerComponentType\",\"name\":\"DistillationTowerComponentTypeDescription\"},\"DistillationTowerComponentTypeNote\":{\"entity\":\"DistillationTowerComponentType.cdm.json/DistillationTowerComponentType\",\"name\":\"DistillationTowerComponentTypeNote\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type  of distillation tower components that may be integrated with or supporting the operation of the distillation tower.\n\nEx:\n- Gas Separator\n- Desalter\n- Furnace\n- Tray\n- Preheat Exchanger\n- Vacuum Furnace",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

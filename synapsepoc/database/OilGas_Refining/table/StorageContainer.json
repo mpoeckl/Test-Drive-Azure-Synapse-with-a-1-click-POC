@@ -227,13 +227,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainer",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageContainerId\"},\"StorageContainerTypeId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageContainerTypeId\"},\"LocationId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"LocationId\"},\"WarehouseId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"WarehouseId\"},\"StorageLength\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageLength\"},\"StorageWidth\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageWidth\"},\"StorageHeight\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageHeight\"},\"StorageShellThickness\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageShellThickness\"},\"CycleRate\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"CycleRate\"},\"CycleRateUnitOfMeasureId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"CycleRateUnitOfMeasureId\"},\"StorageContainerNote\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"StorageContainerNote\"},\"ShippingLocationId\":{\"entity\":\"StorageContainer.cdm.json/StorageContainer\",\"name\":\"ShippingLocationId\"}}}"
 			},
 			"Compressed": false,
@@ -244,8 +244,7 @@
 			"Description": "A component capable of storing a commodity.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageContainerId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

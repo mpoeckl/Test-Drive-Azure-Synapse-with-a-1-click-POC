@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentPriority",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentPriorityId\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityId\"},\"ShipmentPriorityName\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityName\"},\"ShipmentPriorityDescription\":{\"entity\":\"ShipmentPriority.cdm.json/ShipmentPriority\",\"name\":\"ShipmentPriorityDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The priority assigned to the associated Shipment.\n\nEx:\n- Expedite\n- Standard",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentPriorityId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

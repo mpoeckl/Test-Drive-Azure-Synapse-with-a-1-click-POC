@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentMeasurement",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitId\"},\"HydrocrackerUnitComponentId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentId\"},\"MeasurementTypeId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"HydrocrackerUnitComponentMeasurementNote\":{\"entity\":\"HydrocrackerUnitComponentMeasurement.cdm.json/HydrocrackerUnitComponentMeasurement\",\"name\":\"HydrocrackerUnitComponentMeasurementNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The hydrocracker component measurement(s) for the associated period.\n\nEx:\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "HydrocrackerUnitId,HydrocrackerUnitComponentId,MeasurementTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

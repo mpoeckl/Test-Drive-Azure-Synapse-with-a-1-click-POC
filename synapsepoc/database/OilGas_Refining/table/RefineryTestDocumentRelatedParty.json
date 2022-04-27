@@ -143,13 +143,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestDocumentRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestId\"},\"DocumentId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"DocumentId\"},\"RefineryTestDocumentPartyRelationshipTypeId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentPartyRelationshipTypeId\"},\"PartyId\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PartyId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"RefineryTestDocumentRelatedPartyNote\":{\"entity\":\"RefineryTestDocumentRelatedParty.cdm.json/RefineryTestDocumentRelatedParty\",\"name\":\"RefineryTestDocumentRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -160,8 +160,7 @@
 			"Description": "The party(s) related to the refinery test document.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestId,DocumentId,RefineryTestDocumentPartyRelationshipTypeId,PartyId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestPartyRelationshipTypeId\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeId\"},\"RefineryTestPartyRelationshipTypeName\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeName\"},\"RefineryTestPartyRelationshipTypeDescription\":{\"entity\":\"RefineryTestPartyRelationshipType.cdm.json/RefineryTestPartyRelationshipType\",\"name\":\"RefineryTestPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the refinery test and party.\n\nEx:\n- Authorized-By Party\n- Performed-By Party\n- Reported-By Party\n- Reported-To Party\n- Scored-By Party",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

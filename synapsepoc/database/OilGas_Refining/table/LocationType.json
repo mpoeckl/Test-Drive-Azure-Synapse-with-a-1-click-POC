@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/LocationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"LocationTypeId\":{\"entity\":\"LocationType.cdm.json/LocationType\",\"name\":\"LocationTypeId\"},\"LocationTypeName\":{\"entity\":\"LocationType.cdm.json/LocationType\",\"name\":\"LocationTypeName\"},\"LocationTypeDescription\":{\"entity\":\"LocationType.cdm.json/LocationType\",\"name\":\"LocationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A means of categorizing locations based on common characteristics or functions.\n\nEx:\n- Mail-To\n- Ship-To\n- Account Statements-To\n- Documentation Mail-To\n- Legal Documentation-To\n- Home Office\n- Current Position\n\nINDIVIDUAL\n- Personal Residence\n- Vacation Residence\n- Employment Location\n\nLEGAL ENTITY\n- Business Office\n- Branch Office\n- Primary Office\n- Headquarters\n- Headquarters Mail-To\n- Headquarters Ship-To\n- Purchasing Department\n- Sales Office\n- Marketing\n- Support\n- Manufacturer Facility\n- Operations\n- Warehouse\n- Maintenance Facility\n- Supplier\n- Agent\n\nSTRUCTURE\n- Airport\n- Port\n- Warehouse\n- Facility\n- School\n- Police Station\n- Hospital\n- Dock\n- Train Station\n- Storage Tank\n- Aquifer\n- Property\n- Well\n- Oil Depot",
 			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
 			"PrimaryKeys": "LocationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

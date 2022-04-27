@@ -463,13 +463,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Device",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceId\"},\"DeviceName\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceName\"},\"DeviceDescription\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDescription\"},\"SerialNumber\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SerialNumber\"},\"SinglePointMonitorDeviceIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"SinglePointMonitorDeviceIndicator\"},\"MultiPointDeviceMonitorIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"MultiPointDeviceMonitorIndicator\"},\"DisplaysCurrentEnergyConsumptionKwIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyConsumptionKwIndicator\"},\"DisplaysCurrentEnergyCostPerHourIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentEnergyCostPerHourIndicator\"},\"DisplaysEnergyConsumedToDailyKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyConsumedToDailyKwhIndicator\"},\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayEnergyConsumedThisBillingCycleKwhIndicator\"},\"DisplaysEnergyCostThisBillingCycleAmountIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysEnergyCostThisBillingCycleAmountIndicator\"},\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayProjectedEnergyUseForCurrentBillingCycleKwhIndicator\"},\"DisplaysCurrentTimestampIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysCurrentTimestampIndicator\"},\"HasTimerIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasTimerIndicator\"},\"HasAlarmsIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasAlarmsIndicator\"},\"HasHistoricalDataIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"HasHistoricalDataIndicator\"},\"DisplayTariffIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayTariffIndicator\"},\"DisplayCurrentVoltageIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplayCurrentVoltageIndicator\"},\"DisplaysMinimumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMinimumVoltageThisBillingCycleIndicator\"},\"DisplaysMaximumVoltageThisBillingCycleIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DisplaysMaximumVoltageThisBillingCycleIndicator\"},\"DeviceTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceTypeId\"},\"PropertyId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PropertyId\"},\"PowerPhaseTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"PowerPhaseTypeId\"},\"EnergyCostDisplayIndicator\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"EnergyCostDisplayIndicator\"},\"DeviceCommunicationToComputerTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToComputerTypeId\"},\"DeviceDataLoggingTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceDataLoggingTypeId\"},\"DeviceCommunicationToDisplayTypeId\":{\"entity\":\"Device.cdm.json/Device\",\"name\":\"DeviceCommunicationToDisplayTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -480,8 +480,7 @@
 			"Description": "An electronic device that is attached to a network, meter, another device, home appliance etc. that provides control or information.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "DeviceId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

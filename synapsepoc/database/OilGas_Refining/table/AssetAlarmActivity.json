@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetAlarmActivity",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetAlarmActivityId\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityId\"},\"AssetAlarmActivityName\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityName\"},\"AssetAlarmActivityDescription\":{\"entity\":\"AssetAlarmActivity.cdm.json/AssetAlarmActivity\",\"name\":\"AssetAlarmActivityDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "An activity that is performed at a facility specifically as the result an alarm generated.\n\nEx:\n- Service shut-down\n- Public warning\n- Additional testing\n- Mandatory reporting",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetAlarmActivityId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

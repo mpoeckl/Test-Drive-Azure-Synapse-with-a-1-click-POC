@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerComponent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerComponentId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentId\"},\"DistillationTowerComponentName\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentName\"},\"DistillationTowerComponentDescription\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentDescription\"},\"DistillationTowerComponentTypeId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentTypeId\"},\"DistillationTowerComponentNote\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"DistillationTowerComponentNote\"},\"MaterialId\":{\"entity\":\"DistillationTowerComponent.cdm.json/DistillationTowerComponent\",\"name\":\"MaterialId\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "A distillation tower component.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerComponentId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -144,13 +144,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEvent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventId\"},\"RefineryEventDescription\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventDescription\"},\"RefineryEventTypeId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventTypeId\"},\"RefineryEventStartTimestamp\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventStartTimestamp\"},\"RefineryEventEndTimestamp\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventEndTimestamp\"},\"RefineryId\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryId\"},\"RefineryEventNote\":{\"entity\":\"RefineryEvent.cdm.json/RefineryEvent\",\"name\":\"RefineryEventNote\"}}}"
 			},
 			"Compressed": false,
@@ -161,8 +161,7 @@
 			"Description": "An event associated with the Refinery.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryEventId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

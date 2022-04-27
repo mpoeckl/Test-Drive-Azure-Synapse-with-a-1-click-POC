@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NfpaHealthRating",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NfpaHealthRatingId\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingId\"},\"NfpaHealthRatingName\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingName\"},\"NfpaHealthRatingDescription\":{\"entity\":\"NfpaHealthRating.cdm.json/NfpaHealthRating\",\"name\":\"NfpaHealthRatingDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "NFPA Rating - The National Fire Protection Association (NFPA) has developed a standard system (ANSI/NFPA 704) for indicating the health, flammability, and reactivity hazards of chemicals. In addition, a special precaution symbol may be used where necessary. \n\nThis system of identifying hazards associated with various materials was developed primarily for fire protection and emergency personnel but can be useful to anyone who needs to handle potentially hazardous material. As stated in NFPA 704, \"This standard provides a simple system of readily recognizable and easily understood markings, which will give at a glance a general idea of the inherent hazards of any material and the order of severity of these hazards as they relate to fire prevention, exposure, and control\". \n\n \nGeneral Rating Summary Health \n4   May be fatal on short exposure. Specialized protective equipment required\n3   Corrosive or toxic. Avoid skin contact or inhalation\n2   May be harmful if inhaled or absorbed\n1   May be irritating\n0   No unusual hazard",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "NfpaHealthRatingId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

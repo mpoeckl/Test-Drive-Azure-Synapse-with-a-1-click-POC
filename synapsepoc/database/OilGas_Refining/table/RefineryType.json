@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTypeId\":{\"entity\":\"RefineryType.cdm.json/RefineryType\",\"name\":\"RefineryTypeId\"},\"RefineryTypeName\":{\"entity\":\"RefineryType.cdm.json/RefineryType\",\"name\":\"RefineryTypeName\"},\"RefineryTypeDescription\":{\"entity\":\"RefineryType.cdm.json/RefineryType\",\"name\":\"RefineryTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of refinery.\n\nEx:\n- Topping Refinery\n- Hydroskimming Refinery\n- Conversion Refinery\n\nwhere:\n\nTopping Refinery - is designed to prepare feedstocks for petrochemical manufacture or for production of industrial fuels in remote oil-production areas. It consists of tankage, a distillation unit, recovery facilities for gases and light hydrocarbons, and the necessary utility systems (steam, power, and water-treatment plants).\n\nHydroskimming Refinery - the addition of hydrotreating and reforming units to the basic topping configuration results in a more flexible hydroskimming refinery, which can also produce desulfurized distillate fuels and high-octane gasoline.\n\nConversion Refinery - The most versatile refinery configuration is known as the conversion refinery. A conversion refinery incorporates all the basic building blocks found in both the topping and hydroskimming refineries, but it also features gas oil conversion plants such as catalytic cracking and hydrocracking units, olefin conversion plants such as alkylation or polymerization units, and, frequently, coking units for sharply reducing or eliminating the production of residual fuels.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

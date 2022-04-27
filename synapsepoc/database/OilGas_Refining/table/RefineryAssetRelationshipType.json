@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAssetRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryAssetRelationshipTypeId\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeId\"},\"RefineryAssetRelationshipTypeName\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeName\"},\"RefineryAssetRelationshipTypeDescription\":{\"entity\":\"RefineryAssetRelationshipType.cdm.json/RefineryAssetRelationshipType\",\"name\":\"RefineryAssetRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the refinery and asset during the associated period.\n\nEx:\n- Installed \n- Inventoried\n- Salvaged\n- In repair",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryAssetRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerTypeId\":{\"entity\":\"StorageContainerType.cdm.json/StorageContainerType\",\"name\":\"StorageContainerTypeId\"},\"StorageContainerTypeName\":{\"entity\":\"StorageContainerType.cdm.json/StorageContainerType\",\"name\":\"StorageContainerTypeName\"},\"StorageContainerTypeDescription\":{\"entity\":\"StorageContainerType.cdm.json/StorageContainerType\",\"name\":\"StorageContainerTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of storage container.\n\nEx:\n- Tank Farm\n- Storage Tank\n- Geologic Storage\n- Aquifer\n- Salt Cavern Storage Field\n- Salt Dome\n- Depleted reservoir\n- Water Tower\n- Rooftop",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageContainerTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

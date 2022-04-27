@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessTankRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessTankRelationshipTypeId\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeId\"},\"RefineryProcessTankRelationshipTypeName\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeName\"},\"RefineryProcessTankRelationshipTypeDescription\":{\"entity\":\"RefineryProcessTankRelationshipType.cdm.json/RefineryProcessTankRelationshipType\",\"name\":\"RefineryProcessTankRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the refinery process and tank.\n\nEx:\n- Source Crude Input Tank\n- Crude Output Tank\n- Feedstock Input Tank\n- Additive Input Tank\n- Catalyst Input Tank\n- Waste Output Tank",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessTankRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryAdditiveType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AdditiveTypeId\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeId\"},\"AdditiveTypeName\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeName\"},\"AdditiveTypeDescription\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"AdditiveTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"RefineryAdditiveType.cdm.json/RefineryAdditiveType\",\"name\":\"CorrosiveQualityId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "The type of additive, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Cold-Flow Improvers\n- Conductivity Improver\n- Dehazer\n- Hydrogen Sulfide Scavengers and Mercaptan Scavenger\n- Hydrogen Sulfide Scavengers for Asphalt\n- Octane Improver\n- Cetane Number Improver\n- Lubricity Improver\n- Metal Deactivator\n- Diesel Stabilizers\n- Corrosion Inhibitor\n- Phenylenediamines\n- Amine\n- Methylcyclopentadienyl manganese tricarbonyl (MMT)",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "AdditiveTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

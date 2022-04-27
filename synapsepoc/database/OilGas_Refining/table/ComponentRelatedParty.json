@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentId\"},\"PartyId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PartyId\"},\"ComponentPartyRelationshipTypeId\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ComponentPartyRelationshipNote\":{\"entity\":\"ComponentRelatedParty.cdm.json/ComponentRelatedParty\",\"name\":\"ComponentPartyRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The relationship of a component and the associated party(s) during the period indicated.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,PartyId,ComponentPartyRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

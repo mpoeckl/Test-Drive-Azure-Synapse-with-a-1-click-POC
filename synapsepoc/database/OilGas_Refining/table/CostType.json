@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CostType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CostTypeId\":{\"entity\":\"CostType.cdm.json/CostType\",\"name\":\"CostTypeId\"},\"CostTypeName\":{\"entity\":\"CostType.cdm.json/CostType\",\"name\":\"CostTypeName\"},\"CostTypeDescription\":{\"entity\":\"CostType.cdm.json/CostType\",\"name\":\"CostTypeDescription\"},\"CostCategoryId\":{\"entity\":\"CostType.cdm.json/CostType\",\"name\":\"CostCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A type of cost associated with an activity, item or asset.\n\nEx:\n- Capital Cost\n- Investment Cost\n- Operating Cost\n- Personnel Cost\n- Recruitment Cost\n- Regulatory Cost\n- Land Cost\n- Construction Cost\n- Installation Cost\n- Equipment Cost\n- Maintenance Cost\n- Fuel Cost\n- Labor Cost\n\nVariable costs are costs that vary in proportion to the changes in levels of activity or volume of production.\n\nEx:\n- Supplies\n- Fuel\n- Electricity\n- Spoilage\n- Defects\n- Travel (Airfare)\n- Lodging\n- Meals\n- Supplies\n- Office Rental\n- Office Supplies\n- Equipment Rental\n- IT Equipment\n- Telephone and Telecom\n- Workshops / Meetings\n- Security\n- Chemical Cost\n- Cleaning Cost\n- Deep Well Injection Cost \n- Energy Cost\n- Environmental Cost  \n- Membrane Cost\n- Off-Site Treatment Cost\n- Water Disposal Transportation Cost\n- Water Hauling Transportation Cost\n- Water Replacement Cost\n\nFixed costs do not change in total regardless of the number of activities performed or level of activities.\n\nEx:\n- Property taxes\n- Depreciation of plant and equipment\n- Insurance\n\nSemi-variable or mixed costs contain both a fixed element and a variable component.\n\nEx:\n- Supervision\n- Quality inspection\n- Utilities\n- Fringe Benefits\n- Maintenance and repairs\n- Compensation insurance\n- Payroll taxes\n- Rentals",
 			"DisplayFolderInfo": "{\"name\":\"Manufacturing\",\"colorCode\":\"#0050AC\"}",
 			"PrimaryKeys": "CostTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

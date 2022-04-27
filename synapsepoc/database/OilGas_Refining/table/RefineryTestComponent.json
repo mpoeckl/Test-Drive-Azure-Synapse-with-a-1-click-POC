@@ -125,13 +125,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponent",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestId\"},\"RefineryTestComponentTypeId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentTypeId\"},\"ComponentRefineryTestTypeId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"ComponentRefineryTestTypeId\"},\"MeasurementUnits\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"UnitOfMeasureId\"},\"RefineryTestComponentNote\":{\"entity\":\"RefineryTestComponent.cdm.json/RefineryTestComponent\",\"name\":\"RefineryTestComponentNote\"}}}"
 			},
 			"Compressed": false,
@@ -142,8 +142,7 @@
 			"Description": "The component(s) tested by the associated refinery test.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestId,RefineryTestComponentTypeId,ComponentRefineryTestTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetStatusTypeId\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeId\"},\"AssetStatusTypeName\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeName\"},\"AssetStatusTypeDescription\":{\"entity\":\"AssetStatusType.cdm.json/AssetStatusType\",\"name\":\"AssetStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A status type that may be applied to an asset for a period of time.\n\nEx:\n- Operational\n- In Maintenance\n- In Repair\n- Out Of Operation\n- In Consignment\n- In Storage\n- Retired\n- In Salvage\n- Abandoned\n- Unknown\n\nwhere:\n\nOPERATIONAL\nThe asset is in operation.\n\nIN MAINTENANCE\nThe asset is in maintenance.\n\nIN REPAIR\nThe asset is in repair.\n\nIN CONSIGNMENT\nThe asset is under consignment.\n\nIN STORAGE\nThe asset is in-storage\n\nRETIRED\nThe asset has been retired from service.\n\nIN SALVAGE\nTaking components from a piece of (usually outdated or non-functional) property for use in one or more other pieces of property",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -245,13 +245,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentExtraordinaryRepair",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentExtraordinaryRepairId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentExtraordinaryRepairId\"},\"ComponentId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ComponentId\"},\"ExtraordinaryRepairTypeId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ExtraordinaryRepairTypeId\"},\"RepairDescription\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairDescription\"},\"RepairPlannedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairPlannedTimestamp\"},\"RepairStartedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairStartedTimestamp\"},\"RepairCompletedTimestamp\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairCompletedTimestamp\"},\"RepairEstimatedCost\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairEstimatedCost\"},\"RepairActualCost\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairActualCost\"},\"RepairNote\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"RepairNote\"},\"VendorId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"VendorId\"},\"ContractId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"ContractId\"},\"WorkOrderId\":{\"entity\":\"ComponentExtraordinaryRepair.cdm.json/ComponentExtraordinaryRepair\",\"name\":\"WorkOrderId\"}}}"
 			},
 			"Compressed": false,
@@ -262,8 +262,7 @@
 			"Description": "Extraordinary repairs is work performed upon a network component that extends the life of the fixed asset for more than one year.  \n\nExtraordinary repairs are handled differently from an accounting perspective in that they are capitalized and not expensed.   \n\nExtraordinary repairs are charged to the accumulated depreciation account and therefore increase the book value of the network component.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentExtraordinaryRepairId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

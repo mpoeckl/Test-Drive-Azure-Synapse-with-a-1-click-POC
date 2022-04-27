@@ -143,13 +143,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductProduced",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessId\"},\"ProductId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"PeriodEndTimestamp\"},\"ProductUnits\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"ProductUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessProductionProductNote\":{\"entity\":\"RefineryProcessProductProduced.cdm.json/RefineryProcessProductProduced\",\"name\":\"RefineryProcessProductionProductNote\"}}}"
 			},
 			"Compressed": false,
@@ -160,8 +160,7 @@
 			"Description": "The quantity of product output from the refinery process during the indicated period, which is either shipped directly (SHIPMENT) or stored in a storage tank and shipped later.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

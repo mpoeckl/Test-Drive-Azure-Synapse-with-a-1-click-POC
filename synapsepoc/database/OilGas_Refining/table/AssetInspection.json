@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetInspection",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetInspectionId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionId\"},\"AssetId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetId\"},\"PlannedAssetInspectionTimestamp\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"PlannedAssetInspectionTimestamp\"},\"ActualAssetInspectionTimestamp\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"ActualAssetInspectionTimestamp\"},\"AssetInspectionStatusId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionStatusId\"},\"AssetInspectionTypeId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionTypeId\"},\"AssetInspectionNote\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"AssetInspectionNote\"},\"InspectedByPartyId\":{\"entity\":\"AssetInspection.cdm.json/AssetInspection\",\"name\":\"InspectedByPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "An inspection of an asset.",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetInspectionId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

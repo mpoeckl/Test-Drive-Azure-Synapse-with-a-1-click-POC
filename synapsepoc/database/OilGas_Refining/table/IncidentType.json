@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentTypeId\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeId\"},\"IncidentTypeName\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeName\"},\"IncidentTypeDescription\":{\"entity\":\"IncidentType.cdm.json/IncidentType\",\"name\":\"IncidentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of incident.\n\nEx:\n- Incident with no injuries\n- Incident involving one Injury\n- Incident involving multiple injuries\n- Incident involving one fatality\n- Incident involving more than one fatality\n- Network Failure\n- Equipment Failure\n- Power Failure\n- Unplanned Environmental Emission\n- Water Contamination\n- Sewage Spill\n- Broken Water Main\n- Pipeline Leak\n- Fire\n- Explosion\n- Theft\n- Bird Strike\n- Fall",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

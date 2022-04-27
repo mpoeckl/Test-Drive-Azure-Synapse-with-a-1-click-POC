@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankMaterialType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankMaterialTypeId\":{\"entity\":\"StorageTankMaterialType.cdm.json/StorageTankMaterialType\",\"name\":\"StorageTankMaterialTypeId\"},\"StorageTankMaterialTypeName\":{\"entity\":\"StorageTankMaterialType.cdm.json/StorageTankMaterialType\",\"name\":\"StorageTankMaterialTypeName\"},\"StorageTankMaterialTypeDescription\":{\"entity\":\"StorageTankMaterialType.cdm.json/StorageTankMaterialType\",\"name\":\"StorageTankMaterialTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of storage tank material.\n\nEx:\n- Stainless Steel\n- Concrete\n- Steel/aluminum\n- Fiberglass/aramid\n- Carbon fiber\n\nStainless steel\nWhile steel and concrete remain one of the most popular choices for tanks, glass-reinforced plastic, thermoplastic and polyethylene tanks are increasing in popularity. They offer lower build costs and greater chemical resistance, especially for storage of specialty chemicals. There are several relevant standards, such as British Standard 4994 (1989), DVS (German Welding Institute) 2205, and ASME (American Society of Mechanical Engineers) RTP-1 [6] which give advice on wall thickness, quality control procedures, testing procedures, accreditation, fabrication and design criteria of final product.\n\nUnderground storage tanks fall into four different types:\n\nSteel/aluminum tank, made by manufacturers in most states and conforming to standards set by the Steel Tank Institute.\nComposite overwrapped, a metal tank (aluminum/steel) with filament windings like glass fiber/aramid or carbon fiber or a plastic compound around the metal cylinder for corrosion protection and to form an interstitial space.\nTanks made from composite material, fiberglass/aramid or carbon fiber with a metal liner (aluminum or steel). See metal matrix composite.\nComposite tanks such as carbon fiber with a polymer liner (thermoplastic). See rotational molding and fiber-reinforced plastic (FRP).\n\nMany thousands of old underground tanks were replaced with newer tanks made of corrosion resistant materials (such as fiberglass, steel clad with a thick FRP shell, and well-coated steel with galvanic anodes)\n\nSW/DW Steel - Steel Tank that may be painted or coated.\nSW /DW Fiberglass - Fiberglass Tank that may be either single or double wall construction.\nSTIP-3 SW - This is a single wall tank meeting the certain specifications of the Steel Tank Institute. This specification indicates the design and fabrication of coated and cathodically protected steel tanks.\n\nSTIP-3DW - This is a double walled tank meeting the certain specifications of the Steel Tank Institute. This specification indicates the design and fabrication of coated and cathodically protected steel tanks.\nPlasteel, Fiberglass Clad Steel, Permatank - These three tanks are categorized as the same tank. They are steel tanks that have a fiberglass outer cover. They are double walled with an interstitial vacuum barrier.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageTankMaterialTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

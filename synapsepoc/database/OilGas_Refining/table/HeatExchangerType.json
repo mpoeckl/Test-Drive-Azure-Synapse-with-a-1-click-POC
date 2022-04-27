@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerTypeId\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeId\"},\"HeatExchangerTypeName\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeName\"},\"HeatExchangerTypeDescription\":{\"entity\":\"HeatExchangerType.cdm.json/HeatExchangerType\",\"name\":\"HeatExchangerTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of heat exchanger.\n\nEx:\n- Shell and tube heat exchanger\n- Plate heat exchangers\n- Plate and shell heat exchanger\n- Adiabatic wheel heat exchanger\n- Plate fin heat exchanger\n- Pillow plate heat exchanger\n- Fluid heat exchangers\n- Waste heat recovery units\n- Dynamic scraped surface heat exchanger\n- Phase-change heat exchangers\n- Direct contact heat exchangers",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "HeatExchangerTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

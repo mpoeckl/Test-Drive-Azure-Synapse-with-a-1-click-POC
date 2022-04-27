@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitDistillationTower",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"DistillationTowerId\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"DistillationTowerId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"PeriodEndTimestamp\"},\"FluidCatalyticCrackerUnitDistillationColumnNote\":{\"entity\":\"FluidCatalyticCrackerUnitDistillationTower.cdm.json/FluidCatalyticCrackerUnitDistillationTower\",\"name\":\"FluidCatalyticCrackerUnitDistillationColumnNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The distillation column(s) integrated into the FCCU.\n\nThe reaction product vapors (at 535 °C and a pressure of 1.72 barg) flow from the top of the reactor to the bottom section of the distillation column (commonly referred to as the main fractionator) where they are distilled into the FCC end products of cracked petroleum naphtha, fuel oil, and offgas. After further processing for removal of sulfur compounds, the cracked naphtha becomes a high-octane component of the refinery's blended gasolines.\n\nThe main fractionator offgas is sent to what is called a gas recovery unit where it is separated into butanes and butylenes, propane and propylene, and lower molecular weight gases (hydrogen, methane, ethylene and ethane). Some FCC gas recovery units may also separate out some of the ethane and ethylene.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "FluidCatalyticCrackerUnitId,DistillationTowerId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

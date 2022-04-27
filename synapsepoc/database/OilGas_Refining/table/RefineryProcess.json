@@ -323,13 +323,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcess",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessId\"},\"RefineryProcessTypeId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessTypeId\"},\"RefineryProcessPlannedStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedStartTimestamp\"},\"RefineryProcessPlannedEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessPlannedEndTimestamp\"},\"RefineryProcessScheduledStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledStartTimestamp\"},\"RefineryProcessScheduledEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessScheduledEndTimestamp\"},\"RefineryProcessStartTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessStartTimestamp\"},\"RefineryProcessEndTimestamp\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessEndTimestamp\"},\"FacilityId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FacilityId\"},\"LocationId\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"LocationId\"},\"CrackedStockIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"CrackedStockIndicator\"},\"DelayedCokingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DelayedCokingRefineryProcessIndicator\"},\"DesaltingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"DesaltingRefineryProcessIndicator\"},\"FluidCokingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"FluidCokingRefineryProcessIndicator\"},\"HydrocrackingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrocrackingRefineryProcessIndicator\"},\"HydrotreatingRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"HydrotreatingRefineryProcessIndicator\"},\"IsomerizationRefineryProcessIndicator\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"IsomerizationRefineryProcessIndicator\"},\"RefineryProcessNote\":{\"entity\":\"RefineryProcess.cdm.json/RefineryProcess\",\"name\":\"RefineryProcessNote\"}}}"
 			},
 			"Compressed": false,
@@ -340,8 +340,7 @@
 			"Description": "A procedure performed at an Ore Refinery.\n\nPetroleum refining begins with the distillation, or fractionation, of crude oils into separate hydrocarbon groups. The resultant products are directly related to the characteristics of the crude processed. Most distillation products are further converted into more usable products by changing the size and structure of the hydrocarbon molecules through cracking, reforming, and other conversion processes as discussed in this chapter. These converted products are then subjected to various treatment and separation processes such as extraction, hydrotreating, and sweetening to remove undesirable constituents and improve product quality.\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

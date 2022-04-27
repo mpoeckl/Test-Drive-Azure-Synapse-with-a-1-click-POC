@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PlantInformationPoint",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PiPointId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointId\"},\"PiPointName\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointName\"},\"PiPointDescription\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiPointDescription\"},\"PiNode\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"PiNode\"},\"ComponentId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"PlantInformationPoint.cdm.json/PlantInformationPoint\",\"name\":\"ReadingTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "A point in a network, plant or other configurable system as defined by a plant information system, such as SCADA.",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "PiPointId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

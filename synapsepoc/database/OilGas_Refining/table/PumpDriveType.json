@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpDriveType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpDriveTypeId\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeId\"},\"PumpDriveTypeName\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeName\"},\"PumpDriveTypeDescription\":{\"entity\":\"PumpDriveType.cdm.json/PumpDriveType\",\"name\":\"PumpDriveTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A drive that regulates speed to the needed accuracy. \n\nEx:\n-  Open loop\n-  Slip compensation\n-  Encoder feedback",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PumpDriveTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

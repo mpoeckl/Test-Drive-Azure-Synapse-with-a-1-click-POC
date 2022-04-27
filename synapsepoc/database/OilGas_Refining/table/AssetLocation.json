@@ -179,13 +179,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/AssetLocation",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AssetId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetId\"},\"LocationTypeId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PeriodEndTimestamp\"},\"LocationId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"LocationId\"},\"AssetLatitude\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLatitude\"},\"AssetLongitude\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLongitude\"},\"PartyId\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"PartyId\"},\"AssetLocationNote\":{\"entity\":\"AssetLocation.cdm.json/AssetLocation\",\"name\":\"AssetLocationNote\"}}}"
 			},
 			"Compressed": false,
@@ -196,8 +196,7 @@
 			"Description": "The specific location of a fixed asset for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Property & Equipment\",\"colorCode\":\"#1C508C\"}",
 			"PrimaryKeys": "AssetId,LocationTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/NaphthaHydrotreaterProduction",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"NaphthaHydrotreatingUnitId\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"NaphthaHydrotreatingUnitId\"},\"NaphthaHydrotreaterOutputTypeId\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"NaphthaHydrotreaterOutputTypeId\"},\"ProductId\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"PeriodEndTimestamp\"},\"ProducedUnits\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"ProducedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"UnitOfMeasureId\"},\"NaphthaHydrotreaterProductionNote\":{\"entity\":\"NaphthaHydrotreaterProduction.cdm.json/NaphthaHydrotreaterProduction\",\"name\":\"NaphthaHydrotreaterProductionNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The output/production by the naphtha hydrotreater during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "NaphthaHydrotreatingUnitId,NaphthaHydrotreaterOutputTypeId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

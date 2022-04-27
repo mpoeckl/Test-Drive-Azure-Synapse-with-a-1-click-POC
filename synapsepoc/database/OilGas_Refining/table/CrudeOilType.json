@@ -126,13 +126,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilTypeId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeId\"},\"CrudeOilTypeName\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeName\"},\"CrudeOilTypeDescription\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilTypeDescription\"},\"CrudeOilClassificationId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassificationId\"},\"CrudeOilClassId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CrudeOilClassId\"},\"CorrosiveQualityId\":{\"entity\":\"CrudeOilType.cdm.json/CrudeOilType\",\"name\":\"CorrosiveQualityId\"}}}"
 			},
 			"Compressed": false,
@@ -143,8 +143,7 @@
 			"Description": "The type of crude oil source input to the refining process.\n\nEx:\n- Nigerian - Light\n- Saudi - Light\n- Saudi - Heavy\n- Venezuela - Heavy\n- Venezuela - Light\n- USA - Midcont. Sweet\n- USA - W. Texas Sour\n- North Sea - Brent\n\nCrude oil is a mixture of hydrocarbon molecules, which are organic compounds of carbon and hydrogen atoms that may include from one to 60 carbon atoms. The properties of hydrocarbons depend on the number and arrangement of the carbon and hydrogen atoms in the molecules. The simplest hydrocarbon molecule is one carbon atom linked with four hydrogen atoms: methane. All other variations of petroleum hydrocarbons evolve from this molecule.\nHydrocarbons containing up to four carbon atoms are usually gases, those with 5 to 19 carbon atoms are usually liquids, and those with 20 or more are solids. The refining process uses chemicals, catalysts, heat, and pressure to separate and combine the basic types of hydrocarbon molecules naturally found in crude oil into groups of similar molecules. The refining process also rearranges their structures and bonding patterns into different hydrocarbon molecules and compounds. Therefore it is the type of hydrocarbon (paraffinic, naphthenic, or aromatic) rather than its specific chemical compounds that is significant in the refining process.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "CrudeOilTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CoatingType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CoatingTypeId\":{\"entity\":\"CoatingType.cdm.json/CoatingType\",\"name\":\"CoatingTypeId\"},\"CoatingTypeName\":{\"entity\":\"CoatingType.cdm.json/CoatingType\",\"name\":\"CoatingTypeName\"},\"CoatingTypeDescription\":{\"entity\":\"CoatingType.cdm.json/CoatingType\",\"name\":\"CoatingTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A coating type associated with a component.\n\nEx:\n- 3M Tape\n- Asbestos\n- Asphalt\n- Asphalt Primer\n- Bare\n- Black Mastic\n- Blue Guard\n- Coal Tar (Cold)\n- Coal Tar (Hot Enamel)\n- Coal Tar Enamel\n- Coated - General\n- Cold Primer\n- Cold Tape\n- Concrete\n- Cor-Bond\n- Enamel\n- Epoxy\n- Extruded Asphalt\n- Extruded Polyethylene Jacket\n- Felt Wrap\n- Flakeline\n- Flexclad\n- Fusion Bonded Epoxy\n- Glass Filled Polyester\n- Grease\n- Hot Tape\n- Hysol Nap-Guard\n- Neoprene\n- No-Oxid 6X\n- Paint\n- Paper\n- Plastic\n- Power Crete\n- Primer\n- Rock Jacket\n- Rubber\n- ScotchKote\n- Shorted Casing\n- Tapecoat\n- Tar\n- Unknown\n- Wax\n- Wrap\n- X-Tru-Coat\n- Yard Guard",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "CoatingTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

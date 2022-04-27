@@ -16,7 +16,7 @@
 			"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining",
 			"Properties": {
 				"FormatType": "parquet",
-				"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage"
+				"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams"
 			}
 		}
 	},

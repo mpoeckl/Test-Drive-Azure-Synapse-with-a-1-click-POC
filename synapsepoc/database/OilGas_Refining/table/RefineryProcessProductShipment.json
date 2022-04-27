@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessProductShipment",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"RefineryProcessId\"},\"ProductId\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"ProductId\"},\"ShipmentId\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"ShipmentId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"PeriodEndTimestamp\"},\"RefineryProcessProductShippedUnits\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"RefineryProcessProductShippedUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"UnitOfMeasureId\"},\"RefineryProcessProductShipmentNote\":{\"entity\":\"RefineryProcessProductShipment.cdm.json/RefineryProcessProductShipment\",\"name\":\"RefineryProcessProductShipmentNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The quantity of product produced by the refinery process during the associated period that are directly shipped via the Shipment(s).",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ProductId,ShipmentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

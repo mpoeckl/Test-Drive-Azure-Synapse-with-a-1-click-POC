@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelDevice",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterChannelId\"},\"DeviceId\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"DeviceId\"},\"PeriodStartTimestamp\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"PeriodEndTimestamp\"},\"MeterDeviceNote\":{\"entity\":\"MeterChannelDevice.cdm.json/MeterChannelDevice\",\"name\":\"MeterDeviceNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "A device that is metered by the indicated meter channel during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterId,MeterChannelId,DeviceId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

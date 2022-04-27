@@ -162,13 +162,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterUsageForecast",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterId\"},\"MeterUsageForecastTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastTimestamp\"},\"MeterUsageForecastPeriodStartTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodStartTimestamp\"},\"MeterUsageForecastPeriodEndTimestamp\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastPeriodEndTimestamp\"},\"MeterUsageForecast\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecast\"},\"MeterUsageForecastUomId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastUomId\"},\"ForecastMethodTypeId\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"ForecastMethodTypeId\"},\"MeterUsageForecastNote\":{\"entity\":\"MeterUsageForecast.cdm.json/MeterUsageForecast\",\"name\":\"MeterUsageForecastNote\"}}}"
 			},
 			"Compressed": false,
@@ -179,8 +179,7 @@
 			"Description": "A forecasted energy usage at a meter for a particular time interval as of a particular timestamp.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterId,MeterUsageForecastTimestamp,MeterUsageForecastPeriodStartTimestamp,MeterUsageForecastPeriodEndTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

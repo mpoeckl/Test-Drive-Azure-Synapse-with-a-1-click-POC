@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProtocolType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProtocolTypeId\":{\"entity\":\"ProtocolType.cdm.json/ProtocolType\",\"name\":\"ProtocolTypeId\"},\"ProtocolTypeName\":{\"entity\":\"ProtocolType.cdm.json/ProtocolType\",\"name\":\"ProtocolTypeName\"},\"ProtocolTypeDescription\":{\"entity\":\"ProtocolType.cdm.json/ProtocolType\",\"name\":\"ProtocolTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of protocol.\n\nEx: \n- Epson Esc/POS\n- UTC Standard\n- UTC Enhanced\n- AEDEX\n- ICD 2002\n- Ultimate\n- CD 5220\n- DSP-800\n- ADM 787/788\n- Process automation protocol\n- Industrial control system protocol\n- Building automation protocol\n- Power system automation protocol\n- Automatic meter reading protocol\n- Meter protocol\n- Substation automation protocol\n\nEx: Substation automation protocols\nIEC 61850  \nIEC 60870-5-101  \nIEC 60870-5-104  \nIEC 60870-5-103  \nModbus  \n\nProcess automation protocols\nBSAP  \nCANopen \nCC-Link Industrial Networks  \nCIP (Common Industrial Protocol) \nController Area Network \nControlNet\nDeviceNet\nDF-1\nDirectNet \nEtherCAT\nEthernet Global Data (EGD)  \nEtherNet/IP Ethernet Powerlink  \nFOUNDATION fieldbus \nGE SRTP  \nHoneywell SDS \nHostLink Protocol \nInterbus \nModbus PEMEX\nModbus Plus\nModbus RTU  \nOptomux \nProfibus\nRAPIEnet\nSERCOS III \nSinec H1 \nSynqNet  \n\nIndustrial control system protocols\nMTConnect\nOPC\nOPC UA\n\nBuilding automation protocols\n1-Wire  \nBACnet  \nC-Bus\nCC-Link I \nDALI\nDSI\nDynet\nKonnex (KNX)  \nLonTalk \nModbus RTU \noBIX\nS-Bus\nxAP  \nZigBee  \n\nPower system automation protocols\nDNP3 \nIEC 60870-5\nIEC 61850\nIEC 62351  \nModbus\nProfibus\n\nAutomatic meter reading protocols\nANSI C12.18\nDLMS/IEC 62056\nIEC 61107\nM-Bus\nModbus\nZigBee Smart Energy 2.0\n\nMeter protocols\n- 1-Wire  \n- ANSI C12.18\n- ANSI C12.19\n- ANSI C12.21\n- BACnet  \n- C-Bus  \n- DALI  \n- DLM/COSEM\n- DSI  \n- IEC 60870-5-101  \n- IEC 61107\n- IEC 61850  \n- IEC 62056\n- Konnex  \n- LonTalk  \n- Modbus  \n- oBIX  \n- TCP/IP\n- xAP\n- ZigBee  \n\nSubstation automation protocols\nIEC 60870-5-101  \nIEC 60870-5-103  \nIEC 60870-5-104  \nIEC 61850  \nModbus",
 			"DisplayFolderInfo": "{\"name\":\"Transaction\",\"colorCode\":\"#9C4E27\"}",
 			"PrimaryKeys": "ProtocolTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

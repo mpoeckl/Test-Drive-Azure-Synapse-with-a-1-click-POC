@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageTankPipeConstructionType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageTankPipeConstructionTypeId\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeId\"},\"StorageTankPipeConstructionTypeName\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeName\"},\"StorageTankPipeConstructionTypeDescription\":{\"entity\":\"StorageTankPipeConstructionType.cdm.json/StorageTankPipeConstructionType\",\"name\":\"StorageTankPipeConstructionTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of storage tank pipe construction.\n\nEx:\n- Steel DW ( Bare Steel Double wall piping)\n- Steel SW  ( Bare Steel Single wall piping)\n- FG/FLEXDW  flexible piping made of a variety of materials)\n- FG/FLEXSW (similar to the above, but with only a single wall)",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageTankPipeConstructionTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

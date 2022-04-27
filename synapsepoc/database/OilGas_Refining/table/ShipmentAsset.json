@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentAsset",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentId\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentId\"},\"AssetId\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"AssetId\"},\"PeriodStartTimestamp\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"PeriodEndTimestamp\"},\"ThirdPartyAssetIndicator\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ThirdPartyAssetIndicator\"},\"ShipmentAssetNote\":{\"entity\":\"ShipmentAsset.cdm.json/ShipmentAsset\",\"name\":\"ShipmentAssetNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The asset(s) associated with the Shipment.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentId,AssetId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

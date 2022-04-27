@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentStatusTypeId\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeId\"},\"ShipmentStatusTypeName\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeName\"},\"ShipmentStatusTypeDescription\":{\"entity\":\"ShipmentStatusType.cdm.json/ShipmentStatusType\",\"name\":\"ShipmentStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A status type that may be applied to a Shipment.\n\nEx:\n- Scheduled\n- Released to Shipper\n- Released to Carrier \n- In Transit\n- Delivered to Ship-To Address\n- At Consignee Location\n- In Customs\n- In Warehouse Storage\n- In Quarantine\n- Delayed\n- Re-Routed\n- Abandoned\n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -197,13 +197,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShippingFacility",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShippingFacilityId\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityId\"},\"ShippingFacilityName\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityName\"},\"ShippingFacilityDescription\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityDescription\"},\"ShippingFacilityAddress\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityAddress\"},\"ShippingFacilityCity\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCity\"},\"ShippingFacilityState\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityState\"},\"ShippingFacilityZipCode\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityZipCode\"},\"ShippingFacilityCountry\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityCountry\"},\"LocationId\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"LocationId\"},\"ShippingFacilityNote\":{\"entity\":\"ShippingFacility.cdm.json/ShippingFacility\",\"name\":\"ShippingFacilityNote\"}}}"
 			},
 			"Compressed": false,
@@ -214,8 +214,7 @@
 			"Description": "A facility related to rail or ship shipping.",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShippingFacilityId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

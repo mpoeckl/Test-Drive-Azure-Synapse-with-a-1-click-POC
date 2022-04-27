@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/EnvironmentalEmissionsType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"EnvironmentalEmissionsTypeId\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeId\"},\"EnvironmentalEmissionsTypeName\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeName\"},\"EnvironmentalEmissionsTypeDescription\":{\"entity\":\"EnvironmentalEmissionsType.cdm.json/EnvironmentalEmissionsType\",\"name\":\"EnvironmentalEmissionsTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of environmental emission.\n\nEx:\n- Water vapor (H2O)\n- Carbon dioxide (CO2)\n- Methane (CH4)\n- Nitrous oxide (N2O)\n- Ozone (O3)\n- Chlorofluorocarbons (CFCs)\n- Nitrogen (N)2)\n- Oxygen (O2)\n- Argon (AR)\n- Tetrafluoromethane (CF4)\n- Hexafluoroethane (C2F6)\n- Sulfur hexafluoride (SF6)\n- Nitrogen trifluoride (NF3)\n- Air Quality\n- Mercury\n- Nitrogen trifluoride \n- Sulfur dioxide",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "EnvironmentalEmissionsTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductPartyRelationshipTypeId\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeId\"},\"ProductPartyRelationshipTypeName\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeName\"},\"ProductPartyRelationshipTypeDescription\":{\"entity\":\"ProductPartyRelationshipType.cdm.json/ProductPartyRelationshipType\",\"name\":\"ProductPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the party and the Product over the indicated period.\n\nEx:\n- production manager\n- product manager\n- product support\n- support technician\n- plant manager\n- planning manager\n- pricing analyst\n- product development\n- production supervisor\n- safety officer\n- refinery scheduling analyst\n- sales manager\n- environmental engineer\n- sales manager\n- operations manager\n- process manager\n- maintenance\n- OEM Partner\n- issuer\n- co-branded affiliate\n- affinity organization \n\nwhere:\nISSUER\nThe cardholder's bank, or the bank which has issued a MasterCard, Visa or other payment card to an individual. A card issuer is the acceptor and approver of a transaction - the entity that maintains the account relationship with the cardholder.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nAny association member financial institution, bank, credit union, or company that issues, or causes to be issued, plastic cards to cardholders.\n\nCO-BRANDED AFFILIATE\nA co-branded payment card is sponsored by both the issuing bank and a retail organization such as a department store or an airline. Cardholders may get benefits such as discounts or free merchandise from the sponsoring merchant based on account usage and terms.\n\nAFFINITY ORGANIZATION\nA card offered by a lending institution in conjunction with another organization. Schools, non-profit groups, pro wrestlers, popular singers and airlines are among those featured on these types of cards. Frequently, use of this card entitles holders to special discounts or deals from the non-financial group.",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "ProductPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

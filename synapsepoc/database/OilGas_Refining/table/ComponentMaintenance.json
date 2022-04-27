@@ -310,13 +310,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentMaintenance",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentMaintenanceId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"ComponentMaintenanceId\"},\"ComponentId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"ComponentId\"},\"MaintenanceOperationId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceOperationId\"},\"MaintenanceTypeId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceTypeId\"},\"MaintenanceDescription\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceDescription\"},\"MaintenancePlannedStartTimestamp\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenancePlannedStartTimestamp\"},\"MaintenancePlannedEndTimestamp\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenancePlannedEndTimestamp\"},\"MaintenanceActualStartTimestamp\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceActualStartTimestamp\"},\"MaintenanceActualEndTimestamp\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceActualEndTimestamp\"},\"MaintenanceEstimatedCost\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceEstimatedCost\"},\"MaintenanceActualCost\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceActualCost\"},\"MaintenanceNote\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"MaintenanceNote\"},\"VendorId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"VendorId\"},\"ContractId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"ContractId\"},\"LocationId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"LocationId\"},\"WorkOrderId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"WorkOrderId\"},\"PreventiveActionId\":{\"entity\":\"ComponentMaintenance.cdm.json/ComponentMaintenance\",\"name\":\"PreventiveActionId\"}}}"
 			},
 			"Compressed": false,
@@ -327,8 +327,7 @@
 			"Description": "Periodic expenditures undertaken to preserve or retain a component for its original use.\n\nMaintenance does not improve or extend the life of the component.\n\nMaintenance is an expense and are not capitalized.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentMaintenanceId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

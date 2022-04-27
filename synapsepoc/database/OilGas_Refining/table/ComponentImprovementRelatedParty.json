@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentImprovementRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentImprovementId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementId\"},\"PartyId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"PartyId\"},\"ImprovementPartyRelationshipTypeId\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ImprovementPartyRelationshipTypeId\"},\"StartTimestamp\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"StartTimestamp\"},\"EndTimestamp\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"EndTimestamp\"},\"ComponentImprovementRelatedPartyNote\":{\"entity\":\"ComponentImprovementRelatedParty.cdm.json/ComponentImprovementRelatedParty\",\"name\":\"ComponentImprovementRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "A party related to the component improvement.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentImprovementId,PartyId,ImprovementPartyRelationshipTypeId,StartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

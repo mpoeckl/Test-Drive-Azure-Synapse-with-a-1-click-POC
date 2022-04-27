@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentInspectionRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentInspectionId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionId\"},\"PartyId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PartyId\"},\"ComponentInspectionPartyRelationshipTypeId\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"ComponentInspectionRelatedPartyNote\":{\"entity\":\"ComponentInspectionRelatedParty.cdm.json/ComponentInspectionRelatedParty\",\"name\":\"ComponentInspectionRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "Party(s) related to the component inspection.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentInspectionId,PartyId,ComponentInspectionPartyRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

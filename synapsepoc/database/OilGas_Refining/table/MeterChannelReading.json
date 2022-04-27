@@ -193,13 +193,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterChannelReading",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterId\"},\"MeterChannelId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelId\"},\"MeterReadingTypeId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingTypeId\"},\"MeterChannelReadingPeriodStartTimestamp\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodStartTimestamp\"},\"MeterChannelReadingPeriodEndTimestamp\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingPeriodEndTimestamp\"},\"ReadingUnits\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"ReadingUnits\"},\"UnitOfMeasureId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"UnitOfMeasureId\"},\"NumberOfUsageDays\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"NumberOfUsageDays\"},\"MeterChannelReadingNote\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterChannelReadingNote\"},\"MeterReadingCycleId\":{\"entity\":\"MeterChannelReading.cdm.json/MeterChannelReading\",\"name\":\"MeterReadingCycleId\"}}}"
 			},
 			"Compressed": false,
@@ -210,8 +210,7 @@
 			"Description": "A specific meter reading as of a timestamp.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterId,MeterChannelId,MeterReadingTypeId,MeterChannelReadingPeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

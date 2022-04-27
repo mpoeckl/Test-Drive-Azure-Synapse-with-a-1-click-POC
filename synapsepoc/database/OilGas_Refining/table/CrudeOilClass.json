@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilClass",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilClassId\":{\"entity\":\"CrudeOilClass.cdm.json/CrudeOilClass\",\"name\":\"CrudeOilClassId\"},\"CrudeOilClassName\":{\"entity\":\"CrudeOilClass.cdm.json/CrudeOilClass\",\"name\":\"CrudeOilClassName\"},\"CrudeOilClassDescription\":{\"entity\":\"CrudeOilClass.cdm.json/CrudeOilClass\",\"name\":\"CrudeOilClassDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The Environmental Protection Agency has classified crude oil in four categories that reflect how the oil would behave in spills and its aftermath:\n\nClass A: Because they are light and highly liquid, these clear and volatile oils can spread quickly on impervious surfaces and on water. Their odor is strong and they evaporate quickly, emitting volatiles. Usually flammable, these oils also penetrate porous surfaces, such as dirt and sand, and may remain in areas into which they seep. Humans, fish, and other plant and animal life face danger of toxicity to Class A oils. \n\nClass B: Considered less toxic than Class A, these oils are generally non-sticky but feel waxy or oily. The warmer they get, the more likely Class B oils are soak into surfaces; they can be hard to remove. When volatile components of Class B oils evaporate, the result can be a Class C or D residue. Class B includes medium to heavy oils.\n\nClass C: These heavy, tarry oils, which include residual fuel oils and medium to heavy crudes, are slow to seep into porous solids and are not highly toxic. However, Class C oils are difficult to flush away and can sink in water, so they can smother or drown wildlife.\n\nClass D: Non-fluid, thick oils are comparatively non-toxic and don't seep into porous surfaces. Mostly black or dark brown, Class D oils tend to dissolve and cover surfaces when they get hot, which makes them hard to cleanup. Heavy crude oils, such as the bitumen found in tar sands, fall into this class.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "CrudeOilClassId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

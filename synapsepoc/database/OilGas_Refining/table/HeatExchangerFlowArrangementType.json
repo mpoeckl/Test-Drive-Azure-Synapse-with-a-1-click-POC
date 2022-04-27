@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerFlowArrangementType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerFlowArrangementTypeId\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeId\"},\"HeatExchangerFlowArrangementTypeName\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeName\"},\"HeatExchangerFlowArrangementTypeDescription\":{\"entity\":\"HeatExchangerFlowArrangementType.cdm.json/HeatExchangerFlowArrangementType\",\"name\":\"HeatExchangerFlowArrangementTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of heat exchanger flow arrangement.\n\nEx:\n- Parallel-flow\n- Counter-flow\n- Cross-flow\n\nThere are three primary classifications of heat exchangers according to their flow arrangement. In parallel-flow heat exchangers, the two fluids enter the exchanger at the same end, and travel in parallel to one another to the other side. In counter-flow heat exchangers the fluids enter the exchanger from opposite ends. The counter current design is the most efficient, in that it can transfer the most heat from the heat (transfer) medium per unit mass due to the fact that the average temperature difference along any unit length is higher. See countercurrent exchange. In a cross-flow heat exchanger, the fluids travel roughly perpendicular to one another through the exchanger.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "HeatExchangerFlowArrangementTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

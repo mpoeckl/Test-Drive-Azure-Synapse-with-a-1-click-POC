@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CertificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CertificationTypeId\":{\"entity\":\"CertificationType.cdm.json/CertificationType\",\"name\":\"CertificationTypeId\"},\"CertificationTypeName\":{\"entity\":\"CertificationType.cdm.json/CertificationType\",\"name\":\"CertificationTypeName\"},\"CertificationTypeDescription\":{\"entity\":\"CertificationType.cdm.json/CertificationType\",\"name\":\"CertificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of certification that may be assigned.\n\nEx:\n-  Product Certification\n-  Environmental Certification\n-  Component Certification\n-  Safety Certification\n-  Operations Certification\n-  Skill Authorization\n-  Skill Certification\n-  Degree\n-  Certified\n-  Authorized",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "CertificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

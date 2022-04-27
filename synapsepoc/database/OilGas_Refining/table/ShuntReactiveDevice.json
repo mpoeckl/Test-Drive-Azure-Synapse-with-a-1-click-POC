@@ -112,13 +112,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShuntReactiveDevice",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShuntReactiveDeviceId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceId\"},\"ShuntReactiveDeviceTypeId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ShuntReactiveDeviceTypeId\"},\"DesiredMinimumVoltageControlValueKv\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMinimumVoltageControlValueKv\"},\"DesiredMaximumVoltageControlValueKv\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"DesiredMaximumVoltageControlValueKv\"},\"ElectricalJunctionId\":{\"entity\":\"ShuntReactiveDevice.cdm.json/ShuntReactiveDevice\",\"name\":\"ElectricalJunctionId\"}}}"
 			},
 			"Compressed": false,
@@ -129,8 +129,7 @@
 			"Description": "A shunt is a device which allows electric current to pass around another point in the circuit.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ShuntReactiveDeviceId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

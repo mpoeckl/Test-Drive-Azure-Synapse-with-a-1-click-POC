@@ -110,13 +110,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MaintenanceOperation",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaintenanceOperationId\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationId\"},\"MaintenanceOperationName\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationName\"},\"MaintenanceOperationDescription\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationDescription\"},\"MaintenanceOperationStandardNumberHours\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationStandardNumberHours\"},\"MaintenanceOperationTypeId\":{\"entity\":\"MaintenanceOperation.cdm.json/MaintenanceOperation\",\"name\":\"MaintenanceOperationTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -127,8 +127,7 @@
 			"Description": "Periodic expenditures undertaken to preserve or retain an asset for its original use.\n\nMaintenance does not improve or extend the life of the asset.\n\nMaintenance is an expense and is not capitalized.\n\nA specific maintenance operation that is performed upon an asset.\n\nEx:\n- Software Update\n- Lubrication\n- Replacing worn or damage parts",
 			"DisplayFolderInfo": "{\"name\":\"Maintenance & Repair\",\"colorCode\":\"#692B0C\"}",
 			"PrimaryKeys": "MaintenanceOperationId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

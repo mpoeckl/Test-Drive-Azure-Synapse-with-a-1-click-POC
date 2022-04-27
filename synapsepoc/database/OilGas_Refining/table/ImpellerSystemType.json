@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ImpellerSystemType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ImpellerSystemTypeId\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeId\"},\"ImpellerSystemTypeName\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeName\"},\"ImpellerSystemTypeDescription\":{\"entity\":\"ImpellerSystemType.cdm.json/ImpellerSystemType\",\"name\":\"ImpellerSystemTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of pump impeller.\n\nEx:\n- High Head Closed Channel\n- Vortex\n- Centrifugal Screw\n- Propeller\n- Shredded\n- Closed Channel\n- Misced Flow\n- Semi-Open",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ImpellerSystemTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

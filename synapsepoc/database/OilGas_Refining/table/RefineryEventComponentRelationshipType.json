@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventComponentRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventComponentRelationshipTypeId\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeId\"},\"RefineryEventComponentRelationshipTypeName\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeName\"},\"RefineryEventComponentRelationshipTypeDescription\":{\"entity\":\"RefineryEventComponentRelationshipType.cdm.json/RefineryEventComponentRelationshipType\",\"name\":\"RefineryEventComponentRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between a Refinery Event and Component.\n\nEx:\n- Caused-by Component\n- Damaged-by Component\n- Destroyed-by Component\n- Replaced due to - Component\n- Suspect Component\n- Repaired-due to - Component",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryEventComponentRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestComponentTypeId\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeId\"},\"RefineryTestComponentTypeName\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeName\"},\"RefineryTestComponentTypeDescription\":{\"entity\":\"RefineryTestComponentType.cdm.json/RefineryTestComponentType\",\"name\":\"RefineryTestComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A component that is tested for.\n\nEx\n1,2-Dichloroethane \n2-Ethylhexanol \nAcetic Acid \nAcrylonitrile \nAlkylbenzene \nAlpha-Olefins \nAmmonia \nAniline \nAntimony\nArsenic\nBenzene\nBeryllium\nBisphenol-A\nBTX\nButadiene \nButadiene\nCadmium\nCaprolactum \nChlorobenzene \nChromium\nCobalt\nCrude Oil\nCumene \nCyclohexane \nDimethyl Terephthalate\nDioctyl Phthalate \nDodecylbenzene \nEthanol \nEthanolamine \nEthoxylate \nEthylbenzene \nEthylene \nEthylene Glycol \nEthylene Oxide\nEpoxy Resins \nFormaldehyde \nGas Oil\nKetones\nLead\nLinear Alkyl Benzene\nMaleic Anhydride\nManganese\nMercury\nMethanol\nMethyl Tert-Butyl Ether \nMixed Xylenes \nMolybdenum\nN-Butene \nN-Hexene \nNaphtha \nNickel\nNitrobenzene \nNylons\nOlefins\nOrtho-Xylene\nPara-Xylene \nPara-Xylene\nPhenol\nPhosgene\nPolyalpha-Olefins\nPolyamides\nPolyol \nPolyolefins \nPolypropylene \nPolyurethane \nPropylene \nPropylene Glycol \nPropylene Oxide\nPurified Terephthalic Acid \nResins\nSelenium\nSolvents\nStyrene\nStyrene Monomer \nTerephthalic Acid\nTitanium Dioxide\nToluene \nToluene Diisocyanate\nUrea \nVanadium\nVinyl Acetate Monomer \nVinyl Chloride Monomer, VCM\nXylenes",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

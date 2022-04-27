@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DangerousGoodsPackingGroup",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DangerousGoodsPackingGroupId\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupId\"},\"DangerousGoodsPackingGroupName\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupName\"},\"DangerousGoodsPackingGroupDescription\":{\"entity\":\"DangerousGoodsPackingGroup.cdm.json/DangerousGoodsPackingGroup\",\"name\":\"DangerousGoodsPackingGroupDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The properties of the chemical substance or product have an effect on the choice of the packing material. \n\nRecommendations on the material, as well as the sizes, of packages are based on testing and experience. \n\nDangerous goods of classes 3, 4, 5.1, 6.1, 8, and 9 have been divided for packing purposes into three groups according to the degree of danger they present: \n\ngreat danger - Packing Group I  \nmedium danger - Packing Group II  \nminor danger - Packing Group III",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "DangerousGoodsPackingGroupId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

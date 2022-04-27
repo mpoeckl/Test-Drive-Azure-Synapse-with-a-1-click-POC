@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/FluidCatalyticCrackerUnitComponentMeasurement",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FluidCatalyticCrackerUnitId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitId\"},\"FluidCatalyticCrackerUnitComponentId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentId\"},\"MeasurementTypeId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"UnitOfMeasureId\"},\"FluidCatalyticCrackerUnitComponentMeasurementNote\":{\"entity\":\"FluidCatalyticCrackerUnitComponentMeasurement.cdm.json/FluidCatalyticCrackerUnitComponentMeasurement\",\"name\":\"FluidCatalyticCrackerUnitComponentMeasurementNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The FCCU component measurement(s) for the associated period.\n\nEx:\n- Raw oil feed at heater inlet : 114 cubic meter /h\n- Furnace outlet temperature : 291 C\n- Reactor feed temperature : 371 C\n- Reactor Vapor temperature : 549 C",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "FluidCatalyticCrackerUnitId,FluidCatalyticCrackerUnitComponentId,MeasurementTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

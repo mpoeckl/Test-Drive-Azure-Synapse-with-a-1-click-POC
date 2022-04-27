@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HeatExchangerTubeLayoutType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HeatExchangerTubeLayoutTypeId\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeId\"},\"HeatExchangerTubeLayoutTypeName\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeName\"},\"HeatExchangerTubeLayoutTypeDescription\":{\"entity\":\"HeatExchangerTubeLayoutType.cdm.json/HeatExchangerTubeLayoutType\",\"name\":\"HeatExchangerTubeLayoutTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of heat exchanger tube layout.\n\nEx:\n- Triangular 30'\n- Triangular 60'\n- Rotated square 45'\n- Square 90'\n\nTube Layout: refers to how tubes are positioned within the shell. There are four main types of tube layout, which are, triangular (30°), rotated triangular (60°), square (90°) and rotated square (45°). The triangular patterns are employed to give greater heat transfer as they force the fluid to flow in a more turbulent fashion around the piping. Square patterns are employed where high fouling is experienced and cleaning is more regular.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "HeatExchangerTubeLayoutTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

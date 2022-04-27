@@ -129,13 +129,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentCost",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"IncidentId\"},\"IncidentCostTypeId\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"IncidentCostTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"PeriodEndTimestamp\"},\"CostAmount\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"CostAmount\"},\"IncidentCostNote\":{\"entity\":\"IncidentCost.cdm.json/IncidentCost\",\"name\":\"IncidentCostNote\"}}}"
 			},
 			"Compressed": false,
@@ -146,8 +146,7 @@
 			"Description": "The incident-related cost for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,IncidentCostTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

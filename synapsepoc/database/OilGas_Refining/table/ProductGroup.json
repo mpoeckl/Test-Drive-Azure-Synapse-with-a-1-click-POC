@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductGroup",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductGroupId\":{\"entity\":\"ProductGroup.cdm.json/ProductGroup\",\"name\":\"ProductGroupId\"},\"ProductGroupName\":{\"entity\":\"ProductGroup.cdm.json/ProductGroup\",\"name\":\"ProductGroupName\"},\"ProductGroupDescription\":{\"entity\":\"ProductGroup.cdm.json/ProductGroup\",\"name\":\"ProductGroupDescription\"},\"ClassificationAgencyPartyId\":{\"entity\":\"ProductGroup.cdm.json/ProductGroup\",\"name\":\"ClassificationAgencyPartyId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "An arbitrary grouping of Products.\n\nEx:\n- Products\n- Software Products\n- Retail Products\n- Appliances\n- Services\n- Electric services\n- Gas services\n\nImplementation Note:\nThe primary use of the PRODUCT GROUP entity is to provide the foundation for creating a product hierarchy. There are 3 other entities that are used to provide support for this multi-level hierarchy that also allows products to belong to more than one hierarchy: RELATED PRODUCT GROUP, PRODUCT GROUP RELATIONSHIP TYPE and PRODUCT GROUP. \n\nPRODUCT GROUP is used to detail the levels in a product hierarchy. \n\nFor example your hierarchy may include:\nLevel 1 - Region: North America, Europe, Asia, Australia, South America, Africa\nLevel 2 - Channel: Online, Retail Outlet, Third Party Sales Channel\nLevel 3 - Product Category: Clothing, Technology\neach of these levels would be represented by PRODUCT GROUPs for each\nthese groups would be related by RELATED PRODUCT GROUP\nand finally PRODUCT GROUP RELATIONSHIP TYPE would describe the relationships between each of these related",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "ProductGroupId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

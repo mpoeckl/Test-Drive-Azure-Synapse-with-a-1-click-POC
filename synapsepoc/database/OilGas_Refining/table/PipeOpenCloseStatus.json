@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipeOpenCloseStatus",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipeId\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PeriodEndTimestamp\"},\"OpenCloseStatusId\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"OpenCloseStatusId\"},\"PipeOpenCloseStatusNote\":{\"entity\":\"PipeOpenCloseStatus.cdm.json/PipeOpenCloseStatus\",\"name\":\"PipeOpenCloseStatusNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The open/close status of the pipe for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

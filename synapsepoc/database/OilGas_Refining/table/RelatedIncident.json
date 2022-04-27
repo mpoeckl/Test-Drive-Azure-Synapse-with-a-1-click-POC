@@ -93,13 +93,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RelatedIncident",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentId\"},\"RelatedIncidentId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentId\"},\"IncidentRelationshipTypeId\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"IncidentRelationshipTypeId\"},\"RelatedIncidentNote\":{\"entity\":\"RelatedIncident.cdm.json/RelatedIncident\",\"name\":\"RelatedIncidentNote\"}}}"
 			},
 			"Compressed": false,
@@ -110,8 +110,7 @@
 			"Description": "The relationship of two or more incidents.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,RelatedIncidentId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

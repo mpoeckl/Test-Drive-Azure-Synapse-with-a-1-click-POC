@@ -175,13 +175,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentInjuryTreatmentRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"IncidentId\"},\"InjuryTypeId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"InjuryTypeId\"},\"IncidentTreatmentTypeId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"IncidentTreatmentTypeId\"},\"InjuredPartyId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"InjuredPartyId\"},\"PartyId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"PartyId\"},\"IncidentInjuryTreatmentPartyRelationshipTypeId\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"IncidentInjuryTreatmentPartyRelationshipTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"PeriodEndTimestamp\"},\"IncidentInjuryTreatmentRelatedPartyNote\":{\"entity\":\"IncidentInjuryTreatmentRelatedParty.cdm.json/IncidentInjuryTreatmentRelatedParty\",\"name\":\"IncidentInjuryTreatmentRelatedPartyNote\"}}}"
 			},
 			"Compressed": false,
@@ -192,8 +192,7 @@
 			"Description": "A party that has a relationship with the Incident Injury Treatment over the indicated period.",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentId,InjuryTypeId,IncidentTreatmentTypeId,InjuredPartyId,PartyId,IncidentInjuryTreatmentPartyRelationshipTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

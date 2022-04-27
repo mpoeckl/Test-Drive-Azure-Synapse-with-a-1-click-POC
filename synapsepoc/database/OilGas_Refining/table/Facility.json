@@ -417,13 +417,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Facility",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"FacilityId\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityId\"},\"FacilityName\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityName\"},\"FacilityDescription\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityDescription\"},\"FacilityTypeId\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityTypeId\"},\"LocationId\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"LocationId\"},\"FacilityTelephoneNumber\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityTelephoneNumber\"},\"FacilityFaxNumber\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityFaxNumber\"},\"FacilityEmailAddress\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityEmailAddress\"},\"PartyId\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"PartyId\"},\"FacilityNote\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityNote\"},\"FacilityFirstOperationalDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityFirstOperationalDate\"},\"FacilityLastOperationalDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityLastOperationalDate\"},\"FacilityFirstFeasibilityStudyStarted\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityFirstFeasibilityStudyStarted\"},\"FacilityFeasibilityStudyAcceptedDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityFeasibilityStudyAcceptedDate\"},\"FacilityPermitsAppliedDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityPermitsAppliedDate\"},\"FacilityPermitsReceivedDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityPermitsReceivedDate\"},\"FacilityConstructionStartDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityConstructionStartDate\"},\"FacilityConstructionCompletedDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityConstructionCompletedDate\"},\"FacilityConstructionCostAmount\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityConstructionCostAmount\"},\"FacilityFirstProductionDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityFirstProductionDate\"},\"FacilityLastProductionDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityLastProductionDate\"},\"FacilityClosureDate\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"FacilityClosureDate\"},\"DailyCapacityGpmPerDay\":{\"entity\":\"Facility.cdm.json/Facility\",\"name\":\"DailyCapacityGpmPerDay\"}}}"
 			},
 			"Compressed": false,
@@ -434,8 +434,7 @@
 			"Description": "A complex of buildings, equipment and supporting assets that fulfills a specific function or operation.\n\nNote:\nA facility is an above ground infrastructure associated with the operation and maintenance of gas fields, gas plants, water processing and gas/water transmission pipelines (Origin - GIS Technical specification for Field Data Collection).\n\nA collection of surface equipment and meters which facilitate the production, injection or disposition of products. This equipment supports any operation in the processing, development and transportation of products (PPDM).",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "FacilityId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

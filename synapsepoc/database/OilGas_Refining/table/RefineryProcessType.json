@@ -126,13 +126,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeId\"},\"RefineryProcessTypeName\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeName\"},\"RefineryProcessTypeDescription\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessTypeDescription\"},\"RefineryProcessMethodTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessMethodTypeId\"},\"RefineryProcessActionTypeId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessActionTypeId\"},\"RefineryProcessCategoryId\":{\"entity\":\"RefineryProcessType.cdm.json/RefineryProcessType\",\"name\":\"RefineryProcessCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -143,8 +143,7 @@
 			"Description": "The type of refinery processing activity.\n\nEx:\n\nPRETREATMENT ('Salting')\nChemical Separation\nElectrostatic Separation\n\nFRACTIONATION PROCESS:\nAtmospheric distillation (Separate fractions) -> Gas, gas oil, distillate, residual\nVacuum distillation (Separate w/o cracking) -> Gas oil, lube stock, residual\n\nCONVERSION PROCESSES - DECOMPOSITION:\nCatalytic cracking (Upgrade gasoline) -> Gasoline, petrochemical feedstock\nCoking (Convert vacuum residuals) -> Gasoline, petrochemical feedstock\nHydro-cracking  (Convert to lighter HC's) -> Lighter, higher quality products forming \nHydrogen steam reforming  (Produce hydrogen) -> Hydrogen, CO, CO2\nSteam cracking  (Crack large molecules) ->Cracked naphtha, coke, residual\nVisbreaking  (Reduce viscosity) -> Distillate, tar\n\nCONVERSION PROCESSES - UNIFICATION:\nAlkylation  (Unite olefins & isoparaffins) -> Iso-octane (alkylate)\nGrease compounding  (Combine soaps & oils) -> Lubricating grease\nPolymerizing  (Unite 2 or more olefins) -> High-octane naphtha, petrochemical stocks\n\nCONVERSION PROCESSES - ALTERATION OR REARRANGEMENT:\nCatalytic reforming (Upgrade low-octane naphtha) -> High oct. Reformate/aromatic\nIsomerization (Convert straight chain to branch) -> Isobutane/pentane/hexane\n\nTREATMENT PROCESSES:\nAmine treating (Remove acidic contaminants) -> Acid free gases & liquid HCs\nDesalting (Remove contaminants) -> Desalted crude oil\nDrying & sweetening (Remove H2O & sulfur compounds)  -> Sweet & dry hydrocarbons\nFurfural extraction (Upgrade mid distillate & lubes) -> High quality diesel & lube oil\nHydrodesulfurization (Remove sulfur, contaminants) -> Desulfurized olefins\nHydrotreating (Remove impurities, saturate HC's) -> Cracker feed, distillate, lube\nPhenol extraction (Improve viscosity index, color) -> High quality lube oils\nSolvent deasphalting (Remove asphalt) -> Heavy lube oil, asphalt\nSolvent dewaxing (Remove wax from lube stocks) -> Dewaxed lube basestock\nSolvent extraction (Separate unsat. oils)  -> High-octane gasoline\nSweetening (Remove H2S, convert mercaptan)-> High-quality distillate/gasoline\n\nwhere:\n\nSOLVENT EXTRACTION/DEWAXING\nThe purpose of solvent extraction is to prevent corrosion, protect catalyst in subsequent processes, and improve finished products by removing\nunsaturated, aromatic hydrocarbons from lubricant and grease stocks. The solvent extraction process separates aromatics, naphthenes, and impurities from the product stream by dissolving or precipitation.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

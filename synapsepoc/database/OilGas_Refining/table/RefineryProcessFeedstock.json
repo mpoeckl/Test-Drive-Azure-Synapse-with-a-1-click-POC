@@ -192,13 +192,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryProcessFeedstock",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryProcessId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessId\"},\"ComponentId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"ComponentId\"},\"FeedstockTypeId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"PeriodEndTimestamp\"},\"FeedstockUnits\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockUnits\"},\"UnitOfMeasureId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"UnitOfMeasureId\"},\"FeedstockTradeName\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockTradeName\"},\"FeedstockSupplierId\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"FeedstockSupplierId\"},\"RefineryProcessFeedstockNote\":{\"entity\":\"RefineryProcessFeedstock.cdm.json/RefineryProcessFeedstock\",\"name\":\"RefineryProcessFeedstockNote\"}}}"
 			},
 			"Compressed": false,
@@ -209,8 +209,7 @@
 			"Description": "The quantity of feedstock input into the refinery process component from the indicated storage tank during the indicated period.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryProcessId,ComponentId,FeedstockTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

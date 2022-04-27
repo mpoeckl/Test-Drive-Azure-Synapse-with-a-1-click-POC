@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentRelationshipTypeId\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeId\"},\"ComponentRelationshipTypeName\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeName\"},\"ComponentRelationshipTypeDescription\":{\"entity\":\"ComponentRelationshipType.cdm.json/ComponentRelationshipType\",\"name\":\"ComponentRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The relationship between component(s).\n\nEx:\n- Circuit \n- Co-located\n- Functionally-dependent\n- Downstream Dependent\n- From-Component\n- To-Component\n- Comparable\n- Compatible\n- Replacement-by\n- Upgrade-to",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

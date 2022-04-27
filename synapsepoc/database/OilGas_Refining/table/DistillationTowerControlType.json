@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerControlType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerControlTypeId\":{\"entity\":\"DistillationTowerControlType.cdm.json/DistillationTowerControlType\",\"name\":\"DistillationTowerControlTypeId\"},\"DistillationTowerControlTypeName\":{\"entity\":\"DistillationTowerControlType.cdm.json/DistillationTowerControlType\",\"name\":\"DistillationTowerControlTypeName\"},\"DistillationTowerControlTypeDescription\":{\"entity\":\"DistillationTowerControlType.cdm.json/DistillationTowerControlType\",\"name\":\"DistillationTowerControlTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of distillation column control type.\n\nEx:\n- Reflux Ratio\n- Temperature Gradient\n\nwhere:\n\nREFLUX RATIO\nWhen reflux ratio is increased, the amount of reflux increases. Reflux represents cooled, condensed top product returned to the tower top and, as such it is being reprocessed. The top product will therefore be purer. In general, the higher the reflux ratio, the fewer the number of trays required for a given separation. \n\nHowever, too high a ratio may cause flooding in the tower resulting in poor separation and causing 'off-spec' products throughout the system. The reflux rate is normally controlled by a temperature controller in the vapor outlet which operates a control valve in the reflux pump discharge. An increase in tower top temperature will cause the valve to open, increasing the reflux rate, and vice versa.\n\nTEMPERATURE GRADIENT\n\nTemperature (and pressure) control of a distillation tower will govern the purity of the products. The control of top temperature is as discussed above in 'reflux'. Control of the feed inlet temperature and that of the reboiler are also very important. \n\nAgain, if feed and bottom temperatures are too high, too much heavy vapor will rise up the tower and put side-stream products off-spec. This condition, combined with high reflux rate will again lead to flooding and poor separation. Opposite conditions can lead to liquid starvation across the trays and again, a very upset process will result. \n\nThe careful control of top temperature, feed and reboiler temperatures, together with pressure control, will give the desired temperature profile across the tower. \n\nChanges in pressure will affect the boiling points of the components in the crude oil. The vapor pressures therefore, will also be affected and again, if the control parameters are incorrect, the system will be inefficient.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerControlTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

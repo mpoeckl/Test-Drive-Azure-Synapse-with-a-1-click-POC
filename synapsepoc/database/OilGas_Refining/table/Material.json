@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/Material",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MaterialId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialId\"},\"MaterialName\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialName\"},\"MaterialDescription\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialDescription\"},\"CorrosiveQualityId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"CorrosiveQualityId\"},\"MaterialTypeId\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialTypeId\"},\"DiverseOriginMaterialIndicator\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"DiverseOriginMaterialIndicator\"},\"MultiSubstanceMaterialIndicator\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MultiSubstanceMaterialIndicator\"},\"MaterialNote\":{\"entity\":\"Material.cdm.json/Material\",\"name\":\"MaterialNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "A material that may be associated with a component or casing.   \n\nEx:\n- Bare Steel \n- Bare Steel Cast Iron \n- Bolt Type Cast Iron \n- Cast Iron \n- Celluloid Acetate Butadiene \n- Copper \n- Copper-Nickel Alloy\n- DuPont Aladyl-A \n- Flex Joint Cast Iron \n- Flexible Joint Cast Iron \n- Galvanized \n- Gland Type Cast Iron \n- Nickel & Nickel alloy\n- Orangeburg \n- Outside Diameter Steel \n- Plain End Cast Iron \n- Plastic \n- Poly Vinyl Chloride\n- Polyethylene \n- Screw Steel \n- Stainless steel/carbon steel\n- Steel \n- Tantalum \n- Titanium & Titanium alloy\n- Unknown \n- Welded Steel \n- Wrot/wrought Iron \n- Wrot/wrought Steel\n- Zirconium",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MaterialId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

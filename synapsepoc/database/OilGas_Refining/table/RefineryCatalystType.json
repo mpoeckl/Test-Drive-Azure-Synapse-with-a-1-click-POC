@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryCatalystType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CatalystTypeId\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeId\"},\"CatalystTypeName\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeName\"},\"CatalystTypeDescription\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CatalystTypeDescription\"},\"CorrosiveQualityId\":{\"entity\":\"RefineryCatalystType.cdm.json/RefineryCatalystType\",\"name\":\"CorrosiveQualityId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A type of catalyst that may be added to the process, which is a chemical added to a process or product to improve the outcome or product properties.\n\nEx:\n- Tetraethyl Lead (TEL)\n- Tetramethyl Lead (TML)\n- Ethyl tertiary butyl ether (ETBE) \n- Methyl tertiary butyl ether (MTBE)\n- Tertiary amyl methyl ether (TAME)\n- Caustic\n- Sulfuric acid\n- Hydroflouric acid\n- Ammonia\n- Zeolite (FCCU)\n- Bauxite (FCCU)\n- Silica-alumina (FCCU)\n- Aluminum hydrosilicate (FCCU)\n\nwhere:\n\n1. Leaded Gasoline Additives. Tetraethyl lead (TEL) and tetramethyl lead (TML) are additives formerly used to improve gasoline octane ratings but are no\nlonger in common use except in aviation gasoline.\n2. Oxygenates. Ethyl tertiary butyl ether (ETBE), methyl tertiary butyl ether (MTBE), tertiary amyl methyl ether (TAME), and other oxygenates improve\ngasoline octane ratings and reduce carbon monoxide emissions.\n3. Caustics. Caustics are added to desalting water to neutralize acids and reduce corrosion. They are also added to desalted crude in order to reduce the\namount of corrosive chlorides in the tower overheads. They are used in some refinery treating processes to remove contaminants from hydrocarbon\nstreams.\n4. Sulfuric Acid and Hydrofluoric Acid. Sulfuric acid and hydrofluoric acid are used primarily as catalysts in alkylation processes. Sulfuric acid is also used\nin some treatment processes.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "CatalystTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -256,13 +256,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModel",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterModelId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterModelId\"},\"ManufacturedByPartyId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ManufacturedByPartyId\"},\"FirstManufacturedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstManufacturedDate\"},\"FirstAvailableDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstAvailableDate\"},\"FirstMarketedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"FirstMarketedDate\"},\"DiscontinuedDate\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"DiscontinuedDate\"},\"AutomaticMeterModelReaderIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"AutomaticMeterModelReaderIndicator\"},\"RemoteMeterModelReaderIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"RemoteMeterModelReaderIndicator\"},\"TimeOfUseMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"TimeOfUseMeterModelIndicator\"},\"MultipleTariffMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MultipleTariffMeterModelIndicator\"},\"ApplianceEnergyMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"ApplianceEnergyMeterModelIndicator\"},\"SmartMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"SmartMeterModelIndicator\"},\"PowerExportMeterModelIndicator\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"PowerExportMeterModelIndicator\"},\"MeterTypeId\":{\"entity\":\"MeterModel.cdm.json/MeterModel\",\"name\":\"MeterTypeId\"}}}"
 			},
 			"Compressed": false,
@@ -273,8 +273,7 @@
 			"Description": "The model of a meter.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterModelId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

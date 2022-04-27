@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilPetroleumComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilPetroleumComponentTypeId\":{\"entity\":\"CrudeOilPetroleumComponentType.cdm.json/CrudeOilPetroleumComponentType\",\"name\":\"CrudeOilPetroleumComponentTypeId\"},\"CrudeOilPetroleumComponentTypeName\":{\"entity\":\"CrudeOilPetroleumComponentType.cdm.json/CrudeOilPetroleumComponentType\",\"name\":\"CrudeOilPetroleumComponentTypeName\"},\"CrudeOilPetroleumComponentTypeDescription\":{\"entity\":\"CrudeOilPetroleumComponentType.cdm.json/CrudeOilPetroleumComponentType\",\"name\":\"CrudeOilPetroleumComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of crude oil petroleum component type.\n\nEx:\n- Paraffin\n- Aromatics\n- Naphthenes\n- Sulfur\n- Carbon\n- Hydrogen\n- Nitrogen\n- Oxygen\n- Metals\n- Salts\n- Naphthenic acid\n\nCrude oils are complex mixtures containing many different hydrocarbon compounds that vary in appearance and composition from one oil field to another.\nCrude oils range in consistency from water to tar-like solids, and in color from clear to black. An \"average\" crude oil contains about 84% carbon, 14% hydrogen, 1%-3% sulfur, and less than 1% each of nitrogen, oxygen, metals, and salts.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "CrudeOilPetroleumComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

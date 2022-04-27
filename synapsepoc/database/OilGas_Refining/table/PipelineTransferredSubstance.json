@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineTransferredSubstance",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineId\"},\"SubstanceTypeId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"SubstanceTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PeriodEndTimestamp\"},\"ProductId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"ProductId\"},\"TransferredUnits\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnits\"},\"TransferredUnitsUomId\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"TransferredUnitsUomId\"},\"PipelineTransferredSubstanceNote\":{\"entity\":\"PipelineTransferredSubstance.cdm.json/PipelineTransferredSubstance\",\"name\":\"PipelineTransferredSubstanceNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The quantity of substance transferred by the pipeline for the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipelineId,SubstanceTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

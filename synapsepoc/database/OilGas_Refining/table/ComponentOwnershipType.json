@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentOwnershipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentOwnershipTypeId\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeId\"},\"ComponentOwnershipTypeName\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeName\"},\"ComponentOwnershipTypeDescription\":{\"entity\":\"ComponentOwnershipType.cdm.json/ComponentOwnershipType\",\"name\":\"ComponentOwnershipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of ownership associated with the component.\n\nEx:\n- Customer Owned\n- Subscriber Owned\n- Network Owned\n- Utility Owned\n- Other Utility Owned\n- Third Party Owned\n- Government Owned\n- Processing Plant Owned",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentOwnershipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

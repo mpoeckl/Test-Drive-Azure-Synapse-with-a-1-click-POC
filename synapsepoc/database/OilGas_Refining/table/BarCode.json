@@ -141,13 +141,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/BarCode",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BarCodeId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeId\"},\"BarCodeStandardId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeStandardId\"},\"BarCodeImage\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"BarCodeImage\"},\"ItemSku\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ItemSku\"},\"ProductId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"ProductId\"},\"AssetId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"AssetId\"},\"CouponId\":{\"entity\":\"BarCode.cdm.json/BarCode\",\"name\":\"CouponId\"}}}"
 			},
 			"Compressed": false,
@@ -158,8 +158,7 @@
 			"Description": "The bar code.",
 			"DisplayFolderInfo": "{\"name\":\"Inventory\",\"colorCode\":\"#EA279F\"}",
 			"PrimaryKeys": "BarCodeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

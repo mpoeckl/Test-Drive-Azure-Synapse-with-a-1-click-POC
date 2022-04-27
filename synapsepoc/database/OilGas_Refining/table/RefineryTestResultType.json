@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryTestResultType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryTestResultTypeId\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeId\"},\"RefineryTestResultTypeName\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeName\"},\"RefineryTestResultTypeDescription\":{\"entity\":\"RefineryTestResultType.cdm.json/RefineryTestResultType\",\"name\":\"RefineryTestResultTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The result of the refinery test.\n\nEx:\n- Within guideline standards\n- Exceeds guideline standards\n- Report to regulatory body required\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "RefineryTestResultTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/MeterModelSpecificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"MeterModelSpecificationTypeId\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeId\"},\"MeterModelSpecificationTypeName\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeName\"},\"MeterModelSpecificationTypeDescription\":{\"entity\":\"MeterModelSpecificationType.cdm.json/MeterModelSpecificationType\",\"name\":\"MeterModelSpecificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of meter model specification.\n\nEx:\n- Weight\n- Length\n- Width\n- Height\n- Minimum Operating Temperature\n- Maximum Operating Temperature\n- Minimum Operating Humidity Range\n- Maximum Operating Humidity Range\n- Nominal Current\n- Nominal Voltage\n- Nominal Frequency\n- Power Supply Nominal Power\n- Starting current\n- Maximum Current\n- Minimum Operating Temperature\n- Maximum Operating Temperature",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "MeterModelSpecificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

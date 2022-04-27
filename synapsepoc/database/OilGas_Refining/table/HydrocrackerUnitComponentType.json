@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/HydrocrackerUnitComponentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"HydrocrackerUnitComponentTypeId\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeId\"},\"HydrocrackerUnitComponentTypeName\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeName\"},\"HydrocrackerUnitComponentTypeDescription\":{\"entity\":\"HydrocrackerUnitComponentType.cdm.json/HydrocrackerUnitComponentType\",\"name\":\"HydrocrackerUnitComponentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type  of hydrocracker unit component that may be integrated with or supporting the operation of the hydrocracker unit.\n\nEx:\n- Reactor\n- Debutanizer column\n- Fractionator column\n- Gas oil stripper\n- Kerosene stripper\n- Heavy naphtha splitter\n- Heat Exchanger\n- Water-cooled Condenser\n- Sour water Stripper\n- Amine gas treating unit\n- Feed charge pump\n- Recycle furnace\n- High pressure separators",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "HydrocrackerUnitComponentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

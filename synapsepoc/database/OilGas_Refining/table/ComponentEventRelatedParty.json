@@ -127,13 +127,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelatedParty",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventId\"},\"PartyId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"PartyId\"},\"ComponentEventPartyRelationshipTypeId\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipTypeId\"},\"ComponentEventStartTimestamp\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventStartTimestamp\"},\"ComponentEventEndTimestamp\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventEndTimestamp\"},\"ComponentEventPartyRelationshipNote\":{\"entity\":\"ComponentEventRelatedParty.cdm.json/ComponentEventRelatedParty\",\"name\":\"ComponentEventPartyRelationshipNote\"}}}"
 			},
 			"Compressed": false,
@@ -144,8 +144,7 @@
 			"Description": "The relationship of a component event and the associated party(s) during the period indicated.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentEventId,PartyId,ComponentEventPartyRelationshipTypeId,ComponentEventStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StructurePartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StructurePartyRelationshipTypeId\":{\"entity\":\"StructurePartyRelationshipType.cdm.json/StructurePartyRelationshipType\",\"name\":\"StructurePartyRelationshipTypeId\"},\"StructurePartyRelationshipTypeName\":{\"entity\":\"StructurePartyRelationshipType.cdm.json/StructurePartyRelationshipType\",\"name\":\"StructurePartyRelationshipTypeName\"},\"StructurePartyRelationshipTypeDescription\":{\"entity\":\"StructurePartyRelationshipType.cdm.json/StructurePartyRelationshipType\",\"name\":\"StructurePartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the structure and the related party.\n\nEx:\n- Assessed-By Party\n- Owned-By Party\n- Rented-By Party\n- Managed-By Party\n- Resident-At Party\n- Constructed-by Party\n- Operated-by Party\n- Supervised-by Party\n- Safety Operator Party",
 			"DisplayFolderInfo": "{\"name\":\"Geography\",\"colorCode\":\"#8170C2\"}",
 			"PrimaryKeys": "StructurePartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

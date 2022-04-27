@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorSpecificationType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorSpecificationTypeId\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeId\"},\"GeneratorSpecificationTypeName\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeName\"},\"GeneratorSpecificationTypeDescription\":{\"entity\":\"GeneratorSpecificationType.cdm.json/GeneratorSpecificationType\",\"name\":\"GeneratorSpecificationTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of pipe specification.\n\nEx:\n- Generator length\n- Generator width\n- Generator height\n- Generator height\n- Generator minimum generator limit\n- Generator maximum generator limit\n- Generator designed minimum power\n- Generator designed maximum power\n- Generator active power\n- Generator apparent power\n- Generator maximum power\n- Generator frequency\n- Generator output phase\n- Generator engine bore\n- Generator engine stroke\n- Generator cylinder displacement\n- Generator cylinder output\n- Generator mean piston speed\n- Generator engine rating\n- Generator normal life span",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "GeneratorSpecificationTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

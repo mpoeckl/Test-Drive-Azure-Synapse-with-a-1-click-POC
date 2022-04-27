@@ -77,13 +77,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentCasingMaterial",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentId\"},\"MaterialId\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"MaterialId\"},\"ComponentCasingMaterialNote\":{\"entity\":\"ComponentCasingMaterial.cdm.json/ComponentCasingMaterial\",\"name\":\"ComponentCasingMaterialNote\"}}}"
 			},
 			"Compressed": false,
@@ -94,8 +94,7 @@
 			"Description": "The primary material used to construct the component casing.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,MaterialId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

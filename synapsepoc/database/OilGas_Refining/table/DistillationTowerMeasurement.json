@@ -159,13 +159,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DistillationTowerMeasurement",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DistillationTowerId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerId\"},\"MeasurementTypeId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementTypeId\"},\"TowerHeightMeters\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"TowerHeightMeters\"},\"PeriodStartTimestamp\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"PeriodEndTimestamp\"},\"MeasurementUnits\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"MeasurementUnits\"},\"UnitOfMeasureId\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"UnitOfMeasureId\"},\"DistillationTowerMeasurementNote\":{\"entity\":\"DistillationTowerMeasurement.cdm.json/DistillationTowerMeasurement\",\"name\":\"DistillationTowerMeasurementNote\"}}}"
 			},
 			"Compressed": false,
@@ -176,8 +176,7 @@
 			"Description": "The tower measurement(s) determined by tower height and period of time.\n\nEx:\n- Temperature\n- Pressure",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "DistillationTowerId,MeasurementTypeId,TowerHeightMeters,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

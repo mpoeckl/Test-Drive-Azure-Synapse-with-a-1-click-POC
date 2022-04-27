@@ -145,13 +145,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceSpecification",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceId\"},\"DeviceSpecificationTypeId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationTypeId\"},\"PeriodStartTimestamp\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"PeriodEndTimestamp\"},\"DeviceSpecificationValue\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationValue\"},\"DeviceSpecificationUomId\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationUomId\"},\"DeviceSpecificationNote\":{\"entity\":\"DeviceSpecification.cdm.json/DeviceSpecification\",\"name\":\"DeviceSpecificationNote\"}}}"
 			},
 			"Compressed": false,
@@ -162,8 +162,7 @@
 			"Description": "A specification associated with a device.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "DeviceId,DeviceSpecificationTypeId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

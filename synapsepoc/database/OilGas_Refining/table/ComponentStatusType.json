@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentStatusTypeId\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeId\"},\"ComponentStatusTypeName\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeName\"},\"ComponentStatusTypeDescription\":{\"entity\":\"ComponentStatusType.cdm.json/ComponentStatusType\",\"name\":\"ComponentStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A status that may be associated with a component.\n\nEx:\n- In-operation\n- Out-of-operation\n- Scheduled maintenance\n- In Repair",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

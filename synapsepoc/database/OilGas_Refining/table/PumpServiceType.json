@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PumpServiceType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PumpServiceTypeId\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeId\"},\"PumpServiceTypeName\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeName\"},\"PumpServiceTypeDescription\":{\"entity\":\"PumpServiceType.cdm.json/PumpServiceType\",\"name\":\"PumpServiceTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of service associated with the pump.\n\nEx:\n-  High pressure \n-  Common low pressure booster \n-  Low pressure booster to HPP \n-  2nd pass \n-  3rd stage \n-  3rd stage booster \n-  4th stage \n-  ERD booster\n-  Seawater intake \n-  Ultrafiltration backwash \n-  Ultrafiltration feed\n-  Low pressure booster\n-  CIP",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PumpServiceTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

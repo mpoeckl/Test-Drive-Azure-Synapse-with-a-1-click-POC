@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ShipmentChargeCategory",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ShipmentChargeCategoryId\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryId\"},\"ShipmentChargeCategoryName\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryName\"},\"ShipmentChargeCategoryDescription\":{\"entity\":\"ShipmentChargeCategory.cdm.json/ShipmentChargeCategory\",\"name\":\"ShipmentChargeCategoryDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A categorization of shipment charges based on common characteristics or functions performed.\n\nEx:\n- Administrative Charge\n- Delivery Charge\n- Freight Charge\n- Handling Charge\n- Import / Export Charge\n- Insurance Charge\n- Processing Charge\n- Special Handling Charge",
 			"DisplayFolderInfo": "{\"name\":\"Shipping\",\"colorCode\":\"#187A62\"}",
 			"PrimaryKeys": "ShipmentChargeCategoryId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

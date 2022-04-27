@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryPartyRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryPartyRelationshipTypeId\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeId\"},\"RefineryPartyRelationshipTypeName\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeName\"},\"RefineryPartyRelationshipTypeDescription\":{\"entity\":\"RefineryPartyRelationshipType.cdm.json/RefineryPartyRelationshipType\",\"name\":\"RefineryPartyRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between the party and the Refinery.\n\nEx:\n- Joint-venture Partner\n- Owned-by Party\n- Operated-by Party\n- Operator\n- Supervisor\n- Funded-By\n- Maintenance\n- Regulated-By\n- Planning\n- Emergency services",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryPartyRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

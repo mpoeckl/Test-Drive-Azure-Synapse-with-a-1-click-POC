@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/DeviceCommunicationToDisplayType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"DeviceCommunicationToDisplayTypeId\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeId\"},\"DeviceCommunicationToDisplayTypeName\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeName\"},\"DeviceCommunicationToDisplayTypeDescription\":{\"entity\":\"DeviceCommunicationToDisplayType.cdm.json/DeviceCommunicationToDisplayType\",\"name\":\"DeviceCommunicationToDisplayTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of means by which the device communicates to the display.\n\nEx:\n- Power line carrier\n- Wireless 433 MHz\n- Wireless 433.52 MHz",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "DeviceCommunicationToDisplayTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -111,13 +111,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/GeneratorComponentConfiguration",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"GeneratorId\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorId\"},\"GeneratorComponentId\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorComponentId\"},\"PeriodStartTimestamp\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"PeriodEndTimestamp\"},\"GeneratorConfigurationNote\":{\"entity\":\"GeneratorComponentConfiguration.cdm.json/GeneratorComponentConfiguration\",\"name\":\"GeneratorConfigurationNote\"}}}"
 			},
 			"Compressed": false,
@@ -128,8 +128,7 @@
 			"Description": "The Generator Component(s) installed and operating during the associated period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "GeneratorId,GeneratorComponentId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

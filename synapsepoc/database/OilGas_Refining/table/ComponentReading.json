@@ -243,13 +243,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentReading",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentId\"},\"ReadingTypeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingTypeId\"},\"ReadingStartTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingStartTimestamp\"},\"ReadingEndTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingEndTimestamp\"},\"ReadingValue\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingValue\"},\"ReadingUnits\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingUnits\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"UnitOfMeasureId\"},\"ScheduleReadingTimestamp\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ScheduleReadingTimestamp\"},\"ComponentReadingStatusId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingStatusId\"},\"ReadingModeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingModeId\"},\"ReadingResultTypeId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ReadingResultTypeId\"},\"ComponentReadingNote\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"ComponentReadingNote\"},\"PiPointId\":{\"entity\":\"ComponentReading.cdm.json/ComponentReading\",\"name\":\"PiPointId\"}}}"
 			},
 			"Compressed": false,
@@ -260,8 +260,7 @@
 			"Description": "The reading associated with the component for a period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,ReadingTypeId,ReadingStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

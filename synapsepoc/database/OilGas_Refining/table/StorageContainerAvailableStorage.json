@@ -145,13 +145,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/StorageContainerAvailableStorage",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"StorageContainerId\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"StorageContainerId\"},\"ProductId\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"ProductId\"},\"PeriodStartTimestamp\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"PeriodStartTimestamp\"},\"PeriodEndTimestamp\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"PeriodEndTimestamp\"},\"AvailableStorageUnits\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"AvailableStorageUnits\"},\"AvailableStorageUomId\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"AvailableStorageUomId\"},\"StorageContainerAvailableStorageNote\":{\"entity\":\"StorageContainerAvailableStorage.cdm.json/StorageContainerAvailableStorage\",\"name\":\"StorageContainerAvailableStorageNote\"}}}"
 			},
 			"Compressed": false,
@@ -162,8 +162,7 @@
 			"Description": "The available storage associated with the Product for the period.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "StorageContainerId,ProductId,PeriodStartTimestamp",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentEventRelationshipType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentEventRelationshipTypeId\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeId\"},\"ComponentEventRelationshipTypeName\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeName\"},\"ComponentEventRelationshipTypeDescription\":{\"entity\":\"ComponentEventRelationshipType.cdm.json/ComponentEventRelationshipType\",\"name\":\"ComponentEventRelationshipTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The nature of the relationship between two or more Component Events.\n\nEx:\n- Caused-by\n- Contributory\n- Required-by\n- Issued in response to\n- Planned\n- Precautionary\n- Preceding\n- Subsequent",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentEventRelationshipTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

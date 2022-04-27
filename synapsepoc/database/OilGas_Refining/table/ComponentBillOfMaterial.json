@@ -128,13 +128,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ComponentBillOfMaterial",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ComponentId\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ComponentId\"},\"BomLevelNumber\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomLevelNumber\"},\"ItemSku\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"ItemSku\"},\"BomQuantity\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"BomQuantity\"},\"Note\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"Note\"},\"UnitOfMeasureId\":{\"entity\":\"ComponentBillOfMaterial.cdm.json/ComponentBillOfMaterial\",\"name\":\"UnitOfMeasureId\"}}}"
 			},
 			"Compressed": false,
@@ -145,8 +145,7 @@
 			"Description": "The Bill of Material (BOM) for the associated component.",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "ComponentId,BomLevelNumber,ItemSku",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

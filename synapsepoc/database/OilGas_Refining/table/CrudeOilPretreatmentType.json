@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/CrudeOilPretreatmentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"CrudeOilPretreatmentTypeId\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeId\"},\"CrudeOilPretreatmentTypeName\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeName\"},\"CrudeOilPretreatmentTypeDescription\":{\"entity\":\"CrudeOilPretreatmentType.cdm.json/CrudeOilPretreatmentType\",\"name\":\"CrudeOilPretreatmentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The type of crude oil pre-treatment applied to the crude oil.\n\nEx:\n- Chemical Separation\n- Electrostatic Separation\n\nwhere:\nThe two most typical methods of crude-oil desalting, chemical and electrostatic separation, use hot water as the extraction agent. In chemical desalting, water and chemical surfactant (demulsifiers) are added to the crude, heated so that salts and other impurities dissolve into the water or attach to the water, and then held in a tank where they settle out. Electrical desalting is the application of high-voltage electrostatic charges to concentrate suspended water globules in the bottom of the settling tank. Surfactants are added only when the crude has a large amount of suspended solids. Both methods of desalting are continuous. A third and less-common process involves filtering heated crude using diatomaceous earth.",
 			"DisplayFolderInfo": "{\"name\":\"Refining\",\"colorCode\":\"#961E84\"}",
 			"PrimaryKeys": "CrudeOilPretreatmentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

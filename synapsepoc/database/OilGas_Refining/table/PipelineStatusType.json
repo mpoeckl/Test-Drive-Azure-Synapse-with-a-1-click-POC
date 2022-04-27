@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/PipelineStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"PipelineStatusTypeId\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeId\"},\"PipelineStatusTypeName\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeName\"},\"PipelineStatusTypeDescription\":{\"entity\":\"PipelineStatusType.cdm.json/PipelineStatusType\",\"name\":\"PipelineStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The status type of a pipeline.\n\nEx:\n- Retired\n- Active\n- Designed\n- Proposed Retired\n- Unknown",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "PipelineStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/IncidentTreatmentType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"IncidentTreatmentTypeId\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeId\"},\"IncidentTreatmentTypeName\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeName\"},\"IncidentTreatmentTypeDescription\":{\"entity\":\"IncidentTreatmentType.cdm.json/IncidentTreatmentType\",\"name\":\"IncidentTreatmentTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "A type of incident treatment.\n\nEx:\n- On-site medical care\n- Hospitalization\n- Referred to doctor\n- Emergency Air Evacuation\n- None\n- N/A",
 			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#630454\"}",
 			"PrimaryKeys": "IncidentTreatmentTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

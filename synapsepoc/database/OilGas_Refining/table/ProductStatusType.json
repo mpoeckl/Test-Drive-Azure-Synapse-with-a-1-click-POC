@@ -78,13 +78,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/ProductStatusType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"ProductStatusTypeId\":{\"entity\":\"ProductStatusType.cdm.json/ProductStatusType\",\"name\":\"ProductStatusTypeId\"},\"ProductStatusTypeName\":{\"entity\":\"ProductStatusType.cdm.json/ProductStatusType\",\"name\":\"ProductStatusTypeName\"},\"ProductStatusTypeDescription\":{\"entity\":\"ProductStatusType.cdm.json/ProductStatusType\",\"name\":\"ProductStatusTypeDescription\"}}}"
 			},
 			"Compressed": false,
@@ -95,8 +95,7 @@
 			"Description": "The development, sales or marketing status of the associated product.\n\nEx:\n- Unannounced\n- Active\n- Inactive\n- Pending Discontinuance\n- Discontinued\n- Dormant\n- Frozen\n- Replaced\n- Obsolete\n- Abandoned\n- Patented\n- Out-of-Patent\n- Blocked",
 			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#005A61\"}",
 			"PrimaryKeys": "ProductStatusTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,

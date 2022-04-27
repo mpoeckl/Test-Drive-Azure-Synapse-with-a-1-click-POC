@@ -94,13 +94,13 @@
 				"Provider": "ADLS",
 				"Location": "abfss://dlsmpapocfs1@mpajn6axh2pc3wispoc.dfs.core.windows.net/OilGas_Refining/RefineryEventType",
 				"Properties": {
-					"LinkedServiceName": "mpajn6axh2pc3wispocws1-WorkspaceDefaultStorage",
+					"LinkedServiceName": "TripFaresDataLakeStorageLinkedService_NoParams",
 					"LocationSetToDatabaseDefault": true
 				}
 			},
 			"Properties": {
 				"textinputformat.record.delimiter": ",",
-				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"compression": "",
 				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"RefineryEventTypeId\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeId\"},\"RefineryEventTypeName\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeName\"},\"RefineryEventTypeDescription\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventTypeDescription\"},\"RefineryEventCategoryId\":{\"entity\":\"RefineryEventType.cdm.json/RefineryEventType\",\"name\":\"RefineryEventCategoryId\"}}}"
 			},
 			"Compressed": false,
@@ -111,8 +111,7 @@
 			"Description": "A type of event that is recorded for a refinery.\n\nEx:\n- Inspection\n- Planned shut-down\n- Unplanned shut-down\n- Environmental Non-Compliant Emissions Release\n- Emergency Shutdown\n- Hazard alert\n- Emergency repairs",
 			"DisplayFolderInfo": "{\"name\":\"Network\",\"colorCode\":\"#7062A8\"}",
 			"PrimaryKeys": "RefineryEventTypeId",
-			"spark.sql.sources.provider": "parquet",
-			"sql:IsAppendOnly": false
+			"spark.sql.sources.provider": "parquet"
 		},
 		"Retention": 0,
 		"Temporary": false,
