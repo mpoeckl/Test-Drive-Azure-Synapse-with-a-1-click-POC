@@ -5,9 +5,9 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"dataset": {
-						"referenceName": "AzureSqlMITable1",
-						"type": "DatasetReference"
+					"linkedService": {
+						"referenceName": "AzureSqlMI1",
+						"type": "LinkedServiceReference"
 					},
 					"name": "sourceMI"
 				}
@@ -23,17 +23,13 @@
 			],
 			"transformations": [],
 			"scriptLines": [
-				"source(output(",
-				"          id as integer,",
-				"          name as string,",
-				"          number as integer,",
-				"          description as string,",
-				"          ts as timestamp",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> sourceMI",
+				"     format: 'table',",
+				"     store: 'sqlserver',",
+				"     schemaName: 'dbo',",
+				"     tableName: 'test_table',",
+				"     isolationLevel: 'READ_UNCOMMITTED') ~> sourceMI",
 				"sourceMI sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'delimited',",
