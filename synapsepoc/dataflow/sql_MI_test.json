@@ -1,5 +1,5 @@
 {
-	"name": "Dataflow1",
+	"name": "sql_MI_test",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,15 +12,7 @@
 					"name": "sourceMI"
 				}
 			],
-			"sinks": [
-				{
-					"linkedService": {
-						"referenceName": "TripFaresDataLakeStorageLinkedService_NoParams",
-						"type": "LinkedServiceReference"
-					},
-					"name": "sink1"
-				}
-			],
+			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
@@ -33,21 +25,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> sourceMI",
-				"sourceMI sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     format: 'delimited',",
-				"     fileSystem: 'public',",
-				"     folderPath: 'sql_mi_test',",
-				"     columnDelimiter: ',',",
-				"     escapeChar: '\\\\',",
-				"     quoteChar: '\\\"',",
-				"     columnNamesAsHeader: true,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     format: 'table') ~> sourceMI"
 			]
 		}
 	}
